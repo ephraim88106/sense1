@@ -93,38 +93,31 @@ class ExamQuestion extends HTMLElement {
                     font-size: 1rem;
                     line-height: 1.4;
                 }
-                .toggle-answer-btn {
-                    width: 100%;
+                
+                /* Details-like styling for answer section */
+                .answer-details {
                     background: #f8f9fa;
-                    color: #0056b3;
                     border: 1px solid #e9ecef;
-                    padding: 14px;
                     border-radius: 8px;
-                    font-size: 1rem;
-                    font-weight: 700;
-                    cursor: pointer;
+                    padding: 15px;
+                }
+                .answer-summary {
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    transition: all 0.2s;
-                    outline: none;
+                    cursor: pointer;
+                    font-weight: bold;
+                    color: #0056b3;
+                    user-select: none;
                 }
-                .toggle-answer-btn:hover {
-                    background: #e9ecef;
-                }
-                .answer-section {
+                .answer-content {
                     margin-top: 15px;
                     border-top: 1px dashed #ccc;
                     padding-top: 15px;
-                    display: none;
-                    opacity: 0;
-                    transform: translateY(-5px);
-                    transition: all 0.3s ease;
+                    display: none; /* Initially hidden */
                 }
-                .answer-section.open {
+                .answer-content.show {
                     display: block;
-                    opacity: 1;
-                    transform: translateY(0);
                 }
                 .answer-badge {
                     color: #d9534f;
@@ -132,16 +125,16 @@ class ExamQuestion extends HTMLElement {
                     font-size: 1.1rem;
                     margin-bottom: 10px;
                 }
-                .explanation-title {
-                    font-size: 0.95rem;
-                    color: #1f2937;
-                    font-weight: bold;
-                    margin-bottom: 6px;
-                }
                 .explanation {
-                    color: #4b5563;
+                    color: #212529;
                     font-size: 0.95rem;
                     line-height: 1.6;
+                }
+                .arrow-icon {
+                    transition: transform 0.2s;
+                }
+                .arrow-icon.rotated {
+                    transform: rotate(180deg);
                 }
             </style>
             
@@ -150,37 +143,33 @@ class ExamQuestion extends HTMLElement {
                 ${optionsHtml}
             </div>
             
-            <button class="toggle-answer-btn">
-                <span>👉 정답 및 해설 확인하기</span>
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </button>
-            
-            <div class="answer-section">
-                <div class="answer-badge">정답: ${answerText.split('.')[0]}번</div>
-                <div class="explanation"><strong>해설:</strong> ${explanationText}</div>
+            <div class="answer-details">
+                <div class="answer-summary" id="toggle-btn">
+                    <span>👉 정답 및 해설 확인하기</span>
+                    <svg class="arrow-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </div>
+                <div class="answer-content" id="answer-box">
+                    <div class="answer-badge">정답: ${answerText.split('.')[0]}</div>
+                    <div class="explanation"><strong>해설:</strong> ${explanationText}</div>
+                </div>
             </div>
         `;
 
         shadow.appendChild(wrapper);
 
         // Logic
-        const toggleBtn = wrapper.querySelector('.toggle-answer-btn');
-        const answerSection = wrapper.querySelector('.answer-section');
-        const btnText = toggleBtn.querySelector('span');
-        const btnIcon = toggleBtn.querySelector('svg');
+        const toggleBtn = shadow.getElementById('toggle-btn');
+        const answerBox = shadow.getElementById('answer-box');
+        const arrowIcon = toggleBtn.querySelector('.arrow-icon');
 
         toggleBtn.addEventListener('click', () => {
-            const isOpen = answerSection.classList.contains('open');
-            if (isOpen) {
-                answerSection.classList.remove('open');
-                btnText.textContent = '정답 및 해설 보기';
-                toggleBtn.style.background = '#1f2937';
-                btnIcon.innerHTML = '<polyline points="6 9 12 15 18 9"></polyline>'; // down arrow
+            const isShown = answerBox.classList.contains('show');
+            if (isShown) {
+                answerBox.classList.remove('show');
+                arrowIcon.classList.remove('rotated');
             } else {
-                answerSection.classList.add('open');
-                btnText.textContent = '정답 및 해설 숨기기';
-                toggleBtn.style.background = '#6b7280';
-                btnIcon.innerHTML = '<polyline points="18 15 12 9 6 15"></polyline>'; // up arrow
+                answerBox.classList.add('show');
+                arrowIcon.classList.add('rotated');
             }
         });
     }
