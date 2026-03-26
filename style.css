@@ -13,8 +13,16 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif; }
-body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.7; overflow-x: hidden; }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+body { 
+    background-color: var(--bg-main); 
+    color: var(--text-main); 
+    line-height: 1.7; 
+    overflow-x: hidden;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/baseFilter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    opacity: 0.98;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
 
 /* Header & Mega Menu */
 .main-header {
@@ -68,6 +76,25 @@ body { background-color: var(--bg-main); color: var(--text-main); line-height: 1
 
 .dropdown a:hover { background: #f8f9fa; color: var(--primary-color); }
 
+.btn-cert {
+    background: var(--primary-color);
+    color: white !important;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 800;
+    display: inline-block;
+    transition: 0.3s;
+    border: none;
+    box-shadow: 0 4px 15px rgba(59, 47, 47, 0.2);
+}
+
+.btn-cert:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212, 163, 115, 0.4);
+    background: var(--accent-color);
+}
+
 .btn-login {
     background: var(--primary-color);
     color: white !important;
@@ -90,16 +117,42 @@ body { background-color: var(--bg-main); color: var(--text-main); line-height: 1
     background: var(--bg-white);
     padding: 40px 30px;
     border-radius: 24px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow);
-    transition: 0.3s;
+    border: 1px solid rgba(233, 237, 201, 0.5);
+    box-shadow: 
+        0 10px 20px -5px rgba(59, 47, 47, 0.05),
+        0 20px 40px -10px rgba(59, 47, 47, 0.08);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     text-align: center;
 }
 
 .mini-card { padding: 25px; border-radius: 16px; }
 .mini-card h4 { margin-bottom: 5px; color: var(--primary-color); }
 
-.cert-card:hover, .mini-card:hover { transform: translateY(-10px); }
+.cert-card:hover, .mini-card:hover { 
+    transform: translateY(-12px);
+    box-shadow: 
+        0 30px 60px -12px rgba(212, 163, 115, 0.15),
+        0 18px 36px -18px rgba(212, 163, 115, 0.2);
+    border-color: var(--accent-color);
+}
+
+.accent-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fefae0 100%);
+    border: 2px solid var(--accent-color);
+}
+
+.badge {
+    background: rgba(212, 163, 115, 0.1);
+    color: var(--accent-color);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    display: inline-block;
+}
 
 /* Roadmap */
 .roadmap-container {
@@ -130,10 +183,30 @@ body { background-color: var(--bg-main); color: var(--text-main); line-height: 1
 .section-title { text-align: center; margin-bottom: 60px; }
 .section-title h2 { font-size: 2.2rem; font-weight: 900; color: var(--primary-color); }
 
-/* Quiz */
-.quiz-container { background: white; border-radius: 30px; padding: 50px; border: 1px solid var(--border-color); box-shadow: var(--shadow); }
+/* Quiz Header & Controls */
 .quiz-header { margin-bottom: 40px; }
-.quiz-progress-bar { height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; margin-top: 15px; }
+.quiz-controls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.quiz-status { font-weight: 900; color: var(--primary-color); font-size: 1.1rem; }
+
+.btn-shuffle {
+    background: white;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 0.9rem;
+}
+
+.btn-shuffle:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: scale(1.05);
+}
+
+.quiz-progress-bar { height: 8px; background: #f0f0f0; border-radius: 4px; overflow: hidden; }
 .progress { height: 100%; background: var(--accent-color); transition: 0.5s; width: 0%; }
 .quiz-footer { display: flex; justify-content: space-between; margin-top: 40px; }
 

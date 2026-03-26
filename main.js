@@ -40,8 +40,14 @@ class MainHeader extends HTMLElement {
                                     <li><a href="practice.html">기출문제</a></li>
                                 </ul>
                             </li>
+                            <li class="has-dropdown">
+                                <a href="about.html" class="${activePage === 'info' ? 'active' : ''}">정보센터</a>
+                                <ul class="dropdown">
+                                    <li><a href="about.html">사이트 소개</a></li>
+                                    <li><a href="contact.html">고객센터/문의</a></li>
+                                </ul>
+                            </li>
                             <li><a href="cert-library.html" class="${activePage === 'cert' ? 'active' : ''}">심사평가</a></li>
-                            <li><a href="#" class="${activePage === 'info' ? 'active' : ''}">정보센터</a></li>
                             <li><a href="#">마이페이지</a></li>
                         </ul>
                     </nav>
@@ -62,18 +68,21 @@ class MainFooter extends HTMLElement {
                 :host { display: block; font-family: 'Noto Sans KR', sans-serif; background: #f1f3f5; color: #8d99ae; padding: 60px 0; margin-top: 80px; }
                 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
                 .info p { margin-bottom: 5px; font-size: 0.9rem; }
-                .links a { color: #8d99ae; text-decoration: none; margin-left: 15px; font-size: 0.9rem; }
+                .links a { color: #8d99ae; text-decoration: none; margin-left: 15px; font-size: 0.9rem; transition: 0.3s; }
+                .links a:hover { color: #3b2f2f; }
             </style>
             <footer>
                 <div class="container">
                     <div class="info">
-                        <p><strong>(사)한국커피협회 포털</strong> | 대표: 최주호</p>
-                        <p>서울시 마포구 마포대로1길 26-1 | 02-702-4080</p>
-                        <p>© 2024 KCA Korea Coffee Association.</p>
+                        <p><strong>(사)한국커피협회 포털</strong> | KCA 바리스타 학습 도우미</p>
+                        <p>전문적인 기출문제 해설과 상세한 시험 가이드를 제공합니다.</p>
+                        <p>© 2024 KCA Portal. All rights reserved.</p>
                     </div>
                     <div class="links">
-                        <a href="#">이용약관</a>
-                        <a href="#">개인정보처리방침</a>
+                        <a href="about.html">소개</a>
+                        <a href="contact.html">문의</a>
+                        <a href="terms.html">이용약관</a>
+                        <a href="privacy.html">개인정보처리방침</a>
                     </div>
                 </div>
             </footer>
@@ -174,20 +183,21 @@ class ExamQuestion extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
+        this.selected = false;
     }
     connectedCallback() { this.render(); }
     static get observedAttributes() { return ['question', 'options', 'answer', 'explanation']; }
-    attributeChangedCallback() { this.render(); }
+    attributeChangedCallback() { this.selected = false; this.render(); }
     render() {
         const questionText = this.getAttribute('question') || '문제가 없습니다.';
         const options = JSON.parse(this.getAttribute('options') || '[]');
-        const answerText = this.getAttribute('answer') || '정답이 없습니다.';
-        const explanationText = this.getAttribute('explanation') || '해설이 없습니다.';
+        const answerText = this.getAttribute('answer') || '';
+        const explanationText = this.getAttribute('explanation') || '';
 
         let optionsHtml = '';
         options.forEach((opt, idx) => {
             optionsHtml += `
-                <label class="option-label">
+                <label class="option-label" data-text="${opt}">
                     <input type="radio" name="q-option" value="${idx}">
                     <span class="custom-radio">${idx + 1}</span>
                     <span class="option-text">${opt}</span>
@@ -198,30 +208,69 @@ class ExamQuestion extends HTMLElement {
         this.shadowRoot.innerHTML = `
             <style>
                 :host { display: block; margin-bottom: 30px; font-family: 'Noto Sans KR', sans-serif; }
-                .question-title { font-size: 1.2rem; font-weight: 700; color: #1f2937; margin-bottom: 25px; }
-                .options-container { display: flex; flex-direction: column; gap: 12px; }
-                .option-label { display: flex; align-items: center; padding: 16px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; cursor: pointer; transition: 0.2s; }
-                .option-label:hover { background: #f3f4f6; }
+                .question-title { font-size: 1.25rem; font-weight: 800; color: #3b2f2f; margin-bottom: 30px; line-height: 1.6; }
+                .options-container { display: flex; flex-direction: column; gap: 15px; }
+                .option-label { display: flex; align-items: center; padding: 20px; background: #ffffff; border: 2px solid #e9edc9; border-radius: 16px; cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
+                .option-label:hover:not(.disabled) { transform: translateY(-3px); border-color: #d4a373; box-shadow: 0 10px 20px rgba(212, 163, 115, 0.1); }
                 .option-label input { display: none; }
-                .custom-radio { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #d1d5db; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-weight: bold; }
-                .option-label input:checked + .custom-radio { background: #d4a373; color: white; border-color: #d4a373; }
-                .answer-box { margin-top: 25px; padding: 20px; background: #f8fafc; border-radius: 12px; display: none; }
+                .custom-radio { width: 32px; height: 32px; border-radius: 50%; border: 2px solid #e9edc9; display: flex; align-items: center; justify-content: center; margin-right: 20px; font-weight: 900; font-size: 0.9rem; flex-shrink: 0; transition: 0.3s; }
+                .option-text { font-size: 1.05rem; font-weight: 500; color: #4a4a4a; }
+                
+                /* Feedback Styles */
+                .option-label.correct { border-color: #606c38 !important; background: #f0f4e8 !important; }
+                .option-label.correct .custom-radio { background: #606c38; color: white; border-color: #606c38; }
+                .option-label.correct .option-text { color: #283618; font-weight: 700; }
+                
+                .option-label.incorrect { border-color: #bc6c25 !important; background: #fdf2e9 !important; }
+                .option-label.incorrect .custom-radio { background: #bc6c25; color: white; border-color: #bc6c25; }
+                
+                .option-label.disabled { cursor: default; opacity: 0.8; }
+                
+                .answer-box { margin-top: 35px; padding: 25px; background: #fefae0; border-radius: 20px; border-left: 6px solid #d4a373; display: none; animation: slideIn 0.5s ease; }
                 .answer-box.show { display: block; }
-                .btn-check { margin-top: 20px; padding: 12px 25px; background: #3b2f2f; color: white; border-radius: 8px; border: none; cursor: pointer; }
+                .answer-box h4 { margin-bottom: 10px; color: #bc6c25; font-weight: 900; }
+                .explanation-text { color: #3b2f2f; line-height: 1.7; font-size: 0.95rem; }
+                
+                @keyframes slideIn {
+                    from { opacity: 0; transform: translateY(10px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
             </style>
             <div class="question-wrapper">
                 <div class="question-title">${questionText}</div>
-                <div class="options-container">${optionsHtml}</div>
-                <button class="btn-check" id="check-btn">정답 확인</button>
+                <div class="options-container">
+                    ${optionsHtml}
+                </div>
                 <div class="answer-box" id="answer-box">
-                    <p><strong>정답:</strong> ${answerText}</p>
-                    <p><strong>해설:</strong> ${explanationText}</p>
+                    <h4>💡 전문가 해설</h4>
+                    <div class="explanation-text">${explanationText}</div>
                 </div>
             </div>
         `;
-        const btn = this.shadowRoot.getElementById('check-btn');
+
+        const labels = this.shadowRoot.querySelectorAll('.option-label');
         const box = this.shadowRoot.getElementById('answer-box');
-        btn.onclick = () => box.classList.toggle('show');
+
+        labels.forEach(label => {
+            label.onclick = () => {
+                if (this.selected) return;
+                this.selected = true;
+                
+                const selectedText = label.getAttribute('data-text');
+                const isCorrect = selectedText === answerText;
+                
+                labels.forEach(l => {
+                    l.classList.add('disabled');
+                    if (l.getAttribute('data-text') === answerText) {
+                        l.classList.add('correct');
+                    } else if (l === label && !isCorrect) {
+                        l.classList.add('incorrect');
+                    }
+                });
+                
+                box.classList.add('show');
+            };
+        });
     }
 }
 customElements.define('exam-question', ExamQuestion);
@@ -243,24 +292,56 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Quiz Navigation Logic
+    // Quiz Navigation & Shuffle Logic
     const qContainer = document.querySelector('.questions-container');
+    const shuffleBtn = document.getElementById('shuffle-btn');
+    
     if (qContainer && baristaQuestions) {
         let curIdx = 0;
+        let questions = [...baristaQuestions]; // 복사본 사용
+
         const renderQuiz = () => {
-            const q = baristaQuestions[curIdx];
-            qContainer.innerHTML = `<exam-question question="${q.question}" options='${JSON.stringify(q.options)}' answer="${q.answer}" explanation="${q.explanation}"></exam-question>`;
+            const q = questions[curIdx];
+            qContainer.innerHTML = `<exam-question 
+                question="${q.question}" 
+                options='${JSON.stringify(q.options).replace(/'/g, "&apos;")}' 
+                answer="${q.answer}" 
+                explanation="${q.explanation}">
+            </exam-question>`;
+            
             const curQ = document.querySelector('.current-q');
             const totalQ = document.querySelector('.total-q');
             const progress = document.querySelector('.progress');
             if(curQ) curQ.textContent = curIdx + 1;
-            if(totalQ) totalQ.textContent = baristaQuestions.length;
-            if(progress) progress.style.width = `${((curIdx + 1) / baristaQuestions.length) * 100}%`;
+            if(totalQ) totalQ.textContent = questions.length;
+            if(progress) progress.style.width = `${((curIdx + 1) / questions.length) * 100}%`;
+            
+            window.scrollTo({ top: qContainer.offsetTop - 150, behavior: 'smooth' });
         };
+
+        const shuffle = () => {
+            if(!confirm('문제를 무작위로 섞고 1번부터 다시 시작할까요?')) return;
+            for (let i = questions.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [questions[i], questions[j]] = [questions[j], questions[i]];
+            }
+            curIdx = 0;
+            renderQuiz();
+        };
+
+        if(shuffleBtn) shuffleBtn.onclick = shuffle;
+
         const prev = document.querySelector('.btn-nav.outline');
         const next = document.querySelector('.btn-nav.fill');
         if(prev) prev.onclick = () => { if(curIdx > 0) { curIdx--; renderQuiz(); } };
-        if(next) next.onclick = () => { if(curIdx < baristaQuestions.length - 1) { curIdx++; renderQuiz(); } else { alert('마지막 문제입니다.'); } };
+        if(next) next.onclick = () => { 
+            if(curIdx < questions.length - 1) { 
+                curIdx++; 
+                renderQuiz(); 
+            } else { 
+                alert('180문제를 모두 완료하셨습니다! 대단하십니다. ☕'); 
+            } 
+        };
         renderQuiz();
     }
 });

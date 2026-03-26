@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>고객센터 | KCA 바리스타 포털</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main-header active="info"></main-header>
+
+    <main class="container section">
+        <div class="section-title">
+            <h2>무엇을 <span class="highlight">도와드릴까요?</span></h2>
+            <p>서비스 이용 중 불편한 점이나 제안하고 싶은 사항이 있다면 언제든 문의해 주세요.</p>
+        </div>
+
+        <div class="info-hub" style="align-items: flex-start;">
+            <div class="info-box">
+                <h3>📞 연락처 정보</h3>
+                <p>본 사이트 운영 및 기술 지원에 관한 문의는 아래 경로를 통해 가능합니다.</p>
+                <ul style="margin-top: 20px;">
+                    <li><strong>이메일:</strong> help@kca-portal.com</li>
+                    <li><strong>운영시간:</strong> 평일 10:00 - 18:00 (주말/공휴일 휴무)</li>
+                </ul>
+                <div style="margin-top: 30px; padding: 20px; background: #f8fafc; border-radius: 12px; font-size: 0.9rem;">
+                    <p>💡 기출문제의 오류 신고나 해설에 대한 의견은 이메일로 보내주시면 검토 후 반영하겠습니다.</p>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3>✉️ 1:1 문의하기</h3>
+                <form onsubmit="event.preventDefault(); alert('준비 중인 기능입니다. 이메일로 문의해 주세요.');">
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; font-weight: 700; margin-bottom: 5px;">성함</label>
+                        <input type="text" placeholder="성함을 입력하세요" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <label style="display: block; font-weight: 700; margin-bottom: 5px;">이메일 주소</label>
+                        <input type="email" placeholder="답변받을 이메일을 입력하세요" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);">
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <label style="display: block; font-weight: 700; margin-bottom: 5px;">문의 내용</label>
+                        <textarea rows="5" placeholder="문의하실 내용을 상세히 적어주세요" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color);"></textarea>
+                    </div>
+                    <button type="submit" class="btn-cert" style="width: 100%; cursor: pointer;">문의 보내기</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <main-footer></main-footer>
+    <script src="main.js" type="module"></script>
+</body>
+</html>
