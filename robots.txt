@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /firebase-debug.log
+Disallow: /kca.html
+Disallow: /text_kca.txt
+
+Sitemap: https://kca-portal.com/sitemap.xml
