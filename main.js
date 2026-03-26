@@ -33,11 +33,12 @@ class MainHeader extends HTMLElement {
                     <nav>
                         <ul>
                             <li class="has-dropdown">
-                                <a href="exam-guide.html" class="${activePage === 'exam' ? 'active' : ''}">자격시험</a>
+                                <a href="exam-guide.html" class="${activePage === 'exam' ? 'active' : ''}">학습센터</a>
                                 <ul class="dropdown">
-                                    <li><a href="schedule.html">자격시험일정</a></li>
+                                    <li><a href="knowledge.html">커피 지식 백과</a></li>
+                                    <li><a href="practice.html">기출문제 풀이</a></li>
                                     <li><a href="exam-guide.html">시험안내/규정</a></li>
-                                    <li><a href="practice.html">기출문제</a></li>
+                                    <li><a href="schedule.html">자격시험일정</a></li>
                                 </ul>
                             </li>
                             <li class="has-dropdown">
@@ -47,11 +48,8 @@ class MainHeader extends HTMLElement {
                                     <li><a href="contact.html">고객센터/문의</a></li>
                                 </ul>
                             </li>
-                            <li><a href="cert-library.html" class="${activePage === 'cert' ? 'active' : ''}">심사평가</a></li>
-                            <li><a href="#">마이페이지</a></li>
                         </ul>
                     </nav>
-                    <a href="#" class="btn-login">로그인</a>
                 </div>
             </header>
         `;
