@@ -70,29 +70,92 @@
                     <h2>📋 바리스타 자격시험 안내</h2>
                     <p>한국커피협회(KCA) 기준 자격증 취득을 위한 등급별 상세 가이드</p>
                 </div>
+
+                <!-- Process Roadmap -->
+                <div class="roadmap-container">
+                    <div class="roadmap-step">
+                        <div class="step-num">01</div>
+                        <div class="step-content">
+                            <h4>시험 접수</h4>
+                            <p>공식 홈페이지 온라인 접수</p>
+                        </div>
+                    </div>
+                    <div class="roadmap-sep">➔</div>
+                    <div class="roadmap-step">
+                        <div class="step-num">02</div>
+                        <div class="step-content">
+                            <h4>필기 시험</h4>
+                            <p>객관식 사지선다형 50문항</p>
+                        </div>
+                    </div>
+                    <div class="roadmap-sep">➔</div>
+                    <div class="roadmap-step">
+                        <div class="step-num">03</div>
+                        <div class="step-content">
+                            <h4>실기 시험</h4>
+                            <p>준비/에스프레소/카푸치노/정리</p>
+                        </div>
+                    </div>
+                    <div class="roadmap-sep">➔</div>
+                    <div class="roadmap-step success-step">
+                        <div class="step-num">✓</div>
+                        <div class="step-content">
+                            <h4>자격증 발급</h4>
+                            <p>합격자 대상 비갱신 자격 부여</p>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="exam-guide-grid">
+                    <!-- 바리스타 2급 상세 -->
                     <exam-card
                         level="2급"
                         eligibility-written="제한 없음"
                         eligibility-practical="바리스타 2급 필기시험 합격자"
-                        format-written="필기시험 50문항 (50분)"
-                        format-practical="기술 및 감각평가 (준비 및 시연 15분)"
+                        format-written="일반전형: 필기 50문항 (50분) / 특별전형: 무시험 검정 (학점이수자 등)"
+                        format-practical="일반전형: 기술 및 감각평가 (준비 및 시연 15분)"
+                        subjects-written="커피학 개론, 커피 로스팅과 향미평가, 커피 추출 등 예상문제집 포함 (사지선다형)"
+                        subjects-practical="준비 평가, 에스프레소 4잔 평가, 카푸치노 4잔 평가, 서비스 기술 평가"
                         criteria-written="100점 만점에 60점 이상"
                         criteria-practical="100점 만점에 60점 이상 (기술 60점, 감각 40점)"
                         theme="primary"
                     ></exam-card>
 
+                    <!-- 바리스타 1급 상세 -->
                     <exam-card
                         level="1급"
                         eligibility-written="바리스타 2급 자격증 취득자"
                         eligibility-practical="바리스타 1급 필기시험 합격자"
-                        format-written="필기시험 50문항 (50분)"
-                        format-practical="기술 및 감각평가 (준비 및 시연 15분)"
+                        format-written="일반전형: 필기 50문항 (50분) / 특별전형: 무시험 검정 (성적우수자 등)"
+                        format-practical="일반전형: 기술 및 감각평가 (준비 및 시연 15분)"
+                        subjects-written="커피학 개론, 커피 로스팅과 향미평가, 커피 추출 등 예상문제집 포함 (사지선다형)"
+                        subjects-practical="준비 평가, 에스프레소 4잔 평가, 카푸치노 4잔(하트 2, 3단튤립 2) 평가, 서비스 기술 평가"
                         criteria-written="100점 만점에 60점 이상"
-                        criteria-practical="100점 만점에 60점 이상"
+                        criteria-practical="100점 만점에 60점 이상 (기술 60점, 감각 40점)"
                         theme="danger"
                     ></exam-card>
+                </div>
+
+                <!-- 특별전형 및 상세 규정 안내 -->
+                <div class="special-info">
+                    <div class="info-card">
+                        <h3>💡 특별전형(무시험 검정) 안내</h3>
+                        <div class="info-details">
+                            <div class="detail-item">
+                                <strong>2급 전공특별전형:</strong> 협회 인증교육기관 커피교과목 9학점 이상 이수자
+                            </div>
+                            <div class="detail-item">
+                                <strong>1급 전공특별전형:</strong> 협회 인증교육기관 성적우수자 (15학점 이수, 평균 70점 이상)
+                            </div>
+                            <div class="detail-item">
+                                <strong>희망특별전형:</strong> 외국인(귀화인), 장애인 대상 사전 서류심사 전형
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="common-rules">
+                    <exam-table></exam-table>
                 </div>
 
                 <div class="common-rules">

@@ -165,6 +165,8 @@ class ExamCard extends HTMLElement {
         const formatPractical = this.getAttribute('format-practical') || '-';
         const critWritten = this.getAttribute('criteria-written') || '-';
         const critPractical = this.getAttribute('criteria-practical') || '-';
+        const subjectsWritten = this.getAttribute('subjects-written') || '-';
+        const subjectsPractical = this.getAttribute('subjects-practical') || '-';
         const theme = this.getAttribute('theme') || 'primary';
 
         const themeColors = {
@@ -188,6 +190,9 @@ class ExamCard extends HTMLElement {
                     box-shadow: 0 10px 30px -10px rgba(0,0,0,0.1);
                     overflow: hidden;
                     transition: transform 0.3s ease;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
                 }
                 .card:hover {
                     transform: translateY(-5px);
@@ -200,7 +205,7 @@ class ExamCard extends HTMLElement {
                     font-weight: 800;
                     display: flex;
                     align-items: center;
-                    gap: 10px;
+                    justify-content: space-between;
                     border-bottom: 1px solid ${colors.border};
                 }
                 .badge {
@@ -213,9 +218,10 @@ class ExamCard extends HTMLElement {
                 }
                 .card-body {
                     padding: 25px;
+                    flex-grow: 1;
                 }
                 .info-group {
-                    margin-bottom: 20px;
+                    margin-bottom: 24px;
                 }
                 .info-group:last-child {
                     margin-bottom: 0;
@@ -224,14 +230,16 @@ class ExamCard extends HTMLElement {
                     font-size: 0.9rem;
                     color: #6b7280;
                     font-weight: 700;
-                    margin-bottom: 8px;
-                    text-transform: uppercase;
-                    letter-spacing: 0.5px;
+                    margin-bottom: 12px;
+                    display: flex;
+                    align-items: center;
+                    gap: 6px;
                 }
+                .info-label svg { width: 16px; height: 16px; }
                 .info-item {
                     display: flex;
                     gap: 10px;
-                    margin-bottom: 10px;
+                    margin-bottom: 8px;
                     background: #f8fafc;
                     padding: 12px 15px;
                     border-radius: 12px;
@@ -246,21 +254,35 @@ class ExamCard extends HTMLElement {
                     padding: 2px 6px;
                     border-radius: 6px;
                     font-size: 0.85rem;
+                    height: fit-content;
                 }
                 .detail {
                     color: #334155;
                     font-size: 0.95rem;
                     line-height: 1.4;
                 }
+                .subjects-box {
+                    margin-top: 15px;
+                    padding: 12px;
+                    background: #fff;
+                    border: 1px dashed #cbd5e1;
+                    border-radius: 10px;
+                    font-size: 0.85rem;
+                    color: #64748b;
+                }
+                .subjects-box strong { color: #475569; }
             </style>
             <div class="card">
                 <div class="card-header">
                     <span>바리스타 ${level}</span>
-                    <span class="badge">검정안내</span>
+                    <span class="badge">KCA 인증</span>
                 </div>
                 <div class="card-body">
                     <div class="info-group">
-                        <div class="info-label">응시자격</div>
+                        <div class="info-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg>
+                            응시자격
+                        </div>
                         <div class="info-item">
                             <span class="type-tag">필기</span>
                             <span class="detail">${eligWritten}</span>
@@ -272,19 +294,31 @@ class ExamCard extends HTMLElement {
                     </div>
                     
                     <div class="info-group">
-                        <div class="info-label">전형방법</div>
+                        <div class="info-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            전형방법 및 범위
+                        </div>
                         <div class="info-item">
                             <span class="type-tag">필기</span>
-                            <span class="detail">${formatWritten}</span>
+                            <div style="display:flex; flex-direction:column; gap:5px;">
+                                <span class="detail">${formatWritten}</span>
+                                <div class="subjects-box"><strong>범위:</strong> ${subjectsWritten}</div>
+                            </div>
                         </div>
                         <div class="info-item">
                             <span class="type-tag">실기</span>
-                            <span class="detail">${formatPractical}</span>
+                            <div style="display:flex; flex-direction:column; gap:5px;">
+                                <span class="detail">${formatPractical}</span>
+                                <div class="subjects-box"><strong>범위:</strong> ${subjectsPractical}</div>
+                            </div>
                         </div>
                     </div>
 
                     <div class="info-group">
-                        <div class="info-label">합격기준</div>
+                        <div class="info-label">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            합격기준
+                        </div>
                         <div class="info-item">
                             <span class="type-tag">필기</span>
                             <span class="detail">${critWritten}</span>

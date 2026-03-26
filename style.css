@@ -253,6 +253,116 @@ body {
     margin-top: 30px;
 }
 
+/* Roadmap Process */
+.roadmap-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.roadmap-step {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.step-num {
+    width: 40px;
+    height: 40px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.success-step .step-num {
+    background: var(--success-color);
+}
+
+.step-content h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: #1e293b;
+}
+
+.step-content p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.roadmap-sep {
+    color: #cbd5e1;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* Special Admission Info */
+.special-info {
+    margin-top: 40px;
+}
+
+.special-info .info-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 30px;
+    border-left: 6px solid var(--accent-color);
+}
+
+.special-info h3 {
+    font-size: 1.25rem;
+    color: #1e293b;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+.detail-item {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.6;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #f1f5f9;
+}
+
+.detail-item strong {
+    color: var(--primary-color);
+    display: block;
+    margin-bottom: 5px;
+}
+
 .common-rules {
     margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+    .roadmap-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .roadmap-sep {
+        display: none;
+    }
 }
