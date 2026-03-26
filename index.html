@@ -1,14 +1,96 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>바리스타 자격증 필기 기출문제 및 요약 해설 가이드</title>
+    <meta name="description" content="스마트폰으로 쉽게 푸는 바리스타 1급/2급 필기 기출문제 및 커피학 개론 핵심 요약 가이드. 다운로드 없이 무료로 공부하세요.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts: Noto Sans KR -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">☕ 바리스타 합격 패스</h1>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#info">시험정보</a></li>
+                    <li><a href="#study">핵심요약</a></li>
+                    <li><a href="#exam" class="active">기출문제 풀기</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <h2>스마트폰으로 완성하는<br><span class="highlight">바리스타 자격증</span> 단기 합격!</h2>
+                <p>2024년 최신 출제 경향 반영, 2급 필기 기출문제 모의고사</p>
+                <a href="#exam" class="btn-primary">기출문제 바로 풀기</a>
+            </div>
+        </section>
+
+        <!-- Progress Bar & Adsense Placeholder -->
+        <div class="ad-placeholder infeed-ad">
+            <p>[애드센스 광고 영역] 수험생의 학습 흐름을 끊지 않는 자연스러운 인피드 배너</p>
+        </div>
+
+        <!-- Exam Section -->
+        <section id="exam" class="exam-section">
+            <div class="section-header">
+                <h2>📝 바리스타 2급 필기 기출문제 (모의고사)</h2>
+                <div class="progress-bar-container">
+                    <div class="progress-info">진행률 <span class="current-q">1</span> / <span class="total-q">3</span></div>
+                    <div class="progress-bar"><div class="progress" style="width: 33%;"></div></div>
+                </div>
+            </div>
+
+            <div class="questions-container">
+                <exam-question 
+                    question="1. 다음 중 아라비카(Arabica) 커피 원두의 특징으로 옳지 않은 것은?"
+                    options='["카페인 함량이 로부스타보다 낮다.", "주로 고지대에서 재배된다.", "병충해에 강하여 재배가 쉽다.", "향미가 풍부하고 신맛이 좋다."]'
+                    answer="3. 병충해에 강하여 재배가 쉽다."
+                    explanation="아라비카 종은 로부스타 종에 비해 기후 변화나 병충해에 취약하여 재배 조건이 까다롭습니다. 반면 향미가 우수하고 카페인 함량이 낮아 고급 커피로 주로 사용됩니다."
+                ></exam-question>
+
+                <exam-question 
+                    question="2. 에스프레소 추출 시 '과소 추출(Under-extraction)'이 일어났을 때 나타나는 일반적인 특징은?"
+                    options='["쓴맛이 강하고 바디감이 무겁다.", "신맛이 강하고 향기가 덜하다.", "크레마의 색상이 아주 짙은 갈색이다.", "추출 시간이 너무 길어져 발생한다."]'
+                    answer="2. 신맛이 강하고 향기가 덜하다."
+                    explanation="과소 추출은 물이 커피 성분을 충분히 녹여내지 못한 상태로, 추출 시간이 너무 짧거나 원두 입자가 너무 굵을 때 발생합니다. 이 경우 날카로운 신맛이 도드라지고, 단맛이나 바디감이 부족해집니다."
+                ></exam-question>
+
+                <exam-question 
+                    question="3. 우유를 스티밍(Steaming)할 때 적절한 온도는 대략 어느 정도인가?"
+                    options='["40~50℃", "60~70℃", "80~90℃", "95~100℃"]'
+                    answer="2. 60~70℃"
+                    explanation="우유 스티밍의 적정 온도는 약 60~65℃입니다. 70℃를 넘어가면 우유 단백질이 파괴되고 비린내가 나며, 고소한 단맛이 사라집니다."
+                ></exam-question>
+            </div>
+            
+            <div class="exam-navigation">
+                <button class="btn-nav outline">이전 문제</button>
+                <button class="btn-nav fill">다음 문제</button>
+            </div>
+        </section>
+
+        <!-- SEO Content Area -->
+        <section id="study" class="seo-content-section">
+            <h2>💡 바리스타 자격증 독학 합격률 높이는 커피학 개론 요약</h2>
+            <div class="study-card">
+                <h3>로스팅 단계별 특징 (Roasting Stages)</h3>
+                <p>로스팅은 커피 생두에 열을 가하여 향미를 끌어내는 과정입니다. <strong>라이트 로스팅</strong>은 신맛이 강하고, <strong>다크 로스팅</strong>으로 갈수록 쓴맛과 바디감이 강해집니다.</p>
+            </div>
+        </section>
+        
+        <div class="ad-placeholder anchor-ad">
+            <p>[애드센스 광고 영역] 모바일 하단 앵커 배너 광고</p>
+        </div>
+    </main>
+
+    <script src="main.js" type="module"></script>
 </body>
 </html>
