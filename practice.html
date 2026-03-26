@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCA 바리스타 포털 | 기출문제</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main-header active="exam"></main-header>
+
+    <main class="container">
+        <section class="section">
+            <div class="section-title">
+                <h2>📝 실전 기출문제 맛보기</h2>
+                <p>실제 시험 문항을 통해 실력을 점검해 보세요.</p>
+            </div>
+            
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <div class="quiz-status">
+                        <span class="current-q">1</span> / <span class="total-q">0</span>
+                    </div>
+                    <div class="quiz-progress-bar"><div class="progress"></div></div>
+                </div>
+                <div class="questions-container">
+                    <!-- Questions will be loaded here -->
+                </div>
+                <div class="quiz-footer">
+                    <button class="btn-nav outline">이전 문제</button>
+                    <button class="btn-nav fill">다음 문제</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <main-footer></main-footer>
+    <script src="main.js" type="module"></script>
+</body>
+</html>

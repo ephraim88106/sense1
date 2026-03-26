@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KCA 바리스타 포털 | 시험일정</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main-header active="exam"></main-header>
+
+    <main class="container">
+        <section class="section">
+            <div class="section-title">
+                <h2>📅 2026년 바리스타 자격시험 일정</h2>
+                <p>급수를 선택하여 상세 일정과 검정료를 확인하세요.</p>
+            </div>
+
+            <div class="tab-container">
+                <button class="tab-btn active" data-target="level1">바리스타 1급</button>
+                <button class="tab-btn" data-target="level2">바리스타 2급</button>
+            </div>
+
+            <div id="level1" class="tab-content active">
+                <div class="fee-info-container">
+                    <div class="fee-card">
+                        <div class="fee-item"><span>필기시험</span><strong>44,000원</strong></div>
+                        <div class="fee-item"><span>실기시험</span><strong>99,000원</strong></div>
+                        <div class="fee-total"><span>총 검정료</span><strong>143,000원</strong></div>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="schedule-table complex-table">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">회차</th><th rowspan="2">전형구분</th>
+                                <th colspan="2">필기 (Written)</th><th colspan="2">실기 (Practical)</th>
+                            </tr>
+                            <tr><th>항목</th><th>일시</th><th>항목</th><th>일시</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2" class="round-num">98회</td>
+                                <td class="type-special">특별전형</td>
+                                <td>필기 접수 / 발표</td><td>'25.12/15~12/17 | 발표: 12/21</td>
+                                <td>실기 접수</td><td>1/12 ~ 1/14</td>
+                            </tr>
+                            <tr>
+                                <td class="type-general">일반전형</td>
+                                <td>필기 시험 / 발표</td><td>시험: 12/27 | 발표: 1/4</td>
+                                <td>실기 시험 / 발표</td><td>1/23~1/25 | 발표: 2/1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="level2" class="tab-content">
+                <div class="fee-info-container">
+                    <div class="fee-card">
+                        <div class="fee-item"><span>필기시험</span><strong>33,000원</strong></div>
+                        <div class="fee-item"><span>실기시험</span><strong>66,000원</strong></div>
+                        <div class="fee-total"><span>총 검정료</span><strong>99,000원</strong></div>
+                    </div>
+                </div>
+                <div class="table-container">
+                    <table class="schedule-table complex-table">
+                        <thead>
+                            <tr>
+                                <th rowspan="2">회차</th><th rowspan="2">전형구분</th>
+                                <th colspan="2">필기 (Written)</th><th colspan="2">실기 (Practical)</th>
+                            </tr>
+                            <tr><th>항목</th><th>일시</th><th>항목</th><th>일시</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="1" class="round-num">135회</td>
+                                <td class="type-general">실기전용</td>
+                                <td colspan="2" class="text-muted">필기 시험 없음</td>
+                                <td>실기 접수/시험</td><td>접수: '25.12/29~12/30 | 시험: 1/9~1/11</td>
+                            </tr>
+                            <tr class="bg-light">
+                                <td rowspan="2" class="round-num">136회</td>
+                                <td class="type-special">특별/3급전형</td>
+                                <td>필기 접수 / 발표</td><td>1/19 ~ 1/20 | 발표: 1/25</td>
+                                <td>실기 접수</td><td>2/2 ~ 2/3</td>
+                            </tr>
+                            <tr class="bg-light">
+                                <td class="type-general">일반전형</td>
+                                <td>필기 시험 / 발표</td><td>시험: 1/31 | 발표: 2/8</td>
+                                <td>실기 시험 / 발표</td><td>2/21~2/22 | 발표: 3/1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="schedule-tip"><p>💡 <strong>Tip:</strong> 상세 일정은 마이페이지 또는 상단 메뉴의 [자격시험일정]에서 전체 확인 가능합니다.</p></div>
+        </section>
+    </main>
+
+    <main-footer></main-footer>
+    <script src="main.js" type="module"></script>
+</body>
+</html>

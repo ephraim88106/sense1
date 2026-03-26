@@ -3,63 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KCA 바리스타 포털 | 한국커피협회 자격검정 통합 가이드</title>
-    <meta name="description" content="한국커피협회 바리스타 1급/2급, 커피지도사, 홈카페마스터 등 모든 커피 자격증 정보를 한눈에 확인하세요.">
+    <title>KCA 바리스타 포털 | 홈</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="main-header">
-        <div class="container header-inner">
-            <h1 class="logo">☕ KCA PORTAL</h1>
-            <nav class="nav-menu">
-                <ul>
-                    <li class="has-dropdown">
-                        <a href="#exam-guide">자격시험</a>
-                        <ul class="dropdown">
-                            <li><a href="#schedule">자격시험일정</a></li>
-                            <li><a href="#exam-guide">시험안내/규정</a></li>
-                            <li><a href="#exam">기출문제</a></li>
-                            <li><a href="#">접수/유의사항</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="#other-certs">심사평가</a>
-                        <ul class="dropdown">
-                            <li><a href="#other-certs">커피지도사</a></li>
-                            <li><a href="#other-certs">홈카페마스터</a></li>
-                            <li><a href="#other-certs">로스트마스터</a></li>
-                            <li><a href="#other-certs">티마스터</a></li>
-                            <li><a href="#other-certs">커피머신관리사</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="#info-center">정보센터</a>
-                        <ul class="dropdown">
-                            <li><a href="#info-center">공지사항</a></li>
-                            <li><a href="#info-center">FAQ/Q&A</a></li>
-                            <li><a href="#info-center">자료실</a></li>
-                            <li><a href="#">인증교육기관</a></li>
-                        </ul>
-                    </li>
-                    <li class="has-dropdown">
-                        <a href="#">회원/협회</a>
-                        <ul class="dropdown">
-                            <li><a href="#">회원센터</a></li>
-                            <li><a href="#">협회사업</a></li>
-                            <li><a href="#">협회소개</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header-auth">
-                <a href="#" class="btn-login">로그인</a>
-            </div>
-        </div>
-    </header>
+    <main-header active="home"></main-header>
 
     <main>
-        <!-- Hero Section -->
         <section class="home-hero">
             <div class="container">
                 <div class="hero-text">
@@ -68,283 +19,33 @@
                     <p>한국커피협회의 모든 자격증 정보와 학습 자료를 통합 제공합니다.</p>
                 </div>
 
-                <div id="certs" class="cert-grid">
+                <div class="cert-grid">
                     <div class="cert-card">
                         <div class="cert-tag primary">인기</div>
                         <div class="cert-icon">☕</div>
                         <h3>바리스타 2급</h3>
-                        <p>바리스타로서의 기본 소양과 에스프레소 추출 기술을 평가하는 필수 과정</p>
-                        <a href="#exam-guide" class="btn-cert">상세 안내 보기</a>
+                        <p>기본 소양과 에스프레소 추출 기술 평가 과정</p>
+                        <a href="exam-guide.html" class="btn-cert">상세 안내 보기</a>
                     </div>
                     <div class="cert-card">
                         <div class="cert-tag danger">전문가</div>
                         <div class="cert-icon">🎖️</div>
                         <h3>바리스타 1급</h3>
-                        <p>원두의 이해부터 라떼아트, 서비스 매너까지 갖춘 상급 바리스타 과정</p>
-                        <a href="#exam-guide" class="btn-cert">준비하기</a>
+                        <p>원두의 이해부터 라떼아트까지 갖춘 상급 과정</p>
+                        <a href="exam-guide.html" class="btn-cert">준비하기</a>
                     </div>
                     <div class="cert-card accent-card">
                         <div class="cert-tag success">NEW</div>
                         <div class="cert-icon">🎓</div>
                         <h3>커피지도사</h3>
-                        <p>커피 교육 전문가로서 강의 역량과 학문적 소양을 갖춘 마스터 과정</p>
-                        <a href="#other-certs" class="btn-cert">교육과정 확인</a>
+                        <p>교육 전문가로서 강의 역량을 갖춘 마스터 과정</p>
+                        <a href="cert-library.html" class="btn-cert">교육과정 확인</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <div class="container">
-            <!-- Exam Guide Section (Based on Mindmap '시험안내') -->
-            <section id="exam-guide" class="section">
-                <div class="section-title">
-                    <h2>📋 바리스타 자격검정 가이드</h2>
-                    <p>KCA 공식 규정 및 전형 방법을 상세히 안내합니다.</p>
-                </div>
-
-                <!-- Roadmap -->
-                <div class="roadmap-container">
-                    <div class="roadmap-step">
-                        <div class="step-num">01</div>
-                        <div class="step-content"><h4>시험 접수</h4><p>온라인 접수 및 유의사항 확인</p></div>
-                    </div>
-                    <div class="roadmap-sep">➔</div>
-                    <div class="roadmap-step">
-                        <div class="step-num">02</div>
-                        <div class="step-content"><h4>필기 합격</h4><p>50문항 중 60점 이상 득점</p></div>
-                    </div>
-                    <div class="roadmap-sep">➔</div>
-                    <div class="roadmap-step">
-                        <div class="step-num">03</div>
-                        <div class="step-content"><h4>실기 합격</h4><p>기술/감각 평가 합계 60점 이상</p></div>
-                    </div>
-                    <div class="roadmap-sep">➔</div>
-                    <div class="roadmap-step success-step">
-                        <div class="step-num">✓</div>
-                        <div class="step-content"><h4>자격 취득</h4><p>영구 유효 자격증 발급</p></div>
-                    </div>
-                </div>
-                
-                <div class="exam-guide-grid">
-                    <exam-card
-                        level="2급"
-                        eligibility-written="제한 없음"
-                        eligibility-practical="2급 필기시험 합격자"
-                        format-written="일반/특별전형 (50문항/50분)"
-                        format-practical="기술 및 감각평가 (15분)"
-                        subjects-written="커피학 개론, 로스팅, 향미평가, 추출"
-                        subjects-practical="준비, 에스프레소 4잔, 카푸치노 4잔"
-                        criteria-written="60점 이상"
-                        criteria-practical="60점 이상 (기술60/감각40)"
-                        theme="primary"
-                    ></exam-card>
-
-                    <exam-card
-                        level="1급"
-                        eligibility-written="2급 자격증 취득자"
-                        eligibility-practical="1급 필기시험 합격자"
-                        format-written="일반/특별전형 (50문항/50분)"
-                        format-practical="기술 및 감각평가 (15분)"
-                        subjects-written="커피학 심화, 향미평가, 블렌딩"
-                        subjects-practical="에스프레소 4잔, 카푸치노(하트/튤립) 4잔"
-                        criteria-written="60점 이상"
-                        criteria-practical="60점 이상 (기술60/감각40)"
-                        theme="danger"
-                    ></exam-card>
-                </div>
-
-                <div class="special-info">
-                    <div class="info-card">
-                        <h3>💡 특별전형 및 무시험 검정</h3>
-                        <div class="info-details">
-                            <div class="detail-item"><strong>전공특별전형:</strong> 인증기관 학점 이수자 (2급: 9학점, 1급: 15학점)</div>
-                            <div class="detail-item"><strong>바리스타 3급 전형:</strong> 3급 자격 취득자 대상 무시험 필기 검정</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="common-rules">
-                    <exam-table></exam-table>
-                </div>
-            </section>
-
-            <!-- Schedule Section (2026 Barista Level 1 & 2) -->
-            <section id="schedule" class="section">
-                <div class="section-title">
-                    <h2>📅 2026년 바리스타 자격시험 일정</h2>
-                    <p>급수를 선택하여 상세 일정과 검정료를 확인하세요.</p>
-                </div>
-
-                <!-- Level Selector Tabs -->
-                <div class="tab-container">
-                    <button class="tab-btn active" data-target="level1">바리스타 1급</button>
-                    <button class="tab-btn" data-target="level2">바리스타 2급</button>
-                </div>
-
-                <!-- Level 1 Content -->
-                <div id="level1" class="tab-content active">
-                    <div class="fee-info-container">
-                        <div class="fee-card">
-                            <div class="fee-item"><span>필기시험</span><strong>44,000원</strong></div>
-                            <div class="fee-item"><span>실기시험</span><strong>99,000원</strong></div>
-                            <div class="fee-total"><span>총 검정료</span><strong>143,000원</strong></div>
-                            <p class="fee-note">* 환불 규정 별도 공지 참조</p>
-                        </div>
-                    </div>
-                    <div class="table-container">
-                        <table class="schedule-table complex-table">
-                            <thead>
-                                <tr>
-                                    <th rowspan="2">회차</th><th rowspan="2">전형구분</th>
-                                    <th colspan="2">필기 (Written)</th><th colspan="2">실기 (Practical)</th>
-                                </tr>
-                                <tr><th>항목</th><th>일시</th><th>항목</th><th>일시</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td rowspan="3" class="round-num">98회</td>
-                                    <td class="type-special">특별전형</td>
-                                    <td>필기 접수 / 발표</td><td>'25.12/15~12/17 | 발표: 12/21</td>
-                                    <td>실기 접수</td><td>1/12 ~ 1/14</td>
-                                </tr>
-                                <tr>
-                                    <td class="type-general">일반전형</td>
-                                    <td>필기 시험 / 발표</td><td>시험: 12/27 | 발표: 1/4</td>
-                                    <td>실기 시험</td><td>1/23 ~ 1/25</td>
-                                </tr>
-                                <tr>
-                                    <td class="type-special">특별전형</td>
-                                    <td>98-3회 필기 접수</td><td>12/29 ~ 12/30 | 발표: 1/4</td>
-                                    <td>실기 발표</td><td>2/1 (09:00)</td>
-                                </tr>
-                                <tr class="bg-light">
-                                    <td rowspan="3" class="round-num">99회</td>
-                                    <td class="type-special">특별전형</td>
-                                    <td>99-1회 필기 접수</td><td>1/19 ~ 1/20 | 발표: 1/25</td>
-                                    <td>99-1회 실기 접수</td><td>2/2 ~ 2/3</td>
-                                </tr>
-                                <tr class="bg-light">
-                                    <td class="type-general">일반전형</td>
-                                    <td>99-2회 필기 시험</td><td>1/31 | 발표: 2/8</td>
-                                    <td>실기 시험 / 발표</td><td>2/21 ~ 2/22 | 발표: 3/1</td>
-                                </tr>
-                                <tr class="bg-light">
-                                    <td class="type-special">특별전형</td>
-                                    <td>99-3회 필기 접수</td><td>2/2 ~ 2/3 | 발표: 2/8</td>
-                                    <td>99-2회 실기 시험</td><td>3/6 ~ 3/8 | 발표: 3/15</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Level 2 Content -->
-                <div id="level2" class="tab-content">
-                    <div class="fee-info-container">
-                        <div class="fee-card">
-                            <div class="fee-item"><span>필기시험</span><strong>33,000원</strong></div>
-                            <div class="fee-item"><span>실기시험</span><strong>66,000원</strong></div>
-                            <div class="fee-total"><span>총 검정료</span><strong>99,000원</strong></div>
-                            <p class="fee-note">* 환불 규정 별도 공지 참조</p>
-                        </div>
-                    </div>
-                    <div class="table-container">
-                        <table class="schedule-table complex-table">
-                            <thead>
-                                <tr>
-                                    <th rowspan="2">회차</th><th rowspan="2">전형구분</th>
-                                    <th colspan="2">필기 (Written)</th><th colspan="2">실기 (Practical)</th>
-                                </tr>
-                                <tr><th>항목</th><th>일시</th><th>항목</th><th>일시</th></tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td rowspan="2" class="round-num">135회</td>
-                                    <td class="type-general">실기전용</td>
-                                    <td colspan="2" class="text-muted">필기 시험 없음</td>
-                                    <td>135-1회 실기 접수/시험</td><td>접수: '25.12/29~12/30 | 시험: 1/9~1/11</td>
-                                </tr>
-                                <tr>
-                                    <td class="type-general">실기전용</td>
-                                    <td colspan="2" class="text-muted">필기 시험 없음</td>
-                                    <td>135-2회 실기 접수/시험</td><td>접수: 1/12~1/14 | 시험: 1/23~1/25</td>
-                                </tr>
-                                <tr class="bg-light">
-                                    <td rowspan="3" class="round-num">136회</td>
-                                    <td class="type-special">특별/3급전형</td>
-                                    <td>136-1회 필기 접수</td><td>1/19 ~ 1/20 | 발표: 1/25</td>
-                                    <td>136-1회 실기 접수</td><td>2/2 ~ 2/3</td>
-                                </tr>
-                                <tr class="bg-light">
-                                    <td class="type-general">일반전형</td>
-                                    <td>136-2회 필기 시험</td><td>1/31 | 발표: 2/8</td>
-                                    <td>실기 시험 / 발표</td><td>2/21 ~ 2/22 | 발표: 3/1</td>
-                                </tr>
-                                <tr class="bg-light">
-                                    <td class="type-special">특별/3급전형</td>
-                                    <td>136-3회 필기 접수</td><td>2/2 ~ 2/3 | 발표: 2/8</td>
-                                    <td>136-2회 실기 시험</td><td>3/6 ~ 3/8 | 발표: 3/15</td>
-                                </tr>
-                                <tr>
-                                    <td rowspan="3" class="round-num">137회</td>
-                                    <td class="type-special">특별/3급전형</td>
-                                    <td>137-1회 필기 접수</td><td>3/3 ~ 3/4 | 발표: 3/8</td>
-                                    <td>137-1회 실기 접수</td><td>3/16 ~ 3/17</td>
-                                </tr>
-                                <tr>
-                                    <td class="type-general">일반전형</td>
-                                    <td>137-2회 필기 시험</td><td>3/14 | 발표: 3/22</td>
-                                    <td>실기 시험 / 발표</td><td>3/27 ~ 3/29 | 발표: 4/5</td>
-                                </tr>
-                                <tr>
-                                    <td class="type-special">특별/3급전형</td>
-                                    <td>137-3회 필기 접수</td><td>3/16 ~ 3/17 | 발표: 3/22</td>
-                                    <td>137-2회 실기 시험</td><td>4/10 ~ 4/12 | 발표: 4/19</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="schedule-tip">
-                    <p>💡 <strong>Tip:</strong> 138회 ~ 145회 상세 일정은 KCA 공식 홈페이지 또는 상단 [자격시험일정]에서 확인 가능합니다.</p>
-                </div>
-            </section>
-
-            <!-- Other Certs (Based on Mindmap '심사평가/자격종목') -->
-            <section id="other-certs" class="section">
-                <div class="section-title">
-                    <h2>🌟 KCA 자격 종목 라이브러리</h2>
-                    <p>지도사, 마스터 등 커피 전문가를 위한 단계별 자격증</p>
-                </div>
-                <div class="other-certs-grid">
-                    <div class="mini-card"><h4>커피지도사</h4><p>교육 전문가</p></div>
-                    <div class="mini-card"><h4>홈카페마스터</h4><p>커피 애호가</p></div>
-                    <div class="mini-card"><h4>로스트마스터</h4><p>로스팅 전문가</p></div>
-                    <div class="mini-card"><h4>티마스터</h4><p>차 전문가</p></div>
-                    <div class="mini-card"><h4>커피머신관리사</h4><p>장비 관리</p></div>
-                    <div class="mini-card"><h4>라떼아트마스터</h4><p>시각 예술</p></div>
-                </div>
-            </section>
-
-            <!-- Exam Practice Section -->
-            <section id="exam" class="section">
-                <div class="section-title">
-                    <h2>📝 실전 기출문제 맛보기</h2>
-                </div>
-                <div class="quiz-container">
-                    <div class="quiz-header">
-                        <div class="quiz-status"><span class="current-q">1</span> / <span class="total-q">0</span></div>
-                        <div class="quiz-progress-bar"><div class="progress"></div></div>
-                    </div>
-                    <div class="questions-container"></div>
-                    <div class="quiz-footer">
-                        <button class="btn-nav outline">이전 문제</button>
-                        <button class="btn-nav fill">다음 문제</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Information Center (Based on Mindmap '정보센터') -->
             <section id="info-center" class="section no-border">
                 <div class="info-hub">
                     <div class="info-box">
@@ -363,32 +64,12 @@
                         </ul>
                         <a href="#" class="more-link">전체보기 ➔</a>
                     </div>
-                    <div class="info-box">
-                        <h3>📁 자료실</h3>
-                        <ul>
-                            <li>실기평가 규정집 (2024)</li>
-                            <li>특별전형 응시원서 서식</li>
-                        </ul>
-                        <a href="#" class="more-link">전체보기 ➔</a>
-                    </div>
                 </div>
             </section>
         </div>
-
-        <footer class="main-footer">
-            <div class="container footer-content">
-                <div class="footer-info">
-                    <p><strong>(사)한국커피협회 포털</strong> | 사업자번호: 106-82-15113 | 대표: 최주호</p>
-                    <p>주소: 서울시 마포구 마포대로1길 26-1 | 전화: 02-702-4080</p>
-                    <p>© 2024 KCA Korea Coffee Association. All rights reserved.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#">이용약관</a> | <a href="#">개인정보처리방침</a> | <a href="#">무단이메일수집거부</a>
-                </div>
-            </div>
-        </footer>
     </main>
 
+    <main-footer></main-footer>
     <script src="main.js" type="module"></script>
 </body>
 </html>
