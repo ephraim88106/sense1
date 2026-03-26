@@ -64,6 +64,42 @@
         </section>
 
         <div class="container">
+            <!-- Exam Guide Section -->
+            <section id="exam-guide" class="section">
+                <div class="section-title">
+                    <h2>📋 바리스타 자격시험 안내</h2>
+                    <p>한국커피협회(KCA) 기준 자격증 취득을 위한 등급별 상세 가이드</p>
+                </div>
+                
+                <div class="exam-guide-grid">
+                    <exam-card
+                        level="2급"
+                        eligibility-written="제한 없음"
+                        eligibility-practical="바리스타 2급 필기시험 합격자"
+                        format-written="필기시험 50문항 (50분)"
+                        format-practical="기술 및 감각평가 (준비 및 시연 15분)"
+                        criteria-written="100점 만점에 60점 이상"
+                        criteria-practical="100점 만점에 60점 이상 (기술 60점, 감각 40점)"
+                        theme="primary"
+                    ></exam-card>
+
+                    <exam-card
+                        level="1급"
+                        eligibility-written="바리스타 2급 자격증 취득자"
+                        eligibility-practical="바리스타 1급 필기시험 합격자"
+                        format-written="필기시험 50문항 (50분)"
+                        format-practical="기술 및 감각평가 (준비 및 시연 15분)"
+                        criteria-written="100점 만점에 60점 이상"
+                        criteria-practical="100점 만점에 60점 이상"
+                        theme="danger"
+                    ></exam-card>
+                </div>
+
+                <div class="common-rules">
+                    <exam-table></exam-table>
+                </div>
+            </section>
+
             <!-- Schedule Section -->
             <section id="schedule" class="section">
                 <div class="section-title">

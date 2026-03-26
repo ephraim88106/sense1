@@ -244,3 +244,15 @@ body {
     .roadmap { flex-direction: column; }
     .roadmap-arrow { transform: rotate(90deg); }
 }
+
+/* Exam Guide Grid */
+.exam-guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.common-rules {
+    margin-top: 40px;
+}

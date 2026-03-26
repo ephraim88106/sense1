@@ -1,0 +1,650 @@
+자격시험 > 시험안내 | (사)한국커피협회
+<!--
+-->
+function tabFunc(obj){
+var url = $(obj).find("option:selected").data("url");
+var target = $(obj).find("option:selected").data("target");
+if(target=="_blank"){
+window.open(url,target);
+}else{
+location.href=url;
+}
+}
+컨텐츠 바로가기
+메뉴 바로가기
+푸터 바로가기
+var gnbDep1 = 0;
+var gnbDep2 = 0;
+var gnbDep3 = 0;
+var gnbDep4 = 0;
+var calByte = {
+getByteLength : function(s) {
+if (s == null || s.length == 0) {
+return 0;
+}
+var size = 0;
+for ( var i = 0; i < s.length; i++) {
+size += this.charByteSize(s.charAt(i));
+}
+return size;
+},
+cutByteLength : function(s, len) {
+if (s == null || s.length == 0) {
+return 0;
+}
+var size = 0;
+var rIndex = s.length;
+for ( var i = 0; i
+len ) {
+rIndex = i;
+break;
+}
+}
+return s.substring(0, rIndex);
+},
+charByteSize : function(ch) {
+if (ch == null || ch.length == 0) {
+return 0;
+}
+var charCode = ch.charCodeAt(0);
+if (charCode <= 0x00007F) {
+return 1;
+} else if (charCode <= 0x0007FF) {
+return 2;
+} else if (charCode
+a").data("menuno"));
+var v_sub = ($(obj).find(">a").data("sub"));
+if($("ul#gnb li."+v_menuno+" > ul > li").length > 0){
+if(v_sub=="Y"){
+$(org).find(">a").attr("href",$("ul#gnb li."+v_menuno+" > ul > li:eq(0) > a").attr("href"));
+$(org).find(">a").attr("target",$("ul#gnb li."+v_menuno+" > ul > li:eq(0) > a").attr("target"));
+setHref($("ul#gnb li."+v_menuno+" > ul > li:eq(0)"),org);
+}else{
+$(org).find(">a").attr("href",$(org).find(">a").attr("href"));
+}
+}
+}
+function setSnbHref(obj, org){
+var v_menuno = ($(obj).data("menuno"));
+var v_sub = ($(obj).data("sub"));
+if($("ul#gnb li."+v_menuno+" > div").length > 0){
+if($("ul#gnb li."+v_menuno+" > div > ul > li").length > 0){
+if(v_sub=="Y"){
+$(org).find(">a").attr("href",$("ul#gnb li."+v_menuno+" > div > ul > li:eq(0) > a").attr("href"));
+$(org).find(">a").attr("target",$("ul#gnb li."+v_menuno+" > div > ul > li:eq(0) > a").attr("target"));
+setHref($("ul#gnb li."+v_menuno+" > div > ul > li:eq(0)"),org);
+}else{
+$(org).find(">a").attr("href",$(org).find(">a").attr("href"));
+}
+}
+}else{
+if($("ul#gnb li."+v_menuno+" > ul > li").length > 0){
+if(v_sub=="Y"){
+$(org).find(">a").attr("href",$("ul#gnb li."+v_menuno+" > ul > li:eq(0) > a").attr("href"));
+$(org).find(">a").attr("target",$("ul#gnb li."+v_menuno+" > ul > li:eq(0) > a").attr("target"));
+setHref($("ul#gnb li."+v_menuno+" > ul > li:eq(0)"),org);
+}else{
+$(org).find(">a").attr("href",$(org).find(">a").attr("href"));
+}
+}
+}
+}
+$(function(){
+/* $("ul#gnb_parent li").each(function(){
+setHref($(this),$(this));
+}); */
+$("nav#snb_nav li").each(function(){
+setSnbHref($(this),$(this));
+});
+$(document).on("click", "ul#gnb li,  ul#rnb li:not(ul#rnb>li.child), .mSnb_menu li", function(){
+setHref($(this),$(this));
+});
+$(document).on("click", "nav#snb_nav li", function(){
+setSnbHref($(this),$(this));
+});
+$(document).on("click", ".btn_topSitemap", function(){
+location.href="/cms/CmnCon/MainLink.do?GBN=SITEMAP&SITE_NO=2";
+});
+$(document).on("click", "#gnb li ", function(){
+var subYn = $(this).find("a").eq(0).data("sub");
+if(subYn == "N"){
+$(this).find("a").eq(0).removeClass("on");
+}
+});
+$(document).on("click", ".btn_topSearch", function(){
+ifrTotalSearchPop('SearchPop','/cms/FrCon/SearchPop.do');
+});
+$(document).on("click", ".topLanguage .listBox a", function(){
+if($(this).data('code') =='kr'){
+location.href = '/index.do';
+}else{
+location.href = '/'+$(this).data('code')+'/index.do';
+}
+});
+$(".top_log .mypage>.btn_topMy").bind('click', function(){
+if($(".top_log .mypage").hasClass('on')){
+$(".top_log .mypage").removeClass('on');
+$(".top_log .mypage>ul").slideUp(200);
+}else{
+$(".top_log .mypage").addClass('on');
+$(".top_log .mypage>ul").slideDown(200);
+}
+});
+$("header .top_util .btn_topBnrzone").click(function(){
+if(getCookie('KCCprimary_main') != "N"){
+$(".mPopZone").addClass('firstOn');
+$(".mPopZone_dim").addClass('on');
+mPopZone();
+}
+});
+$(".mPopZone .pop_close").click(function(){
+$(".mPopZone").removeClass('firstOn firstPop').removeClass('on');
+mPopZone();
+$(".mPopZone").css({
+"height":""
+});
+$(".mPopZone .pop_list").mCustomScrollbar('destroy');
+});
+$(".mPopZone .pop_list li .txt ").each(function(){
+var cutByte = 90; //표시할 바이트수 정하기
+$(this).each(function(){
+if(calByte.getByteLength( $(this).text() ) >= cutByte){
+$(this).text( calByte.cutByteLength( $(this).text(), cutByte ) + '...' );  //지정한 바이트수 이후 표시할 텍스트(...)
+}
+});
+});
+$(".mPopZone .pop_more").click(function(){
+$(".mPopZone, .mPopZone .pop_list").css({
+"height": ""
+});
+$(".mPopZone").removeClass('firstOn').addClass('on');
+$("html, body").css("overflow","hidden");
+$(".mPopZone_dim").addClass('on');
+$(".mPopZone").css({
+"height": window.innerHeight
+});
+if(window.innerWidth >= 1041){
+$(".mPopZone .pop_list").css({
+"height": window.innerHeight - 100
+});
+}else if(window.innerWidth > 768 && window.innerWidth
+= 1041){
+$(".mPopZone.firstOn").css({
+"height": $(".mPopZone .pop_list li:first-child").height() + 100
+});
+}else if(window.innerWidth > 768 && window.innerWidth
+= 1041){
+$(".sideProgramBox .list").css({
+"height": window.innerHeight - 140
+});
+}else{
+$(".sideProgramBox .list").css({
+"height": window.innerHeight - 70
+});
+}
+}
+팝업존 닫기
+오늘 하루 보지 않기
+<!--
+sitemap
+-->
+MENU
+자격시험
+자격시험일정
+바리스타 1급
+바리스타 2급
+자격시험규정
+바리스타 1급
+바리스타 2급
+시험안내
+접수안내
+유의사항
+시험접수
+실기고사장안내
+심사평가
+자격종목
+커피지도사
+홈카페마스터
+로스트마스터
+티마스터
+커피관리바리스타 3급
+커피머신관리사
+카페메뉴스타일리스트
+라떼아트마스터
+지에이씨피 GACP
+커피향미평가사
+워터소믈리에
+그린커피마스터
+교육과정
+카페디저트마스터
+수강신청
+수강신청
+수강내역(결제)
+교육 및 자격증발급 과정
+정보센터
+공지사항
+FAQ
+Q&A
+자료실
+홍보자료
+PHOTO NEWS
+멤버십 할인 안내
+인증교육기관 안내
+바리스타
+커피지도사
+로스트마스터
+티마스터
+커피머신관리사
+카페메뉴스타일리스트
+라떼아트마스터
+실기평가위원/강사 현황
+실기평가위원
+강사
+구인/구직
+커피산업정보
+회원센터
+정회원
+입회규정
+입회신청
+뱃지신청
+실기평가위원
+활동내역
+참여이력
+실기평가위원 게시판
+실기평가가능일 신청
+강사
+활동내역
+수업관리
+강사 게시판
+기관회원
+입회규정
+과정별 인증신청 현황
+고사장 운영가능일 신청
+바리스타1급 필기 특별전형 등록
+교육기관 현판신청
+부가서비스 신청
+기업회원
+입회규정
+기업회원 소개
+총회 | 학술세미나
+참가신청
+참가내역
+협회 워크숍
+참가신청
+참가내역
+온라인 강의
+참가신청(일반회원)
+실기평가위원 워크숍
+참가신청
+참가내역
+온라인 강의
+필기감독관 신청
+회비납부
+정보수정
+협회사업
+자격 검정 시험
+바리스타
+교육연수
+실기평가단
+한국커피문화연구(학회지)
+논문투고안내
+발간목적 및 연혁
+회칙
+규정안내
+논문검색
+사회공헌사업
+민간자격소개
+MOU 협약기관
+K-Cafe 인증
+협회소개
+회장인사말
+연혁
+조직소개
+임원소개
+권역부소개
+오시는길
+명예의 전당
+마이페이지
+시험접수내역
+바리스타
+결제내역
+보유자격현황
+바리스타 보유자격현황
+심사평가 보유자격현황
+자격증 재발급
+바리스타 자격증
+심사평가 자격제도 자격증
+정보수정
+로그인센터
+로그인
+회원가입
+아이디찾기
+비밀번호찾기
+본인인증(본인인증 없는 내/외국인)
+이용안내
+이용약관
+개인정보취급방침
+무단이메일 수집거부
+갤러리게시판
+코로나 19 자가진단
+코로나 19 자가진단
+코로나 19 자가진단 결과 확인
+자격증재발급 (탈퇴회원)
+바리스타 자격증
+심사평가 자격제도 자격증
+배너존
+Login
+sitemap
+PROGRAM
+메뉴 닫기
+시험안내
+var gnbDep1 = 0;
+var gnbDep2 = 0;
+var gnbDep3 = 0;
+gnbDep1 = 1;
+gnbDep2 = 3;
+$(function(){
+$(document).on("click", ".btn_print", function(){
+window.print();
+});
+/* //1레벨메뉴 숨김 처리 시
+if($(".snb_area ul#snb > li.on").length
+button").eq(0).hide();
+$(".snb_area > button").eq(1).hide();
+$(".snb_area > button").eq(2).hide();
+}
+//2레벨메뉴 숨김 처리 시
+if($(".snb_area ul.menuM > li.on").length
+button").eq(1).hide();
+$(".snb_area > button").eq(2).hide();
+}
+//3레벨메뉴 숨김 처리 시
+if($(".snb_area ul.menuS > li.on").length
+button").eq(2).hide();
+} */
+});
+HOME
+자격시험
+자격시험일정
+바리스타 1급
+바리스타 2급
+자격시험규정
+바리스타 1급
+바리스타 2급
+시험안내
+접수안내
+유의사항
+시험접수
+실기고사장안내
+심사평가
+자격종목
+커피지도사
+홈카페마스터
+로스트마스터
+티마스터
+커피관리바리스타 3급
+커피머신관리사
+카페메뉴스타일리스트
+라떼아트마스터
+지에이씨피 GACP
+커피향미평가사
+워터소믈리에
+그린커피마스터
+교육과정
+카페디저트마스터
+수강신청
+수강신청
+수강내역(결제)
+교육 및 자격증발급 과정
+정보센터
+공지사항
+FAQ
+Q&A
+자료실
+홍보자료
+PHOTO NEWS
+멤버십 할인 안내
+인증교육기관 안내
+바리스타
+커피지도사
+로스트마스터
+티마스터
+커피머신관리사
+카페메뉴스타일리스트
+라떼아트마스터
+실기평가위원/강사 현황
+실기평가위원
+강사
+구인/구직
+커피산업정보
+회원센터
+정회원
+입회규정
+입회신청
+뱃지신청
+실기평가위원
+활동내역
+참여이력
+실기평가위원 게시판
+실기평가가능일 신청
+강사
+활동내역
+수업관리
+강사 게시판
+기관회원
+입회규정
+과정별 인증신청 현황
+고사장 운영가능일 신청
+바리스타1급 필기 특별전형 등록
+교육기관 현판신청
+부가서비스 신청
+기업회원
+입회규정
+기업회원 소개
+총회 | 학술세미나
+참가신청
+참가내역
+협회 워크숍
+참가신청
+참가내역
+온라인 강의
+참가신청(일반회원)
+실기평가위원 워크숍
+참가신청
+참가내역
+온라인 강의
+필기감독관 신청
+회비납부
+정보수정
+협회사업
+자격 검정 시험
+바리스타
+교육연수
+실기평가단
+한국커피문화연구(학회지)
+논문투고안내
+발간목적 및 연혁
+회칙
+규정안내
+논문검색
+사회공헌사업
+민간자격소개
+MOU 협약기관
+K-Cafe 인증
+협회소개
+회장인사말
+연혁
+조직소개
+임원소개
+권역부소개
+오시는길
+명예의 전당
+마이페이지
+시험접수내역
+바리스타
+결제내역
+보유자격현황
+바리스타 보유자격현황
+심사평가 보유자격현황
+자격증 재발급
+바리스타 자격증
+심사평가 자격제도 자격증
+정보수정
+로그인센터
+로그인
+회원가입
+아이디찾기
+비밀번호찾기
+본인인증(본인인증 없는 내/외국인)
+이용안내
+이용약관
+개인정보취급방침
+무단이메일 수집거부
+갤러리게시판
+코로나 19 자가진단
+코로나 19 자가진단
+코로나 19 자가진단 결과 확인
+자격증재발급 (탈퇴회원)
+바리스타 자격증
+심사평가 자격제도 자격증
+응시자격
+자격종목, 등급, 종류, 응시자격으로 이루어진 응시자격표
+자격종목
+등급
+종류
+응시자격
+바리스타
+2급
+필기
+없음
+실기
+바리스타 2급 필기시험에 합격한 자
+1급
+필기
+바리스타 2급 자격증 취득자
+실기
+바리스타 1급 필기시험에 합격한 자
+전형구분
+자격종목, 등급, 종류, 전형구분, 전형방법으로 이루어진 전형구분표
+자격종목
+등급
+종류
+전형구분
+전형방법
+바리스타
+2급
+필기
+일반전형
+필기시험 50문항(시험시간 50분)
+특별전형
+(무시험 검정)
+전공특별전형 : 협회 인증교육기관 학점이수자(커피교과목 9학점 이상 이수)
+희망특별전형 : 외국인(귀화인), 장애인
+교육기관에서 사전서류심사 접수기간에 서류접수, 서류심사 통과 후 필기시험에 접수가능
+바리스타3급전형
+(무시험 검정)
+협회 바리스타3급 자격증 취득자로, 3급전형으로 접수가능
+실기
+일반전형
+기술평가 및 감각평가(준비 및 시연시간 15분)
+1급
+필기
+일반전형
+필기시험 50문항(시험시간 50분)
+특별전형
+(무시험검정)
+전공특별전형 : 협회 인증교육기관 성적우수자(커피교과목 15학점 이수, 평균 70점 이상)
+교육기관에서 사전서류심사 접수기간에 서류접수, 서류심사 통과 후 필기시험에 접수가능
+전공특별전형 : 평생교육원 및 커피아카데미 교육과정 이수자(바리스타1급 교과목 24시간 이상 이수)
+교육기관에서 사전등록, 승인 후 필기시험에 접수가능
+실기
+일반전형
+기술평가 및 감각평가(준비 및 시연시간 15분)
+평가방법
+자격종목, 등급, 종류, 출제범위 및 평가방법으로 이루어진 평가방법표
+자격종목
+등급
+종류
+출제범위 및 평가방법
+바리스타
+2급
+필기
+커피학 개론, 커피 로스팅과 향미평가, 커피 추출 등 바리스타 2급 자격시험 예상문제집 포함
+사지선다형
+실기
+준비 및 시연시간 15분 : 준비 평가, 에스프레소 4잔 평가, 카푸치노 4잔 평가, 서비스 기술 평가
+상세내용은 바리스타 2급 실기평가규정집 및 평가표에서 사전확인 가능
+1급
+필기
+커피학 개론, 커피 로스팅과 향미평가, 커피 추출 등 바리스타 1급 자격시험 예상문제집 포함
+사지선다형
+실기
+준비 및 시연시간 15분 : 준비 평가, 에스프레소 4잔 평가, 카푸치노 4잔(하트 2잔, 3단튤립 2잔) 평가, 서비스 기술 평가
+상세내용은 바리스타 1급 실기평가규정집 및 평가표에서 사전확인 가능
+사정원칙
+자격종목, 등급, 종류, 만점, 합격기준, 실격사유로 이루어진 사정원칙표
+자격종목
+등급
+종류
+만점
+합격기준
+실격사유
+바리스타
+(공통)
+필기
+100점
+60점 이상
+실기
+100점
+(기술60점)
+(감각40점)
+60점 이상
+감각평가
+총 8잔의 음료(에스프레소 4잔, 카푸치노 4잔)가 제공되지 않은 경우
+유효기간
+자격종목, 등급, 종류, 만점, 합격기준, 실격사유로 이루어진 사정원칙표
+바리스타 자격증의 유효기간은 없으며, 비갱신 자격이다.
+Top
+<!--
+위로
+-->
+INFORMATION
+협회소개
+찾아오시는 길
+약관안내
+개인정보처리방침
+무단이메일 수집거부
+코로나 19 자가진단 확인
+APPLY
+(사)한국커피협회에서 주관하는 시험접수입니다.
+자격시험 접수
+CERTIFICATE
+바리스타 1급 2급 민간자격등록번호 한국직업능력개발원 제2012-0587호
+티마스터 민간자격등록번호 한국직업능력개발원 제2014-5130호
+커피지도사 2급 민간자격등록번호 한국직업능력개발원 제2014-6226호
+로스트마스터 민간자격등록번호 한국직업능력개발원 제2015-005906호
+홈카페마스터 민간자격등록번호 한국직업능력개발원 제2018-005392호
+커피관리바리스타 3급 민간자격등록번호 한국직업능력개발원 제2020-005716호
+커피관리커피지도사 1급 민간자격등록번호 한국직업능력연구원 제2021-005757호
+커피머신관리사 민간자격등록번호 한국직업능력연구원 제2023-000270호
+카페메뉴스타일리스트 민간자격등록번호 한국직업능력연구원 제2023-004164호
+지에이씨피커피바리스타 어워드 민간자격등록번호 한국직업능력연구원 제2024-003808호
+지어셉커피그레이드 어워드 민간자격등록번호 한국직업능력연구원 제2024-005480호
+지에이씨피커피로스팅디렉터 어워드 민간자격등록번호 한국직업능력연구원 제2025-000413호
+라떼아트마스터 민간자격등록번호 한국직업능력연구원 제2025-002947호
+커피향미평가사 2급 민간자격등록번호 한국직업능력연구원 제2025-004448호
+지에이씨피커피비지니스컨설턴트 어워드 민간자격등록번호 한국직업능력연구원 제2025-006739호
+워터소믈리에 민간자격등록번호 한국직업능력연구원 제2026-001383호
+그린커피마스터 민간자격등록번호 한국직업능력연구원 제2026-001855호
+CONTACTS
+사업자등록번호
+106-82-15113
+대표자
+최주호
+전화
+02-702-4080
+이메일
+kca@kca-coffee.org
+주소
+서울시 마포구 마포대로1길 26-1
+© 2022 Korea Coffee Association All. rights reserved.
