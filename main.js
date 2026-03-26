@@ -95,32 +95,30 @@ class ExamQuestion extends HTMLElement {
                 }
                 .toggle-answer-btn {
                     width: 100%;
-                    background: #1f2937;
-                    color: white;
-                    border: none;
-                    padding: 16px;
-                    border-radius: 10px;
+                    background: #f8f9fa;
+                    color: #0056b3;
+                    border: 1px solid #e9ecef;
+                    padding: 14px;
+                    border-radius: 8px;
                     font-size: 1rem;
                     font-weight: 700;
                     cursor: pointer;
                     display: flex;
-                    justify-content: center;
+                    justify-content: space-between;
                     align-items: center;
-                    gap: 8px;
-                    transition: background 0.2s;
+                    transition: all 0.2s;
+                    outline: none;
                 }
                 .toggle-answer-btn:hover {
-                    background: #111827;
+                    background: #e9ecef;
                 }
                 .answer-section {
-                    margin-top: 16px;
-                    background: #f0fdf4;
-                    border: 1px solid #bbf7d0;
-                    border-radius: 10px;
-                    padding: 20px;
+                    margin-top: 15px;
+                    border-top: 1px dashed #ccc;
+                    padding-top: 15px;
                     display: none;
                     opacity: 0;
-                    transform: translateY(-10px);
+                    transform: translateY(-5px);
                     transition: all 0.3s ease;
                 }
                 .answer-section.open {
@@ -129,42 +127,21 @@ class ExamQuestion extends HTMLElement {
                     transform: translateY(0);
                 }
                 .answer-badge {
-                    display: inline-block;
-                    background: #22c55e;
-                    color: white;
-                    padding: 4px 10px;
-                    border-radius: 6px;
-                    font-size: 0.85rem;
+                    color: #d9534f;
                     font-weight: bold;
-                    margin-bottom: 12px;
-                }
-                .answer-text {
-                    font-weight: 700;
-                    color: #166534;
+                    font-size: 1.1rem;
                     margin-bottom: 10px;
-                    font-size: 1.05rem;
                 }
                 .explanation-title {
-                    font-size: 0.9rem;
-                    color: #15803d;
+                    font-size: 0.95rem;
+                    color: #1f2937;
                     font-weight: bold;
-                    margin-bottom: 4px;
-                    margin-top: 16px;
+                    margin-bottom: 6px;
                 }
                 .explanation {
-                    color: #374151;
+                    color: #4b5563;
                     font-size: 0.95rem;
                     line-height: 1.6;
-                }
-                .adsense-placeholder-inner {
-                    margin-top: 20px;
-                    padding: 15px;
-                    background: #fff;
-                    border: 1px dashed #cbd5e1;
-                    text-align: center;
-                    color: #94a3b8;
-                    font-size: 0.85rem;
-                    border-radius: 8px;
                 }
             </style>
             
@@ -174,19 +151,13 @@ class ExamQuestion extends HTMLElement {
             </div>
             
             <button class="toggle-answer-btn">
-                <span>정답 및 해설 보기</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                <span>👉 정답 및 해설 확인하기</span>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             
             <div class="answer-section">
-                <div class="answer-badge">정답</div>
-                <div class="answer-text">${answerText}</div>
-                <div class="explanation-title">해설</div>
-                <div class="explanation">${explanationText}</div>
-                
-                <div class="adsense-placeholder-inner">
-                    [애드센스 광고] 해설 하단 배너 (가장 클릭률이 높은 영역)
-                </div>
+                <div class="answer-badge">정답: ${answerText.split('.')[0]}번</div>
+                <div class="explanation"><strong>해설:</strong> ${explanationText}</div>
             </div>
         `;
 

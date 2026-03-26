@@ -54,6 +54,9 @@
 ---
 
 ## 5. 현재 구현 계획 (코드 작성 완료 내역)
-- `index.html`: 전체 레이아웃, 시맨틱 태그, Web Components(`exam-question`) 호출 적용.
+- `index.html`: 전체 레이아웃, 시맨틱 태그, Web Components(`exam-question`) 호출 적용. 사용자 요청에 따른 과소추출 문제 추가.
 - `style.css`: 사용자 친화적인 CSS (그라데이션, 부드러운 그림자, 모바일 우선 반응형) 구성.
-- `main.js`: 기출문제 카드를 위한 Custom Element 정의 및 상호작용 로직 구현.
+- `main.js`: 기출문제 카드를 위한 Custom Element 정의. 사용자의 디자인 피드백을 반영하여 `<details>` 스타일의 직관적인 정답 확인 UI로 개선.
+
+## 6. 배포 상태
+- GitHub `main` 브랜치에 최종 코드 반영 및 배포 완료.
