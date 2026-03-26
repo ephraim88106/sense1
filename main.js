@@ -142,11 +142,29 @@ nextBtn.onclick = () => {
         alert('모든 문제를 다 풀었습니다! 고생하셨습니다.');
     }
 };
-
 // Initial Load
-document.addEventListener('DOMContentLoaded', updateQuiz);
+document.addEventListener('DOMContentLoaded', () => {
+    updateQuiz();
+
+    // Schedule Tab Logic
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.getAttribute('data-target');
+
+            tabBtns.forEach(b => b.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
+
+            btn.classList.add('active');
+            document.getElementById(target).classList.add('active');
+        });
+    });
+});
 
 // Exam Card Component
+...
 class ExamCard extends HTMLElement {
     constructor() {
         super();

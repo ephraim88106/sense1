@@ -168,129 +168,145 @@
                 </div>
             </section>
 
-            <!-- Schedule Section (2026 Barista Level 1) -->
+            <!-- Schedule Section (2026 Barista Level 1 & 2) -->
             <section id="schedule" class="section">
                 <div class="section-title">
-                    <h2>📅 2026년 바리스타 1급 검정시험 일정</h2>
-                    <p>검정료 및 전형별 상세 일정을 확인하세요. (협회 사정에 따라 변경 가능)</p>
+                    <h2>📅 2026년 바리스타 자격시험 일정</h2>
+                    <p>급수를 선택하여 상세 일정과 검정료를 확인하세요.</p>
                 </div>
 
-                <!-- Fee Information -->
-                <div class="fee-info-container">
-                    <div class="fee-card">
-                        <div class="fee-item"><span>필기시험</span><strong>44,000원</strong></div>
-                        <div class="fee-item"><span>실기시험</span><strong>99,000원</strong></div>
-                        <div class="fee-total"><span>총 검정료</span><strong>143,000원</strong></div>
-                        <p class="fee-note">* 환불 규정 별도 공지 참조</p>
+                <!-- Level Selector Tabs -->
+                <div class="tab-container">
+                    <button class="tab-btn active" data-target="level1">바리스타 1급</button>
+                    <button class="tab-btn" data-target="level2">바리스타 2급</button>
+                </div>
+
+                <!-- Level 1 Content -->
+                <div id="level1" class="tab-content active">
+                    <div class="fee-info-container">
+                        <div class="fee-card">
+                            <div class="fee-item"><span>필기시험</span><strong>44,000원</strong></div>
+                            <div class="fee-item"><span>실기시험</span><strong>99,000원</strong></div>
+                            <div class="fee-total"><span>총 검정료</span><strong>143,000원</strong></div>
+                            <p class="fee-note">* 환불 규정 별도 공지 참조</p>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="schedule-table complex-table">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">회차</th><th rowspan="2">전형구분</th>
+                                    <th colspan="2">필기 (Written)</th><th colspan="2">실기 (Practical)</th>
+                                </tr>
+                                <tr><th>항목</th><th>일시</th><th>항목</th><th>일시</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="3" class="round-num">98회</td>
+                                    <td class="type-special">특별전형</td>
+                                    <td>필기 접수 / 발표</td><td>'25.12/15~12/17 | 발표: 12/21</td>
+                                    <td>실기 접수</td><td>1/12 ~ 1/14</td>
+                                </tr>
+                                <tr>
+                                    <td class="type-general">일반전형</td>
+                                    <td>필기 시험 / 발표</td><td>시험: 12/27 | 발표: 1/4</td>
+                                    <td>실기 시험</td><td>1/23 ~ 1/25</td>
+                                </tr>
+                                <tr>
+                                    <td class="type-special">특별전형</td>
+                                    <td>98-3회 필기 접수</td><td>12/29 ~ 12/30 | 발표: 1/4</td>
+                                    <td>실기 발표</td><td>2/1 (09:00)</td>
+                                </tr>
+                                <tr class="bg-light">
+                                    <td rowspan="3" class="round-num">99회</td>
+                                    <td class="type-special">특별전형</td>
+                                    <td>99-1회 필기 접수</td><td>1/19 ~ 1/20 | 발표: 1/25</td>
+                                    <td>99-1회 실기 접수</td><td>2/2 ~ 2/3</td>
+                                </tr>
+                                <tr class="bg-light">
+                                    <td class="type-general">일반전형</td>
+                                    <td>99-2회 필기 시험</td><td>1/31 | 발표: 2/8</td>
+                                    <td>실기 시험 / 발표</td><td>2/21 ~ 2/22 | 발표: 3/1</td>
+                                </tr>
+                                <tr class="bg-light">
+                                    <td class="type-special">특별전형</td>
+                                    <td>99-3회 필기 접수</td><td>2/2 ~ 2/3 | 발표: 2/8</td>
+                                    <td>99-2회 실기 시험</td><td>3/6 ~ 3/8 | 발표: 3/15</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
-                <div class="table-container">
-                    <table class="schedule-table complex-table">
-                        <thead>
-                            <tr>
-                                <th rowspan="2">회차</th>
-                                <th rowspan="2">전형구분</th>
-                                <th colspan="2">필기 (Written)</th>
-                                <th colspan="2">실기 (Practical)</th>
-                            </tr>
-                            <tr>
-                                <th>항목</th>
-                                <th>일시</th>
-                                <th>항목</th>
-                                <th>일시</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- 98회 -->
-                            <tr>
-                                <td rowspan="3" class="round-num">98회</td>
-                                <td class="type-special">특별전형</td>
-                                <td>필기 접수 / 합격발표</td>
-                                <td>'25.12/15~12/17 | 발표: 12/21</td>
-                                <td>실기 접수</td>
-                                <td>1/12 ~ 1/14</td>
-                            </tr>
-                            <tr>
-                                <td class="type-general">일반전형</td>
-                                <td>필기 접수 / 시험 / 발표</td>
-                                <td>'25.12/15~12/17 | 시험: 12/27 | 발표: 1/4</td>
-                                <td>실기 시험</td>
-                                <td>1/23 ~ 1/25</td>
-                            </tr>
-                            <tr>
-                                <td class="type-special">특별전형</td>
-                                <td>98-3회 필기 접수 / 발표</td>
-                                <td>'25.12/29~12/30 | 발표: 1/4</td>
-                                <td>실기 합격발표</td>
-                                <td>2/1 (09:00)</td>
-                            </tr>
-                            <!-- 99회 -->
-                            <tr class="bg-light">
-                                <td rowspan="3" class="round-num">99회</td>
-                                <td class="type-special">특별전형</td>
-                                <td>99-1회 필기 접수 / 발표</td>
-                                <td>1/19 ~ 1/20 | 발표: 1/25</td>
-                                <td>99-1회 실기 접수</td>
-                                <td>2/2 ~ 2/3</td>
-                            </tr>
-                            <tr class="bg-light">
-                                <td class="type-general">일반전형</td>
-                                <td>99-2회 필기 접수 / 시험 / 발표</td>
-                                <td>1/19 ~ 1/20 | 시험: 1/31 | 발표: 2/8</td>
-                                <td>99-1회 실기 시험 / 발표</td>
-                                <td>2/21 ~ 2/22 | 발표: 3/1</td>
-                            </tr>
-                            <tr class="bg-light">
-                                <td class="type-special">특별전형</td>
-                                <td>99-3회 필기 접수 / 발표</td>
-                                <td>2/2 ~ 2/3 | 발표: 2/8</td>
-                                <td>99-2회 실기 시험 / 발표</td>
-                                <td>3/6 ~ 3/8 | 발표: 3/15</td>
-                            </tr>
-                            <!-- 100회 -->
-                            <tr>
-                                <td rowspan="2" class="round-num">100회</td>
-                                <td class="type-general">일반전형</td>
-                                <td>100-2회 필기 접수 / 시험 / 발표</td>
-                                <td>3/3 ~ 3/4 | 시험: 3/14 | 발표: 3/22</td>
-                                <td>100-1회 실기 시험 / 발표</td>
-                                <td>3/27 ~ 3/29 | 발표: 4/5</td>
-                            </tr>
-                            <tr>
-                                <td class="type-special">특별전형</td>
-                                <td>100-3회 필기 접수 / 발표</td>
-                                <td>3/16 ~ 3/17 | 발표: 3/22</td>
-                                <td>100-2회 실기 시험 / 발표</td>
-                                <td>4/10 ~ 4/12 | 발표: 4/19</td>
-                            </tr>
-                            <!-- 101회 -->
-                            <tr class="bg-light">
-                                <td rowspan="2" class="round-num">101회</td>
-                                <td class="type-general">일반전형</td>
-                                <td>101-2회 필기 접수 / 시험 / 발표</td>
-                                <td>4/6 ~ 4/7 | 시험: 4/18 | 발표: 4/26</td>
-                                <td>101-1회 실기 시험 / 발표</td>
-                                <td>5/8 ~ 5/10 | 발표: 5/17</td>
-                            </tr>
-                            <tr class="bg-light">
-                                <td class="type-special">특별전형</td>
-                                <td>101-3회 필기 접수 / 발표</td>
-                                <td>4/20 ~ 4/21 | 발표: 4/26</td>
-                                <td>101-2회 실기 시험 / 발표</td>
-                                <td>5/22 ~ 5/24 | 발표: 5/31</td>
-                            </tr>
-                            <!-- ... 중략 (나머지 회차는 동일 패턴으로 108회까지 이어짐) ... -->
-                            <tr>
-                                <td colspan="6" style="padding: 15px; color: var(--text-muted); font-size: 0.85rem;">
-                                    * 102회 ~ 108회 상세 일정은 상단 메뉴의 [자격시험일정] 전체보기에서 확인 가능합니다.
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <!-- Level 2 Content -->
+                <div id="level2" class="tab-content">
+                    <div class="fee-info-container">
+                        <div class="fee-card">
+                            <div class="fee-item"><span>필기시험</span><strong>33,000원</strong></div>
+                            <div class="fee-item"><span>실기시험</span><strong>66,000원</strong></div>
+                            <div class="fee-total"><span>총 검정료</span><strong>99,000원</strong></div>
+                            <p class="fee-note">* 환불 규정 별도 공지 참조</p>
+                        </div>
+                    </div>
+                    <div class="table-container">
+                        <table class="schedule-table complex-table">
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">회차</th><th rowspan="2">전형구분</th>
+                                    <th colspan="2">필기 (Written)</th><th colspan="2">실기 (Practical)</th>
+                                </tr>
+                                <tr><th>항목</th><th>일시</th><th>항목</th><th>일시</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2" class="round-num">135회</td>
+                                    <td class="type-general">실기전용</td>
+                                    <td colspan="2" class="text-muted">필기 시험 없음</td>
+                                    <td>135-1회 실기 접수/시험</td><td>접수: '25.12/29~12/30 | 시험: 1/9~1/11</td>
+                                </tr>
+                                <tr>
+                                    <td class="type-general">실기전용</td>
+                                    <td colspan="2" class="text-muted">필기 시험 없음</td>
+                                    <td>135-2회 실기 접수/시험</td><td>접수: 1/12~1/14 | 시험: 1/23~1/25</td>
+                                </tr>
+                                <tr class="bg-light">
+                                    <td rowspan="3" class="round-num">136회</td>
+                                    <td class="type-special">특별/3급전형</td>
+                                    <td>136-1회 필기 접수</td><td>1/19 ~ 1/20 | 발표: 1/25</td>
+                                    <td>136-1회 실기 접수</td><td>2/2 ~ 2/3</td>
+                                </tr>
+                                <tr class="bg-light">
+                                    <td class="type-general">일반전형</td>
+                                    <td>136-2회 필기 시험</td><td>1/31 | 발표: 2/8</td>
+                                    <td>실기 시험 / 발표</td><td>2/21 ~ 2/22 | 발표: 3/1</td>
+                                </tr>
+                                <tr class="bg-light">
+                                    <td class="type-special">특별/3급전형</td>
+                                    <td>136-3회 필기 접수</td><td>2/2 ~ 2/3 | 발표: 2/8</td>
+                                    <td>136-2회 실기 시험</td><td>3/6 ~ 3/8 | 발표: 3/15</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="3" class="round-num">137회</td>
+                                    <td class="type-special">특별/3급전형</td>
+                                    <td>137-1회 필기 접수</td><td>3/3 ~ 3/4 | 발표: 3/8</td>
+                                    <td>137-1회 실기 접수</td><td>3/16 ~ 3/17</td>
+                                </tr>
+                                <tr>
+                                    <td class="type-general">일반전형</td>
+                                    <td>137-2회 필기 시험</td><td>3/14 | 발표: 3/22</td>
+                                    <td>실기 시험 / 발표</td><td>3/27 ~ 3/29 | 발표: 4/5</td>
+                                </tr>
+                                <tr>
+                                    <td class="type-special">특별/3급전형</td>
+                                    <td>137-3회 필기 접수</td><td>3/16 ~ 3/17 | 발표: 3/22</td>
+                                    <td>137-2회 실기 시험</td><td>4/10 ~ 4/12 | 발표: 4/19</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
                 <div class="schedule-tip">
-                    <p>💡 <strong>Tip:</strong> 특별전형(무시험검정)은 인증교육기관 학점 이수자만 신청 가능합니다.</p>
+                    <p>💡 <strong>Tip:</strong> 138회 ~ 145회 상세 일정은 KCA 공식 홈페이지 또는 상단 [자격시험일정]에서 확인 가능합니다.</p>
                 </div>
             </section>
 
