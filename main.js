@@ -712,6 +712,12 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = document.getElementById('reg-name').value;
             const email = document.getElementById('reg-email').value;
             const pw = document.getElementById('reg-pw').value;
+            
+            if (pw.length < 6) {
+                alert('비밀번호는 최소 6자 이상이어야 합니다.');
+                return;
+            }
+
             try {
                 const userCredential = await createUserWithEmailAndPassword(auth, email, pw);
                 await updateProfile(userCredential.user, { displayName: name });
@@ -719,8 +725,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 await signOut(auth);
                 location.href = 'login.html';
             } catch (error) {
-                console.error(error);
-                alert('회원가입에 실패했습니다: ' + error.message);
+                console.error("Registration Error:", error.code, error.message);
+                let msg = '회원가입에 실패했습니다.';
+                if (error.code === 'auth/email-already-in-use') msg = '이미 사용 중인 이메일입니다.';
+                else if (error.code === 'auth/invalid-email') msg = '유효하지 않은 이메일 형식입니다.';
+                else if (error.code === 'auth/operation-not-allowed') msg = 'Firebase 콘솔에서 이메일/비밀번호 로그인이 활성화되어 있지 않습니다.';
+                else msg += '\n오류 내용: ' + error.message;
+                alert(msg);
             }
         };
     }
