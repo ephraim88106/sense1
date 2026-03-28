@@ -329,6 +329,7 @@ body {
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 40px 0;
@@ -336,4 +337,10 @@ body {
 }
 .ad-section iframe {
     max-width: 100%;
+}
+.ad-disclosure {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+    opacity: 0.8;
 }
