@@ -276,53 +276,81 @@ class ExamQuestion extends HTMLElement {
 customElements.define('exam-question', ExamQuestion);
 
 // PostBoard Component for Notice and Q&A
-import { db, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from './firebase-config.js';
+import { db, collection, addDoc, getDocs, getDoc, doc, query, orderBy, serverTimestamp, updateDoc, increment, limit, startAfter } from './firebase-config.js';
 
 class PostBoard extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
         this.collectionName = this.getAttribute('collection') || 'posts';
+        this.state = 'list'; // 'list', 'view', 'write'
+        this.currentPostId = null;
+        this.posts = [];
+        this.currentPage = 1;
+        this.postsPerPage = 10;
+        this.lastDoc = null;
+        this.firstDoc = null;
+        this.allPagesDocs = []; // Store the first doc of each page for back navigation
     }
 
     connectedCallback() {
-        this.render();
         this.loadPosts();
     }
 
-    async loadPosts() {
-        const postsContainer = this.shadowRoot.getElementById('posts-container');
-        postsContainer.innerHTML = '<div class="loading">게시글을 불러오는 중...</div>';
+    async loadPosts(direction = 'next') {
+        this.posts = [];
+        this.render();
+        const postsContainer = this.shadowRoot.getElementById('board-content');
+        if (postsContainer) postsContainer.innerHTML = '<div class="loading">게시글을 불러오는 중...</div>';
 
         try {
-            const q = query(collection(db, this.collectionName), orderBy('createdAt', 'desc'));
+            let q;
+            if (direction === 'next' && this.lastDoc) {
+                q = query(collection(db, this.collectionName), orderBy('createdAt', 'desc'), startAfter(this.lastDoc), limit(this.postsPerPage));
+            } else {
+                // Initial load or first page
+                q = query(collection(db, this.collectionName), orderBy('createdAt', 'desc'), limit(this.postsPerPage));
+                this.allPagesDocs = [];
+            }
+
             const querySnapshot = await getDocs(q);
             
             if (querySnapshot.empty) {
-                postsContainer.innerHTML = '<div class="empty">등록된 게시글이 없습니다.</div>';
-                return;
-            }
-
-            postsContainer.innerHTML = '';
-            querySnapshot.forEach((doc) => {
-                const data = doc.data();
-                const date = data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : '방금 전';
+                if (this.currentPage === 1) {
+                    this.posts = [];
+                } else {
+                    alert('더 이상 게시글이 없습니다.');
+                    return;
+                }
+            } else {
+                this.posts = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+                this.firstDoc = querySnapshot.docs[0];
+                this.lastDoc = querySnapshot.docs[querySnapshot.docs.length - 1];
                 
-                const postItem = document.createElement('div');
-                postItem.className = 'post-item';
-                postItem.innerHTML = `
-                    <div class="post-header">
-                        <span class="post-title">${data.title}</span>
-                        <span class="post-date">${date}</span>
-                    </div>
-                    <div class="post-author">작성자: ${data.author || '익명'}</div>
-                    <div class="post-content">${data.content}</div>
-                `;
-                postsContainer.appendChild(postItem);
-            });
+                if (direction === 'next') {
+                    this.allPagesDocs.push(this.firstDoc);
+                }
+            }
+            this.render();
         } catch (error) {
             console.error("Error loading posts:", error);
-            postsContainer.innerHTML = '<div class="error">게시글을 불러오는 데 실패했습니다. Firebase 설정을 확인해주세요.</div>';
+            if (postsContainer) postsContainer.innerHTML = '<div class="error">게시글을 불러오는 데 실패했습니다. Firebase 설정을 확인해주세요.</div>';
+        }
+    }
+
+    async viewPost(postId) {
+        this.currentPostId = postId;
+        this.state = 'view';
+        this.render();
+        
+        try {
+            // Increment views
+            const postRef = doc(db, this.collectionName, postId);
+            await updateDoc(postRef, {
+                views: increment(1)
+            });
+        } catch (e) {
+            console.error("Error incrementing views:", e);
         }
     }
 
@@ -338,10 +366,13 @@ class PostBoard extends HTMLElement {
                 title,
                 author,
                 content,
+                views: 0,
                 createdAt: serverTimestamp()
             });
-            form.reset();
             alert('글이 등록되었습니다!');
+            this.state = 'list';
+            this.currentPage = 1;
+            this.lastDoc = null;
             this.loadPosts();
         } catch (error) {
             console.error("Error adding post:", error);
@@ -350,54 +381,187 @@ class PostBoard extends HTMLElement {
     }
 
     render() {
+        let content = '';
+        if (this.state === 'list') {
+            content = this.renderList();
+        } else if (this.state === 'view') {
+            content = this.renderView();
+        } else if (this.state === 'write') {
+            content = this.renderWrite();
+        }
+
         this.shadowRoot.innerHTML = `
             <style>
                 :host { display: block; font-family: 'Noto Sans KR', sans-serif; }
-                .board-container { background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); overflow: hidden; }
-                .form-section { padding: 30px; border-bottom: 2px solid #f8f9fa; background: #fdfcfb; }
-                .form-group { margin-bottom: 15px; }
-                label { display: block; margin-bottom: 5px; font-weight: 700; color: #3b2f2f; }
-                input, textarea { width: 100%; padding: 12px; border: 1px solid #e9edc9; border-radius: 10px; font-size: 1rem; box-sizing: border-box; }
-                textarea { height: 120px; resize: vertical; }
-                .btn-submit { background: #3b2f2f; color: white; border: none; padding: 12px 25px; border-radius: 25px; font-weight: 700; cursor: pointer; transition: 0.3s; width: 100%; }
-                .btn-submit:hover { background: #d4a373; }
-                
-                .posts-section { padding: 30px; }
-                .post-item { padding: 20px; border-bottom: 1px solid #eee; transition: 0.3s; }
-                .post-item:last-child { border-bottom: none; }
-                .post-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-                .post-title { font-size: 1.2rem; font-weight: 800; color: #3b2f2f; }
-                .post-date { font-size: 0.85rem; color: #8d99ae; }
-                .post-author { font-size: 0.9rem; color: #d4a373; margin-bottom: 10px; font-weight: 500; }
-                .post-content { color: #2b2d42; line-height: 1.6; white-space: pre-wrap; }
-                
                 .loading, .empty, .error { text-align: center; padding: 40px; color: #8d99ae; }
                 .error { color: #bc6c25; }
+                
+                /* Component Specific Styles (Internal to Shadow DOM) */
+                .board-actions { display: flex; justify-content: flex-end; margin-bottom: 20px; }
+                .btn-write { background: #3b2f2f; color: white; border: none; padding: 10px 25px; border-radius: 25px; font-weight: 700; cursor: pointer; transition: 0.3s; }
+                .btn-write:hover { background: #d4a373; }
+
+                /* Reuse Global Styles via CSS Part or duplication if needed, 
+                   but since we are using Shadow DOM, some styles need to be here 
+                   if they are not inherited. Table styles are better here. */
+                table { width: 100%; border-collapse: collapse; margin-top: 10px; background: white; border-radius: 12px; overflow: hidden; }
+                th, td { padding: 15px; border-bottom: 1px solid #eee; text-align: center; }
+                th { background: #f8fafc; font-weight: 700; color: #475569; }
+                .col-title { text-align: left; }
+                .post-link { cursor: pointer; color: #2b2d42; text-decoration: none; font-weight: 600; }
+                .post-link:hover { color: #d4a373; }
+                
+                .pagination { display: flex; justify-content: center; gap: 10px; margin-top: 30px; }
+                .page-btn { padding: 8px 15px; border: 1px solid #e9edc9; background: white; border-radius: 8px; cursor: pointer; }
+                .page-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+                .form-group { margin-bottom: 20px; }
+                label { display: block; margin-bottom: 8px; font-weight: 700; }
+                input, textarea { width: 100%; padding: 12px; border: 1px solid #e9edc9; border-radius: 10px; box-sizing: border-box; font-family: inherit; }
+                textarea { height: 200px; resize: vertical; }
+                
+                .post-view { background: white; padding: 30px; border-radius: 15px; }
+                .view-header { border-bottom: 2px solid #f8f9fa; padding-bottom: 15px; margin-bottom: 20px; }
+                .view-title { font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
+                .view-meta { color: #8d99ae; font-size: 0.9rem; display: flex; gap: 15px; }
+                .view-content { line-height: 1.7; white-space: pre-wrap; min-height: 200px; }
+                .view-footer { margin-top: 30px; display: flex; justify-content: flex-end; gap: 10px; }
+                .btn-back { background: #f1f3f5; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; }
             </style>
-            <div class="board-container">
-                <div class="form-section">
-                    <form id="post-form">
-                        <div class="form-group">
-                            <label>제목</label>
-                            <input type="text" name="title" required placeholder="제목을 입력하세요">
-                        </div>
-                        <div class="form-group">
-                            <label>작성자</label>
-                            <input type="text" name="author" required placeholder="작성자 성함">
-                        </div>
-                        <div class="form-group">
-                            <label>내용</label>
-                            <textarea name="content" required placeholder="내용을 입력하세요"></textarea>
-                        </div>
-                        <button type="submit" class="btn-submit">글쓰기 완료</button>
-                    </form>
+            <div id="board-container">
+                ${content}
+            </div>
+        `;
+
+        this.attachEvents();
+    }
+
+    renderList() {
+        let rows = '';
+        if (this.posts.length === 0) {
+            rows = '<tr><td colspan="5" class="empty">등록된 게시글이 없습니다.</td></tr>';
+        } else {
+            this.posts.forEach((post, index) => {
+                const date = post.createdAt ? new Date(post.createdAt.seconds * 1000).toLocaleDateString() : '방금 전';
+                rows += `
+                    <tr>
+                        <td>${(this.currentPage - 1) * this.postsPerPage + index + 1}</td>
+                        <td class="col-title"><a class="post-link" data-id="${post.id}">${post.title}</a></td>
+                        <td>${post.author || '익명'}</td>
+                        <td>${date}</td>
+                        <td>${post.views || 0}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        return `
+            <div class="board-actions">
+                <button class="btn-write" id="go-write">글쓰기</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 60px;">번호</th>
+                        <th>제목</th>
+                        <th style="width: 120px;">작성자</th>
+                        <th style="width: 120px;">날짜</th>
+                        <th style="width: 80px;">조회수</th>
+                    </tr>
+                </thead>
+                <tbody id="board-content">
+                    ${rows}
+                </tbody>
+            </table>
+            <div class="pagination">
+                <button class="page-btn" id="prev-page" ${this.currentPage === 1 ? 'disabled' : ''}>이전</button>
+                <span class="current-page">${this.currentPage}</span>
+                <button class="page-btn" id="next-page" ${this.posts.length < this.postsPerPage ? 'disabled' : ''}>다음</button>
+            </div>
+        `;
+    }
+
+    renderView() {
+        const post = this.posts.find(p => p.id === this.currentPostId);
+        if (!post) return '<div class="error">게시글을 찾을 수 없습니다.</div>';
+
+        const date = post.createdAt ? new Date(post.createdAt.seconds * 1000).toLocaleString() : '방금 전';
+        return `
+            <div class="post-view">
+                <div class="view-header">
+                    <div class="view-title">${post.title}</div>
+                    <div class="view-meta">
+                        <span><b>작성자:</b> ${post.author}</span>
+                        <span><b>날짜:</b> ${date}</span>
+                        <span><b>조회수:</b> ${post.views + 1}</span>
+                    </div>
                 </div>
-                <div class="posts-section" id="posts-container">
-                    <!-- Posts will be loaded here -->
+                <div class="view-content">${post.content}</div>
+                <div class="view-footer">
+                    <button class="btn-back" id="go-list">목록으로</button>
                 </div>
             </div>
         `;
-        this.shadowRoot.getElementById('post-form').addEventListener('submit', (e) => this.handleSubmit(e));
+    }
+
+    renderWrite() {
+        return `
+            <div class="post-write">
+                <h3 style="margin-bottom: 20px;">📝 새 글 작성</h3>
+                <form id="post-form">
+                    <div class="form-group">
+                        <label>제목</label>
+                        <input type="text" name="title" required placeholder="제목을 입력하세요">
+                    </div>
+                    <div class="form-group">
+                        <label>작성자</label>
+                        <input type="text" name="author" required placeholder="작성자 성함">
+                    </div>
+                    <div class="form-group">
+                        <label>내용</label>
+                        <textarea name="content" required placeholder="내용을 입력하세요"></textarea>
+                    </div>
+                    <div class="view-footer">
+                        <button type="button" class="btn-back" id="cancel-write" style="margin-right: 10px;">취소</button>
+                        <button type="submit" class="btn-write">등록하기</button>
+                    </div>
+                </form>
+            </div>
+        `;
+    }
+
+    attachEvents() {
+        const goWrite = this.shadowRoot.getElementById('go-write');
+        if (goWrite) goWrite.onclick = () => { this.state = 'write'; this.render(); };
+
+        const goList = this.shadowRoot.getElementById('go-list');
+        if (goList) goList.onclick = () => { this.state = 'list'; this.loadPosts(); };
+
+        const cancelWrite = this.shadowRoot.getElementById('cancel-write');
+        if (cancelWrite) cancelWrite.onclick = () => { this.state = 'list'; this.render(); };
+
+        const form = this.shadowRoot.getElementById('post-form');
+        if (form) form.onsubmit = (e) => this.handleSubmit(e);
+
+        const links = this.shadowRoot.querySelectorAll('.post-link');
+        links.forEach(link => {
+            link.onclick = () => this.viewPost(link.getAttribute('data-id'));
+        });
+
+        const prevPage = this.shadowRoot.getElementById('prev-page');
+        if (prevPage) prevPage.onclick = () => {
+            if (this.currentPage > 1) {
+                this.currentPage--;
+                this.lastDoc = null; // Reset lastDoc to reload from beginning or implement full prev logic
+                this.loadPosts(); 
+            }
+        };
+
+        const nextPage = this.shadowRoot.getElementById('next-page');
+        if (nextPage) nextPage.onclick = () => {
+            this.currentPage++;
+            this.loadPosts('next');
+        };
     }
 }
 customElements.define('post-board', PostBoard);
