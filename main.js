@@ -5,23 +5,30 @@ class MainHeader extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
+        onAuthStateChanged(auth, () => {
+            this.render();
+        });
     }
     connectedCallback() {
         this.render();
     }
     render() {
         const activePage = this.getAttribute('active') || 'home';
+        const user = auth.currentUser;
+        
         this.shadowRoot.innerHTML = `
             <style>
                 :host { display: block; font-family: 'Noto Sans KR', sans-serif; position: sticky; top: 0; z-index: 1000; }
                 header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-bottom: 1px solid #e9edc9; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
                 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 80px; }
                 .logo { font-size: 1.6rem; font-weight: 900; color: #3b2f2f; text-decoration: none; letter-spacing: -1px; }
-                nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+                nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; align-items: center; }
                 nav li { position: relative; }
                 nav a { text-decoration: none; color: #2b2d42; font-weight: 700; font-size: 1rem; transition: 0.3s; }
                 nav a:hover, nav a.active { color: #d4a373; }
-                .btn-login { background: #3b2f2f; color: white; padding: 10px 24px; border-radius: 25px; text-decoration: none; font-size: 0.9rem; font-weight: 700; }
+                .btn-login { background: #3b2f2f; color: white; padding: 10px 24px; border-radius: 25px; text-decoration: none; font-size: 0.9rem; font-weight: 700; cursor: pointer; border: none; }
+                .btn-login:hover { background: #d4a373; }
+                .user-info { font-size: 0.9rem; font-weight: 700; color: #3b2f2f; margin-right: 15px; }
                 .has-dropdown:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
                 .dropdown { position: absolute; top: 100%; left: 0; background: white; min-width: 180px; padding: 10px 0; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transform: translateY(10px); transition: 0.3s; border: 1px solid #eee; }
                 .dropdown a { padding: 10px 20px; display: block; font-size: 0.9rem; color: #8d99ae; font-weight: 500; }
@@ -50,11 +57,25 @@ class MainHeader extends HTMLElement {
                                     <li><a href="contact.html">고객센터/문의</a></li>
                                 </ul>
                             </li>
+                            ${user ? `
+                                <li><span class="user-info">👤 ${user.displayName || '사용자'}님</span></li>
+                                <li><button class="btn-login" id="logout-btn">로그아웃</button></li>
+                            ` : `
+                                <li><a href="login.html" class="btn-login">로그인</a></li>
+                            `}
                         </ul>
                     </nav>
                 </div>
             </header>
         `;
+        const logoutBtn = this.shadowRoot.getElementById('logout-btn');
+        if (logoutBtn) {
+            logoutBtn.onclick = async () => {
+                await signOut(auth);
+                alert('로그아웃 되었습니다.');
+                location.href = 'index.html';
+            };
+        }
     }
 }
 customElements.define('main-header', MainHeader);
@@ -276,7 +297,7 @@ class ExamQuestion extends HTMLElement {
 customElements.define('exam-question', ExamQuestion);
 
 // PostBoard Component for Notice and Q&A
-import { db, collection, addDoc, getDocs, getDoc, doc, query, orderBy, serverTimestamp, updateDoc, increment, limit, startAfter } from './firebase-config.js';
+import { db, auth, collection, addDoc, getDocs, getDoc, doc, query, orderBy, serverTimestamp, updateDoc, increment, limit, startAfter, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile } from './firebase-config.js';
 
 class PostBoard extends HTMLElement {
     constructor() {
@@ -291,6 +312,13 @@ class PostBoard extends HTMLElement {
         this.lastDoc = null;
         this.firstDoc = null;
         this.allPagesDocs = []; // Store the first doc of each page for back navigation
+        
+        // Listen for auth state changes to re-render buttons
+        onAuthStateChanged(auth, () => {
+            if (this.state === 'list' || this.state === 'view') {
+                this.render();
+            }
+        });
     }
 
     connectedCallback() {
@@ -356,15 +384,22 @@ class PostBoard extends HTMLElement {
 
     async handleSubmit(e) {
         e.preventDefault();
+        const user = auth.currentUser;
+        if (!user) {
+            alert('로그인이 필요한 서비스입니다.');
+            location.href = 'login.html';
+            return;
+        }
+
         const form = e.target;
         const title = form.title.value;
-        const author = form.author.value;
         const content = form.content.value;
 
         try {
             await addDoc(collection(db, this.collectionName), {
                 title,
-                author,
+                author: user.displayName || '익명',
+                authorId: user.uid,
                 content,
                 views: 0,
                 createdAt: serverTimestamp()
@@ -505,6 +540,17 @@ class PostBoard extends HTMLElement {
     }
 
     renderWrite() {
+        const user = auth.currentUser;
+        if (!user) {
+            return `
+                <div class="error">
+                    <p>로그인이 필요한 서비스입니다.</p>
+                    <button class="btn-write" onclick="location.href='login.html'">로그인하러 가기</button>
+                    <button class="btn-back" id="go-list" style="margin-top: 10px;">목록으로</button>
+                </div>
+            `;
+        }
+
         return `
             <div class="post-write">
                 <h3 style="margin-bottom: 20px;">📝 새 글 작성</h3>
@@ -515,7 +561,7 @@ class PostBoard extends HTMLElement {
                     </div>
                     <div class="form-group">
                         <label>작성자</label>
-                        <input type="text" name="author" required placeholder="작성자 성함">
+                        <input type="text" value="${user.displayName || '익명'}" disabled>
                     </div>
                     <div class="form-group">
                         <label>내용</label>
@@ -640,6 +686,45 @@ customElements.define('home-post-board', HomePostBoard);
 
 // Global Initial Load
 document.addEventListener('DOMContentLoaded', () => {
+    // Login Form Handler
+    const loginForm = document.getElementById('login-form');
+    if (loginForm) {
+        loginForm.onsubmit = async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const pw = document.getElementById('login-pw').value;
+            try {
+                await signInWithEmailAndPassword(auth, email, pw);
+                alert('로그인 되었습니다.');
+                location.href = 'index.html';
+            } catch (error) {
+                console.error(error);
+                alert('로그인에 실패했습니다. 이메일과 비밀번호를 확인해주세요.');
+            }
+        };
+    }
+
+    // Register Form Handler
+    const regForm = document.getElementById('register-form');
+    if (regForm) {
+        regForm.onsubmit = async (e) => {
+            e.preventDefault();
+            const name = document.getElementById('reg-name').value;
+            const email = document.getElementById('reg-email').value;
+            const pw = document.getElementById('reg-pw').value;
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, pw);
+                await updateProfile(userCredential.user, { displayName: name });
+                alert('회원가입이 완료되었습니다! 로그인해 주세요.');
+                await signOut(auth);
+                location.href = 'login.html';
+            } catch (error) {
+                console.error(error);
+                alert('회원가입에 실패했습니다: ' + error.message);
+            }
+        };
+    }
+
     // Schedule Tab Logic
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
