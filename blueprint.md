@@ -30,7 +30,7 @@
 
 ### 3.1. 홈 (Index.html)
 - **Hero:** 신뢰감 있는 문구와 함께 명확한 CTA(Call to Action) 버튼.
-- **Monetization:** 히어로 섹션 하단에 쿠팡 파트너스 캐러셀 광고 배치.
+- **Monetization:** 히어로 섹션 하단에 쿠팡 파트너스 캐러셀 및 세로형 배너 동시 배치.
 
 ### 3.2. 정보센터 (Notice.html & Qna.html)
 - **Interactive Board:** Firebase Firestore와 연동된 실시간 게시판 시스템.
@@ -39,7 +39,7 @@
 ## 4. 기술 스택 및 수익화 전략
 - **Frontend:** Vanilla JS (Web Components), CSS3 (Modern Baseline), HTML5.
 - **Backend:** Firebase Hosting, Firestore (Real-time Database).
-- **수익화 채널:** Google AdSense, Coupang Partners (자동 연동 및 필수 고지 문구 적용).
+- **수익화 채널:** Google AdSense, Coupang Partners (캐러셀 + 세로형 배너 연동 및 필수 고지 문구 적용).
 
 ---
 
@@ -48,7 +48,7 @@
 - **[Done]** 180문항 이상의 기출문제 데이터 및 전문가 해설 구축.
 - **[Done]** 애드센스 필수 페이지(Privacy, Terms, About, Contact) 구축.
 - **[Done]** 독창적 콘텐츠 강화를 위한 '커피 지식 백과' 아티클 추가.
-- **[Done]** 쿠팡 파트너스 광고 위젯 연동 및 필수 고지 문구 적용.
+- **[Done]** 쿠팡 파트너스 다중 광고 위젯(캐러셀, 세로형) 연동 및 필수 고지 문구 적용.
 - **[Done]** 공지사항 및 Q&A 게시판 시스템 구축 (Web Components & Firestore 연동).
 - **[To-Do]** `firebase-config.js`에 실제 Firebase 프로젝트 API 키 설정 필요.
 - **[To-Do]** 지식 백과 아티클 지속 확장 및 학습 로드맵 시각화 보강.
