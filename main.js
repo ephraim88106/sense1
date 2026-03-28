@@ -583,7 +583,16 @@ class PostBoard extends HTMLElement {
         };
 
         const form = this.shadowRoot.getElementById('post-form');
-        if (form) form.onsubmit = (e) => this.handleSubmit(e);
+        if (form) {
+            form.onsubmit = (e) => this.handleSubmit(e);
+        } else {
+            // Fallback: listen on shadowRoot for any submit events
+            this.shadowRoot.addEventListener('submit', (e) => {
+                if (e.target.id === 'post-form') {
+                    this.handleSubmit(e);
+                }
+            }, { once: true }); // Use once to avoid multiple listeners if render is called again
+        }
     }
 }
 customElements.define('post-board', PostBoard);
