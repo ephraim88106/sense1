@@ -11,41 +11,35 @@
   * 시험 안내/규정 (Guide)
   * 기출문제 풀이 (Practice)
 * **정보센터 (Info Center)**
-  * **소개 (About)**: 사이트 운영 목적 및 전문성 강조 [NEW]
-  * **문의 (Contact)**: 사용자 피드백 및 기술 지원 [NEW]
+  * **공지사항 (Notice)**: 사이트의 중요 공지 및 업데이트 정보 제공 [IMPLEMENTED]
+  * **Q&A 게시판 (Q&A)**: 사용자 질의응답 및 소통 공간 [IMPLEMENTED]
+  * **소개 (About)**: 사이트 운영 목적 및 전문성 강조
+  * **문의 (Contact)**: 사용자 피드백 및 기술 지원
 * **학습센터 (Learning Center)**
-  * **지식 백과 (Knowledge Base)**: 커피 품종, 로스팅, 추출 등 전문 지식 아티클 [NEW]
+  * **지식 백과 (Knowledge Base)**: 커피 품종, 로스팅, 추출 등 전문 지식 아티클
   * **기출문제 풀이 (Practice)**: 등급별 모의고사 및 해설
   * **시험 안내 (Guide)**: KCA 규정 및 전형 방법
   * **시험 일정 (Schedule)**: 최신 시험 일정 테이블
-* **정보센터 (Info Center)**
-  * **소개 (About)**: 사이트 운영 목적 및 전문성 강조
-  * **문의 (Contact)**: 사용자 피드백 및 기술 지원
 * **법적 공지 (Legal)**
   * 개인정보처리방침 (Privacy Policy)
   * 이용약관 (Terms of Service)
 * **시스템 페이지**
-  * **404 에러 페이지**: 사용자 친화적 오류 안내 및 홈 연결 [NEW]
+  * **404 에러 페이지**: 사용자 친화적 오류 안내 및 홈 연결
 
 ## 3. 핵심 페이지별 화면 구성 기획 (UI/UX Layout)
 
 ### 3.1. 홈 (Index.html)
 - **Hero:** 신뢰감 있는 문구와 함께 명확한 CTA(Call to Action) 버튼.
-- **Content Richness:** 각 자격증의 가치와 취득 혜택에 대한 상세 설명 및 왜 KCA 포털인지에 대한 가치 제안 섹션 추가.
-- **Engagement:** 학습센터로의 쉬운 접근성 제공.
 - **Monetization:** 히어로 섹션 하단에 쿠팡 파트너스 캐러셀 광고 배치.
 
-### 3.2. 지식 백과 (Knowledge.html) [NEW]
-- **Original Content:** 전문가가 직접 작성한 듯한 깊이 있는 커피 지식 아티클 제공 (아라비카 vs 로부스타, 로스팅 단계 등).
-- **Added Value:** 단순 정보 나열이 아닌, 학습에 도움이 되는 통찰력 있는 정보 구성.
+### 3.2. 정보센터 (Notice.html & Qna.html)
+- **Interactive Board:** Firebase Firestore와 연동된 실시간 게시판 시스템.
+- **PostBoard Component:** 웹 컴포넌트 기반으로 설계되어 게시글 작성 및 목록 조회를 단일 인터페이스에서 제공.
 
-## 4. 애드센스 및 수익화 전략 (Monetization & Search Essentials)
-- **독창성 및 가치:** 타 사이트와 차별화된 '커피 지식 백과'를 통해 독창적인 콘텐츠 확보.
-- **수익화 채널:** Google AdSense와 함께 쿠팡 파트너스(Coupang Partners) 위젯을 활용하여 관련 커피 용품 추천.
-- **기술 요구사항 충족:** 표준 HTML5 준수, 반응형 레이아웃, `robots.txt`를 통한 크롤링 제어.
-- **구조화된 데이터:** JSON-LD 스키마를 활용하여 사이트의 정체성을 검색 엔진에 명확히 전달.
-- **사용자 중심 키워드:** 제목(H1), 소제목(H2), 메타 설명에 수험생이 검색할 만한 핵심 키워드 배치.
-- **탐색 용이성:** 논리적인 메뉴 구조와 크롤링 가능한 표준 링크(`<a>`) 사용.
+## 4. 기술 스택 및 수익화 전략
+- **Frontend:** Vanilla JS (Web Components), CSS3 (Modern Baseline), HTML5.
+- **Backend:** Firebase Hosting, Firestore (Real-time Database).
+- **수익화 채널:** Google AdSense, Coupang Partners (자동 연동 및 필수 고지 문구 적용).
 
 ---
 
@@ -54,7 +48,7 @@
 - **[Done]** 180문항 이상의 기출문제 데이터 및 전문가 해설 구축.
 - **[Done]** 애드센스 필수 페이지(Privacy, Terms, About, Contact) 구축.
 - **[Done]** 독창적 콘텐츠 강화를 위한 '커피 지식 백과' 아티클 추가.
-- **[Done]** 쿠팡 파트너스 광고 위젯 연동 및 필수 고지 문구 적용 (모든 주요 페이지: 홈, 자격시험, 학습센터, 정보센터).
-- **[Done]** 사용자 경험 개선을 위한 커스텀 404 페이지 구현.
-- **[Done]** Google 검색 Essentials 준수를 위한 메타 데이터 및 구조화 데이터 적용.
+- **[Done]** 쿠팡 파트너스 광고 위젯 연동 및 필수 고지 문구 적용.
+- **[Done]** 공지사항 및 Q&A 게시판 시스템 구축 (Web Components & Firestore 연동).
+- **[To-Do]** `firebase-config.js`에 실제 Firebase 프로젝트 API 키 설정 필요.
 - **[To-Do]** 지식 백과 아티클 지속 확장 및 학습 로드맵 시각화 보강.
