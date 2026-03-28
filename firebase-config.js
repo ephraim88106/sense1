@@ -1,6 +1,7 @@
 // Firebase Configuration & Initialization
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, getDoc, doc, query, orderBy, serverTimestamp, updateDoc, increment, limit, startAfter } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, getDoc, doc, query, orderBy, serverTimestamp, updateDoc, increment, limit, startAfter, deleteDoc } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
 
 // FIXME: Replace with your actual Firebase project configuration
 const firebaseConfig = {
@@ -14,5 +15,10 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
 
-export { db, collection, addDoc, getDocs, getDoc, doc, query, orderBy, serverTimestamp, updateDoc, increment, limit, startAfter };
+export { 
+    db, auth, collection, addDoc, getDocs, getDoc, doc, query, orderBy, 
+    serverTimestamp, updateDoc, increment, limit, startAfter, deleteDoc,
+    createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile
+};
