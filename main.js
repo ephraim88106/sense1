@@ -531,37 +531,59 @@ class PostBoard extends HTMLElement {
     }
 
     attachEvents() {
-        const goWrite = this.shadowRoot.getElementById('go-write');
-        if (goWrite) goWrite.onclick = () => { this.state = 'write'; this.render(); };
+        const container = this.shadowRoot.getElementById('board-container');
+        if (!container) return;
 
-        const goList = this.shadowRoot.getElementById('go-list');
-        if (goList) goList.onclick = () => { this.state = 'list'; this.loadPosts(); };
+        container.onclick = (e) => {
+            const target = e.target;
+            
+            // Handle "Write" button
+            if (target.id === 'go-write') {
+                this.state = 'write';
+                this.render();
+                return;
+            }
 
-        const cancelWrite = this.shadowRoot.getElementById('cancel-write');
-        if (cancelWrite) cancelWrite.onclick = () => { this.state = 'list'; this.render(); };
+            // Handle "Back to List" button
+            if (target.id === 'go-list') {
+                this.state = 'list';
+                this.loadPosts();
+                return;
+            }
 
-        const form = this.shadowRoot.getElementById('post-form');
-        if (form) form.onsubmit = (e) => this.handleSubmit(e);
+            // Handle "Cancel Write" button
+            if (target.id === 'cancel-write') {
+                this.state = 'list';
+                this.render();
+                return;
+            }
 
-        const links = this.shadowRoot.querySelectorAll('.post-link');
-        links.forEach(link => {
-            link.onclick = () => this.viewPost(link.getAttribute('data-id'));
-        });
+            // Handle Post Link
+            if (target.classList.contains('post-link')) {
+                this.viewPost(target.getAttribute('data-id'));
+                return;
+            }
 
-        const prevPage = this.shadowRoot.getElementById('prev-page');
-        if (prevPage) prevPage.onclick = () => {
-            if (this.currentPage > 1) {
-                this.currentPage--;
-                this.lastDoc = null; // Reset lastDoc to reload from beginning or implement full prev logic
-                this.loadPosts(); 
+            // Handle Prev Page
+            if (target.id === 'prev-page') {
+                if (this.currentPage > 1) {
+                    this.currentPage--;
+                    this.lastDoc = null;
+                    this.loadPosts();
+                }
+                return;
+            }
+
+            // Handle Next Page
+            if (target.id === 'next-page') {
+                this.currentPage++;
+                this.loadPosts('next');
+                return;
             }
         };
 
-        const nextPage = this.shadowRoot.getElementById('next-page');
-        if (nextPage) nextPage.onclick = () => {
-            this.currentPage++;
-            this.loadPosts('next');
-        };
+        const form = this.shadowRoot.getElementById('post-form');
+        if (form) form.onsubmit = (e) => this.handleSubmit(e);
     }
 }
 customElements.define('post-board', PostBoard);
