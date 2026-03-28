@@ -44,6 +44,8 @@ class MainHeader extends HTMLElement {
                             <li class="has-dropdown">
                                 <a href="about.html" class="${activePage === 'info' ? 'active' : ''}">정보센터</a>
                                 <ul class="dropdown">
+                                    <li><a href="notice.html">공지사항</a></li>
+                                    <li><a href="qna.html">Q&A 게시판</a></li>
                                     <li><a href="about.html">사이트 소개</a></li>
                                     <li><a href="contact.html">고객센터/문의</a></li>
                                 </ul>
@@ -72,7 +74,7 @@ class MainFooter extends HTMLElement {
             <footer>
                 <div class="container">
                     <div class="info">
-                        <p><strong>(사)한국커피협회 포털</strong> | KCA 바리스타 학습 도우미</p>
+                        <p><strong>KCA 바리스타 학습 포털</strong> | 합격을 위한 최적의 파트너</p>
                         <p>전문적인 기출문제 해설과 상세한 시험 가이드를 제공합니다.</p>
                         <p>© 2024 KCA Portal. All rights reserved.</p>
                     </div>
@@ -272,6 +274,133 @@ class ExamQuestion extends HTMLElement {
     }
 }
 customElements.define('exam-question', ExamQuestion);
+
+// PostBoard Component for Notice and Q&A
+import { db, collection, addDoc, getDocs, query, orderBy, serverTimestamp } from './firebase-config.js';
+
+class PostBoard extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.collectionName = this.getAttribute('collection') || 'posts';
+    }
+
+    connectedCallback() {
+        this.render();
+        this.loadPosts();
+    }
+
+    async loadPosts() {
+        const postsContainer = this.shadowRoot.getElementById('posts-container');
+        postsContainer.innerHTML = '<div class="loading">게시글을 불러오는 중...</div>';
+
+        try {
+            const q = query(collection(db, this.collectionName), orderBy('createdAt', 'desc'));
+            const querySnapshot = await getDocs(q);
+            
+            if (querySnapshot.empty) {
+                postsContainer.innerHTML = '<div class="empty">등록된 게시글이 없습니다.</div>';
+                return;
+            }
+
+            postsContainer.innerHTML = '';
+            querySnapshot.forEach((doc) => {
+                const data = doc.data();
+                const date = data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : '방금 전';
+                
+                const postItem = document.createElement('div');
+                postItem.className = 'post-item';
+                postItem.innerHTML = `
+                    <div class="post-header">
+                        <span class="post-title">${data.title}</span>
+                        <span class="post-date">${date}</span>
+                    </div>
+                    <div class="post-author">작성자: ${data.author || '익명'}</div>
+                    <div class="post-content">${data.content}</div>
+                `;
+                postsContainer.appendChild(postItem);
+            });
+        } catch (error) {
+            console.error("Error loading posts:", error);
+            postsContainer.innerHTML = '<div class="error">게시글을 불러오는 데 실패했습니다. Firebase 설정을 확인해주세요.</div>';
+        }
+    }
+
+    async handleSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const title = form.title.value;
+        const author = form.author.value;
+        const content = form.content.value;
+
+        try {
+            await addDoc(collection(db, this.collectionName), {
+                title,
+                author,
+                content,
+                createdAt: serverTimestamp()
+            });
+            form.reset();
+            alert('글이 등록되었습니다!');
+            this.loadPosts();
+        } catch (error) {
+            console.error("Error adding post:", error);
+            alert('글 등록에 실패했습니다. Firebase 설정을 확인해주세요.');
+        }
+    }
+
+    render() {
+        this.shadowRoot.innerHTML = `
+            <style>
+                :host { display: block; font-family: 'Noto Sans KR', sans-serif; }
+                .board-container { background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); overflow: hidden; }
+                .form-section { padding: 30px; border-bottom: 2px solid #f8f9fa; background: #fdfcfb; }
+                .form-group { margin-bottom: 15px; }
+                label { display: block; margin-bottom: 5px; font-weight: 700; color: #3b2f2f; }
+                input, textarea { width: 100%; padding: 12px; border: 1px solid #e9edc9; border-radius: 10px; font-size: 1rem; box-sizing: border-box; }
+                textarea { height: 120px; resize: vertical; }
+                .btn-submit { background: #3b2f2f; color: white; border: none; padding: 12px 25px; border-radius: 25px; font-weight: 700; cursor: pointer; transition: 0.3s; width: 100%; }
+                .btn-submit:hover { background: #d4a373; }
+                
+                .posts-section { padding: 30px; }
+                .post-item { padding: 20px; border-bottom: 1px solid #eee; transition: 0.3s; }
+                .post-item:last-child { border-bottom: none; }
+                .post-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+                .post-title { font-size: 1.2rem; font-weight: 800; color: #3b2f2f; }
+                .post-date { font-size: 0.85rem; color: #8d99ae; }
+                .post-author { font-size: 0.9rem; color: #d4a373; margin-bottom: 10px; font-weight: 500; }
+                .post-content { color: #2b2d42; line-height: 1.6; white-space: pre-wrap; }
+                
+                .loading, .empty, .error { text-align: center; padding: 40px; color: #8d99ae; }
+                .error { color: #bc6c25; }
+            </style>
+            <div class="board-container">
+                <div class="form-section">
+                    <form id="post-form">
+                        <div class="form-group">
+                            <label>제목</label>
+                            <input type="text" name="title" required placeholder="제목을 입력하세요">
+                        </div>
+                        <div class="form-group">
+                            <label>작성자</label>
+                            <input type="text" name="author" required placeholder="작성자 성함">
+                        </div>
+                        <div class="form-group">
+                            <label>내용</label>
+                            <textarea name="content" required placeholder="내용을 입력하세요"></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">글쓰기 완료</button>
+                    </form>
+                </div>
+                <div class="posts-section" id="posts-container">
+                    <!-- Posts will be loaded here -->
+                </div>
+            </div>
+        `;
+        this.shadowRoot.getElementById('post-form').addEventListener('submit', (e) => this.handleSubmit(e));
+    }
+}
+customElements.define('post-board', PostBoard);
 
 // Global Initial Load
 document.addEventListener('DOMContentLoaded', () => {
