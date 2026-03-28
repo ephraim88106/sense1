@@ -588,6 +588,47 @@ class PostBoard extends HTMLElement {
 }
 customElements.define('post-board', PostBoard);
 
+// HomePostBoard Component (Simplified list for index.html)
+class HomePostBoard extends HTMLElement {
+    constructor() {
+        super();
+        this.attachShadow({ mode: 'open' });
+        this.collectionName = this.getAttribute('collection') || 'posts';
+    }
+    connectedCallback() {
+        this.loadLatest();
+    }
+    async loadLatest() {
+        try {
+            const q = query(collection(db, this.collectionName), orderBy('createdAt', 'desc'), limit(3));
+            const querySnapshot = await getDocs(q);
+            let listHtml = '';
+            
+            if (querySnapshot.empty) {
+                listHtml = '<li style="color: #8d99ae; font-size: 0.9rem;">등록된 게시글이 없습니다.</li>';
+            } else {
+                querySnapshot.forEach(doc => {
+                    const data = doc.data();
+                    listHtml += `<li><a href="${this.collectionName === 'notices' ? 'notice.html' : 'qna.html'}" style="text-decoration: none; color: inherit;">${data.title}</a></li>`;
+                });
+            }
+
+            this.shadowRoot.innerHTML = `
+                <style>
+                    ul { list-style: none; padding: 0; margin: 0; }
+                    li { padding: 10px 0; border-bottom: 1px dashed #eee; font-size: 0.95rem; color: #2b2d42; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+                    li:last-child { border-bottom: none; }
+                    a:hover { color: #d4a373; }
+                </style>
+                <ul>${listHtml}</ul>
+            `;
+        } catch (e) {
+            console.error("HomePostBoard Error:", e);
+        }
+    }
+}
+customElements.define('home-post-board', HomePostBoard);
+
 // Global Initial Load
 document.addEventListener('DOMContentLoaded', () => {
     // Schedule Tab Logic
