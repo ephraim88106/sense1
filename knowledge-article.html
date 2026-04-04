@@ -43,6 +43,137 @@
   <script>
     const articles = [
       {
+        id: 5, emoji: "💧", category: "추출",
+        title: "물의 과학: 커피 맛을 좌우하는 숨은 변수",
+        date: "2026.04.04",
+        body: `
+          <p>한 잔의 커피에서 물이 차지하는 비중은 약 98%입니다. 아무리 좋은 원두를 최적의 조건으로 로스팅하고 추출하더라도, 물의 품질이 나쁘면 커피 맛은 기대에 미치지 못합니다. SCA(Specialty Coffee Association)가 별도의 '물 품질 기준'을 제시하는 이유가 바로 여기에 있습니다.</p>
+
+          <h2>TDS(총용존고형물)란?</h2>
+          <p><strong>TDS(Total Dissolved Solids)</strong>는 물 속에 녹아 있는 무기물·유기물의 총량을 ppm(mg/L) 단위로 나타낸 수치입니다. TDS가 너무 낮으면 물이 과도하게 성분을 용해시키려 하여 과다추출이, 너무 높으면 이미 포화 상태에 가까워 과소추출이 발생합니다.</p>
+          <table class="info-table">
+            <thead>
+              <tr><th>구분</th><th>TDS (ppm)</th><th>추출 경향</th><th>맛 영향</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>증류수 수준</strong></td><td>0~50</td><td>과다추출 경향</td><td>날카로운 산미, 떫은 맛</td></tr>
+              <tr><td><strong>SCA 권장 범위</strong></td><td>75~250 (목표 150)</td><td>균형 추출</td><td>단맛·산미·바디 조화</td></tr>
+              <tr><td><strong>경수(Hard Water)</strong></td><td>300 이상</td><td>과소추출 경향</td><td>밋밋한 맛, 석회 스케일 축적</td></tr>
+            </tbody>
+          </table>
+
+          <h2>pH(수소이온농도)의 역할</h2>
+          <p>물의 pH는 커피 산미의 인지에 직접적인 영향을 줍니다. SCA는 추출수의 pH를 <strong>6.5~7.5(중성 부근)</strong>로 권장합니다.</p>
+          <ul>
+            <li><strong>pH 6 이하(산성):</strong> 커피 자체의 산미가 증폭되어 시큼하고 불쾌한 맛이 될 수 있음</li>
+            <li><strong>pH 7 부근(중성):</strong> 산미가 자연스럽게 표현되며, 원두 고유의 향미가 살아남</li>
+            <li><strong>pH 8 이상(알칼리):</strong> 산미가 상쇄되어 밋밋하고 비눗물 같은 느낌이 날 수 있음</li>
+          </ul>
+
+          <h2>핵심 미네랄: 칼슘과 마그네슘</h2>
+          <p>물 속 미네랄 중 커피 추출에 가장 큰 영향을 미치는 것은 <strong>칼슘(Ca²⁺)</strong>과 <strong>마그네슘(Mg²⁺)</strong>입니다.</p>
+          <ul>
+            <li><strong>마그네슘:</strong> 커피의 과일 산(구연산, 사과산)과 결합하여 밝은 산미와 과일향을 강조합니다. 스페셜티 커피의 복합적인 향미를 끌어내는 데 유리합니다.</li>
+            <li><strong>칼슘:</strong> 바디감과 크리미한 질감을 부여합니다. 그러나 과도한 칼슘은 머신 내부에 석회질(스케일)을 형성하여 장비 수명을 단축시킵니다.</li>
+            <li><strong>중탄산염(HCO₃⁻):</strong> 완충 작용으로 산미를 중화합니다. 40~75ppm이 적정이며, 이를 초과하면 산미가 죽고 맛이 평탄해집니다.</li>
+          </ul>
+
+          <h2>SCA 추출수 권장 기준 요약</h2>
+          <table class="info-table">
+            <thead>
+              <tr><th>항목</th><th>목표값</th><th>허용 범위</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>TDS</strong></td><td>150 ppm</td><td>75~250 ppm</td></tr>
+              <tr><td><strong>칼슘 경도</strong></td><td>68 ppm (4 grains)</td><td>17~85 ppm</td></tr>
+              <tr><td><strong>총 알칼리도</strong></td><td>40 ppm</td><td>40~75 ppm 이하</td></tr>
+              <tr><td><strong>pH</strong></td><td>7.0</td><td>6.5~7.5</td></tr>
+              <tr><td><strong>나트륨</strong></td><td>10 ppm</td><td>10 ppm 이하</td></tr>
+              <tr><td><strong>염소</strong></td><td>0 ppm</td><td>검출 불가</td></tr>
+            </tbody>
+          </table>
+
+          <h2>가정에서 물 관리하기</h2>
+          <p>가정이나 카페에서 손쉽게 물 품질을 개선하는 방법은 다음과 같습니다.</p>
+          <ul>
+            <li><strong>정수 필터:</strong> 활성탄 필터로 염소·유기물을 제거하되, 미네랄은 보존하는 필터를 사용합니다. 역삼투(RO) 정수기는 TDS를 거의 0으로 낮추므로 별도의 미네랄 보충이 필요합니다.</li>
+            <li><strong>생수 활용:</strong> 시판 생수의 라벨에서 TDS·칼슘·마그네슘 수치를 확인합니다. 국내 생수 기준 TDS 50~150ppm 제품이 커피 추출에 적합합니다.</li>
+            <li><strong>물 레시피:</strong> 증류수에 미네랄 농축액을 직접 배합하여 원하는 미네랄 프로필을 만드는 방법도 있습니다 (예: Third Wave Water).</li>
+          </ul>
+
+          <div class="exam-tip">시험 포인트: SCA 권장 TDS 목표값 150ppm(허용 75~250), pH 6.5~7.5, 염소 0ppm을 반드시 암기하세요. 마그네슘=산미 강조, 칼슘=바디 강조, 중탄산염=산미 완충의 관계도 자주 출제됩니다.</div>
+        `
+      },
+      {
+        id: 6, emoji: "🩺", category: "커피학개론",
+        title: "커피와 건강: 카페인의 과학적 효과와 적정 섭취량",
+        date: "2026.04.04",
+        body: `
+          <p>커피는 세계에서 가장 많이 소비되는 기호 음료이자, 동시에 건강에 대한 논란이 끊이지 않는 음료이기도 합니다. 현대 의학과 영양학의 연구 결과를 바탕으로, 커피의 주요 성분인 카페인이 인체에 미치는 영향과 올바른 섭취 가이드를 정리합니다.</p>
+
+          <h2>카페인의 약리 작용</h2>
+          <p>카페인(C₈H₁₀N₄O₂)은 중추신경계를 자극하는 <strong>알칼로이드</strong> 물질로, 뇌에서 <strong>아데노신 수용체를 차단</strong>하여 각성 효과를 나타냅니다. 아데노신은 본래 피로 신호를 전달하는 신경전달물질인데, 카페인이 그 자리를 차지하면 졸음이 줄고 집중력이 높아집니다.</p>
+          <ul>
+            <li><strong>흡수 시간:</strong> 섭취 후 약 15~45분 내 혈중 농도 최고치 도달</li>
+            <li><strong>반감기:</strong> 건강한 성인 기준 약 3~7시간 (개인차·유전자·간 기능에 따라 차이)</li>
+            <li><strong>대사 효소:</strong> 간의 CYP1A2 효소가 카페인을 분해하며, 이 효소의 활성도가 개인별 카페인 민감도를 결정</li>
+          </ul>
+
+          <h2>과학적으로 입증된 효과</h2>
+          <p>수십 년간의 역학 연구를 통해 적정량의 커피 섭취가 건강에 미치는 긍정적 효과가 다수 보고되고 있습니다.</p>
+          <table class="info-table">
+            <thead>
+              <tr><th>효과</th><th>메커니즘</th><th>근거 수준</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>각성·집중력 향상</strong></td><td>아데노신 수용체 차단 → 도파민 분비 촉진</td><td>매우 높음</td></tr>
+              <tr><td><strong>운동 능력 향상</strong></td><td>지방산 분해 촉진, 근육 수축 효율 개선</td><td>높음</td></tr>
+              <tr><td><strong>제2형 당뇨 위험 감소</strong></td><td>클로로겐산의 혈당 조절 효과</td><td>높음 (다수 메타분석)</td></tr>
+              <tr><td><strong>간 보호 효과</strong></td><td>간 섬유화·지방간 억제, 간경변 위험 감소</td><td>높음</td></tr>
+              <tr><td><strong>항산화 작용</strong></td><td>폴리페놀·클로로겐산의 활성산소 제거</td><td>중간~높음</td></tr>
+              <tr><td><strong>파킨슨·알츠하이머 위험 감소</strong></td><td>신경세포 보호 효과 (연구 진행 중)</td><td>중간</td></tr>
+            </tbody>
+          </table>
+
+          <h2>카페인 함량 비교</h2>
+          <p>같은 '커피 한 잔'이라도 추출 방식과 원두 종류에 따라 카페인 함량은 크게 달라집니다.</p>
+          <table class="info-table">
+            <thead>
+              <tr><th>음료</th><th>1회 제공량</th><th>카페인 함량</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>에스프레소 (더블)</strong></td><td>60ml</td><td>80~120mg</td></tr>
+              <tr><td><strong>드립 커피</strong></td><td>240ml</td><td>95~200mg</td></tr>
+              <tr><td><strong>콜드브루</strong></td><td>240ml</td><td>150~240mg</td></tr>
+              <tr><td><strong>아메리카노</strong></td><td>360ml</td><td>80~150mg</td></tr>
+              <tr><td><strong>인스턴트 커피</strong></td><td>240ml</td><td>30~90mg</td></tr>
+              <tr><td><strong>디카페인 커피</strong></td><td>240ml</td><td>2~15mg</td></tr>
+            </tbody>
+          </table>
+          <p>참고로 로부스타 원두는 아라비카 대비 약 2배의 카페인을 함유하고 있어, 동일 추출 조건에서도 카페인 함량이 크게 달라질 수 있습니다.</p>
+
+          <h2>적정 섭취량과 주의사항</h2>
+          <p>FDA와 EFSA(유럽식품안전청)는 건강한 성인의 카페인 일일 권장 상한을 <strong>400mg(약 커피 3~4잔)</strong>으로 제시합니다.</p>
+          <ul>
+            <li><strong>임산부:</strong> 200mg 이하 (WHO 권고). 카페인이 태반을 통과하여 태아에게 영향을 줄 수 있음</li>
+            <li><strong>청소년:</strong> 체중 1kg당 2.5mg 이하 (캐나다 보건부 기준)</li>
+            <li><strong>심혈관 질환자:</strong> 주치의와 상의 필요. 급격한 혈압 상승 가능</li>
+            <li><strong>수면 영향:</strong> 취침 6시간 전부터 카페인 섭취를 피하는 것이 권장됨</li>
+          </ul>
+          <p>또한 카페인은 <strong>내성(Tolerance)</strong>이 형성되는 물질입니다. 매일 같은 양을 섭취하면 각성 효과가 줄어들며, 갑자기 중단하면 두통·피로감 등 <strong>금단 증상</strong>이 나타날 수 있습니다. 줄이고 싶다면 1~2주에 걸쳐 점진적으로 감량하는 것이 좋습니다.</p>
+
+          <h2>디카페인 커피의 원리</h2>
+          <p>카페인에 민감하지만 커피의 맛과 향을 즐기고 싶은 사람들을 위한 디카페인 공정은 크게 세 가지로 나뉩니다.</p>
+          <ul>
+            <li><strong>스위스 워터 프로세스(SWP):</strong> 화학 용매 없이 물과 활성탄 필터만으로 카페인을 제거합니다. 99.9% 제거율을 자랑하며, 유기농 인증에도 적합합니다.</li>
+            <li><strong>CO₂ 초임계 추출:</strong> 고압의 이산화탄소를 용매로 사용하여 카페인만 선택적으로 추출합니다. 대량 생산에 유리하며 향미 보존이 뛰어납니다.</li>
+            <li><strong>유기 용매법:</strong> 메틸렌 클로라이드(MC) 또는 에틸 아세테이트(EA)를 사용하여 카페인을 용해·제거합니다. 가장 전통적인 방식이나 잔류 용매 우려가 있습니다.</li>
+          </ul>
+
+          <div class="exam-tip">시험 포인트: 카페인 일일 상한 400mg(임산부 200mg), 카페인 반감기 3~7시간, 아데노신 수용체 차단 메커니즘을 숙지하세요. 디카페인 공정 중 스위스 워터(물+활성탄)와 CO₂ 초임계 추출의 원리 차이가 빈출됩니다.</div>
+        `
+      },
+      {
         id: 4, emoji: "☕", category: "커피학개론",
         title: "원두 산지별 특징 비교: 에티오피아, 콜롬비아, 브라질",
         date: "2026.04.04",

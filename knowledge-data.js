@@ -1,5 +1,19 @@
 export const knowledgeArticles = [
   {
+    id: 5, emoji: "💧", category: "추출",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "물의 과학: 커피 맛을 좌우하는 숨은 변수",
+    date: "2026.04.04",
+    summary: "커피의 98%는 물입니다. TDS, pH, 미네랄 조성이 추출과 향미에 미치는 영향을 과학적으로 분석합니다."
+  },
+  {
+    id: 6, emoji: "🩺", category: "커피학개론",
+    categoryColor: { bg: "#e0f2fe", text: "#0369a1" },
+    title: "커피와 건강: 카페인의 과학적 효과와 적정 섭취량",
+    date: "2026.04.04",
+    summary: "카페인의 약리 작용부터 하루 권장 섭취량, 디카페인 원리까지 과학적 근거를 바탕으로 알아봅니다."
+  },
+  {
     id: 4, emoji: "☕", category: "커피학개론",
     categoryColor: { bg: "#e0f2fe", text: "#0369a1" },
     title: "원두 산지별 특징 비교: 에티오피아, 콜롬비아, 브라질",
