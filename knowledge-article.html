@@ -4,7 +4,7 @@
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9118774019383180" crossorigin="anonymous"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ì»¤í¼ ì§ì | ì¼ì¤ì</title>
+  <title>커피 지식 | 센스원</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <style>
@@ -15,17 +15,27 @@
     .article-title { font-size: 1.6rem; font-weight: 900; line-height: 1.4; margin-bottom: 8px; }
     .article-meta { color: #94a3b8; font-size: 0.85rem; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid #e2e8f0; }
     .article-body p { margin-bottom: 16px; line-height: 1.85; }
+    .article-body h2 { font-size: 1.25rem; font-weight: 800; color: #3b2f2f; margin: 32px 0 14px; padding-left: 12px; border-left: 4px solid #d4a373; }
     .article-body ul { margin: 16px 0 20px; padding-left: 20px; }
     .article-body li { margin-bottom: 10px; line-height: 1.7; }
     .exam-tip { background: #fefce8; border-left: 4px solid #eab308; padding: 14px 18px; border-radius: 0 8px 8px 0; margin: 24px 0; font-size: 0.9rem; color: #713f12; }
+    .info-table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; font-size: 0.9rem; }
+    .info-table th, .info-table td { padding: 12px 14px; border: 1px solid #e2e8f0; text-align: left; }
+    .info-table th { background: #f8fafc; font-weight: 700; color: #475569; white-space: nowrap; }
+    .info-table td { color: #334155; }
+    @media (max-width: 768px) {
+      .article-title { font-size: 1.3rem; }
+      .info-table { font-size: 0.8rem; }
+      .info-table th, .info-table td { padding: 8px 10px; }
+    }
   </style>
 </head>
 <body>
   <main-header active="exam"></main-header>
   <main>
     <div class="article-wrap">
-      <button class="back-btn" onclick="history.back()">â ëª©ë¡ì¼ë¡</button>
-      <div id="content">ë¶ë¬ì¤ë ì¤...</div>
+      <button class="back-btn" onclick="location.href='knowledge.html'">&larr; 목록으로</button>
+      <div id="content">불러오는 중...</div>
     </div>
   </main>
   <main-footer></main-footer>
@@ -33,28 +43,195 @@
   <script>
     const articles = [
       {
-        id: 4, emoji: "â", category: "ì»¤í¼íê°ë¡ ",
-        title: "ìë ì°ì§ë³ í¹ì§ ë¹êµ: ìí°ì¤í¼ì, ì½ë¡¬ë¹ì, ë¸ë¼ì§",
+        id: 4, emoji: "☕", category: "커피학개론",
+        title: "원두 산지별 특징 비교: 에티오피아, 콜롬비아, 브라질",
         date: "2026.04.04",
-        body: '<p>ì¤íìí° ì»¤í¼ ìì¥ì´ ì±ì¥íë©´ì ìë ì°ì§(Origin)ë ë°ë¦¬ì¤íì ì»¤í¼ ì í¸ê° ëª¨ëìê² íµì¬ í¤ìëê° ëììµëë¤. ê°ì ìë¼ë¹ì¹´ íì¢ì´ë¼ë ì¬ë°° ì§ì­ì í ìÂ·ê³ ëÂ·ê¸°íì ë°ë¼ í¥ë¯¸ íë¡íì´ ìì í ë¬ë¼ì§ëë¤.</p><ul><li><strong>ìí°ì¤í¼ì:</strong> ì»¤í¼ì ë°ìì§. ë¸ë£¨ë² ë¦¬Â·ì¬ì¤ë¯¼ ê³¼ì¼í¥, ë°ì ì°ë¯¸. ë´ì¶ë´ ê°ê³µ ë¹ì¨ ëì.</li><li><strong>ì½ë¡¬ë¹ì:</strong> ìºë¬ë©Â·í¤ì´ì¦ë ê· íê°, ìì¸ì(Washed) ê°ê³µ, ê¹ëí ì¤ê° ì°ë¯¸.</li><li><strong>ë¸ë¼ì§:</strong> ì´ì½ë¦¿Â·ê²¬ê³¼ë¥ í¥ë¯¸, ë®ì ì°ë¯¸, ë¬µì§í ë°ëê°. ìì¤íë ì ë¸ë ë ë² ì´ì¤.</li><li><strong>ê°ê³µ ë°©ì:</strong> ë´ì¶ë´(ê³¼ì¼Â·ë°í¨ ëìì¤) vs ììë(ê¹¨ëí ì°ë¯¸Â·íë¡ë´).</li></ul><p>ê° ì°ì§ì ëí í¥ë¯¸ í¤ìëì ê°ê³µ ë°©ìÂ·ê³ ëì ê´ê³ë¥¼ í¨ê» ì´í´íë ê²ì´ ê³ ëì ì íµì¬ìëë¤.</p><div class="exam-tip">ð¡ ìí í¬ì¸í¸: ì°ì§ â ê°ê³µë°©ì â í¥ë¯¸ íë¡íì¼ ì°ê²°ê³ ë¦¬ë¥¼ ì¸ìëì¸ì</div>'
+        body: `
+          <p>스페셜티 커피 시장이 성장하면서 원두 산지(Origin)는 바리스타와 커피 애호가 모두에게 핵심 키워드가 되었습니다. 같은 아라비카 품종이라도 재배 지역의 토양·고도·기후에 따라 향미 프로필이 완전히 달라집니다.</p>
+
+          <h2>에티오피아 (Ethiopia)</h2>
+          <p>커피의 발상지로 불리는 에티오피아는 세계에서 가장 다양한 커피 유전자를 보유하고 있습니다. 예가체프(Yirgacheffe), 시다모(Sidamo), 구지(Guji) 등 대표 생산지에서 재배되며, 내추럴(Natural) 가공 비율이 높은 것이 특징입니다.</p>
+          <ul>
+            <li><strong>향미 프로필:</strong> 블루베리, 재스민, 복숭아 등 화사한 과일·꽃 향이 두드러짐</li>
+            <li><strong>산미:</strong> 밝고 선명한 산미가 특징이며, 와인 같은 바디감을 지님</li>
+            <li><strong>재배 고도:</strong> 1,500~2,200m의 고지대</li>
+            <li><strong>대표 가공:</strong> 내추럴(건식), 워시드(습식) 모두 활발</li>
+          </ul>
+
+          <h2>콜롬비아 (Colombia)</h2>
+          <p>콜롬비아는 세계 3위의 커피 생산국으로, 연중 수확이 가능한 기후 덕분에 안정적인 품질을 유지합니다. 우일라(Huila), 나리뇨(Nariño), 안티오키아(Antioquia) 등이 주요 산지입니다.</p>
+          <ul>
+            <li><strong>향미 프로필:</strong> 캐러멜, 헤이즐넛, 오렌지 등 달콤한 균형감</li>
+            <li><strong>산미:</strong> 중간 밝기의 깨끗한 산미</li>
+            <li><strong>재배 고도:</strong> 1,200~2,000m</li>
+            <li><strong>대표 가공:</strong> 워시드(Washed) 가공이 주류로, 클린컵이 뛰어남</li>
+          </ul>
+
+          <h2>브라질 (Brazil)</h2>
+          <p>세계 최대 커피 생산국인 브라질은 전 세계 생산량의 약 30%를 차지합니다. 미나스 제라이스(Minas Gerais), 상파울루(São Paulo) 등에서 대규모 농장 위주로 재배됩니다.</p>
+          <ul>
+            <li><strong>향미 프로필:</strong> 초콜릿, 견과류, 카라멜 등 고소하고 묵직한 풍미</li>
+            <li><strong>산미:</strong> 낮은 산미, 부드럽고 둥근 맛</li>
+            <li><strong>재배 고도:</strong> 600~1,400m (상대적 저지대)</li>
+            <li><strong>대표 가공:</strong> 내추럴, 펄프드 내추럴(Pulped Natural)</li>
+          </ul>
+
+          <h2>산지별 비교 요약</h2>
+          <table class="info-table">
+            <thead>
+              <tr><th>항목</th><th>에티오피아</th><th>콜롬비아</th><th>브라질</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>대표 향미</strong></td><td>블루베리, 재스민</td><td>캐러멜, 오렌지</td><td>초콜릿, 견과류</td></tr>
+              <tr><td><strong>산미</strong></td><td>높음 (밝고 화사)</td><td>중간 (깨끗)</td><td>낮음 (부드러움)</td></tr>
+              <tr><td><strong>바디</strong></td><td>가벼움~중간</td><td>중간</td><td>묵직함</td></tr>
+              <tr><td><strong>재배 고도</strong></td><td>1,500~2,200m</td><td>1,200~2,000m</td><td>600~1,400m</td></tr>
+              <tr><td><strong>주요 가공</strong></td><td>내추럴 / 워시드</td><td>워시드</td><td>내추럴 / 펄프드 내추럴</td></tr>
+            </tbody>
+          </table>
+
+          <h2>가공 방식이 맛에 미치는 영향</h2>
+          <p><strong>내추럴(Natural/건식):</strong> 커피 체리를 통째로 건조하여 과일향·발효 뉘앙스가 강해집니다. 에티오피아의 대표적인 방식입니다.</p>
+          <p><strong>워시드(Washed/습식):</strong> 과육을 제거한 뒤 발효·수세 과정을 거쳐 깨끗한 산미와 플로럴 노트가 살아납니다. 콜롬비아에서 주로 사용됩니다.</p>
+          <p><strong>펄프드 내추럴(Pulped Natural):</strong> 과육만 제거하고 점액질(Mucilage)을 남긴 채 건조하여 단맛과 바디감이 동시에 살아나며, 브라질에서 많이 사용됩니다.</p>
+
+          <div class="exam-tip">시험 포인트: 산지 → 가공방식 → 향미 프로필 연결 고리를 반드시 숙지하세요. 특히 에티오피아=내추럴=과일향, 콜롬비아=워시드=클린컵, 브라질=견과류·초콜릿의 패턴이 자주 출제됩니다.</div>
+        `
       },
       {
-        id: 1, emoji: "ð±", category: "ì»¤í¼íê°ë¡ ",
-        title: "ìë¼ë¹ì¹´ vs ë¡ë¶ì¤í: ìë²½ ë¹êµ ê°ì´ë",
+        id: 1, emoji: "🌱", category: "커피학개론",
+        title: "아라비카 vs 로부스타: 완벽 비교 가이드",
         date: "2024.01.15",
-        body: '<p>ì  ì¸ê³ ì»¤í¼ ìì°ëì ëë¶ë¶ì ì°¨ì§íë ë íì¢, ìë¼ë¹ì¹´(Arabica)ì ë¡ë¶ì¤í(Robusta)ë ì´ë¤ ì°¨ì´ê° ììê¹ì? ë¨ìí ë§ì ì°¨ì´ë¥¼ ëì´ ì¬ë°° íê²½ê³¼ ííì  ì±ë¶ê¹ì§ ìì¸í íí¤ì³ ë´ëë¤.</p><ul><li><strong>ì¬ë°° ê³ ë:</strong> ìë¼ë¹ì¹´ë 800~2,000m ê³ ì§ë, ë¡ë¶ì¤íë 0~800m ì ì§ëìì ì¬ë°°ë©ëë¤.</li><li><strong>ì¹´íì¸ í¨ë:</strong> ë¡ë¶ì¤íë ìë¼ë¹ì¹´ë³´ë¤ ì½ 2ë°° ë ë§ì ì¹´íì¸ì í¨ì í´ ë³ì¶©í´ì ê°í©ëë¤.</li><li><strong>í¥ë¯¸ í¹ì§:</strong> ìë¼ë¹ì¹´ë ì°ë¯¸ì í¥ê¸°ê° íë¶íë©°, ë¡ë¶ì¤íë ë°ëê°ì´ ë¬µì§íê³  êµ¬ìí ë§ì´ í¹ì§ìëë¤.</li></ul><p>ìê²©ìíìì ì´ ë íì¢ì í¹ì§ì ë¹êµíë ë¬¸ì ê° ë¨ê³¨ë¡ ì¶ì ëë¯ë¡ ëªíí êµ¬ë¶í´ ëì¸ì.</p><div class="exam-tip">ð¡ ìí í¬ì¸í¸: ìë¼ë¹ì¹´(ê³ ì§ëÂ·ì°ë¯¸Â·í¥ê¸°) vs ë¡ë¶ì¤í(ì ì§ëÂ·ì¹´íì¸2ë°°Â·ë°ëê°)</div>'
+        body: `
+          <p>전 세계 커피 생산량의 대부분을 차지하는 두 품종, 아라비카(Arabica)와 로부스타(Robusta)는 어떤 차이가 있을까요? 단순히 맛의 차이를 넘어 재배 환경, 화학적 성분, 활용 분야까지 상세히 파헤쳐 봅니다.</p>
+
+          <h2>기원과 재배 환경</h2>
+          <p><strong>아라비카(Coffea arabica)</strong>는 에티오피아 고원이 원산지로, 해발 800~2,000m의 고지대에서 재배됩니다. 서늘한 기후와 풍부한 강수량을 필요로 하며, 병충해에 취약한 편입니다.</p>
+          <p><strong>로부스타(Coffea canephora)</strong>는 아프리카 콩고 분지 원산으로, 해발 0~800m의 저지대에서도 잘 자랍니다. 고온 다습한 환경에 강하고, 병충해 저항력이 뛰어납니다.</p>
+
+          <h2>화학 성분 비교</h2>
+          <table class="info-table">
+            <thead>
+              <tr><th>성분</th><th>아라비카</th><th>로부스타</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>카페인</strong></td><td>0.8~1.4%</td><td>1.7~4.0% (약 2배)</td></tr>
+              <tr><td><strong>당류</strong></td><td>6~9%</td><td>3~7%</td></tr>
+              <tr><td><strong>지질(오일)</strong></td><td>15~17%</td><td>10~11.5%</td></tr>
+              <tr><td><strong>클로로겐산</strong></td><td>5.5~8%</td><td>7~10% (쓴맛 원인)</td></tr>
+            </tbody>
+          </table>
+          <p>로부스타의 높은 카페인 함량은 자연적인 병충해 방어 수단이 됩니다. 반면 아라비카는 당류와 지질이 풍부해 복합적인 향미를 만들어냅니다.</p>
+
+          <h2>향미 특성</h2>
+          <ul>
+            <li><strong>아라비카:</strong> 밝은 산미, 풍부한 향기(꽃·과일·견과류), 부드러운 바디감. 스페셜티 커피의 주력 품종</li>
+            <li><strong>로부스타:</strong> 강한 바디감, 고무·나무 같은 거친 풍미, 진한 크레마 형성. 에스프레소 블렌드의 베이스에 주로 사용</li>
+          </ul>
+
+          <h2>활용 분야</h2>
+          <p>아라비카는 싱글 오리진, 드립 커피, 스페셜티 등 프리미엄 시장에서 주로 소비됩니다. 로부스타는 인스턴트 커피, 에스프레소 블렌드(크레마 강화용), 가공 식품 등에 널리 활용됩니다.</p>
+          <p>최근에는 파인 로부스타(Fine Robusta)라는 고급 로부스타 시장도 형성되어, 품종 간 경계가 점차 흐려지는 추세입니다.</p>
+
+          <div class="exam-tip">시험 포인트: 아라비카(고지대·산미·향기·카페인 적음) vs 로부스타(저지대·카페인 2배·바디감·크레마)를 명확히 구분하세요. 카페인 함량 수치까지 출제됩니다.</div>
+        `
       },
       {
-        id: 2, emoji: "ð¥", category: "ë¡ì¤í",
-        title: "ë¡ì¤íì ë§ë²: ìëê° ìëê° ëë ê³¼ì ",
+        id: 2, emoji: "🔥", category: "로스팅",
+        title: "로스팅의 마법: 생두가 원두가 되는 과정",
         date: "2024.01.20",
-        body: '<p>ìëì ì´ì ê°íì¬ ì»¤í¼ ê³ ì ì ë§ê³¼ í¥ì ëì´ë´ë ë¡ì¤í(Roasting). ë¨ê³ì ë°ë¼ ë³ííë ë¬¼ë¦¬ì , ííì  ì±ì§ì ììë´ëë¤.</p><ul><li><strong>ê±´ì¡° ë¨ê³ (Drying Phase):</strong> ìë ë´ë¶ì ìë¶ì´ ì¦ë°íë©° ë¸ëìì¼ë¡ ë³íë ìê¸°ìëë¤.</li><li><strong>1ì°¨ í¬ë (First Crack):</strong> ì¡°ì§ì´ í½ì°½íë©° íí ìë¦¬ì ëª¨ë í¥ê¸° ì±ë¶ì´ ë³¸ê²© íì±ë©ëë¤.</li><li><strong>ë°°ì ë (Roast Degree):</strong> ë¼ì´í¸âë¯¸ëìâë¤í¬, ë°°ì ëê° ëììë¡ ì°ë¯¸ë ì¤ê³  ì´ë§Â·ë°ëê°ì´ ì¦ê°í©ëë¤.</li></ul><p>ìëì ì°ì§ì íì¢ì ë§ë ìµì  ë°°ì ëë¥¼ ë°ë ê²ì´ ë¡ì¤í°ì íµì¬ ì­í ìëë¤.</p><div class="exam-tip">ð¡ ìí í¬ì¸í¸: ë¼ì´í¸(ì°ë¯¸â) â ë¯¸ëì(ê· í) â ë¤í¬(ì´ë§Â·ë°ëê°â)</div>'
+        body: `
+          <p>생두(Green Bean)에 열을 가하여 커피 고유의 맛과 향을 끌어내는 로스팅(Roasting)은 커피의 운명을 결정짓는 가장 중요한 공정입니다. 단계에 따라 극적으로 변화하는 물리적·화학적 성질을 알아봅니다.</p>
+
+          <h2>로스팅의 3단계</h2>
+
+          <h2>1단계: 건조 (Drying Phase)</h2>
+          <p>투입 직후부터 약 150°C까지의 구간입니다. 생두 내부의 수분(10~12%)이 서서히 증발하며, 연한 초록색에서 노란색으로 변합니다. 이 단계에서 풋내(Grassy aroma)가 나며, 전체 로스팅 시간의 약 40~50%를 차지합니다.</p>
+
+          <h2>2단계: 마이야르 반응 & 캐러멜화 (Browning Phase)</h2>
+          <p>약 150~200°C 구간에서 마이야르 반응(Maillard Reaction)이 본격 시작됩니다. 아미노산과 환원당이 반응하여 멜라노이딘(갈색 색소)과 수백 가지 향미 화합물이 생성됩니다.</p>
+          <ul>
+            <li><strong>마이야르 반응:</strong> 캐러멜, 견과류, 빵 굽는 향 등 복합적인 풍미 형성</li>
+            <li><strong>캐러멜화:</strong> 당류가 분해되어 달콤한 향과 갈색으로의 색 변화 유도</li>
+            <li><strong>스트레커 분해:</strong> 아미노산이 분해되며 알데히드 계열 향 화합물 생성</li>
+          </ul>
+
+          <h2>3단계: 1차 크랙 이후 (Development Phase)</h2>
+          <p>약 196~205°C에서 '팝' 또는 '탁' 하는 소리와 함께 <strong>1차 크랙(First Crack)</strong>이 발생합니다. 내부 수증기 압력이 세포벽을 파열시키는 현상으로, 이 시점부터 본격적인 '커피다운' 향미가 나타납니다.</p>
+          <p>약 224°C 이상에서는 <strong>2차 크랙(Second Crack)</strong>이 발생하며, 오일이 표면으로 분출됩니다. 이 이후는 다크 로스트 영역입니다.</p>
+
+          <h2>배전도별 특징</h2>
+          <table class="info-table">
+            <thead>
+              <tr><th>배전도</th><th>온도 범위</th><th>특징</th><th>대표 향미</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>라이트</strong></td><td>180~205°C</td><td>1차 크랙 직후, 산지 특성이 가장 선명</td><td>꽃, 과일, 밝은 산미</td></tr>
+              <tr><td><strong>미디엄</strong></td><td>210~220°C</td><td>산미와 바디의 균형</td><td>캐러멜, 견과류, 초콜릿</td></tr>
+              <tr><td><strong>다크</strong></td><td>225°C 이상</td><td>2차 크랙 이후, 오일 표면 분출</td><td>스모키, 쓴맛, 묵직한 바디</td></tr>
+            </tbody>
+          </table>
+
+          <p>배전도가 높아질수록 산미는 줄고 쓴맛·바디감이 증가합니다. 반대로 라이트 로스트는 산지 고유의 향미(테루아)를 가장 잘 표현합니다.</p>
+
+          <div class="exam-tip">시험 포인트: 라이트(산미↑·향기↑) → 미디엄(균형) → 다크(쓴맛·바디↑) 흐름과, 1차 크랙(~200°C)·2차 크랙(~224°C) 온도를 기억하세요.</div>
+        `
       },
       {
-        id: 3, emoji: "â", category: "ì¶ì¶",
-        title: "ìì¤íë ì ì¶ì¶ì 4ë ìì",
+        id: 3, emoji: "☕", category: "추출",
+        title: "에스프레소 추출의 4대 요소",
         date: "2024.01.25",
-        body: '<p>ìë²½í í ìì ìì¤íë ìë¥¼ ìí´ ë°ë¦¬ì¤íê° ì¡°ì í´ì¼ í  íµì¬ ììë¤ìëë¤.</p><ul><li><strong>ë¶ìë (Grinding):</strong> ìì í¬ê¸°ì ë°ë¼ ì¶ì¶ ìëì ì±ë¶ í¨ëì´ ë¬ë¼ì§ëë¤. ê³±ê²âê³¼ë¤ì¶ì¶, êµµê²âê³¼ìì¶ì¶.</li><li><strong>ëì§ (Dosing):</strong> ë°ì¤ì¼ì ë´ë ìëì ìì ì¼ì íê² ì ì§í©ëë¤. ëë¸ ê¸°ì¤ 14~20g.</li><li><strong>ë ë²¨ë§ &amp; í¬í:</strong> ë¬¼ì´ ê³ ë¥´ê² íë¥´ëë¡ ì»¤í¼ í½ì ë°ëë¥¼ ê· ì¼íê² ë§ë­ëë¤. ì½ 15~20kg ìë ¥.</li><li><strong>ì¶ì¶ ìê° (Extraction Time):</strong> 25~30ì´ê° ìµì . ì§§ì¼ë©´ ì ë§, ê¸¸ë©´ ì´ë§ì´ ê°í´ì§ëë¤.</li></ul><p>4ììë ìë¡ ì°ê²°ëë¯ë¡ ê¸°ì¤ì ì ì íê³  í ë²ì íëì© ë³ìë¥¼ ì¡°ì íë ê²ì´ ì¬ë°ë¥¸ ì¸í ë°©ë²ìëë¤.</p><div class="exam-tip">ð¡ ìí í¬ì¸í¸: ë¶ìëÂ·ëì§Â·í¬íÂ·ì¶ì¶ìê° 4ììì ê° ì ì  ìì¹ë¥¼ ìê¸°íì¸ì</div>'
+        body: `
+          <p>완벽한 한 잔의 에스프레소를 위해 바리스타가 반드시 이해하고 조절해야 할 4가지 핵심 변수가 있습니다. 이 요소들은 서로 밀접하게 연결되어 있으며, 하나를 바꾸면 나머지에도 영향을 미칩니다.</p>
+
+          <h2>1. 분쇄도 (Grinding Size)</h2>
+          <p>원두를 얼마나 곱게 또는 굵게 갈 것인지를 결정합니다. 에스프레소는 다른 추출 방식보다 훨씬 고운 분쇄를 필요로 합니다.</p>
+          <ul>
+            <li><strong>너무 곱게 갈 경우:</strong> 물이 커피 층을 통과하기 어려워 추출 시간이 길어지고, 과다추출(Over-extraction)이 발생합니다. 쓴맛과 떫은 맛이 강해집니다.</li>
+            <li><strong>너무 굵게 갈 경우:</strong> 물이 빠르게 통과하여 추출 시간이 짧아지고, 과소추출(Under-extraction)이 됩니다. 신맛과 밍밍한 맛이 납니다.</li>
+            <li><strong>적정 기준:</strong> 백설탕과 소금 사이의 입자 크기, 손으로 비볐을 때 뭉치지 않고 흩어지는 정도</li>
+          </ul>
+
+          <h2>2. 도징 (Dosing)</h2>
+          <p>포터필터 바스켓에 담는 원두의 양을 말합니다. 도징량은 추출 농도와 맛의 밸런스에 직접적인 영향을 줍니다.</p>
+          <ul>
+            <li><strong>싱글 바스켓:</strong> 7~10g</li>
+            <li><strong>더블 바스켓:</strong> 14~20g (가장 일반적)</li>
+            <li><strong>브루잉 비율(Brew Ratio):</strong> 도징량 대비 추출량의 비율. 예: 18g 투입 → 36g 추출 = 1:2 비율</li>
+          </ul>
+          <p>도징량을 일정하게 유지하는 것이 재현성 있는 추출의 첫 번째 조건입니다. 전자저울 사용이 필수입니다.</p>
+
+          <h2>3. 레벨링 & 탬핑 (Leveling & Tamping)</h2>
+          <p>바스켓에 담긴 커피 가루의 밀도를 균일하게 만드는 과정입니다. 불균일하면 물이 약한 부분으로 편향되는 <strong>채널링(Channeling)</strong> 현상이 발생합니다.</p>
+          <ul>
+            <li><strong>레벨링(Distribution):</strong> 탬핑 전 커피 가루를 고르게 분배. WDT(Weiss Distribution Technique) 도구나 손가락으로 수행</li>
+            <li><strong>탬핑 압력:</strong> 약 15~20kg의 일정한 수직 압력. 중요한 것은 압력의 세기보다 수평·균일성</li>
+            <li><strong>폴리시(Polish):</strong> 탬핑 후 표면을 가볍게 회전시켜 마무리</li>
+          </ul>
+
+          <h2>4. 추출 시간 (Extraction Time)</h2>
+          <p>펌프 작동부터 에스프레소가 추출 완료되기까지의 시간을 말합니다.</p>
+          <table class="info-table">
+            <thead>
+              <tr><th>추출 상태</th><th>시간</th><th>맛 특성</th><th>원인</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><strong>과소추출</strong></td><td>20초 미만</td><td>신맛, 밍밍함, 얇은 바디</td><td>분쇄 너무 굵음, 도징 부족</td></tr>
+              <tr><td><strong>적정 추출</strong></td><td>25~30초</td><td>단맛·산미·쓴맛 균형, 풍부한 크레마</td><td>모든 변수 최적화</td></tr>
+              <tr><td><strong>과다추출</strong></td><td>35초 이상</td><td>쓴맛, 떫은 맛, 탄 느낌</td><td>분쇄 너무 곱음, 도징 과다</td></tr>
+            </tbody>
+          </table>
+
+          <h2>4요소의 상호 관계</h2>
+          <p>이 4가지 요소는 독립적이지 않고 서로 맞물려 있습니다. 예를 들어:</p>
+          <ul>
+            <li>분쇄도를 곱게 하면 → 추출 시간이 길어짐 → 도징량을 줄이거나 탬핑 압력을 낮춰 보정</li>
+            <li>도징량을 늘리면 → 추출 저항 증가 → 분쇄도를 약간 굵게 조절</li>
+          </ul>
+          <p>올바른 세팅 방법은 <strong>기준점을 먼저 정하고, 한 번에 하나의 변수만 조절</strong>하는 것입니다. 여러 변수를 동시에 바꾸면 원인 파악이 불가능해집니다.</p>
+
+          <div class="exam-tip">시험 포인트: 분쇄도·도징·탬핑·추출시간 4요소와 각 적정 수치(더블 14~20g, 15~20kg 압력, 25~30초)를 반드시 암기하세요. 과소/과다 추출 원인 연결도 필수입니다.</div>
+        `
       }
     ];
 
@@ -64,10 +241,15 @@
     const container = document.getElementById('content');
 
     if (!article) {
-      container.innerHTML = '<p style="color:#94a3b8;text-align:center;padding:60px 0">ê¸ì ì°¾ì ì ììµëë¤.</p>';
+      container.innerHTML = '<p style="color:#94a3b8;text-align:center;padding:60px 0">글을 찾을 수 없습니다.</p>';
     } else {
-      document.title = article.title + ' | ì¼ì¤ì';
-      container.innerHTML = `<div class="category-badge">${article.emoji} ${article.category}</div><h1 class="article-title">${article.title}</h1><div class="article-meta">${article.date}</div><div class="article-body">${article.body}</div>`;
+      document.title = article.title + ' | 센스원';
+      container.innerHTML = `
+        <div class="category-badge">${article.emoji} ${article.category}</div>
+        <h1 class="article-title">${article.title}</h1>
+        <div class="article-meta">${article.date}</div>
+        <div class="article-body">${article.body}</div>
+      `;
     }
   </script>
 </body>

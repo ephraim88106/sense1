@@ -22,7 +22,7 @@ class MainHeader extends HTMLElement {
                 header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border-bottom: 1px solid #e9edc9; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
                 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; height: 80px; }
                 .logo { font-size: 1.6rem; font-weight: 900; color: #3b2f2f; text-decoration: none; letter-spacing: -1px; }
-                nav ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; align-items: center; }
+                nav > ul { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; align-items: center; }
                 nav li { position: relative; }
                 nav a { text-decoration: none; color: #2b2d42; font-weight: 700; font-size: 1rem; transition: 0.3s; }
                 nav a:hover, nav a.active { color: #d4a373; }
@@ -30,8 +30,15 @@ class MainHeader extends HTMLElement {
                 .btn-login:hover { background: #d4a373; }
                 .user-info { font-size: 0.9rem; font-weight: 700; color: #3b2f2f; margin-right: 15px; }
                 .has-dropdown:hover .dropdown { opacity: 1; visibility: visible; transform: translateY(0); }
-                .dropdown { position: absolute; top: 100%; left: 0; background: white; min-width: 180px; padding: 10px 0; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transform: translateY(10px); transition: 0.3s; border: 1px solid #eee; }
+                .dropdown { list-style: none; position: absolute; top: 100%; left: 0; background: white; min-width: 180px; padding: 10px 0; margin: 0; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); opacity: 0; visibility: hidden; transform: translateY(10px); transition: 0.3s; border: 1px solid #eee; display: flex; flex-direction: column; gap: 0; }
+                .dropdown li { width: 100%; }
                 .dropdown a { padding: 10px 20px; display: block; font-size: 0.9rem; color: #8d99ae; font-weight: 500; }
+                .dropdown a:hover { background: #f8f9fa; color: #3b2f2f; }
+                @media (max-width: 768px) {
+                    .container { flex-direction: column; height: auto; padding: 15px 20px; gap: 10px; }
+                    nav > ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+                    .dropdown { position: static; box-shadow: none; border: none; border-radius: 0; background: #f8f9fa; padding: 5px 0; opacity: 1; visibility: visible; transform: none; min-width: auto; }
+                }
                 .dropdown a:hover { background: #f8f9fa; color: #3b2f2f; }
             </style>
             <header>
