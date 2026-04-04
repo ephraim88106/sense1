@@ -52,6 +52,7 @@ class MainHeader extends HTMLElement {
                                 <a href="about.html" class="${activePage === 'info' ? 'active' : ''}">정보센터</a>
                                 <ul class="dropdown">
                                     <li><a href="notice.html">공지사항</a></li>
+                                    <li><a href="board.html">커뮤니티</a></li>
                                     <li><a href="qna.html">Q&A 게시판</a></li>
                                     <li><a href="about.html">사이트 소개</a></li>
                                     <li><a href="contact.html">고객센터/문의</a></li>
