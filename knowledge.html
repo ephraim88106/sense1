@@ -23,68 +23,7 @@
     </section>
 
     <section class="container section no-border">
-      <div class="info-hub" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
-
-        <a href="knowledge-article.html?id=4" style="text-decoration: none; color: inherit;">
-          <article class="info-box" style="height: 100%; cursor: pointer; transition: transform 0.2s; display: flex; flex-direction: column;">
-            <div style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px;">
-              <span style="font-size: 2rem;">☕</span>
-              <div>
-                <span style="font-size: 0.72rem; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 10px; font-weight: 700;">커피학개론</span>
-                <h3 style="margin: 6px 0 4px; font-size: 1rem;">원두 산지별 특징 비교: 에티오피아, 콜롬비아, 브라질</h3>
-                <p style="color: var(--text-muted); font-size: 0.8rem;">2026.04.04</p>
-              </div>
-            </div>
-            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; flex: 1;">스페셜티 커피 시장이 성장하면서 원두 산지는 바리스타와 커피 애호가 모두에게 핵심 키워드가 되었습니다.</p>
-            <div style="margin-top: 14px; color: #0ea5e9; font-size: 0.85rem; font-weight: 600;">자세히 보기 →</div>
-          </article>
-        </a>
-
-        <a href="knowledge-article.html?id=1" style="text-decoration: none; color: inherit;">
-          <article class="info-box" style="height: 100%; cursor: pointer; transition: transform 0.2s; display: flex; flex-direction: column;">
-            <div style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px;">
-              <span style="font-size: 2rem;">🌱</span>
-              <div>
-                <span style="font-size: 0.72rem; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 10px; font-weight: 700;">커피학개론</span>
-                <h3 style="margin: 6px 0 4px; font-size: 1rem;">아라비카 vs 로부스타: 완벽 비교 가이드</h3>
-                <p style="color: var(--text-muted); font-size: 0.8rem;">2024.01.15</p>
-              </div>
-            </div>
-            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; flex: 1;">전 세계 커피 생산량의 대부분을 차지하는 두 품종, 아라비카와 로부스타는 어떤 차이가 있을까요?</p>
-            <div style="margin-top: 14px; color: #0ea5e9; font-size: 0.85rem; font-weight: 600;">자세히 보기 →</div>
-          </article>
-        </a>
-
-        <a href="knowledge-article.html?id=2" style="text-decoration: none; color: inherit;">
-          <article class="info-box" style="height: 100%; cursor: pointer; transition: transform 0.2s; display: flex; flex-direction: column;">
-            <div style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px;">
-              <span style="font-size: 2rem;">🔥</span>
-              <div>
-                <span style="font-size: 0.72rem; background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 10px; font-weight: 700;">로스팅</span>
-                <h3 style="margin: 6px 0 4px; font-size: 1rem;">로스팅의 마법: 생두가 원두가 되는 과정</h3>
-                <p style="color: var(--text-muted); font-size: 0.8rem;">2024.01.20</p>
-              </div>
-            </div>
-            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; flex: 1;">생두에 열을 가하여 커피 고유의 맛과 향을 끌어내는 로스팅. 단계에 따라 변화하는 성질을 알아봅니다.</p>
-            <div style="margin-top: 14px; color: #0ea5e9; font-size: 0.85rem; font-weight: 600;">자세히 보기 →</div>
-          </article>
-        </a>
-
-        <a href="knowledge-article.html?id=3" style="text-decoration: none; color: inherit;">
-          <article class="info-box" style="height: 100%; cursor: pointer; transition: transform 0.2s; display: flex; flex-direction: column;">
-            <div style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 12px;">
-              <span style="font-size: 2rem;">☕</span>
-              <div>
-                <span style="font-size: 0.72rem; background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 10px; font-weight: 700;">추출</span>
-                <h3 style="margin: 6px 0 4px; font-size: 1rem;">에스프레소 추출의 4대 요소</h3>
-                <p style="color: var(--text-muted); font-size: 0.8rem;">2024.01.25</p>
-              </div>
-            </div>
-            <p style="font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; flex: 1;">완벽한 한 잔의 에스프레소를 위해 바리스타가 조절해야 할 핵심 요소들을 상세히 알아봅니다.</p>
-            <div style="margin-top: 14px; color: #0ea5e9; font-size: 0.85rem; font-weight: 600;">자세히 보기 →</div>
-          </article>
-        </a>
-
+      <div id="knowledge-cards" class="info-hub" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px;">
       </div>
     </section>
 
@@ -108,5 +47,27 @@
   </main>
   <main-footer></main-footer>
   <script src="main.js" type="module"></script>
+  <script type="module">
+    import { knowledgeArticles } from './knowledge-data.js';
+    const container = document.getElementById('knowledge-cards');
+    if (container) {
+      container.innerHTML = knowledgeArticles.map(a => `
+        <a href="knowledge-article.html?id=${a.id}" style="text-decoration:none;color:inherit;">
+          <article class="info-box" style="height:100%;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;">
+            <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;">
+              <span style="font-size:2rem;">${a.emoji}</span>
+              <div>
+                <span style="font-size:0.72rem;background:${a.categoryColor.bg};color:${a.categoryColor.text};padding:2px 8px;border-radius:10px;font-weight:700;">${a.category}</span>
+                <h3 style="margin:6px 0 4px;font-size:1rem;">${a.title}</h3>
+                <p style="color:var(--text-muted);font-size:0.8rem;">${a.date}</p>
+              </div>
+            </div>
+            <p style="font-size:0.9rem;color:var(--text-muted);line-height:1.6;flex:1;">${a.summary}</p>
+            <div style="margin-top:14px;color:#0ea5e9;font-size:0.85rem;font-weight:600;">자세히 보기 &rarr;</div>
+          </article>
+        </a>
+      `).join('');
+    }
+  </script>
 </body>
 </html>

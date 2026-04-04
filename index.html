@@ -85,6 +85,17 @@
 
         <section class="container section no-border">
             <div class="section-title">
+                <h2>최신 <span class="highlight">커피 지식</span></h2>
+                <p>매일 업데이트되는 전문 커피 아티클을 확인하세요.</p>
+            </div>
+            <div id="latest-articles" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;"></div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="knowledge.html" class="btn-cert" style="padding: 12px 32px;">커피 지식 더보기 ➔</a>
+            </div>
+        </section>
+
+        <section class="container section no-border">
+            <div class="section-title">
                 <h2>왜 <span class="highlight">KCA 포털</span>인가요?</h2>
                 <p>우리는 단순한 정보 전달을 넘어 사용자의 합격을 최우선으로 생각합니다.</p>
             </div>
@@ -125,5 +136,28 @@
 
     <main-footer></main-footer>
     <script src="main.js" type="module"></script>
+    <script type="module">
+        import { knowledgeArticles } from './knowledge-data.js';
+        const container = document.getElementById('latest-articles');
+        if (container) {
+            const latest = knowledgeArticles.slice(0, 4);
+            container.innerHTML = latest.map(a => `
+                <a href="knowledge-article.html?id=${a.id}" style="text-decoration:none;color:inherit;">
+                    <article class="info-box" style="height:100%;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;">
+                        <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;">
+                            <span style="font-size:2rem;">${a.emoji}</span>
+                            <div>
+                                <span style="font-size:0.72rem;background:${a.categoryColor.bg};color:${a.categoryColor.text};padding:2px 8px;border-radius:10px;font-weight:700;">${a.category}</span>
+                                <h3 style="margin:6px 0 4px;font-size:1rem;">${a.title}</h3>
+                                <p style="color:#8d99ae;font-size:0.8rem;">${a.date}</p>
+                            </div>
+                        </div>
+                        <p style="font-size:0.9rem;color:#8d99ae;line-height:1.6;flex:1;">${a.summary}</p>
+                        <div style="margin-top:14px;color:#0ea5e9;font-size:0.85rem;font-weight:600;">자세히 보기 &rarr;</div>
+                    </article>
+                </a>
+            `).join('');
+        }
+    </script>
 </body>
 </html>
