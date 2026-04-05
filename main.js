@@ -105,7 +105,7 @@ class MainFooter extends HTMLElement {
                     <div class="info">
                         <p><strong>KCA 바리스타 학습 포털</strong> | 합격을 위한 최적의 파트너</p>
                         <p>전문적인 기출문제 해설과 상세한 시험 가이드를 제공합니다.</p>
-                        <p>© 2024 KCA Portal. All rights reserved.</p>
+                        <p>© 2024-2026 KCA Portal. All rights reserved.</p>
                     </div>
                     <div class="links">
                         <a href="about.html">소개</a>

@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 7, emoji: "🧬", category: "품종 & 가공법",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "게이샤만 알면 늦습니다 — 2026년 커피 품종과 가공법의 모든 것",
+    date: "2026.04.06",
+    summary: "게이샤, SL28부터 혐기성 발효, 공동 발효까지. 2026년 스페셜티 커피의 최전선을 총정리합니다.",
+    link: "coffee-article-2026-04-06.html"
+  },
+  {
     id: 5, emoji: "💧", category: "추출",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "물의 과학: 커피 맛을 좌우하는 숨은 변수",

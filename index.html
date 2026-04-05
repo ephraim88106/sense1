@@ -142,7 +142,7 @@
         if (container) {
             const latest = knowledgeArticles.slice(0, 4);
             container.innerHTML = latest.map(a => `
-                <a href="knowledge-article.html?id=${a.id}" style="text-decoration:none;color:inherit;">
+                <a href="${a.link || 'knowledge-article.html?id=' + a.id}" style="text-decoration:none;color:inherit;">
                     <article class="info-box" style="height:100%;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;">
                         <div style="display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;">
                             <span style="font-size:2rem;">${a.emoji}</span>

@@ -1,7 +1,14 @@
 User-agent: *
 Allow: /
+
+Disallow: /firebase-config.js
+Disallow: /questions.js
 Disallow: /firebase-debug.log
 Disallow: /kca.html
 Disallow: /text_kca.txt
+Disallow: /.firebase/
+
+User-agent: Googlebot
+Allow: /
 
 Sitemap: https://kca-portal.com/sitemap.xml
