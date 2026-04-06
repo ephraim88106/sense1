@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 8, emoji: "🧪", category: "품종 & 가공법",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "2026 스페셜티 커피의 미래: 품종과 가공법이 만드는 맛의 혁명",
+    date: "2026.04.06",
+    summary: "실험적 발효와 코퍼멘테이션이 주도하는 2026 스페셜티 트렌드. 아네로빅·허니·워시드까지 가공법별 향미와 추출 팁을 정리합니다.",
+    link: "coffee-article-2026-04-06-2.html"
+  },
+  {
     id: 7, emoji: "🧬", category: "품종 & 가공법",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "게이샤만 알면 늦습니다 — 2026년 커피 품종과 가공법의 모든 것",
