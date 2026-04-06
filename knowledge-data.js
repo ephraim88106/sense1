@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 9, emoji: "🌊", category: "트렌드",
+    categoryColor: { bg: "#e0f2fe", text: "#0369a1" },
+    title: "2026 스페셜티 커피 대전환: 발효 실험과 펑셔널 커피가 이끄는 새로운 물결",
+    date: "2026.04.07",
+    summary: "코퍼멘테이션, 펑셔널 커피, 지속가능성까지 — 2026년 글로벌 스페셜티 씬을 재편하는 핵심 트렌드를 정리합니다.",
+    link: "coffee-article-2026-04-07.html"
+  },
+  {
     id: 8, emoji: "🧪", category: "품종 & 가공법",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "2026 스페셜티 커피의 미래: 품종과 가공법이 만드는 맛의 혁명",
