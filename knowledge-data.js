@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 10, emoji: "⚗️", category: "추출",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "추출 변수를 알면 커피가 달라진다 — 에스프레소·푸어오버·콜드브루·에어로프레스 완전 해부",
+    date: "2026.04.08",
+    summary: "분쇄도, 물 온도, 추출 시간, 비율까지. 네 가지 대표 추출법의 변수와 레시피를 한눈에 정리합니다.",
+    link: "coffee-article-2026-04-08.html"
+  },
+  {
     id: 9, emoji: "🌊", category: "트렌드",
     categoryColor: { bg: "#e0f2fe", text: "#0369a1" },
     title: "2026 스페셜티 커피 대전환: 발효 실험과 펑셔널 커피가 이끄는 새로운 물결",
