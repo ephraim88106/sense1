@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 11, emoji: "🔥", category: "로스팅",
+    categoryColor: { bg: "#fee2e2", text: "#991b1b" },
+    title: "원두가 커피가 되는 과학 — 마이야르 반응부터 디개싱까지, 로스터가 숨긴 진짜 이야기",
+    date: "2026.04.09",
+    summary: "마이야르 반응, 캐러멜화, 1·2차 크랙, DTR, 디개싱, 보관까지 — 로스팅의 전 과정을 과학적으로 풀어봅니다.",
+    link: "coffee-article-2026-04-09.html"
+  },
+  {
     id: 10, emoji: "⚗️", category: "추출",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "추출 변수를 알면 커피가 달라진다 — 에스프레소·푸어오버·콜드브루·에어로프레스 완전 해부",
