@@ -692,6 +692,28 @@ class HomePostBoard extends HTMLElement {
 }
 customElements.define('home-post-board', HomePostBoard);
 
+// Kakao AdFit 사이드 광고 자동 삽입 (모든 페이지)
+(function() {
+    const adContainer = document.createElement('div');
+    adContainer.className = 'kakao-sidebar-ad';
+    adContainer.innerHTML = `
+        <ins class="kakao_ad_area" style="display:none;"
+        data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+        data-ad-width="300"
+        data-ad-height="250"></ins>
+    `;
+    const footer = document.querySelector('main-footer');
+    if (footer) {
+        footer.parentNode.insertBefore(adContainer, footer);
+    } else {
+        document.body.appendChild(adContainer);
+    }
+    const script = document.createElement('script');
+    script.src = '//t1.daumcdn.net/kas/static/ba.min.js';
+    script.async = true;
+    document.body.appendChild(script);
+})();
+
 // Global Initial Load
 document.addEventListener('DOMContentLoaded', () => {
     // Login Form Handler
