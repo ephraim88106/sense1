@@ -1,5 +1,21 @@
 export const knowledgeArticles = [
   {
+    id: 13, emoji: "🎨", category: "라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "라떼아트가 안 예쁜 진짜 이유 — 밀크 스티밍의 물리학을 모르면 영원히 못 그린다",
+    date: "2026.04.10",
+    summary: "마이크로폼의 물리학부터 스티밍 온도, 푸어링 기법까지 — 라떼아트의 과학적 원리를 완전 해부합니다.",
+    link: "coffee-article-2026-04-10-2.html"
+  },
+  {
+    id: 12, emoji: "🌍", category: "산지",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "카페에서 더 자신있게! 에티오피아·콜롬비아·브라질 원두 산지 완전정복",
+    date: "2026.04.10",
+    summary: "에티오피아, 콜롬비아, 브라질 — 3대 산지의 맛 차이를 알면 내 취향에 딱 맞는 커피를 고를 수 있어요.",
+    link: "coffee-article-2026-04-10.html"
+  },
+  {
     id: 11, emoji: "🔥", category: "로스팅",
     categoryColor: { bg: "#fee2e2", text: "#991b1b" },
     title: "원두가 커피가 되는 과학 — 마이야르 반응부터 디개싱까지, 로스터가 숨긴 진짜 이야기",

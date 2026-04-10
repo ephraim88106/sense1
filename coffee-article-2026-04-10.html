@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>카페에서 더 자신있게! 에티오피아·콜롬비아·브라질 원두 산지 완전정복</title>
+  <meta name="description" content="카페 메뉴판에서 에티오피아, 콜롬비아, 브라질을 보고 고민했던 적 있나요? 산지별 맛 차이를 알면 내 취향에 딱 맞는 커피를 고를 수 있어요." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #faf7f2; font-family: 'Noto Sans KR', sans-serif; color: #2c1810; line-height: 1.9; font-size: 16px; }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 24px 80px; }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, #1a3a2a 0%, #2d6a4f 60%, #52b788 100%);
+      padding: 56px 24px 48px; text-align: center; position: relative; overflow: hidden;
+    }
+    header::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='30' cy='30' r='18' fill='none' stroke='rgba(255,255,255,0.05)' stroke-width='2'/%3E%3C/svg%3E") repeat;
+      opacity: 0.6;
+    }
+    .header-inner { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; }
+    .category-badge {
+      display: inline-block; background: rgba(82,183,136,0.85); color: #fff;
+      font-size: 12px; font-weight: 700; letter-spacing: 1.5px; padding: 6px 16px;
+      border-radius: 20px; margin-bottom: 20px;
+    }
+    .pub-date { color: rgba(255,255,255,0.55); font-size: 13px; margin-bottom: 14px; }
+    header h1 { font-size: clamp(22px,4vw,34px); font-weight: 900; color: #fff; line-height: 1.4; text-shadow: 0 2px 12px rgba(0,0,0,0.4); }
+    .header-sub { color: rgba(255,255,255,0.75); font-size: 15px; margin-top: 14px; }
+
+    /* SUMMARY BOX */
+    .summary-box {
+      background: #fff; border-left: 5px solid #2d6a4f; border-radius: 0 12px 12px 0;
+      padding: 24px 28px; margin: 40px 0; box-shadow: 0 4px 20px rgba(45,106,79,0.08);
+    }
+    .summary-box h2 { font-size: 14px; font-weight: 700; color: #2d6a4f; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li { padding: 5px 0 5px 22px; position: relative; font-size: 15px; color: #3a2018; }
+    .summary-box ul li::before { content: '☕'; position: absolute; left: 0; font-size: 13px; top: 6px; }
+
+    /* BODY */
+    .article-body { margin-top: 36px; }
+    .hook {
+      font-size: 18px; font-weight: 500; color: #1a3a2a;
+      border-left: 4px solid #2d6a4f; padding: 12px 20px;
+      background: rgba(45,106,79,0.05); border-radius: 0 8px 8px 0; margin-bottom: 36px; line-height: 1.8;
+    }
+    h2.section-title { font-size: 20px; font-weight: 800; color: #1a3a2a; margin: 44px 0 16px; padding-left: 16px; border-left: 4px solid #52b788; }
+    p { margin-bottom: 18px; color: #3a2018; font-size: 15.5px; }
+    strong { color: #2d6a4f; }
+
+    /* ORIGIN CARDS */
+    .origin-card {
+      background: #fff; border-radius: 16px; padding: 28px; margin: 24px 0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07); border-top: 4px solid var(--accent);
+    }
+    .origin-card h3 { font-size: 18px; font-weight: 900; color: #1a3a2a; margin-bottom: 8px; }
+    .origin-card .subtitle { font-size: 13px; color: #6b8f71; font-weight: 700; margin-bottom: 16px; letter-spacing: 0.5px; }
+    .taste-bar { display: flex; align-items: center; gap: 10px; margin: 8px 0; font-size: 14px; }
+    .taste-label { width: 60px; color: #555; font-weight: 600; flex-shrink: 0; }
+    .bar-track { flex: 1; height: 8px; background: #f0ece8; border-radius: 4px; overflow: hidden; }
+    .bar-fill { height: 100%; border-radius: 4px; background: var(--accent); }
+    .flavor-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+    .flavor-tag { background: #f0faf4; color: #2d6a4f; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 12px; }
+    .cafe-recommend { background: #f0faf4; border-radius: 10px; padding: 12px 16px; margin-top: 14px; font-size: 14px; color: #2d6a4f; }
+
+    /* TIP BOX */
+    .tip-box {
+      background: linear-gradient(135deg, #f0faf4 0%, #d8f3dc 100%);
+      border: 1.5px solid #52b788; border-radius: 14px; padding: 28px 30px; margin: 40px 0;
+    }
+    .tip-box h3 { font-size: 15px; font-weight: 800; color: #2d6a4f; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+    .tip-box h3::before { content: '💡'; }
+    .tip-item { display: flex; gap: 14px; margin-bottom: 16px; align-items: flex-start; }
+    .tip-num { flex-shrink: 0; width: 28px; height: 28px; background: #2d6a4f; color: #fff; font-size: 13px; font-weight: 900; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+    .tip-text { font-size: 15px; color: #3a2018; line-height: 1.75; }
+
+    /* COMPARISON TABLE */
+    .data-table { width: 100%; border-collapse: collapse; margin: 32px 0; font-size: 14px; }
+    .data-table th { background: #2d6a4f; color: #fff; padding: 12px 14px; text-align: left; font-weight: 700; }
+    .data-table th:first-child { border-radius: 8px 0 0 0; }
+    .data-table th:last-child { border-radius: 0 8px 0 0; }
+    .data-table td { padding: 10px 14px; border-bottom: 1px solid #f0e8dd; vertical-align: top; }
+    .data-table tr:nth-child(even) td { background: #f7fbf8; }
+
+    /* ACTION BOX */
+    .action-box { background: linear-gradient(135deg, #2d6a4f 0%, #1a3a2a 100%); border-radius: 16px; padding: 32px 30px; margin: 44px 0; text-align: center; }
+    .action-box h3 { font-size: 18px; font-weight: 900; color: #74c69d; margin-bottom: 14px; }
+    .action-box p { color: rgba(255,255,255,0.85); font-size: 15px; margin: 0; line-height: 1.8; }
+
+    /* FOOTER */
+    footer { margin-top: 60px; padding-top: 28px; border-top: 1px solid #e8ddd4; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .tag { background: #d8f3dc; color: #2d6a4f; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 20px; }
+    .disclaimer { font-size: 12px; color: #a08070; line-height: 1.6; }
+
+    @media (max-width: 600px) {
+      header { padding: 40px 20px 36px; }
+      .container { padding: 0 16px 60px; }
+      h2.section-title { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <div class="category-badge">☕ 커피학개론</div>
+    <div class="pub-date">2026년 4월 10일</div>
+    <h1>카페에서 더 자신있게!<br>에티오피아·콜롬비아·브라질<br>원두 산지 완전정복</h1>
+    <p class="header-sub">산지만 알아도 내 취향에 딱 맞는 커피를 고를 수 있어요 🌍</p>
+  </div>
+</header>
+
+<!-- BODY -->
+<div class="container">
+
+  <!-- 훅 -->
+  <div class="hook">
+    카페 메뉴판에 "에티오피아 예가체프" "콜롬비아 후일라"라고 적혀 있을 때, 어떤 걸 골라야 할지 모르겠어서 그냥 "아메리카노 한 잔이요" 했던 적 있지 않나요? 오늘 이 글을 읽고 나면, 당당하게 "에티오피아 싱글오리진 주세요" 라고 말할 수 있게 됩니다.
+  </div>
+
+  <!-- 핵심 요약 -->
+  <div class="summary-box">
+    <h2>📌 이 글을 읽으면 알 수 있는 것</h2>
+    <ul>
+      <li>에티오피아 원두가 왜 블루베리 향이 나는지</li>
+      <li>콜롬비아가 카페에서 가장 많이 쓰이는 이유</li>
+      <li>브라질 원두가 에스프레소의 기본인 이유</li>
+      <li>내 취향에 맞는 산지를 고르는 3가지 기준</li>
+      <li>카페에서 산지별로 주문할 때 좋은 음료 조합</li>
+    </ul>
+  </div>
+
+  <div class="article-body">
+
+    <!-- 왜 산지가 중요한가 -->
+    <h2 class="section-title">🌍 왜 원두 산지가 맛에 이렇게 큰 영향을 줄까?</h2>
+    <p>
+      와인에 '떼루아(Terroir)'라는 개념이 있죠 — 포도가 자란 토양, 기후, 고도가 맛을 결정한다는 이론. 커피도 똑같습니다.
+      같은 아라비카 품종이라도 <strong>에티오피아 고원</strong>에서 자란 원두와 <strong>브라질 평원</strong>에서 자란 원두는 맛이 완전히 다릅니다.
+    </p>
+    <p>
+      핵심 변수는 세 가지입니다. <strong>고도(高度)</strong>가 높을수록 일교차가 커지고, 원두가 천천히 익으면서 산미와 복잡한 향미가 생깁니다.
+      <strong>토양의 미네랄 성분</strong>이 원두의 단맛과 바디감에 영향을 주고,
+      <strong>가공 방식(내추럴/워시드)</strong>이 과일향 강도를 결정합니다.
+      쉽게 말하면 — 원두가 어디서, 어떻게 자랐느냐가 곧 당신 잔 안의 맛입니다.
+    </p>
+
+    <!-- 에티오피아 -->
+    <h2 class="section-title">🇪🇹 에티오피아 — "커피 덕후들이 제일 사랑하는 산지"</h2>
+    <div class="origin-card" style="--accent: #9b5de5;">
+      <h3>🫐 에티오피아 (Ethiopia)</h3>
+      <div class="subtitle">고도 1,500~2,200m | 내추럴·워시드 가공 | 아라비카 발원지</div>
+
+      <div class="taste-bar">
+        <span class="taste-label">산미</span>
+        <div class="bar-track"><div class="bar-fill" style="width:85%; background:#9b5de5;"></div></div>
+        <span style="font-size:13px;color:#888;">높음</span>
+      </div>
+      <div class="taste-bar">
+        <span class="taste-label">단맛</span>
+        <div class="bar-track"><div class="bar-fill" style="width:75%; background:#9b5de5;"></div></div>
+        <span style="font-size:13px;color:#888;">높음</span>
+      </div>
+      <div class="taste-bar">
+        <span class="taste-label">바디감</span>
+        <div class="bar-track"><div class="bar-fill" style="width:35%; background:#9b5de5;"></div></div>
+        <span style="font-size:13px;color:#888;">가벼움</span>
+      </div>
+
+      <div class="flavor-tags">
+        <span class="flavor-tag">🫐 블루베리</span>
+        <span class="flavor-tag">🌸 재스민</span>
+        <span class="flavor-tag">🍑 복숭아</span>
+        <span class="flavor-tag">🍵 홍차</span>
+        <span class="flavor-tag">🍋 시트러스</span>
+      </div>
+      <div class="cafe-recommend">
+        ☕ <strong>카페에서 이렇게 즐기세요:</strong> 핸드드립(푸어오버) 또는 에어로프레스로 85~88°C 저온 추출하면 꽃향기와 과일향이 극대화됩니다. 아이스로 마셔도 산미가 상큼하게 살아있어 여름에 특히 인기!
+      </div>
+    </div>
+
+    <p>
+      에티오피아는 <strong>커피의 고향</strong>입니다. 9세기경 에티오피아 목동 칼디가 커피 열매를 먹고 흥분한 염소 떼를 발견했다는 전설이 있을 만큼, 커피의 역사 자체가 이 땅에서 시작됐습니다.
+    </p>
+    <p>
+      유명 산지인 <strong>예가체프(Yirgacheffe)</strong>는 "커피의 성지"로 불리며, 꽃향기와 과일향이 화려하게 펼쳐지는 것으로 유명합니다.
+      내추럴(자연 건식) 가공 방식을 거친 에티오피아 원두는 블루베리·딸기 같은 진한 과일 뉘앙스가 나고,
+      워시드(수세식) 원두는 재스민·홍차 같은 섬세한 플로럴 노트가 강조됩니다.
+    </p>
+
+    <!-- 콜롬비아 -->
+    <h2 class="section-title">🇨🇴 콜롬비아 — "누구에게나 맞는 '국민 원두'"</h2>
+    <div class="origin-card" style="--accent: #f77f00;">
+      <h3>🍎 콜롬비아 (Colombia)</h3>
+      <div class="subtitle">고도 1,500~2,200m | 수세식(워시드) 주류 | 연 2회 수확</div>
+
+      <div class="taste-bar">
+        <span class="taste-label">산미</span>
+        <div class="bar-track"><div class="bar-fill" style="width:55%; background:#f77f00;"></div></div>
+        <span style="font-size:13px;color:#888;">중간</span>
+      </div>
+      <div class="taste-bar">
+        <span class="taste-label">단맛</span>
+        <div class="bar-track"><div class="bar-fill" style="width:70%; background:#f77f00;"></div></div>
+        <span style="font-size:13px;color:#888;">높음</span>
+      </div>
+      <div class="taste-bar">
+        <span class="taste-label">바디감</span>
+        <div class="bar-track"><div class="bar-fill" style="width:60%; background:#f77f00;"></div></div>
+        <span style="font-size:13px;color:#888;">중간</span>
+      </div>
+
+      <div class="flavor-tags">
+        <span class="flavor-tag">🍎 사과</span>
+        <span class="flavor-tag">🍯 캐러멜</span>
+        <span class="flavor-tag">🌰 헤이즐넛</span>
+        <span class="flavor-tag">🍊 오렌지</span>
+        <span class="flavor-tag">🍫 밀크초콜릿</span>
+      </div>
+      <div class="cafe-recommend">
+        ☕ <strong>카페에서 이렇게 즐기세요:</strong> 라테나 플랫화이트로 마시면 캐러멜·헤이즐넛 단맛이 우유와 어우러져 최고의 조화! 드립으로도 균형감이 좋아 커피 입문자에게 가장 추천하는 산지입니다.
+      </div>
+    </div>
+
+    <p>
+      콜롬비아는 <strong>"안전한 선택"</strong>입니다. 극단적으로 신 것도, 쓴 것도 아닌 균형 잡힌 맛 덕분에 카페 메뉴 어디서나 볼 수 있죠.
+      안데스 산맥의 고지대에서 재배되고, 연중 두 번 수확(메인 크롭·미탁 크롭)이 가능해 공급이 안정적입니다.
+    </p>
+    <p>
+      "커피를 잘 모르겠는데 뭐가 맛있어요?"라는 질문에 바리스타들이 콜롬비아를 가장 많이 추천하는 이유가 바로 이것입니다.
+      특히 <strong>후일라(Huila)</strong>, <strong>나리뇨(Nariño)</strong> 지역 원두는 스페셜티 등급에서도 매우 높은 평가를 받습니다.
+    </p>
+
+    <!-- 브라질 -->
+    <h2 class="section-title">🇧🇷 브라질 — "에스프레소의 뼈대를 만드는 원두"</h2>
+    <div class="origin-card" style="--accent: #c8860a;">
+      <h3>🍫 브라질 (Brazil)</h3>
+      <div class="subtitle">고도 700~1,200m | 내추럴·펄프드 내추럴 가공 | 세계 최대 생산국</div>
+
+      <div class="taste-bar">
+        <span class="taste-label">산미</span>
+        <div class="bar-track"><div class="bar-fill" style="width:20%; background:#c8860a;"></div></div>
+        <span style="font-size:13px;color:#888;">낮음</span>
+      </div>
+      <div class="taste-bar">
+        <span class="taste-label">단맛</span>
+        <div class="bar-track"><div class="bar-fill" style="width:65%; background:#c8860a;"></div></div>
+        <span style="font-size:13px;color:#888;">높음</span>
+      </div>
+      <div class="taste-bar">
+        <span class="taste-label">바디감</span>
+        <div class="bar-track"><div class="bar-fill" style="width:90%; background:#c8860a;"></div></div>
+        <span style="font-size:13px;color:#888;">매우 무거움</span>
+      </div>
+
+      <div class="flavor-tags">
+        <span class="flavor-tag">🍫 다크초콜릿</span>
+        <span class="flavor-tag">🌰 땅콩</span>
+        <span class="flavor-tag">🍬 카라멜</span>
+        <span class="flavor-tag">🧈 버터</span>
+        <span class="flavor-tag">☕ 구수한 향</span>
+      </div>
+      <div class="cafe-recommend">
+        ☕ <strong>카페에서 이렇게 즐기세요:</strong> 에스프레소 싱글샷으로 묵직한 바디를 느껴보세요. 블렌드 베이스로도 많이 쓰여 "아메리카노가 고소하고 달다"는 느낌이 있다면 브라질 원두가 들어간 것일 수 있어요!
+      </div>
+    </div>
+
+    <p>
+      브라질은 전 세계 커피 생산량의 <strong>약 40%</strong>를 차지하는 부동의 1위 생산국입니다.
+      낮은 고지대와 평탄한 지형 덕분에 기계 수확이 가능하고, 이 때문에 대량 생산과 안정적인 품질 유지가 강점입니다.
+    </p>
+    <p>
+      브라질 원두의 낮은 산미와 묵직한 바디감은 에스프레소 블렌드의 기본 재료로 완벽합니다.
+      여러분이 마시는 카페 아메리카노나 카페라테의 베이스 원두에는 대부분 브라질이 포함되어 있습니다.
+      "쓴맛이 적고 고소한 커피" = 브라질 원두라고 기억하면 쉬워요.
+    </p>
+
+    <!-- 비교표 -->
+    <h2 class="section-title">📊 한눈에 보는 산지 비교</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>🇪🇹 에티오피아</th>
+          <th>🇨🇴 콜롬비아</th>
+          <th>🇧🇷 브라질</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>대표 향미</strong></td>
+          <td>블루베리, 재스민, 홍차</td>
+          <td>캐러멜, 헤이즐넛, 사과</td>
+          <td>다크초콜릿, 땅콩, 카라멜</td>
+        </tr>
+        <tr>
+          <td><strong>산미</strong></td>
+          <td>밝고 생동감 있음</td>
+          <td>은은하고 균형잡힘</td>
+          <td>거의 없음</td>
+        </tr>
+        <tr>
+          <td><strong>바디감</strong></td>
+          <td>가볍고 섬세함</td>
+          <td>중간 바디</td>
+          <td>묵직하고 진함</td>
+        </tr>
+        <tr>
+          <td><strong>추천 추출</strong></td>
+          <td>핸드드립, 에어로프레스</td>
+          <td>라테, 드립, 프렌치프레스</td>
+          <td>에스프레소, 모카포트</td>
+        </tr>
+        <tr>
+          <td><strong>이런 분께</strong></td>
+          <td>과일향·산미 좋아하는 분</td>
+          <td>커피 입문자, 균형감 선호</td>
+          <td>쓴맛·고소함 좋아하는 분</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- 팁 박스 -->
+    <div class="tip-box">
+      <h3>카페에서 산지 커피 주문 꿀팁 3가지</h3>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text">
+          <strong>"오늘 원두 어디 산지인가요?"</strong> 라고 물어보세요. 스페셜티 카페라면 바리스타가 기꺼이 설명해줍니다. 심지어 시음을 제공하는 곳도 있어요.
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text">
+          <strong>싱글오리진 vs 블렌드</strong> — 싱글오리진은 한 산지의 개성을 그대로 느끼는 것, 블렌드는 여러 산지를 섞어 균형을 맞춘 것. 처음엔 싱글오리진으로 각 산지 맛을 비교해 보는 게 재미있어요.
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text">
+          <strong>산미가 두려우면 브라질부터, 신맛 도전하고 싶으면 에티오피아부터.</strong> 콜롬비아는 언제나 중간 지점에 있어 실패가 없습니다. 이 순서대로 탐험해 보세요!
+        </div>
+      </div>
+    </div>
+
+    <!-- 마무리 -->
+    <div class="action-box">
+      <h3>🗺️ 다음 카페 방문이 기대되지 않나요?</h3>
+      <p>
+        이제 메뉴판에서 산지 이름을 보면 맛을 상상할 수 있을 거예요.<br>
+        에티오피아 = 블루베리·꽃향기, 콜롬비아 = 달달하고 균형, 브라질 = 고소하고 묵직.<br>
+        이 세 가지만 기억해도 카페에서 훨씬 자신있게 주문할 수 있답니다. ☕
+      </p>
+    </div>
+
+  </div><!-- /article-body -->
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="tags">
+      <span class="tag">#커피산지</span>
+      <span class="tag">#에티오피아커피</span>
+      <span class="tag">#콜롬비아커피</span>
+      <span class="tag">#브라질커피</span>
+      <span class="tag">#스페셜티커피</span>
+      <span class="tag">#싱글오리진</span>
+      <span class="tag">#카페추천</span>
+      <span class="tag">#커피취향</span>
+      <span class="tag">#원두고르는법</span>
+      <span class="tag">#커피입문</span>
+      <span class="tag">#핸드드립</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <p class="disclaimer">
+      작성일: 2026년 4월 10일 | 이 아티클은 커피 산지별 향미 특성을 쉽게 이해할 수 있도록 작성된 교육 목적의 콘텐츠입니다. 원두 특성은 로스팅 방식과 추출 조건에 따라 달라질 수 있습니다.
+    </p>
+    <p class="disclaimer" style="margin-top:8px;">© 2026 에브라임 시드(Ephraim Seed) All Rights Reserved</p>
+  </footer>
+
+</div><!-- /container -->
+<div class="kakao-sidebar-ad" style="display:flex;justify-content:center;margin:30px auto;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
