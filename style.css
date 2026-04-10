@@ -633,3 +633,37 @@ body {
     font-weight: 700;
     margin-left: 5px;
 }
+
+/* Kakao AdFit Sidebar Ad */
+.kakao-sidebar-ad {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 900;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+}
+
+/* 컨텐츠 영역과 겹치지 않도록 화면이 충분히 넓을 때만 사이드에 표시 */
+@media (max-width: 1560px) {
+    .kakao-sidebar-ad {
+        position: static;
+        transform: none;
+        display: flex;
+        justify-content: center;
+        margin: 30px auto;
+        width: fit-content;
+    }
+}
+
+@media (max-width: 768px) {
+    .kakao-sidebar-ad {
+        margin: 20px auto;
+        padding: 8px;
+        border-radius: 8px;
+    }
+}
