@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 14, emoji: "☕", category: "카페 창업",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "아메리카노 한 잔에 남는 돈, 단 467원의 진실 — 카페 창업 전에 반드시 알아야 할 수익 구조",
+    date: "2026.04.11",
+    summary: "원가율, 손익분기점, 실패 사례까지 — 바리스타 10년 경력이 털어놓는 카페 창업의 진짜 수익 구조를 완전 해부합니다.",
+    link: "coffee-article-2026-04-11.html"
+  },
+  {
     id: 13, emoji: "🎨", category: "라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "라떼아트가 안 예쁜 진짜 이유 — 밀크 스티밍의 물리학을 모르면 영원히 못 그린다",
