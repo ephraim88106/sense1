@@ -634,7 +634,7 @@ body {
     margin-left: 5px;
 }
 
-/* Kakao AdFit Sidebar Ad */
+/* Kakao AdFit Sidebar Ad (160x600 오른쪽 고정) */
 .kakao-sidebar-ad {
     position: fixed;
     right: 20px;
@@ -648,8 +648,21 @@ body {
     border: 1px solid var(--border-color);
 }
 
+/* Kakao AdFit Middle Ad (300x250 중앙 인라인) */
+.kakao-middle-ad {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+    width: fit-content;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid var(--border-color);
+}
+
 /* 컨텐츠 영역과 겹치지 않도록 화면이 충분히 넓을 때만 사이드에 표시 */
-@media (max-width: 1560px) {
+@media (max-width: 1400px) {
     .kakao-sidebar-ad {
         position: static;
         transform: none;
@@ -661,7 +674,8 @@ body {
 }
 
 @media (max-width: 768px) {
-    .kakao-sidebar-ad {
+    .kakao-sidebar-ad,
+    .kakao-middle-ad {
         margin: 20px auto;
         padding: 8px;
         border-radius: 8px;
