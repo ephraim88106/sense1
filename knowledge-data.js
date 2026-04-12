@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 15, emoji: "🏔️", category: "산지",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "해발 2,000m의 비밀 — 고지대 원두가 왜 더 맛있는가",
+    date: "2026.04.12",
+    summary: "고도가 높을수록 커피가 맛있어지는 과학적 이유 — 기온, 일교차, 생두 밀도, SHB 등급까지 고지대 원두의 비밀을 완전 해부합니다.",
+    link: "coffee-article-2026-04-12.html"
+  },
+  {
     id: 14, emoji: "☕", category: "카페 창업",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "아메리카노 한 잔에 남는 돈, 단 467원의 진실 — 카페 창업 전에 반드시 알아야 할 수익 구조",
