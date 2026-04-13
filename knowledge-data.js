@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 16, emoji: "🧪", category: "품종 & 가공법",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "게이샤는 왜 그렇게 비싼가 — 커피 품종과 가공법이 맛을 결정하는 진짜 이유",
+    date: "2026.04.13",
+    summary: "게이샤·버번·티피카 품종의 유전적 차이부터 워시드·내추럴·허니 가공법까지 — 커피 맛을 결정하는 두 축을 과학적으로 완전 해부합니다.",
+    link: "coffee-article-2026-04-13.html"
+  },
+  {
     id: 15, emoji: "🏔️", category: "산지",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "해발 2,000m의 비밀 — 고지대 원두가 왜 더 맛있는가",
