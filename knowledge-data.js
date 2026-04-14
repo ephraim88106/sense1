@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 17, emoji: "🌊", category: "트렌드",
+    categoryColor: { bg: "#e0f2fe", text: "#0369a1" },
+    title: "대부분의 카페는 아직 모른다 — 2026년 스페셜티 커피 시장을 뒤흔드는 5가지 트렌드",
+    date: "2026.04.14",
+    summary: "글로벌 시장 $10.2B→$20.9B 성장, Gen Z의 콜드브루·RTD 혁명, 기능성 커피, 혐기성 발효까지 — 2026년 스페셜티 커피 판도를 바꿀 5가지 트렌드를 완전 해부합니다.",
+    link: "coffee-article-2026-04-14.html"
+  },
+  {
     id: 16, emoji: "🧪", category: "품종 & 가공법",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "게이샤는 왜 그렇게 비싼가 — 커피 품종과 가공법이 맛을 결정하는 진짜 이유",
