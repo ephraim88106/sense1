@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 18, emoji: "☕", category: "추출",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "커피가 매번 맛이 다른 진짜 이유 — 바리스타가 숨겨온 추출의 비밀 4가지",
+    date: "2026.04.15",
+    summary: "TDS·추출 수율부터 에스프레소·푸어오버·콜드브루·에어로프레스의 황금 레시피까지 — 10년 경력 바리스타가 공개하는 추출 변수의 모든 것.",
+    link: "coffee-article-2026-04-15-2.html"
+  },
+  {
     id: 17, emoji: "🌊", category: "트렌드",
     categoryColor: { bg: "#e0f2fe", text: "#0369a1" },
     title: "대부분의 카페는 아직 모른다 — 2026년 스페셜티 커피 시장을 뒤흔드는 5가지 트렌드",
