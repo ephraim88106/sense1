@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 19, emoji: "☕", category: "추출",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "커피가 쓴 진짜 이유 — 바리스타도 실수하는 추출의 과학 4가지",
+    date: "2026.04.15",
+    summary: "에스프레소·푸어오버·콜드브루·에어로프레스, 모두 다른 추출 원리가 있다 — 쓴맛·신맛의 원인부터 황금 레시피까지 추출의 과학을 한 번에 정리합니다.",
+    link: "coffee-article-2026-04-15.html"
+  },
+  {
     id: 18, emoji: "☕", category: "추출",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "커피가 매번 맛이 다른 진짜 이유 — 바리스타가 숨겨온 추출의 비밀 4가지",
