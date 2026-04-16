@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 20, emoji: "🔥", category: "로스팅",
+    categoryColor: { bg: "#fee2e2", text: "#991b1b" },
+    title: "원두가 맛있어지는 진짜 이유 — 로스팅 화학반응, 바리스타들이 매일 쓰지만 아무도 안 알려줬던 과학",
+    date: "2026.04.16",
+    summary: "마이야르 반응·캐러멜화부터 1차·2차 크랙, RoR, 라이트·미디엄·다크 로스팅의 화학적 차이, 원두 보관 과학까지 — 커피 맛의 80%를 결정하는 로스팅 과학을 완전 해부합니다.",
+    link: "coffee-article-2026-04-16.html"
+  },
+  {
     id: 19, emoji: "☕", category: "추출",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "커피가 쓴 진짜 이유 — 바리스타도 실수하는 추출의 과학 4가지",
