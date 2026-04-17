@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 21, emoji: "🎨", category: "라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "당신의 라떼아트가 뭉개지는 진짜 이유 — 2026 세계 챔피언이 60℃를 고집한 물리학적 비밀",
+    date: "2026.04.17",
+    summary: "마이크로폼이 60℃에서 완성되는 단백질 과학부터 2026 WoC 샌디에이고 챔피언 Bala의 핵심 기술, 하트·튤립·로제타 패턴별 피처 각도와 유속까지 — 10년차 바리스타가 공개하는 라떼아트의 물리학.",
+    link: "coffee-article-2026-04-17.html"
+  },
+  {
     id: 20, emoji: "🔥", category: "로스팅",
     categoryColor: { bg: "#fee2e2", text: "#991b1b" },
     title: "원두가 맛있어지는 진짜 이유 — 로스팅 화학반응, 바리스타들이 매일 쓰지만 아무도 안 알려줬던 과학",
