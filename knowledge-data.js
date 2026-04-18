@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 22, emoji: "💰", category: "카페 창업",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "월 매출 1,000만원 카페 사장의 통장에 남는 돈 — 당신이 상상한 그 숫자가 아닙니다",
+    date: "2026.04.18",
+    summary: "월매출 1,000만원 카페의 진짜 손익계산서, 원가율 25%의 착시, 폐업 카페 사장들의 공통점 TOP 5, 3일치 임대료 법칙까지 — 바리스타 10년차가 공개하는 카페 창업의 잔인한 현실.",
+    link: "coffee-article-2026-04-18.html"
+  },
+  {
     id: 21, emoji: "🎨", category: "라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "당신의 라떼아트가 뭉개지는 진짜 이유 — 2026 세계 챔피언이 60℃를 고집한 물리학적 비밀",
