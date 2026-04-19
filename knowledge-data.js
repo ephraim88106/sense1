@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 23, emoji: "🌍", category: "산지",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "파운드당 $10,000 커피의 비밀 — 고도 100m가 당신의 잔을 완전히 바꾼다",
+    date: "2026.04.19",
+    summary: "파나마 게이샤·에티오피아 예르가체프·콜롬비아 우일라까지 — 해발 1,800m 세포밀도의 과학, 60~140시간 발효의 비밀, 원두 살 때 산지 정보 읽는 3가지 실전 포인트를 10년차 바리스타가 정리합니다.",
+    link: "coffee-article-2026-04-19.html"
+  },
+  {
     id: 22, emoji: "💰", category: "카페 창업",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "월 매출 1,000만원 카페 사장의 통장에 남는 돈 — 당신이 상상한 그 숫자가 아닙니다",
