@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 24, emoji: "🧪", category: "품종 & 가공법",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "100만 원짜리 게이샤가 '쉰내' 났던 날 — 품종보다 잔인한 '가공법'의 진실",
+    date: "2026.04.20",
+    summary: "게이샤·SL28·카투아이 3대 품종 × 워시드·내추럴·허니·애너로빅 4대 가공법의 12가지 맛 방정식. 품종별 기본값과 가공법의 화학적 지문, 그리고 2026년 애너로빅 광풍의 명과 암까지 — 10년차 바리스타가 공개하는 품종 × 가공법 매칭 공식.",
+    link: "coffee-article-2026-04-20.html"
+  },
+  {
     id: 23, emoji: "🌍", category: "산지",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "파운드당 $10,000 커피의 비밀 — 고도 100m가 당신의 잔을 완전히 바꾼다",
