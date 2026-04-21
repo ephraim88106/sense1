@@ -21,9 +21,9 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9118774019383180" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KCA 바리스타 포털 | 합격을 위한 기출문제 및 전문 가이드</title>
-    <meta name="description" content="한국커피협회(KCA) 바리스타 1급, 2급 자격증 취득을 위한 완벽 가이드. 최신 기출문제 풀이, 전문가 해설, 시험 일정 및 커피 지식 백과를 제공합니다.">
-    <meta name="keywords" content="바리스타 자격증, KCA, 한국커피협회, 바리스타 1급, 바리스타 2급, 기출문제, 커피 지식, 홈바리스타">
+    <title>KCA 바리스타 포털 | 최신 커피 뉴스 · 산지 · 로스팅 · 추출 전문 아티클</title>
+    <meta name="description" content="매일 업데이트되는 커피 전문 아티클 — 원두 산지, 로스팅 화학, 추출 과학, 라떼아트 물리학, 카페 창업 수익 구조, 2026 스페셜티 커피 트렌드까지. 10년차 바리스타가 직접 쓰는 깊이 있는 커피 지식 포털.">
+    <meta name="keywords" content="커피 뉴스, 커피 아티클, 원두 산지, 로스팅, 에스프레소 추출, 라떼아트, 카페 창업, 스페셜티 커피, 바리스타 자격증, KCA, 한국커피협회">
     <link rel="canonical" href="https://kca-portal.com/index.html">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -45,11 +45,123 @@
     <main-header active="home"></main-header>
 
     <main>
-        <section class="home-hero">
+        <!-- 1. 최신 뉴스 히어로 (최상단) -->
+        <section class="news-hero">
+            <div class="container">
+                <div class="news-hero-inner">
+                    <span class="badge">Daily Coffee Journal · 매일 업데이트</span>
+                    <h1>10년차 바리스타가 쓰는 <span class="highlight">커피의 과학과 현실</span></h1>
+                    <p class="hero-subtitle">원두 산지의 고도와 발효 시간, 로스팅 화학반응, 추출 수율과 TDS, 라떼아트의 유체역학, 카페 창업의 손익 구조까지 — 가볍게 읽히는 커피 소개글이 아닌, 실제 현장의 변수와 수치로 증명하는 깊이 있는 아티클만 다룹니다.</p>
+                    <div class="hero-categories">
+                        <a href="knowledge.html?category=산지" class="cat-chip" style="background:#dcfce7;color:#166534;">🌍 원두 산지</a>
+                        <a href="knowledge.html?category=로스팅" class="cat-chip" style="background:#fee2e2;color:#991b1b;">🔥 로스팅</a>
+                        <a href="knowledge.html?category=추출" class="cat-chip" style="background:#dcfce7;color:#166534;">☕ 추출 과학</a>
+                        <a href="knowledge.html?category=라떼아트" class="cat-chip" style="background:#fce7f3;color:#9d174d;">🎨 라떼아트</a>
+                        <a href="knowledge.html?category=카페 창업" class="cat-chip" style="background:#fef3c7;color:#92400e;">💰 카페 창업</a>
+                        <a href="knowledge.html?category=트렌드" class="cat-chip" style="background:#e0f2fe;color:#0369a1;">🌊 트렌드</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 대표 아티클 (오늘의 픽) -->
+        <section class="container section no-border">
+            <div class="section-title">
+                <h2>오늘의 <span class="highlight">픽</span></h2>
+                <p>편집자가 직접 고른 이번 주 대표 아티클입니다.</p>
+            </div>
+            <div id="featured-article"></div>
+        </section>
+
+        <!-- 3. 최신 아티클 그리드 -->
+        <section class="container section no-border">
+            <div class="section-title">
+                <h2>최신 <span class="highlight">커피 아티클</span></h2>
+                <p>매일 새로 올라오는 전문 커피 콘텐츠를 확인하세요.</p>
+            </div>
+            <div id="latest-articles" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;"></div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="knowledge.html" class="btn-cert" style="padding: 12px 32px;">커피 지식 더보기 ➔</a>
+            </div>
+        </section>
+
+        <!-- 4. 편집 방향 / 브랜드 소개 -->
+        <section class="container section no-border">
+            <div class="section-title">
+                <h2>왜 <span class="highlight">KCA 포털</span>을 읽어야 하나요?</h2>
+                <p>단순 정보 요약이 아닌, 현장 경험과 수치 기반의 원문 콘텐츠를 지향합니다.</p>
+            </div>
+            <div class="info-hub">
+                <div class="info-box">
+                    <h3>🔬 수치로 증명하는 과학</h3>
+                    <p>"풍미가 좋다"로 끝나지 않습니다. 추출 수율 18~22%, TDS 1.15~1.35, 스티밍 온도 60±5℃처럼 현업에서 바로 쓰는 수치와 근거로 설명합니다.</p>
+                </div>
+                <div class="info-box">
+                    <h3>☕ 10년 현장의 기록</h3>
+                    <p>로스터리와 카페에서 수만 잔을 내린 바리스타가 직접 겪은 실패·개선·재현 사례를 정리합니다. 책에는 없는 현장의 변수까지 다룹니다.</p>
+                </div>
+                <div class="info-box">
+                    <h3>💸 창업자를 위한 실전 수익 구조</h3>
+                    <p>아메리카노 한 잔에 실제로 남는 돈, 원가율의 착시, 3일치 임대료 법칙 등 카페 창업·운영의 진짜 손익을 공개합니다.</p>
+                </div>
+                <div class="info-box">
+                    <h3>🌍 원산지·품종·가공법 심층</h3>
+                    <p>파나마 게이샤부터 에티오피아 예르가체프, 콜롬비아 우일라까지 — 고도·강수량·발효 시간이 잔 안의 풍미로 이어지는 경로를 추적합니다.</p>
+                </div>
+                <div class="info-box">
+                    <h3>🎨 라떼아트·스티밍의 물리학</h3>
+                    <p>마이크로폼이 완성되는 단백질 변성 구간, 피처 각도, 유속과 유량 — 세계 챔피언들이 숨겨온 감각의 영역을 수식으로 풀어냅니다.</p>
+                </div>
+                <div class="info-box">
+                    <h3>📈 2026 스페셜티 트렌드</h3>
+                    <p>글로벌 스페셜티 시장 $10.2B → $20.9B 성장, Gen Z RTD 혁명, 혐기성 발효, 기능성 커피 등 판도를 바꾸는 흐름을 매주 업데이트합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 쿠팡 제휴 광고 -->
+        <section class="ad-section">
+            <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
+                <div class="carousel-ad">
+                    <script src="https://ads-partners.coupang.com/g.js"></script>
+                    <script>
+                        new PartnersCoupang.G({"id":976126,"template":"carousel","trackingCode":"AF4166987","width":"680","height":"140","tsource":""});
+                    </script>
+                </div>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; align-items: center;">
+                    <iframe src="https://coupa.ng/cl7ooV" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" browsingtopics></iframe>
+                    <a href="https://link.coupang.com/a/edhapZ" target="_blank" referrerpolicy="unsafe-url"><img src="https://image12.coupangcdn.com/image/affiliate/banner/43b5f90c5bd57d36b049fb9b9c29a48f@2x.jpg" alt="지워지는 볼펜" width="120" height="240"></a>
+                    <a href="https://link.coupang.com/a/ediox4" target="_blank" referrerpolicy="unsafe-url"><img src="https://image8.coupangcdn.com/image/affiliate/banner/308076df663f707f5978f86950393b39@2x.jpg" alt="벨즈 스팀 피쳐" width="120" height="240"></a>
+                    <iframe src="https://coupa.ng/cl74Gu" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" browsingtopics></iframe>
+                </div>
+                <p class="ad-disclosure">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+            </div>
+        </section>
+
+        <!-- 6. 공지 / Q&A -->
+        <div class="container">
+            <section id="info-center" class="section no-border" style="padding-top: 0;">
+                <div class="info-hub">
+                    <div class="info-box">
+                        <h3>📢 공지사항</h3>
+                        <home-post-board collection="notices"></home-post-board>
+                        <a href="notice.html" class="more-link">전체보기 ➔</a>
+                    </div>
+                    <div class="info-box">
+                        <h3>❓ Q&A 게시판</h3>
+                        <home-post-board collection="qna"></home-post-board>
+                        <a href="qna.html" class="more-link">전체보기 ➔</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- 7. 문제 풀기 & 자격증 (최하단) -->
+        <section class="home-hero" style="margin-top:40px;">
             <div class="container">
                 <div class="hero-text">
                     <span class="badge">Professional Learning Platform</span>
-                    <h1>커피 전문가로 가는 <span class="highlight">가장 확실한 길</span></h1>
+                    <h2 style="font-size:2.2rem;margin:14px 0;">커피 전문가로 가는 <span class="highlight">가장 확실한 길</span></h2>
                     <p>한국커피협회(KCA) 바리스타 자격증 취득을 위한 최고의 가이드와 실전 같은 기출문제 해설을 통해 당신의 꿈을 현실로 만드세요.</p>
                     <div style="margin-top: 30px;">
                         <a href="practice.html" class="btn-cert" style="padding: 15px 40px; font-size: 1.1rem;">지금 바로 문제 풀기 ➔</a>
@@ -81,74 +193,6 @@
                 </div>
             </div>
         </section>
-
-        <section class="container section no-border">
-            <div class="section-title">
-                <h2>최신 <span class="highlight">커피 지식</span></h2>
-                <p>매일 업데이트되는 전문 커피 아티클을 확인하세요.</p>
-            </div>
-            <div id="latest-articles" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;"></div>
-            <div style="text-align: center; margin-top: 30px;">
-                <a href="knowledge.html" class="btn-cert" style="padding: 12px 32px;">커피 지식 더보기 ➔</a>
-            </div>
-        </section>
-
-        <section class="ad-section">
-            <div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 20px;">
-                <div class="carousel-ad">
-                    <script src="https://ads-partners.coupang.com/g.js"></script>
-                    <script>
-                        new PartnersCoupang.G({"id":976126,"template":"carousel","trackingCode":"AF4166987","width":"680","height":"140","tsource":""});
-                    </script>
-                </div>
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; align-items: center;">
-                    <iframe src="https://coupa.ng/cl7ooV" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" browsingtopics></iframe>
-                    <a href="https://link.coupang.com/a/edhapZ" target="_blank" referrerpolicy="unsafe-url"><img src="https://image12.coupangcdn.com/image/affiliate/banner/43b5f90c5bd57d36b049fb9b9c29a48f@2x.jpg" alt="지워지는 볼펜" width="120" height="240"></a>
-                    <a href="https://link.coupang.com/a/ediox4" target="_blank" referrerpolicy="unsafe-url"><img src="https://image8.coupangcdn.com/image/affiliate/banner/308076df663f707f5978f86950393b39@2x.jpg" alt="벨즈 스팀 피쳐" width="120" height="240"></a>
-                    <iframe src="https://coupa.ng/cl74Gu" width="120" height="240" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" browsingtopics></iframe>
-                </div>
-                <p class="ad-disclosure">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
-            </div>
-        </section>
-
-        <section class="container section no-border">
-            <div class="section-title">
-                <h2>왜 <span class="highlight">KCA 포털</span>인가요?</h2>
-                <p>우리는 단순한 정보 전달을 넘어 사용자의 합격을 최우선으로 생각합니다.</p>
-            </div>
-            
-            <div class="info-hub">
-                <div class="info-box">
-                    <h3>🔍 정밀한 해설</h3>
-                    <p>단순 정답 확인이 아닌, 왜 오답인지까지 상세히 설명하는 전문가 해설을 제공합니다.</p>
-                </div>
-                <div class="info-box">
-                    <h3>📅 실시간 일정</h3>
-                    <p>한국커피협회의 공지사항을 실시간으로 모니터링하여 가장 정확한 시험 일정을 안내합니다.</p>
-                </div>
-                <div class="info-box">
-                    <h3>📱 모바일 최적화</h3>
-                    <p>언제 어디서나 학습할 수 있도록 스마트폰과 태블릿에 완벽하게 최적화된 학습 환경을 제공합니다.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="container">
-            <section id="info-center" class="section no-border" style="padding-top: 0;">
-                <div class="info-hub">
-                    <div class="info-box">
-                        <h3>📢 공지사항</h3>
-                        <home-post-board collection="notices"></home-post-board>
-                        <a href="notice.html" class="more-link">전체보기 ➔</a>
-                    </div>
-                    <div class="info-box">
-                        <h3>❓ Q&A 게시판</h3>
-                        <home-post-board collection="qna"></home-post-board>
-                        <a href="qna.html" class="more-link">전체보기 ➔</a>
-                    </div>
-                </div>
-            </section>
-        </div>
     </main>
 
     <div class="kakao-middle-ad">
@@ -169,9 +213,31 @@
     <script src="main.js" type="module"></script>
     <script type="module">
         import { knowledgeArticles } from './knowledge-data.js';
+
+        // 대표 아티클 (최신 1편)
+        const featured = knowledgeArticles[0];
+        const fc = document.getElementById('featured-article');
+        if (featured && fc) {
+            fc.innerHTML = `
+                <a href="${featured.link || 'knowledge-article.html?id=' + featured.id}" style="text-decoration:none;color:inherit;">
+                    <article class="featured-card">
+                        <div class="featured-emoji">${featured.emoji}</div>
+                        <div class="featured-body">
+                            <span class="featured-cat" style="background:${featured.categoryColor.bg};color:${featured.categoryColor.text};">${featured.category}</span>
+                            <h3>${featured.title}</h3>
+                            <p class="featured-date">${featured.date}</p>
+                            <p class="featured-summary">${featured.summary}</p>
+                            <span class="featured-more">전문 읽기 &rarr;</span>
+                        </div>
+                    </article>
+                </a>
+            `;
+        }
+
+        // 최신 아티클 그리드 (2~9번째, 8편)
         const container = document.getElementById('latest-articles');
         if (container) {
-            const latest = knowledgeArticles.slice(0, 4);
+            const latest = knowledgeArticles.slice(1, 9);
             container.innerHTML = latest.map(a => `
                 <a href="${a.link || 'knowledge-article.html?id=' + a.id}" style="text-decoration:none;color:inherit;">
                     <article class="info-box" style="height:100%;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s;display:flex;flex-direction:column;">
