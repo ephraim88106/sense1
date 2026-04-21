@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 25, emoji: "🌊", category: "트렌드",
+    categoryColor: { bg: "#e0f2fe", text: "#0369a1" },
+    title: "서울 카페 700곳이 문 닫은 해, 왜 스페셜티는 오히려 커졌나 — 2026 커피 업계의 잔혹한 양극화",
+    date: "2026.04.21",
+    summary: "2025년 한국 카페 700곳 폐업과 글로벌 스페셜티 시장 연 10.8% 성장의 역설, 18~24세가 주도하는 건강·지속가능성 소비, 아라비카 생산지 21% 소실 경고까지 — 10년차 바리스타가 정리한 2026 커피 업계의 진짜 그림.",
+    link: "coffee-article-2026-04-21.html"
+  },
+  {
     id: 24, emoji: "🧪", category: "품종 & 가공법",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "100만 원짜리 게이샤가 '쉰내' 났던 날 — 품종보다 잔인한 '가공법'의 진실",
