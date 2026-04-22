@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1:15 vs 1:17, 당신이 10년간 잘못 알고 있던 푸어오버 황금비율의 진실</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #faf7f2;
+    color: #2c1810;
+    line-height: 1.85;
+    font-size: 17px;
+    padding: 0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 4px 24px rgba(44, 24, 16, 0.06);
+  }
+  header {
+    background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 100%);
+    color: #faf7f2;
+    padding: 48px 36px 40px;
+  }
+  .badge {
+    display: inline-block;
+    background: #c8860a;
+    color: #2c1810;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .date {
+    font-size: 13px;
+    color: #e5c89a;
+    margin-bottom: 14px;
+    font-weight: 400;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.3;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+  }
+  .subtitle {
+    margin-top: 14px;
+    font-size: 16px;
+    color: #e5c89a;
+    font-weight: 300;
+    font-style: italic;
+  }
+  main { padding: 40px 36px 60px; }
+  .hook {
+    font-size: 19px;
+    font-weight: 500;
+    color: #4a2818;
+    background: #fbf0dc;
+    border-left: 5px solid #c8860a;
+    padding: 22px 26px;
+    margin-bottom: 30px;
+    border-radius: 0 6px 6px 0;
+  }
+  .summary-box {
+    background: #2c1810;
+    color: #faf7f2;
+    padding: 24px 28px;
+    border-radius: 10px;
+    margin: 30px 0 40px;
+  }
+  .summary-box h3 {
+    font-size: 14px;
+    color: #c8860a;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .summary-box ul { list-style: none; }
+  .summary-box ul li {
+    padding: 6px 0 6px 20px;
+    position: relative;
+    font-size: 15px;
+    color: #f5ead4;
+  }
+  .summary-box ul li::before {
+    content: "☕";
+    position: absolute;
+    left: 0;
+  }
+  h2 {
+    font-size: 23px;
+    font-weight: 700;
+    color: #2c1810;
+    border-left: 5px solid #6b3a2a;
+    padding-left: 14px;
+    margin: 44px 0 18px;
+    line-height: 1.4;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #6b3a2a;
+    margin: 24px 0 10px;
+  }
+  p {
+    margin-bottom: 16px;
+    color: #3a2218;
+  }
+  .highlight {
+    background: linear-gradient(transparent 60%, #f5d08a 60%);
+    font-weight: 500;
+  }
+  .tip-box {
+    background: linear-gradient(135deg, #fbf0dc 0%, #f5e3bb 100%);
+    border: 2px solid #c8860a;
+    padding: 26px 28px;
+    border-radius: 12px;
+    margin: 34px 0;
+  }
+  .tip-box h3 {
+    color: #8b4e10;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+  }
+  .tip-box ol { padding-left: 22px; }
+  .tip-box ol li {
+    padding: 10px 0;
+    color: #4a2818;
+    font-size: 15px;
+  }
+  .tip-box ol li strong { color: #6b3a2a; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+    background: #fff;
+  }
+  th {
+    background: #6b3a2a;
+    color: #faf7f2;
+    padding: 12px 10px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 13px;
+  }
+  td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #ede3d2;
+  }
+  tr:nth-child(even) td { background: #faf7f2; }
+  .infographic {
+    background: #fdfaf4;
+    padding: 24px;
+    border-radius: 12px;
+    margin: 34px 0;
+    text-align: center;
+    border: 1px solid #ede3d2;
+  }
+  .infographic-caption {
+    font-size: 13px;
+    color: #8b6a4f;
+    margin-top: 10px;
+    font-style: italic;
+  }
+  .quote {
+    font-style: italic;
+    color: #6b3a2a;
+    border-left: 3px solid #c8860a;
+    padding: 4px 18px;
+    margin: 20px 0;
+    font-size: 16px;
+  }
+  .ending {
+    background: #2c1810;
+    color: #faf7f2;
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 40px;
+    text-align: center;
+  }
+  .ending h3 {
+    color: #c8860a;
+    margin-bottom: 14px;
+    font-size: 18px;
+  }
+  .ending p { color: #f5ead4; font-size: 15px; }
+  footer {
+    padding: 30px 36px;
+    background: #faf7f2;
+    border-top: 1px solid #ede3d2;
+    font-size: 13px;
+    color: #8b6a4f;
+  }
+  .tags { margin-bottom: 14px; }
+  .tag {
+    display: inline-block;
+    background: #ede3d2;
+    color: #6b3a2a;
+    padding: 4px 11px;
+    border-radius: 14px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .disclaimer {
+    font-size: 12px;
+    color: #a08c76;
+    font-style: italic;
+    margin-top: 12px;
+    line-height: 1.6;
+  }
+  strong { color: #6b3a2a; font-weight: 700; }
+  @media (max-width: 640px) {
+    header { padding: 36px 22px 30px; }
+    main { padding: 30px 22px 48px; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 19px; }
+    .hook { font-size: 16px; padding: 18px 20px; }
+    table { font-size: 12px; }
+    th, td { padding: 8px 6px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <span class="badge">BREWING SCIENCE</span>
+    <div class="date">2026년 4월 22일 · 바리스타 10년차의 실전 가이드</div>
+    <h1>1:15 vs 1:17, 당신이 10년간 잘못 알고 있던<br>푸어오버 황금비율의 충격적 진실</h1>
+    <p class="subtitle">"레시피만 따라해도 카페 맛이 안 나는 이유 — 추출은 비율이 아니라 '물리학'이다"</p>
+  </header>
+
+  <main>
+    <div class="hook">
+      솔직히 말하면, 저는 바리스타 3년차까지 <strong>"1:16이 황금비율"</strong>이라고 굳게 믿었습니다. 그런데 어느 날 같은 원두, 같은 그라인더, 같은 물 온도로 추출했는데 어제는 꽃향기가 나고 오늘은 소태처럼 쓰더군요. 비율은 그대로였는데요. 그때 깨달았습니다 — <strong>황금비율이라는 건 사실 '거짓말'이었다</strong>는 걸.
+    </div>
+
+    <div class="summary-box">
+      <h3>오늘 이 글에서 배울 것</h3>
+      <ul>
+        <li>SCA 공식이 말하는 TDS 1.2~1.45%, 추출수율 18~22%의 진짜 의미</li>
+        <li>비율(Ratio)과 추출수율(EY)이 서로 다른 레버인 이유</li>
+        <li>V60에서 '물줄기 높이 5cm'가 바꾸는 놀라운 맛의 차이</li>
+        <li>Scott Rao Spin — 왜 프로들은 블룸에서 컵을 '돌리는가'</li>
+        <li>Magnesium 50ppm vs Calcium 50ppm, 당신 집 수돗물이 만드는 맛의 차이</li>
+        <li>오늘 저녁부터 바로 적용 가능한 체크리스트 3가지</li>
+      </ul>
+    </div>
+
+    <h2>1. "황금비율"은 왜 거짓말인가 — 비율의 진짜 정체</h2>
+    <p>우선 한 가지를 명확히 해야 합니다. 우리가 말하는 <strong>커피와 물의 비율(Brew Ratio)</strong>은 <span class="highlight">맛의 '강도(Strength)'만 결정</span>합니다. 즉, <strong>TDS (Total Dissolved Solids, 총 용존 고형물)</strong>의 숫자만 바꿀 뿐이에요. 1:15로 내리면 진한 커피, 1:17로 내리면 연한 커피. 그게 전부입니다.</p>
+    <p>진짜 맛의 방향 — 시큼한가, 달콤한가, 쓴가 — 을 결정하는 건 <strong>추출수율(Extraction Yield, EY)</strong>이에요. 이건 원두에서 얼마나 많은 성분을 뽑아냈느냐를 나타내는 수치입니다. <strong>SCA(스페셜티 커피 협회)는 이상적인 구간을 18~22%로 정의</strong>합니다.</p>
+    <div class="quote">"비율이 강도라면, 그라인드 사이즈와 푸어링 테크닉은 '방향타'다. 두 변수는 완전히 다른 축에서 작동한다." — Scott Rao</div>
+    <p>18% 미만이면 <strong>언더 추출</strong>(under-extraction) — 시큼하고 풀내음 나고 설익은 맛. 22% 이상이면 <strong>오버 추출</strong>(over-extraction) — 탄맛, 쓴맛, 텁텁한 마무리. 그 사이 골든존이 당신의 목표입니다.</p>
+
+    <h2>2. SCA 브루잉 컨트롤 차트 — 프로들이 보는 지도</h2>
+    <p>사실 대부분의 사람들이 모르는데, 스페셜티 커피 세계에는 <strong>'브루잉 컨트롤 차트'</strong>라는 표준 지도가 있습니다. X축은 추출수율(18~22%), Y축은 TDS(1.15~1.45%). 이 두 축이 교차하는 사각형 안에 떨어지면 — 축하합니다. 세계 어디에서 내려도 '맛있는 커피'라고 합의된 구간입니다.</p>
+
+    <div class="infographic">
+      <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;height:auto">
+        <!-- Background -->
+        <rect x="70" y="30" width="480" height="270" fill="#fbf0dc" stroke="#c8860a" stroke-width="1"/>
+        <!-- Ideal zone -->
+        <rect x="240" y="110" width="180" height="110" fill="#6b3a2a" opacity="0.85"/>
+        <text x="330" y="165" fill="#faf7f2" font-size="15" font-weight="700" text-anchor="middle">IDEAL</text>
+        <text x="330" y="185" fill="#f5d08a" font-size="11" text-anchor="middle">18-22% EY</text>
+        <text x="330" y="200" fill="#f5d08a" font-size="11" text-anchor="middle">1.15-1.45% TDS</text>
+
+        <!-- Under -->
+        <text x="155" y="170" fill="#6b3a2a" font-size="12" text-anchor="middle" font-weight="600">UNDER</text>
+        <text x="155" y="188" fill="#8b6a4f" font-size="10" text-anchor="middle">시큼 · 풀내음</text>
+        <!-- Over -->
+        <text x="500" y="170" fill="#6b3a2a" font-size="12" text-anchor="middle" font-weight="600">OVER</text>
+        <text x="500" y="188" fill="#8b6a4f" font-size="10" text-anchor="middle">쓴맛 · 텁텁</text>
+        <!-- Weak -->
+        <text x="330" y="80" fill="#6b3a2a" font-size="12" text-anchor="middle" font-weight="600">WEAK</text>
+        <text x="330" y="98" fill="#8b6a4f" font-size="10" text-anchor="middle">물 같은 · 밍밍</text>
+        <!-- Strong -->
+        <text x="330" y="270" fill="#6b3a2a" font-size="12" text-anchor="middle" font-weight="600">STRONG</text>
+        <text x="330" y="288" fill="#8b6a4f" font-size="10" text-anchor="middle">진한 · 무거움</text>
+
+        <!-- Axes -->
+        <line x1="70" y1="300" x2="550" y2="300" stroke="#2c1810" stroke-width="2"/>
+        <line x1="70" y1="30" x2="70" y2="300" stroke="#2c1810" stroke-width="2"/>
+        <!-- X axis label -->
+        <text x="310" y="335" fill="#2c1810" font-size="13" text-anchor="middle" font-weight="600">Extraction Yield (%)</text>
+        <text x="90" y="315" fill="#6b3a2a" font-size="10">16%</text>
+        <text x="240" y="315" fill="#6b3a2a" font-size="10">18%</text>
+        <text x="420" y="315" fill="#6b3a2a" font-size="10">22%</text>
+        <text x="520" y="315" fill="#6b3a2a" font-size="10">24%</text>
+        <!-- Y axis label -->
+        <text x="25" y="170" fill="#2c1810" font-size="13" text-anchor="middle" font-weight="600" transform="rotate(-90, 25, 170)">TDS (%)</text>
+        <text x="55" y="115" fill="#6b3a2a" font-size="10">1.45</text>
+        <text x="55" y="225" fill="#6b3a2a" font-size="10">1.15</text>
+        <text x="55" y="295" fill="#6b3a2a" font-size="10">0.9</text>
+        <!-- Title -->
+        <text x="310" y="20" fill="#2c1810" font-size="14" font-weight="700" text-anchor="middle">SCA Brewing Control Chart</text>
+      </svg>
+      <div class="infographic-caption">▲ SCA가 인정한 '맛있는 커피' 구간. 이 사각형 밖으로 벗어나면 무언가 잘못된 것</div>
+    </div>
+
+    <p>여기서 중요한 포인트 — <strong>비율만 바꾸면 Y축(TDS)만 위아래로 움직입니다</strong>. X축을 움직이려면 다른 변수, 즉 <strong>그라인드 분쇄도 · 물 온도 · 추출 시간 · 교반(agitation)</strong>을 건드려야 해요.</p>
+
+    <h2>3. V60 변수 5가지 — 프로 바리스타의 실전 매뉴얼</h2>
+
+    <h3>① 분쇄도 (Grind Size) — 가장 강력한 레버</h3>
+    <p>분쇄도는 커피 입자의 총 표면적을 결정합니다. <strong>가늘수록 표면적이 넓어져 물과 접촉이 많아지고, 추출이 빨라집니다.</strong> 반대로 굵으면 물이 휙 지나가버려 추출이 덜 됩니다. 푸어오버의 황금 분쇄도는 '굵은 모래'~'정제 설탕' 사이. 요즘 2026 트렌드는 <span class="highlight">식탁 소금에 가까운 미세한 분쇄</span>를 쓰는 추세입니다(98°C 물, 1:15 비율에서).</p>
+
+    <h3>② 물 온도 — 2°C가 운명을 가른다</h3>
+    <p>물 온도는 <strong>용해 속도</strong>를 결정합니다. 88°C에서는 산미가 살아나고, 96°C에서는 단맛과 바디가 깊어지며, 98°C 이상에서는 오버 추출 리스크가 급증합니다. 흥미로운 연구 결과 — <strong>TDS와 EY가 같다면 온도가 달라져도 관능적 차이는 생각보다 작다</strong>는 겁니다. 즉, 온도는 '속도 조절 다이얼'에 가깝습니다.</p>
+
+    <h3>③ 블룸 (Bloom) — 30초의 과학</h3>
+    <p>원두에는 이산화탄소(CO₂)가 갇혀 있습니다. 블룸은 이 가스를 빼주는 과정이에요. 가스가 남아있으면 물과 커피 입자 사이에 벽을 만들어 추출을 막습니다. <strong>원두 무게의 2~3배 물을 붓고 30~45초 대기</strong> — 이게 모든 푸어오버의 시작입니다.</p>
+
+    <h3>④ Rao Spin — 컵을 돌리는 마법</h3>
+    <p>Scott Rao가 대중화한 기법입니다. 블룸 직후 <strong>V60 드리퍼를 원을 그리며 부드럽게 돌려주면</strong> 커피 베드가 평평해지고 뭉친 가루가 풀립니다. 이 간단한 동작 하나로 추출수율이 <strong>평균 0.5~1.5% 올라갑니다</strong>. 마지막 푸어 직후에도 한 번 더 살짝 돌려주면 드리퍼 벽면에 붙은 가루까지 모두 물에 잠깁니다.</p>
+
+    <h3>⑤ 물의 미네랄 — 보이지 않는 다섯 번째 변수</h3>
+    <p>많은 홈 바리스타가 놓치는 부분입니다. <strong>칼슘은 바디감과 크리미함</strong>을 담당하고, <strong>마그네슘은 과일 산미와 단맛</strong>을 추출하는 데 압도적으로 강력합니다. SCA 권장 수질 — TDS 75~150ppm, 경도 50~100ppm, 알칼리도 30~50ppm. 수돗물이 너무 경수라면 <strong>필터 정수 + 브루잉 미네랄 패킷</strong> 사용을 권합니다.</p>
+
+    <div class="tip-box">
+      <h3>🎯 오늘 저녁부터 바로 써먹는 실전 팁 3가지</h3>
+      <ol>
+        <li><strong>TDS 굴절계가 없어도 체크하는 법:</strong> 커피를 마시자마자 <strong>10초간 입에 머금어보세요</strong>. 혀 옆구리가 쥐어짜지듯 시큼하면 언더 추출 → 분쇄를 한 단계 가늘게. 끝맛이 재떨이처럼 텁텁하면 오버 → 분쇄를 한 단계 굵게.</li>
+        <li><strong>블룸 완성도 체크:</strong> 블룸 물을 부은 뒤 <strong>커피 표면이 "뽀글뽀글" 부풀지 않는다면</strong> 원두가 이미 신선함을 잃은 것. 로스팅 후 3주를 넘기지 마세요. CO₂가 빠진 원두는 Rao Spin을 아무리 해도 추출이 안 됩니다.</li>
+        <li><strong>푸어링 높이 통일:</strong> 주전자 입구와 커피 베드 사이 거리를 <strong>5cm로 고정</strong>하세요. 너무 높으면 입자가 튀고 구멍이 뚫려 채널링(channeling, 물길 터짐), 너무 낮으면 교반 부족. 이 높이 하나만 통제해도 재현성이 2배 올라갑니다.</li>
+      </ol>
+    </div>
+
+    <h2>4. 비율별 실전 가이드 — 숫자로 보는 맛의 지도</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>비율</th>
+          <th>TDS 예상치</th>
+          <th>캐릭터</th>
+          <th>어울리는 원두</th>
+          <th>추천 상황</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1:14</strong></td>
+          <td>1.50%↑</td>
+          <td>진하고 묵직, 에스프레소 같은 강도</td>
+          <td>다크 로스트 · 브라질</td>
+          <td>아침 잠 깨는 한잔</td>
+        </tr>
+        <tr>
+          <td><strong>1:15</strong></td>
+          <td>1.35~1.45%</td>
+          <td>단맛 강조, 바디 풍부</td>
+          <td>콜롬비아 · 과테말라</td>
+          <td>라떼 대용 / 디저트와</td>
+        </tr>
+        <tr>
+          <td><strong>1:16</strong></td>
+          <td>1.25~1.35%</td>
+          <td>밸런스 중간, 보편적</td>
+          <td>모든 원두 무난</td>
+          <td>입문자 · 매일 아침</td>
+        </tr>
+        <tr>
+          <td><strong>1:17</strong></td>
+          <td>1.15~1.25%</td>
+          <td>산미·향 극대화, 가벼움</td>
+          <td>에티오피아 · 케냐 · 게이샤</td>
+          <td>오후 티타임 · 시음용</td>
+        </tr>
+        <tr>
+          <td><strong>1:18</strong></td>
+          <td>1.05%↓</td>
+          <td>차처럼 맑고 섬세</td>
+          <td>내추럴 가공 라이트로스팅</td>
+          <td>꽃향 찾는 스페셜티 팬</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>이 표를 외우지 마세요. 대신 원리를 기억하세요 — <strong>진한 걸 원하면 비율을 낮추고, 섬세한 걸 원하면 비율을 높인다</strong>. 그리고 어느 쪽이든, <strong>X축(추출수율)이 18~22%를 벗어나면</strong> 비율이 어떻든 맛이 망가집니다.</p>
+
+    <h2>5. 전문가들이 쓰는 추출 레시피 3종 비교</h2>
+    <p>같은 V60이라도 누가 내리느냐에 따라 철학이 다릅니다. 세 가지 대표적인 레시피를 비교해봤습니다.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>레시피</th>
+          <th>원두:물</th>
+          <th>분쇄</th>
+          <th>온도</th>
+          <th>핵심 특징</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>James Hoffmann</strong></td>
+          <td>1:16.7 (15g:250g)</td>
+          <td>중간-가는</td>
+          <td>96°C</td>
+          <td>5단 푸어 · 중간 두 번 스월 · 전체 4분</td>
+        </tr>
+        <tr>
+          <td><strong>Scott Rao</strong></td>
+          <td>1:16 (22g:352g)</td>
+          <td>중간-가는</td>
+          <td>96°C</td>
+          <td>블룸 후 공격적 스핀 · 40초 후 한 번에 붓기</td>
+        </tr>
+        <tr>
+          <td><strong>Tetsu Kasuya 4:6</strong></td>
+          <td>1:15 (20g:300g)</td>
+          <td>중간-굵은</td>
+          <td>92°C</td>
+          <td>처음 40%로 단맛 조절 · 나머지 60%로 강도 조절</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>재미있는 점은 — <strong>세 사람 모두 "1:15~1:17" 좁은 창 안에서 움직인다</strong>는 겁니다. 진짜 차이는 '비율'이 아니라 <span class="highlight">물을 '언제, 얼마나, 어떻게' 붓느냐</span>에 있어요. 이게 바로 교반 제어(agitation control)의 예술입니다.</p>
+
+    <h2>6. 에스프레소에도 같은 원리가 — 9바의 거짓말</h2>
+    <p>푸어오버 얘기만 했지만, 에스프레소도 본질은 같습니다. 많은 분들이 "에스프레소는 무조건 9바"라고 알고 있는데요. <strong>9바는 표준일 뿐, 최적이 아닙니다</strong>. 실제로 퍽(puck)이 받는 저항에 따라 달라져야 해요.</p>
+    <p>분쇄가 가늘면 저항이 커지고, 너무 가늘면 <strong>채널링</strong>이 일어나 물이 한쪽으로만 쏟아집니다. 이때 나오는 샷은 "동시에 시큼하고 쓴" 지옥의 맛이죠. 요즘 프로 머신들이 <strong>프리인퓨전(pre-infusion)</strong>과 <strong>플로우 프로파일링(flow profiling)</strong>을 강조하는 이유가 여기 있습니다 — 저압으로 천천히 적셔 퍽 표면을 균일하게 만든 뒤 풀샷을 때리는 거예요.</p>
+    <p>온도도 마찬가지. <strong>90~96°C 사이에서 2~3°C만 바뀌어도 샷의 캐릭터가 과일에서 탄맛으로 이동</strong>합니다. 홈에스프레소 유저라면 PID 컨트롤러가 있는 머신을 쓰세요. 디지털 온도계 없이 샷 품질을 일정하게 맞추는 건 운에 맡기는 거나 다름없습니다.</p>
+
+    <div class="ending">
+      <h3>☕ 내일 아침, 당장 해볼 수 있는 실험</h3>
+      <p>같은 원두 20g을 두 잔 내리세요. A는 평소대로. B는 <strong>블룸 시간을 15초 → 40초로, 물 온도를 2°C 올려서</strong>. 테이스팅 노트를 써보면 깜짝 놀랄 겁니다 — 같은 원두가 완전히 다른 커피가 됩니다. 그게 바로 추출의 힘이에요. 비율이 아니라 <strong>'변수를 지배하는 자'</strong>가 진짜 바리스타입니다.</p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="tags">
+      <span class="tag">#푸어오버</span>
+      <span class="tag">#V60</span>
+      <span class="tag">#스페셜티커피</span>
+      <span class="tag">#커피추출</span>
+      <span class="tag">#TDS</span>
+      <span class="tag">#추출수율</span>
+      <span class="tag">#ScottRao</span>
+      <span class="tag">#JamesHoffmann</span>
+      <span class="tag">#에스프레소</span>
+      <span class="tag">#홈바리스타</span>
+      <span class="tag">#커피레시피</span>
+      <span class="tag">#브루잉컨트롤차트</span>
+    </div>
+    <div>작성일: 2026년 4월 22일 · 카테고리: 커피 추출 기법 심층 가이드</div>
+    <div class="disclaimer">
+      본 아티클은 2025~2026년 스페셜티 커피 업계 최신 자료(SCA 브루잉 스탠더드, Scott Rao·James Hoffmann 공개 레시피, 수질 연구 저널 등)를 바탕으로 10년차 바리스타의 현장 경험과 결합해 작성되었습니다. 개별 원두와 환경에 따라 결과는 달라질 수 있으며, 모든 레시피는 본인의 입맛에 맞게 재조정할 것을 권합니다.
+    </div>
+  </footer>
+</div>
+</body>
+</html>
