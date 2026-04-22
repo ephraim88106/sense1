@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 26, emoji: "☕", category: "추출",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "1:15 vs 1:17, 당신이 10년간 잘못 알고 있던 푸어오버 황금비율의 충격적 진실",
+    date: "2026.04.22",
+    summary: "SCA 브루잉 컨트롤 차트로 본 TDS 1.15~1.45% · 추출수율 18~22% 골든존, 비율·그라인드·푸어링·물·시간 5대 변수, Scott Rao Spin과 V60 물줄기 높이까지 — 10년차 바리스타가 공개하는 푸어오버 추출의 물리학.",
+    link: "coffee-article-2026-04-22.html"
+  },
+  {
     id: 25, emoji: "🌊", category: "트렌드",
     categoryColor: { bg: "#e0f2fe", text: "#0369a1" },
     title: "서울 카페 700곳이 문 닫은 해, 왜 스페셜티는 오히려 커졌나 — 2026 커피 업계의 잔혹한 양극화",
