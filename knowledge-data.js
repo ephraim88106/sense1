@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 27, emoji: "🔥", category: "로스팅",
+    categoryColor: { bg: "#fee2e2", text: "#991b1b" },
+    title: "로스터가 절대 안 알려주는 1차 크랙의 비밀 — 당신 커피가 쓴 진짜 이유는 'DTR 20%'에 있다",
+    date: "2026.04.23",
+    summary: "196°C 1차 크랙과 224°C 2차 크랙 사이, 디벨롭먼트 타임 비율(DTR) 20~25%가 커피 풍미의 70%를 결정하는 이유 — 마이야르 반응 스위트 스팟, 산지별 DTR 튜닝, 디개싱 과학과 원두 보관법까지 10년차 바리스타가 공개하는 로스팅 심층 가이드.",
+    link: "coffee-article-2026-04-23.html"
+  },
+  {
     id: 26, emoji: "☕", category: "추출",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "1:15 vs 1:17, 당신이 10년간 잘못 알고 있던 푸어오버 황금비율의 충격적 진실",
