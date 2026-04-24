@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 28, emoji: "🎨", category: "라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "로제타가 10번 중 9번 뭉개지는 진짜 이유 — 바리스타 10년차가 공개하는 '0.1mm 마이크로폼'의 물리학",
+    date: "2026.04.24",
+    summary: "손목 스냅이 아니라 스팀 단계에서 이미 70%가 끝난다 — 지름 0.1~0.3mm 마이크로폼을 만드는 카제인·유청 단백질의 계면활성 원리, 스팀완드 8~15도 소용돌이(vortex), 60~65°C 스위트 스팟, 하트·튤립·로제타 패턴별 유체역학 교정 포인트까지 10년차 바리스타가 공개하는 라떼아트 심층 가이드.",
+    link: "coffee-article-2026-04-24.html"
+  },
+  {
     id: 27, emoji: "🔥", category: "로스팅",
     categoryColor: { bg: "#fee2e2", text: "#991b1b" },
     title: "로스터가 절대 안 알려주는 1차 크랙의 비밀 — 당신 커피가 쓴 진짜 이유는 'DTR 20%'에 있다",
