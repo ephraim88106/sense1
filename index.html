@@ -85,6 +85,15 @@
             </div>
         </section>
 
+        <!-- 3.5 카테고리별 최신 아티클 -->
+        <section class="container section no-border">
+            <div class="section-title">
+                <h2>카테고리별 <span class="highlight">최신 아티클</span></h2>
+                <p>관심 있는 주제의 가장 최근 글을 바로 확인하세요.</p>
+            </div>
+            <div id="category-articles" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px;"></div>
+        </section>
+
         <!-- 4. 편집 방향 / 브랜드 소개 -->
         <section class="container section no-border">
             <div class="section-title">
@@ -254,6 +263,52 @@
                     </article>
                 </a>
             `).join('');
+        }
+
+        // 카테고리별 최신 아티클
+        const categoryOrder = [
+            { key: '로스팅', icon: '🔥' },
+            { key: '추출', icon: '☕' },
+            { key: '트렌드', icon: '🌊' },
+            { key: '품종 & 가공법', icon: '🧪' },
+            { key: '산지', icon: '🌍' },
+            { key: '카페 창업', icon: '💰' },
+            { key: '라떼아트', icon: '🎨' }
+        ];
+        const catContainer = document.getElementById('category-articles');
+        if (catContainer) {
+            catContainer.innerHTML = categoryOrder.map(cat => {
+                const items = knowledgeArticles
+                    .filter(a => a.category === cat.key)
+                    .slice(0, 2);
+                if (items.length === 0) return '';
+                const top = items[0];
+                const sub = items[1];
+                const subHtml = sub ? `
+                    <a href="${sub.link || 'knowledge-article.html?id=' + sub.id}" style="text-decoration:none;color:inherit;display:block;padding-top:14px;border-top:1px dashed #e5e7eb;">
+                        <p style="font-size:0.85rem;color:var(--text-main);font-weight:600;line-height:1.45;margin-bottom:4px;">${sub.title}</p>
+                        <p style="font-size:0.75rem;color:#8d99ae;">${sub.date}</p>
+                    </a>
+                ` : '';
+                return `
+                    <article class="info-box" style="display:flex;flex-direction:column;gap:14px;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;">
+                            <span style="font-size:0.8rem;background:${top.categoryColor.bg};color:${top.categoryColor.text};padding:4px 12px;border-radius:12px;font-weight:700;">${cat.icon} ${cat.key}</span>
+                            <a href="knowledge.html?category=${encodeURIComponent(cat.key)}" style="font-size:0.78rem;color:#0ea5e9;text-decoration:none;font-weight:600;">더보기 →</a>
+                        </div>
+                        <a href="${top.link || 'knowledge-article.html?id=' + top.id}" style="text-decoration:none;color:inherit;">
+                            <div style="display:flex;gap:10px;align-items:flex-start;">
+                                <span style="font-size:1.8rem;">${top.emoji}</span>
+                                <div>
+                                    <h3 style="font-size:1rem;margin-bottom:6px;line-height:1.4;">${top.title}</h3>
+                                    <p style="font-size:0.78rem;color:#8d99ae;">${top.date}</p>
+                                </div>
+                            </div>
+                        </a>
+                        ${subHtml}
+                    </article>
+                `;
+            }).join('');
         }
     </script>
 </body>
