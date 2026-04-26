@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 30, emoji: "☕", category: "산지",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "한 잔에 23,608달러짜리 커피의 정체, 그리고 2050년 당신의 모닝커피가 사라지는 이유",
+    date: "2026.04.26",
+    summary: "2025 Best of Panama 게이샤 1kg 23,608달러 낙찰의 진짜 이유는 품종이 아닌 \"땅\" — 1,500m vs 1,800m 100m가 만드는 브릭스 6포인트 차, 화산토 알로판(Allophane)의 배수·보습 비밀, 라보뱅크가 경고한 2050년 아라비카 재배지 20% 멸종 시나리오, 라벨을 농장 단위로 다시 읽는 법까지 10년차 바리스타가 공개하는 원두 산지·테루아 심층 가이드.",
+    link: "coffee-article-2026-04-26.html"
+  },
+  {
     id: 29, emoji: "💰", category: "카페 창업",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "\"카페 차리면 월 1,000만 원 번다\"는 거짓말 — 폐업률 14%, 10년차 바리스타가 공개하는 진짜 손익계산서",
