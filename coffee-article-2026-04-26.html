@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>23,608달러짜리 커피 한 잔의 비밀, 그리고 2050년 커피 멸종 시나리오</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #faf7f2;
+    color: #2c1810;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+  .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #6b3a2a, #8b4513);
+    color: #faf7f2;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 16px;
+  }
+  .date {
+    color: #8a6d5e;
+    font-size: 14px;
+    margin-bottom: 12px;
+    letter-spacing: 0.3px;
+  }
+  h1 {
+    font-size: 34px;
+    font-weight: 900;
+    line-height: 1.35;
+    color: #2c1810;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+  }
+  .subtitle {
+    font-size: 17px;
+    color: #5a4438;
+    font-weight: 400;
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+    border-bottom: 2px solid #e8dccd;
+    line-height: 1.6;
+  }
+  .hook {
+    font-size: 19px;
+    font-weight: 500;
+    color: #2c1810;
+    background: linear-gradient(180deg, #fffdf9 0%, #faf3e7 100%);
+    padding: 28px 30px;
+    border-left: 5px solid #c8860a;
+    border-radius: 4px;
+    margin-bottom: 36px;
+    font-style: italic;
+    line-height: 1.7;
+    box-shadow: 0 2px 8px rgba(107, 58, 42, 0.06);
+  }
+  .summary-box {
+    background: #2c1810;
+    color: #faf7f2;
+    padding: 28px 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+  }
+  .summary-box h3 {
+    font-size: 14px;
+    color: #c8860a;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  .summary-box ul {
+    list-style: none;
+  }
+  .summary-box li {
+    padding: 6px 0 6px 24px;
+    position: relative;
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  .summary-box li::before {
+    content: "☕";
+    position: absolute;
+    left: 0;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #2c1810;
+    margin: 50px 0 18px;
+    padding-left: 16px;
+    border-left: 5px solid #6b3a2a;
+    line-height: 1.4;
+  }
+  p {
+    font-size: 16px;
+    color: #3d2a1f;
+    margin-bottom: 18px;
+  }
+  .highlight {
+    background: linear-gradient(180deg, transparent 60%, #f3d98a 60%);
+    font-weight: 600;
+    padding: 0 2px;
+  }
+  .tip-box {
+    background: linear-gradient(135deg, #fef3d6, #fae5b1);
+    border: 1px solid #e9c478;
+    border-radius: 10px;
+    padding: 28px 30px;
+    margin: 36px 0;
+  }
+  .tip-box h3 {
+    color: #6b3a2a;
+    font-size: 18px;
+    margin-bottom: 16px;
+    font-weight: 800;
+  }
+  .tip-box ol {
+    padding-left: 0;
+    list-style: none;
+    counter-reset: tip;
+  }
+  .tip-box li {
+    counter-increment: tip;
+    padding: 10px 0 10px 42px;
+    position: relative;
+    font-size: 15.5px;
+    color: #3d2a1f;
+    line-height: 1.6;
+  }
+  .tip-box li::before {
+    content: counter(tip);
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 28px;
+    height: 28px;
+    background: #6b3a2a;
+    color: #faf7f2;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 13px;
+  }
+  .infographic {
+    background: #fff;
+    border: 1px solid #e8dccd;
+    border-radius: 12px;
+    padding: 32px 28px;
+    margin: 40px 0;
+    box-shadow: 0 2px 12px rgba(107, 58, 42, 0.05);
+  }
+  .infographic h3 {
+    text-align: center;
+    color: #6b3a2a;
+    font-size: 17px;
+    margin-bottom: 24px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+  }
+  .infographic svg {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    max-width: 720px;
+  }
+  .infographic .caption {
+    text-align: center;
+    font-size: 13px;
+    color: #8a6d5e;
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+  .closing {
+    background: linear-gradient(135deg, #6b3a2a, #2c1810);
+    color: #faf7f2;
+    padding: 36px 32px;
+    border-radius: 12px;
+    margin: 48px 0 32px;
+  }
+  .closing h3 {
+    color: #c8860a;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    margin-bottom: 14px;
+  }
+  .closing p {
+    color: #faf7f2;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  .closing strong { color: #c8860a; }
+  .tags {
+    margin: 32px 0 16px;
+    line-height: 2.4;
+  }
+  .tag {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #c8860a;
+    color: #6b3a2a;
+    padding: 4px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    margin-right: 6px;
+    font-weight: 500;
+  }
+  .footer {
+    border-top: 1px solid #e8dccd;
+    padding-top: 24px;
+    margin-top: 24px;
+    color: #8a6d5e;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  strong.bold-brown { color: #6b3a2a; font-weight: 700; }
+  @media (max-width: 600px) {
+    h1 { font-size: 26px; }
+    .container { padding: 28px 18px 60px; }
+    .hook, .summary-box, .tip-box, .infographic, .closing { padding: 22px 20px; }
+    h2 { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <span class="badge">☕ 원두 산지 & 농장 스토리</span>
+  <div class="date">2026년 4월 26일 · 바리스타 10년차의 깊은 이야기</div>
+
+  <h1>한 잔에 23,608달러짜리 커피의 정체, 그리고 2050년 당신의 모닝커피가 사라지는 이유</h1>
+  <p class="subtitle">파나마 게이샤 한 자루(20kg)가 대기업에 4억 7천만 원에 팔린 그날, 전 세계 커피 산지는 조용히 무너지고 있었습니다. 사실 대부분의 사람들이 모르는데 — 우리가 마시는 커피의 운명은 이미 "지도 위"에서 결정됩니다.</p>
+
+  <div class="hook">
+    "왜 같은 게이샤(Geisha)인데 어떤 건 1kg에 5만 원, 어떤 건 3,100만 원일까요?" 이 질문에 답하지 못한다면, 당신은 아직 커피의 진짜 가치를 모르는 겁니다. 그리고 더 충격적인 사실 — 그 가격을 만든 산지의 절반이 30년 안에 지구상에서 사라질 예정입니다.
+  </div>
+
+  <div class="summary-box">
+    <h3>오늘 이 글에서 배울 것</h3>
+    <ul>
+      <li>같은 품종이라도 "왜" 산지에 따라 맛이 완전히 달라지는지의 과학</li>
+      <li>2025 Best of Panama 경매에서 1kg에 23,608달러를 기록한 게이샤의 정체</li>
+      <li>2050년까지 아라비카 재배지 20%가 사라진다는 라보뱅크 보고서의 의미</li>
+      <li>예르가체프, 파나마, 콜롬비아, 브라질 — 4대 산지의 운명이 갈리는 분기점</li>
+      <li>오늘부터 원두 라벨을 "다르게" 읽는 방법 3가지</li>
+    </ul>
+  </div>
+
+  <h2>1. 게이샤가 미친 가격을 받는 진짜 이유 — 품종이 아니라 "땅"이다</h2>
+  <p>2025년 7월, <span class="highlight">에스메랄다 농장(Hacienda La Esmeralda)의 워시드 게이샤가 98점을 받으며 파나마 역사상 최고점</span>을 갱신했습니다. 같은 해 내추럴 게이샤는 97점, 1kg에 23,608달러로 중국 JD.com에 낙찰됐죠. 한 잔(약 7g)으로 환산하면 165달러, 한화 약 22만 원짜리 커피입니다.</p>
+  <p>여기서 90%의 사람들이 오해합니다. "게이샤니까 비싼 거다"라고요. 하지만 게이샤 품종 자체는 1930년대 에티오피아에서 발견된 평범한 야생종입니다. 진짜 가격을 만든 건 <strong class="bold-brown">파나마 보케테(Boquete) 지역의 1,600~1,800m 고도, 활화산 바루(Barú)의 미네랄 토양, 카리브해와 태평양 사이 안개대(cloud forest) 미세기후</strong>가 결합된 단 하나의 조건입니다. 이 세 가지가 빠지면 같은 게이샤 묘목이라도 99점이 아닌 84점짜리 커피가 됩니다. 즉, 우리는 "콩"이 아니라 "땅"에 돈을 지불하고 있는 것입니다.</p>
+
+  <h2>2. 고도 100m가 만드는 맛의 분기점 — 1,500m vs 1,800m의 화학</h2>
+  <p>커피 마니아도 잘 모르는 사실 — <span class="highlight">아라비카는 해발 100m 올라갈 때마다 평균 기온이 0.6℃씩 떨어지고, 체리 성숙 속도가 약 15% 느려집니다.</span> 느린 성숙은 단순히 시간만 끄는 게 아닙니다. 체리 안에서 자당(Sucrose)·말산(Malic acid)·구연산(Citric acid)이 천천히 축적되면서 풍미의 "층(layer)"이 만들어지죠.</p>
+  <p>1,500m에서 자란 커피는 18~22브릭스(Brix·당도) 수준입니다. 그런데 같은 품종이 1,800m로 올라가면 24~28브릭스까지 치솟습니다. 동시에 세포벽이 더 단단해져 원두 밀도(density)가 0.65g/ml에서 0.75g/ml로 증가하고, 이 단단함은 로스팅 시 향미 보존력의 차이를 만듭니다. 예르가체프(1,700~2,200m)의 그 유명한 자스민·베르가못 향, SCA 점수 88점 이상의 클린컵(Clean cup)이 어떻게 가능한지 — 답은 고도와 화산 토양의 결합입니다.</p>
+
+  <h2>3. 화산토양이 다른 이유 — 미네랄이 아니라 "배수"가 핵심</h2>
+  <p>"화산 토양이 좋다"는 말은 누구나 합니다. 하지만 정확히 왜 좋은지를 설명할 수 있는 사람은 드뭅니다. 카페에서 손님에게 이 한 마디만 해도 "이 바리스타 다르네"라는 인상을 남길 수 있죠.</p>
+  <p>화산토(Andisol)의 진짜 무기는 칼륨·인·마그네슘 같은 미네랄이 아닙니다 — 그건 부수효과입니다. 핵심은 <strong class="bold-brown">알로판(Allophane)이라는 비결정질 점토 광물</strong>이 만드는 압도적 배수력과 보습력의 동시 구현입니다. 일반 점토는 물을 가두면 뿌리를 썩히지만, 화산토는 물을 잡되 산소를 함께 머금어 뿌리 호흡을 막지 않습니다. 결과적으로 커피나무는 스트레스 없이 깊게 뿌리를 내리고, 미량 원소를 자유롭게 흡수해 풍미 전구체(Precursor)인 클로로겐산(CGA)과 트리고넬린(Trigonelline)을 더 많이 합성합니다. 과테말라 안티구아의 초콜릿·스파이스 노트, 코스타리카 타라주의 시트러스 산미, 인도네시아 만델링의 흙내음 — 모두 화산토가 만든 "지역의 서명"입니다.</p>
+
+  <div class="infographic">
+    <h3>📊 산지별 고도 × 향미 프로필 비교 (2026)</h3>
+    <svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="산지별 고도와 향미 비교 인포그래픽">
+      <!-- Y axis -->
+      <line x1="80" y1="40" x2="80" y2="300" stroke="#6b3a2a" stroke-width="2"/>
+      <!-- X axis -->
+      <line x1="80" y1="300" x2="700" y2="300" stroke="#6b3a2a" stroke-width="2"/>
+
+      <!-- Y axis labels (altitude) -->
+      <text x="70" y="50" text-anchor="end" font-size="12" fill="#5a4438">2200m</text>
+      <text x="70" y="115" text-anchor="end" font-size="12" fill="#5a4438">1900m</text>
+      <text x="70" y="180" text-anchor="end" font-size="12" fill="#5a4438">1600m</text>
+      <text x="70" y="245" text-anchor="end" font-size="12" fill="#5a4438">1300m</text>
+      <text x="70" y="305" text-anchor="end" font-size="12" fill="#5a4438">1000m</text>
+
+      <!-- Grid lines -->
+      <line x1="80" y1="50" x2="700" y2="50" stroke="#e8dccd" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="80" y1="115" x2="700" y2="115" stroke="#e8dccd" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="80" y1="180" x2="700" y2="180" stroke="#e8dccd" stroke-width="1" stroke-dasharray="3,3"/>
+      <line x1="80" y1="245" x2="700" y2="245" stroke="#e8dccd" stroke-width="1" stroke-dasharray="3,3"/>
+
+      <!-- Bars -->
+      <!-- Yirgacheffe 1700-2200 -->
+      <rect x="120" y="50" width="60" height="195" fill="#6b3a2a" rx="4"/>
+      <text x="150" y="40" text-anchor="middle" font-size="11" fill="#2c1810" font-weight="700">예르가체프</text>
+      <text x="150" y="320" text-anchor="middle" font-size="10" fill="#5a4438">자스민·베르가못</text>
+      <text x="150" y="334" text-anchor="middle" font-size="10" fill="#5a4438">SCA 88+</text>
+
+      <!-- Boquete (Geisha) 1500-1800 -->
+      <rect x="220" y="115" width="60" height="130" fill="#c8860a" rx="4"/>
+      <text x="250" y="40" text-anchor="middle" font-size="11" fill="#2c1810" font-weight="700">파나마 보케테</text>
+      <text x="250" y="320" text-anchor="middle" font-size="10" fill="#5a4438">트로피컬·플로럴</text>
+      <text x="250" y="334" text-anchor="middle" font-size="10" fill="#5a4438">SCA 90+ (게이샤)</text>
+
+      <!-- Antigua 1500-1700 -->
+      <rect x="320" y="135" width="60" height="110" fill="#8b4513" rx="4"/>
+      <text x="350" y="40" text-anchor="middle" font-size="11" fill="#2c1810" font-weight="700">과테말라 안티구아</text>
+      <text x="350" y="320" text-anchor="middle" font-size="10" fill="#5a4438">초콜릿·스파이스</text>
+      <text x="350" y="334" text-anchor="middle" font-size="10" fill="#5a4438">SCA 85~88</text>
+
+      <!-- Huila 1400-1900 -->
+      <rect x="420" y="115" width="60" height="155" fill="#a0522d" rx="4"/>
+      <text x="450" y="40" text-anchor="middle" font-size="11" fill="#2c1810" font-weight="700">콜롬비아 우일라</text>
+      <text x="450" y="320" text-anchor="middle" font-size="10" fill="#5a4438">캐러멜·레드애플</text>
+      <text x="450" y="334" text-anchor="middle" font-size="10" fill="#5a4438">SCA 84~87</text>
+
+      <!-- Kenya Nyeri 1600-2100 -->
+      <rect x="520" y="70" width="60" height="175" fill="#4a2818" rx="4"/>
+      <text x="550" y="40" text-anchor="middle" font-size="11" fill="#2c1810" font-weight="700">케냐 니에리</text>
+      <text x="550" y="320" text-anchor="middle" font-size="10" fill="#5a4438">블랙커런트·와인</text>
+      <text x="550" y="334" text-anchor="middle" font-size="10" fill="#5a4438">SCA 86~90</text>
+
+      <!-- Brazil Cerrado 800-1300 -->
+      <rect x="620" y="245" width="60" height="55" fill="#d4a574" rx="4"/>
+      <text x="650" y="40" text-anchor="middle" font-size="11" fill="#2c1810" font-weight="700">브라질 세하도</text>
+      <text x="650" y="320" text-anchor="middle" font-size="10" fill="#5a4438">너트·초콜릿·바디</text>
+      <text x="650" y="334" text-anchor="middle" font-size="10" fill="#5a4438">SCA 80~84</text>
+
+      <!-- Title note on right -->
+      <text x="700" y="55" text-anchor="end" font-size="10" fill="#8a6d5e" font-style="italic">고도↑ = 산미·플로럴↑</text>
+      <text x="700" y="295" text-anchor="end" font-size="10" fill="#8a6d5e" font-style="italic">고도↓ = 바디·달콤함↑</text>
+    </svg>
+    <p class="caption">고도가 높을수록 산미와 플로럴 노트가 강해지고, 낮을수록 바디감과 견과류·초콜릿 노트가 진해집니다. 같은 품종이라도 산지가 바뀌면 컵에 담기는 풍미가 완전히 달라지는 이유입니다.</p>
+  </div>
+
+  <h2>4. 무너지는 커피벨트 — 라보뱅크가 경고한 "20% 멸종" 지도</h2>
+  <p>2026년 4월, 글로벌 농업 대출은행 라보뱅크(Rabobank)는 충격적인 보고서를 발표했습니다. <span class="highlight">현재 전 세계 아라비카 재배지의 8%는 이미 기후학적으로 부적합 상태이며, 2050년까지 이 수치가 약 20%로 급증한다는 것</span>입니다. 더 구체적으로:</p>
+  <p><strong class="bold-brown">브라질</strong>은 적정 재배지 비율이 81%에서 62%로 19%p 추락합니다. 저고도 평지에 의존해온 브라질은 "올라갈 산"이 거의 없어 가장 큰 절대 손실이 예상됩니다. <strong class="bold-brown">콜롬비아</strong>는 부적합 지역이 7%에서 18%로 늘고, 적정 지역은 56%에서 45%로 줄어듭니다. 30℃를 넘기는 폭염일은 아라비카 생장에 치명적인데, 2026년 4월 클라이밋 센트럴(Climate Central) 분석에 따르면 주요 산지의 30℃ 초과일이 10년 전 대비 평균 30% 이상 증가했습니다.</p>
+  <p>당신이 지금 마시고 있는 그 콜롬비아 우일라 원두 — 25년 후 같은 농장에서 재배될 확률은 절반에 가깝습니다. 이건 환경 운동가의 과장이 아니라, 커피 선물(先物) 시장이 이미 가격에 반영하고 있는 현실입니다.</p>
+
+  <h2>5. 그래서 우리는 어떤 원두를 골라야 하는가 — 라벨을 다르게 읽는 법</h2>
+  <p>이 모든 변화 속에서 소비자가 할 수 있는 가장 강력한 행동은 <strong class="bold-brown">"라벨을 산지 단위가 아니라 농장 단위로 읽는 것"</strong>입니다. "콜롬비아 슈프리모"는 더 이상 정보가 아닙니다. 이건 등급 표시일 뿐이죠. 진짜 정보는 "콜롬비아 / 우일라 / 핀카 엘 파라이소 / 디에고 사무엘 보르메오 / 1,930m / 더블 아네로빅 / 카투라 품종"입니다.</p>
+  <p>2026년의 스페셜티 커피 소비자라면 농장 이름·생산자 이름·고도·가공법까지 표기된 원두만 사야 합니다. 이건 단지 허세가 아니라 — 그 정보가 있다는 건 직거래(Direct Trade) 또는 경매(Auction) 채널을 통해 생산자에게 정당한 가격이 돌아갔다는 증거이기 때문입니다. 두바이 커피 옥션 2026이 13개 산지국 최다 기록을 세운 것처럼, 직거래 시장은 빠르게 커지고 있고 그것이 지속가능한 산지를 지키는 유일한 경로입니다.</p>
+
+  <div class="tip-box">
+    <h3>💡 지금 바로 써먹는 실전 팁 3가지</h3>
+    <ol>
+      <li><strong>고도 1,500m 룰:</strong> 원두 봉투에 고도(Altitude/MASL)가 표기되지 않았다면 일단 보류하세요. 1,500m 이상이라고 명시된 원두는 산미·복합성에서 2~3등급 위입니다. 1,800m 이상이면 향미 다양성이 폭발합니다.</li>
+      <li><strong>"단일 농장(Single Farm)" 표기 우선:</strong> "Single Origin"은 국가만 단일하다는 뜻입니다. 진짜는 "Single Estate" 또는 "Single Farm"입니다. 맛의 일관성과 추적 가능성이 완전히 다릅니다.</li>
+      <li><strong>가공법으로 산지의 잠재력 가늠하기:</strong> 워시드(Washed)는 산지의 깨끗한 본질을, 내추럴(Natural)은 잠재된 단맛을, 허니(Honey)는 둘의 균형을 보여줍니다. 같은 농장의 세 가지 가공을 한 번씩 마셔보면 그 산지를 진짜로 이해하게 됩니다.</li>
+    </ol>
+  </div>
+
+  <h2>6. 커피의 미래는 "지도"가 아니라 "관계"에 있다</h2>
+  <p>10년차 바리스타로서 가장 인상 깊었던 순간은 2024년 콜롬비아 우일라의 한 농장을 방문했을 때였습니다. 디에고라는 3대째 농부는 같은 카투라 품종을 두 가지 고도(1,650m와 1,930m)에서 따로 재배하고 있었습니다. 그가 말했죠. "100m 차이가 다른 우주를 만든다(Cien metros, otro universo)." 컵에 담긴 두 잔은 정말로 다른 행성에서 온 커피 같았습니다.</p>
+  <p>기후가 산지의 좌표를 흔드는 시대 — 우리에게 남은 선택은 분명합니다. 더 비싼 게이샤를 쫓는 게 아니라, "이 잔이 어디서 어떻게 왔는지"를 묻는 습관을 들이는 것. 그 질문 하나가 멸종 시나리오 속에서 한 농장, 한 가족, 그리고 결국 당신이 내일 마실 커피를 지킵니다.</p>
+
+  <div class="closing">
+    <h3>오늘 당장 해볼 액션</h3>
+    <p>① 지금 당신의 원두 봉투를 꺼내 라벨을 다시 읽어보세요. <strong>국가 / 지역 / 농장 / 고도 / 가공법 / 품종</strong> — 이 6가지가 모두 적혀 있나요? 4개 이상이면 합격, 2개 이하면 다음 구매 때 바꾸세요.</p>
+    <p>② 같은 산지(예: 에티오피아)의 워시드와 내추럴을 한 봉지씩 사서 비교해보세요. 같은 땅이 만든 두 가지 풍미를 알아채는 순간, 산지가 비로소 "지명"이 아닌 "맛"으로 들어옵니다.</p>
+    <p>③ 다음 카페 방문 때 바리스타에게 물어보세요. <strong>"이 원두 농장 이름이 뭐예요?"</strong> 답할 수 있는 카페가 좋은 카페입니다.</p>
+  </div>
+
+  <div class="tags">
+    <span class="tag">#스페셜티커피</span>
+    <span class="tag">#원두산지</span>
+    <span class="tag">#파나마게이샤</span>
+    <span class="tag">#예르가체프</span>
+    <span class="tag">#커피테루아</span>
+    <span class="tag">#기후변화와커피</span>
+    <span class="tag">#직거래커피</span>
+    <span class="tag">#바리스타10년차</span>
+    <span class="tag">#커피멸종</span>
+    <span class="tag">#아라비카</span>
+  </div>
+
+  <div class="footer">
+    <p><strong>작성일:</strong> 2026년 4월 26일 · <strong>카테고리:</strong> 원두 산지 & 농장 스토리</p>
+    <p><strong>참고 자료:</strong> Rabobank Climate Report (2026), Best of Panama Auction 2025, Dubai Coffee Auction 2026, Climate Central (2026), Daily Coffee News, World Coffee Research</p>
+    <p style="margin-top: 12px; font-size: 12px;"><em>※ 본 아티클은 공개된 자료와 현장 경험에 기반한 콘텐츠이며, 가격·점수·통계는 발표 시점 기준입니다. 투자·구매 결정의 단독 근거로 사용하지 마시고 최신 시장 정보를 함께 확인하세요.</em></p>
+  </div>
+
+</div>
+</body>
+</html>
