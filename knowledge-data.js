@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 31, emoji: "🌸", category: "품종·가공",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "한 잔에 70만 원 게이샤가 자스민향이 나는 진짜 이유 — 99%가 모르는 '품종 × 가공법' 공식",
+    date: "2026.04.27",
+    summary: "커피 풍미를 결정하는 보이지 않는 두 손 — 게이샤·SL28·카투라·파카마라 4대 품종의 유전자 차이, 워시드·내추럴·허니의 발효 메커니즘, 2026년 스페셜티 신을 흔드는 혐기성 발효(Anaerobic) 트렌드, 카페 메뉴판 '품종/가공/고도' 코드 해독법까지 10년차 바리스타가 공개하는 품종 × 가공법 심층 가이드.",
+    link: "coffee-article-2026-04-27.html"
+  },
+  {
     id: 30, emoji: "☕", category: "산지",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "한 잔에 23,608달러짜리 커피의 정체, 그리고 2050년 당신의 모닝커피가 사라지는 이유",
