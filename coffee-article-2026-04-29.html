@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9bar 에스프레소는 60년 묵은 우연이었다 — 2026 챔피언들이 6bar로 갈아타는 진짜 이유</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #faf7f2;
+    color: #2c1810;
+    line-height: 1.75;
+    padding: 0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 4px 32px rgba(44, 24, 16, 0.06);
+  }
+  header {
+    background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 100%);
+    color: #faf7f2;
+    padding: 48px 32px 40px;
+  }
+  .badge {
+    display: inline-block;
+    background: #c8860a;
+    color: #2c1810;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+  }
+  .date {
+    font-size: 13px;
+    opacity: 0.75;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+  h1 {
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+  }
+  .subtitle {
+    margin-top: 16px;
+    font-size: 15px;
+    opacity: 0.85;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+  .author-strip {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(250, 247, 242, 0.15);
+    font-size: 13px;
+    opacity: 0.8;
+  }
+  .author-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #c8860a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #2c1810;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  main { padding: 40px 32px 32px; }
+  .hook {
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 1.7;
+    color: #6b3a2a;
+    padding: 24px 0;
+    border-bottom: 2px solid #faf0d8;
+    margin-bottom: 32px;
+  }
+  .summary-box {
+    background: #fff8e8;
+    border-left: 5px solid #c8860a;
+    padding: 22px 26px;
+    border-radius: 4px;
+    margin: 28px 0 36px;
+  }
+  .summary-box h3 {
+    font-size: 13px;
+    color: #c8860a;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .summary-box ul { list-style: none; padding: 0; }
+  .summary-box li {
+    padding: 6px 0 6px 22px;
+    position: relative;
+    font-size: 15px;
+    color: #2c1810;
+  }
+  .summary-box li::before {
+    content: "☕";
+    position: absolute;
+    left: 0;
+  }
+  h2 {
+    font-size: 23px;
+    font-weight: 800;
+    color: #2c1810;
+    margin: 44px 0 18px;
+    padding-left: 16px;
+    border-left: 5px solid #6b3a2a;
+    line-height: 1.4;
+  }
+  h3.sub {
+    font-size: 17px;
+    color: #6b3a2a;
+    margin: 24px 0 10px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 16px;
+    margin-bottom: 16px;
+    color: #2c1810;
+    line-height: 1.85;
+  }
+  p strong { color: #6b3a2a; font-weight: 700; }
+  .quote {
+    font-style: italic;
+    color: #6b3a2a;
+    border-left: 3px solid #c8860a;
+    padding: 4px 0 4px 18px;
+    margin: 18px 0;
+    font-size: 15px;
+  }
+  .tip-box {
+    background: linear-gradient(135deg, #fff4d6 0%, #ffe9b8 100%);
+    border-radius: 12px;
+    padding: 26px 28px;
+    margin: 36px 0;
+    box-shadow: 0 2px 12px rgba(200, 134, 10, 0.15);
+  }
+  .tip-box h3 {
+    font-size: 18px;
+    color: #6b3a2a;
+    margin-bottom: 14px;
+    font-weight: 800;
+  }
+  .tip-box ol {
+    padding-left: 0;
+    counter-reset: tip;
+    list-style: none;
+  }
+  .tip-box li {
+    padding: 14px 0 14px 44px;
+    position: relative;
+    border-bottom: 1px dashed rgba(107, 58, 42, 0.18);
+    font-size: 15px;
+    counter-increment: tip;
+  }
+  .tip-box li:last-child { border-bottom: none; }
+  .tip-box li::before {
+    content: counter(tip);
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 30px;
+    height: 30px;
+    background: #6b3a2a;
+    color: #fff8e8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .tip-box b { color: #6b3a2a; }
+  .infographic {
+    background: #fefcf6;
+    border: 1px solid #f0e6d2;
+    border-radius: 12px;
+    padding: 28px 24px 22px;
+    margin: 36px 0;
+    text-align: center;
+  }
+  .infographic h4 {
+    font-size: 14px;
+    color: #6b3a2a;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .infographic svg { max-width: 100%; height: auto; }
+  table.compare {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 14px;
+    background: #fefcf6;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  table.compare th {
+    background: #6b3a2a;
+    color: #fff8e8;
+    padding: 12px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  table.compare td {
+    padding: 12px;
+    border-bottom: 1px solid #f0e6d2;
+    color: #2c1810;
+  }
+  table.compare tr:last-child td { border-bottom: none; }
+  table.compare td:first-child { font-weight: 700; color: #6b3a2a; }
+  .closing {
+    background: #2c1810;
+    color: #fff8e8;
+    padding: 30px 28px;
+    border-radius: 12px;
+    margin: 40px 0 20px;
+    text-align: center;
+  }
+  .closing h3 {
+    color: #c8860a;
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 800;
+  }
+  .closing p {
+    color: #fff8e8;
+    font-size: 15px;
+    line-height: 1.7;
+  }
+  .tags {
+    margin-top: 36px;
+    padding-top: 24px;
+    border-top: 1px solid #f0e6d2;
+  }
+  .tag {
+    display: inline-block;
+    background: #fff8e8;
+    color: #6b3a2a;
+    padding: 6px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    margin: 4px 6px 4px 0;
+    font-weight: 500;
+  }
+  footer {
+    padding: 24px 32px 32px;
+    border-top: 1px solid #f0e6d2;
+    background: #faf7f2;
+    font-size: 12px;
+    color: #8a7560;
+    text-align: center;
+    line-height: 1.7;
+  }
+  @media (max-width: 600px) {
+    header { padding: 32px 22px; }
+    main { padding: 28px 22px; }
+    h1 { font-size: 24px; }
+    h2 { font-size: 19px; }
+    .hook { font-size: 17px; }
+    p { font-size: 15px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <span class="badge">DEEP DIVE · 추출 기법</span>
+    <div class="date">2026년 4월 29일 (수)</div>
+    <h1>9bar 에스프레소는 60년 묵은 우연이었다<br>— 2026 월드 챔피언들이 6bar로 갈아타는 진짜 이유</h1>
+    <p class="subtitle">당신이 평생 진리라 믿어온 9bar는 사실 1948년 가지아 스프링의 길이가 결정한 우연한 숫자였다. 올해 월드 바리스타 챔피언십 결승에 오른 선수 중 절반 이상이 6~7bar로 추출했다는 사실, 알고 있었나요?</p>
+    <div class="author-strip">
+      <div class="author-avatar">B</div>
+      <div>
+        <strong>BARISTA NOTES</strong> · 스페셜티 커피 10년차 바리스타<br>
+        <span style="opacity: 0.7;">읽는 시간 약 7분 · 깊이 있는 추출 과학</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <p class="hook">
+      "9bar로 뽑으세요." 카페 알바 첫날, 매니저가 그렇게 말했을 때 당신은 의심하지 않았을 거다. 모든 책에, 모든 유튜브에, 모든 머신 매뉴얼에 9bar가 적혀 있으니까. 그런데 사실 — <strong>그 숫자는 70년 전 이탈리아 기술자가 만든 스프링의 길이가 우연히 찍은 압력</strong>이다. 그리고 2026년, 세계 정상급 바리스타들이 그 숫자를 버리기 시작했다.
+    </p>
+
+    <div class="summary-box">
+      <h3>오늘 이 글에서 배울 것</h3>
+      <ul>
+        <li>9bar는 과학이 아니라 1948년 가지아 레버 스프링의 길이가 결정한 우연이라는 사실</li>
+        <li>같은 18~22% 추출수율인데 6bar가 더 달콤하게 느껴지는 미세입자(fines) 이론</li>
+        <li>압력 프로파일링·프리인퓨전·블룸이 채널링을 어떻게 막는지의 물리학</li>
+        <li>2026년 1,500달러 미만 가정용 머신에 압력 프로파일이 표준 탑재된 이유</li>
+        <li>오늘 당장 집 머신에서 시도해볼 수 있는 "유사 6bar 프로파일" 만드는 법</li>
+      </ul>
+    </div>
+
+    <h2>1948년, 가지아 씨가 만든 우연한 숫자</h2>
+    <p>
+      에스프레소 압력의 표준 9bar는 과학적 실험의 결과물이 아니다. 1948년, 이탈리아의 <strong>아킬레 가지아(Achille Gaggia)</strong>가 레버식 머신을 발명했을 때, 그가 사용한 스프링의 인장력이 자연스럽게 8~10bar 사이에서 작동했다. 그 가운데값인 9bar가 그대로 산업 표준으로 굳어졌을 뿐이다.
+    </p>
+    <p>
+      놀라운 건 이 우연이 무려 <strong>크레마(crema)</strong>를 만들어냈다는 것이다. 강한 압력에 물에 녹은 CO₂가 미세한 거품으로 분리되며 그 황금빛 막이 탄생했고, 사람들은 이걸 "에스프레소의 영혼"이라 부르기 시작했다. 그러나 크레마가 곧 맛은 아니다 — 60년 동안 우리는 9bar가 정답이라 가정하고 모든 그라인더, 머신, 레시피를 그 숫자에 맞춰 디자인해 온 것이다.
+    </p>
+
+    <h2>9bar의 어두운 비밀: 미세입자(fines)와 채널링</h2>
+    <p>
+      문제는 압력이 높을수록 <strong>커피 베드 안에서 미세입자가 바닥으로 밀려 내려가 필터 구멍을 막는다</strong>는 점이다. 이게 바로 <strong>채널링(channeling)</strong>의 시작이다. 물이 균일하게 통과하지 못하고 한쪽으로만 빠져나가면, 어떤 부위는 과추출되고 어떤 부위는 덜 추출된다. 결과는? 18~22% 추출수율 안에 들어와도 입에서는 쓴맛과 시큼함이 동시에 난다.
+    </p>
+    <p>
+      반면 <strong>6bar</strong>로 낮추면 미세입자의 이주(fine migration)가 줄어든다. 베드 안의 입자들이 더 안정적으로 물을 받아들이고, 같은 추출수율이 나와도 <strong>맛의 균질성(uniformity)</strong>이 극적으로 올라간다. Climpson & Sons의 블라인드 테이스팅 결과는 분명했다 — 다크초콜릿·시트러스 산미였던 샷이 6bar에서는 밀크초콜릿·말산(말릭 애시드)·드라이프룻 캐릭터로 변했고, 시음자 대다수가 6bar 샷이 더 달다고 답했다.
+    </p>
+
+    <h3 class="sub">왜 추출수율이 같은데 맛은 다른가?</h3>
+    <p>
+      추출수율(EY, Extraction Yield)은 단순히 <em>몇 퍼센트가 녹아 나왔는가</em>만 측정한다. 그러나 같은 20%라도 <strong>어디서</strong> 녹아 나왔는지가 핵심이다. 9bar 채널링이 발생한 샷은 같은 20%여도 절반은 과추출(쓴 페놀류), 절반은 저추출(시큼한 산)에서 나온다. 6bar는 같은 20%가 베드 전체에서 고르게 나오기 때문에, 우리가 인지하는 <em>균형감과 단맛</em>이 살아난다.
+    </p>
+
+    <div class="infographic">
+      <h4>9bar Flat vs 6bar Profiled — 압력 곡선 비교</h4>
+      <svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="bg9" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#6b3a2a" stop-opacity="0.18"/>
+            <stop offset="100%" stop-color="#6b3a2a" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="bg6" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%" stop-color="#c8860a" stop-opacity="0.22"/>
+            <stop offset="100%" stop-color="#c8860a" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <line x1="60" y1="270" x2="700" y2="270" stroke="#8a7560" stroke-width="1.5"/>
+        <line x1="60" y1="40" x2="60" y2="270" stroke="#8a7560" stroke-width="1.5"/>
+        <text x="50" y="65" text-anchor="end" fill="#6b3a2a" font-size="12" font-weight="700">10</text>
+        <text x="50" y="120" text-anchor="end" fill="#6b3a2a" font-size="12" font-weight="700">8</text>
+        <text x="50" y="175" text-anchor="end" fill="#6b3a2a" font-size="12" font-weight="700">6</text>
+        <text x="50" y="230" text-anchor="end" fill="#6b3a2a" font-size="12" font-weight="700">4</text>
+        <text x="50" y="275" text-anchor="end" fill="#6b3a2a" font-size="12" font-weight="700">2</text>
+        <text x="32" y="155" fill="#6b3a2a" font-size="11" font-weight="700" transform="rotate(-90 32 155)">압력 (bar)</text>
+        <text x="60" y="290" text-anchor="middle" fill="#8a7560" font-size="11">0s</text>
+        <text x="220" y="290" text-anchor="middle" fill="#8a7560" font-size="11">8s</text>
+        <text x="380" y="290" text-anchor="middle" fill="#8a7560" font-size="11">16s</text>
+        <text x="540" y="290" text-anchor="middle" fill="#8a7560" font-size="11">24s</text>
+        <text x="680" y="290" text-anchor="middle" fill="#8a7560" font-size="11">32s</text>
+        <text x="380" y="312" text-anchor="middle" fill="#6b3a2a" font-size="11" font-weight="700">추출 시간</text>
+        <path d="M 60 240 L 100 240 L 130 90 L 600 90 L 640 130 L 700 130" fill="none" stroke="#6b3a2a" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M 60 240 L 100 240 L 130 90 L 600 90 L 640 130 L 700 130 L 700 270 L 60 270 Z" fill="url(#bg9)"/>
+        <text x="430" y="78" text-anchor="middle" fill="#6b3a2a" font-size="12" font-weight="700">9 bar 플랫 — 채널링 위험 ↑</text>
+        <path d="M 60 250 L 80 235 L 120 200 L 160 175 L 240 165 L 360 165 L 480 175 L 580 195 L 660 215 L 700 230" fill="none" stroke="#c8860a" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M 60 250 L 80 235 L 120 200 L 160 175 L 240 165 L 360 165 L 480 175 L 580 195 L 660 215 L 700 230 L 700 270 L 60 270 Z" fill="url(#bg6)"/>
+        <text x="370" y="155" text-anchor="middle" fill="#c8860a" font-size="12" font-weight="700">6 bar 프로파일 — 균질 추출 ↑</text>
+        <rect x="62" y="40" width="58" height="20" fill="#fff8e8" stroke="#c8860a" stroke-width="1"/>
+        <text x="91" y="54" text-anchor="middle" fill="#6b3a2a" font-size="10" font-weight="700">PRE-INFUSION</text>
+        <rect x="125" y="40" width="80" height="20" fill="#fff8e8" stroke="#c8860a" stroke-width="1"/>
+        <text x="165" y="54" text-anchor="middle" fill="#6b3a2a" font-size="10" font-weight="700">RAMP-UP</text>
+        <rect x="210" y="40" width="290" height="20" fill="#fff8e8" stroke="#c8860a" stroke-width="1"/>
+        <text x="355" y="54" text-anchor="middle" fill="#6b3a2a" font-size="10" font-weight="700">EXTRACTION (피크 압력)</text>
+        <rect x="505" y="40" width="195" height="20" fill="#fff8e8" stroke="#c8860a" stroke-width="1"/>
+        <text x="602" y="54" text-anchor="middle" fill="#6b3a2a" font-size="10" font-weight="700">DECLINE (감압)</text>
+      </svg>
+      <p style="font-size: 12px; color: #8a7560; margin-top: 12px;">데이터 종합: Climpson &amp; Sons / Robert McKeon Aloe / Compound Coffee 실험 결과를 시각화</p>
+    </div>
+
+    <h2>프리인퓨전(Pre-infusion): 채널링을 막는 진짜 무기</h2>
+    <p>
+      낮은 압력만큼 중요한 게 <strong>프리인퓨전</strong>이다. 본 추출에 들어가기 전 1~3bar의 낮은 압력으로 5~10초간 퍽(puck)을 적시는 단계인데, 이게 왜 결정적이냐면 — 마른 커피 가루는 물을 만나는 순간 부풀어 오르며 베드를 재배열한다. 이 재배열이 <strong>본 추출 압력이 가해지기 전에</strong> 끝나야 채널이 생기지 않는다.
+    </p>
+    <p>
+      Robert McKeon Aloe의 데이터에 따르면, 프리인퓨전을 도입한 샷은 같은 분쇄도에서 <strong>더 곱게 갈아도 채널링이 생기지 않는다</strong>. 곱게 갈수록 표면적이 넓어져 추출 효율이 높아지고, 같은 양의 원두로 더 풍부한 플레이버를 끌어낼 수 있다는 뜻이다. 9bar 머신만 쓰던 시대에는 이게 불가능했다.
+    </p>
+
+    <h2>2026년: 압력 프로파일링이 1,500달러 시대로 내려왔다</h2>
+    <p>
+      불과 5년 전만 해도 압력 프로파일링은 6,000달러 이상의 상업용 머신에서나 볼 수 있는 기능이었다. 그러나 2026년 World of Coffee 샌디에이고에서 발표된 라인업을 보면 — <strong>1,500달러 미만 가정용 머신에 프로그래머블 프리인퓨전, 가변 압력, 플로우 컨트롤이 표준 탑재</strong>되어 있다. SCA 조사에서 소비자의 70%가 "개인화된 추출"에 관심을 보였다는 결과가 시장을 바꿨다.
+    </p>
+    <p>
+      독일 스타트업 <strong>Next Level Coffee</strong>가 공개한 'Anybeans' 기능은 한 발 더 나갔다. 원두 봉투 정보를 스캔하면 AI가 자체 데이터베이스에서 해당 원두에 최적화된 분쇄도와 압력 프로파일을 자동 생성한다. 가지아 씨가 우연히 만든 9bar의 시대가 정말로 저물고 있는 것이다.
+    </p>
+
+    <table class="compare">
+      <thead>
+        <tr><th>변수</th><th>9bar 플랫 추출</th><th>6bar 프로파일 추출</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>피크 압력</td><td>9.0 bar</td><td>6.0~7.0 bar</td></tr>
+        <tr><td>프리인퓨전</td><td>없음 또는 1~2초</td><td>5~10초, 1~3 bar</td></tr>
+        <tr><td>일반 추출수율</td><td>18~21%</td><td>19~22%</td></tr>
+        <tr><td>맛 프로파일</td><td>다크초콜릿, 시트릭, 강한 바디</td><td>밀크초콜릿, 말릭, 드라이프룻</td></tr>
+        <tr><td>채널링 위험</td><td>높음 (미세입자 이주)</td><td>낮음 (베드 안정)</td></tr>
+        <tr><td>분쇄도</td><td>중간~약간 굵게</td><td>곱게 (표면적 ↑)</td></tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <h3>오늘 당장 써먹는 실전 팁 3가지</h3>
+      <ol>
+        <li><b>유사 프리인퓨전 만들기:</b> 압력 조절이 안 되는 가정용 머신이라면, 추출 시작 직후 5~7초 동안 <em>일부러 컵 위에 빈 잔을 두지 말고 발사 후 즉시 멈춤 → 5초 대기 → 재시작</em>해 보라. 베드가 고르게 적셔지는 가짜 프리인퓨전 효과가 난다.</li>
+        <li><b>분쇄도를 한 단계 더 곱게:</b> 평소보다 1~2클릭 더 곱게 갈고 추출 시간을 28~32초로 늘려보라. 프리인퓨전이 들어가면 채널링 없이 더 달콤하고 단단한 바디가 나온다. 단, 사전 적심 단계가 반드시 있어야 한다.</li>
+        <li><b>OPV 모드를 시도하라:</b> 자가 머신을 쓴다면 OPV(Over Pressure Valve)를 6~7bar로 직접 조정하거나, 9bar 모드와 비교 블라인드 테이스팅을 해보라. 같은 원두로 일주일만 비교해도 압력이 맛의 절반을 결정한다는 걸 체감할 수 있다.</li>
+      </ol>
+    </div>
+
+    <h2>핵심 정리: 9bar는 "정답"이 아니라 "한 가지 답"</h2>
+    <p>
+      오해하지 말자 — 9bar가 틀린 건 아니다. 60년 동안 수많은 명작 에스프레소가 9bar에서 나왔고, 다크 로스트나 클래식 이탈리안 블렌드는 여전히 9bar가 적합하다. 그러나 <strong>2026년의 스페셜티 씬은 산미와 향이 살아 있는 라이트~미디엄 로스트 위주</strong>로 재편됐고, 이 원두들은 6bar의 부드러운 추출에서 진가를 발휘한다.
+    </p>
+    <p>
+      바리스타가 해야 할 일은 단 하나 — 자기가 다루는 원두마다 가장 맛있는 압력 곡선을 직접 찾는 것이다. 9bar는 출발점일 뿐, 도착점이 아니다.
+    </p>
+
+    <div class="closing">
+      <h3>📌 내일 당장 해볼 것</h3>
+      <p>
+        오늘 마신 에스프레소를 평소처럼 9bar로 한 잔, 그리고 추출 직후 5초 멈춤(가짜 프리인퓨전)을 추가한 한 잔, 두 개를 만들어 블라인드로 비교해 보세요. 이 작은 실험 하나가 여러분의 미각 데이터베이스를 바꿉니다. 60년 묵은 가정을 의심하는 것 — 그게 좋은 바리스타의 시작입니다.
+      </p>
+    </div>
+
+    <div class="tags">
+      <span class="tag">#스페셜티커피</span>
+      <span class="tag">#에스프레소추출</span>
+      <span class="tag">#9바그래픽</span>
+      <span class="tag">#압력프로파일링</span>
+      <span class="tag">#프리인퓨전</span>
+      <span class="tag">#홈바리스타</span>
+      <span class="tag">#커피과학</span>
+      <span class="tag">#월드바리스타챔피언십</span>
+      <span class="tag">#Gaggia</span>
+      <span class="tag">#PressureProfiling</span>
+    </div>
+
+  </main>
+
+  <footer>
+    BARISTA NOTES · 2026년 4월 29일 작성 · 본 글은 정보 제공 목적이며, 추출 결과는 개별 원두·머신·환경에 따라 달라질 수 있습니다.<br>
+    참고: Climpson &amp; Sons / Perfect Daily Grind / Specialty Coffee Association / Robert McKeon Aloe (TDS Archive) / Clive Coffee
+  </footer>
+
+</div>
+</body>
+</html>
