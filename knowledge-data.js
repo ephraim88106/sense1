@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 33, emoji: "☕", category: "추출",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "9bar 에스프레소는 60년 묵은 우연이었다 — 2026 월드 챔피언들이 6bar로 갈아타는 진짜 이유",
+    date: "2026.04.29",
+    summary: "1948년 가지아 스프링의 길이가 우연히 결정한 9bar 신화의 붕괴 — 2026 월드 바리스타 챔피언십 결승 진출자 절반이 선택한 6~7bar 저압 추출, 프리인퓨전·블루밍·압력 프로파일링의 추출 과학, TDS·수율과 압력의 상관관계, 가정용 머신에서 6bar를 흉내 내는 실전 팁까지 10년차 바리스타가 공개하는 스페셜티 에스프레소 추출 심층 가이드.",
+    link: "coffee-article-2026-04-29.html"
+  },
+  {
     id: 32, emoji: "🌊", category: "트렌드",
     categoryColor: { bg: "#e0f2fe", text: "#0369a1" },
     title: "1,226억 달러 시장이 흔들린다? 스타벅스도 따라가는 2026 스페셜티 커피의 비밀 7가지",
