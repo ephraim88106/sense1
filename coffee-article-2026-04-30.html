@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>갓 볶은 원두가 더 맛없다? — 바리스타도 헷갈리는 '디개싱 72시간'의 잔혹한 과학 | 2026.04.30</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #faf7f2;
+    color: #2c1810;
+    line-height: 1.8;
+    padding: 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(44, 24, 16, 0.08);
+  }
+  .header {
+    background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 100%);
+    color: #faf7f2;
+    padding: 40px 32px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: "";
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, rgba(200, 134, 10, 0.25) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .badge {
+    display: inline-block;
+    background: #c8860a;
+    color: #2c1810;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .date {
+    font-size: 13px;
+    color: #d4b896;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+  h1 {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1.35;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #e8d5b7;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+  .author {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(232, 213, 183, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #d4b896;
+  }
+  .author-avatar {
+    width: 32px; height: 32px;
+    background: #c8860a;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    color: #2c1810;
+  }
+  .content { padding: 36px 32px 24px; }
+  .hook {
+    font-size: 17px;
+    font-weight: 500;
+    color: #6b3a2a;
+    background: #fdf6ea;
+    border-left: 4px solid #c8860a;
+    padding: 18px 22px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+  .summary-box {
+    background: linear-gradient(135deg, #fdf6ea 0%, #f7e8d0 100%);
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-bottom: 32px;
+    border: 1px solid #e8d5b7;
+  }
+  .summary-box h3 {
+    font-size: 14px;
+    color: #6b3a2a;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .summary-box h3::before {
+    content: "☕";
+    font-size: 18px;
+  }
+  .summary-box ul { list-style: none; }
+  .summary-box li {
+    padding: 6px 0 6px 22px;
+    position: relative;
+    font-size: 14.5px;
+    color: #2c1810;
+  }
+  .summary-box li::before {
+    content: "▸";
+    position: absolute;
+    left: 4px;
+    color: #c8860a;
+    font-weight: 700;
+  }
+  h2 {
+    font-size: 21px;
+    font-weight: 900;
+    color: #2c1810;
+    margin: 36px 0 14px;
+    padding-left: 14px;
+    border-left: 5px solid #c8860a;
+    line-height: 1.4;
+  }
+  h2 .num {
+    color: #c8860a;
+    font-family: 'Playfair Display', serif;
+    margin-right: 8px;
+  }
+  p {
+    font-size: 15.5px;
+    color: #3d2818;
+    margin-bottom: 14px;
+    line-height: 1.85;
+  }
+  .highlight {
+    background: linear-gradient(180deg, transparent 60%, rgba(200, 134, 10, 0.3) 60%);
+    font-weight: 700;
+    padding: 0 2px;
+  }
+  .quote {
+    font-style: italic;
+    color: #6b3a2a;
+    border-left: 3px dashed #c8860a;
+    padding: 8px 0 8px 16px;
+    margin: 18px 0;
+    font-size: 15px;
+  }
+  .tip-box {
+    background: linear-gradient(135deg, #c8860a 0%, #a06a08 100%);
+    color: #faf7f2;
+    border-radius: 14px;
+    padding: 26px;
+    margin: 32px 0;
+    box-shadow: 0 6px 20px rgba(200, 134, 10, 0.2);
+  }
+  .tip-box h3 {
+    font-size: 16px;
+    margin-bottom: 14px;
+    font-weight: 900;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .tip-box h3::before { content: "💡"; }
+  .tip-item {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(250, 247, 242, 0.18);
+  }
+  .tip-item:last-child { border: none; padding-bottom: 0; }
+  .tip-num {
+    display: inline-block;
+    background: #2c1810;
+    color: #c8860a;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 24px;
+    font-weight: 700;
+    font-size: 12px;
+    margin-right: 8px;
+  }
+  .tip-item strong { color: #fff7e8; }
+  .tip-item p {
+    color: #fdf6ea;
+    margin: 6px 0 0 32px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .infographic {
+    background: #fdfaf4;
+    border: 1px solid #e8d5b7;
+    border-radius: 12px;
+    padding: 24px;
+    margin: 28px 0;
+    text-align: center;
+  }
+  .infographic-title {
+    font-size: 13px;
+    color: #6b3a2a;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+  .infographic svg { max-width: 100%; height: auto; }
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+    background: #fdfaf4;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .data-table th {
+    background: #6b3a2a;
+    color: #faf7f2;
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .data-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #e8d5b7;
+    color: #3d2818;
+  }
+  .data-table tr:last-child td { border-bottom: none; }
+  .data-table tr:nth-child(even) { background: #faf3e6; }
+  .closing {
+    background: #2c1810;
+    color: #faf7f2;
+    padding: 26px;
+    border-radius: 12px;
+    margin: 32px 0 20px;
+    text-align: center;
+  }
+  .closing h3 {
+    color: #c8860a;
+    font-size: 17px;
+    margin-bottom: 10px;
+    font-weight: 900;
+  }
+  .closing p { color: #e8d5b7; font-size: 14.5px; margin: 0; }
+  .tags {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin: 24px 0;
+  }
+  .tag {
+    background: #fdf6ea;
+    color: #6b3a2a;
+    padding: 6px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    border: 1px solid #e8d5b7;
+  }
+  footer {
+    background: #faf7f2;
+    padding: 22px 32px;
+    border-top: 1px solid #e8d5b7;
+    font-size: 12px;
+    color: #8b6f55;
+    text-align: center;
+    line-height: 1.7;
+  }
+  @media (max-width: 600px) {
+    body { padding: 10px; }
+    .header, .content { padding: 28px 22px; }
+    h1 { font-size: 22px; }
+    h2 { font-size: 18px; }
+    p, .summary-box li { font-size: 14.5px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="header">
+    <span class="badge">로스팅 & 원두</span>
+    <div class="date">2026년 4월 30일 · 목요일</div>
+    <h1>갓 볶은 원두가 더 맛없는 진짜 이유<br>— 바리스타도 헷갈리는 '디개싱 72시간'의 과학</h1>
+    <div class="subtitle">25바의 폭발, 30.7°C의 함정, 그리고 당신의 원두가 매일 죽어가는 이유까지 — 10년차 바리스타가 풀어내는 로스팅 화학의 모든 것.</div>
+    <div class="author">
+      <div class="author-avatar">B</div>
+      <div><strong style="color:#fff7e8">Barista Notes</strong> · 스페셜티 커피 10년차 바리스타가 직접 씁니다</div>
+    </div>
+  </header>
+
+  <div class="content">
+
+    <div class="hook">
+      "방금 볶았어요!" — 카페 주인이 자랑스럽게 내미는 그 원두, 사실 지금 마시면 가장 맛없을 때입니다. 왜 그럴까요? 그리고 정확히 며칠을 기다려야 할까요?
+    </div>
+
+    <div class="summary-box">
+      <h3>오늘 이 글에서 배울 것</h3>
+      <ul>
+        <li>1차 크랙에서 원두 안에서 실제로 일어나는 25바급 폭발의 정체</li>
+        <li>로스팅 직후 72시간이 왜 '커피의 사춘기'인지</li>
+        <li>당신의 원두를 일주일 만에 죽이는 30.7°C의 비밀</li>
+        <li>라이트 vs 미디엄 vs 다크, 카페인·산미·당분의 진짜 차이 (수치 공개)</li>
+        <li>홈로스터가 아니어도 써먹을 수 있는 원두 보관 실전 팁 3가지</li>
+      </ul>
+    </div>
+
+    <h2><span class="num">01.</span>1차 크랙 — 원두 안에서 벌어지는 25바의 폭발</h2>
+    <p>로스팅을 처음 배울 때 가장 신기한 순간은 원두가 "탁! 탁!" 하고 터지는 1차 크랙입니다. 사실 <span class="highlight">대부분의 사람들이 모르는데, 이건 단순한 소리가 아니라 진짜 '폭발'</span>입니다. 약 196°C에서 발생하는 1차 크랙은 원두 내부에 갇힌 수증기와 이산화탄소(CO₂)가 만든 25~50바(bar)의 압력이 셀 벽의 인장강도를 넘어서면서 일어나는 사건이거든요. 참고로 자동차 타이어 압력이 약 2바입니다. 작은 콩 한 알 안에서 그 12배의 압력이 터져나오는 셈이죠.</p>
+    <p>더 중요한 건, 이 순간 원두는 <span class="highlight">'열을 흡수하던 상태'에서 '열을 내뿜는 상태'로 바뀐다</span>는 점입니다. 흡열반응이 발열반응으로 전환되는 이 순간을 우리는 '발열 전이(exothermic phase transition)'라고 부릅니다. 로스터의 RoR(분당 온도 상승률)이 갑자기 튀어오르는 것도 그래서예요. 이 미세한 변화를 잡아내지 못하면 원두는 한순간에 타버립니다.</p>
+
+    <h2><span class="num">02.</span>마이야르 반응 — 갈색의 향, 그 5분의 마법</h2>
+    <p>1차 크랙 직전, 약 150~190°C 구간에서 일어나는 화학반응이 바로 그 유명한 <strong>마이야르 반응(Maillard reaction)</strong>입니다. 단백질의 아미노산과 환원당이 결합하면서 멜라노이딘이라는 갈색 색소와 푸란(카라멜 향), 피롤, 2-푸르푸릴티올(강렬한 커피 향) 같은 휘발성 향미 화합물이 만들어지죠. 빵을 구울 때, 스테이크를 시어링할 때 나는 그 고소한 향이 모두 이 반응의 결과입니다.</p>
+    <p>스페셜티 로스터들은 이 마이야르 구간을 <span class="highlight">3~5분으로 정밀하게 컨트롤</span>합니다. 짧으면 더 달고 산미가 살아나는 라이트한 프로파일, 길면 코코아·견과류 풍미가 깊어지는 미디엄 프로파일이 됩니다. 다만 너무 길어지면 향미를 만든 휘발성 화합물이 오히려 타버려 쓴맛만 남습니다. 그래서 <span class="highlight">에티오피아 게이샤처럼 산미가 매력인 원두는 짧은 마이야르를, 콜롬비아·브라질처럼 단단한 원두는 긴 마이야르를 선호</span>합니다. 같은 196°C라도 거기까지 어떻게 도달했느냐에 따라 컵의 운명이 달라지는 거죠.</p>
+
+    <h2><span class="num">03.</span>디개싱 72시간 — 왜 '갓 볶은 원두'가 가장 맛없을까</h2>
+    <p>이게 오늘 글의 진짜 핵심입니다. 로스팅이 끝난 원두는 내부에 엄청난 양의 CO₂를 품고 있습니다. 그리고 그 CO₂가 빠져나오는 과정을 <strong>디개싱(degassing)</strong>이라고 부릅니다. 연구에 따르면 <span class="highlight">전체 가스의 상당량이 로스팅 후 24~72시간 안에 빠져나오고, 그 뒤로도 며칠에서 몇 주에 걸쳐 천천히 방출</span>됩니다.</p>
+    <p>문제는 이 CO₂가 너무 많이 남아 있을 때입니다. 에스프레소를 추출하면 크레마가 비정상적으로 부풀어 올라 물이 원두층을 제대로 통과하지 못합니다. 푸어오버에서는 '블루밍(bloom)'이 폭발적으로 일어나면서 추출이 들쭉날쭉해지고요. <span class="highlight">바리스타들이 보통 로스팅 후 5~14일 사이를 '골든 윈도우'</span>라고 부르는 이유가 여기에 있습니다. 너무 빠르면 거칠고, 너무 늦으면 산화로 향이 죽기 때문입니다.</p>
+    <div class="quote">"갓 볶은 원두를 그날 바로 마시고 싶다면, 솔직히 차라리 일주일 묵은 잘 보관된 원두가 더 맛있습니다." — 로스터들이 입을 모으는 이야기</div>
+
+    <h2><span class="num">04.</span>30.7°C의 함정 — 당신의 원두가 죽어가는 진짜 속도</h2>
+    <p>2026년 발표된 한 연구는 정말 충격적인 임계값을 제시했습니다. <span class="highlight">주변 온도가 30.7°C를 넘으면 CO₂ 방출 속도가 급격히 가속</span>된다는 겁니다. 한국의 한여름 차 안 온도가 50°C를 가뿐히 넘는다는 걸 생각하면, 마트 주차장에 잠깐 둔 원두가 얼마나 빨리 망가질지 짐작이 갑니다.</p>
+    <p>그래서 좋은 카페들은 원두 봉투에 일방향 디개싱 밸브를 답니다. CO₂는 빠져나가게 하면서 산소는 들어오지 못하게 막는 장치죠. 하지만 이 밸브가 있어도 보관 환경이 나쁘면 무용지물입니다. <span class="highlight">냉장고 안에 보관하라는 조언은 틀렸습니다</span> — 냄새 흡수, 결로 발생, 꺼냈다 넣었다 할 때마다 이슬점 통과로 향미가 죽거든요. 정답은 직사광선·고온·습기를 피한 <strong>실온 그늘, 밀폐 용기, 그리고 가능한 빨리 마시기</strong>입니다.</p>
+
+    <div class="infographic">
+      <div class="infographic-title">▎ 로스팅 후 시간별 향미 곡선 — 디개싱과 산화의 줄다리기</div>
+      <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#c8860a;stop-opacity:0.5"/>
+            <stop offset="100%" style="stop-color:#c8860a;stop-opacity:0.05"/>
+          </linearGradient>
+        </defs>
+        <!-- Axes -->
+        <line x1="60" y1="260" x2="660" y2="260" stroke="#6b3a2a" stroke-width="1.5"/>
+        <line x1="60" y1="40" x2="60" y2="260" stroke="#6b3a2a" stroke-width="1.5"/>
+        <!-- Y-axis label -->
+        <text x="20" y="50" font-size="11" fill="#6b3a2a" font-weight="700">향미</text>
+        <text x="20" y="63" font-size="11" fill="#6b3a2a" font-weight="700">밸런스</text>
+        <!-- X-axis labels -->
+        <text x="80" y="280" font-size="11" fill="#6b3a2a" text-anchor="middle">0일</text>
+        <text x="180" y="280" font-size="11" fill="#6b3a2a" text-anchor="middle">3일</text>
+        <text x="280" y="280" font-size="11" fill="#6b3a2a" text-anchor="middle">7일</text>
+        <text x="400" y="280" font-size="11" fill="#6b3a2a" text-anchor="middle">14일</text>
+        <text x="540" y="280" font-size="11" fill="#6b3a2a" text-anchor="middle">21일</text>
+        <text x="640" y="280" font-size="11" fill="#6b3a2a" text-anchor="middle">30일</text>
+        <text x="360" y="305" font-size="12" fill="#2c1810" font-weight="700" text-anchor="middle">로스팅 이후 경과 시간</text>
+        <!-- Curve -->
+        <path d="M 80,230 Q 130,210 180,160 Q 240,100 320,80 Q 400,90 470,140 Q 550,200 640,250"
+              fill="none" stroke="#c8860a" stroke-width="3"/>
+        <!-- Filled area under curve -->
+        <path d="M 80,230 Q 130,210 180,160 Q 240,100 320,80 Q 400,90 470,140 Q 550,200 640,250 L 640,260 L 80,260 Z"
+              fill="url(#grad1)"/>
+        <!-- Golden window highlight -->
+        <rect x="200" y="40" width="200" height="220" fill="#c8860a" fill-opacity="0.08" stroke="#c8860a" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="300" y="60" font-size="12" fill="#6b3a2a" font-weight="900" text-anchor="middle">★ 골든 윈도우</text>
+        <text x="300" y="75" font-size="10" fill="#6b3a2a" text-anchor="middle">5~14일 — 가장 맛있는 구간</text>
+        <!-- Annotation: too gassy -->
+        <circle cx="100" cy="225" r="4" fill="#2c1810"/>
+        <text x="115" y="220" font-size="10" fill="#2c1810">CO₂ 과다, 추출 불안정</text>
+        <!-- Annotation: peak -->
+        <circle cx="320" cy="80" r="5" fill="#c8860a"/>
+        <text x="335" y="75" font-size="10" fill="#6b3a2a" font-weight="700">최적 향미</text>
+        <!-- Annotation: oxidation -->
+        <circle cx="600" cy="240" r="4" fill="#8b6f55"/>
+        <text x="540" y="230" font-size="10" fill="#8b6f55">산화로 풍미 감소</text>
+      </svg>
+    </div>
+
+    <h2><span class="num">05.</span>라이트 vs 미디엄 vs 다크 — 수치로 본 진짜 차이</h2>
+    <p>"다크 로스트가 카페인이 더 많다"는 말, 들어보셨죠? <span class="highlight">절반은 맞고 절반은 틀린 이야기</span>입니다. 무게당 카페인은 라이트가 약간 더 많지만, 다크는 부피가 늘어서 같은 스쿱으로 뜨면 카페인이 더 들어가는 거예요. 그래서 같은 잔으로 마실 때의 차이는 약 6mg — 콜라 두 모금 분량밖에 안 됩니다.</p>
+    <p>오히려 진짜 차이는 다른 곳에 있습니다. 2025년 한 연구는 <span class="highlight">로스트 단계가 깊어질수록 당분이 거의 50% 감소하고, 향미 프로파일이 과일·꽃 계열에서 스모키·초콜릿 계열로 이동</span>한다는 걸 정량적으로 밝혀냈습니다. "다크가 더 달아"라는 인식은 캐러멜화 때문에 단맛이 더 두껍게 '느껴지는' 것이지, 실제 당 함량은 라이트가 훨씬 높습니다.</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>드롭 시점</th>
+          <th>산미</th>
+          <th>당분</th>
+          <th>오일</th>
+          <th>카페인 (잔당)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>라이트</strong></td><td>1차 크랙 직후</td><td>★★★★★</td><td>★★★★☆</td><td>★☆☆☆☆</td><td>높음</td></tr>
+        <tr><td><strong>미디엄</strong></td><td>1차~2차 크랙 사이</td><td>★★★☆☆</td><td>★★★☆☆</td><td>★★☆☆☆</td><td>중간</td></tr>
+        <tr><td><strong>다크</strong></td><td>2차 크랙 이후</td><td>★☆☆☆☆</td><td>★★☆☆☆</td><td>★★★★★</td><td>약간 낮음</td></tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <h3>오늘 바로 써먹는 원두 보관 실전 팁 3</h3>
+      <div class="tip-item">
+        <span class="tip-num">1</span><strong>로스팅 날짜 보고 5일 기다리기</strong>
+        <p>봉투의 'roasted on' 날짜를 확인하세요. 그날부터 5~14일이 절정입니다. 사자마자 마시지 말고, 살짝 묵혀두는 인내가 컵의 품질을 바꿉니다. 받은 날 첫 모금만 살짝 마셔보고 일주일 뒤랑 비교해보세요 — 같은 원두가 맞나 싶을 겁니다.</p>
+      </div>
+      <div class="tip-item">
+        <span class="tip-num">2</span><strong>냉장고 NO, 그늘 + 밀폐 + 실온 YES</strong>
+        <p>냉장 보관은 결로와 냄새 흡수의 함정입니다. 햇빛 없는 서늘한 실내(20°C 내외), 일방향 밸브가 달린 봉투를 그대로 쓰거나 불투명 밀폐 캔에 옮겨 담으세요. 30°C가 넘는 차 안에 두는 건 절대 금물입니다.</p>
+      </div>
+      <div class="tip-item">
+        <span class="tip-num">3</span><strong>2주치만 사고 자주 사기</strong>
+        <p>대용량 1kg 봉투의 마지막 한 잔보다, 200g씩 자주 사는 마지막 한 잔이 늘 더 맛있습니다. 좋은 카페와 친해지세요. 신선도는 절대 양으로 이길 수 없습니다.</p>
+      </div>
+    </div>
+
+    <h2><span class="num">06.</span>그래서 결론 — 원두는 살아있는 식재료다</h2>
+    <p>로스팅은 끝이 아니라 시작입니다. 원두는 1차 크랙의 폭발에서 시작해, 디개싱이라는 호흡을 거치고, 산화라는 노화를 맞이하는 <span class="highlight">살아있는 식재료</span>입니다. 그래서 진짜 좋은 바리스타는 원두를 '오늘의 컨디션' 단위로 다룹니다. "같은 원두인데 어제는 좋았는데 오늘은 왜 이러지?"는 변덕이 아니라 데이터예요.</p>
+    <p>당신의 다음 한 잔이 평범했다면, 원두를 탓하기 전에 봉투 뒷면의 로스팅 날짜를 한 번만 확인해보세요. 어쩌면 당신은 너무 빠르거나, 너무 늦었을 뿐일지도 모릅니다.</p>
+
+    <div class="closing">
+      <h3>내일 당장 해볼 것</h3>
+      <p>지금 가지고 있는 원두 봉투의 로스팅 날짜를 확인해보세요. 그리고 오늘 한 잔, 일주일 뒤 한 잔, 2주 뒤 한 잔 — 같은 레시피로 추출해 비교 노트를 적어보세요. 당신만의 골든 윈도우가 보입니다.</p>
+    </div>
+
+    <div class="tags">
+      <span class="tag">#스페셜티커피</span>
+      <span class="tag">#로스팅과학</span>
+      <span class="tag">#디개싱</span>
+      <span class="tag">#원두보관법</span>
+      <span class="tag">#마이야르반응</span>
+      <span class="tag">#1차크랙</span>
+      <span class="tag">#커피화학</span>
+      <span class="tag">#홈카페</span>
+      <span class="tag">#바리스타노트</span>
+      <span class="tag">#커피상식</span>
+    </div>
+
+  </div>
+
+  <footer>
+    Barista Notes · 작성일 2026.04.30 · 본 글은 학술 연구와 현장 경험을 바탕으로 작성되었습니다. 카페인 민감도·알레르기 등 개인 차가 있을 수 있으며, 의료적 조언을 대체하지 않습니다.
+  </footer>
+
+</div>
+</body>
+</html>
