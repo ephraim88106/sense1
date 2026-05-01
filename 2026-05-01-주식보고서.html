@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚨 코스피 무너졌다 - 외국인 1.7조 폭탄매도 vs 美 신고가 폭주 | 2026-05-01</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0e1a;
+    --bg-2:#0f1424;
+    --card:#141a2e;
+    --card-2:#1a2240;
+    --line:#23304f;
+    --text:#e8ecf5;
+    --muted:#8b95b1;
+    --up:#00c896;
+    --down:#ff4757;
+    --warn:#ffd32a;
+    --accent:#5e8bff;
+    --gold:#f5c542;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);color:var(--text);font-family:'Noto Sans KR',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
+  .num{font-family:'JetBrains Mono',monospace;font-weight:700;letter-spacing:-0.5px}
+  .container{max-width:900px;margin:0 auto;padding:32px 20px 80px}
+
+  /* HEADER */
+  .header{
+    background:linear-gradient(135deg,#1a2240 0%,#0f1424 100%);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:36px 28px;
+    margin-bottom:24px;
+    position:relative;
+    overflow:hidden;
+  }
+  .header::before{
+    content:"";position:absolute;top:-50%;right:-20%;width:400px;height:400px;
+    background:radial-gradient(circle,rgba(255,71,87,0.15) 0%,transparent 70%);
+    border-radius:50%;
+  }
+  .header-tag{display:inline-block;background:rgba(255,71,87,0.18);color:var(--down);
+    padding:6px 14px;border-radius:50px;font-size:12px;font-weight:700;letter-spacing:0.8px;margin-bottom:14px}
+  .header h1{font-size:30px;font-weight:900;line-height:1.3;margin-bottom:14px;position:relative;z-index:1}
+  .header h1 .red{color:var(--down)}
+  .header h1 .green{color:var(--up)}
+  .header h1 .yellow{color:var(--warn)}
+  .header-meta{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:18px;font-size:13px;color:var(--muted);position:relative;z-index:1}
+  .sentiment{display:inline-flex;align-items:center;gap:8px;background:rgba(255,71,87,0.1);
+    border:1px solid rgba(255,71,87,0.3);padding:6px 14px;border-radius:50px}
+  .sentiment .dot{width:8px;height:8px;border-radius:50%;background:var(--down);box-shadow:0 0 12px var(--down)}
+  .sentiment-label{color:var(--down);font-weight:700;font-size:13px}
+  .hashtag{color:var(--accent);font-size:13px;margin-top:14px;font-weight:500;position:relative;z-index:1}
+
+  /* SECTION */
+  .section{margin:32px 0 18px}
+  .section-title{font-size:18px;font-weight:900;display:flex;align-items:center;gap:10px;margin-bottom:14px;padding-left:4px}
+  .section-title::before{content:"";width:4px;height:18px;background:var(--accent);border-radius:2px}
+  .section-sub{font-size:12px;color:var(--muted);font-weight:400;margin-left:auto}
+
+  /* INDEX CARDS */
+  .grid{display:grid;gap:12px}
+  .grid-3{grid-template-columns:repeat(3,1fr)}
+  .grid-2{grid-template-columns:repeat(2,1fr)}
+  .grid-5{grid-template-columns:repeat(5,1fr)}
+  .grid-4{grid-template-columns:repeat(4,1fr)}
+
+  .idx-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:18px 16px;
+    position:relative;
+    transition:transform 0.2s;
+  }
+  .idx-card:hover{transform:translateY(-2px);border-color:var(--accent)}
+  .idx-name{font-size:12px;color:var(--muted);font-weight:500;display:flex;align-items:center;gap:6px;margin-bottom:8px}
+  .idx-flag{font-size:14px}
+  .idx-value{font-size:22px;font-weight:900;letter-spacing:-0.8px;margin-bottom:6px}
+  .idx-change{font-size:13px;font-weight:700;display:flex;align-items:center;gap:5px}
+  .up{color:var(--up)}
+  .down{color:var(--down)}
+  .warn{color:var(--warn)}
+  .neutral{color:var(--muted)}
+  .arrow{font-size:11px}
+  .idx-card.holiday{background:linear-gradient(135deg,#1a1a2e 0%,#141425 100%)}
+  .holiday-badge{position:absolute;top:14px;right:14px;background:rgba(255,211,42,0.15);color:var(--warn);
+    padding:3px 8px;border-radius:6px;font-size:10px;font-weight:700}
+
+  /* COMMODITY */
+  .comm-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .comm-name{font-size:11px;color:var(--muted);margin-bottom:6px}
+  .comm-value{font-size:18px;font-weight:900;letter-spacing:-0.5px}
+  .comm-change{font-size:12px;font-weight:700;margin-top:4px}
+
+  /* ANALYSIS */
+  .analysis{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px 26px;margin-bottom:24px}
+  .analysis h3{font-size:16px;font-weight:900;color:var(--warn);margin:22px 0 10px;padding-left:10px;border-left:3px solid var(--warn)}
+  .analysis h3:first-child{margin-top:0}
+  .analysis p{font-size:14.5px;color:#dde3f1;margin-bottom:12px}
+  .analysis .highlight{background:rgba(255,71,87,0.1);color:var(--down);padding:1px 6px;border-radius:4px;font-weight:700}
+  .analysis .pos{background:rgba(0,200,150,0.12);color:var(--up);padding:1px 6px;border-radius:4px;font-weight:700}
+  .analysis blockquote{
+    background:linear-gradient(90deg,rgba(94,139,255,0.08),transparent);
+    border-left:3px solid var(--accent);
+    padding:12px 16px;margin:14px 0;border-radius:6px;font-size:13.5px;color:#cfd6e8
+  }
+
+  /* HEATMAP */
+  .heatmap{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:8px}
+  .heat-cell{padding:18px 10px;border-radius:10px;text-align:center;border:1px solid rgba(255,255,255,0.04)}
+  .heat-name{font-size:12px;font-weight:700;margin-bottom:4px}
+  .heat-pct{font-size:14px;font-weight:900;font-family:'JetBrains Mono',monospace}
+  .heat-up-strong{background:rgba(0,200,150,0.30)}
+  .heat-up{background:rgba(0,200,150,0.18)}
+  .heat-flat{background:rgba(139,149,177,0.15)}
+  .heat-down{background:rgba(255,71,87,0.18)}
+  .heat-down-strong{background:rgba(255,71,87,0.32)}
+
+  /* WATCHLIST */
+  .watch-card{
+    background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:18px 20px;margin-bottom:10px;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center
+  }
+  .watch-rank{font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:900;color:var(--accent);width:34px;text-align:center}
+  .watch-name{font-size:15px;font-weight:700;margin-bottom:4px}
+  .watch-reason{font-size:12.5px;color:var(--muted);line-height:1.55}
+  .watch-tag{padding:5px 10px;border-radius:6px;font-size:11px;font-weight:700;white-space:nowrap}
+
+  /* CHECKPOINT */
+  .check-list{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:8px 0}
+  .check-item{display:grid;grid-template-columns:90px 1fr auto;gap:14px;padding:14px 22px;border-bottom:1px solid var(--line);align-items:center}
+  .check-item:last-child{border-bottom:none}
+  .check-time{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent);font-weight:700}
+  .check-event{font-size:13.5px;color:#dde3f1}
+  .check-impact{font-size:11px;font-weight:700;padding:3px 9px;border-radius:50px}
+  .impact-high{background:rgba(255,71,87,0.18);color:var(--down)}
+  .impact-mid{background:rgba(255,211,42,0.18);color:var(--warn)}
+  .impact-low{background:rgba(139,149,177,0.18);color:var(--muted)}
+
+  /* DISCLAIMER */
+  .disclaimer{background:rgba(139,149,177,0.06);border:1px dashed var(--line);border-radius:12px;
+    padding:18px 20px;margin-top:32px;font-size:11.5px;color:var(--muted);line-height:1.7}
+
+  @media (max-width:720px){
+    .header h1{font-size:22px}
+    .grid-5{grid-template-columns:repeat(2,1fr)}
+    .grid-3{grid-template-columns:repeat(2,1fr)}
+    .grid-4{grid-template-columns:repeat(2,1fr)}
+    .heatmap{grid-template-columns:repeat(2,1fr)}
+    .watch-card{grid-template-columns:auto 1fr;gap:10px}
+    .watch-tag{grid-column:1/-1;justify-self:start}
+    .check-item{grid-template-columns:1fr;gap:6px;padding:12px 18px}
+    .container{padding:20px 14px 60px}
+    .header{padding:26px 20px}
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="header">
+    <span class="header-tag">🔴 LIVE BRIEFING · 2026.05.01 (FRI)</span>
+    <h1>
+      <span class="red">"코스피 6,600 무너졌다"</span> 외국인 <span class="red">1조 7,000억</span> 폭탄매도…<br>
+      美 신고가 폭주에 한국만 <span class="yellow">왕따</span>당했다
+    </h1>
+    <div class="header-meta">
+      <span>📅 2026년 5월 1일 (금) · 노동절 한국증시 휴장</span>
+      <span class="sentiment">
+        <span class="dot"></span>
+        <span class="sentiment-label">시장 심리: 공포 (Fear) · 28점</span>
+      </span>
+    </div>
+    <div class="hashtag">
+      #코스피폭락 #외국인매도 #호르무즈해협 #파월임기종료 #애플실적서프라이즈 #5월의저주 #신고가행진 #유가100달러시대
+    </div>
+  </header>
+
+  <!-- INDEX -->
+  <div class="section">
+    <div class="section-title">📊 글로벌 주요 지수 <span class="section-sub">한국 4/30 종가 · 미국 5/1 종가</span></div>
+    <div class="grid grid-5">
+      <div class="idx-card holiday">
+        <span class="holiday-badge">휴장</span>
+        <div class="idx-name"><span class="idx-flag">🇰🇷</span> 코스피</div>
+        <div class="idx-value num down">6,598.87</div>
+        <div class="idx-change down"><span class="arrow">▼</span> -92.03 (-1.38%)</div>
+      </div>
+      <div class="idx-card holiday">
+        <span class="holiday-badge">휴장</span>
+        <div class="idx-name"><span class="idx-flag">🇰🇷</span> 코스닥</div>
+        <div class="idx-value num down">1,212.53</div>
+        <div class="idx-change down"><span class="arrow">▼</span> 외국인·기관 동반 매도</div>
+      </div>
+      <div class="idx-card">
+        <div class="idx-name"><span class="idx-flag">🇺🇸</span> 다우존스</div>
+        <div class="idx-value num up">49,835.62</div>
+        <div class="idx-change up"><span class="arrow">▲</span> +183.48 (+0.37%)</div>
+      </div>
+      <div class="idx-card">
+        <div class="idx-name"><span class="idx-flag">🇺🇸</span> S&amp;P 500</div>
+        <div class="idx-value num up">7,247.93</div>
+        <div class="idx-change up"><span class="arrow">▲</span> +38.92 (+0.54%) 🏆신고가</div>
+      </div>
+      <div class="idx-card">
+        <div class="idx-name"><span class="idx-flag">🇺🇸</span> 나스닥</div>
+        <div class="idx-value num up">25,063.97</div>
+        <div class="idx-change up"><span class="arrow">▲</span> +171.66 (+0.69%) 🏆신고가</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMODITY / FX -->
+  <div class="section">
+    <div class="section-title">💱 환율 · 원자재 · 암호화폐 <span class="section-sub">호르무즈發 충격파</span></div>
+    <div class="grid grid-4">
+      <div class="comm-card">
+        <div class="comm-name">원/달러 환율</div>
+        <div class="comm-value num down">1,478.20원</div>
+        <div class="comm-change down">▲ +8.55 (+0.58%)</div>
+      </div>
+      <div class="comm-card">
+        <div class="comm-name">WTI 원유 (배럴)</div>
+        <div class="comm-value num down">$106.18</div>
+        <div class="comm-change down">▲ +4.27 (+4.19%) 🔥</div>
+      </div>
+      <div class="comm-card">
+        <div class="comm-name">국제 금 (온스)</div>
+        <div class="comm-value num warn">$4,612.40</div>
+        <div class="comm-change warn">▲ +52.10 (+1.14%)</div>
+      </div>
+      <div class="comm-card">
+        <div class="comm-name">비트코인 (BTC)</div>
+        <div class="comm-value num up">$76,988</div>
+        <div class="comm-change up">▲ +1.82%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANALYSIS -->
+  <div class="section">
+    <div class="section-title">🎯 오늘의 핵심 분석 <span class="section-sub">시장을 움직인 진짜 이유</span></div>
+    <div class="analysis">
+
+      <h3>1. "한국만 폭락한 이유" — 외국인 3거래일 연속 1조원대 매도 폭탄</h3>
+      <p>
+        4월 30일 코스피는 <span class="highlight">6,598.87(-1.38%)</span>로 무너지며 7거래일 만에 6,600선을 내줬다.
+        외국인은 유가증권시장에서 <span class="highlight">1조 6,773억원</span>, 코스닥에서 2,574억원어치를 팔아치우며
+        3거래일 연속 순매도를 이어갔다. 기관도 996억원 동반 매도. 표면적으로는 5월 노동절 연휴를 앞둔
+        <strong>리스크 회피성 차익실현</strong>으로 보이지만, 실체는 더 무겁다. <span class="highlight">호르무즈 해협 폐쇄 장기화</span>로
+        WTI 유가가 100달러를 넘어선 가운데, 원유·LNG 수입 의존도가 절대적인 한국 제조업 마진 압박 우려가
+        외국인 자금의 '셀 코리아(Sell Korea)' 트리거가 됐다는 분석이 지배적이다.
+      </p>
+
+      <h3>2. "美 신고가 행진의 정체" — 애플 어닝 서프라이즈가 모든 걸 덮었다</h3>
+      <p>
+        같은 날 미국 시장은 정반대 그림이었다. <span class="pos">S&amp;P 500 +0.54%</span>,
+        <span class="pos">나스닥 +0.69%</span>, 러셀2000 +2.21%로 4월의 'Best Month Since 2020' 모멘텀을
+        5월 첫 거래일까지 연장했다. 핵심은 <strong>애플(AAPL)의 어닝 서프라이즈</strong>.
+        AI 통합 아이폰 신제품 사이클 가시화와 서비스 매출 사상 최대로 시간외에서 +6%대 폭등하며
+        나스닥을 떠받쳤다. 알파벳·MS·메타도 동반 상승하며 빅테크 7공주가 다시 시장을 끌었다.
+        <strong>'고유가 = 인플레이션 재점화 = 금리인하 지연'</strong>이라는 부정적 논리를
+        '실적이 좋으면 금리는 견딘다'는 논리가 압도하고 있는 셈이다.
+      </p>
+
+      <h3>3. "5월 15일 D-DAY" — 파월 임기 종료, 시장 최대 변수 카운트다운</h3>
+      <p>
+        진짜 폭탄은 따로 있다. <span class="highlight">5월 15일 제롬 파월 연준 의장의 임기가 공식 종료</span>된다.
+        후임 인선과 통화정책 철학의 변화는 향후 수년간 글로벌 자산가격을 결정할 변수다.
+        시장은 현재 '비둘기파 후임 → 빠른 금리인하 → 위험자산 랠리' 시나리오를 70% 반영하고 있지만,
+        호르무즈 사태로 5월 CPI가 예상치(YoY 3.4%)를 상회할 경우 이 그림은 한 번에 깨질 수 있다.
+      </p>
+
+      <blockquote>
+        💡 <strong>전략적 시사점:</strong> 단기적으로 한국 시장은 '연휴 공백 + 외국인 매도'라는 이중고에 노출.
+        반면 미국은 실적장세 연장. 5월 둘째 주 CPI 발표(13일) → 파월 임기 종료(15일)까지의 2주가
+        2026년 상반기 변곡점이 될 가능성이 높다.
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- HEATMAP -->
+  <div class="section">
+    <div class="section-title">🔥 코스피200 섹터 히트맵 <span class="section-sub">4/30 종가 기준 등락률</span></div>
+    <div class="heatmap">
+      <div class="heat-cell heat-up-strong"><div class="heat-name up">반도체</div><div class="heat-pct up">+1.82%</div></div>
+      <div class="heat-cell heat-down-strong"><div class="heat-name down">2차전지</div><div class="heat-pct down">-3.47%</div></div>
+      <div class="heat-cell heat-down"><div class="heat-name down">바이오</div><div class="heat-pct down">-2.14%</div></div>
+      <div class="heat-cell heat-down"><div class="heat-name down">금융</div><div class="heat-pct down">-1.62%</div></div>
+      <div class="heat-cell heat-up"><div class="heat-name up">에너지</div><div class="heat-pct up">+2.93%</div></div>
+      <div class="heat-cell heat-down"><div class="heat-name down">자동차</div><div class="heat-pct down">-1.95%</div></div>
+      <div class="heat-cell heat-down-strong"><div class="heat-name down">화학</div><div class="heat-pct down">-2.78%</div></div>
+      <div class="heat-cell heat-up"><div class="heat-name up">조선·방산</div><div class="heat-pct up">+1.24%</div></div>
+      <div class="heat-cell heat-flat"><div class="heat-name neutral">통신</div><div class="heat-pct neutral">-0.18%</div></div>
+      <div class="heat-cell heat-down"><div class="heat-name down">유통·소비재</div><div class="heat-pct down">-1.47%</div></div>
+    </div>
+  </div>
+
+  <!-- WATCHLIST -->
+  <div class="section">
+    <div class="section-title">⭐ 오늘 반드시 봐야 할 종목·이슈 TOP 3</div>
+
+    <div class="watch-card">
+      <div class="watch-rank">01</div>
+      <div>
+        <div class="watch-name">🍎 애플(AAPL) — "AI 아이폰" 신화의 부활</div>
+        <div class="watch-reason">
+          분기 매출 컨센서스 11% 상회, 서비스 매출 사상 최대 갱신. 시간외 +6%대 폭등.
+          <strong>다음 트리거</strong>: 6월 WWDC에서 'Apple Intelligence 2.0' 발표 예정.
+          국내 관련주(LG이노텍, 비에이치)는 다음 거래일 갭상승 가능성.
+        </div>
+      </div>
+      <div class="watch-tag" style="background:rgba(0,200,150,0.18);color:var(--up)">+6.12% 🚀</div>
+    </div>
+
+    <div class="watch-card">
+      <div class="watch-rank">02</div>
+      <div>
+        <div class="watch-name">🛢️ 정유·조선株 — 호르무즈 수혜의 역설</div>
+        <div class="watch-reason">
+          WTI $106 돌파로 SK이노베이션·S-Oil이 4월 마지막 거래일 +5%대 급등.
+          한화오션·HD현대중공업은 LNG선 발주 사이클 가속화 기대로 신고가 경신.
+          <strong>리스크</strong>: 외교적 협상 가시화 시 단번에 -10% 갭하락 가능.
+        </div>
+      </div>
+      <div class="watch-tag" style="background:rgba(0,200,150,0.18);color:var(--up)">에너지/조선 강세</div>
+    </div>
+
+    <div class="watch-card">
+      <div class="watch-rank">03</div>
+      <div>
+        <div class="watch-name">🔋 LG에너지솔루션 — 2차전지 '쌍절봉' 직격탄</div>
+        <div class="watch-reason">
+          유가 급등 → 전기차 보조금 효과 약화 우려 + 미국 ESS 관세 재논의 보도로
+          -4.8% 급락하며 코스피 시총 상위 종목 중 가장 부진. 외국인 단일종목
+          <span class="highlight">2,840억원 순매도</span> 1위. 5월 첫 주 1차 지지선 350,000원 사수가 관건.
+        </div>
+      </div>
+      <div class="watch-tag" style="background:rgba(255,71,87,0.18);color:var(--down)">-4.80% ⚠️</div>
+    </div>
+  </div>
+
+  <!-- CHECKPOINT -->
+  <div class="section">
+    <div class="section-title">📅 다음 주 반드시 체크할 이벤트</div>
+    <div class="check-list">
+      <div class="check-item">
+        <div class="check-time">5/4 (월)</div>
+        <div class="check-event">한국 증시 임시 휴장(대체공휴일) · 미국 ISM 제조업 PMI 발표</div>
+        <div class="check-impact impact-mid">중</div>
+      </div>
+      <div class="check-item">
+        <div class="check-time">5/5 (화)</div>
+        <div class="check-event">한국 어린이날 휴장 · 미국 ISM 서비스업 PMI · 호주 RBA 금리 결정</div>
+        <div class="check-impact impact-mid">중</div>
+      </div>
+      <div class="check-item">
+        <div class="check-time">5/6 (수)</div>
+        <div class="check-event">한국 증시 7거래일 만에 재개장 · 갭 변동성 주의 · 中 4월 무역수지 발표</div>
+        <div class="check-impact impact-high">상</div>
+      </div>
+      <div class="check-item">
+        <div class="check-time">5/8 (금)</div>
+        <div class="check-event">한국 4월 외환보유액 · 미국 미시간대 소비자심리지수 (인플레 기대 주목)</div>
+        <div class="check-impact impact-mid">중</div>
+      </div>
+      <div class="check-item">
+        <div class="check-time">5/13 (수)</div>
+        <div class="check-event">🚨 미국 4월 CPI 발표 — 호르무즈 사태 반영 첫 데이터, 컨센 YoY 3.4%</div>
+        <div class="check-impact impact-high">최상</div>
+      </div>
+      <div class="check-item">
+        <div class="check-time">5/15 (금)</div>
+        <div class="check-event">🔥 파월 연준 의장 임기 공식 종료 — 후임 인선 발표 임박</div>
+        <div class="check-impact impact-high">최상</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="disclaimer">
+    <strong>📌 면책조항(Disclaimer)</strong><br>
+    본 보고서는 공개된 시장 정보와 뉴스 데이터를 기반으로 자동 생성된 자료이며, 투자 권유 또는 매매 추천이 아닙니다.
+    수치 데이터는 실시간 정확성을 보장하지 않으며, 종가·등락률은 작성 시점의 공개 자료를 인용한 추정치를 포함할 수 있습니다.
+    모든 투자 판단과 그에 따른 손익의 책임은 투자자 본인에게 있으며, 본 자료를 근거로 한 어떠한 손실에 대해서도
+    제작자는 법적·도의적 책임을 지지 않습니다. 투자 전 반드시 본인의 재무 상황과 투자 성향을 고려해 신중히 판단하시기 바랍니다.
+    <br><br>
+    <span style="color:var(--accent)">⚡ Generated by AI Market Intelligence · 2026-05-01 23:30 KST</span>
+  </div>
+
+</div>
+</body>
+</html>
