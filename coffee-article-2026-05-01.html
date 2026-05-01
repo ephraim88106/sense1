@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9 bar는 거짓말이었다 — 2026년 에스프레소 추출 황금률, 90%의 바리스타가 모르는 진짜 변수</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #faf7f2;
+  color: #2c1810;
+  line-height: 1.8;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px 20px 80px;
+}
+.header {
+  padding: 40px 0 28px;
+  border-bottom: 3px solid #6b3a2a;
+  margin-bottom: 36px;
+}
+.badge {
+  display: inline-block;
+  background: #6b3a2a;
+  color: #faf7f2;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+.date {
+  color: #8b6f47;
+  font-size: 13px;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+h1 {
+  font-size: 30px;
+  line-height: 1.35;
+  font-weight: 900;
+  color: #2c1810;
+  letter-spacing: -0.5px;
+}
+h1 .highlight {
+  background: linear-gradient(180deg, transparent 60%, #c8860a55 60%);
+  padding: 0 4px;
+}
+.author {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #6b3a2a;
+  font-weight: 500;
+}
+.hook {
+  font-size: 19px;
+  line-height: 1.7;
+  color: #3a2418;
+  margin-bottom: 32px;
+  padding: 24px 26px;
+  background: #fff;
+  border-left: 5px solid #c8860a;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(44, 24, 16, 0.06);
+}
+.hook strong { color: #6b3a2a; font-weight: 700; }
+.summary-box {
+  background: linear-gradient(135deg, #6b3a2a 0%, #8b4a35 100%);
+  color: #faf7f2;
+  padding: 28px 30px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 14px rgba(107, 58, 42, 0.25);
+}
+.summary-box h3 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  color: #f5d99a;
+  font-weight: 700;
+}
+.summary-box ul {
+  list-style: none;
+  padding: 0;
+}
+.summary-box li {
+  padding: 8px 0 8px 26px;
+  position: relative;
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.summary-box li:before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: #c8860a;
+  font-weight: 700;
+  font-size: 18px;
+}
+h2 {
+  font-size: 23px;
+  font-weight: 800;
+  color: #2c1810;
+  margin: 50px 0 18px;
+  padding-left: 16px;
+  border-left: 5px solid #6b3a2a;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+h2 .num {
+  color: #c8860a;
+  font-weight: 900;
+  margin-right: 8px;
+}
+.section p {
+  margin-bottom: 16px;
+  font-size: 15.5px;
+  color: #3a2418;
+}
+.section p strong {
+  color: #6b3a2a;
+  font-weight: 700;
+}
+.section em {
+  font-style: normal;
+  background: #f5e8d3;
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: #6b3a2a;
+}
+.tip-box {
+  background: linear-gradient(135deg, #fdf3dc 0%, #f9e8c0 100%);
+  border: 2px solid #c8860a;
+  border-radius: 10px;
+  padding: 26px 28px;
+  margin: 32px 0;
+  position: relative;
+}
+.tip-box:before {
+  content: "💡 실전 팁";
+  position: absolute;
+  top: -14px;
+  left: 24px;
+  background: #c8860a;
+  color: #fff;
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 14px;
+}
+.tip-box ol {
+  padding-left: 22px;
+  margin-top: 8px;
+}
+.tip-box li {
+  padding: 9px 0;
+  font-size: 15px;
+  color: #3a2418;
+  font-weight: 500;
+}
+.tip-box li strong { color: #6b3a2a; }
+.infographic {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px 24px;
+  margin: 36px 0;
+  box-shadow: 0 2px 10px rgba(44, 24, 16, 0.08);
+  text-align: center;
+}
+.infographic-title {
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  color: #6b3a2a;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+.infographic svg { max-width: 100%; height: auto; }
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(44, 24, 16, 0.06);
+}
+.compare-table th {
+  background: #2c1810;
+  color: #faf7f2;
+  padding: 14px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: 0.5px;
+}
+.compare-table td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #f0e6d4;
+  font-size: 14px;
+  color: #3a2418;
+}
+.compare-table tr:last-child td { border-bottom: none; }
+.compare-table td.label { font-weight: 700; color: #6b3a2a; background: #faf2e3; }
+.quote {
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  color: #6b3a2a;
+  text-align: center;
+  padding: 28px 24px;
+  margin: 32px 0;
+  border-top: 2px solid #c8860a;
+  border-bottom: 2px solid #c8860a;
+  line-height: 1.6;
+}
+.outro {
+  background: #2c1810;
+  color: #faf7f2;
+  padding: 32px 30px;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+.outro h3 {
+  color: #f5d99a;
+  font-size: 18px;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+.outro p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #faf7f2;
+  font-weight: 400;
+}
+.tags {
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid #d4c4a8;
+}
+.tag {
+  display: inline-block;
+  background: #fff;
+  color: #6b3a2a;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 16px;
+  margin: 4px 4px 4px 0;
+  border: 1px solid #d4c4a8;
+  font-weight: 500;
+}
+.footer {
+  margin-top: 32px;
+  padding-top: 22px;
+  border-top: 1px solid #d4c4a8;
+  font-size: 12px;
+  color: #8b6f47;
+  line-height: 1.7;
+}
+@media (max-width: 600px) {
+  h1 { font-size: 24px; }
+  h2 { font-size: 19px; }
+  .container { padding: 16px 16px 60px; }
+  .hook { font-size: 16px; padding: 20px; }
+  .summary-box, .tip-box, .infographic { padding: 22px 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <span class="badge">☕ 추출 기법 심층 가이드</span>
+  <div class="date">2026년 5월 1일 · 읽는 데 8분</div>
+  <h1>"9 bar"는 <span class="highlight">거짓말</span>이었다 — 2026년 에스프레소 추출 황금률, 90%의 바리스타가 모르는 진짜 변수</h1>
+  <div class="author">— 10년 차 스페셜티 바리스타가 알려주는, 카페에서 절대 안 가르쳐주는 이야기</div>
+</div>
+
+<div class="hook">
+  사실 <strong>대부분의 사람들이 모르는데</strong>, 우리가 신성시해온 "9 bar 30초 25g"이라는 황금 공식은 1948년 이탈리아 엔지니어가 <strong>편의상 정한 숫자</strong>일 뿐이라는 사실. 그리고 2024–2026년에 발표된 추출 연구들은, 이 숫자가 <strong>라이트 로스팅 시대에 더는 통하지 않는다</strong>고 말하고 있어요. 오늘은 당신의 에스프레소를 망치고 있던 <strong>진짜 변수 4가지</strong>를 까놓고 이야기합니다.
+</div>
+
+<div class="summary-box">
+  <h3>오늘 이 글에서 배울 것</h3>
+  <ul>
+    <li>9 bar 신화의 진짜 기원 — 1948년 우연의 산물</li>
+    <li>SCA 추출률 18–22%가 흔들리는 이유 (UC Davis 2023 연구)</li>
+    <li>당신이 매일 놓치고 있는 4가지 변수: 분쇄 분포·유속·물·프리인퓨전</li>
+    <li>채널링을 0%로 만드는 WDT + 프리인퓨전 콤보 레시피</li>
+    <li>내일 아침 첫 샷부터 바로 적용하는 실전 변수 매트릭스</li>
+  </ul>
+</div>
+
+<div class="section">
+
+<h2><span class="num">01</span>"9 bar 30초"는 어쩌다 신성한 숫자가 되었나</h2>
+
+<p>먼저 충격적인 사실부터. <strong>9 bar는 과학적으로 도출된 수치가 아닙니다.</strong> 1948년 이탈리아의 아킬레 가지아(Achille Gaggia)가 레버 머신으로 추출했을 때, 그가 손으로 누르는 힘과 스프링이 만들어내는 압력이 우연히 <em>약 9 bar</em> 부근에서 멈췄어요. 그게 표준이 됐습니다. 그 이후 80년 동안 우리는 그 우연을 "정답"이라고 가르쳐온 거예요.</p>
+
+<p>2026년 현재, Clive Coffee, BrewClan, 그리고 Robert McKeon Aloe(Medium의 가장 신뢰받는 추출 연구자)가 한목소리로 말하는 게 있습니다. <strong>"9 bar는 다크 로스팅에 최적화된 압력이고, 라이트 로스팅에는 6 bar가 더 정확하다."</strong> 다크 로스팅 원두는 세포벽이 부서져 추출이 쉬운데, 라이트 로스팅은 세포벽이 단단해서 9 bar로 누르면 <em>채널링(channeling, 물길이 갈라지는 현상)</em>부터 터집니다.</p>
+
+<p>그래서 2026년 시장의 흐름이 바뀌었어요. 한때 6,000달러짜리 슬레이어(Slayer)에만 있던 <strong>플로우 프로파일링·압력 프로파일링</strong>이 이제 2,000달러 미만 가정용 머신(Decent, Lelit Bianca, La Marzocco Linea Micra)에 표준 탑재되고 있습니다. "고정 9 bar"의 시대는 끝났다는 뜻이에요.</p>
+
+</div>
+
+<div class="infographic">
+  <div class="infographic-title">🔥 압력 프로파일 비교 — 전통 vs 2026 표준</div>
+  <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
+    <!-- Grid -->
+    <line x1="60" y1="40" x2="60" y2="270" stroke="#d4c4a8" stroke-width="1.5"/>
+    <line x1="60" y1="270" x2="660" y2="270" stroke="#d4c4a8" stroke-width="1.5"/>
+    <!-- Y axis labels -->
+    <text x="50" y="50" font-size="11" fill="#6b3a2a" text-anchor="end" font-family="sans-serif">10 bar</text>
+    <text x="50" y="100" font-size="11" fill="#6b3a2a" text-anchor="end" font-family="sans-serif">8</text>
+    <text x="50" y="150" font-size="11" fill="#6b3a2a" text-anchor="end" font-family="sans-serif">6</text>
+    <text x="50" y="200" font-size="11" fill="#6b3a2a" text-anchor="end" font-family="sans-serif">4</text>
+    <text x="50" y="250" font-size="11" fill="#6b3a2a" text-anchor="end" font-family="sans-serif">2</text>
+    <text x="50" y="280" font-size="11" fill="#6b3a2a" text-anchor="end" font-family="sans-serif">0</text>
+    <!-- X axis -->
+    <text x="60" y="295" font-size="11" fill="#6b3a2a" font-family="sans-serif">0s</text>
+    <text x="200" y="295" font-size="11" fill="#6b3a2a" text-anchor="middle" font-family="sans-serif">10s</text>
+    <text x="360" y="295" font-size="11" fill="#6b3a2a" text-anchor="middle" font-family="sans-serif">20s</text>
+    <text x="520" y="295" font-size="11" fill="#6b3a2a" text-anchor="middle" font-family="sans-serif">30s</text>
+    <text x="650" y="295" font-size="11" fill="#6b3a2a" text-anchor="middle" font-family="sans-serif">38s</text>
+    <text x="360" y="315" font-size="12" fill="#2c1810" text-anchor="middle" font-family="sans-serif" font-weight="600">추출 시간</text>
+    <!-- Traditional 9 bar flat line -->
+    <path d="M 60,80 L 70,80 L 660,80" stroke="#8b6f47" stroke-width="3" fill="none" stroke-dasharray="6,4"/>
+    <text x="640" y="72" font-size="11" fill="#8b6f47" text-anchor="end" font-family="sans-serif" font-weight="700">전통 9 bar 플랫</text>
+    <!-- 2026 profile: pre-infusion ramp + 6-7 bar peak + decline -->
+    <path d="M 60,270 Q 90,230 130,210 L 200,200 L 240,150 L 320,130 L 420,135 L 520,160 L 620,200 L 660,210"
+          stroke="#c8860a" stroke-width="4" fill="none"/>
+    <!-- Filled area under 2026 curve -->
+    <path d="M 60,270 Q 90,230 130,210 L 200,200 L 240,150 L 320,130 L 420,135 L 520,160 L 620,200 L 660,210 L 660,270 Z"
+          fill="#c8860a" fill-opacity="0.12"/>
+    <text x="320" y="118" font-size="12" fill="#6b3a2a" text-anchor="middle" font-family="sans-serif" font-weight="700">2026 모던 프로파일</text>
+    <text x="120" y="200" font-size="10" fill="#2c1810" font-family="sans-serif">프리인퓨전</text>
+    <text x="320" y="148" font-size="10" fill="#2c1810" text-anchor="middle" font-family="sans-serif">피크 6.5 bar</text>
+    <text x="600" y="195" font-size="10" fill="#2c1810" text-anchor="middle" font-family="sans-serif">디클라인</text>
+    <!-- Title -->
+    <text x="360" y="25" font-size="14" fill="#2c1810" text-anchor="middle" font-family="sans-serif" font-weight="700">압력 곡선: 라이트 로스팅 기준</text>
+  </svg>
+</div>
+
+<div class="section">
+
+<h2><span class="num">02</span>SCA "18–22%"는 끝났다 — 2026년 새로운 추출률 지도</h2>
+
+<p>스페셜티 커피 협회(SCA)가 60년 가까이 가르쳐온 <strong>"이상적 추출률 18–22%"</strong>. 이게 흔들리고 있어요. 2023년 UC Davis의 장-자비에 기나르(Jean-Xavier Guinard) 교수팀이 발표한 연구가 결정타였죠.</p>
+
+<p>기나르 박사의 결론: <strong>"단일한 골든컵(Gold Cup) 영역은 존재하지 않는다."</strong> 현대 소비자 패널 테스트 결과, 선호도가 두 그룹으로 갈렸어요. 한 그룹은 <em>낮은 TDS + 중간 추출률</em>(밝고 산미 있는 컵)을, 다른 그룹은 <em>높은 추출률</em>(달고 묵직한 컵)을 선호했습니다. 2025–2026년 스페셜티 카페들이 메뉴에 "라이트 모던/클래식 모드" 두 가지 추출 옵션을 두기 시작한 이유가 여기 있어요.</p>
+
+<p>실전에선 어떻게 적용할까요. <strong>리프랙토미터(refractometer, 굴절계)</strong>가 답입니다. 에스프레소의 TDS는 8–13%가 정상 범위. 추출률 계산식은 단순해요:</p>
+
+<p><em>추출률(%) = (TDS% × 음료 무게) ÷ 도즈 무게 × 100</em></p>
+
+<p>예: 18g 도즈 → 36g 음료 → TDS 9.5% 나왔다면 추출률은 19%. 18% 미만이면 신맛·짠맛 우세(언더), 22% 초과면 떫고 쓴맛(오버). 하지만 이제는 "당신의 입맛"이 어느 클러스터에 있는지부터 알아야 한다는 게 2026년 트렌드예요.</p>
+
+</div>
+
+<table class="compare-table">
+  <tr>
+    <th style="width:24%">변수</th>
+    <th style="width:38%">언더 익스트랙션 (&lt;18%)</th>
+    <th style="width:38%">오버 익스트랙션 (&gt;22%)</th>
+  </tr>
+  <tr>
+    <td class="label">맛 특성</td>
+    <td>신맛, 짠맛, 얇은 바디, 단맛 부재</td>
+    <td>떫음, 쓴맛, 탄 듯한 후미</td>
+  </tr>
+  <tr>
+    <td class="label">분쇄도 조정</td>
+    <td>더 가늘게(Finer) — 한 클릭 안쪽</td>
+    <td>더 굵게(Coarser) — 한 클릭 바깥</td>
+  </tr>
+  <tr>
+    <td class="label">물 온도</td>
+    <td>높이기 (92–94°C)</td>
+    <td>낮추기 (88–90°C)</td>
+  </tr>
+  <tr>
+    <td class="label">추출 시간</td>
+    <td>2–3초 더 길게</td>
+    <td>2–3초 더 짧게</td>
+  </tr>
+  <tr>
+    <td class="label">도즈량</td>
+    <td>그대로 유지</td>
+    <td>0.5g 줄이기</td>
+  </tr>
+</table>
+
+<div class="section">
+
+<h2><span class="num">03</span>당신이 매일 놓치는 4가지 진짜 변수</h2>
+
+<p>2023년 MDPI Foods 저널에 실린 <em>"Influence of Flow Rate, Particle Size, and Temperature on Espresso Extraction Kinetics"</em> 논문이 결정적인 데이터를 보여줬어요. <strong>실제 컵 속 성분 질량에 가장 큰 영향을 주는 변수는 압력이 아니라 '유속(flow rate)'</strong>이었다는 것. 그리고 그 효과는 <em>분쇄가 가늘어지고 온도가 높아질수록 더 강해진다</em>고 합니다.</p>
+
+<p><strong>① 분쇄 분포(Particle Distribution)</strong> — 분쇄 "크기"가 아니라 분쇄 입자의 "분포"가 진짜 변수입니다. 같은 30번 클릭이라도 그라인더 버(burr)의 정렬, 마모도, 정전기에 따라 입자 분포가 천차만별이에요. 1년 이상 쓴 그라인더라면 칼날 마모도부터 의심하세요.</p>
+
+<p><strong>② 유속(Flow Rate)</strong> — 1초당 머신을 통과하는 물의 양. 같은 9 bar라도 머신의 그룹헤드 직경, 펌프 종류에 따라 유속이 다릅니다. 모던 프로파일링은 압력보다 유속을 직접 제어해요(예: Decent의 "1.5 ml/s 프리인퓨전").</p>
+
+<p><strong>③ 물 미네랄(Water TDS)</strong> — 너무 부드러운 물(70 ppm 미만)은 추출이 약하고, 너무 센 물(200 ppm 초과)은 오버 익스트랙션과 머신 스케일을 일으킵니다. <strong>스페셜티 표준은 75–150 ppm, 칼슘:마그네슘 비율 1:1.</strong> 한국 수돗물은 지역마다 편차가 커서 RO 정수 + 미네랄 첨가가 안전해요.</p>
+
+<p><strong>④ 프리인퓨전(Pre-infusion)</strong> — 1–4 bar의 낮은 압력으로 5–10초 동안 퍽을 적시는 단계. 라이트 로스팅에선 거의 필수예요. 이게 없으면 9 bar의 첫 충격이 퍽의 약한 부분을 깨고 채널링을 만듭니다.</p>
+
+</div>
+
+<div class="tip-box">
+  <ol>
+    <li><strong>WDT부터 시작하라.</strong> 0.3mm 침 7–9개짜리 디스트리뷰션 툴로 바스켓 안을 십자로 휘저으세요. 클럼프(덩어리)가 채널링의 80% 원인입니다. 그다음 디스트리뷰션 툴로 평탄화 → 탬핑 순.</li>
+    <li><strong>프리인퓨전 5초 룰.</strong> 머신에 프리인퓨전 기능이 없다면, 추출 시작 후 <em>5초간 펌프를 끄거나 레버를 절반만</em> 올리세요. 이것만으로 라이트 원두의 산미가 살아납니다.</li>
+    <li><strong>매일 첫 샷은 버려라.</strong> 그라인더 안에 잔류한 어제 분쇄물(retained grounds)이 5g 정도 있어요. 그 첫 샷은 신선도가 떨어진 분쇄와 새 원두가 섞여 절대 일관되지 않습니다. 1샷 분량을 갈아서 버리고, 두 번째 샷부터 평가하세요.</li>
+  </ol>
+</div>
+
+<div class="section">
+
+<h2><span class="num">04</span>채널링을 0%로 만드는 2026 황금 워크플로우</h2>
+
+<p>리서치를 종합한 결과, 2026년 스페셜티 카페의 표준 워크플로우는 이렇게 정리됩니다. <strong>"분쇄 → WDT → 디스트리뷰션 → 탬핑 → 프리인퓨전 → 메인 추출 → 디클라인"</strong>의 7단계.</p>
+
+<p>핵심은 단계마다 <em>변수 하나만</em> 바꾸는 거예요. 신참 바리스타가 가장 자주 하는 실수가 "이번 샷 별로네" 하면서 분쇄·도즈·시간 세 개를 동시에 조정하는 겁니다. 그러면 어느 변수가 효과를 냈는지 영원히 알 수 없어요. <strong>한 번에 하나만, 0.5단위로.</strong></p>
+
+<p>그리고 가장 중요한 마음가짐. <strong>"같은 샷은 두 번 안 나온다"</strong>는 사실을 받아들이세요. 원두는 디게싱(가스 빠짐)이 진행되며 추출 특성이 매일 바뀝니다. 로스팅 후 <em>5–14일</em>이 가장 좋은 윈도우예요. 같은 원두라도 6일째와 12일째는 다른 분쇄도가 필요합니다. 그래서 매일 첫 추출 전에 <strong>그라인더 한 클릭 점검(dial-in)</strong>을 하는 거예요.</p>
+
+</div>
+
+<div class="quote">
+  "9 bar에 집착하지 말고, 당신의 원두가 무엇을 원하는지 들어보세요. 진짜 바리스타는 압력을 누르는 게 아니라, 원두와 대화합니다."
+</div>
+
+<div class="outro">
+  <h3>📌 내일 아침 당장 해볼 것</h3>
+  <p>그라인더를 평소보다 <strong>한 클릭 가늘게</strong> 조정하고, 추출 시작 후 <strong>5초간 펌프를 멈췄다가</strong> 다시 시작해보세요. 이 두 가지만으로도 라이트 로스팅 원두에서 숨어있던 단맛과 플로럴 노트를 끌어낼 수 있습니다. 그리고 그 차이를 <strong>일주일간 기록</strong>해보세요. 당신만의 추출 데이터베이스가 쌓이기 시작합니다.</p>
+</div>
+
+<div class="tags">
+  <span class="tag">#에스프레소추출</span>
+  <span class="tag">#9bar신화</span>
+  <span class="tag">#압력프로파일링</span>
+  <span class="tag">#스페셜티커피</span>
+  <span class="tag">#WDT</span>
+  <span class="tag">#프리인퓨전</span>
+  <span class="tag">#바리스타스킬</span>
+  <span class="tag">#커피추출</span>
+  <span class="tag">#라이트로스팅</span>
+  <span class="tag">#홈바리스타</span>
+</div>
+
+<div class="footer">
+  작성일: 2026년 5월 1일 · 작성자: 10년 차 스페셜티 바리스타<br>
+  본 아티클은 2024–2026년 발표된 SCA, UC Davis Guinard 연구, MDPI Foods, Clive Coffee, BrewClan, Coffee ad Astra의 자료를 기반으로 작성되었습니다.<br>
+  <span style="opacity:0.7">※ 면책: 본 글은 일반적인 정보 제공 목적으로 작성되었으며, 머신·원두·환경에 따라 결과는 달라질 수 있습니다. 카페인 섭취량은 개인의 건강 상태에 맞게 조절하세요.</span>
+</div>
+
+</div>
+</body>
+</html>
