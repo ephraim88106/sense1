@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 35, emoji: "☕", category: "추출",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "\"9 bar\"는 거짓말이었다 — 2026년 에스프레소 추출 황금률, 90%의 바리스타가 모르는 진짜 변수",
+    date: "2026.05.01",
+    summary: "1948년 가지아 레버 머신의 우연이 만든 9 bar 신화의 종말 — 라이트 로스팅 시대에 6 bar가 정답인 이유, UC Davis 2023이 흔든 SCA 추출률 18~22% 골든존, 채널링을 0%로 만드는 분쇄 분포·유속·물·프리인퓨전 4대 변수, WDT + 프리인퓨전 콤보 레시피와 가정용 머신에서 바로 적용하는 변수 매트릭스까지 — 10년차 바리스타가 공개하는 2026 에스프레소 추출 심층 가이드.",
+    link: "coffee-article-2026-05-01.html"
+  },
+  {
     id: 34, emoji: "🔥", category: "로스팅",
     categoryColor: { bg: "#fee2e2", text: "#991b1b" },
     title: "갓 볶은 원두가 더 맛없는 진짜 이유 — 바리스타도 헷갈리는 '디개싱 72시간'의 과학",
