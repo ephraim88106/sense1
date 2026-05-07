@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>스페셜티 커피, 이제 진짜 주류가 됐다 — 2026년 글로벌 트렌드 완전 해부</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #faf7f2;
+      color: #2c1810;
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ─── HEADER ─── */
+    .site-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      padding: 48px 20px 40px;
+      text-align: center;
+    }
+    .site-header .badge {
+      display: inline-block;
+      background: rgba(200,134,10,0.25);
+      border: 1px solid #c8860a;
+      color: #f5d18a;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .site-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      color: #faf7f2;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+    .site-header .subtitle {
+      color: #e8c98a;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+    .meta {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .meta span {
+      color: #c8a87a;
+      font-size: 13px;
+    }
+
+    /* ─── ARTICLE BODY ─── */
+    article {
+      padding-top: 40px;
+    }
+
+    /* Hook */
+    .hook {
+      font-size: 19px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8ee;
+      border-radius: 0 10px 10px 0;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    /* Summary box */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 14px;
+      padding: 28px 30px;
+      margin-bottom: 40px;
+    }
+    .summary-box h2 {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #c8860a;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .summary-box ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .summary-box ul li::before {
+      content: "✦ ";
+      color: #c8860a;
+      font-weight: 900;
+    }
+    .summary-box ul li {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 44px;
+    }
+    .section h2 {
+      font-size: 21px;
+      font-weight: 900;
+      color: #2c1810;
+      border-left: 5px solid #6b3a2a;
+      padding-left: 14px;
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .section p {
+      margin-bottom: 14px;
+      color: #3a2018;
+    }
+    .section strong {
+      color: #6b3a2a;
+    }
+
+    /* Highlight inline */
+    .highlight {
+      background: linear-gradient(to right, #fff3d0, #fff8ee);
+      border-radius: 4px;
+      padding: 2px 6px;
+      font-weight: 700;
+      color: #6b3a2a;
+    }
+
+    /* Tip box */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8ee 0%, #fff3d0 100%);
+      border: 2px solid #c8860a;
+      border-radius: 14px;
+      padding: 28px 30px;
+      margin: 40px 0;
+    }
+    .tip-box h3 {
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      color: #c8860a;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .tip-number {
+      background: #6b3a2a;
+      color: #faf7f2;
+      font-size: 13px;
+      font-weight: 900;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .tip-item p {
+      font-size: 15px;
+      color: #3a2018;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* SVG infographic wrapper */
+    .infographic {
+      margin: 40px 0;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(44,24,16,0.12);
+    }
+    .infographic svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Data table */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+    .data-table th {
+      background: #6b3a2a;
+      color: #faf7f2;
+      padding: 12px 16px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .data-table td {
+      padding: 11px 16px;
+      border-bottom: 1px solid #e8ddd4;
+      color: #3a2018;
+    }
+    .data-table tr:nth-child(even) td {
+      background: #f5f0ea;
+    }
+    .data-table .growth {
+      color: #c8860a;
+      font-weight: 700;
+    }
+
+    /* Closing CTA */
+    .closing {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 14px;
+      padding: 32px 30px;
+      margin-top: 44px;
+      text-align: center;
+    }
+    .closing h3 {
+      font-size: 19px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      color: #f5d18a;
+    }
+    .closing p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #e8c98a;
+    }
+
+    /* Tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 36px;
+    }
+    .tag {
+      background: #e8ddd4;
+      color: #6b3a2a;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #e8ddd4;
+      font-size: 12px;
+      color: #8a7060;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .site-header { padding: 36px 16px 32px; }
+      .summary-box, .tip-box, .closing { padding: 22px 18px; }
+      .section h2 { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="badge">☕ 글로벌 트렌드 리포트</div>
+  <h1>스페셜티 커피, 이제 진짜 주류가 됐다<br>2026년 당신이 몰랐던 7가지 충격적 수치</h1>
+  <p class="subtitle">10년 바리스타가 직접 분석한 글로벌 스페셜티 커피 완전 해부</p>
+  <div class="meta">
+    <span>📅 2026년 5월 7일</span>
+    <span>✍️ 스페셜티 바리스타 팀</span>
+    <span>⏱ 약 8분 읽기</span>
+  </div>
+</header>
+
+<!-- ============ ARTICLE ============ -->
+<div class="container">
+<article>
+
+  <!-- Hook -->
+  <p class="hook">
+    "스페셜티 커피요? 그거 그냥 비싼 커피 아닌가요?" — 아직도 이렇게 생각한다면, 지금 이 글을 끝까지 읽어야 합니다. 2026년, 스페셜티 커피 시장은 전 세계 커피 시장 가치의 <strong>55%</strong>를 점령했고, 규모는 <strong>1,227억 달러(약 170조 원)</strong>를 돌파했습니다. 이건 트렌드가 아니라 혁명입니다.
+  </p>
+
+  <!-- Summary Box -->
+  <div class="summary-box">
+    <h2>📌 오늘 이 글에서 배울 것</h2>
+    <ul>
+      <li>2026년 스페셜티 커피 시장이 얼마나 커졌는지 — 충격적인 숫자</li>
+      <li>MZ세대가 커피 산업 판도를 완전히 뒤집은 방식</li>
+      <li>콜드브루·기능성 커피가 왜 폭발적으로 성장하는지</li>
+      <li>AI가 내 커피 맛을 설계하는 시대가 온 이유</li>
+      <li>한국과 아시아 시장만의 독특한 성장 공식</li>
+      <li>2026년 하반기 놓치면 안 되는 3가지 핵심 기회</li>
+    </ul>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section">
+    <h2>1. "비싼 취미"에서 "170조 시장"으로 — 숫자가 말하는 혁명</h2>
+    <p>
+      솔직히 말할게요. 10년 전, 스페셜티 커피를 처음 시작했을 때 주변 반응은 차가웠습니다. "왜 그 돈 주고 사냐"는 말을 수도 없이 들었죠. 그런데 2026년 현실은 완전히 달라졌습니다.
+    </p>
+    <p>
+      글로벌 스페셜티 커피 시장은 <span class="highlight">2025년 1,115억 달러</span>에서 <span class="highlight">2026년 1,227억 달러</span>로 단 1년 만에 100억 달러 이상 성장했습니다. 그리고 2033년에는 <strong>2,517억 달러(약 350조 원)</strong>에 달할 것으로 예측됩니다. 연평균 성장률(CAGR)은 <strong>10.8%</strong> — 이건 반도체 산업 수준의 성장 속도입니다.
+    </p>
+    <p>
+      더 놀라운 건 미국 시장입니다. 이미 전체 커피 시장 가치의 <strong>55% 이상</strong>이 스페셜티 커피에서 나옵니다. 한때 "고급 취향"이라 불리던 것이 이제 아메리카노만큼 일상이 된 거죠. 우리가 지금 스페셜티 커피의 황금기 한가운데 서 있다는 걸, 숫자는 명확하게 말해주고 있습니다.
+    </p>
+  </div>
+
+  <!-- SVG Infographic 1 — Market Growth -->
+  <div class="infographic">
+    <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background -->
+      <rect width="760" height="360" fill="#2c1810"/>
+      <!-- Title -->
+      <text x="380" y="38" text-anchor="middle" font-family="'Noto Sans KR', sans-serif" font-size="16" font-weight="700" fill="#f5d18a">글로벌 스페셜티 커피 시장 성장 추이 (단위: 억 달러)</text>
+      <!-- Grid lines -->
+      <line x1="80" y1="60" x2="80" y2="290" stroke="#5a3020" stroke-width="1"/>
+      <line x1="80" y1="290" x2="700" y2="290" stroke="#5a3020" stroke-width="1"/>
+      <line x1="80" y1="230" x2="700" y2="230" stroke="#5a3020" stroke-width="0.5" stroke-dasharray="4,4"/>
+      <line x1="80" y1="170" x2="700" y2="170" stroke="#5a3020" stroke-width="0.5" stroke-dasharray="4,4"/>
+      <line x1="80" y1="110" x2="700" y2="110" stroke="#5a3020" stroke-width="0.5" stroke-dasharray="4,4"/>
+      <!-- Y axis labels -->
+      <text x="68" y="294" text-anchor="end" font-family="sans-serif" font-size="11" fill="#c8a87a">0</text>
+      <text x="68" y="234" text-anchor="end" font-family="sans-serif" font-size="11" fill="#c8a87a">800</text>
+      <text x="68" y="174" text-anchor="end" font-family="sans-serif" font-size="11" fill="#c8a87a">1600</text>
+      <text x="68" y="114" text-anchor="end" font-family="sans-serif" font-size="11" fill="#c8a87a">2400</text>
+
+      <!-- Bars: years 2023 ~ 2033 -->
+      <!-- 2023: 900 → height = 900/2600*230 = 79.6 → y = 290-80 = 210 -->
+      <rect x="105" y="210" width="48" height="80" rx="4" fill="#6b3a2a"/>
+      <text x="129" y="205" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#c8a87a">900</text>
+      <text x="129" y="310" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#c8a87a">2023</text>
+
+      <!-- 2024: 1010 → 89.2 → y=200.8 -->
+      <rect x="168" y="201" width="48" height="89" rx="4" fill="#7a4530"/>
+      <text x="192" y="196" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#c8a87a">1,010</text>
+      <text x="192" y="310" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#c8a87a">2024</text>
+
+      <!-- 2025: 1115 → 98.6 → y=191 -->
+      <rect x="231" y="191" width="48" height="99" rx="4" fill="#8a5038"/>
+      <text x="255" y="186" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#c8a87a">1,115</text>
+      <text x="255" y="310" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#c8a87a">2025</text>
+
+      <!-- 2026: 1227 → 108.5 → y=181.5 HIGHLIGHT -->
+      <rect x="294" y="180" width="48" height="110" rx="4" fill="#c8860a"/>
+      <text x="318" y="174" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#f5d18a">1,227</text>
+      <text x="318" y="310" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="700" fill="#f5d18a">2026★</text>
+
+      <!-- 2027: 1360 → 120.1 → y=170 -->
+      <rect x="357" y="170" width="48" height="120" rx="4" fill="#7a4530"/>
+      <text x="381" y="165" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#c8a87a">1,360</text>
+      <text x="381" y="310" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#c8a87a">2027</text>
+
+      <!-- 2028: 1506 → 133 → y=157 -->
+      <rect x="420" y="157" width="48" height="133" rx="4" fill="#7a4530"/>
+      <text x="444" y="152" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#c8a87a">1,506</text>
+      <text x="444" y="310" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#c8a87a">2028</text>
+
+      <!-- 2030: 1850 → 163.5 → y=126.5 -->
+      <rect x="483" y="127" width="48" height="163" rx="4" fill="#8a5038"/>
+      <text x="507" y="122" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#c8a87a">1,850</text>
+      <text x="507" y="310" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#c8a87a">2030</text>
+
+      <!-- 2033: 2517 → 222.3 → y=67.7 -->
+      <rect x="546" y="68" width="48" height="222" rx="4" fill="#c8860a" opacity="0.7"/>
+      <text x="570" y="63" text-anchor="middle" font-family="sans-serif" font-size="10" font-weight="700" fill="#f5d18a">2,517</text>
+      <text x="570" y="310" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#c8a87a">2033</text>
+
+      <!-- Trend line (approximate) -->
+      <polyline points="129,210 192,201 255,191 318,180 381,170 444,157 507,127 570,68"
+        fill="none" stroke="#f5d18a" stroke-width="2" stroke-dasharray="6,3" opacity="0.5"/>
+
+      <!-- CAGR badge -->
+      <rect x="600" y="80" width="130" height="60" rx="10" fill="#c8860a" opacity="0.2" stroke="#c8860a" stroke-width="1"/>
+      <text x="665" y="105" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#f5d18a">연평균 성장률</text>
+      <text x="665" y="128" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#f5d18a">+10.8%</text>
+
+      <!-- Source -->
+      <text x="380" y="345" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#8a7060">출처: Grand View Research / Coherent Market Insights 2026</text>
+    </svg>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section">
+    <h2>2. Z세대와 밀레니얼이 스페셜티 커피를 '점령'한 방법</h2>
+    <p>
+      사실 대부분의 사람들이 모르는데, 스페셜티 커피의 주인공이 바뀌었습니다. 예전엔 "커피 좀 안다"는 40~50대 전문가들의 세계였다면, 지금은 완전히 달라졌습니다.
+    </p>
+    <p>
+      2026년 기준, <span class="highlight">밀레니얼(1981~1996년생) + Z세대(1997~2012년생)</span>가 전체 스페셜티 커피 구매의 <strong>60%</strong>를 차지합니다. 특히 18~24세 연령대는 단독으로 전체 수익의 <strong>32.3%</strong>를 만들어내고 있습니다. 이들에게 커피는 단순한 음료가 아닙니다. 그건 <strong>정체성이고, 콘텐츠이며, 커뮤니티</strong>입니다.
+    </p>
+    <p>
+      Z세대의 <strong>68%</strong>는 아이스·콜드 커피를 강하게 선호하고, <strong>75%</strong>는 자신의 음료를 커스터마이징합니다. 콜드폼, 시럽 추가, 대체유 선택 — 한 번도 메뉴판대로 주문하지 않는 세대가 시장을 이끌고 있죠. 이들이 원하는 건 "내 취향에 맞춤 제작된 커피"이고, 스페셜티 커피는 정확히 그 니즈를 충족시켜 줍니다.
+    </p>
+    <p>
+      한국도 예외가 아닙니다. 2026 서울커피엑스포에서 확인된 트렌드처럼, "단순히 좋은 커피"라는 표현만으로는 더 이상 소비자가 설득되지 않는 시대가 됐습니다. 소비자들은 원두의 농장 주소, 수확 고도, 가공 방식까지 묻기 시작했습니다.
+    </p>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section">
+    <h2>3. 콜드브루의 반란 — 22.72% 성장률이 말하는 것</h2>
+    <p>
+      콜드브루가 인기 있다는 건 다들 알고 있죠. 근데 이 정도인 줄은 몰랐을 겁니다.
+    </p>
+    <p>
+      2026년 글로벌 콜드브루 커피 시장은 <span class="highlight">4억 7,400만 달러</span> 규모에서, 2034년에는 <span class="highlight">24억 3,700만 달러</span>로 성장할 전망입니다. 연평균 성장률 <strong>22.72%</strong> — 이건 전체 커피 시장 성장률(10.8%)의 두 배를 훌쩍 넘습니다. RTD(Ready-to-Drink) 콜드브루까지 포함하면 시장은 더 커집니다.
+    </p>
+    <p>
+      왜 이렇게 폭발적으로 성장할까요? 첫 번째는 <strong>온도</strong>입니다. 차가운 물로 장시간 추출하면 산도(acidity)가 낮아지고, 특유의 단맛과 부드러운 바디감이 살아납니다. 쓴맛에 민감한 소비자들이 입문하기 가장 쉬운 스페셜티 커피가 바로 콜드브루인 거죠. 두 번째는 <strong>편의성</strong>입니다. 병에 담아 냉장 보관하면 1~2주 동안 카페 품질 커피를 즐길 수 있으니, 바쁜 현대인의 라이프스타일과 완벽하게 맞아떨어집니다.
+    </p>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section">
+    <h2>4. 기능성 커피 — "카페인 이상의 무언가"를 원하는 사람들</h2>
+    <p>
+      2026년 커피에서 가장 뜨거운 키워드를 하나 고르라면 단연 <strong>기능성(Functional)</strong>입니다. 커피에 아답토젠(adaptogen), 노트로픽(nootropic), 콜라겐, MCT 오일을 더해 두뇌 향상·스트레스 완화·장 건강까지 챙기는 제품들이 폭발적으로 등장하고 있죠.
+    </p>
+    <p>
+      현재 글로벌 기능성 커피 시장은 <span class="highlight">약 45억 달러</span> 규모. 2030년에는 <span class="highlight">77.8억 달러</span>로 성장할 전망입니다(CAGR 11.84%). 소비자 설문에서 <strong>62%의 커피 음용자</strong>가 "카페인 외의 건강 혜택을 우선시한다"고 답했고, <strong>82%</strong>는 지속가능하게 생산된 커피에 더 높은 가격을 지불할 의향이 있다고 밝혔습니다.
+    </p>
+    <p>
+      아닌게 아니라, 요즘 카페에서 "라이온스 메인 라떼(사자갈기버섯 라떼)"나 "레이시(Reishi) 모카"를 본 적 있지 않으신가요? 이게 그냥 유행이 아니라 <strong>과학 기반 소비 트렌드</strong>입니다. 사람들은 이제 커피 한 잔으로 집중력과 체력까지 관리하려 합니다.
+    </p>
+  </div>
+
+  <!-- Tip Box -->
+  <div class="tip-box">
+    <h3>☕ 실전 팁 — 오늘 바로 써먹을 수 있는 것들</h3>
+    <div class="tip-list">
+      <div class="tip-item">
+        <div class="tip-number">1</div>
+        <p><strong>콜드브루 직접 만들기:</strong> 원두 100g + 차가운 물 700ml → 밀폐용기에 담아 냉장고에서 12~18시간 추출. 소비 전 종이 필터로 두 번 걸러주면 카페 수준 콜드브루 완성. 코스타리카나 에티오피아 내추럴 원두로 하면 과일향이 배가됩니다.</p>
+      </div>
+      <div class="tip-item">
+        <div class="tip-number">2</div>
+        <p><strong>기능성 커피 입문법:</strong> 시작은 '버섯 커피 블렌드' 파우더를 기존 드립 커피에 1/4 티스푼만 추가하는 것으로 충분합니다. 맛 변화 없이 기능성 성분의 효과를 테스트해볼 수 있습니다. 아답토젠(Adaptogen)이란 스트레스 호르몬 코르티솔 조절에 도움을 주는 천연 성분을 말합니다.</p>
+      </div>
+      <div class="tip-item">
+        <div class="tip-number">3</div>
+        <p><strong>스페셜티 원두 구매 시 확인할 것:</strong> 봉투에 "농장명 + 고도 + 가공법"이 모두 표기된 원두만 진짜 스페셜티입니다. "스페셜티 블렌드"라고 써 있어도 표기가 없으면 마케팅 용어일 가능성이 높습니다. SCA(스페셜티 커피 협회) 점수 80점 이상 인증 여부도 확인해보세요.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 5 -->
+  <div class="section">
+    <h2>5. AI가 내 커피 레시피를 설계하는 시대</h2>
+    <p>
+      SF 영화 얘기가 아닙니다. 이미 2026년 현재, 일부 스마트 에스프레소 머신은 AI를 활용해 <strong>원두 원산지·로스팅 날짜·그라인드 크기·물 온도·추출 시간</strong>을 자동으로 조정합니다. 바리스타 10년 경력이 손으로 맞추던 변수들을 AI가 밀리세컨드 단위로 최적화하는 거죠.
+    </p>
+    <p>
+      더 나아가, 카페 키오스크에서는 고객의 과거 주문 데이터를 분석해 "오늘 날씨와 고객님의 패턴으로 보아 콜드 에스프레소 토닉을 추천합니다"라는 개인화 제안을 합니다. Z세대의 <strong>72%</strong>가 매달 새로운 음료를 시도한다는 연구 결과와 맞물려, AI 개인화는 폭발적인 이용률을 기록 중입니다.
+    </p>
+    <p>
+      다만 바리스타의 시각에서 솔직히 말하자면, AI는 <strong>추출 변수의 일관성</strong>을 확보하는 데는 탁월하지만, 원두 고유의 뉘앙스를 감각적으로 읽어내는 능력은 아직 숙련 바리스타에게 미치지 못합니다. 기술과 사람의 협업이 답입니다.
+    </p>
+  </div>
+
+  <!-- Section 6 -->
+  <div class="section">
+    <h2>6. 한국과 아시아 — 글로벌 성장의 진짜 엔진</h2>
+    <p>
+      유럽이나 북미를 제치고 아시아-태평양이 스페셜티 커피 성장의 중심 무대로 올라섰습니다. 이미 글로벌 매출의 <span class="highlight">36.74%</span>를 점유하며, CAGR <strong>12.6%</strong>로 전 세계에서 가장 빠르게 성장하는 지역입니다.
+    </p>
+    <p>
+      한국은 그 중에서도 특별한 위치에 있습니다. 2026년 한국 커피 산업 트렌드 키워드는 <strong>'비욘드(B.E.Y.O.N.D)'</strong>입니다: <strong>B</strong>etter Community(더 나은 커뮤니티), <strong>E</strong>veryday Wellness(일상 건강), <strong>Y</strong>our Moment(나만의 시간), <strong>O</strong>riginal Local(로코노미), <strong>N</strong>ature Forward(지속가능성), <strong>D</strong>iversity(다양성)의 첫 글자입니다.
+    </p>
+    <p>
+      동남아시아의 성장도 눈부십니다. 태국·인도네시아를 중심으로 젊은 소비층과 서구적 라이프스타일이 결합되면서, 방콕과 자카르타의 스페셜티 카페 밀집도는 이제 서울 강남을 추월했다는 분석도 나옵니다. 아이러니하게도, 커피를 생산하는 나라에서 스페셜티 커피의 가장 뜨거운 소비자가 탄생하고 있습니다.
+    </p>
+  </div>
+
+  <!-- Market Data Table -->
+  <div class="section">
+    <h2>7. 한눈에 보는 2026 스페셜티 커피 핵심 데이터</h2>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>카테고리</th>
+          <th>2026 시장 규모</th>
+          <th>성장률(CAGR)</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>전체 스페셜티 커피</td>
+          <td>1,227억 달러</td>
+          <td class="growth">+10.8%</td>
+          <td>2033년 2,517억 달러 전망</td>
+        </tr>
+        <tr>
+          <td>기능성 커피</td>
+          <td>45억 달러</td>
+          <td class="growth">+11.84%</td>
+          <td>2030년 77.8억 달러</td>
+        </tr>
+        <tr>
+          <td>콜드브루 커피</td>
+          <td>4.74억 달러</td>
+          <td class="growth">+22.72%</td>
+          <td>2034년 24.37억 달러</td>
+        </tr>
+        <tr>
+          <td>RTD 커피 전체</td>
+          <td>대규모 성장</td>
+          <td class="growth">+5.46%</td>
+          <td>편의성·기능성 이중 드라이버</td>
+        </tr>
+        <tr>
+          <td>아시아-태평양</td>
+          <td>글로벌 36.74%</td>
+          <td class="growth">+12.6%</td>
+          <td>가장 빠른 성장 지역</td>
+        </tr>
+        <tr>
+          <td>MZ세대 구매 비중</td>
+          <td>전체의 60%</td>
+          <td class="growth">증가 추세</td>
+          <td>18~24세 단독 32.3%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SVG Infographic 2 — Consumer Stats Donut-style -->
+  <div class="infographic">
+    <svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg">
+      <rect width="760" height="300" fill="#1e0f08"/>
+      <text x="380" y="32" text-anchor="middle" font-family="'Noto Sans KR', sans-serif" font-size="15" font-weight="700" fill="#f5d18a">2026 스페셜티 커피 소비자 인식 통계</text>
+
+      <!-- Stat 1 -->
+      <circle cx="95" cy="155" r="60" fill="none" stroke="#5a3020" stroke-width="12"/>
+      <circle cx="95" cy="155" r="60" fill="none" stroke="#c8860a" stroke-width="12"
+        stroke-dasharray="307 377" stroke-dashoffset="94" stroke-linecap="round"/>
+      <text x="95" y="150" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#f5d18a">82%</text>
+      <text x="95" y="172" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#c8a87a">지속가능 커피</text>
+      <text x="95" y="237" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#e8c98a">더 높은 가격 지불 의향</text>
+
+      <!-- Stat 2 -->
+      <circle cx="255" cy="155" r="60" fill="none" stroke="#5a3020" stroke-width="12"/>
+      <circle cx="255" cy="155" r="60" fill="none" stroke="#c8860a" stroke-width="12"
+        stroke-dasharray="236 377" stroke-dashoffset="94" stroke-linecap="round"/>
+      <text x="255" y="150" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#f5d18a">62%</text>
+      <text x="255" y="172" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#c8a87a">커피 음용자</text>
+      <text x="255" y="237" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#e8c98a">건강 기능성 우선시</text>
+
+      <!-- Stat 3 -->
+      <circle cx="415" cy="155" r="60" fill="none" stroke="#5a3020" stroke-width="12"/>
+      <circle cx="415" cy="155" r="60" fill="none" stroke="#c8860a" stroke-width="12"
+        stroke-dasharray="257 377" stroke-dashoffset="94" stroke-linecap="round"/>
+      <text x="415" y="150" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#f5d18a">68%</text>
+      <text x="415" y="172" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#c8a87a">Z세대</text>
+      <text x="415" y="237" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#e8c98a">콜드·아이스 커피 선호</text>
+
+      <!-- Stat 4 -->
+      <circle cx="575" cy="155" r="60" fill="none" stroke="#5a3020" stroke-width="12"/>
+      <circle cx="575" cy="155" r="60" fill="none" stroke="#c8860a" stroke-width="12"
+        stroke-dasharray="283 377" stroke-dashoffset="94" stroke-linecap="round"/>
+      <text x="575" y="150" text-anchor="middle" font-family="sans-serif" font-size="22" font-weight="700" fill="#f5d18a">75%</text>
+      <text x="575" y="172" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#c8a87a">Z세대</text>
+      <text x="575" y="237" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#e8c98a">음료 커스터마이징</text>
+
+      <!-- Source -->
+      <text x="380" y="285" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#8a7060">출처: Keurig Dr Pepper State of Beverages / BeverageDaily / Grand View Research 2026</text>
+    </svg>
+  </div>
+
+  <!-- Closing -->
+  <div class="closing">
+    <h3>내일 당장 해볼 수 있는 행동 하나</h3>
+    <p>
+      오늘 마시는 커피 봉투 뒷면을 한 번만 뒤집어 보세요.<br>
+      농장명, 고도, 가공법이 적혀 있다면 — 당신은 이미 스페셜티 커피의 세계에 발을 디딘 겁니다.<br>
+      아무것도 안 적혀 있다면? 이번 주 딱 한 번만, 정보가 적힌 원두를 사보세요.<br>
+      <br>
+      <strong>한 봉지가 당신의 커피를 영원히 바꿔놓을 수도 있습니다.</strong>
+    </p>
+  </div>
+
+  <!-- Tags -->
+  <div class="tags">
+    <span class="tag">#스페셜티커피</span>
+    <span class="tag">#커피트렌드2026</span>
+    <span class="tag">#콜드브루</span>
+    <span class="tag">#기능성커피</span>
+    <span class="tag">#MZ커피</span>
+    <span class="tag">#아시아커피시장</span>
+    <span class="tag">#AI커피</span>
+    <span class="tag">#지속가능커피</span>
+    <span class="tag">#바리스타</span>
+    <span class="tag">#커피마켓</span>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>작성일: 2026년 5월 7일 | 카테고리: 스페셜티 커피 트렌드</p>
+    <p style="margin-top:8px">
+      본 아티클은 공개된 시장 조사 자료(Grand View Research, Coherent Market Insights, BeverageDaily, Forest Coffee 외)를 바탕으로 작성되었습니다.<br>
+      시장 수치는 조사 기관별로 차이가 있을 수 있으며, 투자 또는 사업 결정의 근거로 사용하실 경우 원본 자료를 반드시 확인하시기 바랍니다.
+    </p>
+  </div>
+
+</article>
+</div>
+
+</body>
+</html>
