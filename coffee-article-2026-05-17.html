@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>라떼아트가 실패하는 진짜 이유 — 바리스타 10년이 밝히는 밀크 스티밍의 물리학</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── HEADER ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      padding: 48px 20px 40px;
+      text-align: center;
+      margin-bottom: 0;
+    }
+
+    .category-badge {
+      display: inline-block;
+      background: rgba(200,134,10,0.85);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      color: #faf7f2;
+      line-height: 1.4;
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+
+    .article-header .subtitle {
+      color: rgba(250,247,242,0.75);
+      font-size: 15px;
+    }
+
+    .article-header .meta {
+      margin-top: 20px;
+      color: rgba(250,247,242,0.6);
+      font-size: 13px;
+    }
+
+    /* ── CONTENT ── */
+    .content {
+      background: #fff;
+      border-radius: 0 0 16px 16px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 30px rgba(44,24,16,0.08);
+    }
+
+    @media (max-width: 600px) {
+      .content { padding: 24px 18px; }
+    }
+
+    /* ── HOOK ── */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8ee;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    /* ── SUMMARY BOX ── */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+    }
+
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 14px;
+    }
+
+    .summary-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .summary-box ul li {
+      padding: 5px 0;
+      font-size: 14px;
+      color: rgba(250,247,242,0.9);
+    }
+
+    .summary-box ul li::before {
+      content: "▸ ";
+      color: #c8860a;
+    }
+
+    /* ── SECTION HEADINGS ── */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      border-left: 5px solid #c8860a;
+      padding-left: 14px;
+      margin: 40px 0 16px;
+      line-height: 1.4;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #3a2218;
+      font-size: 15.5px;
+    }
+
+    strong { color: #6b3a2a; }
+
+    /* ── TIPS BOX ── */
+    .tips-box {
+      background: linear-gradient(135deg, #fff3d6 0%, #fff8ee 100%);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 36px 0;
+    }
+
+    .tips-box h3 {
+      font-size: 16px;
+      font-weight: 900;
+      color: #6b3a2a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tips-box .tip-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .tip-num {
+      background: #c8860a;
+      color: #fff;
+      font-weight: 900;
+      font-size: 13px;
+      border-radius: 50%;
+      min-width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .tip-text {
+      font-size: 14.5px;
+      color: #3a2218;
+      line-height: 1.7;
+    }
+
+    /* ── DATA TABLE ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+
+    .data-table th {
+      background: #2c1810;
+      color: #faf7f2;
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e8ddd6;
+    }
+
+    .data-table tr:nth-child(even) td { background: #faf7f2; }
+
+    /* ── SVG INFOGRAPHIC ── */
+    .infographic-wrap {
+      margin: 36px 0;
+      background: #fff;
+      border: 1px solid #e8ddd6;
+      border-radius: 12px;
+      padding: 24px;
+      overflow-x: auto;
+    }
+
+    .infographic-wrap h3 {
+      text-align: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+    }
+
+    /* ── HIGHLIGHT QUOTE ── */
+    .callout {
+      background: #faf7f2;
+      border-left: 5px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-style: italic;
+      color: #6b3a2a;
+      font-size: 15px;
+    }
+
+    /* ── TAGS ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #e8ddd6;
+    }
+
+    .tag {
+      background: #faf7f2;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* ── FOOTER ── */
+    .article-footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #999;
+      line-height: 1.6;
+    }
+
+    /* ── BADGE ROW ── */
+    .badge-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .badge {
+      background: #faf7f2;
+      border: 1px solid #e8ddd6;
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-size: 13px;
+    }
+
+    .badge span { font-weight: 700; color: #6b3a2a; }
+
+    /* ── INVERT SPECIAL BOX ── */
+    .invert-box {
+      background: linear-gradient(135deg, #2c1810, #4a2018);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 28px 0;
+    }
+
+    .invert-box h4 {
+      color: #c8860a;
+      margin-bottom: 12px;
+      font-size: 16px;
+    }
+
+    .invert-box p {
+      color: rgba(250,247,242,0.88);
+      font-size: 14.5px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ════════ HEADER ════════ -->
+<div class="article-header">
+  <div class="container">
+    <span class="category-badge">☕ 바리스타 스킬 &amp; 라떼아트</span>
+    <h1>라떼아트가 매번 실패하는 진짜 이유 —<br>바리스타 10년이 밝히는 밀크 스티밍의 물리학</h1>
+    <div class="subtitle">마이크로폼의 비밀부터 2026 세계 챔피언 기법까지, 아무도 제대로 알려주지 않았던 모든 것</div>
+    <div class="meta">✍️ 스페셜티 바리스타 10년 경력 | 📅 2026년 5월 17일</div>
+  </div>
+</div>
+
+<!-- ════════ CONTENT ════════ -->
+<div class="container">
+<div class="content">
+
+  <!-- HOOK -->
+  <p class="hook">
+    "우유만 잘 넣으면 라떼아트가 된다"고 생각했다면, 당신은 지금까지 핵심을 완전히 놓치고 있었다.<br>
+    라떼아트의 성패는 <strong>잔에 우유를 붓기 전에 이미 70% 결정</strong>된다.
+  </p>
+
+  <!-- SUMMARY BOX -->
+  <div class="summary-box">
+    <h3>📌 오늘 이 글에서 배울 것</h3>
+    <ul>
+      <li>밀크 스티밍 중 우유 단백질에 실제로 일어나는 일 (과학적 근거)</li>
+      <li>마이크로폼을 망치는 단 하나의 실수 (온도편)</li>
+      <li>하트·튤립·로제타 패턴별 핵심 포인트와 흔한 실패 원인</li>
+      <li>집에서 할 수 있는 라떼아트 8단계 독학법</li>
+      <li>2026 세계 라떼아트 챔피언십 우승 기법 "Invert"란 무엇인가</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2 class="section-title">1. "우유 거품"이 아니라 "마이크로폼" — 이 차이가 전부다</h2>
+  <p>
+    카페에서 라떼아트를 주문했을 때 나오는 그 실크 같은 우유, 사실 이름이 따로 있다. <strong>마이크로폼(Microfoam)</strong>, 일명 벨벳 밀크(Velvet Milk)라고 부른다. 일반 거품(foam)과는 완전히 다른 물질이다.
+  </p>
+  <p>
+    일반 거품은 눈에 보이는 큰 공기방울들이 우유 위에 둥둥 떠있는 상태다. 반면 마이크로폼은 <strong>눈에 보이지 않을 만큼 미세한 공기방울(직경 0.1mm 이하)이 우유 전체에 고르게 분산</strong>되어, 액체와 기체의 경계가 사라진 '제3의 상태'다. 찰랑거리는 물처럼 유동성이 있으면서도 표면장력이 높아 무늬를 그릴 수 있는 것이다.
+  </p>
+  <p>
+    이 상태를 만드는 게 바로 <strong>밀크 스티밍(Milk Steaming)</strong>이다. 에스프레소 머신의 스팀완드에서 나오는 증기를 우유에 주입해 만드는데, 여기에 생각보다 복잡한 물리·화학이 숨어있다.
+  </p>
+
+  <!-- SECTION 2 -->
+  <h2 class="section-title">2. 단백질이 결정한다 — 밀크 스티밍의 물리학</h2>
+  <p>
+    사실 대부분의 사람들이 모르는데, 마이크로폼의 품질을 결정하는 핵심은 <strong>우유 속 단백질</strong>이다. 우유에는 크게 두 종류의 단백질이 있다. 카세인(Casein, 전체 단백질의 약 80%)과 유청단백질(Whey Protein, 약 20%)이다.
+  </p>
+  <p>
+    이 단백질들은 스티밍 과정에서 <strong>계면활성제(Surfactant)</strong>처럼 작동한다. 공기방울 주위를 감싸 더 작은 방울들이 서로 합쳐지는 것(합체, coalescence)을 막아준다. 결과적으로 수백만 개의 초미세 공기방울이 안정적으로 유지되는 것이다.
+  </p>
+
+  <div class="infographic-wrap">
+    <h3>⚗️ 온도별 우유 단백질 반응 & 마이크로폼 품질</h3>
+    <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;display:block;margin:0 auto">
+      <!-- 배경 -->
+      <rect width="720" height="300" fill="#faf7f2" rx="8"/>
+
+      <!-- 온도 구간 바 -->
+      <!-- 0~40°C: 너무 차가움 -->
+      <rect x="40" y="60" width="100" height="140" fill="#b0c4de" rx="4"/>
+      <text x="90" y="50" text-anchor="middle" font-size="11" fill="#555" font-family="sans-serif">0–40°C</text>
+      <text x="90" y="215" text-anchor="middle" font-size="10" fill="#555" font-family="sans-serif">너무 차가움</text>
+      <text x="90" y="228" text-anchor="middle" font-size="10" fill="#555" font-family="sans-serif">단백질 미활성</text>
+
+      <!-- 40~55°C: 적정 예비 구간 -->
+      <rect x="155" y="90" width="100" height="110" fill="#f5c842" rx="4"/>
+      <text x="205" y="50" text-anchor="middle" font-size="11" fill="#555" font-family="sans-serif">40–55°C</text>
+      <text x="205" y="215" text-anchor="middle" font-size="10" fill="#555" font-family="sans-serif">예비 구간</text>
+      <text x="205" y="228" text-anchor="middle" font-size="10" fill="#555" font-family="sans-serif">공기 주입 시작</text>
+
+      <!-- 55~65°C: 최적 구간 (가장 높게) -->
+      <rect x="270" y="30" width="130" height="170" fill="#6b3a2a" rx="4"/>
+      <text x="335" y="50" text-anchor="middle" font-size="13" fill="#fff" font-weight="bold" font-family="sans-serif">55–65°C</text>
+      <text x="335" y="68" text-anchor="middle" font-size="11" fill="#f5c842" font-family="sans-serif">✦ 최적 구간 ✦</text>
+      <text x="335" y="215" text-anchor="middle" font-size="11" fill="#555" font-family="sans-serif">단백질 최대 안정화</text>
+      <text x="335" y="228" text-anchor="middle" font-size="11" fill="#555" font-family="sans-serif">유당 단맛 극대화</text>
+      <text x="335" y="241" text-anchor="middle" font-size="11" fill="#555" font-family="sans-serif">마이크로폼 완성</text>
+
+      <!-- 65~70°C: 위험 구간 -->
+      <rect x="415" y="100" width="100" height="100" fill="#e07b50" rx="4"/>
+      <text x="465" y="50" text-anchor="middle" font-size="11" fill="#555" font-family="sans-serif">65–70°C</text>
+      <text x="465" y="215" text-anchor="middle" font-size="10" fill="#555" font-family="sans-serif">위험 구간</text>
+      <text x="465" y="228" text-anchor="middle" font-size="10" fill="#555" font-family="sans-serif">유청 단백질 변성 시작</text>
+
+      <!-- 70°C+: 실패 구간 -->
+      <rect x="530" y="130" width="110" height="70" fill="#c0392b" rx="4"/>
+      <text x="585" y="50" text-anchor="middle" font-size="11" fill="#555" font-family="sans-serif">70°C 이상</text>
+      <text x="585" y="215" text-anchor="middle" font-size="10" fill="#555" font-family="sans-serif">거품 붕괴</text>
+      <text x="585" y="228" text-anchor="middle" font-size="10" fill="#555" font-family="sans-serif">탄내·쓴맛 발생</text>
+
+      <!-- X축 라벨 -->
+      <text x="360" y="275" text-anchor="middle" font-size="12" fill="#6b3a2a" font-weight="bold" font-family="sans-serif">온도가 높을수록 → 단백질 변성 위험 증가</text>
+
+      <!-- 범례 -->
+      <rect x="42" y="252" width="12" height="12" fill="#6b3a2a" rx="2"/>
+      <text x="60" y="263" font-size="11" fill="#555" font-family="sans-serif">최적 (마이크로폼)</text>
+      <rect x="180" y="252" width="12" height="12" fill="#c0392b" rx="2"/>
+      <text x="198" y="263" font-size="11" fill="#555" font-family="sans-serif">위험/실패</text>
+    </svg>
+  </div>
+
+  <p>
+    <strong>핵심 포인트:</strong> 온도가 65°C를 넘는 순간 유청단백질이 변성(denaturation)되기 시작한다. 단백질이 공기방울을 잡는 능력을 잃으면서 미세 거품들이 합쳐져 큰 거품이 되고, 우유 질감은 묽고 거칠어진다. 이것이 "열심히 스티밍했는데 왜 라떼아트가 안 될까?"의 90%에 해당하는 답이다.
+  </p>
+
+  <!-- SECTION 3 -->
+  <h2 class="section-title">3. 2단계 스티밍 기법 — 프로가 절대 순서를 바꾸지 않는 이유</h2>
+  <p>
+    밀크 스티밍에는 순서가 있다. 이 순서를 어기면 아무리 좋은 원두, 좋은 머신을 써도 라떼아트는 나오지 않는다.
+  </p>
+
+  <div class="badge-row">
+    <div class="badge">⬛ <span>STEP 1</span> 공기 주입 (Aeration)</div>
+    <div class="badge">🔄 <span>STEP 2</span> 소용돌이 (Vortex)</div>
+    <div class="badge">🛑 <span>STEP 3</span> 55~65°C 즉시 정지</div>
+  </div>
+
+  <p>
+    <strong>1단계 — 공기 주입 (2~5초):</strong> 스팀완드 팁을 우유 표면 바로 아래(약 0.5~1cm)에 위치시키고 스팀을 켠다. 이때 "치~익" 하는 소리가 나야 정상이다. 이 단계에서 공기방울이 우유 속으로 들어온다. 단, 너무 오래 하면 큰 거품만 쌓인다. 차가운 우유 기준 2~5초면 충분하다.
+  </p>
+  <p>
+    <strong>2단계 — 소용돌이 생성 (나머지 전부):</strong> 완드를 피쳐(pitcher) 중심에서 살짝 옆으로 이동시켜 우유 전체가 회전하도록 유도한다. 이 소용돌이(vortex)가 1단계에서 주입된 큰 공기방울들을 잘게 쪼개 마이크로폼으로 만든다. 피쳐를 기울여 소용돌이가 더 강하게 생기게 하는 것이 포인트다.
+  </p>
+
+  <div class="callout">
+    💡 "스티밍 소리가 '치직치직'이 아니라 처음 2~3초만 치익 하고 이후엔 조용해야 합니다. 소리가 계속 나면 공기를 과주입하고 있다는 신호예요." — 바리스타 현장 팁
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2 class="section-title">4. 하트 · 튤립 · 로제타 — 패턴별 핵심 비밀과 실패 원인</h2>
+
+  <p>마이크로폼이 완성됐다면 이제 패턴을 그릴 차례다. 각 패턴에는 고유의 물리적 원리가 있다.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>패턴</th>
+        <th>난이도</th>
+        <th>핵심 동작</th>
+        <th>가장 흔한 실패</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>하트 ❤️</strong></td>
+        <td>⭐ 초급</td>
+        <td>잔 1/3 채운 후 피쳐를 낮추고 중심에 원을 만든 뒤 앞으로 선 긋기</td>
+        <td>피쳐를 너무 높게 유지해 우유가 크레마 아래로 가라앉음</td>
+      </tr>
+      <tr>
+        <td><strong>튤립 🌷</strong></td>
+        <td>⭐⭐ 중급</td>
+        <td>작은 원 3~4개를 아래에서 위로 쌓기. 각 원 사이에 흐름 멈추기</td>
+        <td>원과 원 사이 간격이 너무 좁아 경계가 뭉개짐</td>
+      </tr>
+      <tr>
+        <td><strong>로제타 🌿</strong></td>
+        <td>⭐⭐⭐ 고급</td>
+        <td>좌우로 흔들며 뒤로 이동, 잔이 찰 때 앞으로 선 하나로 마무리</td>
+        <td>좌우 폭이 일정하지 않거나 속도 조절 실패로 잎이 뭉침</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    모든 패턴의 공통 전제조건: <strong>잔을 처음에 45도로 기울인다</strong>. 이렇게 해야 우유가 크레마 위가 아니라 크레마 아래로 흘러들어가 깨끗한 갈색 캔버스가 유지된다. 잔을 세운 채로 따르면 하얀 우유가 크레마를 그냥 덮어버려 무늬를 그릴 배경 자체가 사라진다.
+  </p>
+
+  <!-- SECTION 5 -->
+  <h2 class="section-title">5. 집에서 독학하는 라떼아트 8단계 로드맵</h2>
+
+  <p>에스프레소 머신이 없어도 연습할 수 있다. 물과 식용유를 섞은 가짜 에스프레소(물 1: 식용유 소량)와 나노포머(NanoFoamer)로 시작하면 된다.</p>
+
+  <div class="infographic-wrap">
+    <h3>🗺️ 라떼아트 독학 로드맵</h3>
+    <svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;margin:0 auto">
+      <rect width="680" height="220" fill="#faf7f2" rx="8"/>
+
+      <!-- 화살표 라인 -->
+      <line x1="60" y1="100" x2="640" y2="100" stroke="#c8860a" stroke-width="2.5" stroke-dasharray="6,3"/>
+      <!-- 화살표 머리 -->
+      <polygon points="640,94 655,100 640,106" fill="#c8860a"/>
+
+      <!-- STEP boxes -->
+      <!-- 1 -->
+      <rect x="20" y="68" width="76" height="64" rx="8" fill="#2c1810"/>
+      <text x="58" y="89" text-anchor="middle" font-size="10" fill="#c8860a" font-weight="bold" font-family="sans-serif">STEP 1</text>
+      <text x="58" y="104" text-anchor="middle" font-size="9" fill="#faf7f2" font-family="sans-serif">스티밍</text>
+      <text x="58" y="117" text-anchor="middle" font-size="9" fill="#faf7f2" font-family="sans-serif">온도 감각</text>
+      <text x="58" y="148" text-anchor="middle" font-size="9" fill="#888" font-family="sans-serif">1~2주</text>
+
+      <!-- 2 -->
+      <rect x="110" y="68" width="76" height="64" rx="8" fill="#6b3a2a"/>
+      <text x="148" y="89" text-anchor="middle" font-size="10" fill="#c8860a" font-weight="bold" font-family="sans-serif">STEP 2</text>
+      <text x="148" y="104" text-anchor="middle" font-size="9" fill="#faf7f2" font-family="sans-serif">마이크로폼</text>
+      <text x="148" y="117" text-anchor="middle" font-size="9" fill="#faf7f2" font-family="sans-serif">완성 반복</text>
+      <text x="148" y="148" text-anchor="middle" font-size="9" fill="#888" font-family="sans-serif">1~2주</text>
+
+      <!-- 3 -->
+      <rect x="200" y="68" width="76" height="64" rx="8" fill="#6b3a2a"/>
+      <text x="238" y="89" text-anchor="middle" font-size="10" fill="#c8860a" font-weight="bold" font-family="sans-serif">STEP 3</text>
+      <text x="238" y="104" text-anchor="middle" font-size="9" fill="#faf7f2" font-family="sans-serif">따르기</text>
+      <text x="238" y="117" text-anchor="middle" font-size="9" fill="#faf7f2" font-family="sans-serif">속도 조절</text>
+      <text x="238" y="148" text-anchor="middle" font-size="9" fill="#888" font-family="sans-serif">1주</text>
+
+      <!-- 4 -->
+      <rect x="290" y="68" width="76" height="64" rx="8" fill="#c8860a"/>
+      <text x="328" y="89" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold" font-family="sans-serif">STEP 4</text>
+      <text x="328" y="104" text-anchor="middle" font-size="9" fill="#fff" font-family="sans-serif">하트</text>
+      <text x="328" y="117" text-anchor="middle" font-size="9" fill="#fff" font-family="sans-serif">100개 반복</text>
+      <text x="328" y="148" text-anchor="middle" font-size="9" fill="#888" font-family="sans-serif">2~3주</text>
+
+      <!-- 5 -->
+      <rect x="380" y="68" width="76" height="64" rx="8" fill="#c8860a"/>
+      <text x="418" y="89" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold" font-family="sans-serif">STEP 5</text>
+      <text x="418" y="104" text-anchor="middle" font-size="9" fill="#fff" font-family="sans-serif">튤립</text>
+      <text x="418" y="117" text-anchor="middle" font-size="9" fill="#fff" font-family="sans-serif">흐름 끊기</text>
+      <text x="418" y="148" text-anchor="middle" font-size="9" fill="#888" font-family="sans-serif">2~3주</text>
+
+      <!-- 6 -->
+      <rect x="470" y="68" width="76" height="64" rx="8" fill="#8b4513"/>
+      <text x="508" y="89" text-anchor="middle" font-size="10" fill="#c8860a" font-weight="bold" font-family="sans-serif">STEP 6</text>
+      <text x="508" y="104" text-anchor="middle" font-size="9" fill="#faf7f2" font-family="sans-serif">로제타</text>
+      <text x="508" y="117" text-anchor="middle" font-size="9" fill="#faf7f2" font-family="sans-serif">좌우 흔들기</text>
+      <text x="508" y="148" text-anchor="middle" font-size="9" fill="#888" font-family="sans-serif">1개월+</text>
+
+      <!-- 7 -->
+      <rect x="560" y="68" width="86" height="64" rx="8" fill="#2c1810"/>
+      <text x="603" y="89" text-anchor="middle" font-size="10" fill="#c8860a" font-weight="bold" font-family="sans-serif">STEP 7~8</text>
+      <text x="603" y="104" text-anchor="middle" font-size="9" fill="#faf7f2" font-family="sans-serif">응용/창작</text>
+      <text x="603" y="117" text-anchor="middle" font-size="9" fill="#faf7f2" font-family="sans-serif">스완·피닉스</text>
+      <text x="603" y="148" text-anchor="middle" font-size="9" fill="#888" font-family="sans-serif">무한</text>
+
+      <!-- 라벨 -->
+      <text x="340" y="200" text-anchor="middle" font-size="12" fill="#6b3a2a" font-weight="bold" font-family="sans-serif">💡 매일 10잔 × 3개월 = 아마추어 탈출 보장</text>
+    </svg>
+  </div>
+
+  <!-- SECTION 6: 2026 WLAC Invert 기법 -->
+  <h2 class="section-title">6. 2026 세계 챔피언의 혁명 — "Invert" 기법이란 무엇인가</h2>
+
+  <div class="invert-box">
+    <h4>🏆 2026 월드 라떼아트 챔피언십(WLAC) 우승 기법</h4>
+    <p>
+      2026년 세계 라떼아트 챔피언십에서 대만의 <strong>Bala</strong> 선수가 "Invert(인버트)"라는 독창적 기법으로 우승을 거머쥐었다.
+      기존 라떼아트가 <em>"흰색 폼으로 패턴을 그린다"</em>는 개념이었다면, Invert는 이것을 완전히 뒤집는다.
+      <br><br>
+      <strong>핵심 개념:</strong> 에스프레소의 갈색 표면(Brown space)을 오브제로 삼고, 흰 폼은 갈색 영역의 경계를 결정하는 도구로만 사용한다.
+      미술의 <em>네거티브 스페이스(Negative Space)</em> 원리와 동일하다. 너구리·기린·레드판다 세 동물을 에칭 도구 없이 <strong>순수 프리 푸어(free pour)</strong>로 완성했다.
+      <br><br>
+      이 기법의 핵심은 마이크로폼의 밀도와 점도 조절이다. 폼이 묽으면 갈색 경계가 번지고, 너무 단단하면 흐름이 끊긴다. 결국 모든 것은 스티밍으로 돌아온다.
+    </p>
+  </div>
+
+  <!-- TIPS BOX -->
+  <div class="tips-box">
+    <h3>🎯 바리스타 10년이 건네는 실전 팁 3가지</h3>
+    <div class="tip-item">
+      <div class="tip-num">1</div>
+      <div class="tip-text">
+        <strong>스티밍 후 피쳐를 탁! 치고 흔들어라.</strong><br>
+        스티밍이 끝난 직후 피쳐를 평평한 면에 가볍게 두드린 뒤 원을 그리듯 흔들어준다. 표면에 남은 큰 거품이 사라지고 윤기 나는 마이크로폼이 완성된다. 이 과정 없이 바로 따르면 표면이 거칠어진다.
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">2</div>
+      <div class="tip-text">
+        <strong>전지방 우유(Full-fat) 3.5% 이상을 써라.</strong><br>
+        유지방이 높을수록 마이크로폼이 쫀쫀하고 안정적이다. 저지방 우유로 연습하는 것은 어려운 난이도로 시작하는 셈이다. 처음엔 반드시 전지방 우유로 감각을 익힌 후 저지방·오트밀크로 확장하자.
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">3</div>
+      <div class="tip-text">
+        <strong>스티밍은 매번 차가운 우유(4°C)로 시작해라.</strong><br>
+        따뜻하거나 실온 우유로 스티밍하면 공기 주입 시간이 부족해 마이크로폼을 만들기 어렵다. 차가운 우유일수록 공기 주입 단계와 소용돌이 단계를 여유 있게 진행할 수 있다. 냉장고에서 꺼낸 직후 바로 사용하는 것이 정석이다.
+      </div>
+    </div>
+  </div>
+
+  <!-- CLOSING -->
+  <h2 class="section-title">마무리 — 내일 당장 해볼 것</h2>
+  <p>
+    오늘 배운 것을 하나로 압축하면 이렇다: <strong>라떼아트는 예술이기 전에 물리학이다.</strong> 단백질이 안정되는 온도 구간(55~65°C)을 지키고, 공기 주입 → 소용돌이 2단계 순서를 지키는 것. 이 두 가지가 완성되면 나머지는 반복이 해결한다.
+  </p>
+  <p>
+    <strong>내일 당장 해볼 행동:</strong> 스티밍 온도계를 구매해 다음 라떼를 만들 때 정확히 측정해보자. 대부분 60°C를 넘긴다는 걸 알게 될 것이다. 그 순간이 라떼아트 실력이 도약하는 시작점이 된다.
+  </p>
+
+  <!-- TAGS -->
+  <div class="tags">
+    <span class="tag">#라떼아트</span>
+    <span class="tag">#밀크스티밍</span>
+    <span class="tag">#마이크로폼</span>
+    <span class="tag">#바리스타스킬</span>
+    <span class="tag">#커피물리학</span>
+    <span class="tag">#스페셜티커피</span>
+    <span class="tag">#로제타</span>
+    <span class="tag">#튤립라떼아트</span>
+    <span class="tag">#커피독학</span>
+    <span class="tag">#WLAC2026</span>
+    <span class="tag">#바리스타</span>
+    <span class="tag">#홈카페</span>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="article-footer">
+    <p>작성일: 2026년 5월 17일 | 카테고리: 바리스타 스킬 &amp; 라떼아트</p>
+    <p>※ 본 아티클은 스페셜티 커피 업계 전문가의 경험과 최신 연구를 바탕으로 작성되었습니다. 개인차 및 장비에 따라 결과가 다를 수 있습니다.</p>
+  </div>
+
+</div><!-- .content -->
+</div><!-- .container -->
+
+</body>
+</html>
