@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>아라비카가 사라지고 있다 — 2026년 글로벌 스페셜티 커피 시장을 뒤흔드는 5가지 충격 트렌드</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.85;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      padding: 48px 20px 40px;
+      text-align: center;
+      color: #faf7f2;
+    }
+    .badge-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .badge {
+      background: rgba(200,134,10,0.9);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .badge.date-badge {
+      background: rgba(255,255,255,0.15);
+      font-weight: 500;
+      text-transform: none;
+    }
+    header h1 {
+      font-size: clamp(22px, 5vw, 34px);
+      font-weight: 900;
+      line-height: 1.4;
+      max-width: 700px;
+      margin: 0 auto 16px;
+      word-break: keep-all;
+    }
+    header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* ── 본문 ── */
+    .content { padding: 40px 0; }
+
+    /* 훅 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 14px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      word-break: keep-all;
+    }
+
+    /* 핵심요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 14px;
+    }
+    .summary-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 22px;
+      position: relative;
+      font-size: 15px;
+    }
+    .summary-box ul li::before {
+      content: '▸';
+      color: #c8860a;
+      position: absolute;
+      left: 0;
+    }
+
+    /* 소제목 */
+    h2 {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 44px 0 16px;
+      padding-left: 16px;
+      border-left: 5px solid #c8860a;
+      word-break: keep-all;
+      line-height: 1.4;
+    }
+
+    p {
+      margin-bottom: 18px;
+      word-break: keep-all;
+    }
+
+    strong { color: #6b3a2a; }
+
+    /* 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e8, #fff3d6);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+    .tip-box h3 {
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #c8860a;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      background: #c8860a;
+      color: #fff;
+      font-weight: 900;
+      font-size: 13px;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .tip-text { font-size: 15px; }
+
+    /* 통계 하이라이트 */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .stat-card {
+      background: #fff;
+      border: 1px solid #e8ddd0;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(44,24,16,0.06);
+    }
+    .stat-num {
+      font-size: 32px;
+      font-weight: 900;
+      color: #c8860a;
+      line-height: 1.1;
+    }
+    .stat-unit {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: #888;
+      margin-top: 6px;
+    }
+
+    /* SVG 인포그래픽 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px 20px;
+      margin: 36px 0;
+      box-shadow: 0 4px 16px rgba(44,24,16,0.08);
+      overflow-x: auto;
+    }
+    .infographic-wrap h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #6b3a2a;
+      text-align: center;
+      margin-bottom: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    /* 인용구 */
+    blockquote {
+      border-left: 4px solid #6b3a2a;
+      padding: 14px 20px;
+      background: #f5ede5;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #5a3020;
+      margin: 28px 0;
+    }
+
+    /* 행동 제안 */
+    .action-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 44px;
+      text-align: center;
+    }
+    .action-box h3 {
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      color: #c8860a;
+    }
+    .action-box p { margin-bottom: 10px; font-size: 15px; opacity: 0.92; }
+
+    /* 태그 */
+    .tags {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      background: #e8ddd0;
+      color: #6b3a2a;
+      font-size: 13px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #e0d5c8;
+      font-size: 13px;
+      color: #aaa;
+      text-align: center;
+    }
+    footer a { color: #c8860a; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      header { padding: 36px 16px 32px; }
+      .tip-box, .summary-box { padding: 22px 18px; }
+      h2 { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="badge-row">
+    <span class="badge">☕ 스페셜티 트렌드</span>
+    <span class="badge">글로벌 리포트</span>
+    <span class="badge date-badge">2026. 05. 21</span>
+  </div>
+  <h1>아라비카가 사라지고 있다 — 2026년 글로벌 스페셜티 커피 시장을 뒤흔드는 5가지 충격 트렌드</h1>
+  <p class="subtitle">시장 규모 1,115억 달러, 연평균 성장률 10.8%… 커피 업계 10년 경력 바리스타가 직접 분석한 진짜 트렌드</p>
+</header>
+
+<div class="container">
+  <div class="content">
+
+    <p class="hook">
+      "당신이 즐겨 마시는 그 에티오피아 게이샤, 10년 후에도 같은 가격에 살 수 있을까요?" 기후 위기, AI 로스팅, 4세대 커피 문화… 2026년 스페셜티 커피 업계는 지금 조용히, 그러나 완전히 다른 세계로 이동 중입니다.
+    </p>
+
+    <div class="summary-box">
+      <h3>📌 오늘 이 글에서 배울 것</h3>
+      <ul>
+        <li>2026년 글로벌 스페셜티 커피 시장 규모와 성장률 (수치 포함)</li>
+        <li>아라비카 재배지가 줄어드는 진짜 이유와 대안 품종</li>
+        <li>4세대(Fourth Wave) 커피가 3세대와 결정적으로 다른 점</li>
+        <li>AI가 로스팅을 대체하기 시작한 구체적 사례</li>
+        <li>한국 스페셜티 시장의 양극화 구조와 생존 전략</li>
+        <li>내일 당장 써먹을 수 있는 바리스타 실전 팁 3가지</li>
+      </ul>
+    </div>
+
+    <!-- 통계 카드 -->
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="stat-num">1,115</div>
+        <div class="stat-unit">억 달러</div>
+        <div class="stat-label">2025년 글로벌 스페셜티 시장 규모</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">10.8<span style="font-size:18px">%</span></div>
+        <div class="stat-unit">CAGR</div>
+        <div class="stat-label">2026~2033 연평균 성장률</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">60<span style="font-size:18px">%</span></div>
+        <div class="stat-unit">MZ세대</div>
+        <div class="stat-label">스페셜티 커피 소비 비중</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">15<span style="font-size:18px">%+</span></div>
+        <div class="stat-unit">연성장</div>
+        <div class="stat-label">국내 스페셜티 시장 성장률</div>
+      </div>
+    </div>
+
+    <!-- 트렌드 1 -->
+    <h2>🌡️ 트렌드 1. 아라비카 재배지가 무너지고 있다 — 커피 위기의 진짜 시작</h2>
+
+    <p>
+      사실 대부분의 소비자들이 모르는데, <strong>현재 전 세계 아라비카 재배지의 8%가 이미 재배 부적합 판정</strong>을 받았습니다. 라보방크(Rabobank)의 2026년 분석에 따르면, 이 수치는 2050년까지 20%로 치솟을 전망입니다.
+    </p>
+    <p>
+      브라질은 아라비카 적합 재배지가 현재 81%에서 62%로 줄어들 것으로 예측됩니다. 우리가 '커피의 나라'로 알고 있는 콜롬비아도 부적합 지역이 7%에서 18%로 늘어납니다. 가장 충격적인 건 온두라스입니다 — 적합 재배지가 무려 53%에서 12%로 급감할 것이라는 전망이 나왔습니다.
+    </p>
+    <p>
+      그런데 여기서 반전이 있습니다. <strong>2025/2026 시즌은 역설적으로 기록적 풍작</strong>이었습니다. 에티오피아와 우간다의 대풍년이 남미의 감소분을 상쇄하면서 단기적으로는 공급이 안정됐습니다. 하지만 이것은 '마지막 호황'일 수 있습니다. 10년 후를 내다보는 로스터리와 생두 바이어들은 이미 대안 품종 탐색에 나섰습니다.
+    </p>
+
+    <blockquote>
+      "리베리카, 엑셀사, 스테노필라(Stenophylla)... 아직 낯선 이름들이지만, 이 품종들이 다음 세대 스페셜티 커피의 주인공이 될 수 있습니다. 특히 스테노필라는 아라비카 수준의 풍미를 지니면서도 훨씬 높은 온도에서도 생존합니다."
+    </blockquote>
+
+    <!-- SVG 인포그래픽: 아라비카 재배지 변화 -->
+    <div class="infographic-wrap">
+      <h3>📊 기후변화에 따른 아라비카 재배 적합 지역 변화 전망 (%)</h3>
+      <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;display:block;margin:0 auto;">
+        <!-- 배경 -->
+        <rect width="700" height="320" fill="#faf7f2" rx="8"/>
+        <!-- 그리드 라인 -->
+        <line x1="140" y1="30" x2="140" y2="270" stroke="#e0d5c8" stroke-width="1"/>
+        <line x1="140" y1="270" x2="670" y2="270" stroke="#2c1810" stroke-width="2"/>
+        <!-- Y축 레이블 -->
+        <text x="20" y="275" font-family="sans-serif" font-size="11" fill="#888">0%</text>
+        <line x1="140" y1="270" x2="670" y2="270" stroke="#e0d5c8" stroke-width="0.5"/>
+        <text x="20" y="223" font-family="sans-serif" font-size="11" fill="#888">20%</text>
+        <line x1="140" y1="222" x2="670" y2="222" stroke="#e0d5c8" stroke-width="0.5" stroke-dasharray="4,4"/>
+        <text x="20" y="175" font-family="sans-serif" font-size="11" fill="#888">40%</text>
+        <line x1="140" y1="174" x2="670" y2="174" stroke="#e0d5c8" stroke-width="0.5" stroke-dasharray="4,4"/>
+        <text x="20" y="127" font-family="sans-serif" font-size="11" fill="#888">60%</text>
+        <line x1="140" y1="126" x2="670" y2="126" stroke="#e0d5c8" stroke-width="0.5" stroke-dasharray="4,4"/>
+        <text x="20" y="79" font-family="sans-serif" font-size="11" fill="#888">80%</text>
+        <line x1="140" y1="78" x2="670" y2="78" stroke="#e0d5c8" stroke-width="0.5" stroke-dasharray="4,4"/>
+
+        <!-- 국가별 막대 그래프 -->
+        <!-- 브라질 현재(81%) -->
+        <rect x="160" y="68" width="55" height="202" fill="#6b3a2a" rx="4"/>
+        <text x="187" y="63" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#6b3a2a">81%</text>
+        <!-- 브라질 2050(62%) -->
+        <rect x="222" y="123" width="55" height="147" fill="#c8860a" rx="4"/>
+        <text x="249" y="118" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#c8860a">62%</text>
+
+        <!-- 콜롬비아 현재(56%) -->
+        <rect x="320" y="130" width="55" height="140" fill="#6b3a2a" rx="4"/>
+        <text x="347" y="125" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#6b3a2a">56%</text>
+        <!-- 콜롬비아 2050(45%) -->
+        <rect x="382" y="157" width="55" height="113" fill="#c8860a" rx="4"/>
+        <text x="409" y="152" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#c8860a">45%</text>
+
+        <!-- 온두라스 현재(53%) -->
+        <rect x="480" y="138" width="55" height="132" fill="#6b3a2a" rx="4"/>
+        <text x="507" y="133" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#6b3a2a">53%</text>
+        <!-- 온두라스 2050(12%) -->
+        <rect x="542" y="240" width="55" height="30" fill="#e05533" rx="4"/>
+        <text x="569" y="235" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#e05533">12%</text>
+
+        <!-- 국가명 레이블 -->
+        <text x="209" y="295" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2c1810">브라질</text>
+        <text x="371" y="295" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2c1810">콜롬비아</text>
+        <text x="533" y="295" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#2c1810">온두라스</text>
+
+        <!-- 범례 -->
+        <rect x="155" y="308" width="14" height="10" fill="#6b3a2a" rx="2"/>
+        <text x="174" y="318" font-family="sans-serif" font-size="11" fill="#555">현재 적합 재배지</text>
+        <rect x="295" y="308" width="14" height="10" fill="#c8860a" rx="2"/>
+        <text x="314" y="318" font-family="sans-serif" font-size="11" fill="#555">2050년 예측</text>
+        <rect x="410" y="308" width="14" height="10" fill="#e05533" rx="2"/>
+        <text x="429" y="318" font-family="sans-serif" font-size="11" fill="#555">심각한 감소</text>
+      </svg>
+    </div>
+
+    <!-- 트렌드 2 -->
+    <h2>🤖 트렌드 2. AI가 로스터의 손을 대체하기 시작했다 — 4세대(Fourth Wave) 커피의 등장</h2>
+
+    <p>
+      3세대(Third Wave) 커피가 "원산지와 품종의 이야기"였다면, <strong>4세대 커피는 "과학과 기술의 이야기"</strong>입니다. 2026년 현재, AI와 컴퓨터 비전 기술이 로스팅 현장을 조용히 바꾸고 있습니다.
+    </p>
+    <p>
+      스타트업 ansā가 개발한 마이크로 로스터는 임베디드 카메라로 원두를 실시간 촬영하고, AI 알고리즘이 로스팅 진행 상황을 모니터링합니다. 열 분포의 균일성을 자동으로 조정하고, 배치마다 최적의 로스팅 프로파일을 선택합니다. 숙련된 로스터가 '귀로 듣고, 눈으로 보고, 코로 맡던' 감각을 데이터로 치환한 것입니다.
+    </p>
+    <p>
+      더 나아가 전문가들은 <strong>완전 자율 로스팅 시스템의 상용화</strong>를 예측합니다 — 생두를 투입하면 AI가 수분 함량을 분석하고, 최적 프로파일을 설계하고, 로스팅을 실행하고, 품질 검수까지 마치는 시스템입니다. "스마트 커피 머신", "자동화 로스팅", "정밀 프로파일링" 관련 검색량이 2026년 들어 급증하고 있는 것이 이 흐름을 증명합니다.
+    </p>
+    <p>
+      하지만 현장 바리스타들은 말합니다. "AI가 데이터는 읽을 수 있지만, 오늘의 습도와 고객의 기분까지 읽을 수는 없다"고. 기술은 도구일 뿐, 스페셜티의 영혼은 여전히 사람 손에 있습니다.
+    </p>
+
+    <!-- 트렌드 3 -->
+    <h2>👥 트렌드 3. MZ세대가 시장을 장악했다 — 투명성과 트레이서빌리티가 새로운 기준</h2>
+
+    <p>
+      2026년 현재 스페셜티 커피 소비의 <strong>60%가 밀레니얼·Z세대</strong>에서 나옵니다. 미국에서는 25~34세의 62%가 매주 스페셜티 커피를 구매합니다. 이들은 단순히 "맛있는 커피"를 원하는 게 아닙니다.
+    </p>
+    <p>
+      국내 소비자 조사 결과에 따르면, 스페셜티 카페 선택 기준 1위는 <strong>"바리스타가 원산지·가공법·품종을 상세히 설명해주는 곳"</strong>입니다. 소비자들은 원산지, 생산자 이름, 수확 연도, 가공 방식, 가격 형성 논리까지 공개하길 요구합니다. 투명성은 이제 선택이 아니라 필수입니다.
+    </p>
+    <p>
+      아시아-태평양 시장은 2026~2033년 연평균 12.6%로 전 세계에서 가장 빠르게 성장합니다. 한국은 그 최전선에 서 있습니다. 국내 스페셜티 시장 연성장률은 15% 이상 — 전 세계 평균을 웃도는 수치입니다.
+    </p>
+
+    <!-- 트렌드 4 -->
+    <h2>🏠 트렌드 4. 홈카페의 고급화 — 집이 로스터리가 된다</h2>
+
+    <p>
+      전 세계 커피 음용자의 <strong>70%가 이미 집에서 커피를 직접 추출</strong>합니다. 그런데 이 홈브루잉이 단순한 편의의 문제가 아니라 '고급화'의 방향으로 진화하고 있습니다.
+    </p>
+    <p>
+      소량 로트(Micro-lot) 생두, 고정밀 그라인더, 전동 타입 푸어오버 드리퍼, 디지털 스케일과 타이머… 홈바리스타들의 장비 수준이 몇 년 전 스페셜티 카페를 능가하기 시작했습니다. 2026 서울카페쇼에서도 '홈카페 플랫폼화'가 핵심 키워드로 등장했습니다.
+    </p>
+    <p>
+      특히 주목할 점은 <strong>구독형 스페셜티 원두 서비스의 성장</strong>입니다. 매달 다른 농장의 싱글 오리진 원두를 받아보고, QR코드 스캔 한 번으로 그 농장 이야기와 최적 추출 레시피를 확인하는 서비스들이 빠르게 시장을 넓히고 있습니다. 카페가 아닌 집에서도 '경험'을 소비하는 시대가 온 것입니다.
+    </p>
+
+    <!-- 트렌드 5 -->
+    <h2>⚡ 트렌드 5. 한국 시장의 양극화 — 5천 원짜리 게이샤와 900원짜리 자판기의 공존</h2>
+
+    <p>
+      국내 커피 시장에서 가장 흥미로운 현상이 벌어지고 있습니다. <strong>한 잔에 15,000원이 넘는 싱글 오리진 스페셜티 커피와 900원짜리 자판기 커피가 동시에 성장</strong>하고 있습니다.
+    </p>
+    <p>
+      2026년 국내 트렌드 키워드 '비욘드(B.E.Y.O.N.D)'가 이를 잘 설명합니다 — Beyond Boundaries(경계 초월), Everyday Wellness(일상의 건강), Your Own Space(나만의 시간), On-locality(로코노미), Nature & Sustainability(지속가능성), Digital Balance(디지털 균형). 카페는 이제 커피를 파는 곳이 아니라 <strong>이 모든 가치를 복합적으로 제공하는 플랫폼</strong>으로 변화하고 있습니다.
+    </p>
+    <p>
+      생존하는 카페들의 공통점은 명확합니다. 무인 키오스크와 자동화는 효율을 담당하고, 숙련된 바리스타와 깊이 있는 스토리텔링은 감성을 담당합니다. 이 두 가지를 동시에 잘 설계하는 능력이 2026년 카페 운영의 핵심 경쟁력입니다.
+    </p>
+
+    <!-- 실전 팁 박스 -->
+    <div class="tip-box">
+      <h3>☕ 바리스타의 실전 팁 — 내일 당장 써먹을 수 있는 3가지</h3>
+
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text">
+          <strong>원두 구매할 때 "트레이서빌리티 정보" 3가지를 확인하세요.</strong> 농장명(또는 협동조합명), 고도(altitude), 가공 방식(Processing). 이 세 가지를 공개하는 브랜드가 진짜 스페셜티입니다. 정보가 없다면 그건 스페셜티 포장지를 두른 커머셜 그레이드일 가능성이 큽니다.
+        </div>
+      </div>
+
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text">
+          <strong>기후 위기 대응 품종을 미리 경험해보세요.</strong> 가까운 스페셜티 카페에서 '리베리카' 또는 '에티오피아 스테노필라' 원두를 취급하는 곳을 찾아보세요. 10년 안에 당신의 주변 카페 메뉴판에 오를 품종들입니다. 미리 맛봐두면 트렌드 세터가 됩니다.
+        </div>
+      </div>
+
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text">
+          <strong>홈브루잉에 "변수 일지"를 써보세요.</strong> 날짜, 원두 로스팅 날짜, 물 온도, 추출 시간, 원두:물 비율, 오늘의 맛 평가(한 줄)를 메모합니다. 2주만 지속하면 내 입맛에 맞는 완벽한 레시피를 발견하게 됩니다. AI 로스터들이 데이터로 하는 일을 손으로 직접 해보는 것입니다.
+        </div>
+      </div>
+    </div>
+
+    <!-- 심화 비교표 SVG -->
+    <div class="infographic-wrap">
+      <h3>📋 3세대 vs 4세대 스페셜티 커피 비교</h3>
+      <svg viewBox="0 0 660 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:660px;display:block;margin:0 auto;">
+        <rect width="660" height="380" fill="#faf7f2" rx="8"/>
+
+        <!-- 헤더 행 -->
+        <rect x="10" y="10" width="200" height="44" fill="#2c1810" rx="6"/>
+        <rect x="220" y="10" width="200" height="44" fill="#6b3a2a" rx="6"/>
+        <rect x="430" y="10" width="220" height="44" fill="#c8860a" rx="6"/>
+
+        <text x="110" y="38" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#faf7f2">구분</text>
+        <text x="320" y="38" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#faf7f2">3세대 (Third Wave)</text>
+        <text x="540" y="38" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#fff">4세대 (Fourth Wave)</text>
+
+        <!-- 데이터 행들 -->
+        <!-- 행1 -->
+        <rect x="10" y="64" width="200" height="48" fill="#f0e8de" rx="4"/>
+        <rect x="220" y="64" width="200" height="48" fill="#fff" rx="4"/>
+        <rect x="430" y="64" width="220" height="48" fill="#fff8ee" rx="4"/>
+        <text x="110" y="83" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#6b3a2a">핵심 키워드</text>
+        <text x="110" y="101" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">초점</text>
+        <text x="320" y="88" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#2c1810">원산지·품종·스토리</text>
+        <text x="540" y="88" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#2c1810">과학·기술·지속가능성</text>
+
+        <!-- 행2 -->
+        <rect x="10" y="122" width="200" height="48" fill="#f0e8de" rx="4"/>
+        <rect x="220" y="122" width="200" height="48" fill="#fff" rx="4"/>
+        <rect x="430" y="122" width="220" height="48" fill="#fff8ee" rx="4"/>
+        <text x="110" y="141" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#6b3a2a">로스팅</text>
+        <text x="320" y="146" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#2c1810">장인의 감각과 경험</text>
+        <text x="540" y="146" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#2c1810">AI + 컴퓨터 비전</text>
+
+        <!-- 행3 -->
+        <rect x="10" y="180" width="200" height="48" fill="#f0e8de" rx="4"/>
+        <rect x="220" y="180" width="200" height="48" fill="#fff" rx="4"/>
+        <rect x="430" y="180" width="220" height="48" fill="#fff8ee" rx="4"/>
+        <text x="110" y="199" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#6b3a2a">소비자 관심</text>
+        <text x="320" y="204" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#2c1810">맛·향미 프로파일</text>
+        <text x="540" y="204" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#2c1810">투명성·트레이서빌리티</text>
+
+        <!-- 행4 -->
+        <rect x="10" y="238" width="200" height="48" fill="#f0e8de" rx="4"/>
+        <rect x="220" y="238" width="200" height="48" fill="#fff" rx="4"/>
+        <rect x="430" y="238" width="220" height="48" fill="#fff8ee" rx="4"/>
+        <text x="110" y="257" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#6b3a2a">주요 품종</text>
+        <text x="320" y="262" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#2c1810">게이샤·에어룸·SL28</text>
+        <text x="540" y="262" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#2c1810">스테노필라·리베리카 등</text>
+
+        <!-- 행5 -->
+        <rect x="10" y="296" width="200" height="48" fill="#f0e8de" rx="4"/>
+        <rect x="220" y="296" width="200" height="48" fill="#fff" rx="4"/>
+        <rect x="430" y="296" width="220" height="48" fill="#fff8ee" rx="4"/>
+        <text x="110" y="315" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#6b3a2a">공간의 역할</text>
+        <text x="320" y="320" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#2c1810">교육적 경험 공간</text>
+        <text x="540" y="320" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#2c1810">복합 플랫폼 (감성+기술)</text>
+      </svg>
+    </div>
+
+    <!-- 행동 제안 -->
+    <div class="action-box">
+      <h3>🚀 내일 당장 해볼 수 있는 한 가지</h3>
+      <p>지금 마시는 커피 원두 봉지 뒷면을 확인해보세요. 농장명, 고도, 가공 방식이 적혀있나요? 없다면, 이번 주 가장 가까운 스페셜티 로스터리에 들러 "투명성 있는 원두 추천해주세요"라고 한마디만 해보세요.</p>
+      <p>그 한 마디가 당신을 4세대 커피 문화의 일원으로 만들어줍니다. 10년 후 커피 한 잔의 가치는 지금과 완전히 달라져 있을 겁니다 — 더 귀하고, 더 특별하게.</p>
+    </div>
+
+    <!-- 태그 -->
+    <div class="tags">
+      <span class="tag">#스페셜티커피</span>
+      <span class="tag">#커피트렌드2026</span>
+      <span class="tag">#4세대커피</span>
+      <span class="tag">#AI로스팅</span>
+      <span class="tag">#아라비카위기</span>
+      <span class="tag">#기후변화커피</span>
+      <span class="tag">#홈카페</span>
+      <span class="tag">#MZ커피</span>
+      <span class="tag">#FourthWaveCoffee</span>
+      <span class="tag">#스테노필라</span>
+    </div>
+
+  </div><!-- /content -->
+
+  <footer>
+    <p>© 2026 바리스타 커피 아티클 | 작성일: 2026-05-21</p>
+    <p style="margin-top:8px;">※ 본 아티클의 통계 수치는 Grand View Research, Rabobank, KSCA 등 공개 리포트를 기반으로 합니다. 투자·사업 결정에는 원본 자료를 직접 확인하세요.</p>
+  </footer>
+
+</div><!-- /container -->
+</body>
+</html>
