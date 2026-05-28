@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 59, emoji: "🌍", category: "글로벌 트렌드",
+    categoryColor: { bg: "#fee2e2", text: "#991b1b" },
+    title: "2026 커피 업계 지각변동: AI 바리스타·머쉬룸커피·25조 시장 — 지금 모르면 뒤처진다",
+    date: "2026.05.28",
+    summary: "당신이 오늘 아침 마신 그 한 잔의 커피, 사실 전쟁의 한가운데에 있다 — 글로벌 스페셜티 커피 시장이 125조 원(약 1천억 달러)을 향해 치닫는 사이, 시장 규모만이 아니라 커피를 마시는 방식 자체가 바뀌고 있다. 기후 변화로 흔들리는 원산지와 아라비카 재배지 축소, AI가 바꾸는 로스팅·추출·바리스타의 역할, 라이언스 메인·차가버섯을 갈아 넣은 '머쉬룸커피'와 기능성 음료 시장의 폭발, MZ·Z세대가 주도하는 4세대 커피와 콜드브루·RTD(Ready-to-Drink) 시장 25조 원의 의미, Grand View Research·Coherent Market Insights·Beverage Daily·ICO 공개 데이터로 본 2026~2030 시장 성장 곡선, 그리고 한국 카페·바리스타가 지금 당장 준비해야 할 5가지 전환 포인트까지 — 기술·환경·라이프스타일이 충돌하는 격전지가 된 2026 커피 업계 지각변동을 한 편에 정리한 트렌드 리포트.",
+    link: "coffee-article-2026-05-28.html"
+  },
+  {
     id: 58, emoji: "🧪", category: "품종 & 가공법",
     categoryColor: { bg: "#ede9fe", text: "#5b21b6" },
     title: "같은 에티오피아 원두인데 왜 맛이 다를까? 품종 × 가공법이 커피 맛의 90%를 결정한다",
