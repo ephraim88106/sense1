@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2026 커피 업계 지각변동: AI 바리스타·머쉬룸커피·25조 시장 — 지금 모르면 뒤처진다</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.85;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* HEADER */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #fff;
+      padding: 50px 20px 40px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .category-badge {
+      display: inline-block;
+      background: rgba(200,134,10,0.85);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+      word-break: keep-all;
+    }
+
+    .article-subtitle {
+      font-size: 15px;
+      font-weight: 300;
+      opacity: 0.88;
+      margin-bottom: 20px;
+    }
+
+    .article-meta {
+      font-size: 13px;
+      opacity: 0.7;
+    }
+
+    /* SUMMARY BOX */
+    .summary-box {
+      background: #fff;
+      border-left: 5px solid #c8860a;
+      border-radius: 0 12px 12px 0;
+      padding: 22px 26px;
+      margin-bottom: 40px;
+      box-shadow: 0 2px 16px rgba(44,24,16,0.07);
+    }
+
+    .summary-box h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #c8860a;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .summary-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .summary-box ul li {
+      padding: 5px 0 5px 22px;
+      position: relative;
+      font-size: 14.5px;
+      color: #3a2010;
+    }
+
+    .summary-box ul li::before {
+      content: "☕";
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* SECTION HEADINGS */
+    h2.section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #2c1810;
+      margin: 48px 0 16px;
+      padding-left: 16px;
+      border-left: 4px solid #c8860a;
+      word-break: keep-all;
+    }
+
+    p {
+      margin-bottom: 18px;
+      color: #3d2015;
+      word-break: keep-all;
+    }
+
+    strong {
+      color: #6b3a2a;
+    }
+
+    /* TIP BOX */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8ec 0%, #fef0d0 100%);
+      border: 2px solid #c8860a;
+      border-radius: 14px;
+      padding: 26px 28px;
+      margin: 40px 0;
+    }
+
+    .tip-box h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: #6b3a2a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .tip-number {
+      background: #c8860a;
+      color: #fff;
+      font-weight: 800;
+      font-size: 13px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .tip-text {
+      font-size: 14.5px;
+      color: #3a2010;
+    }
+
+    /* HIGHLIGHT QUOTE */
+    .highlight-quote {
+      background: #2c1810;
+      color: #faf7f2;
+      padding: 28px 30px;
+      border-radius: 14px;
+      margin: 36px 0;
+      font-size: 17px;
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .highlight-quote::before {
+      content: '"';
+      font-size: 60px;
+      line-height: 1;
+      color: #c8860a;
+      position: absolute;
+      top: 8px;
+      left: 20px;
+      font-style: normal;
+      font-weight: 900;
+    }
+
+    .highlight-quote p {
+      color: #faf7f2;
+      padding-left: 30px;
+      margin: 0;
+    }
+
+    /* SVG INFOGRAPHIC */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 20px;
+      margin: 40px 0;
+      box-shadow: 0 4px 20px rgba(44,24,16,0.1);
+      overflow-x: auto;
+    }
+
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* TREND LIST */
+    .trend-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .trend-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 18px;
+      border-top: 4px solid #c8860a;
+      box-shadow: 0 2px 12px rgba(44,24,16,0.07);
+    }
+
+    .trend-card .emoji {
+      font-size: 26px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .trend-card h4 {
+      font-size: 14px;
+      font-weight: 800;
+      color: #2c1810;
+      margin-bottom: 6px;
+    }
+
+    .trend-card p {
+      font-size: 13px;
+      color: #6b5040;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ACTION BOX */
+    .action-box {
+      background: linear-gradient(135deg, #6b3a2a 0%, #2c1810 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 30px 28px;
+      margin: 40px 0;
+    }
+
+    .action-box h3 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #c8860a;
+      margin-bottom: 16px;
+    }
+
+    .action-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .action-box ul li {
+      padding: 7px 0 7px 26px;
+      position: relative;
+      font-size: 14.5px;
+      color: #faf7f2;
+    }
+
+    .action-box ul li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #c8860a;
+      font-weight: 700;
+    }
+
+    /* TAGS */
+    .tags {
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 2px solid #e8ddd5;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #fff;
+      border: 1.5px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin: 4px 4px 4px 0;
+    }
+
+    /* DISCLAIMER */
+    .disclaimer {
+      margin-top: 24px;
+      font-size: 12px;
+      color: #9a8070;
+      line-height: 1.6;
+    }
+
+    /* DATA NUMBER HIGHLIGHT */
+    .stat-highlight {
+      font-size: 28px;
+      font-weight: 900;
+      color: #c8860a;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: #6b5040;
+      margin-left: 4px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 16px 28px; }
+      h2.section-title { font-size: 17px; }
+      .highlight-quote { padding: 22px 18px; font-size: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="article-header">
+  <div class="container">
+    <span class="category-badge">🌍 글로벌 트렌드</span>
+    <h1 class="article-title">2026 커피 업계 지각변동:<br>AI 바리스타·머쉬룸커피·25조 시장<br>— 지금 모르면 뒤처진다</h1>
+    <p class="article-subtitle">스페셜티 커피 시장이 역사상 가장 빠르게 팽창하고 있다.<br>변하는 건 시장 규모만이 아니다 — 커피를 마시는 방식 자체가 바뀌고 있다.</p>
+    <p class="article-meta">2026년 5월 28일 · 바리스타 & 콘텐츠 작가 | 읽기 약 7분</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <p style="font-size:17px; font-weight:500; color:#2c1810; line-height:1.8;">
+    당신이 오늘 아침 마신 그 한 잔의 커피, 사실 전쟁의 한가운데에 있다. 기후 변화로 흔들리는 원산지, AI가 바꾸는 로스팅과 추출, 버섯을 갈아 넣은 '건강 커피', 그리고 125조 원(약 1천억 달러)을 향해 치닫는 글로벌 스페셜티 시장. 2026년 커피 업계는 단순한 음료 트렌드를 넘어 기술·환경·라이프스타일이 충돌하는 격전지가 되었다.
+  </p>
+
+  <!-- SUMMARY BOX -->
+  <div class="summary-box">
+    <h3>☕ 오늘 이 글에서 배울 것</h3>
+    <ul>
+      <li>글로벌 스페셜티 커피 시장 규모와 성장률 (최신 수치)</li>
+      <li>2026년 전 세계를 강타한 5대 커피 트렌드</li>
+      <li>한국에서만 보이는 독특한 현상 — '커마카세'의 부상</li>
+      <li>AI와 스마트 기술이 커피를 어떻게 바꾸는가</li>
+      <li>기후 위기가 당신의 커피값에 미치는 영향</li>
+      <li>내일 당장 써먹을 수 있는 실전 팁 3가지</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2 class="section-title">① 25조 원? 아니, 122조 원 — 스페셜티 커피 시장의 진짜 규모</h2>
+
+  <p>
+    사실 대부분의 사람들이 모르는 것이 있다. 스페셜티 커피 시장이 <strong>2025년 기준 약 111.5조 달러(USD 111.5 billion)</strong>에 달하며, 2026년에는 <strong>1,220억 달러</strong>를 돌파할 것으로 전망된다는 사실이다. 더 놀라운 건 성장 속도다. 연평균 성장률(CAGR) <strong>10.8%</strong>로, 2033년에는 2,517억 달러(약 340조 원)에 육박할 것으로 Grand View Research는 예측한다.
+  </p>
+
+  <p>
+    지역별로는 <strong>북미가 50.7% 점유율</strong>로 선두를 유지하고 있지만, 가장 뜨거운 곳은 아시아태평양이다. 이 지역의 스페셜티 커피 시장은 <strong>CAGR 12.6%</strong>로 전 세계에서 가장 빠르게 성장 중이다. 한국, 일본, 대만을 중심으로 급성장하는 중산층과 '커피를 문화로 즐기는' 세대가 이 성장을 견인하고 있다.
+  </p>
+
+  <p>
+    소비자 구조도 주목할 만하다. <strong>18~24세가 전체 매출의 32.3%</strong>를 차지하며, 밀레니얼과 Z세대를 합치면 스페셜티 커피 구매의 <strong>60%</strong>를 점유한다. 커피는 이제 중장년의 습관적 카페인이 아니라, 젊은 세대의 정체성 표현 수단이 되었다.
+  </p>
+
+  <!-- INFOGRAPHIC SVG -->
+  <div class="infographic-wrap">
+    <h3>📊 글로벌 스페셜티 커피 시장 성장 전망 (단위: 십억 USD)</h3>
+    <svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;display:block;margin:0 auto;">
+      <!-- Grid -->
+      <line x1="70" y1="240" x2="660" y2="240" stroke="#e0d5cc" stroke-width="1.5"/>
+      <line x1="70" y1="190" x2="660" y2="190" stroke="#e0d5cc" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="70" y1="140" x2="660" y2="140" stroke="#e0d5cc" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="70" y1="90" x2="660" y2="90" stroke="#e0d5cc" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="70" y1="40" x2="660" y2="40" stroke="#e0d5cc" stroke-width="1" stroke-dasharray="4,3"/>
+
+      <!-- Y-axis labels -->
+      <text x="60" y="244" text-anchor="end" font-size="11" fill="#9a8070">0</text>
+      <text x="60" y="194" text-anchor="end" font-size="11" fill="#9a8070">50B</text>
+      <text x="60" y="144" text-anchor="end" font-size="11" fill="#9a8070">100B</text>
+      <text x="60" y="94" text-anchor="end" font-size="11" fill="#9a8070">150B</text>
+      <text x="60" y="44" text-anchor="end" font-size="11" fill="#9a8070">200B</text>
+
+      <!-- Bars: 2022, 2023, 2024, 2025, 2026(est), 2028(f), 2030(f), 2033(f) -->
+      <!-- 2022: ~80B -->
+      <rect x="82" y="160" width="52" height="80" fill="#c8a87a" rx="5"/>
+      <text x="108" y="155" text-anchor="middle" font-size="10" fill="#6b3a2a" font-weight="700">80B</text>
+      <text x="108" y="258" text-anchor="middle" font-size="11" fill="#9a8070">2022</text>
+
+      <!-- 2023: ~90B -->
+      <rect x="157" y="150" width="52" height="90" fill="#c8a87a" rx="5"/>
+      <text x="183" y="145" text-anchor="middle" font-size="10" fill="#6b3a2a" font-weight="700">90B</text>
+      <text x="183" y="258" text-anchor="middle" font-size="11" fill="#9a8070">2023</text>
+
+      <!-- 2024: ~101B -->
+      <rect x="232" y="139" width="52" height="101" fill="#c8a87a" rx="5"/>
+      <text x="258" y="134" text-anchor="middle" font-size="10" fill="#6b3a2a" font-weight="700">101B</text>
+      <text x="258" y="258" text-anchor="middle" font-size="11" fill="#9a8070">2024</text>
+
+      <!-- 2025: ~111.5B -->
+      <rect x="307" y="128" width="52" height="112" fill="#c8860a" rx="5"/>
+      <text x="333" y="123" text-anchor="middle" font-size="10" fill="#6b3a2a" font-weight="700">111.5B</text>
+      <text x="333" y="258" text-anchor="middle" font-size="11" fill="#9a8070">2025</text>
+
+      <!-- 2026: ~122.7B (highlighted) -->
+      <rect x="382" y="117" width="52" height="123" fill="#6b3a2a" rx="5"/>
+      <text x="408" y="112" text-anchor="middle" font-size="10" fill="#c8860a" font-weight="800">122.7B</text>
+      <text x="408" y="258" text-anchor="middle" font-size="11" fill="#6b3a2a" font-weight="800">2026★</text>
+
+      <!-- 2028: ~148B -->
+      <rect x="457" y="96" width="52" height="144" fill="#c8860a" rx="5" opacity="0.75"/>
+      <text x="483" y="91" text-anchor="middle" font-size="10" fill="#6b3a2a" font-weight="700">148B</text>
+      <text x="483" y="258" text-anchor="middle" font-size="11" fill="#9a8070">2028</text>
+
+      <!-- 2033: ~251.7B -->
+      <rect x="532" y="40" width="52" height="200" fill="#6b3a2a" rx="5" opacity="0.6"/>
+      <text x="558" y="35" text-anchor="middle" font-size="10" fill="#6b3a2a" font-weight="700">251.7B</text>
+      <text x="558" y="258" text-anchor="middle" font-size="11" fill="#9a8070">2033(예)</text>
+
+      <!-- Legend -->
+      <rect x="80" y="275" width="14" height="10" fill="#c8860a" rx="2"/>
+      <text x="98" y="284" font-size="11" fill="#9a8070">실적/추정</text>
+      <rect x="170" y="275" width="14" height="10" fill="#6b3a2a" rx="2"/>
+      <text x="188" y="284" font-size="11" fill="#9a8070">2026 현재 / 2033 전망</text>
+    </svg>
+    <p style="font-size:12px;color:#9a8070;text-align:center;margin-top:8px;">출처: Grand View Research, Coherent Market Insights (2026)</p>
+  </div>
+
+  <!-- SECTION 2 -->
+  <h2 class="section-title">② 2026년 전 세계를 강타한 5대 커피 트렌드</h2>
+
+  <p>
+    업계 10년을 지켜보면서 이렇게 동시에 여러 트렌드가 충돌하는 시기는 처음이다. 각 트렌드를 하나씩 뜯어보자.
+  </p>
+
+  <div class="trend-grid">
+    <div class="trend-card">
+      <span class="emoji">🍄</span>
+      <h4>머쉬룸 커피의 주류화</h4>
+      <p>라이언스 메인·차가 버섯을 넣은 기능성 커피가 틈새 시장을 넘어 주류로 올라섰다. 면역력 강화, 집중력 향상, 스트레스 감소 효과를 내세운다.</p>
+    </div>
+    <div class="trend-card">
+      <span class="emoji">💪</span>
+      <h4>프로틴 커피 (ProCo)</h4>
+      <p>단백질 보충제 + 아이스 커피의 결합. 운동 후 루틴으로 자리 잡으며 RTD(Ready-to-Drink) 시장에서 가장 빠르게 성장 중.</p>
+    </div>
+    <div class="trend-card">
+      <span class="emoji">🤖</span>
+      <h4>AI 로스팅 & 스마트 브루잉</h4>
+      <p>머신러닝이 원두 색상·수분·온도를 실시간 분석해 자동으로 로스팅 커브를 조절. 소비자 취향 학습 기반 맞춤 레시피 생성.</p>
+    </div>
+    <div class="trend-card">
+      <span class="emoji">🌿</span>
+      <h4>클라이메이트 커피</h4>
+      <p>기후 내성 F1 하이브리드 품종(Starmaya, Centroamericano) 보급 확산. 기존 대비 수확량 40% 증가, 물 사용량 30% 절감.</p>
+    </div>
+    <div class="trend-card">
+      <span class="emoji">🥤</span>
+      <h4>RTD 스페셜티 폭발</h4>
+      <p>RTD 커피 시장 2026년 262억 달러 돌파. 스페셜티 등급 원두를 사용한 병입 콜드브루·라떼가 편의점·마트를 석권 중.</p>
+    </div>
+    <div class="trend-card">
+      <span class="emoji">📍</span>
+      <h4>로컬 & 마이크로 로스터</h4>
+      <p>대형 프랜차이즈에 대한 반작용으로 동네 소규모 로스터리에 대한 충성도가 급증. "어디서 볶았냐"가 구매 기준이 된다.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <h2 class="section-title">③ 한국에서만 보이는 현상 — '커마카세'라는 혁명</h2>
+
+  <p>
+    한국 스페셜티 커피 씬에서 가장 뜨거운 키워드는 단연 <strong>'커마카세'(커피 + 오마카세)</strong>다. 바리스타가 그날의 원두와 추출 방식을 직접 큐레이션해 한 잔씩 서빙하는 이 방식은, 2026년 들어 스페셜티 카페를 넘어 대형 프랜차이즈까지 도입하기 시작했다.
+  </p>
+
+  <p>
+    왜 이 트렌드가 한국에서 유독 강하게 나타날까? 답은 <strong>차별화 전략</strong>에 있다. 1,500~2,000원대 저가 커피 브랜드가 시장을 잠식하는 상황에서, 스페셜티 카페들이 택한 무기가 바로 '경험 판매'다. 3만~8만 원짜리 커마카세는 단순한 커피 소비가 아니라, 바리스타와의 대화, 공간 연출, 스토리텔링을 아우르는 종합 예술이 된다.
+  </p>
+
+  <div class="highlight-quote">
+    <p>커피를 마시는 게 아니라 '커피 작품'을 감상하는 시대가 왔다. 바리스타는 이제 서비스 직원이 아니라 퍼포머이자 큐레이터다.</p>
+  </div>
+
+  <p>
+    2026년 5월 개최된 <strong>'코리아커피위크'</strong>는 더현대 서울에서 40개 브랜드가 참가하며 역대 최대 규모를 기록했다. 핵심 키워드로 '로컬다움'이 선정된 것은 시사하는 바가 크다 — 커피의 정체성이 글로벌 스탠더드에서 로컬 고유성으로 이동하고 있다는 신호다.
+  </p>
+
+  <!-- SECTION 4 -->
+  <h2 class="section-title">④ AI가 커피를 만든다 — 바리스타의 미래는 어디에</h2>
+
+  <p>
+    "AI가 바리스타를 대체할 것인가?" 이 질문은 이제 SF가 아니다. 2026년 현재, AI 탑재 에스프레소 머신은 <strong>컴퓨터 비전(computer vision)</strong>으로 원두를 스캔한 뒤 그라인드 크기, 수온, 추출 압력을 자동 조절한다. 고급 로스팅 소프트웨어는 머신러닝으로 배치별 최적 로스팅 커브를 예측하고, 클라우드에 데이터를 쌓아 맛의 재현성을 극대화한다.
+  </p>
+
+  <p>
+    농업 분야도 마찬가지다. Cropster 등의 정밀농업 툴은 토양 수분 센서와 기상 데이터를 연동해 관개량을 자동 조절하며, 농가의 <strong>물 사용량을 40% 절감</strong>했다는 보고가 나왔다. AI는 커피 재배부터 추출까지 전 과정을 디지털화하고 있다.
+  </p>
+
+  <p>
+    그렇다면 인간 바리스타는 불필요해질까? 오히려 반대다. AI가 기술적 변수를 처리할수록, <strong>감성적 경험과 스토리텔링</strong>은 더욱 차별화된 가치가 된다. 머신이 재현할 수 없는 것은 바로 바리스타의 '공감'과 '대화'다.
+  </p>
+
+  <!-- SECTION 5 -->
+  <h2 class="section-title">⑤ 기후 위기 × 커피 가격 — 당신의 지갑을 위협하는 진짜 적</h2>
+
+  <p>
+    2025년 내내 급등하던 커피 원두 가격은 2026년 들어 숨을 고르는 모습이다. 국제커피기구(ICO) 가격 지표는 파운드당 약 259.50센트로, 2023년 12월(176.1센트) 대비 <strong>약 48% 높은 수준</strong>을 유지 중이다. 그러나 브라질이 2026/27년에 <strong>7,530만 가방(전년 대비 +20.8%)</strong>을 수확할 것으로 예상되고, 베트남도 생산량을 회복하면서 글로벌 시장에 약 1,000만 가방 잉여가 발생할 전망이다.
+  </p>
+
+  <p>
+    단기적으로는 가격 안정 신호지만, 장기적 위협은 여전하다. 아라비카 커피는 <strong>18~22°C의 좁은 온도 범위</strong>에서만 최적 생육이 가능한데, 기후변화로 적합 재배 지역이 급격히 축소되고 있다. 전문가들은 현재 속도로 온난화가 진행되면 2050년까지 전 세계 커피 재배 적합 면적의 <strong>절반 이상이 사라질 수 있다</strong>고 경고한다.
+  </p>
+
+  <p>
+    이에 대한 업계의 응전이 바로 <strong>대체 커피(Alternative Coffee)</strong>의 부상이다. 보리, 치커리, 곡물, 버섯, 식물성 부산물을 활용한 커피 대체음료가 원두 가격 변동 리스크를 줄이는 대안으로 주목받고 있다. 스페셜티 카페들도 이를 '새로운 경험'으로 포지셔닝하며 메뉴에 편입시키고 있다.
+  </p>
+
+  <!-- DATA HIGHLIGHT -->
+  <div style="display:flex;gap:24px;flex-wrap:wrap;margin:36px 0;">
+    <div style="flex:1;min-width:160px;background:#fff;border-radius:14px;padding:22px;text-align:center;box-shadow:0 2px 12px rgba(44,24,16,0.08);">
+      <div class="stat-highlight">12.6%</div>
+      <div class="stat-label">아태 지역 스페셜티 커피 CAGR</div>
+    </div>
+    <div style="flex:1;min-width:160px;background:#fff;border-radius:14px;padding:22px;text-align:center;box-shadow:0 2px 12px rgba(44,24,16,0.08);">
+      <div class="stat-highlight">$26.2B</div>
+      <div class="stat-label">2026 글로벌 RTD 커피 시장</div>
+    </div>
+    <div style="flex:1;min-width:160px;background:#fff;border-radius:14px;padding:22px;text-align:center;box-shadow:0 2px 12px rgba(44,24,16,0.08);">
+      <div class="stat-highlight">+48%</div>
+      <div class="stat-label">ICO 원두 가격 지수 (vs 2023.12)</div>
+    </div>
+    <div style="flex:1;min-width:160px;background:#fff;border-radius:14px;padding:22px;text-align:center;box-shadow:0 2px 12px rgba(44,24,16,0.08);">
+      <div class="stat-highlight">60%</div>
+      <div class="stat-label">MZ세대의 스페셜티 커피 구매 비중</div>
+    </div>
+  </div>
+
+  <!-- SECTION 6 -->
+  <h2 class="section-title">⑥ 기능성 커피의 반란 — 이제 커피는 '마시는 보충제'</h2>
+
+  <p>
+    스페셜티 커피 음용자의 <strong>61%가 커피의 건강 효능에 공감</strong>한다는 조사 결과는 '기능성 커피' 열풍의 배경을 설명한다. 현재 글로벌 기능성 커피 시장은 약 45억 달러(약 6조 원) 규모이며, 2030년에는 <strong>77.8억 달러</strong>로 성장이 예상된다(CAGR 11.84%).
+  </p>
+
+  <p>
+    가장 주목받는 카테고리는 세 가지다. 첫째, <strong>노트로픽(Nootropic) 커피</strong> — 두뇌 기능 향상을 목적으로 라이언스 메인 버섯, 박코파(Bacopa) 등 인지 강화 성분을 혼합한 제품이다. 둘째, <strong>프로틴 커피</strong> — 단백질 함량을 20~30g 수준으로 높인 RTD 형태가 피트니스 커뮤니티에서 폭발적으로 인기다. 셋째, <strong>장 건강 커피</strong> — 프로바이오틱스와 콜라겐을 함유한 제품이 '속 편한 커피'로 포지셔닝하며 중장년 여성층을 공략 중이다.
+  </p>
+
+  <!-- TIP BOX -->
+  <div class="tip-box">
+    <h3>⚡ 바리스타 선배가 알려주는 실전 팁 3가지</h3>
+    <div class="tip-item">
+      <div class="tip-number">1</div>
+      <div class="tip-text"><strong>머쉬룸 커피 직접 만들기:</strong> 시중 라이언스 메인 파우더(분말 형태)를 에스프레소 더블샷에 1티스푼 녹여 라떼를 만들어 보세요. 쓴맛이 부드러워지면서 집중력이 높아지는 효과를 직접 느낄 수 있습니다. 단, 처음엔 0.5티스푼부터 시작해 내 몸이 어떻게 반응하는지 확인하세요.</div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-number">2</div>
+      <div class="tip-text"><strong>RTD 원두 등급 확인법:</strong> 편의점 RTD 커피를 살 때 성분표에서 '스페셜티 등급(SCA 80점 이상)' 또는 '싱글 오리진' 표기를 확인하세요. 가격이 조금 더 비싸도 원두 품질 차이가 맛에서 확연히 드러납니다.</div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-number">3</div>
+      <div class="tip-text"><strong>AI 추출 앱 활용하기:</strong> Acaia Orion, Decent Espresso 앱 등 AI 기반 추출 보조 앱을 활용하면 내가 좋아하는 맛을 데이터로 기록하고 재현할 수 있습니다. 홈 바리스타라면 지금 당장 시작해볼 만한 가장 실용적인 기술 투자입니다.</div>
+    </div>
+  </div>
+
+  <!-- ACTION BOX -->
+  <div class="action-box">
+    <h3>🚀 내일 당장 해볼 수 있는 행동 제안</h3>
+    <ul>
+      <li>근처 독립 로스터리 카페를 한 곳 방문해, 오늘 날아온 원두의 산지와 가공법을 바리스타에게 물어보세요. 5분의 대화가 커피 보는 눈을 완전히 바꿔줄 겁니다.</li>
+      <li>주로 마시는 RTD 커피 브랜드의 원두 등급을 검색해 보세요. 스페셜티 등급인지 여부가 맛과 가격의 차이를 만듭니다.</li>
+      <li>머쉬룸 커피나 프로틴 커피 중 하나를 일주일 간 테스트해 보세요. '트렌드'가 내 몸과 맞는지 직접 경험해 보는 것이 최고의 커피 교육입니다.</li>
+      <li>SCA(스페셜티커피협회) 한국 챕터(korea.sca.coffee)를 팔로우해 국내 스페셜티 이벤트와 교육 정보를 실시간으로 받아보세요.</li>
+    </ul>
+  </div>
+
+  <!-- SVG 2: Functional Coffee Market Growth -->
+  <div class="infographic-wrap">
+    <h3>📈 기능성 커피 시장 성장 (단위: 십억 USD)</h3>
+    <svg viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;display:block;margin:0 auto;">
+      <!-- Background fill for area -->
+      <defs>
+        <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#c8860a" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="#c8860a" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Grid lines -->
+      <line x1="60" y1="180" x2="560" y2="180" stroke="#e0d5cc" stroke-width="1.5"/>
+      <line x1="60" y1="140" x2="560" y2="140" stroke="#e0d5cc" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="60" y1="100" x2="560" y2="100" stroke="#e0d5cc" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="60" y1="60" x2="560" y2="60" stroke="#e0d5cc" stroke-width="1" stroke-dasharray="4,3"/>
+
+      <!-- Y labels -->
+      <text x="52" y="184" text-anchor="end" font-size="11" fill="#9a8070">0</text>
+      <text x="52" y="144" text-anchor="end" font-size="11" fill="#9a8070">3B</text>
+      <text x="52" y="104" text-anchor="end" font-size="11" fill="#9a8070">6B</text>
+      <text x="52" y="64" text-anchor="end" font-size="11" fill="#9a8070">9B</text>
+
+      <!-- Line path: years 2022(2.8B), 2023(3.2B), 2024(3.7B), 2025(4.2B), 2026(4.5B), 2028(5.5B), 2030(7.78B) -->
+      <!-- Scale: 0–9B maps to 180–60px (120px range). 1B = 13.3px -->
+      <!-- 2.8B: 180 - 2.8*13.3=37.2 = 142.8 ~ 143 -->
+      <!-- 3.2B: 180 - 3.2*13.3=42.6 = 137.4 ~ 137 -->
+      <!-- 3.7B: 180 - 3.7*13.3=49.2 = 130.8 ~ 131 -->
+      <!-- 4.2B: 180 - 4.2*13.3=55.9 = 124.1 ~ 124 -->
+      <!-- 4.5B: 180 - 4.5*13.3=59.9 = 120.1 ~ 120 -->
+      <!-- 5.5B: 180 - 5.5*13.3=73.1 = 106.9 ~ 107 -->
+      <!-- 7.78B: 180 - 7.78*13.3=103.5 = 76.5 ~ 77 -->
+
+      <!-- X positions: 2022=100, 2023=170, 2024=240, 2025=310, 2026=380, 2028=450, 2030=520 -->
+
+      <polygon points="100,143 170,137 240,131 310,124 380,120 450,107 520,77 520,180 100,180"
+               fill="url(#areaGrad)"/>
+
+      <polyline points="100,143 170,137 240,131 310,124 380,120 450,107 520,77"
+                fill="none" stroke="#c8860a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Dots -->
+      <circle cx="100" cy="143" r="5" fill="#c8860a"/>
+      <circle cx="170" cy="137" r="5" fill="#c8860a"/>
+      <circle cx="240" cy="131" r="5" fill="#c8860a"/>
+      <circle cx="310" cy="124" r="5" fill="#c8860a"/>
+      <circle cx="380" cy="120" r="7" fill="#6b3a2a" stroke="#c8860a" stroke-width="2"/>
+      <circle cx="450" cy="107" r="5" fill="#c8860a" opacity="0.7"/>
+      <circle cx="520" cy="77" r="5" fill="#c8860a" opacity="0.7"/>
+
+      <!-- Labels -->
+      <text x="100" y="197" text-anchor="middle" font-size="11" fill="#9a8070">2022</text>
+      <text x="170" y="197" text-anchor="middle" font-size="11" fill="#9a8070">2023</text>
+      <text x="240" y="197" text-anchor="middle" font-size="11" fill="#9a8070">2024</text>
+      <text x="310" y="197" text-anchor="middle" font-size="11" fill="#9a8070">2025</text>
+      <text x="380" y="197" text-anchor="middle" font-size="11" fill="#6b3a2a" font-weight="800">2026★</text>
+      <text x="450" y="197" text-anchor="middle" font-size="11" fill="#9a8070">2028</text>
+      <text x="520" y="197" text-anchor="middle" font-size="11" fill="#9a8070">2030</text>
+
+      <!-- Value labels -->
+      <text x="100" y="133" text-anchor="middle" font-size="10" fill="#6b3a2a">2.8B</text>
+      <text x="380" y="110" text-anchor="middle" font-size="10" fill="#6b3a2a" font-weight="700">4.5B</text>
+      <text x="520" y="67" text-anchor="middle" font-size="10" fill="#6b3a2a" font-weight="700">7.78B</text>
+    </svg>
+    <p style="font-size:12px;color:#9a8070;text-align:center;margin-top:8px;">출처: Beverage Daily, Future Market Insights (2026)</p>
+  </div>
+
+  <!-- CLOSING -->
+  <h2 class="section-title">마치며 — 커피 한 잔이 세상을 담는 시대</h2>
+
+  <p>
+    2026년의 스페셜티 커피는 더 이상 '고급 취향'의 전유물이 아니다. AI가 추출을 돕고, 버섯이 카페인과 공존하며, MZ세대가 시장을 이끌고, 기후 위기가 새로운 품종을 탄생시키는 이 격변의 시대에 커피 한 잔은 기술·환경·문화가 응축된 복잡한 결정체가 되었다.
+  </p>
+
+  <p>
+    당신이 오늘 마시는 그 커피 한 잔도, 지구 반대편 농부의 고민과 AI 알고리즘과 바리스타의 손끝이 만들어낸 합작품이다. 그 이야기를 알고 마시는 커피는, 분명히 다른 맛이 난다.
+  </p>
+
+  <!-- TAGS -->
+  <div class="tags">
+    <span class="tag">#스페셜티커피</span>
+    <span class="tag">#커피트렌드2026</span>
+    <span class="tag">#머쉬룸커피</span>
+    <span class="tag">#AI바리스타</span>
+    <span class="tag">#커마카세</span>
+    <span class="tag">#RTD커피</span>
+    <span class="tag">#기능성커피</span>
+    <span class="tag">#프로틴커피</span>
+    <span class="tag">#클라이메이트커피</span>
+    <span class="tag">#한국커피</span>
+    <span class="tag">#바리스타</span>
+    <span class="tag">#커피시장</span>
+  </div>
+
+  <div class="disclaimer">
+    본 아티클에 포함된 시장 수치는 Grand View Research, Coherent Market Insights, Beverage Daily, ICO(국제커피기구) 등 공개 자료를 기반으로 작성되었습니다. 투자 또는 사업 결정에 활용 시 원본 자료를 반드시 확인하시기 바랍니다. 작성일: 2026년 5월 28일.
+  </div>
+
+</div><!-- /container -->
+</body>
+</html>
