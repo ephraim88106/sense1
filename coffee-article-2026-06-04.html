@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>하루 34개 카페가 폐업하는 이유 — 10년 바리스타가 알려주는 생존의 숫자들 | 스페셜티 커피 인사이트</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #faf7f2;
+      color: #2c1810;
+      line-height: 1.85;
+      font-size: 16px;
+    }
+
+    /* ── 헤더 ── */
+    .hero {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+    .hero .category-badge {
+      display: inline-block;
+      background: rgba(200, 134, 10, 0.9);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(22px, 4vw, 36px);
+      font-weight: 900;
+      line-height: 1.4;
+      max-width: 720px;
+      margin: 0 auto 16px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .hero .subtitle {
+      font-size: 15px;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 20px;
+    }
+    .hero .meta {
+      font-size: 12px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ── 본문 컨테이너 ── */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    /* ── 훅 & 요약박스 ── */
+    .hook {
+      font-size: 19px;
+      font-weight: 500;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding-left: 20px;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    .summary-box {
+      background: #fff8ee;
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      color: #c8860a;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .summary-box ul {
+      list-style: none;
+    }
+    .summary-box ul li {
+      padding: 5px 0;
+      padding-left: 22px;
+      position: relative;
+      font-size: 15px;
+    }
+    .summary-box ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #c8860a;
+      font-weight: 700;
+    }
+
+    /* ── 섹션 소제목 ── */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: #2c1810;
+      margin: 48px 0 16px;
+      padding-left: 18px;
+      border-left: 5px solid #6b3a2a;
+    }
+
+    p { margin-bottom: 18px; font-size: 16px; }
+    strong { color: #6b3a2a; }
+
+    /* ── 강조 숫자 카드 ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .stat-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(107,58,42,0.1);
+      border-top: 4px solid #c8860a;
+    }
+    .stat-card .num {
+      font-size: 36px;
+      font-weight: 900;
+      color: #6b3a2a;
+      line-height: 1;
+    }
+    .stat-card .unit {
+      font-size: 14px;
+      color: #c8860a;
+      font-weight: 700;
+    }
+    .stat-card .desc {
+      font-size: 12px;
+      color: #888;
+      margin-top: 6px;
+      line-height: 1.5;
+    }
+
+    /* ── 실전 팁 박스 ── */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8ee, #fdf3e0);
+      border-left: 6px solid #c8860a;
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+    .tip-box h3 {
+      color: #c8860a;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      background: #c8860a;
+      color: #fff;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .tip-text { font-size: 15px; line-height: 1.7; }
+
+    /* ── 경고 박스 ── */
+    .warning-box {
+      background: #fff5f5;
+      border-left: 6px solid #d63031;
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .warning-box h4 { color: #d63031; font-size: 13px; font-weight: 800; margin-bottom: 10px; }
+    .warning-box p { font-size: 14px; margin: 0; color: #555; }
+
+    /* ── SVG 인포그래픽 ── */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 20px;
+      margin: 36px 0;
+      box-shadow: 0 4px 20px rgba(107,58,42,0.1);
+      overflow-x: auto;
+    }
+    .infographic-wrap h3 {
+      text-align: center;
+      color: #2c1810;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    /* ── 비교 테이블 ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 14px;
+    }
+    .compare-table th {
+      background: #6b3a2a;
+      color: #fff;
+      padding: 12px 16px;
+      text-align: left;
+    }
+    .compare-table td {
+      padding: 11px 16px;
+      border-bottom: 1px solid #ede0d4;
+    }
+    .compare-table tr:nth-child(even) td { background: #fdf8f3; }
+    .compare-table .good { color: #27ae60; font-weight: 700; }
+    .compare-table .bad { color: #d63031; font-weight: 700; }
+
+    /* ── 태그 ── */
+    .tags {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid #e8ddd5;
+    }
+    .tag {
+      display: inline-block;
+      background: #6b3a2a;
+      color: #fff;
+      font-size: 11px;
+      padding: 4px 12px;
+      border-radius: 14px;
+      margin: 4px;
+      font-weight: 500;
+    }
+
+    /* ── 푸터 ── */
+    .footer {
+      margin-top: 32px;
+      padding: 20px 0;
+      border-top: 1px solid #e8ddd5;
+      font-size: 11px;
+      color: #aaa;
+      text-align: center;
+      line-height: 1.8;
+    }
+
+    /* ── 반응형 ── */
+    @media (max-width: 600px) {
+      .hero { padding: 40px 18px 36px; }
+      .container { padding: 28px 18px 50px; }
+      .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<div class="hero">
+  <div class="category-badge">☕ 카페 창업 & 운영</div>
+  <h1>하루 34개 카페가 폐업하는 이유 — 10년 바리스타가 알려주는 생존의 숫자들</h1>
+  <p class="subtitle">"감성"만으론 살아남지 못한다. 원가율, 손익분기점, 그리고 살아남는 카페의 공통점</p>
+  <p class="meta">2026년 06월 04일 · 스페셜티 커피 바리스타 · 읽는 시간 약 8분</p>
+</div>
+
+<div class="container">
+
+  <!-- 훅 -->
+  <p class="hook">
+    "커피 좋아하니까 카페 하면 되지 않을까?"<br>
+    이 한 마디가 매년 수만 명을 폐업으로 이끄는 가장 위험한 문장이다.
+  </p>
+
+  <!-- 핵심 요약 박스 -->
+  <div class="summary-box">
+    <h3>📌 오늘 이 글에서 배울 것</h3>
+    <ul>
+      <li>카페 1년 폐업률이 41%를 넘는 진짜 이유 (숫자로 증명)</li>
+      <li>음료 한 잔의 실제 원가 구조 — 재료비만이 원가가 아니다</li>
+      <li>생존하는 카페의 수익 공식: 원가율·인건비·임대료 삼각형</li>
+      <li>2026년 카페 창업 핵심 키워드 2가지</li>
+      <li>내일 당장 매출을 올릴 수 있는 실전 전략 3가지</li>
+    </ul>
+  </div>
+
+  <!-- 섹션 1 -->
+  <h2 class="section-title">📉 충격적인 숫자들 — 카페 창업의 현실</h2>
+
+  <p>2024년, 하루 평균 <strong>34개의 카페</strong>가 폐업했다. 이건 통계청 수치다. 연간 약 1만2천 개가 문을 닫는 셈이다. 그런데도 매일 새로운 카페가 생겨난다. 왜? '나는 다를 거야'라는 믿음 때문이다.</p>
+
+  <p>중소벤처기업부 자료를 보면 더 냉혹하다. 카페 창업 후 <strong>1년 생존률 58.7%</strong>, <strong>3년 생존률 39.4%</strong>, <strong>5년 폐업률 무려 66.2%</strong>다. 10곳 중 6~7곳은 5년을 버티지 못한다는 뜻이다. 커피 한 잔의 감동이 현실의 임대료 앞에서 얼마나 빨리 사라지는지를 보여주는 숫자다.</p>
+
+  <!-- 통계 카드 -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="num">34</div>
+      <div class="unit">개 / 하루</div>
+      <div class="desc">2024년 기준 일평균 카페 폐업 수</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">41%</div>
+      <div class="unit">이상</div>
+      <div class="desc">창업 1년 내 폐업률 (2023년 기준)</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">66%</div>
+      <div class="unit">5년 후</div>
+      <div class="desc">창업 5년차 폐업률</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">200~300</div>
+      <div class="unit">만원</div>
+      <div class="desc">전국 평균 카페 월 순이익<br>(매출 ~800만 기준)</div>
+    </div>
+  </div>
+
+  <div class="warning-box">
+    <h4>⚠️ 이것만은 알고 시작하자</h4>
+    <p>전국 평균 카페 월매출 800만 원 중 순이익은 200~300만 원이다. 임대료·인건비·원재료비를 빼고 나면 최저임금을 겨우 넘기는 수준이 될 수 있다. "커피 한 잔에 5천 원이니까 하루 100잔만 팔면..."이라는 계산은 위험하다.</p>
+  </div>
+
+  <!-- 섹션 2 -->
+  <h2 class="section-title">💸 커피 한 잔의 진짜 원가 — 재료비가 전부가 아니다</h2>
+
+  <p>아메리카노 한 잔을 4,500원에 판다고 치자. 원두 원가는 얼마일까? 약 200~350원이다. "그럼 마진이 엄청나겠네!"라고 생각하는 순간, 이미 함정에 빠진 것이다.</p>
+
+  <p>카페의 원가는 <strong>재료비(Food Cost) + 인건비(Labor Cost) + 임대료 + 기타 고정비</strong>의 합이다. 전문가들은 이것을 '총원가(Total Cost)'라고 부른다. 각 항목의 매출 대비 적정 비율을 알아야 살아남는다.</p>
+
+  <!-- SVG 인포그래픽: 원가 구조 도넛 차트 -->
+  <div class="infographic-wrap">
+    <h3>☕ 아메리카노 4,500원의 원가 해부도 (목표치 기준)</h3>
+    <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;margin:0 auto;">
+      <!-- 도넛 차트 (간략화된 파이 섹션들) -->
+      <!-- 재료비 25% -->
+      <circle cx="180" cy="160" r="100" fill="none" stroke="#c8860a" stroke-width="40"
+        stroke-dasharray="157 471" stroke-dashoffset="0" transform="rotate(-90 180 160)" />
+      <!-- 인건비 30% -->
+      <circle cx="180" cy="160" r="100" fill="none" stroke="#6b3a2a" stroke-width="40"
+        stroke-dasharray="188 440" stroke-dashoffset="-157" transform="rotate(-90 180 160)" />
+      <!-- 임대료 20% -->
+      <circle cx="180" cy="160" r="100" fill="none" stroke="#a0522d" stroke-width="40"
+        stroke-dasharray="126 502" stroke-dashoffset="-345" transform="rotate(-90 180 160)" />
+      <!-- 기타고정비 10% -->
+      <circle cx="180" cy="160" r="100" fill="none" stroke="#d4a574" stroke-width="40"
+        stroke-dasharray="63 565" stroke-dashoffset="-471" transform="rotate(-90 180 160)" />
+      <!-- 순이익 15% -->
+      <circle cx="180" cy="160" r="100" fill="none" stroke="#27ae60" stroke-width="40"
+        stroke-dasharray="94 534" stroke-dashoffset="-534" transform="rotate(-90 180 160)" />
+      <!-- 중앙 텍스트 -->
+      <text x="180" y="153" text-anchor="middle" fill="#2c1810" font-size="13" font-weight="700" font-family="Noto Sans KR">4,500원</text>
+      <text x="180" y="172" text-anchor="middle" fill="#888" font-size="11" font-family="Noto Sans KR">아메리카노</text>
+
+      <!-- 범례 -->
+      <rect x="330" y="60" width="14" height="14" rx="3" fill="#c8860a"/>
+      <text x="352" y="72" fill="#2c1810" font-size="13" font-family="Noto Sans KR">재료비 &amp; 소모품 — 25% (1,125원)</text>
+
+      <rect x="330" y="92" width="14" height="14" rx="3" fill="#6b3a2a"/>
+      <text x="352" y="104" fill="#2c1810" font-size="13" font-family="Noto Sans KR">인건비 — 30% (1,350원)</text>
+
+      <rect x="330" y="124" width="14" height="14" rx="3" fill="#a0522d"/>
+      <text x="352" y="136" fill="#2c1810" font-size="13" font-family="Noto Sans KR">임대료 — 20% (900원)</text>
+
+      <rect x="330" y="156" width="14" height="14" rx="3" fill="#d4a574"/>
+      <text x="352" y="168" fill="#2c1810" font-size="13" font-family="Noto Sans KR">관리비·광열비·기타 — 10% (450원)</text>
+
+      <rect x="330" y="188" width="14" height="14" rx="3" fill="#27ae60"/>
+      <text x="352" y="200" fill="#2c1810" font-size="13" font-family="Noto Sans KR">순이익 — 15% (675원)</text>
+
+      <!-- 하단 주석 -->
+      <text x="350" y="250" fill="#aaa" font-size="11" font-family="Noto Sans KR">* 목표 수익 구조 기준. 임대료·인건비 상황에 따라 상이</text>
+      <text x="350" y="268" fill="#d63031" font-size="11" font-weight="700" font-family="Noto Sans KR">⚠ 순이익 15% 미달 시 장기 생존 어려움</text>
+    </svg>
+  </div>
+
+  <p>사실 많은 사장님들이 재료비(원두, 우유, 시럽 등)만 계산하고 "원가율이 낮다"고 착각한다. 하지만 인건비와 임대료를 합산하면 이야기가 완전히 달라진다. <strong>순이익 15% 아래로 떨어지면 장기 생존이 거의 불가능</strong>하다는 게 현장 컨설턴트들의 공통된 의견이다.</p>
+
+  <!-- 섹션 3 -->
+  <h2 class="section-title">📊 폐업하는 카페 vs 살아남는 카페 — 수치로 보는 차이</h2>
+
+  <p>10년간 수백 개의 카페를 봐온 경험으로 말하자면, 폐업하는 카페와 살아남는 카페의 차이는 메뉴의 차이가 아니다. <strong>숫자를 아느냐 모르느냐</strong>의 차이다.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>지표</th>
+        <th>폐업 위험 카페</th>
+        <th>생존하는 카페</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>재료비율</strong></td>
+        <td class="bad">40% 이상</td>
+        <td class="good">25~30% 이하</td>
+      </tr>
+      <tr>
+        <td><strong>인건비율</strong></td>
+        <td class="bad">35% 이상</td>
+        <td class="good">28~32%</td>
+      </tr>
+      <tr>
+        <td><strong>임대료 비율</strong></td>
+        <td class="bad">25% 이상</td>
+        <td class="good">15~20% 이하</td>
+      </tr>
+      <tr>
+        <td><strong>3대 비용 합계</strong></td>
+        <td class="bad">85% 이상 → 폐업 구간</td>
+        <td class="good">70~75% → 생존 가능</td>
+      </tr>
+      <tr>
+        <td><strong>월 순이익</strong></td>
+        <td class="bad">0~100만원 (사실상 무임금)</td>
+        <td class="good">300만원 이상</td>
+      </tr>
+      <tr>
+        <td><strong>시그니처 메뉴</strong></td>
+        <td class="bad">없음 (카피 메뉴 위주)</td>
+        <td class="good">1~2개 확실한 대표 메뉴</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>특히 <strong>"3대 비용(재료비 + 인건비 + 임대료)의 합이 매출의 75%를 넘으면 위험 신호"</strong>라는 공식을 기억하자. 이 숫자를 주간 단위로 체크하는 카페는 살아남고, 한 달이 지나서야 파악하는 카페는 무너진다.</p>
+
+  <!-- 섹션 4 -->
+  <h2 class="section-title">🔥 2026년 카페 창업의 핵심 키워드 2가지</h2>
+
+  <p>2026년 카페 업계를 관통하는 두 개의 키워드는 <strong>① 원두 비용 관리</strong>와 <strong>② 운영 효율화</strong>다. 이 둘을 모두 잡는 카페만이 인건비·생두가격·임대료의 3중 압박을 버텨낼 수 있다.</p>
+
+  <p><strong>① 원두 비용 관리:</strong> 국제 생두 가격은 2024~2025년 사이 30~40% 이상 급등했다. 브라질 이상기후, 물류비 상승, 환율 불안정이 겹쳤기 때문이다. 살아남는 카페들의 공통점은 <strong>자체 로스팅(In-house Roasting)</strong>을 도입해 원두 원가를 20~35% 절감하는 것이다. 작은 배치(Batch)로 자주 볶아 재고 리스크를 줄이면서도 신선도를 유지하는 전략이다.</p>
+
+  <p><strong>② 운영 효율화:</strong> 인건비는 최저임금 인상으로 계속 오른다. 대응책은 두 가지다 — 첫째, 메뉴를 줄여 <strong>제조 동선을 단순화</strong>한다. 복잡한 메뉴 30개보다 잘 팔리는 메뉴 10개가 수익성이 훨씬 높다. 둘째, <strong>데이터 기반 인력 배치</strong>다. 어떤 요일, 어떤 시간대에 손님이 몰리는지 분석해 피크타임에만 추가 인력을 쓰는 방식이다.</p>
+
+  <!-- 섹션 5 -->
+  <h2 class="section-title">🗺️ 폐업의 3대 함정 — "나는 아니겠지"의 착각</h2>
+
+  <p>카페를 차렸다가 1년 안에 닫는 사람들과 이야기해보면 공통된 패턴이 있다.</p>
+
+  <p><strong>함정 1 — 과포화 시장 무시:</strong> 서울 강남구 기준 1km²당 카페 밀집도는 42.5개다. 주변 카페 수를 직접 세보지 않고 창업하는 건 전장을 모르고 나가는 것과 같다. 창업 전 반경 500m 안의 경쟁점 수, 유동 인구, 직장인/주거민 비율을 반드시 분석해야 한다.</p>
+
+  <p><strong>함정 2 — "맛있으면 알아서 입소문 난다":</strong> 2026년 마케팅의 중심은 영상이다. 네이버 플레이스 최적화, 당근마켓 동네 마케팅, 인스타그램·틱톡 숏폼 — 이 세 가지를 하지 않는 카페는 지도에서 사라진다. 오픈 초기 3개월 동안의 마케팅 예산을 반드시 초기 창업비에 포함시켜야 한다.</p>
+
+  <p><strong>함정 3 — 계절 수요 편차 무시:</strong> 카페 매출은 봄·가을에 최고, 여름·겨울에 급락하는 경우가 많다. 특히 소규모 카페는 비수기 2~3개월을 버틸 <strong>운전자금(최소 3개월치 고정비)</strong>을 따로 확보해두지 않으면 번 돈을 그대로 날린다.</p>
+
+  <!-- 실전 팁 박스 -->
+  <div class="tip-box">
+    <h3>💡 바리스타 10년이 알려주는 생존 실전 팁 3가지</h3>
+
+    <div class="tip-item">
+      <div class="tip-num">1</div>
+      <div class="tip-text">
+        <strong>"손익분기점 계산"을 매주 한다</strong> — 월 고정비(임대료+인건비+대출이자)를 공헌이익률(1 - 변동비율)로 나눈 값이 바로 손익분기점 매출이다. 이 숫자를 모르면 지금 내가 살고 있는지 죽어가고 있는지도 모른 채 장사하는 것이다. 엑셀 하나로 충분하다.
+      </div>
+    </div>
+
+    <div class="tip-item">
+      <div class="tip-num">2</div>
+      <div class="tip-text">
+        <strong>메뉴는 줄이고 시그니처는 키워라</strong> — 메뉴판에 30가지 음료가 있는 카페치고 잘 되는 카페를 본 적이 없다. 가장 많이 팔리는 상위 5개 메뉴가 매출의 70~80%를 만든다. 나머지는 과감히 정리하고, 시그니처 음료 하나에 스토리와 비주얼을 집중 투자해라. "이 집 가면 이거 꼭 먹어야 해"가 SNS를 탄다.
+      </div>
+    </div>
+
+    <div class="tip-item">
+      <div class="tip-num">3</div>
+      <div class="tip-text">
+        <strong>재료비 원가율은 30% 이하로 묶어라</strong> — 아메리카노의 원두+컵+빨대+포장지 등 변동비 합계가 판매가의 30%를 넘으면 인건비·임대료까지 더했을 때 수지가 맞지 않는다. 특히 생과일 음료나 복잡한 디저트는 원가율이 40%를 넘기 쉽다 — 이런 메뉴는 가격을 올리거나 단순화하거나 과감히 포기해야 한다.
+      </div>
+    </div>
+  </div>
+
+  <!-- 섹션 6 -->
+  <h2 class="section-title">🌱 2026년, 그래도 희망이 있는 이유</h2>
+
+  <p>이 모든 냉혹한 숫자에도 불구하고, 살아남는 카페는 분명히 존재한다. 그리고 그들의 공통점은 "더 감성적인 공간"이 아니라 <strong>"더 정확한 숫자 관리"</strong>였다.</p>
+
+  <p>2026년 스페셜티 커피 트렌드는 더 이상 '좋은 원두, 비싼 장비'만으로 차별화되지 않는다. 소비자들은 공간·서비스·경험까지 포함된 총체적 완성도를 요구한다. 동시에 건강 트렌드로 인해 <strong>저당 음료, 글루텐프리 디저트, 식물성 우유 옵션</strong>은 선택이 아닌 필수가 됐다.</p>
+
+  <p>그리고 무엇보다 중요한 것: 카페는 단순히 "커피를 파는 공간"이 아니다. 사람들이 머물고 싶어지는 이유를 만드는 곳이다. 그 이유를 만드는 사람이, 숫자도 알고 있을 때 — 그 카페만이 5년을 버틴다.</p>
+
+  <!-- 마무리 행동 제안 -->
+  <div class="tip-box" style="background: linear-gradient(135deg, #f0faf4, #e8f5ed); border-left-color: #27ae60;">
+    <h3 style="color: #27ae60;">🎯 내일 당장 해볼 수 있는 것 3가지</h3>
+    <div class="tip-item">
+      <div class="tip-num" style="background: #27ae60;">①</div>
+      <div class="tip-text">지난 달 재료비 + 인건비 + 임대료의 합을 매출로 나눠봐라. 75% 이하면 생존 가능, 85% 이상이면 지금 당장 메뉴 정리와 비용 구조 재점검이 필요하다.</div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num" style="background: #27ae60;">②</div>
+      <div class="tip-text">가장 잘 팔리는 메뉴 Top 3와 가장 안 팔리는 메뉴 Bottom 5를 뽑아봐라. Bottom 5는 이번 달 안에 정리 여부를 검토해라.</div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num" style="background: #27ae60;">③</div>
+      <div class="tip-text">네이버 지도에서 내 카페를 검색해봐라. 사진이 5장 미만이거나 리뷰가 10개 미만이면 오늘 당장 포토 업로드와 리뷰 요청 메시지를 시작해라. 이게 가장 빠른 마케팅이다.</div>
+    </div>
+  </div>
+
+  <!-- 태그 -->
+  <div class="tags">
+    <span class="tag">#카페창업</span>
+    <span class="tag">#카페운영</span>
+    <span class="tag">#카페수익구조</span>
+    <span class="tag">#원가율</span>
+    <span class="tag">#손익분기점</span>
+    <span class="tag">#스페셜티커피</span>
+    <span class="tag">#2026카페트렌드</span>
+    <span class="tag">#카페폐업</span>
+    <span class="tag">#바리스타</span>
+    <span class="tag">#소규모카페</span>
+    <span class="tag">#카페창업비용</span>
+    <span class="tag">#카페마케팅</span>
+  </div>
+
+  <div class="footer">
+    작성일: 2026년 06월 04일 &nbsp;|&nbsp; 스페셜티 커피 바리스타 &amp; 콘텐츠 작가<br>
+    본 아티클의 통계 수치는 중소벤처기업부, 통계청, 업계 공개 자료를 기반으로 작성되었으며, 개별 매장 상황에 따라 차이가 있을 수 있습니다.<br>
+    창업 관련 최종 의사결정은 전문 컨설턴트와 상담하시기를 권장합니다.
+  </div>
+
+</div>
+</body>
+</html>
