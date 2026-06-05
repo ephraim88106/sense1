@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>해발 2000m의 비밀: 당신이 마신 커피 한 잔은 어디서 왔을까?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.85;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* HEADER */
+    .site-header {
+      background: #2c1810;
+      padding: 14px 20px;
+      text-align: center;
+    }
+    .site-header span {
+      color: #c8860a;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      padding: 52px 28px 44px;
+      text-align: center;
+      color: #fff;
+    }
+    .category-badge {
+      display: inline-block;
+      background: rgba(200,134,10,0.25);
+      border: 1px solid #c8860a;
+      color: #f0c060;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+    .hero h1 {
+      font-size: clamp(22px, 5vw, 36px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+      word-break: keep-all;
+    }
+    .hero h1 em {
+      color: #f0c060;
+      font-style: normal;
+    }
+    .hero-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 20px;
+    }
+    .meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* BODY */
+    .article-body {
+      padding-top: 40px;
+    }
+
+    p {
+      margin-bottom: 18px;
+      word-break: keep-all;
+    }
+
+    /* SUMMARY BOX */
+    .summary-box {
+      background: #fff;
+      border-left: 5px solid #c8860a;
+      border-radius: 8px;
+      padding: 22px 24px;
+      margin: 32px 0;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.08);
+    }
+    .summary-box h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #c8860a;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .summary-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .summary-box ul li {
+      padding: 5px 0 5px 22px;
+      position: relative;
+      font-size: 15px;
+      color: #3d1f14;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* SECTION HEADING */
+    h2 {
+      font-size: clamp(18px, 4vw, 24px);
+      font-weight: 900;
+      color: #2c1810;
+      margin: 42px 0 16px;
+      padding-left: 16px;
+      border-left: 5px solid #c8860a;
+      word-break: keep-all;
+      line-height: 1.4;
+    }
+
+    /* TIP BOX */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8ee, #fdf3e3);
+      border: 1.5px solid #c8860a;
+      border-radius: 12px;
+      padding: 26px 28px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 16px;
+    }
+    .tip-box .tip-icon {
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .tip-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+    .tip-item:last-child { margin-bottom: 0; }
+    .tip-num {
+      width: 24px;
+      height: 24px;
+      background: #6b3a2a;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .tip-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #3d1f14;
+    }
+    .tip-text strong {
+      color: #6b3a2a;
+    }
+
+    /* HIGHLIGHT */
+    .highlight {
+      background: #fff3e0;
+      border-radius: 6px;
+      padding: 2px 6px;
+      color: #8b4513;
+      font-weight: 700;
+    }
+
+    /* ORIGIN CARDS */
+    .origin-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .origin-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 12px rgba(107,58,42,0.1);
+      border-top: 4px solid;
+    }
+    .origin-card:nth-child(1) { border-color: #e86f00; }
+    .origin-card:nth-child(2) { border-color: #c00000; }
+    .origin-card:nth-child(3) { border-color: #2e7d32; }
+    .origin-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #2c1810;
+    }
+    .origin-card .altitude {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+    .flavor-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .flavor-tag {
+      background: #faf7f2;
+      border: 1px solid #e0d0c0;
+      border-radius: 20px;
+      padding: 3px 10px;
+      font-size: 12px;
+      color: #6b3a2a;
+    }
+
+    /* SVG SECTION */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px;
+      margin: 36px 0;
+      box-shadow: 0 2px 14px rgba(107,58,42,0.1);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    /* QUOTE */
+    .pull-quote {
+      border-left: 4px solid #c8860a;
+      padding: 16px 20px;
+      margin: 28px 0;
+      font-size: 17px;
+      font-weight: 700;
+      color: #6b3a2a;
+      background: #fff;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      word-break: keep-all;
+    }
+
+    /* ACTION BOX */
+    .action-box {
+      background: linear-gradient(135deg, #2c1810, #6b3a2a);
+      color: #fff;
+      border-radius: 14px;
+      padding: 30px 28px;
+      margin-top: 40px;
+      text-align: center;
+    }
+    .action-box h3 {
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 14px;
+      color: #f0c060;
+    }
+    .action-box p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 0;
+    }
+    .action-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 18px;
+      text-align: left;
+    }
+    .action-step {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 14px;
+      color: rgba(255,255,255,0.9);
+    }
+    .action-step-num {
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      width: 22px;
+      height: 22px;
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* TAGS */
+    .tags-section {
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid #e0d0c0;
+    }
+    .tags-section .tag-label {
+      font-size: 13px;
+      color: #888;
+      margin-bottom: 10px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      background: #2c1810;
+      color: #f0c060;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    /* FOOTER */
+    .article-footer {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid #e0d0c0;
+      font-size: 12px;
+      color: #aaa;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .origin-cards { grid-template-columns: 1fr; }
+      .hero { padding: 36px 18px 30px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <span>☕ 바리스타 커피 아티클 — 매일 배우는 커피 한 잔</span>
+</header>
+
+<div class="hero">
+  <div class="category-badge">🌍 원두 산지 & 농장 스토리</div>
+  <h1>해발 2,000m의 비밀:<br><em>당신이 마신 커피 한 잔은 어디서 왔을까?</em></h1>
+  <p class="hero-sub">에티오피아 농부가 새벽 4시에 일어나 손으로 딴 체리 한 알 — 그것이 당신 컵에 담기까지</p>
+  <p class="meta">2026년 6월 5일 · 10년 경력 바리스타 필진</p>
+</div>
+
+<div class="container">
+  <div class="article-body">
+
+    <p style="font-size:18px; font-weight:700; color:#6b3a2a; margin-top:8px;">
+      커피를 마실 때 "어디서 왔어?" 라고 물어본 적 있으신가요? 사실 그 질문에 답하는 순간, 커피가 완전히 다르게 느껴지기 시작합니다.
+    </p>
+
+    <div class="summary-box">
+      <h3>📌 오늘 이 글에서 배울 것</h3>
+      <ul>
+        <li>고도가 커피 맛을 바꾸는 <strong>과학적 메커니즘</strong></li>
+        <li>에티오피아·케냐·콜롬비아 산지별 <strong>플레이버 차이</strong>와 이유</li>
+        <li>직거래(다이렉트 트레이드)가 당신 컵의 맛을 <strong>어떻게 바꾸는지</strong></li>
+        <li>원두 봉투의 산지 정보 <strong>제대로 읽는 법</strong></li>
+        <li>내일 당장 써먹는 <strong>산지별 추출 팁</strong></li>
+      </ul>
+    </div>
+
+    <h2>고도가 맛을 만든다 — 해발고도의 과학</h2>
+
+    <p>
+      사실 대부분의 사람들이 모르는 사실이 있습니다. 에티오피아 예르가체프 원두가 왜 그렇게 꽃향기와 과일향을 품고 있는지, 그것은 단순히 "에티오피아 땅이 좋아서"가 아닙니다. 정확히는 <span class="highlight">해발 1,700~2,200m</span> 에 달하는 고도 때문입니다.
+    </p>
+
+    <p>
+      높은 고도에서는 두 가지 일이 동시에 일어납니다. 첫째, 온도가 낮아집니다. 해발 1,000m 오를 때마다 평균 기온이 약 6.5°C 내려가죠. 둘째, 대기압이 낮아져 산소 밀도도 떨어집니다. 이 조건에서 커피 체리는 <strong>훨씬 느리게 성숙</strong>합니다. 저지대에서 6개월 걸리는 숙성이 고산지에서는 9~12개월이 걸리기도 합니다.
+    </p>
+
+    <p>
+      이 느린 성숙 과정에서 마법이 일어납니다. 클로로겐산, 구연산, 사과산 같은 <strong>유기산 화합물이 풍부하게 축적</strong>되고, 동시에 당분도 천천히 깊어집니다. 결과적으로 고도가 높을수록 산미가 밝고 복합적이며, 플레이버 층위가 훨씬 다양한 커피가 만들어집니다. 이것이 스페셜티 커피 세계에서 산지 고도가 품질의 척도로 통하는 이유입니다.
+    </p>
+
+    <div class="infographic-wrap">
+      <h3>📊 고도별 커피 특성 비교 인포그래픽</h3>
+      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" width="100%" style="display:block;">
+        <!-- Background -->
+        <rect width="720" height="300" fill="#faf7f2" rx="10"/>
+
+        <!-- Mountain silhouette -->
+        <polygon points="80,240 200,80 320,240" fill="#e8d8c8" opacity="0.5"/>
+        <polygon points="200,80 260,140 320,240 200,240" fill="#d4bfa8" opacity="0.4"/>
+
+        <!-- Altitude bars -->
+        <!-- Low: 600-1000m -->
+        <rect x="360" y="180" width="80" height="60" rx="6" fill="#d4a96a" opacity="0.85"/>
+        <text x="400" y="173" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#6b3a2a" font-weight="700">600~1,000m</text>
+        <text x="400" y="254" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#6b3a2a">저지대</text>
+
+        <!-- Mid: 1000-1500m -->
+        <rect x="460" y="130" width="80" height="110" rx="6" fill="#c8860a" opacity="0.8"/>
+        <text x="500" y="123" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#6b3a2a" font-weight="700">1,000~1,500m</text>
+        <text x="500" y="254" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#6b3a2a">중산지</text>
+
+        <!-- High: 1500-2200m -->
+        <rect x="560" y="60" width="80" height="180" rx="6" fill="#6b3a2a" opacity="0.9"/>
+        <text x="600" y="53" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#2c1810" font-weight="700">1,500~2,200m</text>
+        <text x="600" y="254" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#6b3a2a">고산지</text>
+
+        <!-- Labels inside bars -->
+        <text x="400" y="215" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#fff" font-weight="700">바디감↑</text>
+        <text x="400" y="229" text-anchor="middle" font-family="sans-serif" font-size="11" fill="rgba(255,255,255,0.8)">견과·초콜릿</text>
+
+        <text x="500" y="185" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#fff" font-weight="700">균형잡힌</text>
+        <text x="500" y="200" text-anchor="middle" font-family="sans-serif" font-size="11" fill="rgba(255,255,255,0.85)">산미+단맛</text>
+        <text x="500" y="215" text-anchor="middle" font-family="sans-serif" font-size="11" fill="rgba(255,255,255,0.85)">카라멜·과일</text>
+
+        <text x="600" y="130" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#f0c060" font-weight="700">복합 산미↑↑</text>
+        <text x="600" y="148" text-anchor="middle" font-family="sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">꽃향·베리</text>
+        <text x="600" y="163" text-anchor="middle" font-family="sans-serif" font-size="11" fill="rgba(255,255,255,0.9)">시트러스·재스민</text>
+        <text x="600" y="180" text-anchor="middle" font-family="sans-serif" font-size="11" fill="rgba(255,255,255,0.85)">✦ SCA 최고 등급</text>
+
+        <!-- Mountain peak label -->
+        <text x="200" y="65" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#6b3a2a" font-weight="700">⛰️ 고산지</text>
+        <text x="200" y="80" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">= 느린 성숙</text>
+        <text x="200" y="95" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#888">= 복합 풍미</text>
+
+        <!-- Axis -->
+        <line x1="350" y1="240" x2="660" y2="240" stroke="#ccc" stroke-width="1.5"/>
+        <text x="505" y="270" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#999">재배 고도 (낮음 → 높음)</text>
+      </svg>
+    </div>
+
+    <h2>에티오피아 예르가체프 — 커피의 고향이 품은 꽃향기</h2>
+
+    <p>
+      커피의 발원지 에티오피아, 그중에서도 예르가체프(Yirgacheffe) 지역은 전 세계 바리스타들이 "이 향은 어디서 오는 거지?" 라며 의아해하는 곳입니다. 해발 <strong>1,700~2,200m</strong>의 비옥한 점토질 토양 위에서 야생 아라비카 원두가 자라는 이곳은, 오직 이 지역에서만 나오는 특유의 재스민·베르가못·레몬그라스 향을 만들어냅니다.
+    </p>
+
+    <p>
+      놀라운 사실은 이 향이 인위적인 가공에서 오는 게 아니라는 점입니다. 예르가체프의 소농들은 하루 중 온도 차가 15°C 이상 벌어지는 극단적인 일교차 환경에서 커피를 키웁니다. 낮에는 강한 적도 햇살로 당분이 쌓이고, 밤에는 차가운 공기로 산미 화합물이 보존됩니다. 이 반복이 <strong>티 라이크 바디(Tea-like body)</strong>, 즉 홍차처럼 맑고 깔끔하면서도 복합적인 플레이버를 만들어냅니다.
+    </p>
+
+    <p>
+      2025/26 시즌, 에티오피아 커피 생산량은 <strong>1,160만 백(60kg 기준)</strong>으로 전망됩니다. 정부의 직수출 정책 개혁으로 생산자들이 국제 바이어와 직접 계약할 수 있게 되면서, 예르가체프 스몰 패밀리 팜의 이름이 원두 봉투에 직접 적히는 시대가 열렸습니다.
+    </p>
+
+    <div class="pull-quote">
+      "예르가체프 원두는 아프리카의 와인이다 — 같은 포도밭에서도 해마다 다른 빈티지가 나오듯, 같은 농장도 수확 연도에 따라 전혀 다른 컵을 만들어낸다."
+    </div>
+
+    <h2>케냐 AA — 화산토가 빚은 블랙커런트의 폭발</h2>
+
+    <p>
+      케냐 AA를 처음 마셔본 사람들은 대개 이렇게 반응합니다. "이게 커피야 주스야?" 케냐 커피의 시그니처인 블랙커런트, 자몽, 토마토 같은 선명한 과일 산미는 놀랍도록 강렬합니다. 이 개성의 비밀은 <strong>케냐 중부 고원의 붉은 화산토(nyumba soils)</strong>에 있습니다.
+    </p>
+
+    <p>
+      케냐 화산토는 인(phosphorus)과 철(iron)이 풍부합니다. 인은 커피나무의 에너지 대사를 촉진해 당분 축적을 늘리고, 철은 토양 배수를 도와 뿌리가 깊게 내려가게 합니다. 이 두 미네랄이 만나 <strong>해발 1,400~2,000m</strong>의 키쿠유산 슬로프에서 밀도 높고 단단한 AA 사이즈의 원두가 탄생합니다.
+    </p>
+
+    <p>
+      2026년 5월 발표된 케냐 커피 허브(Kenya Coffee Hub) 이니셔티브에 따르면, 국제 바이어들이 케냐 현지 농장을 직접 방문해 계약하면 기존 가격 대비 <strong>30~50% 높은 프리미엄</strong>을 기꺼이 지불하고 있습니다. "현장에서 마신 커피 한 잔이 쇼핑 샘플보다 훨씬 더 사람들을 설득한다"는 것이 이 허브의 철학입니다.
+    </p>
+
+    <h2>콜롬비아 — 안데스가 만든 균형의 미학</h2>
+
+    <p>
+      콜롬비아 커피는 스페셜티 입문자에게 가장 자주 추천됩니다. 이유는 단 하나 — <strong>균형감</strong>이 뛰어나기 때문입니다. 너무 강하지 않은 산미, 부드러운 바디, 달콤한 캐러멜·견과류 뒷맛이 어우러져 "커피답다"는 느낌을 정석으로 구현합니다.
+    </p>
+
+    <p>
+      이 균형의 비결은 콜롬비아의 독특한 지형에 있습니다. 안데스 산맥이 세 갈래로 뻗어 있는 콜롬비아는 <strong>1,200~2,000m</strong> 고도의 커피 재배 가능 면적이 세계에서 가장 넓은 나라 중 하나입니다. 또한 적도 근처의 특성상 1년에 두 번 수확 시즌(메인: 10~2월, 미타카: 4~6월)이 있어, 신선한 원두를 연중 안정적으로 공급받을 수 있습니다.
+    </p>
+
+    <p>
+      콜롬비아는 "카페 데 콜롬비아(Café de Colombia)" 디지털 추적 시스템을 도입해 농장 → 로스터 → 카페로 이어지는 전 공급망을 투명하게 공개합니다. 이제 바리스타는 원두 봉투의 QR코드 하나로 어느 농부가, 어느 협동조합에서, 어떤 고도에서 수확한 원두인지 즉시 확인할 수 있습니다.
+    </p>
+
+    <div class="origin-cards">
+      <div class="origin-card">
+        <h4>🇪🇹 에티오피아 예르가체프</h4>
+        <div class="altitude">해발 1,700~2,200m · 점토 화강암질</div>
+        <div class="flavor-tags">
+          <span class="flavor-tag">재스민</span>
+          <span class="flavor-tag">레몬그라스</span>
+          <span class="flavor-tag">베르가못</span>
+          <span class="flavor-tag">복숭아</span>
+          <span class="flavor-tag">티 라이크</span>
+        </div>
+      </div>
+      <div class="origin-card">
+        <h4>🇰🇪 케냐 AA</h4>
+        <div class="altitude">해발 1,400~2,000m · 붉은 화산토</div>
+        <div class="flavor-tags">
+          <span class="flavor-tag">블랙커런트</span>
+          <span class="flavor-tag">자몽</span>
+          <span class="flavor-tag">토마토</span>
+          <span class="flavor-tag">와이니</span>
+          <span class="flavor-tag">강한 산미</span>
+        </div>
+      </div>
+      <div class="origin-card">
+        <h4>🇨🇴 콜롬비아 안데스</h4>
+        <div class="altitude">해발 1,200~2,000m · 화산 배수토</div>
+        <div class="flavor-tags">
+          <span class="flavor-tag">캐러멜</span>
+          <span class="flavor-tag">견과류</span>
+          <span class="flavor-tag">밀크초콜릿</span>
+          <span class="flavor-tag">사과</span>
+          <span class="flavor-tag">균형감</span>
+        </div>
+      </div>
+    </div>
+
+    <h2>다이렉트 트레이드가 당신 컵을 바꾸는 이유</h2>
+
+    <p>
+      스페셜티 커피에서 "다이렉트 트레이드(Direct Trade)"는 단순한 마케팅 문구가 아닙니다. 전통적인 커피 유통은 농부 → 수집상 → 수출업자 → 수입업자 → 로스터 → 카페로, 최대 6단계를 거칩니다. 이 과정에서 농부에게 돌아가는 몫은 커피 최종 판매가의 <strong>5~10%에 불과</strong>했습니다.
+    </p>
+
+    <p>
+      다이렉트 트레이드는 이 구조를 농부↔로스터로 단축합니다. 로스터가 직접 농장을 방문하고, 품질 기준을 함께 정하며, 시장가보다 높은 가격을 보장합니다. 농부는 그 돈으로 고품질 가공 시설에 투자하고, 더 좋은 원두를 키웁니다. 이 선순환이 5년, 10년 쌓이면 한 농장의 품질은 눈에 띄게 달라집니다. 우리가 "어, 이 원두 왜 이렇게 맛있어?" 라고 느끼는 순간 뒤에는 대부분 이런 관계가 있습니다.
+    </p>
+
+    <div class="tip-box">
+      <div class="tip-title">
+        <div class="tip-icon">💡</div>
+        바리스타 선배의 실전 팁 3가지
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>원두 봉투의 고도(Altitude/masl) 숫자를 확인하세요.</strong> "1,800masl" 이상이면 고산지 스페셜티. 산미가 밝고 플레이버가 복합적입니다. 1,000masl 이하면 견과류·초콜릿 바디감 위주의 커피. 취향에 따라 선택하세요.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>에티오피아 원두는 물 온도를 낮게(88~90°C) 맞추세요.</strong> 섬세한 꽃향기와 산미는 고온에서 쉽게 날아갑니다. 낮은 온도로 천천히 추출하면 재스민 향이 살아납니다. 케냐 원두는 92°C까지 올려도 됩니다 — 과일 산미가 더 선명해집니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>"싱글 오리진(Single Origin)"과 "블렌드(Blend)"를 구분하세요.</strong> 싱글 오리진은 한 산지·한 농장의 개성을 그대로 맛보는 것. 블렌드는 여러 산지의 장점을 조합한 것. 처음 스페셜티를 접한다면 콜롬비아 싱글 오리진으로 시작해 점차 에티오피아·케냐 순으로 넓혀가는 것을 추천합니다.</div>
+      </div>
+    </div>
+
+    <h2>봉투 한 장에 담긴 농부의 이야기</h2>
+
+    <p>
+      오늘날 좋은 스페셜티 카페의 원두 봉투에는 농장 이름, 농부의 이름, 수확 연도, 가공 방식, 고도가 모두 적혀 있습니다. 이것은 단순한 정보가 아닙니다. 에티오피아의 비루 베켈레(Biru Bekele) 씨가 새벽 4시에 일어나 잘 익은 빨간 체리만 손으로 골라 딴 과정, 케냐 협동조합 여성 농부들이 함께 세운 습식 가공장, 콜롬비아 안데스 슬로프에서 세 세대에 걸쳐 이어온 가족 농장의 이야기가 그 몇 줄에 응축되어 있습니다.
+    </p>
+
+    <p>
+      커피 한 잔의 여정을 알고 마시는 것 — 그것이 스페셜티 커피가 그냥 비싼 커피가 아닌 이유입니다. 당신이 그 이야기를 알아주는 소비자가 될 때, 농부도 더 좋은 커피를 키울 이유를 갖게 됩니다.
+    </p>
+
+    <div class="action-box">
+      <h3>🌱 내일 당장 해볼 것</h3>
+      <div class="action-steps">
+        <div class="action-step">
+          <div class="action-step-num">1</div>
+          <span>집에 있는 원두 봉투를 꺼내 <strong>산지 고도(masl)</strong>가 적혀 있는지 확인해보세요. 없다면 — 그 브랜드가 정보를 숨기는 이유를 생각해보세요.</span>
+        </div>
+        <div class="action-step">
+          <div class="action-step-num">2</div>
+          <span>카페에서 에티오피아 싱글 오리진을 주문할 때 "예르가체프인지 시다마인지" 한 번만 물어보세요. 바리스타의 눈빛이 달라질 겁니다.</span>
+        </div>
+        <div class="action-step">
+          <div class="action-step-num">3</div>
+          <span>에티오피아 ↔ 케냐 ↔ 콜롬비아 같은 산지를 달리해 같은 추출 방법으로 사이드 바이 사이드 테이스팅을 해보세요. 고도와 토양이 얼마나 다른 컵을 만드는지 혀가 직접 배웁니다.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tags-section">
+      <div class="tag-label">해시태그</div>
+      <div class="tags">
+        <span class="tag">#스페셜티커피</span>
+        <span class="tag">#원두산지</span>
+        <span class="tag">#에티오피아커피</span>
+        <span class="tag">#예르가체프</span>
+        <span class="tag">#케냐AA</span>
+        <span class="tag">#콜롬비아커피</span>
+        <span class="tag">#커피테루아</span>
+        <span class="tag">#고산지커피</span>
+        <span class="tag">#다이렉트트레이드</span>
+        <span class="tag">#바리스타팁</span>
+        <span class="tag">#커피공부</span>
+        <span class="tag">#싱글오리진</span>
+        <span class="tag">#커피취향</span>
+      </div>
+    </div>
+
+    <div class="article-footer">
+      <p>※ 본 아티클은 스페셜티 커피에 대한 정보 제공을 목적으로 작성되었으며, 특정 제품이나 브랜드의 광고가 아닙니다.</p>
+      <p>작성일: 2026년 6월 5일 · 카테고리: 원두 산지 &amp; 농장 스토리 (주제 5번)</p>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
