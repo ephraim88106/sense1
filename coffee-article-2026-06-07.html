@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>당신이 마시는 커피, 지금 전 세계가 뒤집히고 있다 — 2026 스페셜티 커피 대격변 리포트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brown: #6b3a2a;
+    --caramel: #c8860a;
+    --espresso: #2c1810;
+    --cream: #faf7f2;
+    --light-brown: #8b5e3c;
+    --pale-caramel: #fff3d6;
+    --border: #e8d5c0;
+    --text: #2d2016;
+    --subtext: #6b5540;
+  }
+
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 16px;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  /* ── HEADER ── */
+  .article-header {
+    background: linear-gradient(135deg, var(--espresso) 0%, var(--brown) 60%, #9c5235 100%);
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .article-header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    background: rgba(200,134,10,0.15);
+    border-radius: 50%;
+  }
+  .article-header::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; left: -30px;
+    width: 160px; height: 160px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+
+  .category-badge {
+    display: inline-block;
+    background: var(--caramel);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  .article-title {
+    font-size: clamp(22px, 4vw, 34px);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .article-subtitle {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 20px;
+  }
+
+  .article-meta {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ── BODY ── */
+  .article-body {
+    background: #fff;
+    padding: 40px 36px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 24px rgba(44,24,16,0.08);
+  }
+
+  @media (max-width: 600px) {
+    .article-body { padding: 28px 20px; }
+  }
+
+  /* Hook paragraph */
+  .hook {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--brown);
+    border-left: 4px solid var(--caramel);
+    padding-left: 18px;
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+
+  /* Summary box */
+  .summary-box {
+    background: var(--pale-caramel);
+    border: 1.5px solid #f0c96a;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 36px;
+  }
+  .summary-box h3 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--caramel);
+    margin-bottom: 10px;
+  }
+  .summary-box ul {
+    list-style: none;
+    padding: 0;
+  }
+  .summary-box ul li {
+    font-size: 14px;
+    padding: 3px 0;
+    padding-left: 18px;
+    position: relative;
+    color: var(--espresso);
+  }
+  .summary-box ul li::before {
+    content: '☕';
+    position: absolute;
+    left: 0;
+    font-size: 12px;
+  }
+
+  /* Section headings */
+  h2.section-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--espresso);
+    border-left: 5px solid var(--caramel);
+    padding-left: 14px;
+    margin: 40px 0 14px;
+  }
+
+  p {
+    color: var(--text);
+    margin-bottom: 16px;
+    font-size: 15.5px;
+  }
+
+  strong { color: var(--brown); }
+
+  /* Stat highlight */
+  .stat-highlight {
+    display: inline-block;
+    background: var(--brown);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin: 0 2px;
+  }
+
+  /* Tip box */
+  .tip-box {
+    background: linear-gradient(135deg, #fff8ee, var(--pale-caramel));
+    border: 2px solid var(--caramel);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 36px 0;
+  }
+  .tip-box h3 {
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--caramel);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tip-box .tip-item {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+  .tip-box .tip-num {
+    min-width: 26px;
+    height: 26px;
+    background: var(--caramel);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .tip-box .tip-text {
+    font-size: 14px;
+    color: var(--espresso);
+    line-height: 1.65;
+  }
+
+  /* ── SVG INFOGRAPHIC ── */
+  .infographic-wrap {
+    margin: 36px 0;
+    background: #fff;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 16px;
+    overflow-x: auto;
+  }
+  .infographic-wrap h4 {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--subtext);
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── COMPARISON TABLE ── */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0 36px;
+    font-size: 14px;
+  }
+  .compare-table th {
+    background: var(--espresso);
+    color: #fff;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .compare-table th:first-child { border-radius: 8px 0 0 0; }
+  .compare-table th:last-child { border-radius: 0 8px 0 0; }
+  .compare-table td {
+    padding: 9px 14px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+    vertical-align: top;
+  }
+  .compare-table tr:nth-child(even) td { background: #fdf9f4; }
+  .compare-table tr:last-child td { border-bottom: none; }
+  .badge-up {
+    display: inline-block;
+    background: #e8f5e9;
+    color: #388e3c;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+  }
+  .badge-hot {
+    display: inline-block;
+    background: #fde8e8;
+    color: #c62828;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 10px;
+  }
+
+  /* Call to action */
+  .cta-box {
+    background: linear-gradient(135deg, var(--espresso), var(--brown));
+    border-radius: 12px;
+    padding: 28px 28px;
+    margin: 40px 0 30px;
+    color: #fff;
+    text-align: center;
+  }
+  .cta-box h3 {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+  .cta-box p {
+    color: rgba(255,255,255,0.82);
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  /* Tags */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 32px;
+  }
+  .tag {
+    font-size: 12px;
+    color: var(--light-brown);
+    background: #f3ebe0;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* Footer */
+  .article-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #9e8070;
+    line-height: 1.6;
+  }
+
+  /* Quote */
+  blockquote {
+    border-left: 4px solid var(--caramel);
+    background: #fdf9f4;
+    margin: 24px 0;
+    padding: 14px 20px;
+    font-style: italic;
+    color: var(--subtext);
+    font-size: 15px;
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote cite {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--light-brown);
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════ HEADER ══════ -->
+<div class="article-header">
+  <span class="category-badge">☕ 스페셜티 커피 트렌드</span>
+  <h1 class="article-title">당신이 마시는 커피,<br>지금 전 세계가 뒤집히고 있다</h1>
+  <p class="article-subtitle">2026 스페셜티 커피 대격변 리포트 — 가격·소비·기술·한국 시장까지 완전 해부</p>
+  <span class="article-meta">2026년 6월 7일 · 바리스타 & 커피 콘텐츠 작가</span>
+</div>
+
+<div class="container">
+<div class="article-body">
+
+  <!-- ── HOOK ── -->
+  <p class="hook">
+    "그냥 커피 한 잔인데 왜 이렇게 비싸졌어?" — 당신도 최근 이 말을 들었거나, 직접 했을 것이다. 그 이유가 기후변화, AI 혁명, 그리고 MZ세대의 입맛 때문이라면 믿겠는가?
+  </p>
+
+  <!-- ── SUMMARY BOX ── -->
+  <div class="summary-box">
+    <h3>📋 오늘 이 글에서 배울 것</h3>
+    <ul>
+      <li>2026년 글로벌 스페셜티 커피 시장 규모와 성장률 (수치 포함)</li>
+      <li>아라비카 가격이 79% 폭등한 진짜 이유</li>
+      <li>콜드브루·기능성 커피·AI 바리스타 — 3대 빅 트렌드 해부</li>
+      <li>한국 커피 시장의 양극화, 누가 살아남는가</li>
+      <li>내일 당장 써먹을 수 있는 바리스타 실전 팁 3가지</li>
+    </ul>
+  </div>
+
+  <!-- ══════ SECTION 1 ══════ -->
+  <h2 class="section-title">📈 2026 글로벌 스페셜티 커피 시장, 얼마나 커졌나</h2>
+
+  <p>
+    솔직히 말하면, 스페셜티 커피는 더 이상 "취미"가 아니다. 2025년 기준 전 세계 스페셜티 커피 시장 규모는 <strong>약 1,115억 달러(한화 약 152조 원)</strong>에 달한다. 그리고 이 수치는 2033년까지 연평균 <span class="stat-highlight">CAGR 10.8%</span>로 성장해 <strong>2,517억 달러</strong>를 넘길 것으로 전망된다.
+  </p>
+
+  <p>
+    전체 커피 시장도 마찬가지다. 글로벌 커피 시장은 2035년까지 <strong>3,975억 달러</strong>에 이를 것으로 예측된다. 한국만 봐도 2024년 커피 시장 규모는 <strong>약 15조 원</strong>이며, 2034년까지 연평균 9.7% 성장해 40조 원 이상이 될 것이라는 전망이 나온다.
+  </p>
+
+  <p>
+    가장 주목해야 할 지역은 <strong>아시아-태평양</strong>이다. 이 지역의 스페셜티 커피 성장률은 <span class="stat-highlight">CAGR 12.6%</span>로 전 세계에서 가장 빠르다. 중산층 증가와 커피 문화의 빠른 확산이 그 배경이다. 그리고 한국은 그 중심에 있다.
+  </p>
+
+  <!-- ── INFOGRAPHIC: Market Growth ── -->
+  <div class="infographic-wrap">
+    <h4>글로벌 스페셜티 커피 시장 성장 전망 (단위: 억 달러)</h4>
+    <svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;margin:0 auto;">
+      <!-- Grid lines -->
+      <line x1="80" y1="30" x2="80" y2="210" stroke="#e8d5c0" stroke-width="1"/>
+      <line x1="80" y1="210" x2="660" y2="210" stroke="#e8d5c0" stroke-width="1"/>
+      <line x1="80" y1="170" x2="660" y2="170" stroke="#f0e4d4" stroke-width="0.8" stroke-dasharray="4,4"/>
+      <line x1="80" y1="130" x2="660" y2="130" stroke="#f0e4d4" stroke-width="0.8" stroke-dasharray="4,4"/>
+      <line x1="80" y1="90" x2="660" y2="90" stroke="#f0e4d4" stroke-width="0.8" stroke-dasharray="4,4"/>
+      <line x1="80" y1="50" x2="660" y2="50" stroke="#f0e4d4" stroke-width="0.8" stroke-dasharray="4,4"/>
+
+      <!-- Y labels -->
+      <text x="70" y="214" text-anchor="end" font-size="10" fill="#9e8070">0</text>
+      <text x="70" y="174" text-anchor="end" font-size="10" fill="#9e8070">500</text>
+      <text x="70" y="134" text-anchor="end" font-size="10" fill="#9e8070">1,000</text>
+      <text x="70" y="94" text-anchor="end" font-size="10" fill="#9e8070">1,500</text>
+      <text x="70" y="54" text-anchor="end" font-size="10" fill="#9e8070">2,000+</text>
+
+      <!-- Bars: 2022, 2024, 2026(est), 2028(est), 2030(est), 2033(est) -->
+      <!-- 2022 ~650억→ height=(650/2500)*160=41.6 → y=210-41.6=168 -->
+      <rect x="100" y="177" width="60" height="33" rx="4" fill="#c8a882"/>
+      <text x="130" y="173" text-anchor="middle" font-size="10" fill="#6b3a2a" font-weight="700">~650억</text>
+      <text x="130" y="228" text-anchor="middle" font-size="11" fill="#6b5540">2022</text>
+
+      <!-- 2024 ~950억→ height=60.8 → y=210-61=149 -->
+      <rect x="195" y="152" width="60" height="58" rx="4" fill="#b8895e"/>
+      <text x="225" y="148" text-anchor="middle" font-size="10" fill="#6b3a2a" font-weight="700">~950억</text>
+      <text x="225" y="228" text-anchor="middle" font-size="11" fill="#6b5540">2024</text>
+
+      <!-- 2025 ~1115억→ height=71.4 → y=210-71=139 -->
+      <rect x="290" y="138" width="60" height="72" rx="4" fill="#9c6b40"/>
+      <text x="320" y="134" text-anchor="middle" font-size="10" fill="#6b3a2a" font-weight="700">1,115억</text>
+      <text x="320" y="228" text-anchor="middle" font-size="11" fill="#6b5540">2025</text>
+
+      <!-- 2027 ~1350억→ height=86.4 → y=210-86=124 -->
+      <rect x="385" y="123" width="60" height="87" rx="4" fill="#8b5a32"/>
+      <text x="415" y="119" text-anchor="middle" font-size="10" fill="#6b3a2a" font-weight="700">~1,350억</text>
+      <text x="415" y="228" text-anchor="middle" font-size="11" fill="#6b5540">2027(예)</text>
+
+      <!-- 2030 ~1800억→ height=115 → y=210-115=95 -->
+      <rect x="480" y="94" width="60" height="116" rx="4" fill="#7a4a28"/>
+      <text x="510" y="90" text-anchor="middle" font-size="10" fill="#6b3a2a" font-weight="700">~1,800억</text>
+      <text x="510" y="228" text-anchor="middle" font-size="11" fill="#6b5540">2030(예)</text>
+
+      <!-- 2033 ~2517억→ height=160 → y=210-160=50 -->
+      <rect x="575" y="50" width="60" height="160" rx="4" fill="#c8860a"/>
+      <text x="605" y="46" text-anchor="middle" font-size="10" fill="#c8860a" font-weight="800">2,517억</text>
+      <text x="605" y="228" text-anchor="middle" font-size="11" fill="#6b5540">2033(예)</text>
+
+      <!-- Trend arrow -->
+      <path d="M130,174 Q320,100 605,50" stroke="#c8860a" stroke-width="2" fill="none" stroke-dasharray="6,3" opacity="0.5"/>
+
+      <!-- CAGR badge -->
+      <rect x="420" y="34" width="100" height="26" rx="13" fill="#c8860a"/>
+      <text x="470" y="51" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">CAGR 10.8% ↑</text>
+
+      <text x="370" y="250" text-anchor="middle" font-size="10" fill="#b0907a">출처: Grand View Research, Coherent Market Insights 2026</text>
+    </svg>
+  </div>
+
+  <!-- ══════ SECTION 2 ══════ -->
+  <h2 class="section-title">🌡️ 아라비카 폭등 — 커피가 비싸진 진짜 이유</h2>
+
+  <p>
+    2025년 2월, 국제 아라비카 선물 가격이 <span class="stat-highlight">파운드당 $4.41</span>이라는 사상 최고치를 기록했다. 2024년 초 대비 무려 <strong>79% 상승</strong>이다. 지금 카페 메뉴판 가격이 조금씩 오른 이유, 여기 있다.
+  </p>
+
+  <p>
+    범인은 <strong>기후변화</strong>다. 세계 최대 커피 생산국인 브라질은 2023~2024년 극심한 가뭄으로 작황이 크게 줄었다. 베트남도 홍수로 건조·운반이 마비됐다. 공급은 줄었는데 수요는 늘었으니 가격이 폭등할 수밖에 없었다.
+  </p>
+
+  <p>
+    세계은행은 2026년 아라비카 가격이 <strong>13% 하락</strong>할 것으로 전망하고 있다. 좋은 소식처럼 들리지만, 사실 대부분의 바리스타들이 모르는 게 있다 — 이 하락조차도 "2020~2023년 평균보다는 구조적으로 높은 수준"이 유지된다는 뜻이다. 이른바 <strong>'뉴노멀(New Normal)'</strong>이 시작된 것이다.
+  </p>
+
+  <blockquote>
+    "2026년은 커피 가격 급등이 마무리된 게 아니라, 높은 가격대의 바닥이 굳어지는 해다."
+    <cite>— Perfect Daily Grind, 2026년 커피 산업 전망 보고서</cite>
+  </blockquote>
+
+  <!-- ══════ SECTION 3 ══════ -->
+  <h2 class="section-title">🥤 콜드브루·기능성 커피·AI 바리스타 — 3대 빅 트렌드</h2>
+
+  <p>
+    트렌드를 읽으면 다음 메뉴를 먼저 준비할 수 있다. 2026년 전 세계 스페셜티 커피 업계를 관통하는 3개의 거대한 파도를 정리했다.
+  </p>
+
+  <p>
+    <strong>① 콜드브루의 사계절화</strong><br>
+    콜드브루는 더 이상 여름 한정이 아니다. 이제 찬 음료는 겨울에도, 비 오는 날에도 팔린다. 콜드브루·나이트로 커피·아이스 에스프레소는 2026년 카페 메뉴의 핵심이며, 프리미엄 RTD(Ready-to-Drink) 형태로 편의점·마트까지 빠르게 침투하고 있다. 소비자들이 "더 부드럽고, 덜 쓰고, 더 고급스러운" 맛을 원하기 때문이다.
+  </p>
+
+  <p>
+    <strong>② 기능성 커피의 폭발적 성장</strong><br>
+    그냥 각성만 되는 커피는 이제 구세대다. 2026년의 소비자는 커피 한 잔에 <strong>집중력·장 건강·면역력</strong>까지 원한다. 라이언스 메인(사자 갈기 버섯), 아시와간다, 콜라겐, 노트로픽스(nootropics)를 섞은 기능성 커피 시장은 현재 <span class="stat-highlight">45억 달러</span>이며, 2030년까지 <span class="stat-highlight">77.8억 달러</span>로 성장한다(CAGR 11.84%). 스타벅스도 이미 이 시장에 발을 담갔다.
+  </p>
+
+  <p>
+    <strong>③ AI 바리스타와 정밀 추출</strong><br>
+    SF 영화처럼 들리겠지만, 이미 현실이다. 미국의 Artly Coffee는 AI와 모션 캡처 기술로 챔피언 바리스타의 동작을 그대로 학습한 로봇 바리스타를 운영 중이다. 블록체인 원두 이력 추적, VR 커피 테이스팅, AI 로스팅 프로파일 자동 최적화도 상용화 단계에 진입했다. 데이터가 맛을 결정하는 시대가 열리고 있다.
+  </p>
+
+  <!-- Comparison Table -->
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>트렌드</th>
+        <th>현재 시장 규모</th>
+        <th>2030년 전망</th>
+        <th>상태</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>스페셜티 커피 전체</strong></td>
+        <td>1,115억 달러</td>
+        <td>~1,800억 달러</td>
+        <td><span class="badge-up">성장 중</span></td>
+      </tr>
+      <tr>
+        <td><strong>기능성 커피</strong></td>
+        <td>45억 달러</td>
+        <td>77.8억 달러</td>
+        <td><span class="badge-hot">급성장</span></td>
+      </tr>
+      <tr>
+        <td><strong>콜드브루 / RTD</strong></td>
+        <td>최다 성장 카테고리</td>
+        <td>사계절 주력 메뉴</td>
+        <td><span class="badge-hot">급성장</span></td>
+      </tr>
+      <tr>
+        <td><strong>아시아-태평양 시장</strong></td>
+        <td>세계 2위 규모</td>
+        <td>CAGR 12.6% 세계 1위</td>
+        <td><span class="badge-up">성장 중</span></td>
+      </tr>
+      <tr>
+        <td><strong>발효 가공 원두</strong></td>
+        <td>프리미엄 틈새 시장</td>
+        <td>스페셜티 주류 편입</td>
+        <td><span class="badge-up">성장 중</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ══════ SECTION 4 ══════ -->
+  <h2 class="section-title">🇰🇷 한국 커피 시장 — 양극화의 파도</h2>
+
+  <p>
+    한국은 1인당 커피 소비량이 이미 세계 최상위권이다. 그런데 지금 시장에서 벌어지는 일은 단순한 성장이 아니라 <strong>양극화</strong>다. 한쪽에서는 한 잔에 1만 원이 넘는 게이샤 싱글 오리진을 마시는 사람들이 늘고, 다른 쪽에서는 1,500원짜리 저가 커피 브랜드가 매장 수를 폭발적으로 늘리고 있다.
+  </p>
+
+  <p>
+    MZ세대가 이 변화의 주역이다. 이들은 가치 소비에 익숙하다 — 비싸도 "나만의 경험"이 있으면 기꺼이 지갑을 연다. 원두 산지, 농장 고도, 바리스타의 전문성까지 따진다. 반면, 무난한 아메리카노 한 잔은 최대한 저렴하게 해결하려 한다.
+  </p>
+
+  <p>
+    2026년 한국 카페 시장에서 살아남으려면, 이 두 극단 중 하나를 명확히 선택해야 한다는 것이 업계 전문가들의 공통된 진단이다. 이도 저도 아닌 중간 포지션은 가장 위험하다.
+  </p>
+
+  <!-- ══════ SECTION 5 ══════ -->
+  <h2 class="section-title">🌱 지속가능성 — 이제 기본값이 되다</h2>
+
+  <p>
+    2026년 스페셜티 커피 소비자들은 맛만 보는 게 아니다. <strong>공정무역(Fair Trade), 레인포레스트 얼라이언스(Rainforest Alliance), 유기농 인증</strong>이 구매 결정에 결정적 영향을 미친다. 이는 "착한 소비"를 넘어 이제 기본 조건이 됐다.
+  </p>
+
+  <p>
+    싱가포르의 스타트업 Prefer는 음식 폐기물을 발효시켜 "원두 없는 커피"를 개발 중이다. 놀랍게도 맛은 일반 커피와 구별이 어려울 정도라고 한다. 기후변화로 아라비카 재배 가능 지역이 줄어드는 상황에서, 이런 혁신이 10년 안에 주류가 될 수도 있다.
+  </p>
+
+  <p>
+    또한 <strong>정밀 발효(Precision Fermentation)</strong>와 <strong>콘트롤드 코-퍼멘트(Controlled Co-Ferment)</strong> 가공법이 스페셜티 커피의 새로운 프런티어로 떠올랐다. 와인 양조 기법을 커피에 접목해 완전히 새로운 향미 프로파일을 만들어내는 것이다. 이 가공법으로 처리된 원두는 소위 "실험 결과물"로 CoE(Cup of Excellence) 경매에서 최고가를 갱신하고 있다.
+  </p>
+
+  <!-- ══════ TIP BOX ══════ -->
+  <div class="tip-box">
+    <h3>💡 바리스타 실전 팁 3가지 — 오늘 당장 써먹어라</h3>
+    <div class="tip-item">
+      <span class="tip-num">1</span>
+      <p class="tip-text"><strong>콜드브루 레시피 하나 완성해두기:</strong> 콜드브루는 원두:물 비율 1:8, 냉장 12시간이 기본이지만, 같은 원두라도 분쇄도와 침출 시간에 따라 맛이 완전히 달라진다. 중간 굵기 분쇄(에스프레소보다 굵게, 핸드드립보다 가늘게)로 12시간 vs. 18시간을 한 번씩 비교 테스트해보라. 당신만의 "시그니처 레시피"가 생긴다.</p>
+    </div>
+    <div class="tip-item">
+      <span class="tip-num">2</span>
+      <p class="tip-text"><strong>원두 산지 스토리를 외워두기:</strong> 소비자들이 점점 "왜 이 원두인가?"를 묻는다. 에티오피아 예르가체프는 고도 1,700~2,200m에서 재배되어 과일향이 강하고, 콜롬비아 우일라는 안데스 화산 토양 덕분에 카라멜 단맛이 특징이라는 식으로 30초 설명을 준비해두면, 손님은 단골이 된다.</p>
+    </div>
+    <div class="tip-item">
+      <span class="tip-num">3</span>
+      <p class="tip-text"><strong>기능성 재료 하나 추가 실험하기:</strong> 기능성 커피 트렌드에 올라타려면 거창할 필요 없다. 마트에서 라이언스 메인 버섯 파우더나 마카 파우더를 구입해 라떼에 소량 첨가해보자. 비율은 라떼 300ml 기준 0.5g부터 시작. 맛 변화가 거의 없으면서도 "기능성 커피"라는 새로운 메뉴 카테고리를 테스트할 수 있다.</p>
+    </div>
+  </div>
+
+  <!-- ══════ SECTION 6 ══════ -->
+  <h2 class="section-title">👤 누가 이 변화를 이끄는가 — MZ세대 데이터</h2>
+
+  <p>
+    사실 대부분의 사람들이 모르는데, 스페셜티 커피 소비를 실질적으로 이끄는 건 기성세대가 아니다. 전 세계 스페셜티 커피 구매의 <span class="stat-highlight">60%</span>가 밀레니얼·Z세대에 의해 이루어진다. 더 놀라운 건, 18~24세의 <span class="stat-highlight">46%</span>가 어제 스페셜티 커피를 마셨다는 것이다.
+  </p>
+
+  <p>
+    이들의 특징은 명확하다. 첫째, <strong>투명성을 요구</strong>한다. 원두 이력, 농장 위치, 생산자 이름, 로스팅 날짜까지 알고 싶어한다. 둘째, <strong>경험에 돈을 쓴다</strong>. 커피 자체뿐 아니라 카페 공간, 바리스타와의 대화, 인스타그램에 올릴 수 있는 비주얼까지 구매한다. 셋째, <strong>SNS로 유행을 만든다</strong>. 틱톡과 유튜브에서 커피 레시피가 수백만 뷰를 기록하는 시대다.
+  </p>
+
+  <!-- ══════ CTA ══════ -->
+  <div class="cta-box">
+    <h3>내일 당장 해볼 수 있는 단 하나의 행동</h3>
+    <p>
+      가장 가까운 스페셜티 카페에 가서 바리스타에게 딱 한 가지를 물어보라:<br>
+      <em>"오늘 원두, 어느 나라 어느 농장 건가요?"</em><br><br>
+      그 대답에 따라 그 카페가 진짜 스페셜티인지, 그냥 비싼 커피인지 알 수 있다.<br>
+      그리고 당신은 이미 남들보다 한 발 앞서 커피를 이해하기 시작한 것이다.
+    </p>
+  </div>
+
+  <!-- ── TAGS ── -->
+  <div class="tags">
+    <span class="tag">#스페셜티커피</span>
+    <span class="tag">#커피트렌드2026</span>
+    <span class="tag">#콜드브루</span>
+    <span class="tag">#기능성커피</span>
+    <span class="tag">#아라비카가격</span>
+    <span class="tag">#AI바리스타</span>
+    <span class="tag">#한국카페시장</span>
+    <span class="tag">#제3의물결</span>
+    <span class="tag">#서드웨이브커피</span>
+    <span class="tag">#바리스타팁</span>
+    <span class="tag">#커피지식</span>
+    <span class="tag">#홈카페</span>
+  </div>
+
+  <!-- ── FOOTER ── -->
+  <div class="article-footer">
+    <p>📅 작성일: 2026년 6월 7일 | ✍️ 스페셜티 커피 10년 경력 바리스타 & 콘텐츠 작가</p>
+    <p style="margin-top:8px;">본 아티클은 Grand View Research, Coherent Market Insights, Statista, Perfect Daily Grind, Beverage Daily, Symrise In-Sight, Bellwether Coffee 등 공개된 시장 조사 자료를 바탕으로 작성되었습니다. 시장 수치는 각 리서치 기관의 추정치이며 실제와 다를 수 있습니다.</p>
+  </div>
+
+</div><!-- /.article-body -->
+</div><!-- /.container -->
+
+</body>
+</html>
