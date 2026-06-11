@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카페 창업하면 월 200만원 번다는 말, 진짜일까? — 바리스타가 알려주는 수익 구조의 민낯</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #faf7f2;
+      --brown: #6b3a2a;
+      --caramel: #c8860a;
+      --espresso: #2c1810;
+      --light-brown: #a0522d;
+      --bg-card: #fff8f0;
+      --border: #e8ddd0;
+      --text: #2d2018;
+      --text-light: #7a6050;
+    }
+
+    body {
+      background: var(--cream);
+      font-family: 'Noto Sans KR', sans-serif;
+      color: var(--text);
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ===== HEADER ===== */
+    .article-header {
+      padding: 48px 0 36px;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: var(--brown);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .badge.caramel {
+      background: var(--caramel);
+    }
+
+    .date-tag {
+      font-size: 13px;
+      color: var(--text-light);
+    }
+
+    .article-title {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.4;
+      color: var(--espresso);
+      margin-bottom: 14px;
+    }
+
+    .article-subtitle {
+      font-size: 17px;
+      color: var(--text-light);
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .author-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .author-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--brown);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .author-info strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--espresso);
+    }
+
+    .author-info span {
+      font-size: 12px;
+      color: var(--text-light);
+    }
+
+    /* ===== SUMMARY BOX ===== */
+    .summary-box {
+      background: var(--espresso);
+      color: #f5ece3;
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 44px;
+    }
+
+    .summary-box h3 {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--caramel);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    .summary-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .summary-box ul li {
+      padding: 5px 0;
+      font-size: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .summary-box ul li::before {
+      content: "☑";
+      color: var(--caramel);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ===== SECTION ===== */
+    .section {
+      margin-bottom: 44px;
+    }
+
+    .section-title {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--espresso);
+      padding-left: 16px;
+      border-left: 5px solid var(--caramel);
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+
+    .section p {
+      font-size: 16px;
+      line-height: 1.9;
+      margin-bottom: 14px;
+      color: var(--text);
+    }
+
+    .highlight {
+      background: linear-gradient(180deg, transparent 60%, #f0c96a55 60%);
+      font-weight: 700;
+    }
+
+    .callout {
+      background: #fff3e0;
+      border-left: 4px solid var(--caramel);
+      border-radius: 0 10px 10px 0;
+      padding: 14px 18px;
+      margin: 18px 0;
+      font-size: 15px;
+      color: var(--espresso);
+      font-weight: 500;
+    }
+
+    /* ===== TIP BOX ===== */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8ec, #fef0d0);
+      border: 1.5px solid var(--caramel);
+      border-radius: 14px;
+      padding: 26px 28px;
+      margin: 36px 0;
+    }
+
+    .tip-box .tip-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .tip-box .tip-icon {
+      font-size: 24px;
+    }
+
+    .tip-box .tip-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--brown);
+    }
+
+    .tip-list {
+      list-style: none;
+      counter-reset: tip;
+    }
+
+    .tip-list li {
+      counter-increment: tip;
+      display: flex;
+      gap: 12px;
+      margin-bottom: 12px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .tip-list li::before {
+      content: counter(tip);
+      background: var(--brown);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ===== FAILURE BOX ===== */
+    .failure-box {
+      background: #fff5f5;
+      border: 1.5px solid #e57373;
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin: 28px 0;
+    }
+
+    .failure-box .failure-title {
+      font-size: 15px;
+      font-weight: 800;
+      color: #c62828;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .failure-box ul {
+      list-style: none;
+    }
+
+    .failure-box ul li {
+      padding: 6px 0;
+      font-size: 15px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .failure-box ul li::before {
+      content: "✗";
+      color: #e53935;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ===== SVG INFOGRAPHIC ===== */
+    .infographic-wrap {
+      margin: 36px 0;
+    }
+
+    .infographic-title {
+      text-align: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--espresso);
+      margin-bottom: 16px;
+    }
+
+    svg.infographic {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    /* ===== CTA BOX ===== */
+    .cta-box {
+      background: var(--brown);
+      color: #fff;
+      border-radius: 16px;
+      padding: 32px 28px;
+      text-align: center;
+      margin-top: 44px;
+    }
+
+    .cta-box h3 {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      font-size: 15px;
+      opacity: 0.88;
+      line-height: 1.7;
+    }
+
+    .cta-steps {
+      margin-top: 20px;
+      text-align: left;
+      display: inline-block;
+    }
+
+    .cta-steps li {
+      list-style: none;
+      padding: 6px 0;
+      font-size: 15px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .cta-steps li span.num {
+      background: var(--caramel);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ===== TAGS ===== */
+    .tags {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: var(--text-light);
+      font-weight: 500;
+    }
+
+    /* ===== FOOTER ===== */
+    .article-footer {
+      margin-top: 50px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 12px;
+      color: #b0a090;
+      line-height: 1.7;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .article-header { padding: 28px 0 24px; }
+      .section-title { font-size: 18px; }
+      .summary-box { padding: 20px; }
+      .tip-box { padding: 18px 16px; }
+      .cta-box { padding: 24px 16px; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="badge-row">
+      <span class="badge">카페 창업 · 운영</span>
+      <span class="badge caramel">실전 수익 분석</span>
+      <span class="date-tag">2026년 6월 11일</span>
+    </div>
+    <h1 class="article-title">
+      카페 창업하면 월 200만 원 번다는 말, 진짜일까?<br>
+      <span style="color:var(--caramel)">바리스타가 알려주는 수익 구조의 민낯</span>
+    </h1>
+    <p class="article-subtitle">
+      원가율 25%의 함정, 손익분기점 계산법, 폐업으로 이어지는 4가지 실수 —<br>창업 전 반드시 알아야 할 숫자들을 모두 공개합니다.
+    </p>
+    <div class="author-row">
+      <div class="author-icon">☕</div>
+      <div class="author-info">
+        <strong>스페셜티 바리스타 편집부</strong>
+        <span>업력 10년 · 카페 운영 직접 경험</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- SUMMARY BOX -->
+  <div class="summary-box">
+    <h3>📋 오늘 이 글에서 배울 것</h3>
+    <ul>
+      <li>카페 수익 구조의 실제 숫자 — 원가율, 인건비, 임대료 비율 공개</li>
+      <li>손익분기점을 계산하는 공식과 실전 시뮬레이션</li>
+      <li>카페가 망하는 4가지 공통 패턴과 예방법</li>
+      <li>2026년 생두 가격 상승 시대의 원가 절감 전략</li>
+      <li>내일 당장 써먹을 수 있는 3가지 운영 개선법</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 1 -->
+  <section class="section">
+    <h2 class="section-title">1. 훅 — "커피가 좋아서 창업했어요"가 가장 위험한 이유</h2>
+    <p>
+      사실 대부분의 사람들이 모르는데, <span class="highlight">카페는 한국에서 창업 후 3년 내 폐업률이 가장 높은 업종 중 하나</span>입니다. 2025~2026년 기준으로 국내 카페 수는 이미 포화 상태를 넘었고, 블랙워터이슈 등 업계 전문 매체는 2026년 카페 시장을 "양적 성장의 끝, 효율과 생존의 시대"로 규정했습니다.
+    </p>
+    <p>
+      그런데도 매년 수만 명이 카페 창업에 뛰어듭니다. "커피를 좋아한다", "나만의 공간을 갖고 싶다", "운영이 쉬워 보인다" — 이 세 가지 이유가 가장 흔하고, 동시에 가장 위험한 창업 동기입니다. 커피를 사랑하는 것과 사업을 이익으로 운영하는 것은 완전히 다른 능력이기 때문입니다.
+    </p>
+    <div class="callout">
+      "커피 한 잔의 원가가 400원이니까 4,500원에 팔면 많이 남겠지?" — 이 계산이 틀린 이유를 이 글에서 낱낱이 밝힙니다.
+    </div>
+  </section>
+
+  <!-- SVG INFOGRAPHIC 1: 수익 구조 -->
+  <div class="infographic-wrap">
+    <div class="infographic-title">📊 카페 매출 1,000만 원일 때 실제 돈의 흐름</div>
+    <svg class="infographic" viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg">
+      <rect width="760" height="320" fill="#fff8f0" rx="14"/>
+
+      <!-- 타이틀 -->
+      <text x="380" y="36" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="14" font-weight="700" fill="#2c1810">월 매출 1,000만 원 기준 비용 분해</text>
+
+      <!-- 막대 배경 -->
+      <rect x="60" y="55" width="640" height="46" rx="23" fill="#ede0d4"/>
+
+      <!-- 재료비 35% -->
+      <rect x="60" y="55" width="224" height="46" rx="23" fill="#6b3a2a"/>
+      <text x="172" y="83" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="13" font-weight="700" fill="#fff">재료비 35%</text>
+
+      <!-- 인건비 25% -->
+      <rect x="284" y="55" width="160" height="46" rx="0" fill="#a0522d"/>
+      <text x="364" y="83" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="13" font-weight="700" fill="#fff">인건비 25%</text>
+
+      <!-- 임대료 15% -->
+      <rect x="444" y="55" width="96" height="46" rx="0" fill="#c8860a"/>
+      <text x="492" y="83" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" font-weight="700" fill="#fff">임대 15%</text>
+
+      <!-- 기타 15% -->
+      <rect x="540" y="55" width="96" height="46" rx="0" fill="#e0b070"/>
+      <text x="588" y="83" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" font-weight="700" fill="#fff">기타 15%</text>
+
+      <!-- 순이익 10% -->
+      <rect x="636" y="55" width="64" height="46" rx="0 23 23 0" fill="#4caf50"/>
+      <text x="668" y="83" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" font-weight="700" fill="#fff">순익10%</text>
+
+      <!-- 아래 수치 -->
+      <text x="172" y="130" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="13" fill="#6b3a2a" font-weight="700">350만원</text>
+      <text x="364" y="130" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="13" fill="#a0522d" font-weight="700">250만원</text>
+      <text x="492" y="130" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="13" fill="#c8860a" font-weight="700">150만원</text>
+      <text x="588" y="130" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="13" fill="#c07030" font-weight="700">150만원</text>
+      <text x="668" y="130" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="13" fill="#388e3c" font-weight="700">100만원</text>
+
+      <!-- 목표 비율 표 -->
+      <text x="60" y="175" font-family="Noto Sans KR, sans-serif" font-size="13" font-weight="700" fill="#2c1810">✅ 건강한 카페의 비용 목표 비율</text>
+
+      <!-- 표 -->
+      <rect x="60" y="188" width="640" height="110" rx="10" fill="#fff" stroke="#e8ddd0" stroke-width="1.5"/>
+      <!-- 헤더 -->
+      <rect x="60" y="188" width="640" height="30" rx="10 10 0 0" fill="#6b3a2a"/>
+      <text x="200" y="208" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" font-weight="700" fill="#fff">항목</text>
+      <text x="400" y="208" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" font-weight="700" fill="#fff">목표 비율</text>
+      <text x="590" y="208" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" font-weight="700" fill="#fff">월 1,000만 기준</text>
+
+      <line x1="60" y1="218" x2="700" y2="218" stroke="#e8ddd0" stroke-width="1"/>
+      <text x="200" y="236" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" fill="#2c1810">재료비 (원두·식재료·포장)</text>
+      <text x="400" y="236" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" fill="#c8860a" font-weight="700">30~35% 이내</text>
+      <text x="590" y="236" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" fill="#2c1810">300~350만원</text>
+
+      <line x1="60" y1="244" x2="700" y2="244" stroke="#e8ddd0" stroke-width="1"/>
+      <text x="200" y="262" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" fill="#2c1810">인건비 (오너 인건비 포함)</text>
+      <text x="400" y="262" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" fill="#c8860a" font-weight="700">20~25% 이내</text>
+      <text x="590" y="262" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" fill="#2c1810">200~250만원</text>
+
+      <line x1="60" y1="270" x2="700" y2="270" stroke="#e8ddd0" stroke-width="1"/>
+      <text x="200" y="288" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" fill="#2c1810">임대료 (관리비 포함)</text>
+      <text x="400" y="288" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" fill="#c8860a" font-weight="700">10~15% 이내</text>
+      <text x="590" y="288" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" fill="#2c1810">100~150만원</text>
+    </svg>
+  </div>
+
+  <!-- SECTION 2 -->
+  <section class="section">
+    <h2 class="section-title">2. 원가율 25%의 진짜 의미 — 숫자를 제대로 읽어야 한다</h2>
+    <p>
+      커피 음료의 평균 원가율은 약 10~20%입니다. 아메리카노 한 잔에 들어가는 원두 원가는 200~400원 수준이고 4,500원에 팔면 원가율은 약 9%에 불과합니다. 그런데 왜 카페는 남는 게 없을까요?
+    </p>
+    <p>
+      오해는 바로 여기서 시작됩니다. <span class="highlight">원가율이 낮다 ≠ 수익이 높다.</span> 전체 매출에서 실제 '순이익'을 갉아먹는 것은 재료비가 아니라 임대료, 인건비, 감가상각비(창업비 상환), 수도광열비, 카드 수수료 등 보이지 않는 고정비들입니다.
+    </p>
+    <div class="callout">
+      💡 핵심: 카페의 평균 원가율은 <strong>전체 비용 기준으로 약 25%</strong>지만, 이것만 보면 절반도 모르는 겁니다. 고정비까지 합산하면 실질 비용 비율은 87~93%에 달합니다.
+    </div>
+    <p>
+      2023년 통계 기준 전국 평균 카페 월매출은 약 800만 원, 순이익은 200~300만 원 수준입니다. 오너가 직접 일한다면 이 200~300만 원이 곧 내 월급입니다. 직원을 쓰면 그 중 상당 부분이 추가 인건비로 나갑니다.
+    </p>
+  </section>
+
+  <!-- SECTION 3: 손익분기점 -->
+  <section class="section">
+    <h2 class="section-title">3. 손익분기점 계산, 이렇게 하면 됩니다</h2>
+    <p>
+      카페를 열기 전에 반드시 계산해야 할 숫자가 손익분기점(BEP, Break-Even Point)입니다. 이 지점 이하 매출이면 무조건 적자, 이 지점 이상이면 흑자입니다.
+    </p>
+    <p><strong>공식:</strong></p>
+    <div class="callout">
+      <strong>손익분기점 매출 = 월 고정비 ÷ (1 − 변동비율)</strong><br><br>
+      변동비율 = 변동비 ÷ 매출 (재료비, 포장재, 소모품 등)<br><br>
+      예시: 월 고정비 300만 원 / 변동비율 35% → BEP = 300만 ÷ 0.65 ≈ <strong>461만 원</strong>
+    </div>
+    <p>
+      하지만 현실에서 월 임대료 150만 원, 인건비 200만 원, 대출이자·기타 고정비 100만 원이면 고정비만 450만 원입니다. 이 경우 손익분기점은 월 약 <strong>690만 원</strong>이 됩니다. 여기에 오너 본인의 인건비(최저임금 기준 약 240만 원)까지 포함하면 실질 BEP는 <strong>월 1,000만 원을 훌쩍 넘습니다.</strong>
+    </p>
+    <p>
+      업계 통계에 따르면 일반적인 도심 카페의 손익분기점은 <strong>월 2,500~3,500만 원</strong> 수준으로, 평균 월매출 800만 원이라는 수치와의 괴리가 어마어마합니다. 이 간극이 바로 폐업으로 이어지는 가장 큰 원인입니다.
+    </p>
+  </section>
+
+  <!-- SVG INFOGRAPHIC 2: BEP 시뮬레이션 -->
+  <div class="infographic-wrap">
+    <div class="infographic-title">📈 창업비용 유형별 손익분기 도달 난이도</div>
+    <svg class="infographic" viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg">
+      <rect width="760" height="260" fill="#fff8f0" rx="14"/>
+
+      <!-- Y축 레이블 -->
+      <text x="40" y="50" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#7a6050">창업비</text>
+
+      <!-- 타입별 막대 -->
+      <!-- 무인카페 -->
+      <rect x="80" y="60" width="160" height="130" rx="8" fill="#e8f5e9"/>
+      <rect x="80" y="130" width="160" height="60" rx="0 0 8 8" fill="#66bb6a"/>
+      <text x="160" y="115" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" fill="#2e7d32" font-weight="700">무인 카페</text>
+      <text x="160" y="133" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#2e7d32">창업비: ~3,600만원</text>
+      <text x="160" y="178" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="13" fill="#fff" font-weight="700">난이도 ★★</text>
+      <text x="160" y="210" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#555">BEP 낮음</text>
+
+      <!-- 개인카페 -->
+      <rect x="300" y="40" width="160" height="150" rx="8" fill="#fff3e0"/>
+      <rect x="300" y="120" width="160" height="70" rx="0 0 8 8" fill="#ffa726"/>
+      <text x="380" y="95" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" fill="#e65100" font-weight="700">개인 카페</text>
+      <text x="380" y="113" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#e65100">창업비: 8,000~1.2억</text>
+      <text x="380" y="162" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="13" fill="#fff" font-weight="700">난이도 ★★★</text>
+      <text x="380" y="210" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#555">BEP 중간</text>
+
+      <!-- 프랜차이즈 -->
+      <rect x="520" y="20" width="160" height="170" rx="8" fill="#fce4ec"/>
+      <rect x="520" y="110" width="160" height="80" rx="0 0 8 8" fill="#ef5350"/>
+      <text x="600" y="72" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" fill="#b71c1c" font-weight="700">프랜차이즈 카페</text>
+      <text x="600" y="90" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#b71c1c">창업비: ~1억5,900만원</text>
+      <text x="600" y="152" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="13" fill="#fff" font-weight="700">난이도 ★★★★★</text>
+      <text x="600" y="210" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#555">BEP 높음 (감가상각 부담)</text>
+
+      <!-- 범례 -->
+      <rect x="80" y="230" width="14" height="14" rx="3" fill="#66bb6a"/>
+      <text x="100" y="241" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#555">낮은 초기 부담</text>
+      <rect x="220" y="230" width="14" height="14" rx="3" fill="#ffa726"/>
+      <text x="240" y="241" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#555">중간</text>
+      <rect x="310" y="230" width="14" height="14" rx="3" fill="#ef5350"/>
+      <text x="330" y="241" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#555">높은 BEP (투자 회수 오래 걸림)</text>
+    </svg>
+  </div>
+
+  <!-- SECTION 4: 실패 패턴 -->
+  <section class="section">
+    <h2 class="section-title">4. 카페가 망하는 4가지 공통 패턴</h2>
+    <p>10년간 업계에서 직접 보고 들은 실패 사례를 분석하면, 놀랍도록 비슷한 패턴이 반복됩니다.</p>
+
+    <div class="failure-box">
+      <div class="failure-title">⚠️ 공통 실패 패턴 4가지</div>
+      <ul>
+        <li><strong>입지 오판:</strong> 임대료가 저렴한 곳을 택했다가 유동인구 부족으로 6개월 내 매출 급감. "장사는 입지가 70%"라는 말은 진짜입니다. 같은 브랜드, 같은 투자금이어도 입지에 따라 매출 3배 차이가 납니다.</li>
+        <li><strong>인테리어에 과투자:</strong> 창업 예산의 50% 이상을 인테리어에 쏟아붓고 마케팅·운영 자금이 바닥난 경우. 예쁜 카페가 성공하는 게 아니라, 돈을 버는 카페가 성공합니다.</li>
+        <li><strong>메뉴 과잉 확장:</strong> 커피·디저트·브런치·굿즈까지 모두 팔려다가 식재료 로스율(버려지는 비율)이 치솟고 주방 동선이 복잡해져 인건비 낭비. 메뉴가 줄수록 이익이 늘어납니다.</li>
+        <li><strong>피크타임 의존:</strong> 출근 시간대 1~2시간에만 매출이 몰리는 구조. 나머지 8시간은 임대료와 인건비만 나가는 텅 빈 매장이 됩니다. 오후 매출 활성화 전략 없이 창업하면 반드시 위기가 옵니다.</li>
+      </ul>
+    </div>
+
+    <p>
+      특히 입지의 경우, 실제 사례로 울산 남구의 한 카페 점주는 처음에 저렴한 임대료 매장을 선택했다가 유동인구가 너무 적어 6개월 만에 이전을 결정했습니다. 임대료를 두 배로 늘렸지만, 매출은 세 배로 늘었습니다. <span class="highlight">임대료는 비용이 아니라 매출을 사는 투자</span>라는 관점 전환이 필요합니다.
+    </p>
+  </section>
+
+  <!-- SECTION 5: 2026 트렌드 -->
+  <section class="section">
+    <h2 class="section-title">5. 2026년 생존 전략 — 원두 비용 관리와 운영 효율화</h2>
+    <p>
+      2026년 카페 업계의 가장 큰 변수는 <strong>생두(green bean) 가격의 구조적 상승</strong>입니다. 기후 위기로 인한 커피 산지 작황 악화, 환율 변동, 물류비 증가가 겹치면서 원두 원가가 빠르게 오르고 있습니다. 블랙워터이슈 등 전문 매체들은 이 상황에서 살아남는 카페의 공통점으로 두 가지를 꼽습니다.
+    </p>
+    <div class="callout">
+      <strong>① 직접 로스팅</strong>으로 외부 원두 의존도 낮추기<br>
+      <strong>② 데이터 기반 운영</strong>으로 재고 낭비·인건비 낭비 제거
+    </div>
+    <p>
+      직접 로스팅의 핵심은 단순히 로스터기를 갖는 것이 아닙니다. <span class="highlight">소량 자주 로스팅 → 재고 부담 감소 + 신선도 유지 → 원두 폐기율 감소</span>라는 선순환 구조를 만드는 것입니다. 여기에 로스팅 프로파일(데이터)을 축적하면 직원이 바뀌어도 맛의 재현성을 유지할 수 있습니다.
+    </p>
+    <p>
+      소비자 트렌드도 변했습니다. "어느 농장에서, 어떻게 로스팅된 원두인지"를 설명할 수 있는 카페에 대한 신뢰도가 높아지고 있습니다. 인테리어와 추상적인 브랜드 콘셉트가 아니라 <strong>원두의 투명성과 재현 가능한 맛</strong>이 재방문을 끌어냅니다.
+    </p>
+  </section>
+
+  <!-- TIP BOX -->
+  <div class="tip-box">
+    <div class="tip-header">
+      <span class="tip-icon">💡</span>
+      <span class="tip-title">지금 당장 써먹는 실전 팁 3가지</span>
+    </div>
+    <ul class="tip-list">
+      <li>
+        <div>
+          <strong>원가율 계산 먼저, 메뉴판 나중</strong><br>
+          새 메뉴를 만들기 전에 반드시 원가율을 계산하세요. 목표: 음료 15~25%, 디저트 30% 이내. 원가율이 35%를 넘는 메뉴는 판매량이 아무리 많아도 손익 악화 주범이 됩니다. 레시피 카드에 원가를 명시하는 것부터 시작하세요.
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>오전 피크 의존 구조 탈피 — 오후 '앵커 메뉴' 만들기</strong><br>
+          오후 2~5시 매출을 끌어올릴 시그니처 메뉴(계절 음료, 한정 디저트 세트 등)를 반드시 운영하세요. 피크 이외 시간대 매출이 30%만 늘어나도 손익분기점을 훨씬 빨리 넘길 수 있습니다.
+        </div>
+      </li>
+      <li>
+        <div>
+          <strong>창업 전 3개월 POS 시뮬레이션 필수</strong><br>
+          희망 월매출에서 역산으로 일 매출, 시간당 고객 수, 객단가를 계산하세요. 예: 월 1,500만 원 목표 → 일 50만 원 → 시간당 약 7~8명 × 객단가 6,500원 이상. 이 숫자가 현실적인지 상권에서 직접 유동인구를 세어보세요.
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION 6: 행동 제안 -->
+  <section class="section">
+    <h2 class="section-title">6. 내일 당장 해볼 것 — 예비 창업자와 현 운영자를 위한 체크리스트</h2>
+    <p>
+      이 글을 읽은 후 아무것도 달라지지 않는다면 읽지 않은 것과 같습니다. 예비 창업자라면 아래 세 가지 숫자부터 계산해보세요. 이미 운영 중이라면 이 수치들을 다시 점검해보세요.
+    </p>
+  </section>
+
+  <!-- CTA BOX -->
+  <div class="cta-box">
+    <h3>☕ 지금 당장 해볼 3가지 액션</h3>
+    <p>숫자를 알아야 살아남습니다. 오늘부터 시작하세요.</p>
+    <ul class="cta-steps">
+      <li><span class="num">1</span>내 카페(혹은 목표 카페)의 월 고정비 총합을 계산하고, 손익분기점 매출을 구해보세요. (공식: 고정비 ÷ (1 − 변동비율))</li>
+      <li><span class="num">2</span>현재 메뉴판에서 원가율이 35%를 초과하는 메뉴를 찾아내고 가격 조정 또는 단종을 검토하세요.</li>
+      <li><span class="num">3</span>창업 예정지의 평일 오전 9~11시, 오후 2~5시 유동인구를 직접 30분씩 세어보세요. 수치가 목표 객수에 미치지 못하면 그 입지는 재검토가 필요합니다.</li>
+    </ul>
+  </div>
+
+  <!-- TAGS -->
+  <div class="tags">
+    <span class="tag">#카페창업</span>
+    <span class="tag">#카페운영</span>
+    <span class="tag">#원가율</span>
+    <span class="tag">#손익분기점</span>
+    <span class="tag">#카페수익구조</span>
+    <span class="tag">#바리스타</span>
+    <span class="tag">#스페셜티커피</span>
+    <span class="tag">#카페창업실패</span>
+    <span class="tag">#2026카페트렌드</span>
+    <span class="tag">#카페창업현실</span>
+    <span class="tag">#소자본창업</span>
+    <span class="tag">#커피사업</span>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="article-footer">
+    <p><strong>작성일:</strong> 2026년 6월 11일 &nbsp;|&nbsp; <strong>카테고리:</strong> 카페 창업 &amp; 운영 실전</p>
+    <p style="margin-top:8px">본 아티클은 스페셜티 커피 업계 현장 경험 및 공개된 업계 통계를 바탕으로 작성된 교육 목적의 콘텐츠입니다. 실제 창업 결정 전에는 소상공인진흥공단 등 공인 기관의 전문 상담을 권장합니다. 수치는 시장 상황에 따라 달라질 수 있습니다.</p>
+  </div>
+
+</div>
+</body>
+</html>
