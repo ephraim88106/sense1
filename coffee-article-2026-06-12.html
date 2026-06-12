@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>해발 2,000m에서 태어난 커피 한 잔 — 산지가 맛을 결정하는 진짜 이유 | 바리스타 커피 아티클</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #faf7f2;
+      --brown: #6b3a2a;
+      --caramel: #c8860a;
+      --espresso: #2c1810;
+      --light-brown: #a0522d;
+      --bg-tip: #fff8ed;
+      --border-tip: #e8a020;
+      --text-body: #3a2a20;
+      --text-muted: #7a6055;
+    }
+
+    body {
+      background-color: var(--cream);
+      font-family: 'Noto Sans KR', sans-serif;
+      color: var(--text-body);
+      line-height: 1.85;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── HEADER ── */
+    .article-header {
+      background: linear-gradient(135deg, var(--espresso) 0%, #5a2a18 60%, #8b4513 100%);
+      color: #fff;
+      padding: 50px 30px 40px;
+      margin-bottom: 40px;
+      border-radius: 0 0 24px 24px;
+    }
+
+    .category-badge {
+      display: inline-block;
+      background: var(--caramel);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      margin-bottom: 16px;
+    }
+
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 900;
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+
+    .article-header h1 em {
+      color: #f0c060;
+      font-style: normal;
+    }
+
+    .article-meta {
+      font-size: 13px;
+      opacity: 0.75;
+      margin-top: 12px;
+    }
+
+    /* ── SUMMARY BOX ── */
+    .summary-box {
+      background: #fff;
+      border-left: 5px solid var(--caramel);
+      border-radius: 0 12px 12px 0;
+      padding: 22px 26px;
+      margin: 32px 0;
+      box-shadow: 0 2px 12px rgba(107,58,42,0.08);
+    }
+
+    .summary-box h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--caramel);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .summary-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .summary-box ul li {
+      padding: 5px 0;
+      padding-left: 22px;
+      position: relative;
+      font-size: 15px;
+    }
+
+    .summary-box ul li::before {
+      content: "☕";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      font-size: 13px;
+    }
+
+    /* ── SECTION HEADINGS ── */
+    h2.section-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--espresso);
+      border-left: 5px solid var(--caramel);
+      padding-left: 14px;
+      margin: 40px 0 16px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      font-size: 15.5px;
+      color: var(--text-body);
+    }
+
+    strong { color: var(--brown); }
+
+    /* ── TIP BOX ── */
+    .tip-box {
+      background: var(--bg-tip);
+      border: 2px solid var(--border-tip);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+
+    .tip-box h3 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--brown);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tip-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tip-list li {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+
+    .tip-number {
+      background: var(--caramel);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      min-width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .tip-text { font-size: 15px; line-height: 1.7; }
+
+    /* ── HIGHLIGHT TEXT ── */
+    .highlight {
+      background: linear-gradient(120deg, #ffe0a0 0%, #ffd070 100%);
+      border-radius: 4px;
+      padding: 1px 6px;
+      font-weight: 700;
+    }
+
+    /* ── DATA TABLE ── */
+    .data-table-wrap {
+      overflow-x: auto;
+      margin: 28px 0;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(107,58,42,0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+    }
+
+    thead tr {
+      background: var(--espresso);
+      color: #fff;
+    }
+
+    thead th {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    tbody tr:nth-child(even) { background: #fdf5ec; }
+
+    tbody td {
+      padding: 11px 16px;
+      font-size: 14px;
+      border-bottom: 1px solid #f0e8dc;
+    }
+
+    /* ── INFOGRAPHIC ── */
+    .infographic-wrap {
+      margin: 36px 0;
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 2px 16px rgba(107,58,42,0.10);
+    }
+
+    .infographic-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--brown);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      border-left: 4px solid var(--caramel);
+      font-size: 15px;
+      font-style: italic;
+      color: var(--espresso);
+    }
+
+    .callout::before {
+      content: "💡 ";
+      font-style: normal;
+    }
+
+    /* ── PRODUCER CARD ── */
+    .producer-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px 26px;
+      margin: 24px 0;
+      border-top: 4px solid var(--brown);
+      box-shadow: 0 2px 12px rgba(44,24,16,0.08);
+    }
+
+    .producer-card h4 {
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--espresso);
+      margin-bottom: 10px;
+    }
+
+    .producer-card .tag {
+      display: inline-block;
+      background: var(--cream);
+      border: 1px solid var(--brown);
+      color: var(--brown);
+      font-size: 12px;
+      padding: 2px 10px;
+      border-radius: 12px;
+      margin: 0 4px 8px 0;
+    }
+
+    /* ── FOOTER ── */
+    .article-footer {
+      border-top: 2px solid #ede0d0;
+      margin-top: 48px;
+      padding-top: 28px;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .tag-list { margin-bottom: 12px; }
+
+    .tag-item {
+      display: inline-block;
+      background: #f0e4d4;
+      color: var(--brown);
+      border-radius: 16px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      margin: 0 4px 6px 0;
+    }
+
+    .disclaimer {
+      font-size: 12px;
+      color: #aa8870;
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; border-radius: 0; }
+      .container { padding: 0 14px 40px; }
+      .tip-box, .summary-box, .producer-card { padding: 18px 16px; }
+      thead th, tbody td { padding: 10px 12px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="article-header">
+  <div class="container">
+    <span class="category-badge">☕ 원두 산지 & 농장 스토리</span>
+    <h1>해발 <em>2,000m</em>에서 태어난 커피 한 잔<br>
+    — 산지가 맛을 결정하는 <em>진짜</em> 이유</h1>
+    <p style="opacity:.8;font-size:15px;margin-top:10px;">
+      에티오피아 농부의 손끝에서 당신의 컵까지, 고도·토양·기후가 만들어내는 테루아의 과학
+    </p>
+    <div class="article-meta">
+      2026년 6월 12일 &nbsp;|&nbsp; 바리스타 10년 경력 커피 칼럼니스트 &nbsp;|&nbsp; 예상 읽기 시간: 7분
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <p>
+    같은 아라비카 품종인데, 왜 에티오피아 커피는 블루베리 향이 나고 콜롬비아 커피는 캐러멜 향이 날까요?
+    답은 원두 안에 있지 않습니다. <strong>원두가 자란 땅, 하늘, 그리고 사람</strong> 안에 있습니다.
+    이것이 바로 커피 세계에서 '테루아(Terroir)'라고 부르는 개념입니다.
+    와인에서 먼저 유명해진 이 단어가 지금 스페셜티 커피 업계를 완전히 뒤흔들고 있습니다.
+  </p>
+
+  <!-- SUMMARY BOX -->
+  <div class="summary-box">
+    <h3>오늘 이 글에서 배울 것</h3>
+    <ul>
+      <li>고도가 1,000m 높아지면 맛이 어떻게 달라지는가 (과학적 메커니즘)</li>
+      <li>토양 종류(화산토 vs 점토)가 커피 향에 미치는 영향</li>
+      <li>에티오피아·케냐·콜롬비아 산지별 맛 차이의 진짜 이유</li>
+      <li>실제 생산자 이야기 — 해발 2,100m 구지 농장의 비밀</li>
+      <li>산지 정보를 읽고 원두를 선택하는 실전 가이드</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2 class="section-title">1. 테루아란 무엇인가 — 커피의 출생증명서</h2>
+
+  <p>
+    프랑스어 '테루아(terroir)'는 본래 토양을 뜻하지만, 커피 세계에서는 훨씬 넓은 개념을 포함합니다.
+    <strong>해발 고도, 토양 성분, 기온, 강수 패턴, 일조량, 바람, 그늘나무 종류</strong>까지
+    커피나무를 둘러싼 모든 환경 요인의 총합이 바로 테루아입니다.
+    2024년 제임스쿡대학교 연구팀이 발표한 논문에 따르면,
+    토양 유형·고도·비료 사용 여부·기후 조합이 싱글오리진 커피의 고유한 풍미 프로필을 결정한다는 사실이
+    실증적으로 확인되었습니다.
+  </p>
+
+  <p>
+    사실 대부분의 사람들이 모르는 게 있는데요 — 같은 게이샤(Geisha) 품종이라도
+    파나마 볼케노 화산 토양에서 자란 것과 에티오피아 구지에서 자란 것은
+    전혀 다른 컵 프로필을 가집니다. <span class="highlight">품종보다 산지가 먼저입니다.</span>
+  </p>
+
+  <!-- SECTION 2 -->
+  <h2 class="section-title">2. 고도의 마법 — 1,000m 높을수록 왜 더 맛있어지나</h2>
+
+  <p>
+    스페셜티 커피의 골든 존은 해발 <strong>1,200m~2,200m</strong>입니다.
+    이 범위를 벗어나면 COE(컵 오브 엑설런스) 입상 원두를 찾기가 어려워집니다.
+    왜일까요? 고도가 높을수록 기온이 낮아지고, 커피 체리가 천천히 익습니다.
+  </p>
+
+  <div class="callout">
+    체리가 빨리 익으면 당분이 충분히 형성되기 전에 수확됩니다. 반면 서늘한 고지대에서 느리게 익은 체리는 복합 유기산과 당분이 층층이 쌓입니다 — 이것이 곧 복합적인 과일향과 산미의 정체입니다.
+  </div>
+
+  <p>
+    고도가 올라갈수록 산소 농도가 낮아져 커피나무는 더 강한 스트레스를 받습니다.
+    스트레스를 이겨내기 위해 식물은 <strong>폴리페놀, 클로로겐산, 자당</strong> 같은
+    방어 물질을 더 많이 합성하는데, 이 성분들이 로스팅 과정에서 복잡한 향미 화합물로 전환됩니다.
+    2025년 <em>Food Research International</em>에 발표된 연구는 한발 더 나아가,
+    수확 시기(조기 vs 만기)가 같은 농장 내에서도 컵 품질을 크게 좌우한다는 것을 증명했습니다.
+  </p>
+
+  <!-- SVG INFOGRAPHIC: 고도별 맛 특성 -->
+  <div class="infographic-wrap">
+    <div class="infographic-title">📊 고도대별 커피 맛 특성 인포그래픽</div>
+    <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+      <defs>
+        <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#f9f0e4"/>
+          <stop offset="100%" stop-color="#faf7f2"/>
+        </linearGradient>
+        <linearGradient id="barHigh" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#c8860a"/>
+          <stop offset="100%" stop-color="#8b4513"/>
+        </linearGradient>
+        <linearGradient id="barMid" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#e0a040"/>
+          <stop offset="100%" stop-color="#c8860a"/>
+        </linearGradient>
+        <linearGradient id="barLow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#d4b89a"/>
+          <stop offset="100%" stop-color="#b89060"/>
+        </linearGradient>
+      </defs>
+
+      <!-- BG -->
+      <rect width="700" height="320" rx="12" fill="url(#bgGrad)"/>
+
+      <!-- Y-axis label -->
+      <text x="10" y="40" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#7a6055" font-weight="700">고도 (m)</text>
+
+      <!-- Baseline -->
+      <line x1="70" y1="260" x2="670" y2="260" stroke="#d4b89a" stroke-width="1.5"/>
+
+      <!-- HIGH ALTITUDE BAR (2,000~2,200m) -->
+      <rect x="90" y="80" width="130" height="180" rx="8" fill="url(#barHigh)"/>
+      <text x="155" y="70" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="13" font-weight="700" fill="#6b3a2a">2,000~2,200m</text>
+      <text x="155" y="56" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="11" fill="#aa6020">최고급 스페셜티</text>
+      <!-- Flavor tags -->
+      <text x="155" y="130" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="13" fill="#fff" font-weight="700">🍇 블루베리</text>
+      <text x="155" y="155" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="13" fill="#fff">🌸 자스민</text>
+      <text x="155" y="178" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="13" fill="#fff">🍋 시트러스</text>
+      <text x="155" y="201" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#ffe090">복합 산미 ★★★★★</text>
+      <text x="155" y="270" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#7a6055">에티오피아 구지</text>
+
+      <!-- MID ALTITUDE BAR (1,500~2,000m) -->
+      <rect x="280" y="120" width="130" height="140" rx="8" fill="url(#barMid)"/>
+      <text x="345" y="110" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="13" font-weight="700" fill="#6b3a2a">1,500~2,000m</text>
+      <text x="345" y="96" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="11" fill="#aa6020">프리미엄 스페셜티</text>
+      <text x="345" y="162" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="13" fill="#fff" font-weight="700">🍊 오렌지</text>
+      <text x="345" y="185" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="13" fill="#fff">🍬 캐러멜</text>
+      <text x="345" y="208" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#ffe090">균형 ★★★★☆</text>
+      <text x="345" y="270" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#7a6055">콜롬비아 우일라</text>
+
+      <!-- LOW ALTITUDE BAR (800~1,500m) -->
+      <rect x="470" y="170" width="130" height="90" rx="8" fill="url(#barLow)"/>
+      <text x="535" y="160" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="13" font-weight="700" fill="#6b3a2a">800~1,500m</text>
+      <text x="535" y="146" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="11" fill="#aa6020">커머셜 등급</text>
+      <text x="535" y="203" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="13" fill="#fff" font-weight="700">🍫 초콜릿</text>
+      <text x="535" y="226" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#fff0d0">묵직함 ★★★☆☆</text>
+      <text x="535" y="270" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#7a6055">브라질 세하도</text>
+
+      <!-- footnote -->
+      <text x="350" y="308" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="11" fill="#aa8870">* 고도는 대표적인 예시이며 품종, 가공법, 로스팅에 따라 달라질 수 있습니다</text>
+    </svg>
+  </div>
+
+  <!-- SECTION 3 -->
+  <h2 class="section-title">3. 토양이 향을 만든다 — 화산토 vs 점토의 전쟁</h2>
+
+  <p>
+    커피 농가에서 가장 탐내는 토양은 단연 <strong>화산토(Volcanic Soil)</strong>입니다.
+    파나마 보케테의 '바루 화산 토양', 케냐 Mt. 케냐 주변의 '붉은 화산 점토'가 대표적입니다.
+    화산토의 비밀은 미네랄 밀도에 있습니다. 마그네슘·칼륨·인이 풍부한 화산토는 커피나무가
+    클로로겐산과 당분을 더 효율적으로 합성하도록 돕습니다.
+    이것이 케냐 AA 원두에서 느껴지는 독특한 <strong>블랙커런트·토마토 산미</strong>의 근원입니다.
+  </p>
+
+  <p>
+    반면 콜롬비아 우일라 지역의 <strong>점토질 토양</strong>은 수분 보유력이 높아
+    건기에도 커피나무가 안정적으로 수분을 공급받습니다.
+    덕분에 일관된 품질의 달콤한 캐러멜·다크초콜릿 향의 원두가 생산되는 거죠.
+    "와인처럼 매년 맛이 다른 커피"를 원한다면 에티오피아,
+    "매번 안정적인 달달한 커피"를 원한다면 콜롬비아를 선택하면 됩니다.
+  </p>
+
+  <!-- COMPARISON TABLE -->
+  <div class="data-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>산지</th>
+          <th>고도</th>
+          <th>토양 특성</th>
+          <th>대표 향미</th>
+          <th>산미</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>에티오피아 예르가체프</strong></td>
+          <td>1,750~2,200m</td>
+          <td>적색 점토, 유기물 풍부</td>
+          <td>블루베리, 자스민, 레몬</td>
+          <td>★★★★★</td>
+        </tr>
+        <tr>
+          <td><strong>케냐 키리냐가</strong></td>
+          <td>1,500~1,800m</td>
+          <td>붉은 화산 점토(Nitisol)</td>
+          <td>블랙커런트, 토마토, 시더</td>
+          <td>★★★★☆</td>
+        </tr>
+        <tr>
+          <td><strong>콜롬비아 우일라</strong></td>
+          <td>1,400~2,000m</td>
+          <td>점토, 화산재 혼합</td>
+          <td>캐러멜, 다크초콜릿, 오렌지</td>
+          <td>★★★☆☆</td>
+        </tr>
+        <tr>
+          <td><strong>파나마 보케테</strong></td>
+          <td>1,600~2,100m</td>
+          <td>바루 화산토, 미네랄 풍부</td>
+          <td>피치, 망고, 재스민 (게이샤)</td>
+          <td>★★★★★</td>
+        </tr>
+        <tr>
+          <td><strong>브라질 세하도</strong></td>
+          <td>850~1,100m</td>
+          <td>붉은 황토(Cerrado)</td>
+          <td>너트, 밀크초콜릿, 버터</td>
+          <td>★★☆☆☆</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2 class="section-title">4. 농장 이야기 — 해발 2,100m 구지의 키다네 가족</h2>
+
+  <div class="producer-card">
+    <h4>🌿 키다네 패밀리 — 에티오피아 구지 워싱 스테이션</h4>
+    <span class="tag">에티오피아 구지</span>
+    <span class="tag">해발 2,100m</span>
+    <span class="tag">내추럴 가공</span>
+    <span class="tag">싱글 패밀리</span>
+    <p style="margin-top:10px;font-size:14.5px;">
+      키다네 가족은 2019년 Lulo Coffee를 설립하며 구지·시다마·예르가체프·웨스트 아르시 지역에
+      소규모 워싱 스테이션을 직접 운영하기 시작했습니다. 이전까지 에티오피아 소농들은 협동조합과
+      상품 거래소를 통해서만 커피를 팔 수 있었고, 자신의 이름을 단 커피를 세계 시장에 내놓는 것은
+      꿈도 꿀 수 없었습니다. 하지만 에티오피아 정부의 정책 변화로 소농도 수출 라이선스를 취득할 수 있게 되자,
+      이들은 직접 국제 로스터리와 협상하며 <strong>킬로그램당 $1.54 이상</strong>의 프리미엄을 확보했습니다.
+      이 커피 한 잔의 값이 농부의 아이 교육비가 됩니다.
+    </p>
+  </div>
+
+  <p>
+    케냐에는 2025년 기준 약 <strong>80만 명의 소농</strong>이 커피를 재배하고 있으며,
+    평균 농지 면적은 0.5헥타르에 불과합니다. 손바닥만 한 땅에서 세계 최고 품질의 SL28, SL34 품종이 자랍니다.
+    Dimitra Intelligence라는 캐나다 애그테크 기업은 케냐 소농 100만 명 이상을 디지털 플랫폼으로 연결,
+    국제 시장 직거래를 가능하게 하고 있습니다. 당신이 마시는 케냐 AA 한 잔이 이 시스템 위에 있습니다.
+  </p>
+
+  <!-- SECTION 5 -->
+  <h2 class="section-title">5. 기후변화 위기 — 우리가 좋아하는 커피가 사라지고 있다</h2>
+
+  <p>
+    좋은 소식만 있는 건 아닙니다. 에티오피아는 기후 변화로 인해 연간 약 <strong>34일의 폭염이 추가</strong>되고 있으며,
+    케냐에서는 재생 농업(Regenerative Agriculture) 전환이 필수 과제가 됐습니다.
+    기온이 1°C 오르면 커피 재배 가능 고도는 150~200m씩 올라가야 합니다.
+    이미 일부 농장은 더 높은 산지로 이동을 시작했고,
+    저지대 커피 농장은 서서히 다른 작물로 전환되고 있습니다.
+  </p>
+
+  <div class="callout">
+    스페셜티 커피를 구매하는 행위 자체가 소농의 생계를 지원하고 그들이 고지대 농장을 유지하게 하는 힘입니다. 단순히 맛있는 커피를 마시는 게 아니라, 커피 생태계를 지키는 일입니다.
+  </div>
+
+  <!-- SECTION 6 -->
+  <h2 class="section-title">6. 산지 레이블을 읽는 법 — 원두 포장에서 맛을 예측하라</h2>
+
+  <p>
+    스페셜티 원두 포장에는 보통 다음 정보가 적혀 있습니다:
+    국가 → 지역(Region) → 농장 또는 협동조합명 → 고도 → 품종 → 가공법 순입니다.
+    이 정보만 잘 읽어도 컵에 담길 맛을 80% 예측할 수 있습니다.
+  </p>
+
+  <div class="tip-box">
+    <h3>🎯 실전 팁 — 산지 정보로 원두 고르는 3가지 방법</h3>
+    <ul class="tip-list">
+      <li>
+        <span class="tip-number">1</span>
+        <span class="tip-text">
+          <strong>고도 먼저 확인하세요.</strong>
+          포장에 "1,900m"이라고 적혀 있으면 밝고 복합적인 과일향을 기대해도 됩니다.
+          "900m"이라면 묵직한 초콜릿·너트 계열입니다.
+          고도가 표기되지 않은 원두는 의심해볼 것.
+        </span>
+      </li>
+      <li>
+        <span class="tip-number">2</span>
+        <span class="tip-text">
+          <strong>산지+가공법 조합을 기억하세요.</strong>
+          "에티오피아 + 내추럴" = 발효된 과일향, 묵직한 바디.
+          "에티오피아 + 워시드" = 깨끗하고 밝은 꽃향.
+          같은 산지라도 가공법이 맛을 180도 바꿉니다.
+        </span>
+      </li>
+      <li>
+        <span class="tip-number">3</span>
+        <span class="tip-text">
+          <strong>싱글 패밀리 or 협동조합 라벨을 찾으세요.</strong>
+          "Washed Lot #3, Yirgacheffe Cooperative"처럼 구체적일수록 추적 가능성이 높고,
+          생산자에게 공정한 가격이 돌아갈 확률이 높습니다.
+          단순히 "Ethiopia Blend"는 테루아 표현이 희석됩니다.
+        </span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- CLOSING -->
+  <h2 class="section-title">내일 당장 해볼 수 있는 것</h2>
+
+  <p>
+    지금 집에 있는 원두 봉투를 꺼내세요. 국가, 지역, 고도가 적혀 있나요?
+    없다면 다음에는 이 세 가지가 적힌 원두를 사보세요.
+    있다면, 오늘 배운 내용으로 그 원두의 맛을 미리 예측해보고 실제 맛과 비교해보세요.
+    그 순간, 당신은 단순한 커피 소비자에서 <strong>커피 감별사</strong>가 됩니다.
+  </p>
+
+  <p>
+    그리고 한 가지 더 — 다음에 스페셜티 원두를 살 때,
+    조금 더 비싸더라도 <span class="highlight">농장 이름이 적힌 원두</span>를 선택해보세요.
+    그 추가 금액이 해발 2,000m 위 농부의 자녀 교육비가 됩니다.
+    맛과 의미를 동시에 담은 한 잔, 그게 진짜 스페셜티 커피입니다.
+  </p>
+
+  <!-- FOOTER -->
+  <div class="article-footer">
+    <div class="tag-list">
+      <span class="tag-item">#스페셜티커피</span>
+      <span class="tag-item">#원두산지</span>
+      <span class="tag-item">#테루아</span>
+      <span class="tag-item">#에티오피아커피</span>
+      <span class="tag-item">#케냐커피</span>
+      <span class="tag-item">#콜롬비아커피</span>
+      <span class="tag-item">#커피고도</span>
+      <span class="tag-item">#바리스타</span>
+      <span class="tag-item">#공정무역커피</span>
+      <span class="tag-item">#커피농장</span>
+    </div>
+    <p>✍️ 작성일: 2026년 6월 12일</p>
+    <p class="disclaimer">
+      이 아티클은 스페셜티 커피 산업 전문가 및 공개된 학술 자료를 바탕으로 작성되었습니다.
+      개별 원두의 맛은 로스팅 정도, 추출 방법, 보관 상태에 따라 달라질 수 있습니다.
+    </p>
+  </div>
+
+</div>
+</body>
+</html>
