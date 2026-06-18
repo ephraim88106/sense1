@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>카페 창업 3년 안에 60%가 망하는 진짜 이유 — 바리스타가 공개하는 수익 구조의 민낯</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* HEADER */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      padding: 60px 40px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 0 32px 32px;
+      margin-bottom: 48px;
+    }
+    .article-header::before {
+      content: "☕";
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.06;
+      top: -30px;
+      right: -20px;
+    }
+    .category-badge {
+      display: inline-block;
+      background: #c8860a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      padding: 5px 14px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .article-header h1 {
+      color: #fff;
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 900;
+      line-height: 1.4;
+      margin-bottom: 16px;
+    }
+    .article-header h1 em {
+      color: #f5c842;
+      font-style: normal;
+    }
+    .article-meta {
+      color: rgba(255,255,255,0.7);
+      font-size: 13px;
+    }
+    .article-meta span { margin: 0 8px; }
+
+    /* HOOK */
+    .hook-box {
+      background: #fff;
+      border-left: 5px solid #c8860a;
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #2c1810;
+      line-height: 1.6;
+      box-shadow: 0 2px 12px rgba(107,58,42,0.08);
+    }
+
+    /* SUMMARY BOX */
+    .summary-box {
+      background: #fff8ee;
+      border: 2px solid #c8860a;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .summary-box h3 {
+      color: #c8860a;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .summary-box ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .summary-box ul li {
+      padding-left: 28px;
+      position: relative;
+      font-size: 15px;
+      color: #3a2010;
+    }
+    .summary-box ul li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #c8860a;
+      font-weight: 900;
+    }
+
+    /* SECTION */
+    .section {
+      margin-bottom: 52px;
+    }
+    .section h2 {
+      font-size: clamp(18px, 3vw, 23px);
+      font-weight: 900;
+      color: #2c1810;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .section p {
+      color: #3a2010;
+      margin-bottom: 16px;
+      font-size: 15.5px;
+    }
+    .highlight {
+      background: linear-gradient(120deg, #fff3cd 0%, #ffe69a 100%);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    /* TIP BOX */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8ee, #fff3dc);
+      border: 2px solid #c8860a;
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+    .tip-box h3 {
+      color: #c8860a;
+      font-size: 15px;
+      font-weight: 900;
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      background: #c8860a;
+      color: #fff;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .tip-text {
+      font-size: 15px;
+      color: #2c1810;
+      line-height: 1.7;
+    }
+
+    /* STAT CARD ROW */
+    .stat-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .stat-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(107,58,42,0.1);
+    }
+    .stat-card .num {
+      font-size: 32px;
+      font-weight: 900;
+      color: #6b3a2a;
+      line-height: 1.1;
+    }
+    .stat-card .unit { font-size: 14px; color: #6b3a2a; font-weight: 700; }
+    .stat-card .label {
+      font-size: 12px;
+      color: #888;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* QUOTE */
+    .quote-block {
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 24px;
+      margin: 28px 0;
+      background: #fff;
+      border-radius: 0 12px 12px 0;
+      font-style: italic;
+      color: #4a2a1a;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* SVG INFOGRAPHIC */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 20px;
+      padding: 32px;
+      margin: 40px 0;
+      box-shadow: 0 4px 20px rgba(107,58,42,0.1);
+      overflow-x: auto;
+    }
+    .infographic-wrap h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #2c1810;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    /* FAILURE CASE BOX */
+    .failure-box {
+      background: #fff5f5;
+      border: 2px solid #e74c3c;
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin: 28px 0;
+    }
+    .failure-box h4 {
+      color: #c0392b;
+      font-size: 15px;
+      font-weight: 900;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .failure-box p {
+      color: #5a2020;
+      font-size: 14.5px;
+      margin-bottom: 10px;
+    }
+    .failure-box p:last-child { margin-bottom: 0; }
+
+    /* ACTION BOX */
+    .action-box {
+      background: linear-gradient(135deg, #2c1810, #6b3a2a);
+      border-radius: 20px;
+      padding: 36px 32px;
+      margin: 48px 0 0;
+      color: #fff;
+    }
+    .action-box h3 {
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 18px;
+      color: #f5c842;
+    }
+    .action-box p { color: rgba(255,255,255,0.85); margin-bottom: 12px; font-size: 15px; }
+    .action-list {
+      list-style: none;
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .action-list li {
+      padding-left: 26px;
+      position: relative;
+      font-size: 15px;
+      color: rgba(255,255,255,0.9);
+    }
+    .action-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: #c8860a;
+      font-weight: 900;
+    }
+
+    /* FOOTER */
+    .article-footer {
+      margin-top: 60px;
+      padding-top: 28px;
+      border-top: 2px solid #e8ddd0;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .tag {
+      background: #e8ddd0;
+      color: #6b3a2a;
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+    .disclaimer { font-size: 12px; color: #999; line-height: 1.6; }
+
+    @media (max-width: 540px) {
+      .article-header { padding: 40px 20px 36px; }
+      .stat-row { grid-template-columns: repeat(2, 1fr); }
+      .summary-box, .tip-box, .action-box { padding: 20px; }
+      .infographic-wrap { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+
+  <!-- HEADER -->
+  <header class="article-header">
+    <div class="category-badge">☕ 카페 창업 실전</div>
+    <h1>카페 창업 3년 안에 <em>60%가 망하는</em><br>진짜 이유 — 바리스타가 공개하는<br>수익 구조의 민낯</h1>
+    <div class="article-meta">
+      <span>2026년 6월 18일</span>
+      <span>|</span>
+      <span>스페셜티 바리스타 10년 경력</span>
+      <span>|</span>
+      <span>읽는 시간 약 8분</span>
+    </div>
+  </header>
+
+  <!-- HOOK -->
+  <div class="hook-box">
+    "커피 한 잔 팔면 얼마 남을까요?" 라고 물으면 대부분 틀린 대답을 합니다.<br>
+    아메리카노 4,500원 — 원두값 200원이면 4,300원이 남는다고요?<br>
+    <span style="color:#c8860a">그 착각이 바로 카페 창업의 무덤입니다.</span>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="summary-box">
+    <h3>📋 오늘 이 글에서 배울 것</h3>
+    <ul>
+      <li>카페 수익 구조의 실제 — 원가율·인건비·임대료 비율 완전 해부</li>
+      <li>2025~2026년 폐업률 역전 현상 — 10년 만에 처음 일어난 위기</li>
+      <li>스페셜티 카페 vs 프랜차이즈, 어느 쪽이 더 돈이 될까?</li>
+      <li>실제 실패 사례 3가지 — 내가 목격한 충격적인 현실</li>
+      <li>살아남는 카페들의 공통점 — 오늘 당장 적용할 수 있는 3가지</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 1 -->
+  <div class="section">
+    <h2>☕ 커피 한 잔의 진짜 원가 — 원두값만 계산하면 망한다</h2>
+    <p>
+      아메리카노 한 잔에 들어가는 원두는 약 18g. 시중 스페셜티 원두 1kg 가격이 25,000원이라면 원두 원가는 <span class="highlight">약 450원</span>입니다.
+      이 숫자만 보면 4,500원에 팔면 4,050원이 남는다고 느끼죠. 하지만 실제로 카페가 계산해야 할 "진짜 원가"는 전혀 다릅니다.
+    </p>
+    <p>
+      커피업계에서는 <strong>F&B 원가율(Food Cost)</strong>이라는 개념을 씁니다. 음료류(커피, 티 등)의 재료비 원가율은 판매가 대비 <span class="highlight">10~20%</span> 수준이 이상적입니다.
+      즉 4,500원짜리 아메리카노라면 재료비는 450~900원 선이 적정한 거죠. 여기까지는 좋습니다.
+    </p>
+    <p>
+      문제는 그다음입니다. 카페 운영에는 재료비 외에도 <strong>인건비·임대료·공과금·감가상각·포장재·유지보수비</strong>가 줄줄이 붙습니다.
+      업계의 황금 비율을 흔히 <span class="highlight">"30-30-30 법칙"</span>이라고 부릅니다 — 재료비 30%, 인건비 30%, 임대료+기타 30%를 합치면 매출의 90%가 나가고, 순이익은 겨우 10%라는 뜻입니다.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="num">10<span class="unit">~20%</span></div>
+        <div class="label">음료류 재료비 원가율<br>(목표 범위)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">20<span class="unit">~25%</span></div>
+        <div class="label">적정 인건비 비율<br>(매출 대비)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">10<span class="unit">~15%</span></div>
+        <div class="label">적정 임대료 비율<br>(매출 대비)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">10<span class="unit">~15%</span></div>
+        <div class="label">현실적 순이익률<br>(잘 될 경우)</div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      "전국 평균 카페 월매출은 약 800만 원, 순이익은 200~300만 원 수준입니다.
+      사실 자영업자 최저임금을 계산하면 오히려 마이너스인 경우도 많습니다."
+    </div>
+  </div>
+
+  <!-- SVG INFOGRAPHIC 1: 비용 구조 도넛 -->
+  <div class="infographic-wrap">
+    <h3>📊 카페 매출 100% 중 비용 구조 시각화</h3>
+    <svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;display:block;margin:0 auto;">
+      <!-- 도넛 차트 중심 (280,160), r=110 내부 r=65 -->
+      <defs>
+        <filter id="shadow"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.15"/></filter>
+      </defs>
+
+      <!-- 재료비 30% = 108도: 0° → 108° -->
+      <path d="M280,160 L280,50 A110,110 0 0,1 375.3,214.5 Z" fill="#c8860a" filter="url(#shadow)"/>
+      <!-- 인건비 25% = 90도: 108° → 198° -->
+      <path d="M280,160 L375.3,214.5 A110,110 0 0,1 175.0,214.5 Z" fill="#6b3a2a" filter="url(#shadow)"/>
+      <!-- 임대료 15% = 54도: 198° → 252° -->
+      <path d="M280,160 L175.0,214.5 A110,110 0 0,1 186.0,56.0 Z" fill="#e07b39" filter="url(#shadow)"/>
+      <!-- 기타고정비 20% = 72도: 252° → 324° -->
+      <path d="M280,160 L186.0,56.0 A110,110 0 0,1 369.1,91.5 Z" fill="#a0522d" filter="url(#shadow)"/>
+      <!-- 순이익 10% = 36도: 324° → 360° -->
+      <path d="M280,160 L369.1,91.5 A110,110 0 0,1 280,50 Z" fill="#27ae60" filter="url(#shadow)"/>
+
+      <!-- 내부 원 (도넛 구멍) -->
+      <circle cx="280" cy="160" r="65" fill="#fff"/>
+      <text x="280" y="152" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="13" font-weight="700" fill="#2c1810">매출</text>
+      <text x="280" y="172" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="13" font-weight="700" fill="#2c1810">100%</text>
+
+      <!-- 범례 -->
+      <rect x="430" y="70" width="16" height="16" rx="4" fill="#c8860a"/>
+      <text x="454" y="83" font-family="Noto Sans KR,sans-serif" font-size="14" fill="#2c1810">재료비 (원가) 30%</text>
+
+      <rect x="430" y="100" width="16" height="16" rx="4" fill="#6b3a2a"/>
+      <text x="454" y="113" font-family="Noto Sans KR,sans-serif" font-size="14" fill="#2c1810">인건비 25%</text>
+
+      <rect x="430" y="130" width="16" height="16" rx="4" fill="#e07b39"/>
+      <text x="454" y="143" font-family="Noto Sans KR,sans-serif" font-size="14" fill="#2c1810">임대료 15%</text>
+
+      <rect x="430" y="160" width="16" height="16" rx="4" fill="#a0522d"/>
+      <text x="454" y="173" font-family="Noto Sans KR,sans-serif" font-size="14" fill="#2c1810">기타 고정비 20%</text>
+
+      <rect x="430" y="190" width="16" height="16" rx="4" fill="#27ae60"/>
+      <text x="454" y="203" font-family="Noto Sans KR,sans-serif" font-size="14" fill="#2c1810">순이익 10%</text>
+
+      <text x="430" y="250" font-family="Noto Sans KR,sans-serif" font-size="12" fill="#888">※ 업계 평균 기준. 매장 규모·입지에 따라 상이</text>
+    </svg>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="section">
+    <h2>📉 2025년 충격적인 통계 — 폐업률이 개업률을 앞질렀다</h2>
+    <p>
+      2025년 1분기, 서울시 기준으로 커피·음료업의 폐업률(4.0%)이 개업률(3.1%)을 처음으로 앞질렀습니다.
+      이 역전 현상은 <strong>2015년 이후 10년 만에 처음</strong>입니다. 시장이 포화를 넘어 이미 수축 국면에 접어들었다는 뜻입니다.
+    </p>
+    <p>
+      더 충격적인 건 생존율 데이터입니다. 중소벤처기업부 소상공인 생존율 조사에 따르면 카페 업종의 <span class="highlight">1년 생존율 58.7%</span>,
+      <span class="highlight">3년 생존율은 겨우 39.4%</span>입니다. 3년 후에는 10개 중 6개가 사라진다는 뜻이죠.
+    </p>
+    <p>
+      연령별로 보면 20대 창업자의 폐업률은 <span class="highlight">20.4%</span>로, 50대(8.0%)의 무려 2.5배에 달합니다.
+      "나는 커피를 좋아하니까 잘할 수 있어"라는 열정만으로는 절대 버틸 수 없는 구조입니다.
+    </p>
+
+    <div class="stat-row">
+      <div class="stat-card">
+        <div class="num">58.7<span class="unit">%</span></div>
+        <div class="label">카페 1년 생존율<br>(절반 가까이 폐업)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">39.4<span class="unit">%</span></div>
+        <div class="label">카페 3년 생존율<br>(10개 중 6개 사라짐)</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">+60<span class="unit">%</span></div>
+        <div class="label">아라비카 원두 가격<br>2024→2025 상승폭</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">42.5<span class="unit">개</span></div>
+        <div class="label">서울 강남 1km² 내<br>카페 밀집 수</div>
+      </div>
+    </div>
+
+    <p>
+      설상가상으로 2025년 아라비카 원두 가격은 전년 대비 60% 이상 급등해 1톤당 8,300달러를 기록했습니다.
+      브라질·베트남 이상기후로 생산량이 급감한 탓이죠. 원가율을 지키려면 가격을 올려야 하는데,
+      이미 저가 프랜차이즈에 길들여진 소비자들은 가격 인상에 민감하게 반응합니다.
+    </p>
+  </div>
+
+  <!-- SECTION 3: 실패 사례 -->
+  <div class="section">
+    <h2>💀 내가 목격한 실패 사례 3가지 — 왜 망했는지 솔직하게</h2>
+
+    <div class="failure-box">
+      <h4>❌ 사례 1: "커피 좋아하면 잘할 줄 알았어요" — 열정만 있었던 28세 직장인</h4>
+      <p>서울 홍대 근처 13평 매장, 권리금 + 인테리어로 1억 2천만원 투자. 아메리카노 4,000원, 라떼 5,000원으로 시작했습니다.</p>
+      <p>문제: 월 임대료 240만원(매출의 25% 이상), 알바 2명 인건비 220만원, 원재료비 160만원. 월 고정비만 700만원 이상인데 월 매출은 750만원에서 벗어나지 못했습니다.</p>
+      <p><strong>결론:</strong> 18개월 만에 폐업. 순손실 약 4,500만원. "제가 임대료 계산을 매출 기준으로 안 하고 그냥 '낼 수 있겠다'고만 생각했어요."</p>
+    </div>
+
+    <div class="failure-box">
+      <h4>❌ 사례 2: "스페셜티 원두면 차별화된다" — 믿었던 품질의 배신</h4>
+      <p>경기도 분당 주택가 20평 매장. 에티오피아 예르가체프 단일 원산지만 고집, 아메리카노 6,500원. 초기 6개월은 그럭저럭 버텼습니다.</p>
+      <p>문제: 주택가 상권에서 6,500원짜리 커피는 '비싸다'는 인식이 고착됐고, 재방문율이 30% 미만으로 떨어졌습니다. 원두 품질은 훌륭했지만 마케팅을 전혀 하지 않았습니다.</p>
+      <p><strong>결론:</strong> 2년 후 폐업. "좋은 커피를 만들면 사람들이 알아서 온다"는 생각이 가장 큰 실수였습니다.</p>
+    </div>
+
+    <div class="failure-box">
+      <h4>❌ 사례 3: "직원 뽑으면 편해질 줄 알았죠" — BEP 붕괴의 교과서</h4>
+      <p>인천 부평 오피스 상권. 하루 150잔 정도 팔릴 때 직원 1명 추가 채용. 월 인건비 230만원 증가.</p>
+      <p>문제: 직원 추가 전 BEP는 월 900만원이었는데, 채용 후 BEP가 1,280만원으로 뛰었습니다. 매출은 그대로였지만 갑자기 매달 적자로 전환됐습니다.</p>
+      <p><strong>결론:</strong> "직원 한 명 뽑을 때는 반드시 그 월급만큼 매출이 늘어나는지 먼저 계산해야 했는데, 그걸 몰랐습니다."</p>
+    </div>
+  </div>
+
+  <!-- SVG INFOGRAPHIC 2: BEP 계산 도표 -->
+  <div class="infographic-wrap">
+    <h3>📐 카페 손익분기점(BEP) 시뮬레이션 — 월 고정비별 필요 매출</h3>
+    <svg viewBox="0 0 680 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;display:block;margin:0 auto;">
+      <!-- 배경 그리드 -->
+      <line x1="90" y1="30" x2="90" y2="230" stroke="#e8ddd0" stroke-width="1.5"/>
+      <line x1="90" y1="230" x2="650" y2="230" stroke="#e8ddd0" stroke-width="1.5"/>
+      <!-- 그리드 수평선 -->
+      <line x1="90" y1="80" x2="650" y2="80" stroke="#f0e8e0" stroke-width="1" stroke-dasharray="4,4"/>
+      <line x1="90" y1="130" x2="650" y2="130" stroke="#f0e8e0" stroke-width="1" stroke-dasharray="4,4"/>
+      <line x1="90" y1="180" x2="650" y2="180" stroke="#f0e8e0" stroke-width="1" stroke-dasharray="4,4"/>
+
+      <!-- Y축 레이블 (필요 월매출) -->
+      <text x="80" y="84" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#888" text-anchor="end">2,000만</text>
+      <text x="80" y="134" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#888" text-anchor="end">1,500만</text>
+      <text x="80" y="184" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#888" text-anchor="end">1,000만</text>
+      <text x="80" y="234" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#888" text-anchor="end">500만</text>
+      <text x="60" y="140" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#6b3a2a" text-anchor="middle" transform="rotate(-90,60,140)">필요 최소 월매출</text>
+
+      <!-- 원가율 40% 선 (BEP = 고정비÷0.6) -->
+      <!-- 고정비 500만 → BEP 833만, 고정비 800만 → BEP 1333만, 고정비 1100만 → BEP 1833만 -->
+      <!-- X 좌표: 500=150, 800=300, 1100=450 / Y좌표: 830만=(230-50*1.66=147)→147, 1333=(230-83.3*2)=64, 1833=(230-83.3*2.66)=8 -->
+      <!-- 단순화: X=90+(고정비-200)*0.5, Y=230-(BEP-500)*0.1 -->
+      <!-- 고정비 500 → x=240, BEP=833 → y=197 -->
+      <!-- 고정비 800 → x=390, BEP=1333 → y=147 -->
+      <!-- 고정비 1000 → x=490, BEP=1667 → y=117 -->
+      <!-- 고정비 1200 → x=590, BEP=2000 → y=87 -->
+      <polyline points="240,197 390,147 490,117 590,87" fill="none" stroke="#c8860a" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="240" cy="197" r="5" fill="#c8860a"/>
+      <circle cx="390" cy="147" r="5" fill="#c8860a"/>
+      <circle cx="490" cy="117" r="5" fill="#c8860a"/>
+      <circle cx="590" cy="87" r="5" fill="#c8860a"/>
+
+      <!-- 데이터 레이블 -->
+      <text x="240" y="215" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#6b3a2a" text-anchor="middle">500만원</text>
+      <text x="390" y="165" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#6b3a2a" text-anchor="middle">800만원</text>
+      <text x="490" y="107" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#6b3a2a" text-anchor="middle">1,000만원</text>
+      <text x="590" y="77" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#6b3a2a" text-anchor="middle">1,200만원</text>
+
+      <!-- X축 레이블 -->
+      <text x="370" y="258" font-family="Noto Sans KR,sans-serif" font-size="12" fill="#888" text-anchor="middle">↑ 월 고정비 (임대료+인건비+기타)</text>
+
+      <!-- 선 레이블 -->
+      <text x="610" y="100" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#c8860a" font-weight="700">원가율 40% 가정</text>
+      <text x="610" y="115" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#888">BEP = 고정비÷0.6</text>
+
+      <!-- 제목 -->
+      <text x="370" y="22" font-family="Noto Sans KR,sans-serif" font-size="12" fill="#2c1810" text-anchor="middle" font-weight="700">고정비가 높아질수록 필요 매출이 가파르게 상승합니다</text>
+    </svg>
+    <p style="font-size:12px;color:#888;text-align:center;margin-top:8px;">공식: BEP 매출 = 총 고정비 ÷ (1 − 변동비율) | 원가율 40% 기준</p>
+  </div>
+
+  <!-- SECTION 4 -->
+  <div class="section">
+    <h2>🏆 스페셜티 카페 vs 저가 프랜차이즈 — 솔직한 수익 비교</h2>
+    <p>
+      "스페셜티 카페를 하면 마진이 더 높겠지?"라는 생각은 반은 맞고 반은 틀립니다.
+      단건 마진율은 높지만, 객수(하루 방문 고객 수)가 프랜차이즈에 비해 훨씬 적기 때문에 총 매출이 크게 떨어집니다.
+    </p>
+    <p>
+      2025~2026년 데이터 기준으로 메가커피·빽다방 같은 저가 프랜차이즈의 연평균 매출은 <span class="highlight">약 2.5~3.7억원</span> 수준입니다.
+      반면 개인·스페셜티 카페는 잘 되는 주거상권 기준으로도 월 600만원(연 7,200만원) 수준이면 '선방'으로 봅니다.
+    </p>
+    <p>
+      그러나 반드시 알아야 할 반전이 있습니다. 소비자 이용 패턴 조사에 따르면 개인 카페 방문 시 평균 지출액은 <span class="highlight">8,157원</span>으로,
+      저가 프랜차이즈(3,500~5,000원)보다 월등히 높습니다. 단골 한 명의 가치가 저가 프랜차이즈 단골의 2배인 셈입니다.
+      즉 스페셜티 카페의 전략은 <strong>객수보다 객단가와 단골 충성도</strong>에 집중해야 한다는 뜻입니다.
+    </p>
+    <p>
+      2026년 생존 전략의 핵심은 분명합니다. <span class="highlight">소규모 고효율</span> — 대형 매장보다 배달·테이크아웃 비중을 높인 소규모 매장, 로스터리 직영으로 원두 원가 통제, 구독 모델 도입으로 안정적 고정 수익 확보가 살아남는 카페들의 공통점입니다.
+    </p>
+  </div>
+
+  <!-- SECTION 5 -->
+  <div class="section">
+    <h2>🔑 살아남는 카페들이 절대 공개하지 않는 3가지 비밀</h2>
+    <p>10년간 바리스타로 일하면서 문을 닫는 카페와 살아남는 카페를 수없이 봐왔습니다. 차이는 딱 세 가지였습니다.</p>
+
+    <p>
+      <strong>첫 번째, 임대료를 매출의 10~12% 이하로 묶는다.</strong><br>
+      살아남는 카페들은 절대 임대료가 매출의 15%를 넘지 않도록 입지 선택 때부터 역산합니다.
+      "이 자리에서 월 매출 1,200만원을 만들 수 있는가? 그럼 임대료는 최대 144만원"이라는 식으로요.
+      감으로 자리를 잡는 게 아니라, <span class="highlight">숫자로 입지를 결정</span>합니다.
+    </p>
+    <p>
+      <strong>두 번째, 제조 음료 vs 핸드헬드 음료 비중을 관리한다.</strong><br>
+      에스프레소 베이스 음료(아메리카노·라떼)는 추출 시간 30초에 원가율 15%지만,
+      프라푸치노 류는 제조 시간 3분에 원가율 35%입니다. 생산성이 완전히 다릅니다.
+      잘되는 카페들은 메뉴별 '시간당 공헌이익'을 계산해서 비효율 메뉴를 과감히 정리합니다.
+    </p>
+    <p>
+      <strong>세 번째, 오픈 첫날부터 단골 데이터를 쌓는다.</strong><br>
+      CRM(고객 관리 시스템)을 카페에서 쓴다는 게 낯설 수 있지만, 스탬프 적립 앱 하나만 있어도 됩니다.
+      월 4회 이상 방문하는 단골 고객 1명은 신규 고객 15명의 가치와 같다는 연구 결과가 있습니다.
+      단골의 재방문율을 5%만 높여도 순이익은 25~95% 증가한다는 것이 업계의 정설입니다.
+    </p>
+  </div>
+
+  <!-- TIP BOX -->
+  <div class="tip-box">
+    <h3>⚡ 바리스타가 알려주는 실전 팁 3가지 — 내일 당장 써먹으세요</h3>
+    <div class="tip-item">
+      <div class="tip-num">1</div>
+      <div class="tip-text">
+        <strong>지금 당장 '메뉴별 공헌이익'을 계산하세요.</strong><br>
+        공헌이익 = 판매가 − 변동비(재료비+포장재). 메뉴 전체에서 이 숫자를 뽑아보면 어떤 메뉴가 진짜 돈을 버는지 보입니다. 원가율 35% 이상 메뉴는 과감히 가격을 올리거나 메뉴에서 빼세요.
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">2</div>
+      <div class="tip-text">
+        <strong>"월 22일 이후가 진짜 내 돈" 원칙을 세우세요.</strong><br>
+        월 고정비가 700만원, 하루 매출 32만원이라면 22일째부터 순이익 구간에 진입합니다. 이 날짜를 매달 달력에 표시해두고, 22일 이전에는 지출을 극도로 아끼는 습관을 만드세요.
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">3</div>
+      <div class="tip-text">
+        <strong>원두 구매는 '월 사용량 × 1.1' 기준으로 발주하세요.</strong><br>
+        원두는 로스팅 후 3~4주 내 사용이 최적이므로 과재고가 곧 비용입니다. 2026년 원두 가격 상승기에 재고를 많이 쌓는 것은 오히려 현금 흐름을 막는 함정입니다. 소량 자주 발주하는 방식이 품질과 원가 모두에 유리합니다.
+      </div>
+    </div>
+  </div>
+
+  <!-- ACTION BOX -->
+  <div class="action-box">
+    <h3>☕ 내일 당장 해볼 수 있는 행동 제안</h3>
+    <p>이 글을 읽었다면, 지금 바로 계산기를 꺼내 아래 세 가지를 해보세요:</p>
+    <ul class="action-list">
+      <li><strong>내 카페의 월 고정비를 더하고</strong>, BEP 매출을 계산하세요 (고정비 ÷ 0.6). 지금 달성 가능한 수치인가요?</li>
+      <li><strong>임대료 ÷ 월 매출</strong>을 계산해 15% 이하인지 확인하세요. 넘는다면 지금이 협상 또는 이전을 고민할 시점입니다.</li>
+      <li><strong>가장 많이 팔리는 메뉴 TOP 3와 가장 원가율 높은 메뉴 TOP 3</strong>를 적어보세요. 겹치는 메뉴가 있다면 오늘 전략이 필요합니다.</li>
+    </ul>
+    <p style="margin-top:20px;color:rgba(255,255,255,0.6);font-size:13px;">
+      카페는 낭만이 아닌 수학입니다. 하지만 숫자를 이해하고 나면, 그 위에서 낭만을 누릴 수 있습니다.
+    </p>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="article-footer">
+    <div class="tags">
+      <span class="tag">#카페창업</span>
+      <span class="tag">#카페수익구조</span>
+      <span class="tag">#원가율</span>
+      <span class="tag">#BEP손익분기점</span>
+      <span class="tag">#스페셜티커피</span>
+      <span class="tag">#카페폐업률</span>
+      <span class="tag">#바리스타팁</span>
+      <span class="tag">#카페운영</span>
+      <span class="tag">#자영업</span>
+      <span class="tag">#2026창업트렌드</span>
+    </div>
+    <p class="disclaimer">
+      본 아티클은 10년 경력 바리스타의 현장 경험과 공개된 업계 통계를 바탕으로 작성되었습니다.
+      개인 매장의 수익은 입지·운영 방식에 따라 크게 다를 수 있으며, 창업 전 전문 컨설팅과 상권 분석을 병행하시길 권장합니다.
+      작성일: 2026년 6월 18일
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
