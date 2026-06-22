@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>커피가 쓴 건 원두 탓이 아니다 — 추출 변수 완전 정복</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 24px 20px 60px;
+    }
+    /* ── 헤더 ── */
+    .header {
+      border-bottom: 3px solid #6b3a2a;
+      padding-bottom: 28px;
+      margin-bottom: 36px;
+    }
+    .badge-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-block;
+      background: #6b3a2a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+    .date-label {
+      font-size: 13px;
+      color: #a08070;
+    }
+    h1 {
+      font-size: clamp(24px, 5vw, 36px);
+      font-weight: 900;
+      color: #2c1810;
+      line-height: 1.3;
+      margin-bottom: 14px;
+    }
+    h1 em {
+      color: #c8860a;
+      font-style: normal;
+    }
+    .subtitle {
+      font-size: 17px;
+      color: #5a3e35;
+      font-weight: 500;
+      border-left: 4px solid #c8860a;
+      padding-left: 14px;
+    }
+
+    /* ── 훅 ── */
+    .hook {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 28px 24px;
+      margin-bottom: 36px;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 1.9;
+    }
+    .hook strong { color: #c8860a; }
+
+    /* ── 핵심 요약 박스 ── */
+    .summary-box {
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+      background: #fff8ee;
+    }
+    .summary-box h2 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #c8860a;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 14px;
+    }
+    .summary-box ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .summary-box ul li::before {
+      content: "✔ ";
+      color: #c8860a;
+      font-weight: 700;
+    }
+
+    /* ── 본문 소제목 ── */
+    h3 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #2c1810;
+      border-left: 5px solid #c8860a;
+      padding-left: 14px;
+      margin: 44px 0 18px;
+      line-height: 1.4;
+    }
+    p { margin-bottom: 16px; color: #3d2218; }
+    strong { color: #6b3a2a; }
+
+    /* ── 팁 박스 ── */
+    .tip-box {
+      background: linear-gradient(135deg, #fff3d6 0%, #fde8b0 100%);
+      border-radius: 12px;
+      padding: 28px;
+      margin: 40px 0;
+      border-left: 5px solid #c8860a;
+    }
+    .tip-box h4 {
+      font-size: 16px;
+      font-weight: 800;
+      color: #6b3a2a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tip-box ol {
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .tip-box ol li { color: #3d2218; font-weight: 500; }
+
+    /* ── 실패 카드 ── */
+    .fail-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 28px 0;
+    }
+    @media(max-width: 540px){ .fail-grid { grid-template-columns: 1fr; } }
+    .fail-card {
+      border-radius: 10px;
+      padding: 20px;
+      border: 1.5px solid;
+    }
+    .fail-card.under {
+      background: #fff0e6;
+      border-color: #e07b3a;
+    }
+    .fail-card.over {
+      background: #fce8e8;
+      border-color: #c03030;
+    }
+    .fail-card h5 {
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+    .fail-card.under h5 { color: #b85c20; }
+    .fail-card.over h5 { color: #a02020; }
+    .fail-card ul { padding-left: 16px; font-size: 14px; color: #3d2218; }
+    .fail-card ul li { margin-bottom: 5px; }
+
+    /* ── 인포그래픽 ── */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px 16px;
+      margin: 44px 0;
+      box-shadow: 0 2px 16px rgba(44,24,16,0.09);
+      overflow-x: auto;
+    }
+    .infographic-wrap h4 {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 800;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+    }
+
+    /* ── 비교 테이블 ── */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 28px 0;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+    .compare-table thead tr {
+      background: #6b3a2a;
+      color: #fff;
+    }
+    .compare-table th, .compare-table td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid #e8d8cf;
+    }
+    .compare-table tbody tr:nth-child(even) { background: #fff8f4; }
+    .compare-table tbody tr:nth-child(odd) { background: #fff; }
+
+    /* ── 마무리 ── */
+    .outro {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 14px;
+      padding: 32px 28px;
+      margin-top: 52px;
+    }
+    .outro h4 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #c8860a;
+      margin-bottom: 16px;
+    }
+    .outro p { color: #e8d8cf; margin-bottom: 10px; }
+    .outro .action-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .outro .icon { font-size: 20px; flex-shrink: 0; }
+
+    /* ── 태그 & 하단 ── */
+    .tags {
+      margin-top: 44px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      background: #ede3da;
+      color: #6b3a2a;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer-note {
+      margin-top: 32px;
+      font-size: 12px;
+      color: #a08070;
+      border-top: 1px solid #e0d0c5;
+      padding-top: 16px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ── 헤더 ── -->
+  <div class="header">
+    <div class="badge-row">
+      <span class="badge">☕ 추출 기법</span>
+      <span class="date-label">2026년 6월 22일 · 바리스타 10년 경력 칼럼</span>
+    </div>
+    <h1>커피가 쓴 건 원두 탓이 아니다<br><em>추출 변수 완전 정복 — 에스프레소·푸어오버·콜드브루 실패 원인까지</em></h1>
+    <p class="subtitle">분쇄도 하나, 온도 2°C 차이가 당신의 커피를 망치고 있다</p>
+  </div>
+
+  <!-- ── 훅 ── -->
+  <div class="hook">
+    "<strong>이 원두는 왜 이렇게 써?</strong>" — 카페에서, 집에서, 수백 번 들었습니다.<br>
+    사실 대부분의 경우, 문제는 원두가 아닙니다.<br>
+    <strong>추출 변수</strong>를 제대로 건드리지 않은 것입니다.<br><br>
+    10년 동안 샷을 뽑으면서 깨달은 한 가지 진실 — <strong>좋은 커피의 80%는 변수 제어에서 나옵니다.</strong>
+    오늘 이 글을 읽고 나면, 더 이상 원두 탓은 하지 않게 될 겁니다.
+  </div>
+
+  <!-- ── 핵심 요약 박스 ── -->
+  <div class="summary-box">
+    <h2>📌 오늘 이 글에서 배울 것</h2>
+    <ul>
+      <li>커피 추출에서 가장 중요한 5가지 변수와 각각의 역할</li>
+      <li>과소추출 vs 과다추출 — 맛으로 즉각 진단하는 방법</li>
+      <li>에스프레소·푸어오버·콜드브루별 최적 레시피 수치</li>
+      <li>TDS와 추출 수율(Extraction Yield)이란 무엇인가</li>
+      <li>집에서 바리스타 수준으로 뽑는 실전 팁 3가지</li>
+    </ul>
+  </div>
+
+  <!-- ── 본론 1 ── -->
+  <h3>① 추출이란 무엇인가 — 커피는 "녹이는" 행위다</h3>
+  <p>커피 추출(Extraction)이란 로스팅된 원두 안에 있는 수용성 화합물을 물에 녹여내는 과정입니다. 원두의 전체 성분 중 물에 녹는 비율은 약 <strong>28~30%</strong>에 불과하며, 그 중 우리가 실제로 마시는 커피에 들어 있는 비율(추출 수율, Extraction Yield)은 <strong>18~22%</strong>가 이상적입니다.</p>
+  <p>스페셜티 커피 협회(SCA)의 연구에 따르면, 추출 수율 19~20% 구간에서 산미·단맛·바디감의 균형이 가장 우수한 것으로 나타났습니다. 이 범위보다 낮으면 <em>과소추출(under-extraction)</em>, 높으면 <em>과다추출(over-extraction)</em>이 됩니다.</p>
+  <p>또 하나의 지표는 <strong>TDS(Total Dissolved Solids, 총 용존 고형물)</strong>입니다. 쉽게 말해 커피의 "진하기"를 나타내는 수치로, 에스프레소는 8~12%, 필터 커피는 1.2~1.45%가 SCA 권장 범위입니다. TDS 측정기(굴절계)를 쓰면 집에서도 정밀하게 확인할 수 있습니다.</p>
+
+  <!-- ── 본론 2 ── -->
+  <h3>② 추출을 결정하는 5가지 핵심 변수</h3>
+  <p>추출에 영향을 주는 변수는 다양하지만, 핵심은 5가지입니다. 이 다섯 가지를 이해하면 어떤 추출 방법이든 논리적으로 조절할 수 있습니다.</p>
+
+  <div class="infographic-wrap">
+    <h4>☕ 5가지 추출 변수 — 한눈에 보기</h4>
+    <svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;display:block;margin:0 auto;">
+      <defs>
+        <linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6b3a2a"/><stop offset="100%" stop-color="#3d1e10"/></linearGradient>
+        <linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c8860a"/><stop offset="100%" stop-color="#a06c08"/></linearGradient>
+        <linearGradient id="bg3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#5a8a3c"/><stop offset="100%" stop-color="#3d6028"/></linearGradient>
+        <linearGradient id="bg4" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2e6ea6"/><stop offset="100%" stop-color="#1a4a78"/></linearGradient>
+        <linearGradient id="bg5" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#8e4a9e"/><stop offset="100%" stop-color="#5c2e6a"/></linearGradient>
+      </defs>
+      <!-- Card 1 -->
+      <rect x="10" y="20" width="130" height="150" rx="12" fill="url(#bg1)"/>
+      <text x="75" y="54" text-anchor="middle" fill="#fff" font-size="26">🌡️</text>
+      <text x="75" y="82" text-anchor="middle" fill="#c8860a" font-size="13" font-weight="800">수온</text>
+      <text x="75" y="102" text-anchor="middle" fill="#fde8c0" font-size="11">92 – 96 °C</text>
+      <text x="75" y="122" text-anchor="middle" fill="#e8c8a0" font-size="10">낮을수록→신맛</text>
+      <text x="75" y="140" text-anchor="middle" fill="#e8c8a0" font-size="10">높을수록→쓴맛</text>
+      <text x="75" y="158" text-anchor="middle" fill="#c8860a" font-size="10" font-weight="700">★ 가장 즉각적</text>
+
+      <!-- Card 2 -->
+      <rect x="150" y="20" width="130" height="150" rx="12" fill="url(#bg2)"/>
+      <text x="215" y="54" text-anchor="middle" fill="#fff" font-size="26">⚙️</text>
+      <text x="215" y="82" text-anchor="middle" fill="#fff" font-size="13" font-weight="800">분쇄도</text>
+      <text x="215" y="102" text-anchor="middle" fill="#fff3d0" font-size="11">가늘→추출↑</text>
+      <text x="215" y="122" text-anchor="middle" fill="#fff3d0" font-size="11">굵을→추출↓</text>
+      <text x="215" y="142" text-anchor="middle" fill="#fff3d0" font-size="10">에스프: 고움</text>
+      <text x="215" y="160" text-anchor="middle" fill="#fff3d0" font-size="10">푸어오버: 중간</text>
+
+      <!-- Card 3 -->
+      <rect x="290" y="20" width="130" height="150" rx="12" fill="url(#bg3)"/>
+      <text x="355" y="54" text-anchor="middle" fill="#fff" font-size="26">⚖️</text>
+      <text x="355" y="82" text-anchor="middle" fill="#c8f0a0" font-size="13" font-weight="800">브루 비율</text>
+      <text x="355" y="102" text-anchor="middle" fill="#e0f8c8" font-size="11">커피:물 비율</text>
+      <text x="355" y="122" text-anchor="middle" fill="#e0f8c8" font-size="10">에스프: 1:2~2.5</text>
+      <text x="355" y="142" text-anchor="middle" fill="#e0f8c8" font-size="10">푸어오버: 1:15~17</text>
+      <text x="355" y="162" text-anchor="middle" fill="#e0f8c8" font-size="10">콜드브루: 1:8~10</text>
+
+      <!-- Card 4 -->
+      <rect x="430" y="20" width="130" height="150" rx="12" fill="url(#bg4)"/>
+      <text x="495" y="54" text-anchor="middle" fill="#fff" font-size="26">⏱️</text>
+      <text x="495" y="82" text-anchor="middle" fill="#a8d8ff" font-size="13" font-weight="800">추출 시간</text>
+      <text x="495" y="102" text-anchor="middle" fill="#d0eaff" font-size="10">에스프: 25~32s</text>
+      <text x="495" y="122" text-anchor="middle" fill="#d0eaff" font-size="10">푸어오버: 2:30~3:00</text>
+      <text x="495" y="142" text-anchor="middle" fill="#d0eaff" font-size="10">콜드브루: 12~24h</text>
+      <text x="495" y="162" text-anchor="middle" fill="#d0eaff" font-size="10">시간 ↑→추출↑</text>
+
+      <!-- Card 5 -->
+      <rect x="570" y="20" width="130" height="150" rx="12" fill="url(#bg5)"/>
+      <text x="635" y="54" text-anchor="middle" fill="#fff" font-size="26">💧</text>
+      <text x="635" y="82" text-anchor="middle" fill="#e0c0ff" font-size="13" font-weight="800">물 품질</text>
+      <text x="635" y="102" text-anchor="middle" fill="#f0d8ff" font-size="11">경도 75~150 ppm</text>
+      <text x="635" y="122" text-anchor="middle" fill="#f0d8ff" font-size="10">너무 경도 낮음→</text>
+      <text x="635" y="140" text-anchor="middle" fill="#f0d8ff" font-size="10">밍밍한 맛</text>
+      <text x="635" y="160" text-anchor="middle" fill="#f0d8ff" font-size="10">필터 정수물 권장</text>
+
+      <!-- Bottom note -->
+      <text x="360" y="200" text-anchor="middle" fill="#6b3a2a" font-size="13" font-weight="700">▼ 모든 변수는 서로 연결되어 있다 — 하나를 바꾸면 나머지도 바꿔야 한다</text>
+
+      <!-- Arrow/flow diagram -->
+      <rect x="60" y="220" width="590" height="50" rx="10" fill="#fff3e0" stroke="#c8860a" stroke-width="1.5"/>
+      <text x="75" y="252" fill="#6b3a2a" font-size="12" font-weight="700">분쇄도 가늘게 ▶</text>
+      <text x="210" y="252" fill="#a06c08" font-size="11">물 통과 저항 ↑ ▶</text>
+      <text x="335" y="252" fill="#a06c08" font-size="11">추출 시간 ↑ ▶</text>
+      <text x="445" y="252" fill="#a06c08" font-size="11">TDS·수율 ↑ ▶</text>
+      <text x="555" y="252" fill="#c03030" font-size="11">쓴맛 위험 ▶</text>
+
+      <rect x="60" y="290" width="590" height="50" rx="10" fill="#fff0f0" stroke="#e07a3a" stroke-width="1.5"/>
+      <text x="75" y="322" fill="#6b3a2a" font-size="12" font-weight="700">수온 낮추기  ▶</text>
+      <text x="210" y="322" fill="#a06c08" font-size="11">용해도 ↓ ▶</text>
+      <text x="310" y="322" fill="#a06c08" font-size="11">수율 ↓ ▶</text>
+      <text x="405" y="322" fill="#a06c08" font-size="11">신맛·짠맛 위험 ▶</text>
+      <text x="545" y="322" fill="#3a7a20" font-size="11">보정: 분쇄 가늘게</text>
+    </svg>
+  </div>
+
+  <!-- ── 본론 3 ── -->
+  <h3>③ 과소추출 vs 과다추출 — 입으로 진단하는 법</h3>
+  <p>사실 대부분의 사람들이 모르는데, 커피 맛의 문제는 <strong>혀가 가장 먼저 알아챕니다.</strong> 측정 장비 없이도, 아래 특성만 파악하면 즉시 문제를 진단할 수 있습니다.</p>
+
+  <div class="fail-grid">
+    <div class="fail-card under">
+      <h5>😣 과소추출 (Under-extraction)</h5>
+      <ul>
+        <li>날카로운 신맛, 짠맛</li>
+        <li>바디감이 얇고 밍밍함</li>
+        <li>여운이 빠르게 사라짐</li>
+        <li>커피향이 거의 없음</li>
+      </ul>
+      <p style="margin-top:10px;font-size:13px;color:#b85c20;font-weight:600;">→ 분쇄도 가늘게 / 수온 올리기 / 추출 시간 늘리기</p>
+    </div>
+    <div class="fail-card over">
+      <h5>😖 과다추출 (Over-extraction)</h5>
+      <ul>
+        <li>강하고 불쾌한 쓴맛</li>
+        <li>떫은 뒷맛, 수렴성</li>
+        <li>공허한 단맛 (인위적)</li>
+        <li>목에 걸리는 텁텁함</li>
+      </ul>
+      <p style="margin-top:10px;font-size:13px;color:#a02020;font-weight:600;">→ 분쇄도 굵게 / 수온 낮추기 / 추출 시간 줄이기</p>
+    </div>
+  </div>
+
+  <!-- ── 본론 4 ── -->
+  <h3>④ 추출법별 완전 레시피 — 에스프레소·푸어오버·콜드브루</h3>
+  <p>각 추출법은 서로 다른 물리적 메커니즘으로 작동합니다. 에스프레소는 고압·단시간, 푸어오버는 중력·중시간, 콜드브루는 저온·장시간이라는 극명한 차이가 있습니다.</p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>항목</th>
+        <th>☕ 에스프레소</th>
+        <th>🫗 푸어오버</th>
+        <th>🧊 콜드브루</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>원두 : 물</td><td>1 : 2 ~ 2.5</td><td>1 : 15 ~ 17</td><td>1 : 8 ~ 10</td></tr>
+      <tr><td>수온</td><td>90 ~ 96 °C</td><td>92 ~ 96 °C</td><td>상온 or 냉장</td></tr>
+      <tr><td>분쇄도</td><td>매우 고움 (설탕 입자)</td><td>중간 (굵은 소금)</td><td>굵음 (원두 반쪽)</td></tr>
+      <tr><td>압력</td><td>9 bar (표준)</td><td>중력 (0 bar)</td><td>중력 (0 bar)</td></tr>
+      <tr><td>추출 시간</td><td>25 ~ 32 초</td><td>2분 30초 ~ 3분</td><td>12 ~ 24 시간</td></tr>
+      <tr><td>이상적 TDS</td><td>8 ~ 12 %</td><td>1.2 ~ 1.45 %</td><td>4 ~ 6 % (원액)</td></tr>
+      <tr><td>이상적 수율</td><td>18 ~ 22 %</td><td>18 ~ 22 %</td><td>16 ~ 20 %</td></tr>
+    </tbody>
+  </table>
+
+  <!-- ── 본론 5 ── -->
+  <h3>⑤ 2026년 추출 트렌드 — 압력 프로파일링의 대중화</h3>
+  <p>2026년 현재, 커피 추출에서 가장 주목받는 기술은 <strong>압력 프로파일링(Pressure Profiling)</strong>입니다. 에스프레소 추출 전 과정에서 압력을 동적으로 조절하는 이 기술은 과거 수천만원대 상업용 장비의 전유물이었지만, 이제는 <strong>프로슈머 머신에서도 표준</strong>이 되고 있습니다.</p>
+  <p>또한 에스프레소 샷의 시간·중량 데이터를 그라인더로 자동 전송해 분쇄도를 실시간 보정하는 <strong>스마트 자동화 기술</strong>도 카페 현장에 빠르게 도입되고 있습니다. "실패 없는 에스프레소"가 기술적으로 가능해진 시대입니다.</p>
+  <p>푸어오버 분야에서는 라마르조코의 모드바 시스템처럼 유량·온도·시간 프로파일을 정밀 프로그래밍할 수 있는 장비가 고급 카페를 중심으로 확산 중입니다. 재현성과 일관성이 스페셜티 커피의 핵심 키워드로 자리잡고 있습니다.</p>
+
+  <!-- ── 본론 6 ── -->
+  <h3>⑥ 집에서 바리스타처럼 뽑는 법 — 장비보다 중요한 것</h3>
+  <p>"좋은 장비가 있어야 좋은 커피가 나온다"는 말은 <strong>절반만 맞습니다.</strong> 수백만원짜리 장비로 변수를 무시하면 형편없는 커피가 나옵니다. 반대로, 기본 장비라도 5가지 변수를 이해하고 제어하면 카페 수준의 결과물이 충분히 가능합니다.</p>
+  <p>핵심은 딱 하나입니다 — <strong>한 번에 하나의 변수만 바꿀 것.</strong> 분쇄도와 온도를 동시에 바꾸면 무엇이 맛을 바꿨는지 알 수 없습니다. 과학적인 실험처럼 접근해야 합니다.</p>
+
+  <!-- ── 실전 팁 박스 ── -->
+  <div class="tip-box">
+    <h4>☕ 실전 팁 3가지 — 내일 당장 써먹을 수 있는 조언</h4>
+    <ol>
+      <li><strong>커피 저울을 사라 (1만원대도 충분).</strong> 눈대중으로 커피를 넣는 순간부터 재현이 불가능해집니다. 원두 무게와 추출 중량을 모두 재는 습관이 커피 실력을 10배 올립니다.</li>
+      <li><strong>맛이 이상하면 분쇄도 먼저 의심하라.</strong> 쓰면 굵게, 시고 짜면 가늘게 — 온도보다 분쇄도가 가장 즉각적이고 효과적인 조절 수단입니다.</li>
+      <li><strong>뜸들이기(Bloom/Pre-infusion)를 생략하지 마라.</strong> 원두에 물을 먼저 소량 부어 30~45초간 CO₂를 빼주면 이후 추출이 훨씬 균일해집니다. 신선한 원두일수록 이 단계가 결정적입니다.</li>
+    </ol>
+  </div>
+
+  <!-- ── 추출 변수 영향도 SVG 인포그래픽 ── -->
+  <div class="infographic-wrap">
+    <h4>📊 추출 변수 영향도 — 어떤 변수가 가장 큰 차이를 만드나?</h4>
+    <svg viewBox="0 0 660 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:660px;display:block;margin:0 auto;">
+      <!-- 바탕 -->
+      <rect x="0" y="0" width="660" height="260" rx="0" fill="#faf7f2"/>
+      <!-- y축 레이블 -->
+      <text x="14" y="40" fill="#a08070" font-size="11">영향 높음</text>
+      <text x="14" y="200" fill="#a08070" font-size="11">영향 낮음</text>
+      <!-- 가이드 라인 -->
+      <line x1="120" y1="30" x2="630" y2="30" stroke="#e8d8cf" stroke-width="1"/>
+      <line x1="120" y1="80" x2="630" y2="80" stroke="#e8d8cf" stroke-width="1"/>
+      <line x1="120" y1="130" x2="630" y2="130" stroke="#e8d8cf" stroke-width="1"/>
+      <line x1="120" y1="180" x2="630" y2="180" stroke="#e8d8cf" stroke-width="1"/>
+      <line x1="120" y1="220" x2="630" y2="220" stroke="#6b3a2a" stroke-width="1.5"/>
+
+      <!-- 막대: 분쇄도 -->
+      <rect x="135" y="38" width="70" height="182" rx="6" fill="#6b3a2a"/>
+      <text x="170" y="34" text-anchor="middle" fill="#6b3a2a" font-size="11" font-weight="800">95%</text>
+      <text x="170" y="238" text-anchor="middle" fill="#6b3a2a" font-size="12" font-weight="700">분쇄도</text>
+
+      <!-- 막대: 수온 -->
+      <rect x="245" y="58" width="70" height="162" rx="6" fill="#c8860a"/>
+      <text x="280" y="54" text-anchor="middle" fill="#c8860a" font-size="11" font-weight="800">85%</text>
+      <text x="280" y="238" text-anchor="middle" fill="#6b3a2a" font-size="12" font-weight="700">수온</text>
+
+      <!-- 막대: 브루 비율 -->
+      <rect x="355" y="78" width="70" height="142" rx="6" fill="#5a8a3c"/>
+      <text x="390" y="74" text-anchor="middle" fill="#5a8a3c" font-size="11" font-weight="800">75%</text>
+      <text x="390" y="238" text-anchor="middle" fill="#6b3a2a" font-size="12" font-weight="700">브루 비율</text>
+
+      <!-- 막대: 추출 시간 -->
+      <rect x="465" y="108" width="70" height="112" rx="6" fill="#2e6ea6"/>
+      <text x="500" y="104" text-anchor="middle" fill="#2e6ea6" font-size="11" font-weight="800">59%</text>
+      <text x="500" y="238" text-anchor="middle" fill="#6b3a2a" font-size="12" font-weight="700">추출 시간</text>
+
+      <!-- 막대: 물 품질 -->
+      <rect x="565" y="148" width="55" height="72" rx="6" fill="#8e4a9e"/>
+      <text x="592" y="144" text-anchor="middle" fill="#8e4a9e" font-size="11" font-weight="800">38%</text>
+      <text x="592" y="238" text-anchor="middle" fill="#6b3a2a" font-size="12" font-weight="700">물 품질</text>
+
+      <text x="330" y="258" text-anchor="middle" fill="#a08070" font-size="10">* 바리스타 경험치 기반 상대적 영향도 (추출 수율에 미치는 즉각적 변화 기준)</text>
+    </svg>
+  </div>
+
+  <!-- ── 마무리 ── -->
+  <div class="outro">
+    <h4>☕ 내일 당장 해볼 수 있는 것</h4>
+    <div class="action-item">
+      <span class="icon">1️⃣</span>
+      <p>지금 마시는 커피 한 잔을 천천히 음미하며 과소추출인지 과다추출인지 진단해 보세요. 신맛이 날카롭다면 과소, 씁쓸하고 텁텁하다면 과다입니다.</p>
+    </div>
+    <div class="action-item">
+      <span class="icon">2️⃣</span>
+      <p>다음 브루잉 때 <strong>분쇄도만 바꾸고</strong> 나머지는 동일하게 유지한 뒤 맛을 비교해 보세요. 한 번에 하나의 변수만 바꾸는 것이 추출 실력을 키우는 가장 빠른 방법입니다.</p>
+    </div>
+    <div class="action-item">
+      <span class="icon">3️⃣</span>
+      <p>저울을 구매하지 않으셨다면 오늘이 바로 사야 할 날입니다. 1만원대 주방 저울 하나가 당신의 커피 경험을 완전히 바꿔줍니다.</p>
+    </div>
+    <p style="margin-top:16px;color:#c8860a;font-weight:700;">"좋은 커피는 비싼 원두에서 오지 않는다. 정확한 변수 제어에서 온다." — 현장 바리스타의 10년 결론</p>
+  </div>
+
+  <!-- ── 태그 ── -->
+  <div class="tags">
+    <span class="tag">#스페셜티커피</span>
+    <span class="tag">#커피추출</span>
+    <span class="tag">#에스프레소</span>
+    <span class="tag">#푸어오버</span>
+    <span class="tag">#콜드브루</span>
+    <span class="tag">#TDS</span>
+    <span class="tag">#추출수율</span>
+    <span class="tag">#바리스타팁</span>
+    <span class="tag">#홈카페</span>
+    <span class="tag">#커피변수</span>
+    <span class="tag">#커피공부</span>
+    <span class="tag">#분쇄도</span>
+    <span class="tag">#과소추출</span>
+    <span class="tag">#과다추출</span>
+    <span class="tag">#압력프로파일링</span>
+  </div>
+
+  <div class="footer-note">
+    작성일: 2026-06-22 &nbsp;|&nbsp; 카테고리: 커피 추출 기법 심층 가이드 &nbsp;|&nbsp;
+    본 아티클은 SCA(Specialty Coffee Association) 브루잉 기준 및 바리스타 현장 경험을 기반으로 작성되었습니다.
+    개인의 미각 차이에 따라 최적 수치는 다를 수 있으며, 기재된 수치는 일반적인 권장 범위입니다.
+  </div>
+
+</div>
+</body>
+</html>
