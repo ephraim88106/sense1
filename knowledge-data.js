@@ -1,5 +1,21 @@
 export const knowledgeArticles = [
   {
+    id: 90, emoji: "🤖", category: "글로벌 트렌드",
+    categoryColor: { bg: "#ede9fe", text: "#5b21b6" },
+    title: "AI가 내 커피를 골라준다고? 2026년 스페셜티 커피 시장의 충격적인 변화 5가지",
+    date: "2026.06.28",
+    summary: "2026년 스페셜티 커피 시장은 AI·QR·AR 기술이 소비 경험을 바꾸고, 블루보틀의 루이싱 인수, 아시아태평양 시장의 폭발적 성장, 한국 카페 시장의 'B.E.Y.O.N.D' 키워드, 홈카페와 기능성 커피의 진화까지 — 숫자와 현장 사례로 분석한 스페셜티 커피 트렌드 완전 정복.",
+    link: "coffee-article-2026-06-28.html"
+  },
+  {
+    id: 89, emoji: "🌱", category: "커피 품종 & 가공법",
+    categoryColor: { bg: "#d1fae5", text: "#065f46" },
+    title: "게이샤는 왜 kg당 4천만원인가 — 커피 품종과 가공법의 모든 것",
+    date: "2026.06.27",
+    summary: "게이샤가 2025년 경매에서 kg당 4,200만원을 찍은 이유, SL28이 케냐 커피를 세계 최고로 만든 과학, 워시드·내추럴·허니 가공법이 같은 원두를 전혀 다른 맛으로 바꾸는 과정, 무산소발효(Anaerobic) 가공법의 원리, 그리고 내일 카페에서 바로 써먹는 원두 선택 공식 — 커피 품종과 가공법의 모든 것을 완전 해부.",
+    link: "coffee-article-2026-06-27.html"
+  },
+  {
     id: 88, emoji: "🌍", category: "산지",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "고도 300m마다 커피 당도가 10% 오른다 — 산지가 맛을 결정하는 진짜 이유",
