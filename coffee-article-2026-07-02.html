@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>원두가 탈 때 생기는 일 — 로스팅 온도 1℃가 당신의 커피를 완전히 바꾸는 이유</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --brown: #6b3a2a;
+      --caramel: #c8860a;
+      --espresso: #2c1810;
+      --cream: #faf7f2;
+      --light-tan: #f0e8d8;
+      --mid-tan: #e8d5b0;
+      --text: #2d2218;
+      --subtext: #6b5b4e;
+    }
+    body { background: var(--cream); font-family: 'Noto Sans KR', sans-serif; color: var(--text); line-height: 1.8; padding: 0 16px 60px; }
+    .wrapper { max-width: 800px; margin: 0 auto; }
+    header { padding: 40px 0 32px; border-bottom: 2px solid var(--mid-tan); margin-bottom: 36px; }
+    .badge-row { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+    .badge { display: inline-block; background: var(--brown); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; padding: 4px 12px; border-radius: 20px; text-transform: uppercase; }
+    .badge.caramel { background: var(--caramel); }
+    .date { font-size: 13px; color: var(--subtext); }
+    h1 { font-size: clamp(22px, 4.5vw, 34px); font-weight: 900; color: var(--espresso); line-height: 1.4; margin-bottom: 16px; }
+    .subtitle { font-size: 16px; color: var(--subtext); font-weight: 400; }
+    .summary-box { background: var(--espresso); color: #f5e8d5; border-radius: 12px; padding: 24px 28px; margin-bottom: 36px; }
+    .summary-box h2 { font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--caramel); margin-bottom: 14px; }
+    .summary-box ul { padding-left: 20px; }
+    .summary-box li { font-size: 14px; line-height: 1.9; margin-bottom: 4px; }
+    .hook { font-size: 18px; font-weight: 500; color: var(--brown); border-left: 4px solid var(--caramel); padding-left: 20px; margin-bottom: 32px; line-height: 1.9; }
+    h3 { font-size: clamp(17px, 3vw, 21px); font-weight: 700; color: var(--espresso); border-left: 5px solid var(--caramel); padding-left: 16px; margin: 40px 0 16px; }
+    p { font-size: 15.5px; line-height: 1.9; margin-bottom: 18px; color: var(--text); }
+    strong { color: var(--brown); }
+    em { background: linear-gradient(180deg, transparent 60%, #f5d98855 60%); font-style: normal; }
+    .highlight { background: #fff8ec; border: 1.5px solid var(--caramel); border-radius: 10px; padding: 20px 24px; margin: 28px 0; }
+    .highlight-title { font-size: 13px; font-weight: 700; color: var(--caramel); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 12px; }
+    .highlight p { margin-bottom: 8px; font-size: 14.5px; }
+    .tips-box { background: linear-gradient(135deg, #c8860a15 0%, #6b3a2a10 100%); border: 2px solid var(--caramel); border-radius: 14px; padding: 28px 32px; margin: 40px 0; }
+    .tips-box h2 { font-size: 18px; font-weight: 900; color: var(--espresso); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+    .tips-box h2::before { content: "☕"; font-size: 22px; }
+    .tip-item { display: flex; gap: 16px; margin-bottom: 18px; align-items: flex-start; }
+    .tip-num { min-width: 32px; height: 32px; background: var(--caramel); color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; margin-top: 2px; }
+    .tip-text { font-size: 14.5px; line-height: 1.8; }
+    .tip-text strong { display: block; margin-bottom: 4px; font-size: 15px; }
+    .chart-wrapper { background: #fff; border: 1px solid var(--mid-tan); border-radius: 12px; padding: 24px 16px; margin: 36px 0; overflow-x: auto; }
+    .chart-wrapper h2 { font-size: 14px; font-weight: 700; color: var(--subtext); text-align: center; margin-bottom: 16px; letter-spacing: 0.5px; }
+    svg { display: block; margin: 0 auto; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 14px; }
+    .data-table th { background: var(--espresso); color: #f5e8d5; padding: 10px 14px; text-align: left; font-weight: 700; }
+    .data-table td { padding: 10px 14px; border-bottom: 1px solid var(--mid-tan); }
+    .data-table tr:nth-child(even) td { background: var(--light-tan); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--mid-tan); }
+    .tag { background: var(--light-tan); color: var(--brown); font-size: 12px; padding: 5px 12px; border-radius: 20px; font-weight: 500; }
+    .footer-note { margin-top: 32px; font-size: 12px; color: var(--subtext); text-align: center; padding-top: 16px; border-top: 1px dashed var(--mid-tan); }
+    @media (max-width: 480px) { .tips-box { padding: 20px 18px; } h3 { font-size: 17px; } p { font-size: 15px; } .data-table { font-size: 12.5px; } .data-table th, .data-table td { padding: 8px 10px; } }
+  </style>
+</head>
+<body>
+<div class="wrapper">
+  <header>
+    <div class="badge-row">
+      <span class="badge">로스팅 과학</span>
+      <span class="badge caramel">원두 보관</span>
+      <span class="date">2026년 7월 2일 · 스페셜티 바리스타 기고</span>
+    </div>
+    <h1>원두가 탈 때 생기는 일 — 로스팅 온도 1℃가 당신의 커피를 완전히 바꾸는 이유</h1>
+    <p class="subtitle">"왜 어제 마신 커피는 맛있었는데 오늘 같은 원두로 내린 커피는 다를까?" — 그 답은 100% 열의 과학에 있습니다.</p>
+  </header>
+
+  <div class="summary-box">
+    <h2>📋 오늘 이 글에서 배울 것</h2>
+    <ul>
+      <li>마이야르 반응과 카라멜화가 커피 맛을 만드는 원리</li>
+      <li>1차 크랙·2차 크랙에서 원두에 무슨 일이 벌어지는가</li>
+      <li>클로로겐산은 90%까지 사라지고 카페인은 오히려 늘어나는 이유</li>
+      <li>갓 볶은 원두가 오히려 맛없는 'CO₂ 디개싱'의 비밀</li>
+      <li>아레니우스 법칙으로 보는 원두 최적 보관법</li>
+    </ul>
+  </div>
+
+  <p class="hook">
+    커피를 10년 넘게 내려오면서 손님들에게 가장 많이 받는 질문이 있습니다. "왜 카페에서 마시면 맛있는데 집에서 내리면 달라요?" 답은 원두의 산지나 추출 도구에 있지 않습니다. 대부분은 <strong>로스팅 이후 원두 안에서 벌어지는 화학적 사건들</strong>을 무시하기 때문입니다.
+  </p>
+
+  <h3>열이 원두를 만나는 순간 — 마이야르 반응의 마법</h3>
+  <p>
+    생두(그린빈)는 초록색에 풀 냄새가 납니다. 여기에 열을 가하면 <em>마이야르 반응(Maillard Reaction)</em>이 시작됩니다. 이것은 단순한 '탄다'는 게 아닙니다. 생두 속 <strong>환원당(포도당, 과당)과 아미노산(단백질의 구성단위)</strong>이 결합하면서 수백 가지 향기 물질과 갈색 색소(멜라노이딘)를 동시에 만들어내는 복합 반응입니다.
+  </p>
+  <p>
+    이 반응은 약 <strong>150℃ 이상</strong>에서 시작되며, 온도가 높아질수록 기하급수적으로 빨라집니다. 그래서 로스팅 후반 10℃ 차이가 전반부 30℃보다 맛에 더 큰 영향을 줍니다. 마이야르 반응으로 만들어진 멜라노이딘은 단순히 색만 내는 게 아닙니다 — 라디칼을 제거하는 강력한 <strong>항산화 물질</strong>이기도 합니다.
+  </p>
+  <p>
+    동시에 <em>카라멜화(Caramelization)</em>도 진행됩니다. 당이 단독으로 고온에서 분해되며 버터스카치, 견과류, 달콤한 탄 향기를 만들어냅니다. 사람들이 "커피에서 카라멜 향이 난다"고 표현하는 바로 그것입니다.
+  </p>
+
+  <div class="chart-wrapper">
+    <h2>로스팅 단계별 온도·풍미 변화 인포그래픽</h2>
+    <svg viewBox="0 0 740 320" width="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bgGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#e8f5e9"/>
+          <stop offset="30%" stop-color="#fff9c4"/>
+          <stop offset="60%" stop-color="#ffe0b2"/>
+          <stop offset="85%" stop-color="#bf360c" stop-opacity="0.3"/>
+          <stop offset="100%" stop-color="#3e1a0a" stop-opacity="0.6"/>
+        </linearGradient>
+        <linearGradient id="tempLine" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#c8860a"/>
+          <stop offset="100%" stop-color="#2c1810"/>
+        </linearGradient>
+      </defs>
+      <rect x="60" y="30" width="640" height="160" rx="8" fill="url(#bgGrad)" opacity="0.4"/>
+      <text x="100" y="22" font-size="11" fill="#4caf50" font-weight="700" font-family="sans-serif" text-anchor="middle">건조</text>
+      <text x="240" y="22" font-size="11" fill="#f9a825" font-weight="700" font-family="sans-serif" text-anchor="middle">마이야르</text>
+      <text x="390" y="22" font-size="11" fill="#e65100" font-weight="700" font-family="sans-serif" text-anchor="middle">1차 크랙</text>
+      <text x="540" y="22" font-size="11" fill="#bf360c" font-weight="700" font-family="sans-serif" text-anchor="middle">디벨롭먼트</text>
+      <text x="660" y="22" font-size="11" fill="#4e0505" font-weight="700" font-family="sans-serif" text-anchor="middle">2차 크랙</text>
+      <polyline points="60,170 160,155 260,130 360,95 420,72 480,58 580,42 680,34"
+        fill="none" stroke="url(#tempLine)" stroke-width="3" stroke-linecap="round"/>
+      <line x1="380" y1="30" x2="380" y2="195" stroke="#e65100" stroke-width="1.5" stroke-dasharray="5,4"/>
+      <line x1="630" y1="30" x2="630" y2="195" stroke="#4e0505" stroke-width="1.5" stroke-dasharray="5,4"/>
+      <rect x="320" y="196" width="118" height="22" rx="4" fill="#e65100" opacity="0.85"/>
+      <text x="379" y="211" font-size="11" fill="white" font-weight="700" font-family="sans-serif" text-anchor="middle">1차 크랙 ~196–204℃</text>
+      <rect x="570" y="196" width="118" height="22" rx="4" fill="#4e0505" opacity="0.85"/>
+      <text x="629" y="211" font-size="11" fill="white" font-weight="700" font-family="sans-serif" text-anchor="middle">2차 크랙 ~224–230℃</text>
+      <text x="60" y="248" font-size="11" fill="#6b5b4e" font-family="sans-serif">산미</text>
+      <rect x="100" y="238" width="540" height="10" rx="5" fill="#ddd"/>
+      <rect x="100" y="238" width="420" height="10" rx="5" fill="#c8860a" opacity="0.6"/>
+      <rect x="100" y="238" width="180" height="10" rx="5" fill="#c8860a"/>
+      <text x="60" y="268" font-size="11" fill="#6b5b4e" font-family="sans-serif">단맛</text>
+      <rect x="100" y="258" width="540" height="10" rx="5" fill="#ddd"/>
+      <rect x="160" y="258" width="300" height="10" rx="5" fill="#f9a825"/>
+      <text x="60" y="288" font-size="11" fill="#6b5b4e" font-family="sans-serif">쓴맛</text>
+      <rect x="100" y="278" width="540" height="10" rx="5" fill="#ddd"/>
+      <rect x="350" y="278" width="290" height="10" rx="5" fill="#6b3a2a"/>
+      <text x="60" y="308" font-size="11" fill="#6b5b4e" font-family="sans-serif">바디</text>
+      <rect x="100" y="298" width="540" height="10" rx="5" fill="#ddd"/>
+      <rect x="300" y="298" width="340" height="10" rx="5" fill="#2c1810" opacity="0.7"/>
+      <text x="100" y="225" font-size="10" fill="#999" font-family="sans-serif" text-anchor="middle">100℃</text>
+      <text x="260" y="225" font-size="10" fill="#999" font-family="sans-serif" text-anchor="middle">150℃</text>
+      <text x="420" y="225" font-size="10" fill="#999" font-family="sans-serif" text-anchor="middle">200℃</text>
+      <text x="580" y="225" font-size="10" fill="#999" font-family="sans-serif" text-anchor="middle">220℃</text>
+      <text x="680" y="225" font-size="10" fill="#999" font-family="sans-serif" text-anchor="middle">230℃</text>
+      <line x1="60" y1="186" x2="90" y2="186" stroke="#c8860a" stroke-width="2.5"/>
+      <text x="96" y="190" font-size="11" fill="#6b5b4e" font-family="sans-serif">온도 곡선</text>
+    </svg>
+  </div>
+
+  <h3>1차 크랙과 2차 크랙 — 원두의 운명이 갈리는 2분</h3>
+  <p>
+    로스팅 중 가장 극적인 순간이 있습니다. 원두 내부의 수분이 수증기로 변하고 카라멜화에서 발생한 이산화탄소(CO₂)가 축적되면서 <strong>내부 압력이 임계점</strong>을 넘습니다. 그 순간 원두의 세포벽이 터지며 "딱!" 소리가 납니다 — 이것이 <em>1차 크랙(First Crack)</em>입니다. 온도는 약 <strong>196~204℃</strong>입니다.
+  </p>
+  <p>
+    1차 크랙 이후가 핵심입니다. 로스터는 이 지점부터 불을 끄기까지의 시간을 조절해 <strong>풍미 발달(Development Time)</strong>을 완성합니다. 너무 일찍 끄면 신맛이 날카롭고 풀내가 납니다(미개발). 너무 오래 두면 단맛이 사라지고 쓴맛만 남습니다(과개발). 전문 로스터들이 "DT(Development Time)를 절대 놓치지 않는다"고 말하는 이유가 여기에 있습니다.
+  </p>
+  <p>
+    <strong>2차 크랙(Second Crack)</strong>은 약 224~230℃에서 발생합니다. 소리가 더 빠르고 가벼워집니다. 이 시점에 원두 속 오일이 표면으로 밀려나와 겉이 반들반들해집니다. 원산지 특성(테루아)은 거의 사라지고 로스팅 캐릭터가 지배하는 다크 로스트 영역입니다.
+  </p>
+
+  <div class="highlight">
+    <div class="highlight-title">🔬 데이터로 보는 로스팅 단계별 변화</div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>로스트 단계</th>
+          <th>온도 범위</th>
+          <th>클로로겐산</th>
+          <th>카페인</th>
+          <th>주요 풍미</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>라이트 로스트</td>
+          <td>196~205℃</td>
+          <td>高 (최대 80% 잔존)</td>
+          <td>중간</td>
+          <td>과일, 꽃향, 밝은 산미</td>
+        </tr>
+        <tr>
+          <td>미디엄 로스트</td>
+          <td>205~220℃</td>
+          <td>중간 (30~50% 잔존)</td>
+          <td>높음*</td>
+          <td>견과류, 카라멜, 균형잡힌 단맛</td>
+        </tr>
+        <tr>
+          <td>다크 로스트</td>
+          <td>220~230℃+</td>
+          <td>低 (10~20% 잔존)</td>
+          <td>높음*</td>
+          <td>초콜릿, 스모키, 강한 쓴맛</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12.5px; color:#888; margin-top:8px;">* 카페인 함량은 절대량이 아닌 무게 대비 비율 — 로스팅 중 다른 화합물이 휘발되면서 상대적으로 높아 보임 (카페인 자체는 238℃에서 녹는점으로 일반 로스팅 온도에서 안정)</p>
+  </div>
+
+  <h3>클로로겐산은 90% 사라지고 카페인은 늘어난다? — 로스팅과 건강성분의 역설</h3>
+  <p>
+    커피의 주요 건강성분인 <em>클로로겐산(Chlorogenic Acid)</em>은 강력한 항산화 물질로 알려져 있습니다. 그런데 로스팅 온도가 220℃에서 40분 진행될 경우, 클로로겐산은 생두 대비 <strong>최대 90%까지 분해</strong>됩니다. (연구 기준: 생두 543mg/L → 로스팅 후 약 54mg/L 이하)
+  </p>
+  <p>
+    아이러니하게도 카페인은 다릅니다. 카페인의 녹는점은 <strong>238℃</strong>로 일반 로스팅 온도보다 높습니다. 즉 카페인은 로스팅 열에도 거의 분해되지 않습니다. 다만 로스팅 중 다른 휘발성 물질들이 날아가면서 원두 전체 무게가 줄고, 그 결과 <strong>같은 무게의 원두 안에 카페인 비율이 높아 보이는</strong> 효과가 생깁니다. 라이트 로스트보다 다크 로스트 한 잔에 카페인이 많다는 속설이 사실이 아닌 이유이기도 합니다.
+  </p>
+
+  <h3>갓 볶은 원두가 오히려 맛없다? — CO₂ 디개싱의 비밀</h3>
+  <p>
+    로스팅하는 동안 원두 내부에는 대량의 <em>이산화탄소(CO₂)</em>가 생성·갇힙니다. 갓 볶은 원두로 에스프레소를 내리면 크레마가 과도하게 터지고 산미가 날카롭고 불안정합니다. 이것이 디개싱(Degassing, CO₂ 방출) 때문입니다.
+  </p>
+  <p>
+    CO₂는 로스팅 후 <strong>1~2주에 걸쳐 천천히 방출</strong>됩니다. 흥미로운 점은 이 CO₂가 방출되는 동안 원두 내부를 보호한다는 것입니다 — 내부에서 가스가 밀려나오는 동안 산소가 원두 속으로 침투하기 어렵기 때문입니다. 즉, <strong>활발한 디개싱 기간이 천연 산화 방지 기제</strong>로 작동합니다.
+  </p>
+  <p>
+    일반적으로 에스프레소는 로스팅 후 <strong>7~14일</strong>, 푸어오버·핸드드립은 <strong>5~10일</strong> 후가 최적입니다. 라이트 로스트는 디개싱이 느리게 일어나 더 긴 숙성 기간이 필요하고, 다크 로스트는 기체가 빨리 방출되므로 더 빨리 마시는 게 좋습니다.
+  </p>
+
+  <h3>아레니우스 법칙으로 본 원두 보관의 과학</h3>
+  <p>
+    화학에는 <em>아레니우스 법칙(Arrhenius Equation)</em>이 있습니다. 간단히 말하면, <strong>온도가 10℃ 올라갈 때마다 화학반응 속도가 2~3배 빨라진다</strong>는 원리입니다. 이것이 원두 보관에 그대로 적용됩니다.
+  </p>
+  <p>
+    상온(25℃)에서 원두가 산화되는 속도를 1이라 하면, 냉장(5℃)에서는 약 4분의 1 속도입니다. 냉동(-18℃)에서는 훨씬 느려집니다. 그래서 전문 로스터들이 장기 보관 시 냉동을 추천하는 이유가 있습니다. 단, 냉동 원두를 꺼낼 때 <strong>결로(condensation) 현상</strong>에 주의해야 합니다 — 한 번 꺼낸 원두를 다시 넣었다 꺼내면 온도 차이로 수분이 원두에 달라붙어 품질이 급격히 저하됩니다.
+  </p>
+  <p>
+    가장 실용적인 규칙: <strong>2~3주 안에 소비할 분량은 상온 밀폐 보관, 그 이상은 소분 냉동(1회분씩 지퍼백)</strong>이 정답입니다. 그리고 어떤 경우도 산소·빛·습기·고온의 4가지 적은 피해야 합니다.
+  </p>
+
+  <div class="tips-box">
+    <h2>바리스타가 알려주는 실전 팁 3가지</h2>
+    <div class="tip-item">
+      <div class="tip-num">1</div>
+      <div class="tip-text">
+        <strong>원두 구매 시 '로스팅 날짜'를 확인하라 (유통기한 말고)</strong>
+        포장의 유통기한이 아닌 <em>로스팅 날짜(Roast Date)</em>를 확인하세요. 로스팅 후 5일~21일 사이가 최고의 윈도우입니다. 이 날짜가 없는 제품은 신선도를 보장하지 않습니다.
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">2</div>
+      <div class="tip-text">
+        <strong>'쓴맛'이 싫다면 라이트, '풍부한 바디'가 좋다면 미디엄 — 다크는 로스팅 맛이다</strong>
+        다크 로스트의 쓴맛은 원두의 개성이 아닌 로스팅 캐릭터입니다. 원산지 특성이 살아있는 커피를 원한다면 라이트~미디엄 로스트를 선택하세요. 반대로 일관된 강한 맛을 원한다면 다크가 맞습니다.
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">3</div>
+      <div class="tip-text">
+        <strong>원두통에 원두를 가득 채워라 — 빈 공간 = 산소 = 산화</strong>
+        밀폐 용기 안의 빈 공간에는 산소가 가득합니다. 진공 밸브 원웨이 백이 있다면 최선, 없다면 원두가 통을 거의 채울 수 있도록 양을 조절해 구매하세요. 진공 디개서(핸드 펌프 진공 뚜껑)도 매우 효과적입니다.
+      </div>
+    </div>
+  </div>
+
+  <h3>내일 당장 해볼 수 있는 것</h3>
+  <p>
+    지금 집에 있는 원두 봉투를 꺼내보세요. <strong>로스팅 날짜</strong>가 있나요? 오늘 날짜와 비교해 5~21일 사이라면 지금이 황금 기간입니다. 만약 4주가 넘었다면 에스프레소 추출보다 <em>콜드브루</em>로 내리세요 — 저온 장시간 추출은 산화된 원두의 거친 맛을 크게 완화해줍니다.
+  </p>
+  <p>
+    그리고 다음에 원두를 살 때, 한 가지 실험을 해보세요. <strong>같은 원두를 로스팅 후 3일, 10일, 21일에 각각 내려보는 것</strong>입니다. 동일한 레시피로 추출했는데 맛이 완전히 다릅니다. 그 차이를 느끼는 순간, 당신은 이미 보통 사람보다 훨씬 깊은 커피 세계로 들어간 겁니다.
+  </p>
+  <p>
+    로스팅은 단순히 원두를 굽는 행위가 아닙니다. <strong>수백 가지 화학반응을 1~15분 안에 지휘하는 예술과 과학의 결합</strong>입니다. 그 열의 이야기를 알고 마시는 커피 한 잔은 분명 다르게 느껴질 것입니다.
+  </p>
+
+  <div class="tags">
+    <span class="tag">#로스팅과학</span>
+    <span class="tag">#마이야르반응</span>
+    <span class="tag">#스페셜티커피</span>
+    <span class="tag">#원두보관법</span>
+    <span class="tag">#1차크랙</span>
+    <span class="tag">#디개싱</span>
+    <span class="tag">#바리스타팁</span>
+    <span class="tag">#라이트로스트</span>
+    <span class="tag">#다크로스트</span>
+    <span class="tag">#커피화학</span>
+    <span class="tag">#클로로겐산</span>
+    <span class="tag">#카페인</span>
+  </div>
+
+  <div class="footer-note">
+    작성일: 2026년 7월 2일 · 스페셜티 커피 바리스타 &amp; 콘텐츠 작가 기고<br/>
+    본 아티클은 정보 제공 목적으로 작성되었습니다. 개인차 및 원두 특성에 따라 결과가 다를 수 있습니다.
+  </div>
+</div>
+</body>
+</html>
