@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>라떼아트가 실패하는 진짜 이유 — 스팀 피처 잡기 전에 반드시 알아야 할 물리학</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+    }
+
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      padding: 50px 30px 40px;
+      text-align: center;
+      color: white;
+    }
+    .badge {
+      display: inline-block;
+      background: #c8860a;
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      text-transform: uppercase;
+    }
+    .main-title {
+      font-size: clamp(22px, 5vw, 36px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 14px;
+      word-break: keep-all;
+    }
+    .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      font-weight: 400;
+    }
+    .date-line {
+      margin-top: 18px;
+      font-size: 13px;
+      opacity: 0.65;
+    }
+
+    /* BODY CONTENT */
+    article { padding-top: 40px; }
+
+    p { margin-bottom: 1.3em; word-break: keep-all; }
+
+    /* SUMMARY BOX */
+    .summary-box {
+      background: #fff8ee;
+      border-left: 5px solid #c8860a;
+      border-radius: 0 12px 12px 0;
+      padding: 22px 24px;
+      margin: 30px 0;
+    }
+    .summary-box h3 {
+      color: #c8860a;
+      font-size: 14px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    .summary-box ul { padding-left: 20px; }
+    .summary-box ul li { margin-bottom: 6px; font-size: 15px; }
+
+    /* SECTION HEADING */
+    h2 {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 46px 0 16px;
+      padding-left: 16px;
+      border-left: 5px solid #6b3a2a;
+      color: #2c1810;
+      line-height: 1.4;
+    }
+
+    /* TIP BOX */
+    .tip-box {
+      background: linear-gradient(135deg, #fff3d6, #ffeab0);
+      border: 1px solid #c8860a33;
+      border-radius: 14px;
+      padding: 24px 26px;
+      margin: 32px 0;
+    }
+    .tip-box h3 {
+      color: #6b3a2a;
+      font-weight: 800;
+      font-size: 16px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tip-box .tip-item {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+    .tip-number {
+      background: #6b3a2a;
+      color: white;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .tip-box .tip-item p { margin-bottom: 0; font-size: 15px; }
+
+    /* HIGHLIGHT */
+    .highlight {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 22px 24px;
+      margin: 28px 0;
+      font-size: 15px;
+    }
+    .highlight strong { color: #c8860a; }
+
+    /* DATA TABLE */
+    .data-table-wrap {
+      overflow-x: auto;
+      margin: 28px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+    }
+    thead { background: #6b3a2a; color: white; }
+    thead th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    tbody tr:nth-child(even) { background: #f5efe6; }
+    tbody tr:nth-child(odd) { background: white; }
+    tbody td { padding: 12px 14px; border-bottom: 1px solid #e8ddd0; }
+
+    /* SVG SECTION */
+    .infographic-wrap {
+      background: white;
+      border-radius: 16px;
+      padding: 24px;
+      margin: 32px 0;
+      box-shadow: 0 4px 20px rgba(44,24,16,0.08);
+    }
+    .infographic-wrap h3 {
+      text-align: center;
+      color: #6b3a2a;
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    /* CLOSING BOX */
+    .closing-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 16px;
+      padding: 32px 28px;
+      margin-top: 46px;
+    }
+    .closing-box h2 {
+      border-left-color: #c8860a;
+      color: #faf7f2;
+      margin-top: 0;
+    }
+
+    /* TAGS */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #f0e8de;
+      color: #6b3a2a;
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .disclaimer {
+      font-size: 12px;
+      color: #999;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid #e0d5c8;
+    }
+
+    blockquote {
+      border-left: 4px solid #c8860a;
+      padding: 12px 20px;
+      margin: 24px 0;
+      background: #fffaf4;
+      font-style: italic;
+      color: #6b3a2a;
+      border-radius: 0 8px 8px 0;
+    }
+    strong { color: #6b3a2a; }
+
+    @media (max-width: 600px) {
+      .header { padding: 36px 18px 30px; }
+      h2 { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge">☕ 바리스타 스킬 &amp; 라떼아트</div>
+  <h1 class="main-title">라떼아트가 실패하는 진짜 이유<br>— 스팀 피처 잡기 전에 반드시 알아야 할 물리학</h1>
+  <p class="subtitle">마이크로폼의 과학부터 로제타·하트·3D 아트 완성까지, 10년 바리스타가 털어놓는 진짜 비밀</p>
+  <p class="date-line">2026년 7월 3일 | 스페셜티 커피 전문 아티클</p>
+</div>
+
+<div class="container">
+<article>
+
+<p style="margin-top: 36px;">
+"스팀 밀크가 물처럼 묽어요." "폼이 너무 거칠어서 그림이 안 그려져요." "분명히 레시피대로 했는데 왜 실패하죠?"
+</p>
+<p>
+커피를 배우는 사람들이 가장 많이 질문하는 것이 라떼아트입니다. 그런데 실제로 현장에서 10년을 보내고 나서 깨달은 건 — <strong>대부분의 라떼아트 실패는 손기술 이전에 물리학을 이해하지 못한 데서 비롯됩니다.</strong>
+</p>
+<p>
+스팀 피처를 몇 천 번 흔들어봐야 소용없습니다. 왜 우유가 폼이 되는지, 왜 온도가 1~2도 차이에 따라 텍스처가 달라지는지를 먼저 이해해야 비로소 손끝이 따라옵니다.
+</p>
+
+<div class="summary-box">
+  <h3>📋 오늘 이 글에서 배울 것</h3>
+  <ul>
+    <li>마이크로폼(microfoam)이 만들어지는 단백질·물리학 원리</li>
+    <li>온도별 스팀 기법 — "몇 도에서 멈춰야 하는가"의 정확한 이유</li>
+    <li>하트·튤립·로제타 패턴별 피처 기술 차이</li>
+    <li>오트밀크·두유·아몬드밀크 라떼아트 — 2026 바리스타 트렌드</li>
+    <li>3D 라떼아트·AI 프린터까지 — 지금 대회에서 벌어지는 일</li>
+    <li>집에서 혼자 연습하는 최단 루트 3가지</li>
+  </ul>
+</div>
+
+<!-- SECTION 1 -->
+<h2>1. 우유가 폼이 되는 이유 — 단백질과 공기의 전쟁</h2>
+<p>
+사실 대부분의 사람들이 모르는데, 우유가 폼이 되는 과정은 사실 <strong>단백질이 공기 방울을 껴안는 과정</strong>입니다. 우유의 구성을 분해하면 물 87%, 지방 3~4%, 단백질 3~4%, 유당 4~5% 입니다. 이 중에서 라떼아트의 핵심은 단백질, 특히 <strong>카세인 미셀(casein micelle)</strong>과 <strong>유청 단백질(whey protein)</strong>입니다.
+</p>
+<p>
+스팀 완드를 우유에 꽂고 증기를 주입하면 두 가지가 동시에 일어납니다. 첫째, 수증기가 우유에 닿아 열에너지를 전달하면서 우유 온도를 높입니다. 스팀은 기체 상태의 물이고, 차가운 우유에 닿는 순간 다시 액체로 응결되면서 엄청난 열을 방출하는 것입니다. 둘째, 완드 끝의 압력으로 공기가 강제 주입됩니다.
+</p>
+<p>
+여기서 물리학이 등장합니다. 유청 단백질은 온도가 오르면서 구조가 펴지면서(열변성, denaturation), 그 표면에 <strong>물을 좋아하는 친수성(hydrophilic) 쪽은 바깥</strong>으로, <strong>기름기를 좋아하는 소수성(hydrophobic) 쪽은 공기 방울 쪽</strong>으로 배열됩니다. 단백질이 공기 방울 주변에 보호막을 치는 셈입니다. 이 막이 탄탄할수록 거품이 작고 안정적이 됩니다 — 이것이 바로 <strong>마이크로폼</strong>입니다.
+</p>
+<blockquote>
+"마이크로폼이란, 육안으로 기포가 보이지 않을 만큼 작고 균일한 거품이 우유 전체에 분산된 상태다. 이 상태에서 우유는 '광택 있는 페인트'처럼 흐른다."
+</blockquote>
+
+<!-- SECTION 2 -->
+<h2>2. 온도의 비밀 — "60~65도"는 왜 마법의 숫자인가</h2>
+<p>
+스팀 완드를 쓸 때 "65도에서 멈추라"는 말을 들어봤을 것입니다. 그냥 관습일까요? 아닙니다. 정확한 화학적 이유가 있습니다.
+</p>
+
+<div class="infographic-wrap">
+  <h3>🌡️ 우유 온도별 변화 과정</h3>
+  <svg viewBox="0 0 740 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:740px;display:block;margin:0 auto;">
+    <!-- background -->
+    <rect width="740" height="200" fill="#fffaf4" rx="12"/>
+    <!-- timeline bar -->
+    <rect x="30" y="95" width="680" height="14" rx="7" fill="#e8ddd0"/>
+    <!-- gradient fill -->
+    <defs>
+      <linearGradient id="tempGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:#7ec8e3;stop-opacity:1" />
+        <stop offset="30%" style="stop-color:#6bc86b;stop-opacity:1" />
+        <stop offset="65%" style="stop-color:#c8860a;stop-opacity:1" />
+        <stop offset="90%" style="stop-color:#e05252;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#8b0000;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect x="30" y="95" width="680" height="14" rx="7" fill="url(#tempGrad)"/>
+    <!-- markers -->
+    <!-- 0°C -->
+    <circle cx="30" cy="102" r="6" fill="#7ec8e3" stroke="white" stroke-width="2"/>
+    <text x="30" y="82" text-anchor="middle" font-size="11" fill="#555">0°C</text>
+    <text x="30" y="135" text-anchor="middle" font-size="10" fill="#888">냉장</text>
+    <!-- 40°C -->
+    <circle cx="248" cy="102" r="6" fill="#6bc86b" stroke="white" stroke-width="2"/>
+    <text x="248" y="82" text-anchor="middle" font-size="11" fill="#555">40°C</text>
+    <text x="248" y="135" text-anchor="middle" font-size="10" fill="#2c8c2c" font-weight="bold">공기주입 시작</text>
+    <text x="248" y="150" text-anchor="middle" font-size="10" fill="#888">스티밍 시작점</text>
+    <!-- 60°C -->
+    <circle cx="466" cy="102" r="7" fill="#c8860a" stroke="white" stroke-width="2"/>
+    <text x="466" y="78" text-anchor="middle" font-size="11" fill="#c8860a" font-weight="bold">60~65°C</text>
+    <text x="466" y="135" text-anchor="middle" font-size="10" fill="#c8860a" font-weight="bold">⭐ 스위트 스팟</text>
+    <text x="466" y="150" text-anchor="middle" font-size="10" fill="#888">단백질 최적 변성</text>
+    <!-- 70°C -->
+    <circle cx="574" cy="102" r="6" fill="#e05252" stroke="white" stroke-width="2"/>
+    <text x="574" y="82" text-anchor="middle" font-size="11" fill="#e05252">70°C+</text>
+    <text x="574" y="135" text-anchor="middle" font-size="10" fill="#e05252">단맛↓ 비릿함↑</text>
+    <!-- 80°C -->
+    <circle cx="706" cy="102" r="6" fill="#8b0000" stroke="white" stroke-width="2"/>
+    <text x="706" y="82" text-anchor="middle" font-size="11" fill="#8b0000">80°C+</text>
+    <text x="706" y="135" text-anchor="middle" font-size="10" fill="#8b0000">단백질 응고</text>
+    <!-- label -->
+    <text x="370" y="185" text-anchor="middle" font-size="12" fill="#999">온도 →</text>
+  </svg>
+</div>
+
+<p>
+40~45도 구간은 우유의 지방이 녹기 시작하면서 풍미가 풀어지는 시점입니다. 이 구간에서 공기 주입(에어레이션)을 집중적으로 합니다. 55~65도 구간에서는 유청 단백질이 최적의 상태로 변성되어 마이크로폼이 안정화됩니다. 유당(lactose)도 열에 의해 분해되면서 우유 특유의 단맛이 극대화되는 구간이기도 합니다.
+</p>
+<p>
+반대로 65도를 넘기면? 단백질이 지나치게 응고되기 시작해 폼이 거칠어지고 우유 자체의 비릿한 냄새가 올라옵니다. 라떼가 "탄 것 같은" 맛이 나는 건 에스프레소 때문이 아니라, <strong>스팀을 너무 오래 한 우유</strong> 때문인 경우가 많습니다.
+</p>
+
+<!-- SECTION 3 -->
+<h2>3. 스팀 완드 각도와 소리 — 프로가 귀로 듣는 것</h2>
+<p>
+완드를 어디에 꽂느냐, 얼마나 깊이 꽂느냐, 피처를 어느 각도로 기울이느냐 — 이 세 가지가 마이크로폼의 질을 결정합니다.
+</p>
+<p>
+<strong>완드 위치:</strong> 피처 안에서 중심에서 약간 오프셋(비틀린 위치)에 놓아야 합니다. 스팀이 우유를 회오리(vortex) 형태로 회전시켜야 공기 방울이 잘게 쪼개지기 때문입니다. 완벽한 중심에 꽂으면 회전이 없어 거품이 굵어집니다.
+</p>
+<p>
+<strong>완드 깊이:</strong> 처음에는 표면 바로 아래(약 1~2cm)에 위치해 공기를 주입합니다. "쉬-쉬-쉬" 하는 소리가 나야 정상입니다. 이 소리가 안 들리면 공기가 안 들어가는 것이고, "꿀꿀" 하는 큰 소리가 나면 완드가 너무 표면 위에 있어 큰 기포가 만들어지고 있다는 신호입니다.
+</p>
+<p>
+<strong>스팀 소리로 진단하는 법:</strong>
+</p>
+
+<div class="tip-box">
+  <h3>🔊 소리로 스팀 상태 진단하기</h3>
+  <div class="tip-item">
+    <span class="tip-number">✅</span>
+    <p><strong>"쓰-쓰" 또는 "tss-tss" 소리</strong> — 공기가 균일하게 주입되는 올바른 상태. 마이크로폼이 만들어지고 있다.</p>
+  </div>
+  <div class="tip-item">
+    <span class="tip-number">⚠️</span>
+    <p><strong>큰 "꿀꿀" 소리</strong> — 완드가 너무 표면 위에 있다. 큰 기포가 생겨 라떼아트가 불가능한 폼이 됨. 완드를 살짝 더 담그기.</p>
+  </div>
+  <div class="tip-item">
+    <span class="tip-number">❌</span>
+    <p><strong>소리 없이 진동만</strong> — 완드가 너무 깊이 박혀 있다. 우유 온도만 올리고 공기는 안 주입 중. 완드를 살짝 올리기.</p>
+  </div>
+</div>
+
+<!-- SECTION 4 -->
+<h2>4. 패턴별 쏟기 기술 — 하트·튤립·로제타의 결정적 차이</h2>
+<p>
+마이크로폼이 완성됐다면 이제 손기술의 영역입니다. 패턴마다 피처 각도, 쏟는 속도, 흔드는 폭이 완전히 다릅니다.
+</p>
+
+<div class="data-table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>패턴</th>
+        <th>난이도</th>
+        <th>피처 각도</th>
+        <th>주입 속도</th>
+        <th>핵심 기술</th>
+        <th>폼 굵기</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>❤️ 하트</strong></td>
+        <td>⭐</td>
+        <td>낮게 (잔 가까이)</td>
+        <td>중간</td>
+        <td>흔들기 → 끌어당기기</td>
+        <td>중간 마이크로폼</td>
+      </tr>
+      <tr>
+        <td><strong>🌸 튤립</strong></td>
+        <td>⭐⭐</td>
+        <td>낮게</td>
+        <td>빠름 → 느림 반복</td>
+        <td>층층이 중단 후 재주입</td>
+        <td>중간 마이크로폼</td>
+      </tr>
+      <tr>
+        <td><strong>🍃 로제타</strong></td>
+        <td>⭐⭐⭐</td>
+        <td>매우 낮게</td>
+        <td>느림 + 좌우 진동</td>
+        <td>잔을 움직이며 좌우 진동</td>
+        <td>극세 마이크로폼</td>
+      </tr>
+      <tr>
+        <td><strong>🦢 백조·3D</strong></td>
+        <td>⭐⭐⭐⭐⭐</td>
+        <td>변동</td>
+        <td>극세 조절</td>
+        <td>다층 구조 + 스푼 성형</td>
+        <td>두꺼운 드라이폼 혼합</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+<strong>하트</strong>는 피처를 잔에 가깝게 내리고 중앙에 일정량 쏟다가, 작게 흔들어 폼을 퍼뜨린 후 반대편으로 빠르게 당기는 동작으로 완성합니다. 초보자가 가장 먼저 배워야 할 패턴입니다.
+</p>
+<p>
+<strong>로제타</strong>는 하트와 결정적으로 다릅니다. 나뭇잎의 결을 살리려면 폼이 더 미세해야 하고, 피처 끝이 더 뾰족한 것이 유리합니다. 잔을 살짝 기울인 채 좌우로 리듬감 있게 흔들면서 뒤로 서서히 당기는 동작인데, <strong>흔드는 폭과 리듬이 잎의 간격을 결정</strong>합니다. 처음엔 느리게, 점점 속도를 높여 중간~끝부분 잎이 촘촘해지도록 합니다.
+</p>
+
+<!-- SECTION 5 -->
+<h2>5. 식물성 우유 라떼아트 — 2026 바리스타들이 주목하는 이유</h2>
+<p>
+2025~2026년 WBC(세계 바리스타 챔피언십)에서 식물성 우유로 만든 라떼아트 시연이 폭발적으로 늘었습니다. 단순히 트렌드가 아닙니다 — <strong>식물성 우유는 단백질·지방 구성이 달리기 때문에 스팀 방법 자체가 다릅니다.</strong>
+</p>
+
+<div class="highlight">
+  <strong>오트 밀크 (Oat Milk)</strong> — 현재 라떼아트 호환성 1위<br>
+  추천 온도: <strong>60°C</strong> / 약한 공기 주입으로 시작, 빠르게 소용돌이 형성. 두유보다 단맛이 강하고 크리미한 텍스처 덕분에 로제타까지 가능. Oatly, Minor Figures, MILKLAB 바리스타 블렌드 추천.<br><br>
+  <strong>두유 (Soy Milk)</strong> — 단백질 많아 폼 유지력 최강<br>
+  추천 온도: <strong>55~58°C 이하</strong>에서 멈춰야 응고(curdling) 방지. 폼 자체는 유제품과 거의 동일한 안정성. 다만 특유의 콩 냄새가 올라올 수 있음.<br><br>
+  <strong>아몬드 밀크 (Almond Milk)</strong> — 가장 까다로움<br>
+  지방·단백질 함량이 낮아 폼이 얇고 불안정. 에어레이션 시간을 최대한 짧게, 강한 소용돌이로 빠르게 완성해야 함. 일반 아몬드밀크보다 <strong>바리스타 전용 블렌드</strong> 사용 필수.
+</div>
+
+<!-- SECTION 6 -->
+<h2>6. 2026 라떼아트 트렌드 — AI 프린터와 3D 아트의 시대</h2>
+<p>
+지금 대회에서 무슨 일이 벌어지고 있는지 아십니까? 2025년 이후 라떼아트 대회는 단순한 패턴 경쟁을 넘어섰습니다.
+</p>
+<p>
+<strong>3D 라떼아트</strong>가 메인스트림이 되었습니다. 스팀된 폼을 잔 위에 쌓아 입체 구조물을 만드는 기법으로, 귀여운 고양이, 벚꽃, 계절 캐릭터까지 구현됩니다. 식용 색소를 이용해 음영을 넣고 입체감을 표현하는 '컬러 라떼아트'도 함께 확산 중입니다.
+</p>
+<p>
+한편 <strong>AI 라떼아트 프린터</strong>가 일본·한국을 중심으로 본격 상용화됐습니다. 사진을 업로드하면 천연 커피 추출물 잉크로 라떼 폼 위에 포토리얼리스틱 이미지를 인쇄해주는 기기입니다. 일부 카페에서는 고객 얼굴 사진을 라떼에 담아주는 서비스도 운영 중입니다. 바리스타의 손기술을 대체하는 것이 아니라, <strong>새로운 표현 영역을 확장하는 도구</strong>로 받아들여지고 있습니다.
+</p>
+
+<!-- SECTION 7 - TIP BOX -->
+<h2>7. 집에서 혼자 연습하는 가장 빠른 루트</h2>
+<p>
+"카페가 아니면 연습할 수 없다"는 건 오해입니다. 집에서 하루 20분 연습으로 3개월 안에 하트를 완성할 수 있는 루트가 있습니다.
+</p>
+
+<div class="tip-box">
+  <h3>🏠 홈 바리스타 연습 3단계</h3>
+  <div class="tip-item">
+    <span class="tip-number">1</span>
+    <p><strong>물+식용색소 피처 연습:</strong> 에스프레소 없이 물로 패턴 쏟기부터 익히세요. 머그컵에 물을 3/4 채우고, 다른 피처에 녹차 가루를 탄 물을 담아 '하트 끌어당기기' 동작만 반복합니다. 근육 기억(muscle memory)을 쌓는 가장 빠른 방법입니다.</p>
+  </div>
+  <div class="tip-item">
+    <span class="tip-number">2</span>
+    <p><strong>온도계 의무 사용:</strong> 스팀할 때 온도계 없이 '손 감각'에 의존하면 안 됩니다. 처음 3개월은 반드시 온도계로 62~65도를 직접 확인하면서 감각을 교정하세요. 1,000번 연습보다 온도계로 100번 확인한 연습이 더 효과적입니다.</p>
+  </div>
+  <div class="tip-item">
+    <span class="tip-number">3</span>
+    <p><strong>스팀 영상 슬로우모션 촬영:</strong> 스마트폰 슬로우모션(240fps)으로 자신의 스팀 동작을 촬영하세요. 완드 각도, 우유 소용돌이 방향, 폼이 만들어지는 순간을 눈으로 확인하면 교정 속도가 3배 빨라집니다.</p>
+  </div>
+</div>
+
+<!-- SVG 인포그래픽 2 -->
+<div class="infographic-wrap">
+  <h3>📊 라떼아트 성공률을 높이는 핵심 변수</h3>
+  <svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;display:block;margin:0 auto;">
+    <rect width="700" height="280" fill="#fefcf9" rx="10"/>
+    <!-- 영향도 막대 차트 -->
+    <text x="350" y="28" text-anchor="middle" font-size="13" fill="#6b3a2a" font-weight="700">각 요소가 라떼아트 완성도에 미치는 영향 (%)
+</text>
+
+    <!-- Bars -->
+    <!-- 마이크로폼 품질: 35% -->
+    <rect x="160" y="50" width="245" height="30" rx="5" fill="#6b3a2a"/>
+    <text x="155" y="71" text-anchor="end" font-size="12" fill="#444">마이크로폼 품질</text>
+    <text x="413" y="71" font-size="12" fill="white" font-weight="700"> 35%</text>
+
+    <!-- 온도 조절: 25% -->
+    <rect x="160" y="95" width="175" height="30" rx="5" fill="#c8860a"/>
+    <text x="155" y="116" text-anchor="end" font-size="12" fill="#444">온도 조절</text>
+    <text x="343" y="116" font-size="12" fill="white" font-weight="700"> 25%</text>
+
+    <!-- 쏟기 각도/속도: 20% -->
+    <rect x="160" y="140" width="140" height="30" rx="5" fill="#a05c3b"/>
+    <text x="155" y="161" text-anchor="end" font-size="12" fill="#444">쏟기 각도·속도</text>
+    <text x="308" y="161" font-size="12" fill="white" font-weight="700"> 20%</text>
+
+    <!-- 에스프레소 크레마: 10% -->
+    <rect x="160" y="185" width="70" height="30" rx="5" fill="#d4956a"/>
+    <text x="155" y="206" text-anchor="end" font-size="12" fill="#444">에스프레소 크레마</text>
+    <text x="238" y="206" font-size="12" fill="white" font-weight="700"> 10%</text>
+
+    <!-- 손 흔들기 기술: 10% -->
+    <rect x="160" y="230" width="70" height="30" rx="5" fill="#e8b88a"/>
+    <text x="155" y="251" text-anchor="end" font-size="12" fill="#444">손 흔들기 기술</text>
+    <text x="238" y="251" font-size="12" fill="#6b3a2a" font-weight="700"> 10%</text>
+
+    <!-- 눈금 -->
+    <line x1="160" y1="45" x2="160" y2="265" stroke="#ddd" stroke-width="1"/>
+  </svg>
+</div>
+
+<!-- CLOSING -->
+<div class="closing-box">
+  <h2>내일 당장 해볼 것</h2>
+  <p style="color:#e8d5c0; margin-top: 16px;">
+    오늘부터 스팀을 할 때마다 <strong style="color:#c8860a;">온도계를 반드시 꽂으세요.</strong> 그리고 스팀이 끝난 직후 피처를 살짝 탁 쳐서 큰 기포를 터뜨리고 원을 그리듯 돌려 폼을 균일화하는 '태핑과 스와이핑' 동작을 꼭 추가하세요.
+  </p>
+  <p style="color:#e8d5c0; margin-top: 12px;">
+    마지막으로, 라떼아트는 최소 300잔을 쏟기 전까지 실력이 보이지 않습니다. 실망하지 마세요. 모든 프로 바리스타가 처음엔 물 같은 폼과 형편없는 하트로 시작했습니다. 중요한 건 매 잔 하나씩, 온도를 확인하고 소리를 듣고 눈으로 폼을 관찰하는 습관입니다. 그것이 쌓이면 어느 순간 손이 먼저 반응하게 됩니다.
+  </p>
+  <p style="color:#c8860a; margin-top: 16px; font-weight: 700;">
+    ☕ 오늘도 좋은 커피 한 잔, 좋은 하루 되세요.
+  </p>
+</div>
+
+<div class="tags">
+  <span class="tag">#라떼아트</span>
+  <span class="tag">#밀크스티밍</span>
+  <span class="tag">#마이크로폼</span>
+  <span class="tag">#바리스타스킬</span>
+  <span class="tag">#스페셜티커피</span>
+  <span class="tag">#커피트렌드2026</span>
+  <span class="tag">#오트밀크라떼</span>
+  <span class="tag">#로제타</span>
+  <span class="tag">#하트라떼</span>
+  <span class="tag">#홈바리스타</span>
+  <span class="tag">#3D라떼아트</span>
+  <span class="tag">#커피물리학</span>
+</div>
+
+<p class="disclaimer">
+이 아티클은 스페셜티 커피 업계 현장 경험과 최신 트렌드 리서치를 바탕으로 작성된 교육 목적의 콘텐츠입니다. | 작성일: 2026-07-03
+</p>
+
+</article>
+</div>
+</body>
+</html>
