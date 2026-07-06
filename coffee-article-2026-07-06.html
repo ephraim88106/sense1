@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>게이샤 한 잔이 10만 원인 이유 — 커피 품종과 가공법이 바꾸는 맛의 세계 | 바리스타 커피 저널</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #faf7f2;
+      color: #2c1810;
+      line-height: 1.85;
+      font-size: 16px;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 100%);
+      padding: 14px 24px;
+      text-align: center;
+    }
+    .site-header .logo {
+      color: #c8860a;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #3d1f14 0%, #6b3a2a 55%, #8b4e2e 100%);
+      color: #faf7f2;
+      padding: 60px 24px 50px;
+      text-align: center;
+    }
+    .category-badge {
+      display: inline-block;
+      background: #c8860a;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 50px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1.35;
+      max-width: 720px;
+      margin: 0 auto 16px;
+    }
+    .hero h1 em {
+      color: #f5c36b;
+      font-style: normal;
+    }
+    .hero .subtitle {
+      font-size: 1rem;
+      opacity: 0.85;
+      max-width: 560px;
+      margin: 0 auto 24px;
+    }
+    .hero .meta {
+      font-size: 0.78rem;
+      opacity: 0.65;
+    }
+
+    /* ── MAIN LAYOUT ── */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .article-body {
+      padding: 48px 0 64px;
+    }
+
+    /* ── HOOK ── */
+    .hook {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #4a2218;
+      border-left: 4px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8ee;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 36px;
+      line-height: 1.75;
+    }
+
+    /* ── SUMMARY BOX ── */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 44px;
+    }
+    .summary-box h2 {
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 14px;
+    }
+    .summary-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 22px;
+      position: relative;
+      font-size: 0.93rem;
+      opacity: 0.9;
+    }
+    .summary-box ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: #c8860a;
+      font-weight: 700;
+    }
+
+    /* ── SECTION HEADINGS ── */
+    .section {
+      margin-bottom: 48px;
+    }
+    .section h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #2c1810;
+      border-left: 5px solid #6b3a2a;
+      padding-left: 16px;
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .section p {
+      margin-bottom: 14px;
+      color: #3a1e14;
+    }
+    .section p strong {
+      color: #6b3a2a;
+    }
+
+    /* ── VARIETY CARDS ── */
+    .variety-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 18px;
+      margin: 24px 0;
+    }
+    .variety-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      border: 1px solid #e8ddd5;
+      border-top: 4px solid;
+    }
+    .variety-card.geisha  { border-top-color: #9b59b6; }
+    .variety-card.sl28    { border-top-color: #e74c3c; }
+    .variety-card.catuai  { border-top-color: #27ae60; }
+    .variety-card.bourbon { border-top-color: #c8860a; }
+    .variety-card h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .variety-card .origin {
+      font-size: 0.73rem;
+      color: #888;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+    .variety-card p {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #4a3028;
+    }
+    .flavor-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .flavor-tags span {
+      background: #faf7f2;
+      border: 1px solid #d4c4bc;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      color: #6b3a2a;
+      font-weight: 600;
+    }
+
+    /* ── TIP BOX ── */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8ee 0%, #fef3dc 100%);
+      border: 1px solid #e8c882;
+      border-radius: 12px;
+      padding: 26px 28px;
+      margin: 32px 0;
+    }
+    .tip-box h3 {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 14px;
+    }
+    .tip-box ol {
+      padding-left: 20px;
+    }
+    .tip-box ol li {
+      margin-bottom: 10px;
+      font-size: 0.93rem;
+      color: #3a1e14;
+    }
+    .tip-box ol li strong {
+      color: #6b3a2a;
+    }
+
+    /* ── SVG / INFOGRAPHIC WRAPPER ── */
+    .infographic-wrap {
+      margin: 36px 0;
+      overflow-x: auto;
+    }
+    .infographic-wrap svg {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    /* ── PROCESS COMPARISON TABLE ── */
+    .compare-table-wrap {
+      overflow-x: auto;
+      margin: 28px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+    thead tr {
+      background: #2c1810;
+      color: #faf7f2;
+    }
+    thead th {
+      padding: 12px 14px;
+      text-align: left;
+      font-weight: 700;
+    }
+    tbody tr:nth-child(odd)  { background: #fff; }
+    tbody tr:nth-child(even) { background: #faf7f2; }
+    tbody td {
+      padding: 11px 14px;
+      border-bottom: 1px solid #e8ddd5;
+      color: #3a1e14;
+      vertical-align: top;
+    }
+    tbody td:first-child { font-weight: 700; color: #6b3a2a; }
+
+    /* ── QUOTE ── */
+    .pull-quote {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #6b3a2a;
+      text-align: center;
+      padding: 28px 24px;
+      border-top: 2px solid #c8860a;
+      border-bottom: 2px solid #c8860a;
+      margin: 40px 0;
+      line-height: 1.6;
+    }
+
+    /* ── TREND BOX ── */
+    .trend-box {
+      background: #fff;
+      border: 1px solid #e8ddd5;
+      border-radius: 12px;
+      padding: 24px 26px;
+      margin: 24px 0;
+    }
+    .trend-box h4 {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #2c1810;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .trend-box h4 .badge {
+      background: #6b3a2a;
+      color: #fff;
+      font-size: 0.65rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    .trend-box p {
+      font-size: 0.88rem;
+      color: #4a3028;
+      margin: 0;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #2c1810;
+      color: #d4c4bc;
+      padding: 36px 24px;
+      text-align: center;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .tags span {
+      background: rgba(255,255,255,0.08);
+      border-radius: 20px;
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      color: #c8860a;
+    }
+    footer .disclaimer {
+      font-size: 0.73rem;
+      opacity: 0.5;
+      max-width: 600px;
+      margin: 12px auto 0;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 44px 20px 36px; }
+      .summary-box { padding: 22px 20px; }
+      .tip-box { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SITE HEADER -->
+<header class="site-header">
+  <div class="logo">☕ 바리스타 커피 저널 · Specialty Coffee</div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <span class="category-badge">☕ 커피 품종 &amp; 가공법</span>
+  <h1>게이샤 한 잔이 <em>10만 원</em>인 이유<br>— 품종과 가공법이 커피 맛을 결정한다</h1>
+  <p class="subtitle">워시드·내추럴·허니·무산소… 봉투에 쓰인 그 단어들, 맛이 이렇게나 달랐다</p>
+  <div class="meta">2026년 7월 6일 · 읽는 시간 약 8분 · #스페셜티커피 #품종 #가공법</div>
+</div>
+
+<!-- ARTICLE BODY -->
+<main class="container">
+  <article class="article-body">
+
+    <!-- HOOK -->
+    <div class="hook">
+      "같은 에티오피아 원두인데, 한 봉지는 2만 원이고 다른 건 12만 원이에요." 카페에서 이 말을 들은 적 있으신가요? 비밀은 원두가 어떤 '품종'이고, 수확 후 어떻게 '가공'되었는지에 있습니다. 커피 한 잔의 맛은 사실 농장을 떠난 직후의 72시간이 거의 결정합니다.
+    </div>
+
+    <!-- SUMMARY BOX -->
+    <div class="summary-box">
+      <h2>📌 오늘 이 글에서 배울 것</h2>
+      <ul>
+        <li>게이샤·SL28·카투아이·버번 — 품종이 향미에 미치는 결정적 차이</li>
+        <li>워시드·내추럴·허니 가공법의 원리와 맛 차이를 한눈에</li>
+        <li>2026년 핫 트렌드 — 무산소 발효·열충격·코-퍼멘트란 무엇인가</li>
+        <li>원두 봉투의 라벨을 읽는 실전 가이드 (속지 않는 법)</li>
+        <li>내 입맛에 맞는 가공법을 고르는 구체적인 기준 3가지</li>
+      </ul>
+    </div>
+
+    <!-- SECTION 1: 품종이 왜 중요한가 -->
+    <div class="section">
+      <h2>① 품종이란 무엇이고, 왜 그렇게 중요한가</h2>
+      <p>와인을 마실 때 "샤르도네냐 소비뇽 블랑이냐"를 따지듯, 커피도 <strong>품종(Variety/Cultivar)</strong>에 따라 향미의 틀이 완전히 달라집니다. 현재 상업적으로 재배되는 아라비카 커피만 해도 수십 가지 품종이 있으며, 스페셜티 씬에서 주목받는 것들은 각자 독보적인 향미 유전자를 갖고 있습니다.</p>
+      <p>사실 대부분의 사람들이 모르는데 — 같은 에티오피아 예르가체프 농장에서도 게이샤 품종을 심으면 자스민·복숭아 향이 나고, 헤어룸 품종을 심으면 블루베리 잼 같은 묵직한 단맛이 납니다. <strong>품종은 향미의 '유전적 상한선'을 결정</strong>합니다. 가공과 로스팅은 그 안에서 최대치를 끌어내는 작업이고요.</p>
+
+      <!-- VARIETY CARDS -->
+      <div class="variety-grid">
+        <div class="variety-card geisha">
+          <h3>🌸 게이샤 (Geisha)</h3>
+          <div class="origin">원산지: 에티오피아 → 파나마 보케테 광역화</div>
+          <p>2004년 파나마 에스메랄다 농장이 세계 경매에서 kg당 역대 최고가를 갱신하며 주목받기 시작. 재스민·베르가못·복숭아·레몬그라스 같은 섬세한 꽃향기와 과일향이 특징이며, 차(tea)처럼 가볍고 투명한 질감이 납니다.</p>
+          <div class="flavor-tags">
+            <span>자스민</span><span>복숭아</span><span>레몬그라스</span><span>홍차</span>
+          </div>
+        </div>
+        <div class="variety-card sl28">
+          <h3>🍷 SL28</h3>
+          <div class="origin">원산지: 케냐 스콧 연구소 개발 (1930년대)</div>
+          <p>케냐 커피의 정체성을 만든 품종. '블랙커런트(까막까치밥나무) 같은 포도주 산미'로 유명하며, 무게감 있는 바디와 극적인 토마토·와인 복합미가 특징. 병충해에 약해 재배 난이도가 높지만, 컵 품질은 세계 최고 수준.</p>
+          <div class="flavor-tags">
+            <span>블랙커런트</span><span>토마토</span><span>레드와인</span><span>흑설탕</span>
+          </div>
+        </div>
+        <div class="variety-card catuai">
+          <h3>🌿 카투아이 (Catuai)</h3>
+          <div class="origin">원산지: 브라질 (문도 노보 × 카투라 교배, 1949)</div>
+          <p>브라질·코스타리카·과테말라 등에서 가장 널리 재배되는 '실용 품종'. 강한 바람과 병충해에 강하고 생산성이 높아 농가 소득에 유리. 향미는 헤이즐넛·밀크초콜릿·카라멜처럼 안정적이며 밸런스가 좋습니다.</p>
+          <div class="flavor-tags">
+            <span>헤이즐넛</span><span>밀크초콜릿</span><span>카라멜</span><span>견과류</span>
+          </div>
+        </div>
+        <div class="variety-card bourbon">
+          <h3>✨ 버번 (Bourbon)</h3>
+          <div class="origin">원산지: 레위니옹 섬 (구 이름 Bourbon)</div>
+          <p>에티오피아에서 아라비카의 초기 변이종으로 예멘을 거쳐 레위니옹 섬에 정착. 달콤한 과일 산미에 버터스카치·갈색설탕 같은 풍미가 어우러집니다. 게이샤처럼 화려하지 않아도 '클래식한 스페셜티'를 대표하는 품종.</p>
+          <div class="flavor-tags">
+            <span>사과</span><span>버터스카치</span><span>갈색설탕</span><span>황도복숭아</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: 가공법 -->
+    <div class="section">
+      <h2>② 워시드·내추럴·허니 — 가공법이 맛을 바꾸는 원리</h2>
+      <p>커피 체리를 수확하면 씨앗(생두)을 감싸고 있는 <strong>껍질(외피) → 과육(펄프) → 점액질(뮤실리지) → 파치먼트</strong> 4층 구조가 있습니다. 어디까지 제거하고 어떻게 건조하느냐에 따라 가공법이 나뉘고, 이것이 향미의 '분위기'를 결정합니다.</p>
+
+      <!-- SVG INFOGRAPHIC: 가공법 비교 -->
+      <div class="infographic-wrap">
+        <svg viewBox="0 0 740 340" xmlns="http://www.w3.org/2000/svg" width="740" height="340">
+          <defs>
+            <filter id="shadow" x="-5%" y="-5%" width="110%" height="120%">
+              <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#00000022"/>
+            </filter>
+          </defs>
+
+          <!-- Background -->
+          <rect width="740" height="340" fill="#faf7f2" rx="12"/>
+
+          <!-- Title -->
+          <text x="370" y="32" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="14" font-weight="700" fill="#2c1810">가공법 단계별 비교 인포그래픽</text>
+
+          <!-- Column headers -->
+          <rect x="20" y="48" width="215" height="38" rx="6" fill="#6b3a2a"/>
+          <text x="127" y="72" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="13" font-weight="700" fill="#fff">☁ 워시드 (Washed)</text>
+
+          <rect x="262" y="48" width="215" height="38" rx="6" fill="#c8860a"/>
+          <text x="370" y="72" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="13" font-weight="700" fill="#fff">🍯 허니 (Honey)</text>
+
+          <rect x="505" y="48" width="215" height="38" rx="6" fill="#4a2218"/>
+          <text x="613" y="72" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="13" font-weight="700" fill="#fff">🍒 내추럴 (Natural)</text>
+
+          <!-- Row labels on left side (we embed them in cells) -->
+          <!-- Cell rows -->
+          <!-- Row 1: 외피 제거 -->
+          <rect x="20" y="96" width="215" height="48" rx="4" fill="#fff" filter="url(#shadow)"/>
+          <text x="127" y="116" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" font-weight="700" fill="#6b3a2a">외피·과육 완전 제거</text>
+          <text x="127" y="132" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#666">수확 직후 탈피기로 제거</text>
+
+          <rect x="262" y="96" width="215" height="48" rx="4" fill="#fff" filter="url(#shadow)"/>
+          <text x="370" y="116" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" font-weight="700" fill="#c8860a">외피만 제거, 점액질 일부 잔류</text>
+          <text x="370" y="132" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#666">뮤실리지 잔류량으로 등급 구분</text>
+
+          <rect x="505" y="96" width="215" height="48" rx="4" fill="#fff" filter="url(#shadow)"/>
+          <text x="613" y="116" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" font-weight="700" fill="#4a2218">체리 전체 그대로 건조</text>
+          <text x="613" y="132" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#666">수확 후 그대로 건조 베드에</text>
+
+          <!-- Row 2: 발효/건조 -->
+          <rect x="20" y="154" width="215" height="52" rx="4" fill="#fff" filter="url(#shadow)"/>
+          <text x="127" y="174" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" font-weight="700" fill="#6b3a2a">물탱크 발효 12~36시간</text>
+          <text x="127" y="190" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#666">→ 수세 → 건조 14~21일</text>
+
+          <rect x="262" y="154" width="215" height="52" rx="4" fill="#fff" filter="url(#shadow)"/>
+          <text x="370" y="174" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" font-weight="700" fill="#c8860a">그늘/햇빛 건조 14~25일</text>
+          <text x="370" y="190" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#666">Yellow→Red→Black 허니로 세분화</text>
+
+          <rect x="505" y="154" width="215" height="52" rx="4" fill="#fff" filter="url(#shadow)"/>
+          <text x="613" y="174" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" font-weight="700" fill="#4a2218">햇빛 건조 25~35일</text>
+          <text x="613" y="190" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#666">느린 건조로 과실미 극대화</text>
+
+          <!-- Row 3: 맛 -->
+          <rect x="20" y="216" width="215" height="52" rx="4" fill="#e8f4f8" filter="url(#shadow)"/>
+          <text x="127" y="236" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" font-weight="700" fill="#2563ab">클린 · 밝은 산미 · 투명한 바디</text>
+          <text x="127" y="252" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#444">꽃향·시트러스·허브 강조</text>
+
+          <rect x="262" y="216" width="215" height="52" rx="4" fill="#fef9e7" filter="url(#shadow)"/>
+          <text x="370" y="236" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" font-weight="700" fill="#b7770d">달콤함 + 클린 밸런스</text>
+          <text x="370" y="252" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#444">카라멜·석청·열대과일 중간감</text>
+
+          <rect x="505" y="216" width="215" height="52" rx="4" fill="#fdf0f0" filter="url(#shadow)"/>
+          <text x="613" y="236" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" font-weight="700" fill="#c0392b">무거운 바디 · 진한 과실미</text>
+          <text x="613" y="252" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#444">블루베리·초콜릿·발효향 강조</text>
+
+          <!-- Row 4: 난이도 -->
+          <rect x="20" y="278" width="215" height="38" rx="4" fill="#f5f5f5" filter="url(#shadow)"/>
+          <text x="127" y="293" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#555">품질 안정성</text>
+          <text x="127" y="308" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" font-weight="700" fill="#27ae60">★★★★★ 가장 높음</text>
+
+          <rect x="262" y="278" width="215" height="38" rx="4" fill="#f5f5f5" filter="url(#shadow)"/>
+          <text x="370" y="293" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#555">품질 안정성</text>
+          <text x="370" y="308" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" font-weight="700" fill="#f39c12">★★★★ 중상</text>
+
+          <rect x="505" y="278" width="215" height="38" rx="4" fill="#f5f5f5" filter="url(#shadow)"/>
+          <text x="613" y="293" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#555">품질 안정성</text>
+          <text x="613" y="308" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="12" font-weight="700" fill="#e74c3c">★★★ 날씨 의존도 높음</text>
+        </svg>
+      </div>
+
+      <p><strong>포인트:</strong> 허니 가공법은 점액질 잔류 비율에 따라 옐로 허니(20~30% 잔류) → 레드 허니(50~60%) → 블랙 허니(90% 이상)로 나뉩니다. 블랙 허니는 내추럴에 가까운 진한 단맛을 내고, 옐로 허니는 워시드에 가깝게 산뜻합니다.</p>
+    </div>
+
+    <!-- PULL QUOTE -->
+    <div class="pull-quote">
+      "가공법은 원두의 유전자를 바꾸지 않습니다.<br>다만, 그 유전자가 가진 맛의 잠재력을<br>어떤 방향으로 꽃피울지 결정할 뿐이죠."
+    </div>
+
+    <!-- SECTION 3: 실전 팁 -->
+    <div class="tip-box">
+      <h3>🔑 실전 팁 — 내 입맛에 맞는 원두 고르는 기준 3가지</h3>
+      <ol>
+        <li><strong>산미를 좋아한다면 → 워시드 + 게이샤 or SL28.</strong> 봉투에 "Ethiopia Washed" 또는 "Kenya SL28"이 보이면 주저 없이 선택. 밝고 투명한 산미와 꽃향기를 기대할 수 있습니다.</li>
+        <li><strong>달고 묵직한 커피를 원한다면 → 내추럴 + 버번 or 카투아이.</strong> "Brazil Natural" "Ethiopia Natural Heirloom" 표기를 찾으세요. 블루베리잼 같은 깊은 단맛과 초콜릿 여운이 납니다.</li>
+        <li><strong>무난하게 시작하고 싶다면 → 허니 + 카투아이.</strong> Costa Rica 허니 가공 원두가 입문용으로 최적. 산미도 단맛도 중간이라 어떤 추출 방식으로도 실패가 적습니다.</li>
+      </ol>
+    </div>
+
+    <!-- SECTION 4: 2026 트렌드 -->
+    <div class="section">
+      <h2>③ 2026년 스페셜티 씬을 뒤흔드는 가공법 트렌드</h2>
+      <p>워시드·내추럴·허니가 '기본 삼각형'이라면, 지금 스페셜티 업계는 그 삼각형 밖을 탐험 중입니다. 특히 <strong>발효 과학</strong>이 생산지 현장에 깊숙이 들어오면서 맛의 가능성이 폭발했습니다.</p>
+
+      <div class="trend-box">
+        <h4>무산소 발효 (Anaerobic Fermentation) <span class="badge">🔥 HOT</span></h4>
+        <p>밀폐 탱크에서 산소를 제거하고 발효시키는 방법. 젖산균과 특정 효모가 활성화되어 일반 가공법으론 불가능한 <strong>라즈베리·화이트와인 같은 향미</strong>를 만들어냅니다. 콜롬비아를 중심으로 브라질·에티오피아로 확산 중이며, 2026년 현재 상위 경매 lot의 kg당 가격이 50달러를 넘기도 합니다.</p>
+      </div>
+
+      <div class="trend-box">
+        <h4>열충격 가공 (Thermal Shock) <span class="badge">NEW</span></h4>
+        <p>콜롬비아 생산자 윌톤 베니테스(Wilton Benitez)가 개발. 무산소 발효 후 펄프를 제거한 생두를 <strong>따뜻한 물로 세척한 직후 차가운 물에 급랭</strong>시켜 발효를 정확한 시점에 중단시킵니다. 발현된 향미가 콩에 고정되며, 캔디 같은 극도의 단맛이 특징. 현재 시장에서 가장 비싼 가공법 중 하나.</p>
+      </div>
+
+      <div class="trend-box">
+        <h4>탄산 침용 (Carbonic Maceration) <span class="badge">2015~지금</span></h4>
+        <p>보졸레 와인 양조법에서 차용. CO₂로 채운 탱크에 체리 전체를 넣어 각 체리 내부에서 개별 발효가 일어나게 합니다. 사사 세스틱(Sasa Sestic)이 이 기법으로 <strong>2015 세계 바리스타 챔피언십</strong>을 수상하며 유명해졌습니다. 주스처럼 선명한 레드 프루트가 특징.</p>
+      </div>
+
+      <div class="trend-box">
+        <h4>코-퍼멘트 (Co-Fermentation) <span class="badge">논란 중</span></h4>
+        <p>망고·딸기·계피·포도 효모 등 다른 재료를 탱크에 함께 넣어 발효. 커피에서 절대 나올 수 없는 맛이 구현되지만, 첨가물을 표기하지 않는 일부 생산자들 때문에 '인퓨즈드(flavored) 커피와 구분이 어렵다'는 윤리 논쟁이 2026년 내내 이어지고 있습니다. 투명한 라벨 표기가 핵심.</p>
+      </div>
+
+      <p style="margin-top:18px;">2026년 연구에 따르면, <strong>스타터 컬처(배양 균주)</strong>를 발효 탱크에 주입하면 목표 향미에 도달하는 시간이 기존 2~4일에서 <strong>14~36시간</strong>으로 단축됩니다. 또한 50L~7,000L 바이오리액터에서도 스페셜티 등급을 안정적으로 유지하는 스케일업 연구도 발표되어, 실험적 가공법이 더 이상 소량 농가만의 이야기가 아님을 보여줍니다.</p>
+    </div>
+
+    <!-- SECTION 5: 비교표 -->
+    <div class="section">
+      <h2>④ 품종 × 가공법 — 어떻게 조합하면 어떤 커피가 나오나</h2>
+      <p>품종과 가공법은 각각 독립적인 변수이지만, 조합할 때 시너지(또는 충돌)가 생깁니다. 아래 표로 한눈에 정리했습니다.</p>
+
+      <div class="compare-table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>품종</th>
+              <th>워시드와 만나면</th>
+              <th>내추럴과 만나면</th>
+              <th>무산소와 만나면</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>게이샤</td>
+              <td>자스민·레몬·홍차 — 가장 섬세하고 투명한 컵</td>
+              <td>복숭아·망고·달콤한 꽃향 — 화려하지만 무거워짐</td>
+              <td>라즈베리 화이트와인 + 꽃향기 — 최고가 조합</td>
+            </tr>
+            <tr>
+              <td>SL28</td>
+              <td>블랙커런트·토마토·레드와인 산미 강렬하게 부각</td>
+              <td>블루베리잼 + 포도 — 강렬하지만 거친 편</td>
+              <td>베리류 산미 + 발효향 — 복잡도 극대화</td>
+            </tr>
+            <tr>
+              <td>카투아이</td>
+              <td>깔끔한 밀크초콜릿·카라멜 — 안정적인 밸런스</td>
+              <td>황도·건포도·캐러멜 — 대중적인 달콤함</td>
+              <td>체리코크·캔디 — 가성비 좋은 무산소 lot</td>
+            </tr>
+            <tr>
+              <td>버번</td>
+              <td>사과·황도·버터스카치 — 클래식 스페셜티의 정석</td>
+              <td>건자두·초콜릿·설탕절임 — 진하고 풍성한 단맛</td>
+              <td>딸기잼·크랜베리 — 허니 공정과 함께 인기 상승 중</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SECTION 6: 라벨 읽는 법 -->
+    <div class="section">
+      <h2>⑤ 원두 봉투 라벨, 이렇게 읽으면 속지 않습니다</h2>
+      <p>스페셜티 커피 전문점이 늘어나면서 봉투에 멋진 단어들이 가득해졌습니다. 그런데 실제로 뭘 의미하는지 모르면 비싼 값을 치르고 내 입맛과 전혀 다른 커피를 살 수도 있습니다.</p>
+      <p>첫 번째로 확인할 것은 <strong>가공법(Process)</strong>입니다. Washed·Natural·Honey·Anaerobic 중 어느 것인지 명확히 적혀 있어야 합니다. "Specialty Fermented"처럼 모호하게 적혀 있다면 질문해보세요.</p>
+      <p>두 번째는 <strong>품종(Variety/Cultivar)</strong>입니다. Geisha, SL28, Catuai처럼 구체적인 품종명이 적혀야 신뢰할 수 있는 정보입니다. "Ethiopian Heirloom" 또는 "Mixed Variety"도 흔한데, 이는 에티오피아 재래종으로 복합적인 향미를 가집니다.</p>
+      <p>세 번째는 <strong>발효 시간 및 온도</strong>입니다. 좋은 무산소 발효 원두라면 "48-hour anaerobic, 18°C" 식으로 구체적 수치가 있습니다. 이것이 없다면 마케팅성 라벨일 가능성이 있습니다.</p>
+      <p>마지막으로, <strong>코-퍼멘트 여부</strong>를 확인하세요. 과일·향신료가 첨가된 경우 "Co-fermented with [재료]"로 명시되어야 정직한 라벨입니다. 향이 과도하게 특정 과일향인데 표기가 없다면 인퓨즈드(flavored) 커피일 가능성을 염두에 두세요.</p>
+    </div>
+
+    <!-- TIP BOX 2: 내일 당장 해볼 것 -->
+    <div class="tip-box">
+      <h3>☕ 내일 당장 해볼 수 있는 행동 제안</h3>
+      <ol>
+        <li><strong>집에 있는 원두 봉투를 꺼내보세요.</strong> 가공법과 품종이 적혀 있나요? 없다면 로스터리 SNS나 홈페이지를 확인해보세요. 적혀 있다면 위 표와 대조해 맛을 예측해보고, 실제와 비교해보는 것이 최고의 감각 훈련입니다.</li>
+        <li><strong>같은 원두의 워시드·내추럴 버전을 나란히 구매해보세요.</strong> 에티오피아 예르가체프 워시드 vs 내추럴 — 이 하나의 비교 실험이 커피를 이해하는 가장 빠른 길입니다. 많은 스페셜티 로스터리가 동일 농장의 두 버전을 함께 출시합니다.</li>
+        <li><strong>다음 카페 방문 시 바리스타에게 물어보세요.</strong> "이 원두 품종이랑 가공법이 뭔가요?" — 이 한 마디가 당신을 커피 초보에서 커피 마니아로 바꿔줍니다. 좋은 바리스타라면 기꺼이 설명해줄 것입니다.</li>
+      </ol>
+    </div>
+
+  </article>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="tags">
+      <span>#스페셜티커피</span>
+      <span>#커피품종</span>
+      <span>#가공법</span>
+      <span>#게이샤</span>
+      <span>#SL28</span>
+      <span>#워시드</span>
+      <span>#내추럴</span>
+      <span>#허니프로세스</span>
+      <span>#무산소발효</span>
+      <span>#바리스타</span>
+      <span>#커피공부</span>
+    </div>
+    <div style="font-size:0.82rem; color:#c8860a; margin-bottom:8px;">바리스타 커피 저널 · 2026년 7월 6일</div>
+    <p class="disclaimer">본 아티클은 스페셜티 커피 전문 바리스타의 현장 경험 및 공개된 연구 자료(Perfect Daily Grind, ScienceDirect, International Journal of Food Science and Technology 2026 등)를 바탕으로 작성되었습니다. 원두 가격 및 트렌드는 시장 상황에 따라 변동될 수 있습니다.</p>
+  </div>
+</footer>
+
+</body>
+</html>
