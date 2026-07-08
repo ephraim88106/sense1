@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 98, emoji: "☕", category: "추출",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "커피가 매번 다른 맛이 나는 진짜 이유 — 바리스타 10년이 숨겨온 추출 변수의 비밀",
+    date: "2026.07.08",
+    summary: "추출 수율과 TDS 등 커피 맛을 결정하는 핵심 변수 5가지, 과소추출·과다추출을 혀로 진단하고 즉석에서 고치는 법, 에스프레소·푸어오버·콜드브루·에어로프레스 방식별 황금 레시피까지 — 추출 변수 5가지와 과소·과다추출 즉석 해결법을 완전 정리.",
+    link: "coffee-article-2026-07-08.html"
+  },
+  {
     id: 97, emoji: "☕", category: "커피 품종 & 가공법",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "게이샤 한 잔이 10만 원인 이유 — 커피 품종과 가공법이 바꾸는 맛의 세계",
