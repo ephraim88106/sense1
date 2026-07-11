@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>해발 2,000m에서 탄생하는 맛 — 고도가 커피를 명품으로 만드는 진짜 과학</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #faf7f2;
+      font-family: 'Noto Sans KR', sans-serif;
+      color: #2c1810;
+      line-height: 1.85;
+    }
+
+    /* ── 헤더 배너 ── */
+    .hero {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 50%, #8b5e3c 100%);
+      color: #fff;
+      padding: 56px 24px 48px;
+      text-align: center;
+    }
+    .hero .category-badge {
+      display: inline-block;
+      background: #c8860a;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero .date {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(1.55rem, 4vw, 2.4rem);
+      font-weight: 900;
+      line-height: 1.35;
+      max-width: 720px;
+      margin: 0 auto 20px;
+    }
+    .hero .subtitle {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.78);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ── 컨테이너 ── */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    /* ── 핵심 요약 박스 ── */
+    .summary-box {
+      background: #fff8ee;
+      border-left: 5px solid #c8860a;
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      margin-bottom: 42px;
+    }
+    .summary-box h2 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #c8860a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .summary-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .summary-box ul li {
+      padding: 5px 0 5px 22px;
+      position: relative;
+      font-size: 0.97rem;
+    }
+    .summary-box ul li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: #c8860a;
+      font-size: 0.7rem;
+      top: 8px;
+    }
+
+    /* ── 본문 섹션 ── */
+    .section {
+      margin-bottom: 46px;
+    }
+    .section h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #2c1810;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      margin-bottom: 18px;
+      line-height: 1.4;
+    }
+    .section p {
+      font-size: 1rem;
+      color: #3a2016;
+      margin-bottom: 14px;
+    }
+    .section .highlight {
+      background: #fff3dc;
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 0.95rem;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* ── 실전 팁 박스 ── */
+    .tips-box {
+      background: linear-gradient(135deg, #c8860a 0%, #a86c08 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 32px 28px;
+      margin: 48px 0;
+    }
+    .tips-box h2 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .tip-item {
+      background: rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+    }
+    .tip-item:last-child { margin-bottom: 0; }
+    .tip-item .tip-num {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      opacity: 0.8;
+      margin-bottom: 6px;
+    }
+    .tip-item p {
+      font-size: 0.97rem;
+      line-height: 1.7;
+    }
+
+    /* ── 데이터 비교표 ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 0.92rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(44,24,16,0.08);
+    }
+    .data-table thead tr {
+      background: #6b3a2a;
+      color: #fff;
+    }
+    .data-table thead th {
+      padding: 14px 16px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .data-table tbody tr:nth-child(even) { background: #fff8ee; }
+    .data-table tbody tr:nth-child(odd) { background: #fff; }
+    .data-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #f0e6d3;
+    }
+    .data-table .accent { color: #c8860a; font-weight: 700; }
+
+    /* ── 원산지 카드 ── */
+    .origin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin: 24px 0;
+    }
+    .origin-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 22px 20px;
+      box-shadow: 0 2px 12px rgba(44,24,16,0.07);
+      border-top: 5px solid #6b3a2a;
+    }
+    .origin-card h4 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #2c1810;
+      margin-bottom: 8px;
+    }
+    .origin-card .altitude-badge {
+      display: inline-block;
+      background: #fff3dc;
+      color: #c8860a;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+    .origin-card p {
+      font-size: 0.88rem;
+      color: #5a3828;
+      line-height: 1.65;
+    }
+
+    /* ── SVG 인포그래픽 ── */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 20px 20px;
+      box-shadow: 0 2px 16px rgba(44,24,16,0.09);
+      margin: 36px 0;
+      overflow-x: auto;
+    }
+    .infographic-wrap h3 {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #2c1810;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    /* ── 마무리 행동 박스 ── */
+    .action-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 16px;
+      padding: 32px 28px;
+      margin: 48px 0 32px;
+      text-align: center;
+    }
+    .action-box h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: #c8860a;
+    }
+    .action-box p {
+      font-size: 0.97rem;
+      line-height: 1.8;
+      color: rgba(250,247,242,0.85);
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* ── 해시태그 & 푸터 ── */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .tag {
+      background: #f0e6d3;
+      color: #6b3a2a;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+    .footer-note {
+      font-size: 0.78rem;
+      color: #a08070;
+      border-top: 1px solid #e8d8c8;
+      padding-top: 18px;
+      line-height: 1.7;
+    }
+
+    /* ── 첫 문장 훅 ── */
+    .hook {
+      font-size: 1.18rem;
+      font-weight: 500;
+      color: #6b3a2a;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 22px;
+      margin-bottom: 36px;
+      background: rgba(107,58,42,0.05);
+      border-radius: 0 10px 10px 0;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 540px) {
+      .hero { padding: 40px 18px 36px; }
+      .container { padding: 28px 16px 48px; }
+      .data-table { font-size: 0.82rem; }
+      .data-table thead th, .data-table td { padding: 10px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ 헤더 배너 ══ -->
+<header class="hero">
+  <div class="category-badge">☕ 원두 산지 &amp; 농장 스토리</div>
+  <div class="date">2026년 7월 12일</div>
+  <h1>해발 2,000m에서 탄생하는 맛 — 고도가 커피를 명품으로 만드는 진짜 과학</h1>
+  <p class="subtitle">
+    에티오피아 예르가체프의 꽃향기, 콜롬비아 나리뇨의 달콤한 산미…<br />
+    그 비밀은 모두 "고도"에 있었다
+  </p>
+</header>
+
+<!-- ══ 본문 ══ -->
+<div class="container">
+
+  <!-- 훅 문장 -->
+  <p class="hook">
+    "같은 아라비카 품종인데 왜 이 원두는 블루베리 향이 나고, 저 원두는 밋밋할까요?" — 처음 스페셜티 커피를 접한 손님들이 가장 많이 던지는 질문입니다. 10년 동안 원두를 고르고 볶고 내리면서 제가 내린 결론은 딱 하나였어요. <strong>고도(해발 높이)가 맛을 결정한다.</strong>
+  </p>
+
+  <!-- 핵심 요약 박스 -->
+  <div class="summary-box">
+    <h2>📋 오늘 이 글에서 배울 것</h2>
+    <ul>
+      <li>고도가 커피 맛에 미치는 <strong>구체적인 화학 반응</strong> (클로로겐산·자당 축적)</li>
+      <li>해발 고도별 커피 원두의 <strong>밀도·산미·단맛 차이</strong> 비교</li>
+      <li>에티오피아 예르가체프 vs 콜롬비아 나리뇨 — 고지대 스타 산지 비교</li>
+      <li>원두 패키지의 "고도 표기"를 읽는 법 &amp; 구매 전략</li>
+      <li>내일 바로 써먹는 고지대 원두 추출 팁 3가지</li>
+    </ul>
+  </div>
+
+  <!-- ── 섹션 1 ── -->
+  <div class="section">
+    <h3>왜 고도가 높을수록 커피가 맛있어질까? — 느림의 마법</h3>
+    <p>
+      사실 대부분의 사람들이 모르는데, 커피 체리가 "얼마나 천천히 익느냐"가 맛의 출발점입니다. 해발 1,500m 이상의 고지대는 낮 기온이 18~22°C, 밤 기온이 10°C 아래로 떨어집니다. 이 서늘한 환경에서 커피 체리는 저지대의 6~7개월보다 훨씬 긴 <strong>9~10개월</strong>에 걸쳐 천천히 숙성됩니다.
+    </p>
+    <p>
+      이 긴 숙성 기간 동안 커피나무는 잎과 줄기에서 만들어진 탄수화물·아미노산·질소화합물을 씨앗(생두)으로 꾸준히 밀어넣습니다. 서두르지 않기 때문에 가득, 균일하게 채워집니다. 그 결과물이 바로 <strong>밀도 높은 생두</strong>입니다.
+    </p>
+    <div class="highlight">
+      💡 연구 결과: 고지대(1,500~2,200m) 원두의 밀도는 0.95~1.25 g/cm³으로, 저지대 원두(0.85~0.95 g/cm³)보다 최대 30% 더 높습니다. 밀도가 높을수록 향미 전구체(Flavor Precursor)가 더 많이 들어 있어 로스팅 후 복잡한 향미가 발현됩니다.
+    </div>
+  </div>
+
+  <!-- ── 섹션 2 ── -->
+  <div class="section">
+    <h3>클로로겐산 &amp; 자당 — 맛을 만드는 두 주인공</h3>
+    <p>
+      고지대 커피의 맛을 이해하려면 두 가지 물질을 알아야 합니다. 첫 번째는 <strong>클로로겐산(Chlorogenic Acid, CGA)</strong>입니다. 로스팅 과정에서 클로로겐산은 분해되며 복잡한 향미 화합물로 변환됩니다. 고지대 원두는 저지대 대비 <strong>30~50% 더 많은 클로로겐산</strong>을 함유하고 있어 로스팅 후 더 풍부하고 입체적인 향미가 나타납니다.
+    </p>
+    <p>
+      두 번째는 <strong>자당(Sucrose, 설탕의 기본 형태)</strong>입니다. 고지대의 서늘한 기온은 당 대사를 느리게 만들어 자당이 빠르게 분해되지 않고 씨앗에 축적됩니다. 고지대 원두는 저지대보다 <strong>15~25% 더 높은 당 함량</strong>을 가집니다. 이것이 에티오피아 예르가체프의 꿀 같은 달콤함, 콜롬비아 나리뇨의 캐러멜 뉘앙스의 비밀입니다.
+    </p>
+    <div class="highlight">
+      🔬 간단히 말하면: 서늘한 고도 → 천천히 익음 → 클로로겐산↑ &amp; 자당↑ → 로스팅 시 메일라드 반응 폭발 → 과일향·꽃향·초콜릿향 복합 발현
+    </div>
+  </div>
+
+  <!-- SVG 인포그래픽 -->
+  <div class="infographic-wrap">
+    <h3>⛰️ 해발 고도별 커피 원두 특성 비교</h3>
+    <svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;display:block;margin:0 auto;">
+      <!-- 배경 -->
+      <rect width="720" height="380" fill="#fdfaf6" rx="12"/>
+
+      <!-- 고도 산 실루엣 -->
+      <polygon points="60,320 200,120 340,320" fill="#e8d8c8" opacity="0.5"/>
+      <polygon points="160,320 340,80 520,320" fill="#d4b896" opacity="0.5"/>
+      <polygon points="300,320 500,40 700,320" fill="#c8a07a" opacity="0.5"/>
+
+      <!-- 산 라벨 -->
+      <text x="200" y="115" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#6b3a2a" font-weight="700">저지대</text>
+      <text x="200" y="130" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#8b5e3c">600~900m</text>
+      <text x="340" y="75" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#6b3a2a" font-weight="700">중고지대</text>
+      <text x="340" y="90" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#8b5e3c">900~1,500m</text>
+      <text x="500" y="35" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#2c1810" font-weight="800">고지대 ★</text>
+      <text x="500" y="52" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#c8860a">1,500~2,500m</text>
+
+      <!-- 바닥선 -->
+      <line x1="40" y1="325" x2="700" y2="325" stroke="#c8a07a" stroke-width="1.5"/>
+
+      <!-- 데이터 카드 3개 -->
+      <!-- 저지대 카드 -->
+      <rect x="20" y="200" width="180" height="110" rx="10" fill="#fff" stroke="#e8d8c8" stroke-width="1.5"/>
+      <text x="110" y="220" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#8b5e3c" font-weight="700">저지대 원두</text>
+      <text x="30" y="242" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#5a3828">밀도: 0.85–0.95 g/cm³</text>
+      <text x="30" y="260" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#5a3828">숙성 기간: 6–7개월</text>
+      <text x="30" y="278" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#5a3828">당 함량: 기준값</text>
+      <text x="30" y="296" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#5a3828">향미: 고소함·어스시</text>
+
+      <!-- 중고지대 카드 -->
+      <rect x="265" y="175" width="190" height="125" rx="10" fill="#fff" stroke="#d4b896" stroke-width="1.5"/>
+      <text x="360" y="196" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#8b5e3c" font-weight="700">중고지대 원두</text>
+      <text x="275" y="216" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#5a3828">밀도: 0.90–1.05 g/cm³</text>
+      <text x="275" y="234" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#5a3828">숙성 기간: 7–9개월</text>
+      <text x="275" y="252" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#5a3828">당 함량: +8~12%</text>
+      <text x="275" y="270" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#5a3828">향미: 견과류·카카오</text>
+      <text x="275" y="288" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#5a3828">클로로겐산: +15~25%</text>
+
+      <!-- 고지대 카드 (강조) -->
+      <rect x="508" y="130" width="200" height="175" rx="10" fill="#fff8ee" stroke="#c8860a" stroke-width="2.5"/>
+      <rect x="508" y="130" width="200" height="30" rx="10 10 0 0" fill="#c8860a"/>
+      <text x="608" y="151" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#fff" font-weight="800">★ 고지대 원두 (최상)</text>
+      <text x="518" y="178" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#2c1810">밀도: 0.95–1.25 g/cm³</text>
+      <text x="518" y="196" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#2c1810">숙성 기간: 9–10개월</text>
+      <text x="518" y="214" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#c8860a" font-weight="700">당 함량: +15~25% ↑</text>
+      <text x="518" y="232" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#c8860a" font-weight="700">클로로겐산: +30~50% ↑</text>
+      <text x="518" y="250" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#2c1810">향미: 과일·꽃·허브</text>
+      <text x="518" y="268" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#2c1810">산미: 생동감 있는</text>
+      <text x="518" y="286" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#2c1810">단맛: 꿀·캐러멜</text>
+
+      <!-- 출처 -->
+      <text x="360" y="370" text-anchor="middle" font-family="Noto Sans KR, sans-serif" font-size="9" fill="#b09080">참고: 고도별 원두 특성 (Achilles Coffee Roasters, PMC 연구 2024)</text>
+    </svg>
+  </div>
+
+  <!-- ── 섹션 3 ── -->
+  <div class="section">
+    <h3>에티오피아 예르가체프 — 해발 2,000m에서 피어나는 재스민</h3>
+    <p>
+      에티오피아 남부 구라게 지역에 자리한 <strong>예르가체프(Yirgacheffe)</strong>는 현지어로 "비옥한 땅"을 의미합니다. 해발 2,000~2,500m의 고원에 위치하며 아바야 호수가 풍부한 강우량을 공급하고, 낮엔 햇살이 충분하지만 밤엔 서늘한 기온 덕분에 커피 체리가 극도로 천천히 익습니다.
+    </p>
+    <p>
+      예르가체프 커피를 처음 마신 사람들은 대개 두 가지 반응을 보입니다. "이게 정말 커피야?" 그리고 "꽃향기가 어떻게 커피에서 나지?" 재스민 같은 꽃향기, 레몬·베르가못의 감귤 산미, 그리고 꿀 같은 달콤한 여운 — 이 모든 것이 바로 2,000m 고도의 결과물입니다. 전통 소규모 농장들이 모여 협동 조합 방식으로 공동 수확·수세 처리를 하는 것도 일관된 품질의 비결입니다.
+    </p>
+    <div class="highlight">
+      🗺 예르가체프 키워드: 고도 2,000~2,500m | 워시드 처리 주력 | 재스민·감귤·꿀 향미 | SCA 점수 88~92점대
+    </div>
+  </div>
+
+  <!-- ── 섹션 4 ── -->
+  <div class="section">
+    <h3>콜롬비아 나리뇨 &amp; 후일라 — 화산토 위의 달콤한 기적</h3>
+    <p>
+      콜롬비아 남서부 끝자락, 에콰도르 국경과 맞닿은 <strong>나리뇨(Nariño)</strong>는 평균 고도 2,000m 이상의 험준한 안데스 산악 지대입니다. 적도와 가까워 일 년 내내 충분한 일조량을 확보하면서도 고도 덕분에 서늘한 기온을 유지하는 — 그야말로 커피 재배의 기적 같은 조건입니다.
+    </p>
+    <p>
+      여기에 화산성 토양이 더해집니다. 수백 년간 화산 활동으로 쌓인 토양은 미네랄과 유기물이 풍부해 커피나무의 뿌리가 더 다양한 영양소를 흡수하도록 합니다. 대부분이 소농원 체제이며, FNC(콜롬비아 커피 생산자 협회)의 지원을 받아 수확 후 처리와 품질 관리를 엄격하게 진행합니다. 경사가 너무 가팔라 기계 수확이 불가능하기 때문에 <strong>100% 손 수확</strong>으로 빨갛게 잘 익은 체리만 선별합니다.
+    </p>
+    <div class="highlight">
+      🗺 나리뇨·후일라 키워드: 고도 1,800~2,200m | 화산토양 | 손 수확 100% | 화사한 산미·복합적 향미 | 카투라·카스티요 품종
+    </div>
+  </div>
+
+  <!-- 원산지 카드 -->
+  <div class="origin-grid">
+    <div class="origin-card">
+      <h4>🇪🇹 에티오피아 예르가체프</h4>
+      <span class="altitude-badge">2,000 ~ 2,500m</span>
+      <p>재스민 꽃향 / 감귤·베르가못 산미 / 꿀 단맛 / 워시드 처리 / 전통 소규모 협동 농장</p>
+    </div>
+    <div class="origin-card">
+      <h4>🇨🇴 콜롬비아 나리뇨</h4>
+      <span class="altitude-badge">1,800 ~ 2,200m</span>
+      <p>화산토·높은 미네랄 / 밝은 사과·캐러멜 산미 / 100% 손 수확 / 카투라·카스티요 품종</p>
+    </div>
+    <div class="origin-card">
+      <h4>🇰🇪 케냐 아비다레 &amp; 키암부</h4>
+      <span class="altitude-badge">1,700 ~ 2,100m</span>
+      <p>블랙커런트·토마토 산미 / 실키한 바디 / SL28·SL34 품종 / 더블 워시드 가공</p>
+    </div>
+  </div>
+
+  <!-- ── 섹션 5 ── -->
+  <div class="section">
+    <h3>원두 패키지의 고도 표기를 읽는 법 — 숫자 하나가 맛을 예측한다</h3>
+    <p>
+      스페셜티 커피 원두 패키지를 보면 "1,800 masl" 혹은 "Altitude: 1,200~1,400m" 같은 표기가 있습니다. <strong>masl = meters above sea level(해수면 기준 고도)</strong>입니다. 이 숫자를 읽는 것만으로도 어느 정도 맛을 예측할 수 있습니다.
+    </p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>고도</th>
+          <th>기대 향미</th>
+          <th>산미 수준</th>
+          <th>단맛</th>
+          <th>대표 산지</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>600~900m</td>
+          <td>고소함, 어스시, 묵직함</td>
+          <td>낮음</td>
+          <td>보통</td>
+          <td>브라질 상파울루 저지대</td>
+        </tr>
+        <tr>
+          <td>900~1,200m</td>
+          <td>견과류, 밀크초콜릿</td>
+          <td>중간</td>
+          <td>보통~높음</td>
+          <td>과테말라 아티틀란 저지</td>
+        </tr>
+        <tr>
+          <td>1,200~1,500m</td>
+          <td>과일, 캐러멜, 카카오</td>
+          <td>중간~높음</td>
+          <td>높음</td>
+          <td>코스타리카, 온두라스</td>
+        </tr>
+        <tr>
+          <td class="accent">1,500~1,800m</td>
+          <td class="accent">복숭아, 살구, 장미, 시트러스</td>
+          <td class="accent">높음</td>
+          <td class="accent">매우 높음</td>
+          <td class="accent">콜롬비아 후일라·나리뇨</td>
+        </tr>
+        <tr>
+          <td class="accent">1,800~2,500m</td>
+          <td class="accent">재스민, 블루베리, 베르가못</td>
+          <td class="accent">매우 높음</td>
+          <td class="accent">꿀·카라멜 수준</td>
+          <td class="accent">에티오피아 예르가체프</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ── 섹션 6 — 생산자 이야기 ── -->
+  <div class="section">
+    <h3>숫자 뒤에 숨은 사람들 — 소농 생산자의 하루</h3>
+    <p>
+      고지대 커피 농장의 현실은 낭만과 거리가 있습니다. 험준한 경사면에서 기계를 쓸 수 없어 모든 수확이 손으로 이루어집니다. 에티오피아 예르가체프의 경우 가족 단위의 소농 수백 명이 협동 조합 습식 처리장(Washing Station)에 체리를 납품합니다. 콜롬비아 나리뇨에서는 FNC의 지도 아래 소농들이 수확 후 처리 기술을 교육받고, 공정무역 인증을 통해 더 높은 가격을 받습니다.
+    </p>
+    <p>
+      우리가 한 잔의 커피를 마실 때, 그 안에는 수백 명의 농부가 경사 60도의 산에서 손으로 딴 체리들이 담겨 있습니다. 고지대 스페셜티 커피에 '프리미엄'이라는 말이 붙는 이유는 단순히 맛 때문만이 아닙니다. <strong>그것이 가능한 유일한 방법인 '노동 집약적 손 수확'에 대한 정당한 대가</strong>이기도 합니다.
+    </p>
+  </div>
+
+  <!-- 실전 팁 박스 -->
+  <div class="tips-box">
+    <h2>☕ 바리스타의 실전 팁 — 고지대 원두를 100% 즐기는 법</h2>
+    <div class="tip-item">
+      <div class="tip-num">TIP 01 — 추출 온도 낮추기</div>
+      <p>고지대 원두는 밀도가 높아 과추출이 쉽습니다. 푸어오버 기준 93°C가 표준이지만, 예르가체프 같은 고지대 워시드 원두는 <strong>89~91°C</strong>로 내리면 꽃향기와 과일 산미가 훨씬 선명하게 살아납니다.</p>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">TIP 02 — 분쇄도 조금 굵게</div>
+      <p>밀도 높은 고지대 원두는 분쇄 시 표면적이 넓어져 추출이 빠릅니다. 평소보다 <strong>10~15% 굵게 그라인딩</strong>하면 원치 않는 쓴맛을 줄이고 밝은 산미와 단맛을 균형 있게 잡을 수 있습니다.</p>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">TIP 03 — 원두 패키지에서 고도 먼저 확인</div>
+      <p>원두를 살 때 "고도(Altitude/masl)" 표기를 꼭 확인하세요. <strong>1,800m 이상</strong>이라면 과일·꽃 향미, 밝은 산미를 기대하세요. 고소하고 묵직한 걸 원한다면 1,000m 이하 저지대 원두가 더 잘 맞습니다.</p>
+    </div>
+  </div>
+
+  <!-- 마무리 행동 제안 -->
+  <div class="action-box">
+    <h3>🌄 내일 당장 해볼 수 있는 것</h3>
+    <p>
+      지금 집에 있는 원두 포장지를 꺼내 "고도(Altitude)"를 찾아보세요.<br />
+      만약 표기가 없다면, 그 원두는 스페셜티 등급이 아닐 가능성이 높습니다.<br /><br />
+      다음 원두 구매 때는 <strong>에티오피아 예르가체프(2,000m+)</strong> 또는<br />
+      <strong>콜롬비아 나리뇨(1,800m+)</strong> 워시드 원두를 한 번 골라보세요.<br />
+      지금까지 마셨던 커피와 전혀 다른 맛의 세계가 펼쳐질 겁니다.
+    </p>
+  </div>
+
+  <!-- 해시태그 -->
+  <div class="tags">
+    <span class="tag">#스페셜티커피</span>
+    <span class="tag">#원두산지</span>
+    <span class="tag">#고도와커피</span>
+    <span class="tag">#에티오피아예르가체프</span>
+    <span class="tag">#콜롬비아나리뇨</span>
+    <span class="tag">#테루아르</span>
+    <span class="tag">#커피농장스토리</span>
+    <span class="tag">#바리스타팁</span>
+    <span class="tag">#커피지식</span>
+    <span class="tag">#고지대커피</span>
+    <span class="tag">#싱글오리진</span>
+    <span class="tag">#커피향미</span>
+  </div>
+
+  <!-- 푸터 -->
+  <div class="footer-note">
+    작성일: 2026년 7월 12일 | 작성: 스페셜티 커피 10년 경력 바리스타<br />
+    참고 자료: Achilles Coffee Roasters, PMC(PubMed Central) 고도·향미 연구, 94Celsius, FNC 콜롬비아 커피 생산자 협회, 에티오피아 예르가체프 협동 조합 자료<br />
+    ※ 이 아티클의 수치는 각 연구 기관의 자료를 기반으로 하며 원두 품종·가공법에 따라 개인차가 있을 수 있습니다.
+  </div>
+
+</div>
+</body>
+</html>
