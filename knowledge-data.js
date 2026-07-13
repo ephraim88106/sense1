@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 103, emoji: "☕", category: "커피 품종 & 가공법",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "게이샤는 왜 1kg에 3천만 원인가 — 품종과 가공법이 커피 맛을 결정하는 진짜 이유",
+    date: "2026.07.13",
+    summary: "게이샤·SL28·카투아이 등 같은 아라비카인데 가격이 수백 배 차이나는 품종의 비밀, 게이샤가 비싼 진짜 이유인 고도와 유전자 이야기, 워시드·내추럴·허니 가공법이 향미를 완전히 바꾸는 화학적 원리, 2026년 스페셜티 씬을 뒤흔드는 무산소(Anaerobic) 발효 트렌드, 내 취향에 맞는 품종·가공법을 고르는 실전 팁까지 — 품종과 가공법이 커피 맛을 결정하는 과학 완전 해부.",
+    link: "coffee-article-2026-07-13.html"
+  },
+  {
     id: 102, emoji: "🌋", category: "산지 & 테루아르",
     categoryColor: { bg: "#ecfccb", text: "#3f6212" },
     title: "해발 2,000m에서 탄생하는 맛 — 고도가 커피를 명품으로 만드는 진짜 과학",
