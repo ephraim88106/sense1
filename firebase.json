@@ -5,6 +5,7 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
+      "**/myenv/**",
       "kca.html",
       "text_kca.txt",
       "blueprint.md",
