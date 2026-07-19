@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>해발 2,000m에서 자란 원두, 왜 이렇게 맛있을까? — 고도가 커피 맛을 결정하는 놀라운 과학</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #faf7f2;
+      color: #2c1810;
+      line-height: 1.85;
+      font-size: 17px;
+    }
+
+    .hero {
+      background: linear-gradient(160deg, #2c1810 0%, #6b3a2a 55%, #c8860a 100%);
+      color: #fff;
+      padding: 60px 24px 50px;
+      text-align: center;
+    }
+
+    .hero .badge {
+      display: inline-block;
+      background: rgba(200,134,10,0.85);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      font-weight: 900;
+      line-height: 1.35;
+      max-width: 760px;
+      margin: 0 auto 18px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .hero .subtitle {
+      font-size: 1rem;
+      opacity: 0.85;
+      margin-bottom: 14px;
+    }
+
+    .hero .meta {
+      font-size: 0.8rem;
+      opacity: 0.65;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px 60px;
+    }
+
+    /* 훅 */
+    .hook {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 18px 20px;
+      background: #fff8ed;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #fff;
+      border-radius: 14px;
+      padding: 28px 28px 22px;
+      margin-bottom: 42px;
+    }
+
+    .summary-box h3 {
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 14px;
+    }
+
+    .summary-box ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .summary-box ul li {
+      padding: 6px 0 6px 22px;
+      position: relative;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .summary-box ul li:last-child { border-bottom: none; }
+
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      font-size: 0.85rem;
+    }
+
+    /* 섹션 소제목 */
+    h2 {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 44px 0 16px;
+      padding-left: 16px;
+      border-left: 5px solid #c8860a;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #3d2015;
+    }
+
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff3d6 0%, #ffeab8 100%);
+      border: 2px solid #c8860a;
+      border-radius: 14px;
+      padding: 26px 28px;
+      margin: 40px 0;
+    }
+
+    .tip-box h3 {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #6b3a2a;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tip-box ol {
+      padding-left: 20px;
+    }
+
+    .tip-box ol li {
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: #3d2015;
+    }
+
+    .tip-box ol li strong { color: #8b4513; }
+
+    /* SVG 컨테이너 */
+    .infographic {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 20px;
+      margin: 40px 0;
+      box-shadow: 0 4px 24px rgba(44,24,16,0.08);
+    }
+
+    .infographic h3 {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+    }
+
+    .infographic svg {
+      display: block;
+      margin: 0 auto;
+      width: 100%;
+      max-width: 680px;
+    }
+
+    /* 비교 데이터 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 28px 0;
+      font-size: 0.9rem;
+    }
+
+    .compare-table th {
+      background: #6b3a2a;
+      color: #fff;
+      padding: 12px 14px;
+      text-align: left;
+      font-weight: 700;
+    }
+
+    .compare-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid #e8ddd5;
+      color: #3d2015;
+    }
+
+    .compare-table tr:nth-child(even) td { background: #fdf6ef; }
+    .compare-table tr:hover td { background: #fff3e0; }
+
+    .compare-table td:first-child { font-weight: 700; color: #6b3a2a; }
+
+    /* 하단 태그 */
+    .tags {
+      margin-top: 50px;
+      padding-top: 24px;
+      border-top: 2px solid #e8ddd5;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tags span {
+      background: #f0e8e0;
+      color: #6b3a2a;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    .disclaimer {
+      margin-top: 20px;
+      font-size: 0.75rem;
+      color: #999;
+      line-height: 1.6;
+    }
+
+    /* 강조 인용 */
+    .pull-quote {
+      font-size: 1.25rem;
+      font-style: italic;
+      color: #6b3a2a;
+      text-align: center;
+      margin: 36px 0;
+      padding: 24px 32px;
+      border-top: 3px solid #c8860a;
+      border-bottom: 3px solid #c8860a;
+      background: #fff;
+      border-radius: 8px;
+    }
+
+    /* 스탯 카드 */
+    .stat-row {
+      display: flex;
+      gap: 16px;
+      margin: 28px 0;
+      flex-wrap: wrap;
+    }
+
+    .stat-card {
+      flex: 1;
+      min-width: 140px;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(44,24,16,0.07);
+      border-top: 4px solid #c8860a;
+    }
+
+    .stat-card .num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #6b3a2a;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .stat-card .label {
+      font-size: 0.78rem;
+      color: #888;
+      line-height: 1.4;
+    }
+
+    /* 농장 스토리 카드 */
+    .farm-card {
+      background: #fff;
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin: 18px 0;
+      border-left: 6px solid #c8860a;
+      box-shadow: 0 2px 10px rgba(44,24,16,0.06);
+    }
+
+    .farm-card h4 {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #2c1810;
+      margin-bottom: 8px;
+    }
+
+    .farm-card .farm-meta {
+      font-size: 0.8rem;
+      color: #c8860a;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .farm-card p {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      .stat-row { gap: 10px; }
+      .stat-card .num { font-size: 1.6rem; }
+      h2 { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- 히어로 헤더 -->
+<div class="hero">
+  <div class="badge">☕ 원두 산지 &amp; 농장 스토리</div>
+  <h1>해발 2,000m에서 자란 원두,<br>왜 이렇게 맛있을까?</h1>
+  <p class="subtitle">고도가 커피 맛을 결정하는 놀라운 과학 — 에티오피아부터 파나마까지</p>
+  <p class="meta">2026년 7월 19일 | 스페셜티 바리스타 10년 경력 칼럼</p>
+</div>
+
+<div class="container">
+
+  <!-- 훅 -->
+  <div class="hook">
+    에스프레소 한 잔을 마시며 "이거 어디서 왔지?"라고 물어본 적 있나요? 그 대답에 따라 당신이 느끼는 맛이 완전히 달라집니다. 사실 커피의 풍미를 결정하는 가장 강력한 변수는 로스팅도, 추출 기술도 아닙니다. 바로 <strong>'해발 고도'</strong>입니다.
+  </div>
+
+  <!-- 핵심 요약 박스 -->
+  <div class="summary-box">
+    <h3>📋 오늘 이 글에서 배울 것</h3>
+    <ul>
+      <li>왜 해발 1,500m 이상 원두는 당도와 산미가 폭발적으로 높아지는가</li>
+      <li>에티오피아·케냐·콜롬비아·파나마 — 산지별로 맛이 근본적으로 다른 과학적 이유</li>
+      <li>파나마 게이샤 한 잔이 수만 원을 넘는 진짜 이유 (농장 스토리 포함)</li>
+      <li>카페에서 원두 고를 때 라벨의 어떤 숫자를 봐야 하는가</li>
+      <li>2026년 싱글 오리진 시장의 핵심 트렌드와 소비자가 알아야 할 것</li>
+    </ul>
+  </div>
+
+  <!-- 스탯 -->
+  <div class="stat-row">
+    <div class="stat-card">
+      <div class="num">+25%</div>
+      <div class="label">해발 1,500m 이상에서<br>추가 축적되는 당분</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">+60%</div>
+      <div class="label">고고도 원두의<br>클로로겐산 함량 증가</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">9~10개월</div>
+      <div class="label">고지대 체리 숙성 기간<br>(저지대 대비 3개월 더)</div>
+    </div>
+    <div class="stat-card">
+      <div class="num">$23.2B</div>
+      <div class="label">2034년 글로벌<br>싱글 오리진 시장 규모</div>
+    </div>
+  </div>
+
+  <!-- SVG 인포그래픽: 고도별 커피 특성 -->
+  <div class="infographic">
+    <h3>📊 해발 고도별 커피 특성 비교</h3>
+    <svg viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" font-family="'Noto Sans KR', sans-serif">
+      <!-- 배경 -->
+      <rect width="680" height="360" fill="#fdfaf6" rx="10"/>
+
+      <!-- 산 실루엣 -->
+      <polygon points="60,300 200,80 340,300" fill="#e8ddd5" opacity="0.5"/>
+      <polygon points="200,300 380,50 560,300" fill="#d5c4b8" opacity="0.4"/>
+      <polygon points="400,300 560,110 680,300" fill="#c4b0a0" opacity="0.35"/>
+
+      <!-- 고도 구분선 -->
+      <!-- 2200m -->
+      <line x1="50" y1="70" x2="630" y2="70" stroke="#c8860a" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+      <text x="635" y="75" font-size="11" fill="#c8860a" font-weight="700">2,200m</text>
+      <!-- 1500m -->
+      <line x1="50" y1="155" x2="630" y2="155" stroke="#6b3a2a" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.7"/>
+      <text x="635" y="160" font-size="11" fill="#6b3a2a" font-weight="700">1,500m</text>
+      <!-- 1000m -->
+      <line x1="50" y1="230" x2="630" y2="230" stroke="#999" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.6"/>
+      <text x="635" y="235" font-size="11" fill="#999">1,000m</text>
+
+      <!-- 구역 레이블 -->
+      <!-- 최고급 스페셜티 구역 -->
+      <rect x="55" y="75" width="560" height="76" fill="#c8860a" rx="6" opacity="0.12"/>
+      <text x="340" y="100" font-size="13" fill="#8b5e00" font-weight="900" text-anchor="middle">🏆 최고급 스페셜티 구역 (1,500–2,200m)</text>
+      <text x="340" y="120" font-size="11" fill="#a06800" text-anchor="middle">복합 과일향 · 재스민 · 베리 · 밝은 산미 · 당도 ↑↑↑</text>
+      <text x="340" y="140" font-size="10" fill="#c8860a" text-anchor="middle">예: 에티오피아 예르가체프, 파나마 게이샤, 케냐 뉴에리</text>
+
+      <!-- 스페셜티 구역 -->
+      <rect x="55" y="158" width="560" height="68" fill="#6b3a2a" rx="6" opacity="0.09"/>
+      <text x="340" y="182" font-size="13" fill="#5a2e1a" font-weight="900" text-anchor="middle">⭐ 스페셜티 구역 (1,000–1,500m)</text>
+      <text x="340" y="200" font-size="11" fill="#7a3f22" text-anchor="middle">견과류·카라멜·초콜릿 · 균형잡힌 산미</text>
+      <text x="340" y="218" font-size="10" fill="#6b3a2a" text-anchor="middle">예: 콜롬비아 우일라, 코스타리카 따라수</text>
+
+      <!-- 상업용 구역 -->
+      <rect x="55" y="233" width="560" height="57" fill="#aaa" rx="6" opacity="0.1"/>
+      <text x="340" y="255" font-size="13" fill="#666" font-weight="700" text-anchor="middle">일반 상업용 구역 (600–1,000m)</text>
+      <text x="340" y="272" font-size="11" fill="#888" text-anchor="middle">부드럽고 단조로운 맛 · 쓴맛 위주 · 아이스 아메리카노용</text>
+
+      <!-- 바닥 -->
+      <line x1="50" y1="300" x2="630" y2="300" stroke="#ccc" stroke-width="1" opacity="0.5"/>
+      <text x="340" y="320" font-size="10" fill="#bbb" text-anchor="middle">해발 고도 (MASL = Meters Above Sea Level)</text>
+
+      <!-- 좌측 y축 레이블 -->
+      <text x="20" y="113" font-size="9" fill="#aaa" text-anchor="middle" transform="rotate(-90,20,113)">고도</text>
+    </svg>
+  </div>
+
+  <!-- 섹션 1 -->
+  <h2>🌡️ 왜 고도가 높을수록 커피가 맛있어질까?</h2>
+  <p>
+    대부분의 사람들이 "고지대 원두가 좋다"는 말은 들었어도 그 이유를 제대로 설명하지 못합니다. 핵심은 <strong>온도차</strong>와 <strong>숙성 속도</strong>입니다.
+  </p>
+  <p>
+    해발 1,500m 이상 고지대는 낮 기온이 20~25°C, 밤 기온은 10°C 아래로 뚝 떨어집니다. 낮 동안 커피나무는 광합성으로 당분을 열심히 만들어냅니다. 그런데 밤이 되면 기온이 내려가면서 세포 대사가 극도로 느려집니다. 이 당분을 '소모'하지 않고 그대로 체리 안에 <strong>농축</strong>시키는 것이죠.
+  </p>
+  <p>
+    이 과정이 반복되면서 저지대에서는 6~7개월이면 끝나는 체리 숙성이 고지대에서는 <strong>9~10개월</strong>씩 걸립니다. 2025년 Nature Scientific Reports에 실린 연구에 따르면, 고도 100m 상승할 때마다 원두의 총 페놀 함량이 약 0.8mg/g씩 증가합니다. 저지대 대비 최대 <strong>당분 25% 더, 클로로겐산 40~60% 더</strong> 축적됩니다. 클로로겐산은 원두의 산미와 복합 향미의 기초입니다.
+  </p>
+
+  <!-- 섹션 2 -->
+  <h2>🇪🇹 에티오피아 예르가체프 — 왜 항상 재스민과 블루베리인가</h2>
+  <p>
+    에티오피아 예르가체프(Yirgacheffe)는 해발 1,700~2,200m에 위치한 고원 지대입니다. 안개가 낀 캐노피(나무 그늘) 아래에서 자라는 에티오피아 재래종 커피나무는 독특한 <strong>지방 결합 에스터(lipid-bound ester)</strong>를 생성합니다. 이 에스터가 로스팅 과정에서 분해되면서 재스민, 베르가못, 열대 꽃향기가 폭발적으로 피어납니다.
+  </p>
+  <p>
+    또한 예르가체프의 붉은 점토 토양은 철분과 미네랄이 풍부해 블루베리, 복숭아 같은 과일 계열 뉘앙스를 더합니다. 이것이 바로 에티오피아 커피를 워시드(수세식) 가공하면 항상 밝은 과일향이 나오는 과학적 이유입니다.
+  </p>
+
+  <!-- 섹션 3 -->
+  <h2>🇰🇪 케냐 뉴에리 — 검은 건포도와 토마토 줄기의 비밀</h2>
+  <p>
+    케냐 뉴에리(Nyeri) 지역의 커피는 전 세계 바리스타들이 "가장 복잡한 산미"라 부릅니다. SL28, SL34 품종이 철분이 풍부한 붉은 화산 토양에서 자라면서 <strong>피라진(pyrazine)</strong>이라는 방향 성분을 다량 생성합니다. 피라진은 로스팅 중 마이야르 반응에서 블랙커런트(검은 건포도), 토마토 줄기 같은 독특한 쌉싸래한 단맛을 만들어냅니다.
+  </p>
+  <p>
+    케냐 커피의 "와인 같은 산미"도 여기서 비롯됩니다. SL28 품종은 가뭄 저항성이 강하지만 재배 면적이 제한적이어서 스페셜티 시장에서 희소가치가 매우 높습니다. 케냐 AA 등급은 스크린 사이즈 18 이상의 대형 원두만 인정하며, 밀도와 당도를 동시에 충족해야 합니다.
+  </p>
+
+  <!-- 섹션 4 -->
+  <h2>🌋 파나마 게이샤 — 한 잔이 수만 원인 이유를 알면 납득됩니다</h2>
+
+  <div class="farm-card">
+    <div class="farm-meta">📍 파나마 치리키 주 · 에스메랄다 농장 · 해발 1,400–1,800m</div>
+    <h4>하시엔다 라 에스메랄다 (Hacienda La Esmeralda)</h4>
+    <p>캘리포니아 은행장이었던 루돌프 피터슨이 파나마 바루 화산 인근 농장을 인수한 것이 시작이었습니다. 농장 한구석에서 유독 키 크고 잎이 넓은 커피나무들이 자라고 있었는데, 그 열매에서 나는 향이 다른 것들과 완전히 달랐습니다. 이 나무가 바로 에티오피아 서남부 게샤(Gesha) 숲에서 유래한 게이샤 품종이었습니다. 피터슨 가족은 이 커피를 분리 수확해 2004년 베스트 오브 파나마 대회에 출품했고, 심사위원들은 재스민, 복숭아, 베르가못이 폭발하는 이 커피에 경외감을 표했습니다.</p>
+  </div>
+
+  <p>
+    파나마 게이샤가 비싼 이유는 단순히 희귀하기 때문만이 아닙니다. 화산 토양의 미네랄, 1,400m 이상의 고도에서 오는 극단적인 일교차, 그리고 게이샤 품종이 가진 유전적 특성이 삼위일체로 맞물릴 때만 이 향미가 나옵니다. 2024년 베스트 오브 파나마 경매에서 게이샤 커피는 파운드당 1,000달러를 초과하는 낙찰가를 기록했습니다.
+  </p>
+
+  <!-- 비교 표 -->
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>산지</th>
+        <th>고도(m)</th>
+        <th>토양</th>
+        <th>대표 향미</th>
+        <th>핵심 과학</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>에티오피아 예르가체프</td>
+        <td>1,700–2,200</td>
+        <td>붉은 점토</td>
+        <td>재스민, 블루베리, 베르가못</td>
+        <td>지방 결합 에스터</td>
+      </tr>
+      <tr>
+        <td>케냐 뉴에리</td>
+        <td>1,500–1,900</td>
+        <td>철분 화산토</td>
+        <td>블랙커런트, 토마토, 와인산미</td>
+        <td>피라진 형성</td>
+      </tr>
+      <tr>
+        <td>파나마 치리키 (게이샤)</td>
+        <td>1,400–1,800</td>
+        <td>화산 부식토</td>
+        <td>재스민, 복숭아, 열대과일</td>
+        <td>게이샤 유전 + 화산 미네랄</td>
+      </tr>
+      <tr>
+        <td>콜롬비아 우일라</td>
+        <td>1,200–2,000</td>
+        <td>화산 안데스토</td>
+        <td>카라멜, 사과산미, 초콜릿</td>
+        <td>느린 체리 성숙, 사과산 축적</td>
+      </tr>
+      <tr>
+        <td>브라질 세라도</td>
+        <td>800–1,200</td>
+        <td>붉은 라테라이트</td>
+        <td>견과류, 밀크초콜릿, 낮은 산미</td>
+        <td>빠른 숙성, 낮은 클로로겐산</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 섹션 5 -->
+  <h2>📈 2026년 싱글 오리진 트렌드 — 소비자가 달라지고 있다</h2>
+  <p>
+    글로벌 싱글 오리진 커피 시장은 2026년 현재 <strong>약 155억 달러 규모</strong>로, 2034년까지 232억 달러에 달할 것으로 전망됩니다(CAGR 6.86%). 이 성장의 핵심은 '맛'이 아니라 <strong>'이야기'</strong>입니다. 소비자의 70%는 생산자 이야기가 있는 원두에 더 높은 가격을 지불할 의향이 있다고 밝혔습니다. 2020년 대비 원두 산지 스토리에 대한 소비자 관심은 <strong>40% 이상 증가</strong>했습니다.
+  </p>
+  <p>
+    특히 2026년에는 인도 아라쿠 밸리, 에콰도르 갈라파고스 섬, 페루 찬차마요 같은 새로운 산지들이 국제 경매에서 주목받고 있습니다. 한국 스페셜티 커피 협회(KSCA)에 따르면 국내 스페셜티 커피 시장은 연평균 15% 이상 성장하고 있으며, 싱글 오리진을 찾는 소비자 비율도 가파르게 오르고 있습니다.
+  </p>
+
+  <!-- 풀 쿼트 -->
+  <div class="pull-quote">
+    "커피 한 잔은 지리학 교과서다.<br>해발 고도, 토양, 기후, 농부의 손길 —<br>그 모든 것이 당신의 혀 위에서 펼쳐진다."
+  </div>
+
+  <!-- 섹션 6 -->
+  <h2>🔬 테루아르(Terroir)란 무엇인가 — 와인만의 이야기가 아니다</h2>
+  <p>
+    프랑스 와인 업계에서 쓰는 '테루아르(Terroir)'는 토양, 기후, 지형, 생산자의 철학이 결합해 만들어내는 고유한 맛의 집합입니다. 스페셜티 커피 업계는 이 개념을 적극 차용하고 있습니다. 사실 커피는 와인보다 테루아르의 영향을 더 직접적으로 받습니다. 커피나무는 한 번 심으면 수십 년 같은 자리에서 자라며, 그 땅의 모든 것을 빨아들입니다.
+  </p>
+  <p>
+    같은 게이샤 품종이라도 파나마 에스메랄다 농장과 에티오피아 게샤 숲에서 나온 것은 전혀 다른 맛입니다. 에티오피아산은 더 와일드하고 야생적인 꽃향기를 내고, 파나마산은 더 섬세하고 정제된 복숭아향을 냅니다. 이것이 테루아르의 힘입니다.
+  </p>
+
+  <!-- 실전 팁 박스 -->
+  <div class="tip-box">
+    <h3>💡 바리스타가 알려주는 실전 팁 3가지</h3>
+    <ol>
+      <li>
+        <strong>원두 봉투의 고도(MASL)를 확인하라:</strong> 1,500 MASL 이상이면 복합 과일향과 밝은 산미를 기대할 수 있습니다. 숫자가 없는 원두는 대부분 저지대산이거나 블렌드입니다. 카페에서 원두를 고를 때 이 숫자 하나만 봐도 맛을 미리 예측할 수 있습니다.
+      </li>
+      <li>
+        <strong>에티오피아 워시드 vs 내추럴 비교 시음:</strong> 같은 예르가체프 농장의 워시드(수세식)와 내추럴(건조식) 원두를 같은 추출 방법으로 비교 시음해 보세요. 워시드는 재스민·감귤처럼 청명한 향, 내추럴은 블루베리·포도처럼 진하고 달콤한 향이 납니다. 테루아르는 같지만 가공법이 맛의 표현 방식을 바꿉니다.
+      </li>
+      <li>
+        <strong>싱글 오리진은 브루 커피로 마셔라:</strong> 고지대 스페셜티 원두의 복합 향미는 에스프레소보다 <strong>푸어오버(핸드드립)</strong>나 <strong>에어로프레스</strong>로 추출할 때 훨씬 잘 살아납니다. 93°C, 물 대 원두 비율 15:1, 총 추출 시간 3분 전후가 기준점입니다. 에스프레소용 블렌드와 싱글 오리진을 같은 방식으로 마시면 좋은 원두를 낭비하는 것입니다.
+      </li>
+    </ol>
+  </div>
+
+  <!-- 마무리 -->
+  <h2>🚀 내일 당장 해볼 것</h2>
+  <p>
+    가까운 스페셜티 카페에 가서 점원에게 이렇게 물어보세요. <strong>"지금 가장 고지대에서 온 싱글 오리진 원두가 뭔가요? MASL 알 수 있어요?"</strong> 그 질문 하나가 당신을 일반 커피 소비자에서 스페셜티 커피 애호가로 업그레이드시켜 줄 것입니다.
+  </p>
+  <p>
+    그리고 집에서 핸드드립을 즐긴다면, 다음 번에는 '원산지: 에티오피아 예르가체프, 고도: 1,900m'라고 적힌 원두를 한 번 사보세요. 처음으로 "커피에서 재스민 향이 난다는 게 진짜였구나"를 경험하게 될 겁니다. 그 순간부터 커피가 달라 보입니다.
+  </p>
+
+  <!-- 태그 및 하단 -->
+  <div class="tags">
+    <span>#스페셜티커피</span>
+    <span>#원두산지</span>
+    <span>#싱글오리진</span>
+    <span>#고도와커피</span>
+    <span>#테루아르</span>
+    <span>#에티오피아커피</span>
+    <span>#파나마게이샤</span>
+    <span>#케냐커피</span>
+    <span>#바리스타팁</span>
+    <span>#커피과학</span>
+    <span>#MASL</span>
+    <span>#스페셜티카페</span>
+  </div>
+
+  <div class="disclaimer">
+    ※ 이 아티클은 스페셜티 커피 바리스타 10년 경력을 바탕으로 작성된 교육 목적의 콘텐츠입니다. 시장 데이터는 2025–2026년 공개 자료를 기반으로 합니다. 커피의 맛은 개인의 감각과 추출 방법에 따라 달라질 수 있습니다. | 작성일: 2026-07-19
+  </div>
+
+</div>
+</body>
+</html>
