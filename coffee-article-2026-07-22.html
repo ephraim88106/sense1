@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>커피 맛이 매번 다른 이유 — 바리스타가 숨긴 '추출 황금 법칙' 완전 정복</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.85;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #8b4513 100%);
+      padding: 48px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: rgba(200,134,10,0.15);
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -60px;
+      width: 240px; height: 240px;
+      border-radius: 50%;
+      background: rgba(200,134,10,0.1);
+    }
+
+    .badge {
+      display: inline-block;
+      background: #c8860a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 4px 14px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      position: relative; z-index: 1;
+    }
+
+    header h1 {
+      color: #faf7f2;
+      font-size: clamp(22px, 4vw, 32px);
+      font-weight: 900;
+      line-height: 1.35;
+      position: relative; z-index: 1;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    header h1 em {
+      color: #f5c842;
+      font-style: normal;
+    }
+
+    .meta {
+      color: rgba(250,247,242,0.75);
+      font-size: 13px;
+      margin-top: 14px;
+      position: relative; z-index: 1;
+    }
+
+    /* ── SUMMARY BOX ── */
+    .summary-box {
+      background: #fff8ee;
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 36px 0;
+    }
+    .summary-box h2 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #c8860a;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .summary-box ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .summary-box li {
+      font-size: 14px;
+      color: #4a2010;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .summary-box li::before {
+      content: '✓';
+      color: #c8860a;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── BODY ── */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #4a2010;
+      background: #f0e8dc;
+      border-left: 5px solid #c8860a;
+      padding: 18px 22px;
+      border-radius: 0 8px 8px 0;
+      margin: 32px 0 28px;
+      line-height: 1.6;
+    }
+
+    h2.section-title {
+      font-size: 20px;
+      font-weight: 900;
+      color: #2c1810;
+      border-left: 5px solid #6b3a2a;
+      padding-left: 14px;
+      margin: 42px 0 16px;
+      line-height: 1.35;
+    }
+
+    p {
+      color: #3a2010;
+      margin-bottom: 16px;
+    }
+
+    strong { color: #2c1810; }
+
+    /* ── TIP BOX ── */
+    .tip-box {
+      background: linear-gradient(135deg, #fff3d4 0%, #ffe8a0 100%);
+      border: 1px solid #c8860a;
+      border-radius: 12px;
+      padding: 22px 26px;
+      margin: 32px 0;
+    }
+    .tip-box h3 {
+      color: #7a4e00;
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tip-box ol {
+      padding-left: 20px;
+    }
+    .tip-box li {
+      font-size: 14px;
+      color: #4a2810;
+      margin-bottom: 10px;
+      line-height: 1.65;
+    }
+
+    /* ── HIGHLIGHT CALLOUT ── */
+    .callout {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin: 24px 0;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .callout strong { color: #f5c842; }
+
+    /* ── SVG INFOGRAPHIC SECTION ── */
+    .infographic-wrap {
+      margin: 40px 0;
+      background: #fff;
+      border-radius: 14px;
+      padding: 24px 16px;
+      box-shadow: 0 4px 20px rgba(44,24,16,0.08);
+      overflow-x: auto;
+    }
+    .infographic-wrap h3 {
+      text-align: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+    }
+
+    /* ── COMPARISON TABLE ── */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin: 28px 0;
+    }
+    .comparison-table th {
+      background: #2c1810;
+      color: #faf7f2;
+      padding: 10px 14px;
+      text-align: center;
+      font-weight: 700;
+    }
+    .comparison-table th:first-child { border-radius: 8px 0 0 0; }
+    .comparison-table th:last-child  { border-radius: 0 8px 0 0; }
+    .comparison-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e8ddd0;
+      text-align: center;
+      color: #3a2010;
+    }
+    .comparison-table tr:nth-child(even) td { background: #fff8f0; }
+    .comparison-table tr:last-child td:first-child { border-radius: 0 0 0 8px; }
+    .comparison-table tr:last-child td:last-child  { border-radius: 0 0 8px 0; }
+
+    /* ── TAGS ── */
+    .tags {
+      margin-top: 44px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      background: #f0e8dc;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      border: 1px solid #d4c0a8;
+    }
+
+    .disclaimer {
+      margin-top: 36px;
+      font-size: 12px;
+      color: #9a8070;
+      border-top: 1px solid #e0d4c4;
+      padding-top: 20px;
+      line-height: 1.7;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      header { padding: 36px 16px 30px; }
+      .summary-box, .tip-box { padding: 18px 16px; }
+      .comparison-table { font-size: 12px; }
+      .comparison-table td, .comparison-table th { padding: 8px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="badge">☕ 추출 기법 심층 가이드</div>
+  <h1>커피 맛이 매번 다른 이유,<br /><em>바리스타들이 숨긴 '추출 황금 법칙'</em></h1>
+  <p class="meta">2026년 07월 22일 | 바리스타 10년 경력 · 스페셜티 커피 전문</p>
+</header>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <p class="hook">
+    "같은 원두인데 왜 카페에서 마신 것과 집에서 내린 게 이렇게 다를까요?"
+    10년간 수천 잔을 내리면서 손님들에게 가장 많이 받은 질문입니다. 정답은 원두가 아닙니다.
+    <strong>문제는 항상 추출</strong>에 있었습니다.
+  </p>
+
+  <!-- SUMMARY BOX -->
+  <div class="summary-box">
+    <h2>📌 오늘 이 글에서 배울 것</h2>
+    <ul>
+      <li>커피가 쓰거나 신 진짜 이유 — 과추출 vs 미추출의 과학</li>
+      <li>에스프레소·푸어오버·콜드브루·에어로프레스 핵심 변수 비교</li>
+      <li>SCA(스페셜티커피협회) 기준 수율 18~22% 맞추는 법</li>
+      <li>2025 세계 에어로프레스 챔피언십 우승 레시피 공개</li>
+      <li>내일 당장 적용할 수 있는 실전 조정 3가지</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2 class="section-title">① 추출이란 무엇인가 — 물과 원두의 화학 반응</h2>
+  <p>
+    커피를 내리는 행위는 사실 <strong>선택적 용해(selective dissolution)</strong> 과정입니다. 원두 안에는 산미를 만드는 유기산, 단맛의 당류, 쓴맛의 클로로겐산과 카페인, 향기 화합물인 휘발성 에스터 등 수백 가지 성분이 공존합니다. 물은 이 성분들을 시간 순서대로 끌어냅니다. 먼저 <strong>과일향과 신맛(산미)</strong>이 나오고, 그 다음 <strong>달콤하고 균형 잡힌 맛</strong>, 마지막으로 <strong>탄닌과 쓴맛</strong>이 옵니다.
+  </p>
+  <p>
+    여기서 핵심 개념이 등장합니다. <strong>TDS(총용존고형물, Total Dissolved Solids)</strong>와 <strong>추출 수율(Extraction Yield)</strong>입니다. TDS는 컵 안에 녹아 있는 커피 성분의 농도이고, 수율은 원두에서 물로 건너온 성분의 비율입니다. SCA(스페셜티커피협회) 기준으로 드립 커피의 이상적인 TDS는 <strong>1.15~1.35%</strong>, 에스프레소는 <strong>8~12%</strong>입니다. 추출 수율은 <strong>18~22%</strong>가 황금 범위입니다.
+  </p>
+
+  <div class="callout">
+    💡 <strong>18% 미만</strong>이면 미추출 — 신맛, 짠맛, 얇은 바디. &nbsp;&nbsp;
+    <strong>22% 초과</strong>이면 과추출 — 쓴맛, 떫음, 공허한 피니시.<br />
+    사실 대부분의 홈카페 실패는 <strong>미추출</strong>에서 옵니다. "너무 써요"라고 느끼는 것의 70%는 과추출이 아니라 미추출로 인한 불균형 때문입니다.
+  </div>
+
+  <!-- SVG INFOGRAPHIC 1: 추출 수율 스펙트럼 -->
+  <div class="infographic-wrap">
+    <h3>📊 추출 수율(Extraction Yield) 스펙트럼</h3>
+    <svg viewBox="0 0 740 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:740px;display:block;margin:0 auto;">
+      <!-- gradient bar -->
+      <defs>
+        <linearGradient id="extGrad" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%"   stop-color="#e8b84b"/>
+          <stop offset="25%"  stop-color="#e8b84b"/>
+          <stop offset="35%"  stop-color="#4caf50"/>
+          <stop offset="60%"  stop-color="#4caf50"/>
+          <stop offset="70%"  stop-color="#e74c3c"/>
+          <stop offset="100%" stop-color="#8B0000"/>
+        </linearGradient>
+      </defs>
+
+      <!-- axis line -->
+      <rect x="30" y="62" width="680" height="36" rx="18" fill="url(#extGrad)" opacity="0.9"/>
+
+      <!-- zone labels -->
+      <text x="100" y="55" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="13" font-weight="700" fill="#c8860a">미추출</text>
+      <text x="100" y="70" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#666">Under-extracted</text>
+
+      <text x="370" y="55" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="13" font-weight="700" fill="#2e7d32">황금 구간</text>
+      <text x="370" y="70" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#555">Sweet Spot</text>
+
+      <text x="620" y="55" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="13" font-weight="700" fill="#c0392b">과추출</text>
+      <text x="620" y="70" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#666">Over-extracted</text>
+
+      <!-- tick marks & % labels -->
+      <line x1="30"  y1="100" x2="30"  y2="112" stroke="#555" stroke-width="1.5"/>
+      <line x1="200" y1="100" x2="200" y2="112" stroke="#555" stroke-width="1.5"/>
+      <line x1="285" y1="100" x2="285" y2="112" stroke="#2e7d32" stroke-width="2"/>
+      <line x1="455" y1="100" x2="455" y2="112" stroke="#2e7d32" stroke-width="2"/>
+      <line x1="540" y1="100" x2="540" y2="112" stroke="#c0392b" stroke-width="1.5"/>
+      <line x1="710" y1="100" x2="710" y2="112" stroke="#555" stroke-width="1.5"/>
+
+      <text x="30"  y="130" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="12" fill="#555">0%</text>
+      <text x="200" y="130" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="12" fill="#555">14%</text>
+      <text x="285" y="130" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="12" font-weight="700" fill="#2e7d32">18%</text>
+      <text x="455" y="130" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="12" font-weight="700" fill="#2e7d32">22%</text>
+      <text x="540" y="130" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="12" fill="#c0392b">24%</text>
+      <text x="710" y="130" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="12" fill="#555">30%</text>
+
+      <!-- descriptors -->
+      <text x="100" y="152" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#996600">신맛·짠맛·얇음</text>
+      <text x="370" y="152" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#2e7d32">균형·단맛·바디</text>
+      <text x="625" y="152" text-anchor="middle" font-family="Noto Sans KR,sans-serif" font-size="11" fill="#c0392b">쓴맛·떫음·건조함</text>
+    </svg>
+  </div>
+
+  <!-- SECTION 2 -->
+  <h2 class="section-title">② 에스프레소 — 9기압이 만드는 30초의 기적</h2>
+  <p>
+    에스프레소는 <strong>9bar(기압)</strong>의 압력으로 90~94°C 물을 20~35초 동안 원두를 통과시켜 30ml 내외를 추출하는 방식입니다. 일반 브루잉과 달리 <strong>TDS가 8~12%</strong>에 달해 매우 진한 농도를 자랑합니다. 브루 레이시오는 <strong>1:2</strong>가 기본(원두 18g → 추출액 36g)이며, 라이트 로스팅 원두의 경우 1:2.5~1:3까지 늘리는 것이 트렌드입니다.
+  </p>
+  <p>
+    에스프레소가 실패하는 가장 흔한 원인은 <strong>분쇄도 불일치</strong>입니다. 너무 굵으면 물이 빠르게 통과해 미추출(신맛·짠맛), 너무 가늘면 흐름이 막혀 과추출(쓴맛·떫음)이 됩니다. 이상적인 추출 시간인 27~33초에서 크게 벗어난다면 분쇄도부터 조정하세요. <strong>1초가 길어지면 분쇄도를 한 단계 굵게, 1초가 짧아지면 한 단계 가늘게</strong> — 이것이 에스프레소 다이얼링의 철칙입니다.
+  </p>
+
+  <!-- SECTION 3 -->
+  <h2 class="section-title">③ 푸어오버(핸드드립) — 물줄기 하나로 향을 설계하다</h2>
+  <p>
+    푸어오버는 추출 변수가 가장 많이 드러나는 방식입니다. 온도, 유량, 주수 높이, 물줄기 굵기, 뜸들이기 시간까지 모두 맛에 영향을 줍니다. 기본 레시피는 <strong>원두 15g, 물 240ml(1:16 비율), 93°C, 총 추출 시간 3분~3분 30초</strong>입니다.
+  </p>
+  <p>
+    핵심은 <strong>뜸들이기(Pre-infusion / Blooming)</strong>입니다. 원두량의 2배 물(30ml)로 30~40초 적셔두면 CO₂가 빠져나가며 이후 고른 추출이 가능해집니다. 로스팅한 지 1~2주 이내의 신선한 원두일수록 CO₂가 많아 뜸들이기가 더 중요합니다. 분쇄도는 <strong>중간~중간 굵게(바닷가 모래 굵기)</strong>가 기본이며, 온도는 라이트 로스팅 93~96°C, 다크 로스팅 88~90°C가 이상적입니다.
+  </p>
+
+  <!-- SVG INFOGRAPHIC 2: 추출 방식별 비교 바 차트 -->
+  <div class="infographic-wrap">
+    <h3>📊 추출 방식별 핵심 변수 비교</h3>
+    <svg viewBox="0 0 740 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:740px;display:block;margin:0 auto;">
+      <!-- Y axis -->
+      <line x1="100" y1="20" x2="100" y2="250" stroke="#ccc" stroke-width="1.5"/>
+      <!-- X axis -->
+      <line x1="100" y1="250" x2="720" y2="250" stroke="#ccc" stroke-width="1.5"/>
+
+      <!-- Grid lines -->
+      <line x1="100" y1="50"  x2="720" y2="50"  stroke="#eee" stroke-width="1" stroke-dasharray="4,4"/>
+      <line x1="100" y1="100" x2="720" y2="100" stroke="#eee" stroke-width="1" stroke-dasharray="4,4"/>
+      <line x1="100" y1="150" x2="720" y2="150" stroke="#eee" stroke-width="1" stroke-dasharray="4,4"/>
+      <line x1="100" y1="200" x2="720" y2="200" stroke="#eee" stroke-width="1" stroke-dasharray="4,4"/>
+
+      <!-- Y Labels -->
+      <text x="90" y="254" text-anchor="end" font-size="11" fill="#888" font-family="sans-serif">0</text>
+      <text x="90" y="204" text-anchor="end" font-size="11" fill="#888" font-family="sans-serif">25</text>
+      <text x="90" y="154" text-anchor="end" font-size="11" fill="#888" font-family="sans-serif">50</text>
+      <text x="90" y="104" text-anchor="end" font-size="11" fill="#888" font-family="sans-serif">75</text>
+      <text x="90" y="54"  text-anchor="end" font-size="11" fill="#888" font-family="sans-serif">100</text>
+      <text x="60" y="150" text-anchor="middle" font-size="11" fill="#888" font-family="sans-serif" transform="rotate(-90,60,150)">상대 점수</text>
+
+      <!-- BAR GROUP 1: 에스프레소 -->
+      <!-- 압력 100 → bar height 200 → y=50 -->
+      <rect x="120" y="50"  width="40" height="200" fill="#6b3a2a" rx="3"/>
+      <!-- 온도 94/100 → 188 → y=62 -->
+      <rect x="165" y="62"  width="40" height="188" fill="#c8860a" rx="3"/>
+      <!-- 시간 (0.5min → 3) → 5/100 → 10 → y=240 -->
+      <rect x="210" y="240" width="40" height="10"  fill="#4caf50" rx="3"/>
+
+      <text x="185" y="270" text-anchor="middle" font-size="12" font-weight="700" fill="#2c1810" font-family="Noto Sans KR,sans-serif">에스프레소</text>
+
+      <!-- BAR GROUP 2: 푸어오버 -->
+      <rect x="310" y="130" width="40" height="120" fill="#6b3a2a" rx="3"/><!-- 압력 낮음 -->
+      <rect x="355" y="56"  width="40" height="194" fill="#c8860a" rx="3"/><!-- 온도 93 -->
+      <rect x="400" y="190" width="40" height="60"  fill="#4caf50" rx="3"/><!-- 3분 -->
+      <text x="375" y="270" text-anchor="middle" font-size="12" font-weight="700" fill="#2c1810" font-family="Noto Sans KR,sans-serif">푸어오버</text>
+
+      <!-- BAR GROUP 3: 콜드브루 -->
+      <rect x="490" y="230" width="40" height="20"  fill="#6b3a2a" rx="3"/><!-- 압력 없음 -->
+      <rect x="535" y="230" width="40" height="20"  fill="#c8860a" rx="3"/><!-- 온도 낮음(10°C) -->
+      <rect x="580" y="50"  width="40" height="200" fill="#4caf50" rx="3"/><!-- 12~24시간 -->
+      <text x="550" y="270" text-anchor="middle" font-size="12" font-weight="700" fill="#2c1810" font-family="Noto Sans KR,sans-serif">콜드브루</text>
+
+      <!-- Legend -->
+      <rect x="570" y="20" width="14" height="14" fill="#6b3a2a" rx="2"/>
+      <text x="588" y="31" font-size="11" fill="#444" font-family="sans-serif">압력</text>
+      <rect x="620" y="20" width="14" height="14" fill="#c8860a" rx="2"/>
+      <text x="638" y="31" font-size="11" fill="#444" font-family="sans-serif">온도</text>
+      <rect x="670" y="20" width="14" height="14" fill="#4caf50" rx="2"/>
+      <text x="688" y="31" font-size="11" fill="#444" font-family="sans-serif">시간</text>
+    </svg>
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2 class="section-title">④ 콜드브루 — 시간이 온도를 대신하는 추출의 역설</h2>
+  <p>
+    "콜드브루는 그냥 오래 담가두면 되는 거 아닌가요?" — 절반은 맞고 절반은 틀립니다. 콜드브루는 <strong>5~20°C의 낮은 온도</strong>에서 12~24시간 동안 추출합니다. 뜨거운 물이 하는 빠른 용해를 <strong>시간이 대신</strong>하는 구조입니다. 브루 레이시오는 <strong>1:4~1:8</strong>(원두 대비 물)로 일반 핫브루보다 훨씬 진하게 세팅합니다.
+  </p>
+  <p>
+    흥미로운 과학적 발견이 있습니다. 2017년 NIH 연구에 따르면, 콜드브루에서 카페인과 클로로겐산의 농도는 <strong>6~7시간 후 이미 평형(equilibrium)에 도달</strong>합니다. 즉, 24시간과 7시간의 카페인 함량 차이는 미미합니다. 그렇다면 왜 12~24시간을 권장할까요? 카페인 이외의 복합적인 <strong>향기 성분과 단맛</strong>은 더 오랜 시간 천천히 추출되기 때문입니다. 콜드브루가 산미가 낮고 달콤한 이유는 뜨거운 물에서만 잘 추출되는 <strong>쓴 유기산이 상대적으로 덜 용출</strong>되기 때문입니다.
+  </p>
+
+  <!-- SECTION 5 -->
+  <h2 class="section-title">⑤ 에어로프레스 — 세계 챔피언들이 선택한 이유</h2>
+  <p>
+    에어로프레스는 커피 추출 도구 중 가장 <strong>실험적이고 용서하는</strong> 기구입니다. 온도 범위(75~100°C), 스팁 시간(30초~4분), 압력(사용자가 조절)이 모두 넓게 허용됩니다. 특히 <strong>인버티드(거꾸로 뒤집기) 방법</strong>은 커피 원액이 조기에 흘러내리는 것을 막아 접촉 시간을 완전히 통제할 수 있습니다.
+  </p>
+  <p>
+    2025 세계 에어로프레스 챔피언십(WAC)에서 호주 대표 Némo Pop이 우승을 차지했습니다. 우승 레시피의 핵심은 <strong>원두 18g, 물 125ml(TDS 125ppm)을 84°C로 세팅</strong>하고 Comandante 그라인더 31클릭의 분쇄도를 사용한 것입니다. 놀랍게도 온도가 84°C로 낮은데, 이는 라이트 로스팅 원두의 섬세한 과일향을 과추출하지 않기 위한 전략입니다.
+  </p>
+
+  <div class="callout">
+    ☕ 에어로프레스 입문 레시피 (인버티드 기준):<br />
+    원두 <strong>15g</strong> · 물 <strong>220ml @ 88°C</strong> · 스팁 <strong>1분 30초</strong> · 압력 <strong>20~30초간 천천히</strong><br />
+    → 분쇄도: 중간 굵기(드립보다 약간 굵게) · 예상 TDS: <strong>1.3~1.6%</strong>
+  </div>
+
+  <!-- SECTION 6 -->
+  <h2 class="section-title">⑥ 추출 실패 진단 — 지금 당신의 커피가 맛없는 이유</h2>
+  <p>
+    같은 원두, 같은 기구인데 맛이 매일 다르다면? 단 하나의 변수가 바뀌고 있는 겁니다. 가장 흔한 범인들을 정리했습니다.
+  </p>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>증상</th>
+        <th>원인</th>
+        <th>해결책</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>신맛이 너무 강함</td>
+        <td>미추출 (분쇄 굵음, 온도 낮음, 시간 짧음)</td>
+        <td>분쇄도를 한 단계 가늘게 / 온도 2°C 올리기</td>
+      </tr>
+      <tr>
+        <td>쓰고 떫음</td>
+        <td>과추출 (분쇄 가늘음, 온도 높음, 시간 길음)</td>
+        <td>분쇄도를 한 단계 굵게 / 추출 시간 줄이기</td>
+      </tr>
+      <tr>
+        <td>향은 좋은데 맹한 맛</td>
+        <td>브루 레이시오 묽음</td>
+        <td>원두량 1~2g 늘리거나 물량 줄이기</td>
+      </tr>
+      <tr>
+        <td>맛이 매일 다름</td>
+        <td>물 온도 일관성 없음 / 계량 부정확</td>
+        <td>온도계 사용, 저울로 원두·물 계량 필수</td>
+      </tr>
+      <tr>
+        <td>바디가 없고 수분감만</td>
+        <td>필터 막힘 또는 채널링</td>
+        <td>필터 청소 / 탬핑 균일도 확인</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- TIP BOX -->
+  <div class="tip-box">
+    <h3>🎯 바리스타의 실전 팁 3가지 — 내일 당장 써먹으세요</h3>
+    <ol>
+      <li>
+        <strong>변수는 하나씩만 바꿔라.</strong> 맛이 마음에 안 든다고 분쇄도·온도·시간을 한꺼번에 바꾸면 뭐가 문제였는지 절대 알 수 없습니다. 오늘은 분쇄도만, 내일은 온도만 — 한 번에 하나씩 조정하세요.
+      </li>
+      <li>
+        <strong>저울은 사치가 아니다.</strong> "눈대중으로 하면 안 되나요?" — 안 됩니다. 1g의 차이가 추출 수율 1% 이상을 바꿉니다. 0.1g 단위 저울은 1만 원대에도 구매 가능합니다. 이것 하나로 맛의 재현성이 완전히 달라집니다.
+      </li>
+      <li>
+        <strong>물 온도를 정확히 맞춰라.</strong> 끓는 물을 그냥 쓰는 분이 많습니다. 100°C 물은 라이트 로스팅 원두를 과추출합니다. 포트의 뚜껑을 열고 1분 기다리면 약 92~93°C가 됩니다. 또는 냉수를 조금 섞어 조절하세요.
+      </li>
+    </ol>
+  </div>
+
+  <!-- CONCLUSION -->
+  <h2 class="section-title">마치며 — 추출은 '반복'이 전부다</h2>
+  <p>
+    10년간 커피를 내리면서 깨달은 한 가지가 있습니다. <strong>완벽한 추출은 한 번의 행운이 아니라, 수백 번의 기록에서 나온다</strong>는 것입니다. 오늘 맛있었다면 그 레시피를 기록하세요. 분쇄도, 물 온도, 원두량, 추출 시간, 심지어 날씨까지. 커피는 습도와 기온에도 미묘하게 반응합니다.
+  </p>
+  <p>
+    내일 당장 해보세요: 지금 쓰는 방식에서 <strong>분쇄도를 딱 한 단계 가늘게</strong> 해보세요. 그것만으로도 많은 분들이 "왜 이제야 알았지?"를 외칩니다.
+  </p>
+
+  <!-- TAGS -->
+  <div class="tags">
+    <span class="tag">#스페셜티커피</span>
+    <span class="tag">#커피추출</span>
+    <span class="tag">#에스프레소</span>
+    <span class="tag">#핸드드립</span>
+    <span class="tag">#콜드브루</span>
+    <span class="tag">#에어로프레스</span>
+    <span class="tag">#바리스타팁</span>
+    <span class="tag">#추출수율</span>
+    <span class="tag">#TDS</span>
+    <span class="tag">#홈카페</span>
+    <span class="tag">#커피레시피</span>
+    <span class="tag">#SCA기준</span>
+  </div>
+
+  <div class="disclaimer">
+    <strong>작성일:</strong> 2026년 07월 22일 &nbsp;|&nbsp; <strong>작성자:</strong> 스페셜티 커피 바리스타 (경력 10년)<br />
+    본 아티클의 수치 및 레시피는 SCA(스페셜티커피협회) 기준 및 최신 연구(NIH, Tea &amp; Coffee Trade Journal, World AeroPress Championship)를 참고하였으며, 원두 종류·로스팅 정도·사용 기기에 따라 결과가 달라질 수 있습니다.
+  </div>
+
+</div>
+</body>
+</html>
