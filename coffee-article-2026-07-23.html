@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>당신의 원두가 맛없는 진짜 이유 — 로스팅의 숨겨진 과학 | 바리스타 커피 아티클</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.85;
+      font-size: 16px;
+    }
+
+    .wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── Header ── */
+    .hero {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #fff;
+      padding: 56px 32px 48px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(200,134,10,0.9);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: clamp(22px, 5vw, 34px);
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 16px;
+      word-keep: keep-all;
+    }
+    .hero-sub {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 22px;
+    }
+    .hero-meta {
+      font-size: 13px;
+      opacity: 0.65;
+    }
+
+    /* ── Body ── */
+    article {
+      padding-top: 40px;
+    }
+
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 4px solid #c8860a;
+      padding-left: 18px;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #fff8ee;
+      border: 1.5px solid #c8860a;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      color: #c8860a;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .summary-box ul {
+      padding-left: 18px;
+    }
+    .summary-box li {
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: #4a2c1a;
+    }
+    .summary-box li::marker { color: #c8860a; }
+
+    /* 소제목 */
+    h2 {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 44px 0 16px;
+      padding-left: 16px;
+      border-left: 5px solid #6b3a2a;
+      line-height: 1.35;
+    }
+
+    p {
+      margin-bottom: 18px;
+      color: #3d2010;
+      word-keep: keep-all;
+    }
+
+    strong { color: #6b3a2a; }
+
+    em {
+      font-style: normal;
+      background: linear-gradient(to bottom, transparent 60%, #ffeaa0 60%);
+    }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff3dc, #fff8ee);
+      border-radius: 14px;
+      border: 2px solid #c8860a;
+      padding: 28px 32px;
+      margin: 44px 0;
+    }
+    .tip-box h3 {
+      font-size: 17px;
+      font-weight: 900;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tip-box h3::before {
+      content: '☕';
+      font-size: 20px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      background: #6b3a2a;
+      color: #fff;
+      font-weight: 900;
+      font-size: 13px;
+      min-width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .tip-text {
+      font-size: 15px;
+      color: #3d2010;
+      line-height: 1.7;
+    }
+    .tip-text strong { color: #c8860a; }
+
+    /* SVG 인포그래픽 wrapper */
+    .infographic {
+      margin: 48px 0;
+    }
+    .infographic-title {
+      text-align: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+    }
+
+    /* 비교표 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 32px 0;
+      font-size: 14px;
+    }
+    .compare-table th {
+      background: #6b3a2a;
+      color: #fff;
+      padding: 12px 14px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .compare-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid #e5d9ce;
+      color: #3d2010;
+    }
+    .compare-table tr:nth-child(even) td { background: #fff8f0; }
+
+    /* 마무리 */
+    .closing {
+      background: #2c1810;
+      color: #fdf8f3;
+      border-radius: 14px;
+      padding: 32px 36px;
+      margin-top: 48px;
+      font-size: 15.5px;
+      line-height: 1.9;
+    }
+    .closing strong { color: #c8860a; }
+
+    /* 태그 & 하단 */
+    .tags {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      background: #ecddd3;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 20px;
+      border-top: 1px solid #e0d4c8;
+      font-size: 12px;
+      color: #9a7a6a;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 40px 20px 36px; }
+      h2 { font-size: 19px; }
+      .tip-box, .summary-box { padding: 20px; }
+      .closing { padding: 24px 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">☕ 로스팅 & 원두 과학</div>
+  <h1>당신의 원두가 맛없는 진짜 이유<br>— 로스터가 절대 말 안 해주는 비밀</h1>
+  <p class="hero-sub">마이야르·카라멜화·DTR… 이 세 가지를 모르면 아무리 비싼 원두도 소용없다</p>
+  <p class="hero-meta">2026년 7월 23일 · 스페셜티 바리스타 10년 경력 · 읽는 시간 약 8분</p>
+</div>
+
+<div class="wrap">
+<article>
+
+  <p class="hook">
+    "같은 원두인데 왜 저 카페 커피가 더 맛있지?" — 사실 이 질문의 답은 추출이 아니라 <em>로스팅</em>에 있습니다.
+    생두 속에는 1,000여 종의 화합물이 잠들어 있고, 로스터의 손에 따라 그것이 꽃향기가 될 수도, 탄 냄새가 될 수도 있습니다.
+  </p>
+
+  <div class="summary-box">
+    <h3>📌 오늘 이 글에서 배울 것</h3>
+    <ul>
+      <li>로스팅 중 실제로 일어나는 화학반응 3가지 (마이야르·카라멜화·1차 균열)</li>
+      <li>DTR(발달시간비율)이 맛을 어떻게 좌우하는지</li>
+      <li>아그트론(Agtron) 색도계로 로스트 레벨 읽는 법</li>
+      <li>2026년 스페셜티 씬이 라이트 로스트를 선택하는 이유</li>
+      <li>원두를 2배 더 오래 신선하게 보관하는 방법</li>
+    </ul>
+  </div>
+
+  <!-- 소제목 1 -->
+  <h2>생두는 어떻게 원두가 되는가 — 로스팅의 물리학</h2>
+  <p>
+    로스터에 생두가 들어가는 순간, 드라마가 시작됩니다. 처음엔 <strong>흡열반응</strong>이 지배합니다.
+    생두 속 수분(10~12%)이 증발하면서 열을 빨아들이고, 녹색이던 원두는 서서히 황금빛으로 변합니다.
+    이때 나는 냄새는 풀이나 건초 같은 풋내입니다. 아직 커피가 아닙니다.
+  </p>
+  <p>
+    온도가 올라갈수록 뭔가 달라집니다. 약 <strong>130~150°C</strong> 구간에서 원두 표면의 수분이 대부분 사라지고,
+    내부에서 일어나는 반응이 열을 '내뿜기' 시작합니다(발열반응으로 전환). 이 변곡점을 바리스타들은
+    <em>"터닝 포인트(Turning Point)"</em>라고 부르고, 이 시점의 온도와 타이밍이 로스팅 프로파일의 첫 번째 관문입니다.
+  </p>
+  <p>
+    사실 대부분의 사람들이 모르는 게 있는데, 로스팅에서 열 전달 방식은 세 가지(전도·대류·복사)가 동시에 작동합니다.
+    드럼 로스터는 전도와 대류가 메인이고, 드럼의 회전 속도와 공기 흐름(에어플로우)이 각 방식의 비중을 결정합니다.
+    같은 온도 커브를 그려도 에어플로우 설정이 다르면 전혀 다른 컵이 나오는 이유가 이것입니다.
+  </p>
+
+  <!-- 소제목 2 -->
+  <h2>마이야르 반응 vs 카라멜화 — 둘의 차이가 당신의 커피 맛을 가른다</h2>
+  <p>
+    <strong>170~190°C</strong> 구간에 들어서면 두 거인이 동시에 깨어납니다.
+  </p>
+  <p>
+    <strong>마이야르 반응(Maillard Reaction)</strong>은 단백질(아미노산)과 당이 만나 일어나는 반응입니다.
+    수백 가지 휘발성 향미 화합물이 이 반응 하나에서 태어납니다 — 꽃향기, 초콜릿 향, 흙 내음, 구운 향, 심지어 과일향까지.
+    스페셜티 커피의 복잡한 향미 노트 대부분이 마이야르 반응의 산물입니다.
+  </p>
+  <p>
+    <strong>카라멜화(Caramelization)</strong>는 이와 별도로, 당 성분이 열에 의해 스스로 분해·중합되는 과정입니다.
+    단맛과 캐러멜 향, 아몬드·헤이즐넛 계열의 견과류 향이 여기서 나옵니다.
+    흥미로운 건 라이트 로스트일수록 자당(수크로스)이 일부 그대로 남아 '달콤한 산미'를 만들지만,
+    다크 로스트에서는 자당이 거의 완전히 분해되어 단맛이 사라지고 쓴맛이 강해진다는 점입니다.
+  </p>
+  <p>
+    이 두 반응은 각각 다른 온도에서 최적화됩니다. 그래서 로스터들은 이 구간의 온도 상승 속도(ROR, Rate of Rise)를
+    초 단위로 제어합니다. 너무 빠르면 표면만 타고 내부는 생 상태가 됩니다.
+    너무 느리면 '베이크드(baked)' — 구수한 향 없이 납작하고 단조로운 맛이 됩니다.
+  </p>
+
+  <!-- SVG 인포그래픽 -->
+  <div class="infographic">
+    <p class="infographic-title">로스팅 단계별 온도 & 핵심 반응 타임라인</p>
+    <svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;border-radius:12px;background:#fff8f2;">
+
+      <!-- 배경 그라데이션 구간 -->
+      <!-- 건조 구간 -->
+      <rect x="40" y="20" width="140" height="240" fill="#f0ede8" rx="4"/>
+      <!-- 마이야르·카라멜 구간 -->
+      <rect x="180" y="20" width="160" height="240" fill="#fef3dc" rx="4"/>
+      <!-- 1차 크랙 구간 -->
+      <rect x="340" y="20" width="120" height="240" fill="#fde8c8" rx="4"/>
+      <!-- 발달 구간 -->
+      <rect x="460" y="20" width="140" height="240" fill="#f5d5b0" rx="4"/>
+      <!-- 2차 크랙 이후 -->
+      <rect x="600" y="20" width="120" height="240" fill="#e8c4a0" rx="4"/>
+
+      <!-- 구간 레이블 -->
+      <text x="110" y="44" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#9a7a6a" text-anchor="middle" font-weight="700">건조 단계</text>
+      <text x="260" y="44" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#c8860a" text-anchor="middle" font-weight="700">마이야르·카라멜화</text>
+      <text x="400" y="44" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#a06020" text-anchor="middle" font-weight="700">1차 크랙</text>
+      <text x="530" y="44" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#7a4010" text-anchor="middle" font-weight="700">발달(DTR)</text>
+      <text x="660" y="44" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#5a2808" text-anchor="middle" font-weight="700">2차 크랙 이후</text>
+
+      <!-- 온도 커브 -->
+      <polyline
+        points="40,230 80,210 120,195 160,178 180,170 220,155 260,140 300,128 340,118 380,110 400,108 420,106 460,102 500,96 540,90 580,84 600,80 640,76 680,72 720,70"
+        fill="none" stroke="#6b3a2a" stroke-width="3" stroke-linejoin="round"/>
+
+      <!-- 온도 포인트 마커 -->
+      <!-- 터닝포인트 ~140°C -->
+      <circle cx="168" cy="174" r="6" fill="#c8860a"/>
+      <line x1="168" y1="168" x2="168" y2="58" stroke="#c8860a" stroke-dasharray="4,3" stroke-width="1.5"/>
+      <text x="168" y="56" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#c8860a" text-anchor="middle" font-weight="700">~140°C</text>
+      <text x="168" y="67" font-family="Noto Sans KR, sans-serif" font-size="9" fill="#c8860a" text-anchor="middle">터닝포인트</text>
+
+      <!-- 마이야르 시작 ~170°C -->
+      <circle cx="220" cy="155" r="6" fill="#e07010"/>
+      <line x1="220" y1="149" x2="220" y2="74" stroke="#e07010" stroke-dasharray="4,3" stroke-width="1.5"/>
+      <text x="220" y="72" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#e07010" text-anchor="middle" font-weight="700">~170°C</text>
+      <text x="220" y="83" font-family="Noto Sans KR, sans-serif" font-size="9" fill="#e07010" text-anchor="middle">마이야르 시작</text>
+
+      <!-- 1차 크랙 ~196°C -->
+      <circle cx="370" cy="111" r="8" fill="#a03000"/>
+      <line x1="370" y1="103" x2="370" y2="56" stroke="#a03000" stroke-dasharray="4,3" stroke-width="1.5"/>
+      <text x="370" y="54" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#a03000" text-anchor="middle" font-weight="700">~196°C</text>
+      <text x="370" y="65" font-family="Noto Sans KR, sans-serif" font-size="9" fill="#a03000" text-anchor="middle">1차 크랙(First Crack)</text>
+
+      <!-- 2차 크랙 ~224°C -->
+      <circle cx="610" cy="79" r="8" fill="#5a1800"/>
+      <line x1="610" y1="71" x2="610" y2="54" stroke="#5a1800" stroke-dasharray="4,3" stroke-width="1.5"/>
+      <text x="640" y="52" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#5a1800" text-anchor="middle" font-weight="700">~224°C</text>
+      <text x="640" y="63" font-family="Noto Sans KR, sans-serif" font-size="9" fill="#5a1800" text-anchor="middle">2차 크랙</text>
+
+      <!-- Y축 레이블 -->
+      <text x="36" y="234" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#9a7a6a" text-anchor="end">100°C</text>
+      <text x="36" y="170" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#9a7a6a" text-anchor="end">150°C</text>
+      <text x="36" y="108" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#9a7a6a" text-anchor="end">200°C</text>
+      <text x="36" y="74" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#9a7a6a" text-anchor="end">230°C</text>
+
+      <!-- X축 -->
+      <line x1="40" y1="260" x2="720" y2="260" stroke="#c8a898" stroke-width="1"/>
+      <text x="110" y="278" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#9a7a6a" text-anchor="middle">0~3분</text>
+      <text x="260" y="278" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#9a7a6a" text-anchor="middle">3~7분</text>
+      <text x="400" y="278" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#9a7a6a" text-anchor="middle">7~9분</text>
+      <text x="530" y="278" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#9a7a6a" text-anchor="middle">9~12분</text>
+      <text x="660" y="278" font-family="Noto Sans KR, sans-serif" font-size="10" fill="#9a7a6a" text-anchor="middle">12분 이후</text>
+
+      <!-- 로스트 레벨 아이콘 영역 -->
+      <rect x="40" y="295" width="80" height="28" rx="6" fill="#f5f0ea"/>
+      <text x="80" y="313" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#9a7a6a" text-anchor="middle" font-weight="700">라이트</text>
+
+      <rect x="300" y="295" width="100" height="28" rx="6" fill="#dfc9a8"/>
+      <text x="350" y="313" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#6b3a2a" text-anchor="middle" font-weight="700">미디엄</text>
+
+      <rect x="560" y="295" width="100" height="28" rx="6" fill="#5a2808"/>
+      <text x="610" y="313" font-family="Noto Sans KR, sans-serif" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">다크</text>
+    </svg>
+  </div>
+
+  <!-- 소제목 3 -->
+  <h2>DTR — 바리스타들이 집착하는 단 하나의 숫자</h2>
+  <p>
+    1차 크랙이 시작되는 순간부터 원두를 드럼에서 꺼내는 순간까지의 시간을 <strong>발달 시간(Development Time)</strong>이라고 합니다.
+    그리고 이 발달 시간을 총 로스팅 시간으로 나눈 비율이 바로 <em>DTR(Development Time Ratio)</em>입니다.
+  </p>
+  <p>
+    스페셜티 로스터들이 목표로 하는 DTR은 보통 <strong>20~30%</strong>입니다.
+    노르딕 스타일처럼 산미와 과일향을 극대화하는 경우 18~22%로 짧게 가고,
+    바디와 초콜릿 향을 원하면 25~30%로 길게 가져갑니다.
+  </p>
+  <p>
+    DTR이 <strong>15% 미만</strong>이면 어떻게 될까요? 커피 맛이 납작하고 풋내가 납니다.
+    원두 내부의 화학 반응이 완결되지 않은 상태로 배출되기 때문입니다.
+    반대로 <strong>35% 이상</strong>이 되면 과도한 열 노출로 섬세한 향이 날아가고,
+    스모키하거나 단조로운 쓴맛만 남습니다.
+    이게 바로 비싼 원두를 사도 실망하는 이유 중 하나입니다 — 로스팅이 최적화되지 않았을 가능성이 있습니다.
+  </p>
+
+  <table class="compare-table">
+    <thead>
+      <tr>
+        <th>DTR 범위</th>
+        <th>맛 프로파일</th>
+        <th>적합한 용도</th>
+        <th>위험 신호</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>&lt;15%</strong></td>
+        <td>풋내, 납작, 시큼한 산미</td>
+        <td>없음 (미발달)</td>
+        <td>언더로스트</td>
+      </tr>
+      <tr>
+        <td><strong>18~22%</strong></td>
+        <td>과일향, 꽃향, 밝은 산미</td>
+        <td>푸어오버, 필터 커피</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>22~28%</strong></td>
+        <td>균형감, 캐러멜, 견과류</td>
+        <td>에스프레소, 라떼</td>
+        <td>—</td>
+      </tr>
+      <tr>
+        <td><strong>28~35%</strong></td>
+        <td>진한 바디, 초콜릿, 낮은 산미</td>
+        <td>다크 에스프레소</td>
+        <td>향 손실 주의</td>
+      </tr>
+      <tr>
+        <td><strong>&gt;35%</strong></td>
+        <td>스모키, 단조로운 쓴맛</td>
+        <td>없음 (과발달)</td>
+        <td>오버로스트</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 소제목 4 -->
+  <h2>2026년 스페셜티 씬, 왜 모두가 라이트 로스트에 열광하는가</h2>
+  <p>
+    불과 5년 전만 해도 "커피는 진해야 한다"는 편견이 강했습니다. 그런데 2026년 현재, 스페셜티 씬은 라이트 로스트를 중심으로
+    완전히 재편됐습니다. 그 이유는 경제학과 과학이 동시에 작용합니다.
+  </p>
+  <p>
+    우선 <strong>테루아(Terroir)</strong>의 문제입니다. 에티오피아 예르가체프의 블루베리 향, 파나마 게이샤의 자스민 향,
+    케냐 SL28의 블랙커런트 산미 — 이런 원산지 고유의 향미는 라이트 로스트에서만 온전히 살아납니다.
+    다크 로스트로 가면 이런 개성이 로스팅 특성에 묻혀버립니다.
+  </p>
+  <p>
+    비즈니스 측면도 있습니다. 라이트 로스트를 사용하는 스페셜티 카페는 라떼·푸어오버 업셀 비율이
+    <strong>15~20% 더 높고</strong>, 소비자들은 뚜렷한 향미 차별화에 대해 10~15%의 프리미엄을 기꺼이 지불합니다.
+    라이트 로스트는 단순히 트렌드가 아니라, 수익성 있는 포지셔닝 전략이기도 합니다.
+  </p>
+  <p>
+    로스트 레벨을 객관적으로 측정하는 도구가 <strong>아그트론(Agtron) 색도계</strong>입니다.
+    SCAA(미국 스페셜티 커피 협회) 기준으로 #95(Very Light)부터 #25(Very Dark)까지 8단계로 분류됩니다.
+    스페셜티 로스터들은 보통 #70~#55 구간(라이트~미디엄 라이트)을 목표로 합니다.
+  </p>
+
+  <!-- 소제목 5 -->
+  <h2>원두 보관의 과학 — 2주가 지나면 이미 늦었다</h2>
+  <p>
+    최고급 원두를 사서 3개월 뒤에 마시면 어떻게 될까요? 솔직히 말하겠습니다. 향은 거의 다 날아갔고,
+    산패된 지방 성분이 불쾌한 뒷맛을 남깁니다. 원두는 생물입니다.
+  </p>
+  <p>
+    로스팅 직후 원두는 엄청난 양의 <strong>이산화탄소(CO₂)</strong>를 방출합니다. 이 탈기(Degassing) 과정이 끝나기 전에 추출하면
+    CO₂ 기포가 물이 원두를 고르게 적시는 걸 방해해 맛이 불균일해집니다.
+    그래서 로스팅 후 <strong>3~7일</strong>이 지난 원두가 추출에 가장 이상적입니다(에스프레소는 7~10일).
+  </p>
+  <p>
+    반대로 너무 오래 두면 산화가 시작됩니다. 개봉 후 실온 보관 시 <strong>2~3주면</strong> 향이 눈에 띄게 옅어집니다.
+    전문가들이 말하는 황금 구간은 로스팅 후 <em>3일~2주</em>입니다.
+  </p>
+  <p>
+    냉동 보관은 어떨까요? 올바르게 하면 유효합니다. 냉동 상태에서 오일과 향 성분의 산화 속도가 극도로 느려져
+    <strong>2~3개월까지</strong> 신선함을 유지할 수 있습니다. 단, 반드시 <em>소분(1회 분량씩)</em>해서 밀봉 후 냉동해야 합니다.
+    해동 후 재냉동은 절대 금지입니다. 온도 변화 때마다 결로가 생겨 품질이 급격히 떨어집니다.
+  </p>
+  <p>
+    아로마 밸브(One-Way Valve) 포장을 쓰는 것도 중요합니다. 이 밸브는 내부의 CO₂는 내보내되 외부 공기(산소)는 차단하는 구조로,
+    로스팅 직후 원두의 신선도를 지키는 데 핵심적입니다.
+  </p>
+
+  <!-- 실전 팁 박스 -->
+  <div class="tip-box">
+    <h3>바리스타가 알려주는 실전 팁 3가지</h3>
+    <div class="tip-item">
+      <div class="tip-num">1</div>
+      <div class="tip-text">
+        <strong>원두 구입 시 로스팅 날짜를 확인하라.</strong> 유통기한이 아니라 '로스팅 날짜'가 인쇄된 봉투를 선택하세요.
+        로스팅 후 3일~2주 안의 원두가 가장 맛있습니다. 마트에서 날짜 없는 원두는 사실상 "언제 볶았는지 모른다"는 뜻입니다.
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">2</div>
+      <div class="tip-text">
+        <strong>냉동 보관은 소분이 전부다.</strong> 한 봉지를 한꺼번에 냉동하지 말고, 지퍼백에 2~3일치씩 나눠 담아 냉동하세요.
+        꺼낼 때는 30분 이상 실온에서 해동 후 사용합니다. 절대 다시 냉동 금지.
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">3</div>
+      <div class="tip-text">
+        <strong>DTR을 로스터에게 물어봐라.</strong> 좋은 로스터리는 DTR 수치를 공개합니다. "이 원두 DTR이 어떻게 됩니까?"라고
+        물었을 때 대답할 수 있는 로스터의 원두를 선택하세요. 그것이 스페셜티의 진짜 기준입니다.
+      </div>
+    </div>
+  </div>
+
+  <!-- 마무리 -->
+  <div class="closing">
+    <p>
+      커피 한 잔에는 농부의 손, 로스터의 감각, 그리고 수백 가지 화학반응이 담겨 있습니다.
+      오늘부터 원두 봉투를 살 때 로스팅 날짜를 확인하고, 카페에서 바리스타에게
+      <strong>"이 원두 DTR이 어떻게 됩니까?"</strong>라고 한 번 물어보세요.
+    </p>
+    <p style="margin-top:14px;">
+      그 질문 하나로, 당신은 이미 대부분의 소비자보다 커피를 더 깊이 이해하는 사람이 됩니다.
+      내일 아침, 원두 봉투 뒷면부터 다시 읽어보는 것으로 시작해보세요.
+    </p>
+  </div>
+
+  <!-- 태그 -->
+  <div class="tags">
+    <span class="tag">#스페셜티커피</span>
+    <span class="tag">#로스팅과학</span>
+    <span class="tag">#마이야르반응</span>
+    <span class="tag">#DTR</span>
+    <span class="tag">#원두보관법</span>
+    <span class="tag">#라이트로스트</span>
+    <span class="tag">#카라멜화</span>
+    <span class="tag">#아그트론</span>
+    <span class="tag">#커피트렌드2026</span>
+    <span class="tag">#바리스타팁</span>
+    <span class="tag">#1차크랙</span>
+    <span class="tag">#커피공부</span>
+  </div>
+
+  <div class="footer">
+    <p>본 아티클은 스페셜티 커피 업계 10년 경력 바리스타의 경험과 최신 연구를 바탕으로 작성되었습니다.</p>
+    <p>작성일: 2026년 7월 23일 | 카테고리: 로스팅 & 원두 심층</p>
+    <p style="margin-top:8px; font-size:11px; color:#bba090;">
+      ※ 본 콘텐츠는 교육 목적으로 작성되었으며, 개별 원두·장비 특성에 따라 결과가 다를 수 있습니다.
+    </p>
+  </div>
+
+</article>
+</div>
+
+</body>
+</html>
