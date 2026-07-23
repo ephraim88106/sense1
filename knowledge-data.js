@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 113, emoji: "🔥", category: "로스팅 & 원두 과학",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "당신의 원두가 맛없는 진짜 이유 — 로스팅의 숨겨진 과학",
+    date: "2026.07.23",
+    summary: "\"같은 원두인데 왜 저 카페 커피가 더 맛있지?\" — 사실 이 질문의 답은 추출이 아니라 로스팅에 있습니다.     생두 속에는 1,000여 종의 화합물이 잠들어 있고, 로스터의 손에 따라 그것이 꽃향기가 될 수도, 탄 냄새가 될 수도 있습니다.",
+    link: "coffee-article-2026-07-23.html"
+  },
+  {
     id: 112, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "커피 맛이 매번 다른 이유 — 바리스타가 숨긴 \'추출 황금 법칙\' 완전 정복",
