@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 114, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "라떼아트가 안 되는 진짜 이유 — 99%가 모르는 우유 속 물리학의 비밀",
+    date: "2026.07.24",
+    summary: "라떼아트가 안 되는 진짜 이유 — 99%가 모르는 우유 속 물리학의 비밀",
+    link: "coffee-article-2026-07-24.html"
+  },
+  {
     id: 113, emoji: "🔥", category: "로스팅 & 원두 과학",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "당신의 원두가 맛없는 진짜 이유 — 로스팅의 숨겨진 과학",
