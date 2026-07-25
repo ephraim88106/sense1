@@ -24,6 +24,8 @@ SITE = "https://sense1.pages.dev"
 GA_ID = "G-L6H7ZKF5GE"
 SITE_NAME = "KCA 바리스타 포털"
 OG_IMAGE = SITE + "/assets/og-default.png"
+# 네이버 서치어드바이저 HTML 태그 방식 content 값 (웹마스터도구에서 발급)
+NAVER_VERIFY = ""
 TODAY = datetime.date.today().isoformat()
 
 # robots.txt 에서 차단 중인 문서 + 사이트맵에 넣지 않을 것
@@ -108,6 +110,9 @@ def build_block(fname, src):
     h = head_of(src)
 
     parts = [BEGIN]
+
+    if NAVER_VERIFY and rel == "index.html":
+        parts.append('<meta name="naver-site-verification" content="%s">' % NAVER_VERIFY)
 
     # description — 기존에 없을 때만 새로 넣는다
     if not re.search(r'<meta\s+name=["\']description["\']', h, flags=re.I):
