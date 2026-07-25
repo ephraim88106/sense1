@@ -180,19 +180,22 @@ def fix_file(path):
     # 죽은 도메인(kca-portal.com) URL 교정 — 이메일 주소는 건드리지 않는다
     src = src.replace("https://kca-portal.com", SITE).replace("http://kca-portal.com", SITE)
 
-    # 이전 실행 블록 제거
-    src = re.sub(re.escape(BEGIN) + r".*?" + re.escape(END), "", src, flags=re.S)
+    # 이전 실행 블록 제거 — 앞뒤 공백까지 흡수해야 재실행 시 빈 줄이 쌓이지 않는다
+    src = re.sub(r"[ \t]*\n?" + re.escape(BEGIN) + r".*?" + re.escape(END) + r"[ \t]*\n?",
+                 "", src, flags=re.S)
     # 우리가 관리하는 태그 중 중복될 수 있는 것 제거 (head 안에서만)
     def clean_head(m):
         h = m.group(0)
-        h = re.sub(r'\s*<link[^>]+rel=["\']canonical["\'][^>]*>', "", h, flags=re.I)
-        h = re.sub(r'\s*<meta[^>]+property=["\']og:[^"\']*["\'][^>]*>', "", h, flags=re.I)
-        h = re.sub(r'\s*<meta[^>]+name=["\']twitter:[^"\']*["\'][^>]*>', "", h, flags=re.I)
+        h = re.sub(r'[ \t]*<link[^>]+rel=["\']canonical["\'][^>]*>[ \t]*\n?', "", h, flags=re.I)
+        h = re.sub(r'[ \t]*<meta[^>]+property=["\']og:[^"\']*["\'][^>]*>[ \t]*\n?', "", h, flags=re.I)
+        h = re.sub(r'[ \t]*<meta[^>]+name=["\']twitter:[^"\']*["\'][^>]*>[ \t]*\n?', "", h, flags=re.I)
+        h = re.sub(r"\n{3,}", "\n\n", h)          # 빈 줄 누적 방지
+        h = re.sub(r"[ \t\n]*</head>", "\n</head>", h, flags=re.I)
         return h
     src = re.sub(r"<head[^>]*>.*?</head>", clean_head, src, flags=re.S | re.I)
 
     block = build_block(fname, src)
-    src = re.sub(r"</head>", block + "\n</head>", src, count=1, flags=re.I)
+    src = re.sub(r"[ \t\n]*</head>", "\n" + block + "\n</head>", src, count=1, flags=re.I)
 
     with open(path, "w", encoding="utf-8") as f:
         f.write(src)

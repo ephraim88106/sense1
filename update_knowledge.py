@@ -92,3 +92,23 @@ if __name__ == '__main__':
 
     html_full = args.html_path or os.path.join(os.path.dirname(args.kd), args.html)
     add_entry(args.kd, args.date, args.html, html_full)
+
+    # ------------------------------------------------------------------
+    # SEO 자동 정비 (2026-07-25 추가)
+    # 새 글에 canonical·og·GA·구조화 데이터를 주입하고 sitemap.xml 을 갱신한다.
+    # 이 단계를 건너뛰면 새 글이 검색엔진에 색인되지 않는다.
+    # 별도 명령을 외우지 않아도 되도록 여기에 연결해 두었다.
+    # ------------------------------------------------------------------
+    try:
+        import subprocess
+        repo_dir = os.path.dirname(os.path.abspath(__file__))
+        seo = os.path.join(repo_dir, 'seo_fix.py')
+        if os.path.exists(seo):
+            r = subprocess.run([sys.executable, seo], capture_output=True, text=True, cwd=repo_dir)
+            print((r.stdout or '').strip() or (r.stderr or '').strip())
+            if r.returncode != 0:
+                print('[WARN] seo_fix.py 실패 — 커밋 전에 `python3 seo_fix.py` 를 수동 실행하세요.')
+        else:
+            print('[WARN] seo_fix.py 를 찾지 못했습니다. sitemap.xml 이 갱신되지 않았습니다.')
+    except Exception as e:
+        print('[WARN] SEO 정비 중 오류: %s' % e)
