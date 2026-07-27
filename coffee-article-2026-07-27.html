@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>게이샤가 kg당 3천만원인 이유 — 품종과 가공법이 커피 맛을 결정하는 과학</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px 60px; }
+
+    /* 헤더 */
+    header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      padding: 50px 20px 40px;
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .badge-wrap { display: flex; justify-content: center; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; }
+    .badge {
+      display: inline-block;
+      background: rgba(200,134,10,0.85);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+    .badge.secondary {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.4);
+    }
+    header h1 {
+      font-size: clamp(22px, 4.5vw, 34px);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.4;
+      max-width: 720px;
+      margin: 0 auto 14px;
+    }
+    header h1 span { color: #f5cc6a; }
+    .subtitle {
+      color: rgba(255,255,255,0.78);
+      font-size: 15px;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+    .meta {
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+    }
+
+    /* 본문 카드 */
+    .content-card {
+      background: #fff;
+      border-radius: 0 0 16px 16px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 24px rgba(44,24,16,0.08);
+    }
+    @media (max-width: 600px) { .content-card { padding: 28px 18px; } }
+
+    /* 훅 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 14px 20px;
+      background: #fdf5e6;
+      border-radius: 0 12px 12px 0;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: linear-gradient(135deg, #fdf5e6 0%, #fef9f0 100%);
+      border: 2px solid #c8860a;
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      color: #c8860a;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .summary-box ul { list-style: none; }
+    .summary-box ul li {
+      padding: 5px 0 5px 24px;
+      position: relative;
+      font-size: 15px;
+      color: #3a2010;
+    }
+    .summary-box ul li::before {
+      content: "☕";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2 {
+      font-size: 22px;
+      font-weight: 800;
+      color: #2c1810;
+      margin: 44px 0 16px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin: 28px 0 10px;
+    }
+    p { margin-bottom: 18px; color: #3a2010; }
+
+    /* 강조 */
+    strong { color: #6b3a2a; }
+    em { color: #c8860a; font-style: normal; font-weight: 600; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #6b3a2a 0%, #4a2518 100%);
+      color: #fff;
+      border-radius: 16px;
+      padding: 28px 30px;
+      margin: 36px 0;
+    }
+    .tip-box h3 {
+      color: #f5cc6a;
+      font-size: 16px;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      background: #c8860a;
+      color: #fff;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: rgba(255,255,255,0.92); }
+
+    /* 인포그래픽 래퍼 */
+    .infographic-wrap {
+      margin: 36px 0;
+      background: #fff;
+      border-radius: 16px;
+      border: 1.5px solid #e8d8c8;
+      padding: 24px 20px;
+      overflow-x: auto;
+    }
+    .infographic-title {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    /* 품종 카드 그리드 */
+    .variety-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin: 28px 0; }
+    .variety-card {
+      background: #faf7f2;
+      border: 1.5px solid #e8d8c8;
+      border-radius: 14px;
+      padding: 20px 18px;
+      border-top: 4px solid;
+    }
+    .variety-card.geisha { border-top-color: #c8860a; }
+    .variety-card.sl28 { border-top-color: #e05555; }
+    .variety-card.catuai { border-top-color: #4a9a6a; }
+    .variety-card.bourbon { border-top-color: #7a5a9a; }
+    .variety-card h4 { font-size: 16px; font-weight: 800; color: #2c1810; margin-bottom: 6px; }
+    .variety-card .origin { font-size: 12px; color: #888; margin-bottom: 10px; }
+    .variety-card .flavor-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+    .flavor-tag {
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+    .geisha .flavor-tag { background: #fef3da; color: #c8860a; }
+    .sl28 .flavor-tag { background: #fdeaea; color: #c03030; }
+    .catuai .flavor-tag { background: #e8f5ee; color: #2a7a4a; }
+    .bourbon .flavor-tag { background: #f0ebf8; color: #6a3a9a; }
+    .variety-card .note { font-size: 13px; color: #5a4030; line-height: 1.6; }
+    .price-tag {
+      display: inline-block;
+      background: #2c1810;
+      color: #f5cc6a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 8px;
+      margin-top: 8px;
+    }
+
+    /* 가공법 비교 */
+    .processing-compare {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin: 28px 0;
+    }
+    .proc-card {
+      border-radius: 14px;
+      padding: 20px 16px;
+      text-align: center;
+    }
+    .proc-card.washed { background: #eaf4fb; border: 2px solid #4a90c0; }
+    .proc-card.natural { background: #fdf0e8; border: 2px solid #e07030; }
+    .proc-card.honey { background: #fef9e0; border: 2px solid #d4a010; }
+    .proc-card.anaerobic { background: #f0eafa; border: 2px solid #8050c0; }
+    .proc-icon { font-size: 32px; margin-bottom: 8px; }
+    .proc-card h4 { font-size: 15px; font-weight: 800; margin-bottom: 6px; color: #2c1810; }
+    .proc-card .ko-name { font-size: 12px; color: #888; margin-bottom: 10px; }
+    .proc-bar-label { font-size: 12px; font-weight: 600; color: #555; margin: 6px 0 3px; text-align: left; }
+    .proc-bar-bg { background: rgba(0,0,0,0.08); border-radius: 8px; height: 8px; margin-bottom: 2px; }
+    .proc-bar { height: 8px; border-radius: 8px; }
+    .washed .proc-bar { background: #4a90c0; }
+    .natural .proc-bar { background: #e07030; }
+    .honey .proc-bar { background: #d4a010; }
+    .anaerobic .proc-bar { background: #8050c0; }
+    .proc-flavor { font-size: 12px; color: #5a4030; margin-top: 10px; font-style: italic; line-height: 1.5; }
+
+    /* 구분선 */
+    hr { border: none; border-top: 1.5px solid #e8d8c8; margin: 36px 0; }
+
+    /* 행동 제안 */
+    .action-box {
+      background: linear-gradient(135deg, #faf7f2 0%, #fef5e0 100%);
+      border: 2px dashed #c8860a;
+      border-radius: 14px;
+      padding: 26px 28px;
+      margin-top: 40px;
+    }
+    .action-box h3 { color: #6b3a2a; margin-bottom: 14px; font-size: 16px; }
+    .action-box ol { padding-left: 22px; }
+    .action-box ol li { margin-bottom: 8px; font-size: 15px; color: #3a2010; }
+
+    /* 해시태그 */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1.5px solid #e8d8c8;
+    }
+    .tag {
+      font-size: 13px;
+      color: #6b3a2a;
+      background: #f0e8da;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    /* 면책조항 */
+    .disclaimer {
+      margin-top: 28px;
+      font-size: 12px;
+      color: #aaa;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin: 24px 0;
+    }
+    .data-chip {
+      background: #2c1810;
+      color: #fff;
+      border-radius: 12px;
+      padding: 14px 20px;
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+    }
+    .data-chip .num { font-size: 24px; font-weight: 900; color: #f5cc6a; display: block; }
+    .data-chip .label { font-size: 12px; color: rgba(255,255,255,0.7); margin-top: 4px; display: block; }
+
+    /* 인용 */
+    blockquote {
+      border-left: 4px solid #c8860a;
+      margin: 24px 0;
+      padding: 12px 20px;
+      background: #fdf5e6;
+      border-radius: 0 10px 10px 0;
+      font-size: 15px;
+      color: #4a2c18;
+      font-style: italic;
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<meta name="description" content="워시드·내추럴·허니, 왜 같은 농장 원두인데 맛이 완전히 다를까? 바리스타 10년이 밝히는 가공의 진짜 비밀">
+<link rel="canonical" href="https://sense1.pages.dev/coffee-article-2026-07-27">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="게이샤가 kg당 3천만원인 이유 — 품종과 가공법이 커피 맛을 결정하는 과학">
+<meta property="og:description" content="워시드·내추럴·허니, 왜 같은 농장 원두인데 맛이 완전히 다를까? 바리스타 10년이 밝히는 가공의 진짜 비밀">
+<meta property="og:url" content="https://sense1.pages.dev/coffee-article-2026-07-27">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://sense1.pages.dev/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sense1.pages.dev/assets/og-default.png">
+<meta property="article:published_time" content="2026-07-27T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-07-27T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://sense1.pages.dev/#organization", "name": "KCA 바리스타 포털", "url": "https://sense1.pages.dev/"}, {"@type": "WebSite", "@id": "https://sense1.pages.dev/#website", "url": "https://sense1.pages.dev/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://sense1.pages.dev/#organization"}}, {"@type": "Article", "@id": "https://sense1.pages.dev/coffee-article-2026-07-27#page", "url": "https://sense1.pages.dev/coffee-article-2026-07-27", "headline": "게이샤가 kg당 3천만원인 이유 — 품종과 가공법이 커피 맛을 결정하는 과학", "description": "워시드·내추럴·허니, 왜 같은 농장 원두인데 맛이 완전히 다를까? 바리스타 10년이 밝히는 가공의 진짜 비밀", "inLanguage": "ko-KR", "image": "https://sense1.pages.dev/assets/og-default.png", "isPartOf": {"@id": "https://sense1.pages.dev/#website"}, "datePublished": "2026-07-27", "dateModified": "2026-07-27", "author": {"@id": "https://sense1.pages.dev/#organization"}, "publisher": {"@id": "https://sense1.pages.dev/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- 헤더 -->
+<header>
+  <div class="container">
+    <div class="badge-wrap">
+      <span class="badge">☕ 품종 & 가공법</span>
+      <span class="badge secondary">스페셜티 커피 심층 가이드</span>
+      <span class="badge secondary">2026. 07. 27</span>
+    </div>
+    <h1>게이샤가 kg당 <span>3,000만원</span>인 이유 —<br>품종과 가공법이 커피 맛을 결정하는 과학</h1>
+    <p class="subtitle">워시드·내추럴·허니, 왜 같은 농장 원두인데 맛이 완전히 다를까? 바리스타 10년이 밝히는 가공의 진짜 비밀</p>
+    <p class="meta">by 스페셜티 바리스타 · 10년 경력</p>
+  </div>
+</header>
+
+<!-- 본문 -->
+<div class="container">
+<div class="content-card">
+
+  <!-- 훅 -->
+  <div class="hook">
+    "같은 농장, 같은 나무에서 딴 체리인데 — 워시드로 만들면 레몬 티, 내추럴로 만들면 복숭아 잼이 된다."<br>
+    이게 말이 되는 소리냐고요? 됩니다. 그리고 이 차이가 커피 한 잔의 가격을 1,000원에서 30,000원으로 만듭니다.
+  </div>
+
+  <!-- 핵심 요약 -->
+  <div class="summary-box">
+    <h3>✦ 오늘 이 글에서 배울 것</h3>
+    <ul>
+      <li>게이샤·SL28·카투아이·부르봉 — 품종별 향미 특성과 가격 차이의 과학적 이유</li>
+      <li>워시드·내추럴·허니·무산소발효 — 가공법이 발효 화학반응을 통해 맛을 만드는 원리</li>
+      <li>2025년 Best of Panama 경매에서 게이샤가 kg당 3,020만원을 기록한 사건의 내막</li>
+      <li>케냐 SL28의 '더블 퍼멘테이션'이 왜 전 세계 바리스타를 열광시키는지</li>
+      <li>내일 당장 원두 구매에 써먹을 수 있는 품종×가공법 조합 선택 공식</li>
+    </ul>
+  </div>
+
+  <!-- 섹션 1 -->
+  <h2>01. "왜 커피 맛이 이렇게 달라요?" — 품종이 답이다</h2>
+  <p>
+    커피 입문자들이 가장 자주 하는 질문이 있습니다. "에티오피아 커피는 왜 항상 과일향이고, 케냐 커피는 왜 이렇게 새콤한 거예요?" 사실 이 질문의 절반은 <strong>품종(Variety)</strong>이 답입니다. 나머지 절반은 뒤에서 다룰 가공법이고요.
+  </p>
+  <p>
+    커피나무는 크게 아라비카(Arabica)와 로부스타(Robusta)로 나뉘는데, 스페셜티 커피 세계는 사실상 아라비카의 세계입니다. 그리고 아라비카 안에는 수백 가지 품종(Cultivar)이 존재합니다. 마치 사과에도 홍옥·부사·후지가 있고 포도에도 머루·캠벨·거봉이 있듯이, 커피도 품종마다 유전자가 다르고, 유전자가 다르면 만들어내는 향미 화합물의 종류와 농도가 완전히 달라집니다.
+  </p>
+
+  <div class="data-highlight">
+    <div class="data-chip">
+      <span class="num">47,000+</span>
+      <span class="label">게이샤 유전체 유전자 수<br>(2025년 전체 게놈 해독 결과)</span>
+    </div>
+    <div class="data-chip">
+      <span class="num">₩30,204/g</span>
+      <span class="label">2025년 Best of Panama<br>게이샤 최고 경매가 (kg당 약 3천만원)</span>
+    </div>
+    <div class="data-chip">
+      <span class="num">90년</span>
+      <span class="label">케냐 SL28·SL34<br>품종 개발 역사</span>
+    </div>
+  </div>
+
+  <!-- 품종 카드 -->
+  <h3>주요 4대 품종 완전 비교</h3>
+  <div class="variety-grid">
+    <div class="variety-card geisha">
+      <h4>🌸 게이샤 (Geisha/Gesha)</h4>
+      <div class="origin">에티오피아 원산 → 파나마에서 꽃 핀 품종</div>
+      <div class="flavor-tags">
+        <span class="flavor-tag">재스민</span>
+        <span class="flavor-tag">베르가못</span>
+        <span class="flavor-tag">복숭아</span>
+        <span class="flavor-tag">레몬 버베나</span>
+      </div>
+      <p class="note">해발 1,500m 이상에서만 진가를 발휘. 수확량이 일반 아라비카의 절반 수준이라 희소성 극상. 2025년 전체 게놈이 해독되어 레드부르봉과의 유전적 유사성이 밝혀짐.</p>
+      <span class="price-tag">최고가: $30,204/kg (2025)</span>
+    </div>
+    <div class="variety-card sl28">
+      <h4>🍒 SL28</h4>
+      <div class="origin">케냐 스콧 연구소 개발, 1930년대</div>
+      <div class="flavor-tags">
+        <span class="flavor-tag">블랙커런트</span>
+        <span class="flavor-tag">자두</span>
+        <span class="flavor-tag">토마토</span>
+        <span class="flavor-tag">밝은 산미</span>
+      </div>
+      <p class="note">드라이 컨디션에서도 생존하는 강한 내성. 더블 퍼멘테이션(이중 발효) 가공법과 만나면 세계 최고의 산미 밸런스를 자랑. 케냐를 대표하는 품종.</p>
+    </div>
+    <div class="variety-card catuai">
+      <h4>🌿 카투아이 (Catuai)</h4>
+      <div class="origin">브라질 IAPAR 연구소 개발 1949년</div>
+      <div class="flavor-tags">
+        <span class="flavor-tag">캐러멜</span>
+        <span class="flavor-tag">밀크초콜릿</span>
+        <span class="flavor-tag">견과류</span>
+        <span class="flavor-tag">부드러운 산미</span>
+      </div>
+      <p class="note">카투라×문도노보 교배종. 낮은 키로 강한 바람에도 버팀. 대량생산에 용이해 코스타리카·과테말라에서 광범위하게 재배. 가장 '대중적 스페셜티' 품종.</p>
+    </div>
+    <div class="variety-card bourbon">
+      <h4>🍇 부르봉 (Bourbon)</h4>
+      <div class="origin">부르봉 섬(현 레위니옹) 유래</div>
+      <div class="flavor-tags">
+        <span class="flavor-tag">체리</span>
+        <span class="flavor-tag">다크초콜릿</span>
+        <span class="flavor-tag">와인</span>
+        <span class="flavor-tag">감미로운 바디</span>
+      </div>
+      <p class="note">티피카와 함께 아라비카의 양대 조상. 복잡하고 균형 잡힌 맛의 원형. 레드·옐로·핑크 부르봉으로 변종이 나뉘며, 특히 핑크부르봉은 차세대 스페셜티로 주목받는 중.</p>
+    </div>
+  </div>
+
+  <blockquote>
+    "게이샤의 재스민 향은 훈련된 감각으로도 '이게 커피야?' 싶을 정도입니다. 처음 마셨을 때 저는 손님이 허브티를 섞었나 의심했어요." — 10년차 바리스타 경험담
+  </blockquote>
+
+  <!-- 섹션 2 -->
+  <h2>02. 게이샤가 비싼 진짜 이유 — 유전자부터 다르다</h2>
+  <p>
+    2025년, 과학 저널 <em>G3 Genes|Genomes|Genetics</em>에 게이샤의 전체 게놈(유전체) 해독 논문이 발표됐습니다. 결론은 놀라웠습니다. 게이샤는 47,000개 이상의 유전자를 가지고 있으며, 레드 부르봉과 높은 유전적 유사성을 보이면서도 <strong>향미 화합물 합성 경로</strong>에서 독특한 차이를 보입니다.
+  </p>
+  <p>
+    쉽게 말하면, 게이샤는 다른 품종보다 <em>재스몬산(Jasmonic acid) 계열 향 성분</em>을 더 많이 만들어낼 수 있는 유전자 조합을 갖고 있습니다. 이것이 그 '재스민 향'의 정체입니다. 해발 1,500m 이상의 저온 환경에서 천천히 익으면 이 향 성분이 더욱 농축됩니다. 바로 그래서 <strong>고도가 낮은 농장에서는 게이샤 심어봤자 그냥 평범한 커피</strong>가 나오는 겁니다.
+  </p>
+  <p>
+    2025년 8월, 파나마 Best of Panama 경매에서 아시엔다 라 에스메랄다 농장의 워시드 게이샤 한 로트가 <em>kg당 $30,204(약 4,150만원)</em>에 낙찰됐습니다. 이것은 단순한 커피 마케팅이 아닙니다. 유전적으로 차별화된 향미 + 희소한 생산량(일반 아라비카의 50%) + 고도 제약이라는 3중 희소성이 만든 가격입니다.
+  </p>
+
+  <!-- 섹션 3 -->
+  <h2>03. SL28의 비밀 무기 — 더블 퍼멘테이션</h2>
+  <p>
+    케냐 커피를 마셔본 적 있다면 기억할 겁니다. 그 특유의 <strong>블랙커런트·자두·토마토</strong> 향, 그리고 입 안을 쫙 당기는 밝고 선명한 산미. 이건 SL28과 SL34 품종 자체의 힘이기도 하지만, 케냐만의 독특한 가공법 '더블 퍼멘테이션(이중 발효)'이 결정적 역할을 합니다.
+  </p>
+
+  <div class="infographic-wrap">
+    <div class="infographic-title">📊 케냐 더블 퍼멘테이션 공정도</div>
+    <svg viewBox="0 0 720 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;display:block;margin:0 auto;">
+      <!-- 배경 -->
+      <rect width="720" height="200" fill="#faf7f2" rx="12"/>
+
+      <!-- 단계 박스들 -->
+      <!-- 1 수확 -->
+      <rect x="20" y="60" width="100" height="80" rx="10" fill="#e8f0e8" stroke="#4a9a6a" stroke-width="2"/>
+      <text x="70" y="90" text-anchor="middle" font-size="22" font-family="sans-serif">🍒</text>
+      <text x="70" y="112" text-anchor="middle" font-size="11" font-family="Noto Sans KR,sans-serif" fill="#2c6040" font-weight="700">① 체리 수확</text>
+      <text x="70" y="128" text-anchor="middle" font-size="10" font-family="Noto Sans KR,sans-serif" fill="#555">완숙 선별</text>
+
+      <!-- 화살표 -->
+      <path d="M 122 100 L 148 100" stroke="#c8860a" stroke-width="2.5" marker-end="url(#arr)"/>
+      <defs>
+        <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+          <path d="M0,0 L0,6 L8,3 z" fill="#c8860a"/>
+        </marker>
+      </defs>
+
+      <!-- 2 펄핑 -->
+      <rect x="150" y="60" width="100" height="80" rx="10" fill="#fdf0e8" stroke="#e07030" stroke-width="2"/>
+      <text x="200" y="90" text-anchor="middle" font-size="22" font-family="sans-serif">⚙️</text>
+      <text x="200" y="112" text-anchor="middle" font-size="11" font-family="Noto Sans KR,sans-serif" fill="#8a3010" font-weight="700">② 펄핑</text>
+      <text x="200" y="128" text-anchor="middle" font-size="10" font-family="Noto Sans KR,sans-serif" fill="#555">껍질 제거</text>
+
+      <path d="M 252 100 L 278 100" stroke="#c8860a" stroke-width="2.5" marker-end="url(#arr)"/>
+
+      <!-- 3 1차발효 -->
+      <rect x="280" y="40" width="110" height="120" rx="10" fill="#eaf4fb" stroke="#4a90c0" stroke-width="2.5"/>
+      <text x="335" y="75" text-anchor="middle" font-size="20" font-family="sans-serif">💧</text>
+      <text x="335" y="98" text-anchor="middle" font-size="11" font-family="Noto Sans KR,sans-serif" fill="#1a5080" font-weight="700">③ 1차 발효</text>
+      <text x="335" y="116" text-anchor="middle" font-size="10" font-family="Noto Sans KR,sans-serif" fill="#555">수중 24~72h</text>
+      <text x="335" y="132" text-anchor="middle" font-size="10" font-family="Noto Sans KR,sans-serif" fill="#4a90c0">무시라지 분해</text>
+
+      <path d="M 392 100 L 418 100" stroke="#c8860a" stroke-width="2.5" marker-end="url(#arr)"/>
+
+      <!-- 4 세척+2차발효 -->
+      <rect x="420" y="40" width="120" height="120" rx="10" fill="#f0eafa" stroke="#8050c0" stroke-width="2.5"/>
+      <text x="480" y="75" text-anchor="middle" font-size="20" font-family="sans-serif">🌊</text>
+      <text x="480" y="98" text-anchor="middle" font-size="11" font-family="Noto Sans KR,sans-serif" fill="#5030a0" font-weight="700">④ 세척+2차 침지</text>
+      <text x="480" y="116" text-anchor="middle" font-size="10" font-family="Noto Sans KR,sans-serif" fill="#555">깨끗한 물 12~24h</text>
+      <text x="480" y="132" text-anchor="middle" font-size="10" font-family="Noto Sans KR,sans-serif" fill="#8050c0">산미 정교화</text>
+
+      <path d="M 542 100 L 568 100" stroke="#c8860a" stroke-width="2.5" marker-end="url(#arr)"/>
+
+      <!-- 5 건조 -->
+      <rect x="570" y="60" width="110" height="80" rx="10" fill="#fef9e0" stroke="#d4a010" stroke-width="2"/>
+      <text x="625" y="90" text-anchor="middle" font-size="22" font-family="sans-serif">☀️</text>
+      <text x="625" y="112" text-anchor="middle" font-size="11" font-family="Noto Sans KR,sans-serif" fill="#8a6010" font-weight="700">⑤ 건조 & 완성</text>
+      <text x="625" y="128" text-anchor="middle" font-size="10" font-family="Noto Sans KR,sans-serif" fill="#555">아프리칸베드</text>
+
+      <!-- 하단 라벨 -->
+      <text x="360" y="185" text-anchor="middle" font-size="11" font-family="Noto Sans KR,sans-serif" fill="#888">※ 케냐 더블 퍼멘테이션이 SL28의 블랙커런트·자두 산미를 극대화하는 이유</text>
+    </svg>
+  </div>
+
+  <p>
+    케냐 더블 퍼멘테이션의 핵심은 1차 발효(24~72시간) 후 한 번 씻어내고, 다시 깨끗한 물에 12~24시간 <strong>침지(Soaking)</strong>하는 2단계 과정입니다. 이 2차 침지 과정에서 콩 표면에 남아있는 불필요한 발효 부산물들이 걸러지고, <em>SL28 특유의 시트르산(Citric acid)과 말산(Malic acid) 계열 산미</em>가 정교하게 살아납니다. 일반 워시드 가공과 달리 이중 세척으로 '클린컵'의 완성도를 극대화하는 것이죠.
+  </p>
+
+  <!-- 섹션 4 -->
+  <h2>04. 같은 원두, 완전히 다른 맛 — 가공법의 화학</h2>
+  <p>
+    이제 진짜 비밀을 이야기할 차례입니다. <strong>사실 대부분의 사람들이 모르는데</strong>, 커피 맛의 30~50%는 품종이 결정하고, 나머지 50~70%는 가공법이 결정합니다. 같은 게이샤를 워시드로 만들면 재스민·레몬티, 내추럴로 만들면 복숭아잼·망고처럼 완전히 다른 음료가 됩니다.
+  </p>
+
+  <div class="processing-compare">
+    <div class="proc-card washed">
+      <div class="proc-icon">💧</div>
+      <h4>워시드 (Washed)</h4>
+      <div class="ko-name">습식 가공법</div>
+      <div class="proc-bar-label">클린컵 명확도</div>
+      <div class="proc-bar-bg"><div class="proc-bar" style="width:95%"></div></div>
+      <div class="proc-bar-label">과일 바디감</div>
+      <div class="proc-bar-bg"><div class="proc-bar" style="width:30%"></div></div>
+      <div class="proc-bar-label">생산 복잡도</div>
+      <div class="proc-bar-bg"><div class="proc-bar" style="width:70%"></div></div>
+      <p class="proc-flavor">"레몬·자몽·허브티 — 원두 본연의 향을 가장 선명하게 드러냄"</p>
+    </div>
+    <div class="proc-card natural">
+      <div class="proc-icon">☀️</div>
+      <h4>내추럴 (Natural)</h4>
+      <div class="ko-name">건식·자연 가공법</div>
+      <div class="proc-bar-label">클린컵 명확도</div>
+      <div class="proc-bar-bg"><div class="proc-bar" style="width:35%"></div></div>
+      <div class="proc-bar-label">과일 바디감</div>
+      <div class="proc-bar-bg"><div class="proc-bar" style="width:95%"></div></div>
+      <div class="proc-bar-label">생산 복잡도</div>
+      <div class="proc-bar-bg"><div class="proc-bar" style="width:45%"></div></div>
+      <p class="proc-flavor">"복숭아·블루베리·와인발효향 — 과일 바디가 폭발적. 실패 시 발효취 위험"</p>
+    </div>
+    <div class="proc-card honey">
+      <div class="proc-icon">🍯</div>
+      <h4>허니 (Honey)</h4>
+      <div class="ko-name">펄프드 내추럴</div>
+      <div class="proc-bar-label">클린컵 명확도</div>
+      <div class="proc-bar-bg"><div class="proc-bar" style="width:60%"></div></div>
+      <div class="proc-bar-label">과일 바디감</div>
+      <div class="proc-bar-bg"><div class="proc-bar" style="width:65%"></div></div>
+      <div class="proc-bar-label">생산 복잡도</div>
+      <div class="proc-bar-bg"><div class="proc-bar" style="width:80%"></div></div>
+      <p class="proc-flavor">"캐러멜·황도복숭아 — 워시드의 산미 + 내추럴의 달콤함을 동시에. 옐로우→블랙 허니로 갈수록 바디 강해짐"</p>
+    </div>
+    <div class="proc-card anaerobic">
+      <div class="proc-icon">🧪</div>
+      <h4>무산소발효 (Anaerobic)</h4>
+      <div class="ko-name">혐기성 발효 가공</div>
+      <div class="proc-bar-label">클린컵 명확도</div>
+      <div class="proc-bar-bg"><div class="proc-bar" style="width:50%"></div></div>
+      <div class="proc-bar-label">독특한 풍미</div>
+      <div class="proc-bar-bg"><div class="proc-bar" style="width:98%"></div></div>
+      <div class="proc-bar-label">생산 복잡도</div>
+      <div class="proc-bar-bg"><div class="proc-bar" style="width:95%"></div></div>
+      <p class="proc-flavor">"복숭아향 사탕·감초·열대과일 — 효모가 산소 없이 발효해 전혀 새로운 향미 화합물 생성"</p>
+    </div>
+  </div>
+
+  <p>
+    가공의 핵심은 <strong>무시라지(Mucilage)</strong>라는 체리 과육의 점성 물질입니다. 이 당분과 효소 덩어리를 얼마나, 어떤 방식으로 발효시키느냐가 맛을 결정합니다. 워시드는 이걸 물과 발효로 완전히 씻어내고, 내추럴은 껍질째 말리며 천천히 콩 속으로 스며들게 하고, 허니는 껍질만 벗기고 무시라지를 부분적으로 남깁니다. 무산소발효는 탱크를 밀봉해 이산화탄소 환경에서 효모가 새로운 에스테르 화합물을 만들도록 유도합니다.
+  </p>
+
+  <!-- 섹션 5 -->
+  <h2>05. 허니 가공법의 컬러 코드 — 옐로우·레드·블랙의 차이</h2>
+  <p>
+    허니 가공법이 처음인 분들이 가장 헷갈리는 부분입니다. "허니 커피가 꿀 맛이 나나요?" — 절대 아닙니다. '허니(Honey)'는 점착성 무시라지가 꿀처럼 끈적하게 콩에 달라붙어 있는 모습에서 유래한 이름입니다.
+  </p>
+  <p>
+    허니 프로세스는 남긴 무시라지의 양에 따라 색으로 분류됩니다. <em>옐로우 허니(Yellow Honey)</em>는 무시라지를 20~40% 남기고 빠르게 건조 — 가장 워시드에 가깝고 산미가 살아있습니다. <em>레드 허니(Red Honey)</em>는 50~75% 남기고 천천히 건조 — 과일향과 바디가 강해집니다. <em>블랙 허니(Black Honey)</em>는 무시라지를 거의 100% 남기고 2~6주 건조 — 내추럴에 가까운 진한 과일 단맛과 묵직한 바디를 냅니다.
+  </p>
+  <p>
+    코스타리카와 엘살바도르 농부들이 허니 프로세스의 명인들입니다. 코스타리카 산타 테레사 농장처럼 해발 2,000m에서 SL28을 블랙 허니로 가공하면 — 이것이 바로 스페셜티 커피 매니아들이 찾는 '극한의 조합'입니다.
+  </p>
+
+  <!-- 실전 팁 -->
+  <div class="tip-box">
+    <h3>🎯 바리스타가 알려주는 실전 팁 3가지</h3>
+    <div class="tip-item">
+      <div class="tip-num">1</div>
+      <div class="tip-text">
+        <strong>원두 구매 시 '품종×가공법' 조합을 보세요.</strong> 게이샤 내추럴이면 극한의 과일향 경험, SL28 워시드면 케냐 전통 산미의 정수, 카투아이 허니면 달콤하고 부드러운 일상의 커피. 이 공식만 외워도 카페에서 메뉴 선택 실패율이 절반 이하로 줍니다.
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">2</div>
+      <div class="tip-text">
+        <strong>내추럴 원두는 물 온도를 1~2도 낮추세요.</strong> 내추럴 가공 원두는 이미 과일 향이 풍부하게 농축되어 있어 높은 온도에서 과추출되면 발효취가 올라옵니다. 워시드보다 92→90°C로 낮추면 깔끔한 과일 단맛이 살아납니다.
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">3</div>
+      <div class="tip-text">
+        <strong>처음 게이샤를 마신다면 워시드 에스프레소보다 워시드 푸어오버를 선택하세요.</strong> 에스프레소는 고압 추출로 향미가 압축되어 게이샤의 섬세한 꽃향기가 오히려 뭉개질 수 있습니다. V60이나 케멕스로 93°C·1:15 비율로 4분 추출 — 이것이 게이샤를 처음 경험하는 최적의 방법입니다.
+      </div>
+    </div>
+  </div>
+
+  <!-- 섹션 6 -->
+  <h2>06. 무산소발효(Anaerobic) — 커피 가공법의 혁명</h2>
+  <p>
+    2015년 이후 스페셜티 커피 세계를 뒤흔든 새로운 가공법이 있습니다. 바로 <strong>무산소발효(Anaerobic Fermentation)</strong>입니다. 와인 양조에서 영감을 받은 이 방법은, 커피 체리를 밀폐 탱크에 넣고 이산화탄소를 주입해 산소를 차단한 상태에서 효모를 발효시킵니다.
+    </p>
+  <p>
+    산소가 없으면 효모는 <em>에스테르 화합물</em>을 다량 생성합니다. 이것이 복숭아향 사탕, 감초, 열대과일, 심지어 럼주 같은 향미를 만들어냅니다. 전통적인 커피에서 절대로 나올 수 없는 향들이죠. 2023~2025년 월드바리스타챔피언십(WBC) 상위권 선수들의 80% 이상이 무산소발효 원두를 사용했습니다. 한국의 이창준 바리스타도 이 가공법의 원두로 세계 무대를 놀라게 했습니다.
+  </p>
+  <p>
+    다만 비용이 문제입니다. 탱크 관리, 온도 제어, 시간 모니터링까지 — 무산소발효 원두의 생산 비용은 워시드의 3~5배입니다. 하지만 그 맛의 독창성은 분명히 값어치를 합니다.
+  </p>
+
+  <!-- 심화 데이터 SVG 인포그래픽 -->
+  <div class="infographic-wrap">
+    <div class="infographic-title">📈 가공법별 향미 특성 레이더 차트 (5점 척도)</div>
+    <svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;display:block;margin:0 auto;">
+      <defs>
+        <style>
+          .axis-label { font-family: 'Noto Sans KR', sans-serif; font-size: 11px; fill: #555; }
+          .legend-text { font-family: 'Noto Sans KR', sans-serif; font-size: 11px; }
+        </style>
+      </defs>
+
+      <!-- 배경 -->
+      <rect width="500" height="320" fill="#faf7f2" rx="12"/>
+
+      <!-- 레이더 중심 -->
+      <!-- 축: 클린컵(위), 과일향(오른쪽위), 바디(오른쪽아래), 달콤함(아래), 산미(왼쪽아래), 꽃향(왼쪽위) -->
+      <!-- 6각형 그리드, 중심 (220,160) -->
+
+      <!-- 그리드 5단계 -->
+      <!-- r=20,40,60,80,100 -->
+      <g opacity="0.3" stroke="#6b3a2a" stroke-width="0.8" fill="none">
+        <!-- 5각형 그리드 (6개 방향) -->
+        <!-- 각도: 270°(위), 330°, 30°(오른쪽위), 90°(아래), 150°, 210° -->
+        <!-- 각각 r=20,40,60,80,100 -->
+        <polygon points="220,140 246,150 236,180 204,180 194,150" />
+        <polygon points="220,120 272,140 252,200 188,200 168,140" />
+        <polygon points="220,100 298,130 268,220 172,220 142,130" />
+        <polygon points="220,80 324,120 284,240 156,240 116,120" />
+        <polygon points="220,60 350,110 300,260 140,260 90,110" />
+      </g>
+
+      <!-- 축선 -->
+      <g stroke="#6b3a2a" stroke-width="0.8" opacity="0.25">
+        <line x1="220" y1="160" x2="220" y2="60"/>
+        <line x1="220" y1="160" x2="350" y2="110"/>
+        <line x1="220" y1="160" x2="300" y2="260"/>
+        <line x1="220" y1="160" x2="140" y2="260"/>
+        <line x1="220" y1="160" x2="90" y2="110"/>
+      </g>
+
+      <!-- 축 레이블 -->
+      <text x="220" y="52" text-anchor="middle" class="axis-label" font-weight="700">클린컵</text>
+      <text x="362" y="108" text-anchor="start" class="axis-label" font-weight="700">꽃·과일향</text>
+      <text x="308" y="272" text-anchor="middle" class="axis-label" font-weight="700">단맛·바디</text>
+      <text x="132" y="272" text-anchor="middle" class="axis-label" font-weight="700">발효 복잡도</text>
+      <text x="68" y="108" text-anchor="end" class="axis-label" font-weight="700">산미</text>
+
+      <!-- 워시드 폴리곤 (클린5, 과일2, 바디2, 발효1, 산미4) -->
+      <!-- 클린(위): (220, 60+5단계기준80) → (220, 60) r=100 -->
+      <!-- 실제 점수 기반 좌표 계산 (중심220,160, r=100) -->
+      <!-- 클린: 5/5=1.0 → 위쪽, 각도-90° → x=220+100*cos(-90)=220, y=160+100*sin(-90)=60 -->
+      <!-- 과일향: 2/5=0.4 → 각도-30° → x=220+40*cos(-30)=220+34.6=254.6, y=160+40*sin(-30)=160-20=140 -->
+      <!-- 바디: 2/5=0.4 → 각도30° → x=220+40*cos(30)=254.6, y=160+40*sin(30)=180 -->
+      <!-- 발효복잡도: 1/5=0.2 → 각도90° → x=220+20*cos(90)=220, y=160+20*sin(90)=180 -->
+      <!-- 산미: 4/5=0.8 → 각도150° → x=220+80*cos(150)=220-69.3=150.7, y=160+80*sin(150)=200 -->
+      <!-- 꽃향: - 5개 축만 사용 -->
+      <polygon
+        points="220,60 255,140 255,180 220,180 151,200"
+        fill="#4a90c0" fill-opacity="0.25" stroke="#4a90c0" stroke-width="2"/>
+
+      <!-- 내추럴 폴리곤 (클린2, 과일5, 바디5, 발효3, 산미2) -->
+      <polygon
+        points="220,100 350,110 300,260 220,220 116,120"
+        fill="#e07030" fill-opacity="0.25" stroke="#e07030" stroke-width="2"/>
+
+      <!-- 허니 폴리곤 (클린3, 과일4, 바디3, 발효2, 산미3) -->
+      <polygon
+        points="220,100 324,120 268,220 172,220 142,130"
+        fill="#d4a010" fill-opacity="0.2" stroke="#d4a010" stroke-width="2" stroke-dasharray="5,3"/>
+
+      <!-- 범례 -->
+      <rect x="20" y="10" width="14" height="14" fill="#4a90c0" fill-opacity="0.7" rx="3"/>
+      <text x="38" y="22" class="legend-text" fill="#4a90c0" font-weight="700">워시드</text>
+      <rect x="95" y="10" width="14" height="14" fill="#e07030" fill-opacity="0.7" rx="3"/>
+      <text x="113" y="22" class="legend-text" fill="#e07030" font-weight="700">내추럴</text>
+      <rect x="175" y="10" width="14" height="14" fill="#d4a010" fill-opacity="0.7" rx="3"/>
+      <text x="193" y="22" class="legend-text" fill="#d4a010" font-weight="700">허니</text>
+
+      <!-- 점수 눈금 -->
+      <text x="222" y="62" font-size="9" fill="#6b3a2a" font-family="sans-serif">5</text>
+      <text x="222" y="82" font-size="9" fill="#aaa" font-family="sans-serif">4</text>
+      <text x="222" y="102" font-size="9" fill="#aaa" font-family="sans-serif">3</text>
+      <text x="222" y="122" font-size="9" fill="#aaa" font-family="sans-serif">2</text>
+      <text x="222" y="142" font-size="9" fill="#aaa" font-family="sans-serif">1</text>
+    </svg>
+  </div>
+
+  <!-- 행동 제안 -->
+  <hr/>
+  <div class="action-box">
+    <h3>☕ 내일 당장 해볼 수 있는 실험</h3>
+    <ol>
+      <li><strong>같은 농장의 워시드·내추럴 비교 구매.</strong> 커피 리브레, 프릳츠, 소울커피 등 국내 스페셜티 로스터리에서 동일 원산지의 가공법 다른 두 원두를 사서 같은 레시피로 내려보세요. 이것만으로도 가공법의 차이를 완벽하게 체험할 수 있습니다.</li>
+      <li><strong>케냐 AA 워시드를 주문할 때 'SL28 또는 SL34 품종 포함 여부'를 확인하세요.</strong> 표기가 있는 로스터리라면 더 정직한 스페셜티 커피를 파는 곳입니다.</li>
+      <li><strong>게이샤가 부담스럽다면 핑크부르봉부터 시작하세요.</strong> 가격은 게이샤의 30~50% 수준이지만, 꽃향기의 우아함은 충분히 경험할 수 있습니다. 르완다·엘살바도르 산 핑크부르봉을 추천합니다.</li>
+    </ol>
+  </div>
+
+  <!-- 마무리 -->
+  <hr/>
+  <p style="font-size:15px;line-height:1.9;color:#3a2010;">
+    커피 한 잔이 나오기까지 — 나무의 유전자, 고도와 기후, 수확 후 며칠간의 발효 결정이 모두 담겨 있습니다. 다음에 카페에서 원두 설명을 볼 때 "게이샤 / 워시드 / 파나마 1,600m"라는 세 단어가 보인다면, 그것만으로 그 한 잔의 스토리를 읽을 수 있는 사람이 됐습니다. 그것이 스페셜티 커피를 '마시는 것'이 아니라 '읽는 것'으로 즐기는 첫걸음입니다.
+  </p>
+
+  <!-- 해시태그 -->
+  <div class="tags">
+    <span class="tag">#커피품종</span>
+    <span class="tag">#게이샤</span>
+    <span class="tag">#SL28</span>
+    <span class="tag">#카투아이</span>
+    <span class="tag">#워시드</span>
+    <span class="tag">#내추럴</span>
+    <span class="tag">#허니프로세스</span>
+    <span class="tag">#무산소발효</span>
+    <span class="tag">#스페셜티커피</span>
+    <span class="tag">#커피가공법</span>
+    <span class="tag">#바리스타팁</span>
+    <span class="tag">#커피과학</span>
+  </div>
+
+  <div class="disclaimer">
+    본 아티클은 스페셜티 커피 바리스타의 현장 경험과 공개된 학술 자료를 바탕으로 작성되었습니다.<br>
+    가격 및 경매 데이터는 2025년 기준이며 시장 상황에 따라 변동될 수 있습니다. | 2026.07.27 발행
+  </div>
+
+</div><!-- content-card -->
+</div><!-- container -->
+</body>
+</html>
