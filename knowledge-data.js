@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 119, emoji: "🔥", category: "로스팅 & 원두 과학",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "원두가 '맛있어지는' 순간 — 로스팅 화학반응의 비밀과 원두를 죽이는 보관 실수",
+    date: "2026.07.30",
+    summary: "\"로스팅은 그냥 원두 볶는 거잖아요?\" — 이 말을 들으면 10년 차 로스터들은 조용히 웃습니다.     생두 한 알이 로스터 안에서 10~14분을 견디는 동안, 무려 800가지 이상의 향미 화합물이 새로 생성됩니다. 이 글은 그 '볶는 과정'의 숨겨진 과학을 낱낱이 파헤칩니다.",
+    link: "coffee-article-2026-07-30.html"
+  },
+  {
     id: 118, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "커피 맛 80%는 추출에서 결정됩니다 — 바리스타 10년이 숨겨온 추출의 비밀",
