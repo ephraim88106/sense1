@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 120, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "라떼아트가 안 되는 진짜 이유 — 카페에서 절대 안 알려주는 밀크 스티밍의 과학",
+    date: "2026.07.31",
+    summary: "\"왜 저는 해봐도 뭉개지기만 할까요?\" — 이 질문, 하루에도 수십 번 받습니다.       솔직히 말할게요. 문제는 연습량이 아닙니다. 잘못된 원리를 반복하고 있는 것이에요.",
+    link: "coffee-article-2026-07-31.html"
+  },
+  {
     id: 119, emoji: "🔥", category: "로스팅 & 원두 과학",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "원두가 '맛있어지는' 순간 — 로스팅 화학반응의 비밀과 원두를 죽이는 보관 실수",
