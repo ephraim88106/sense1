@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 121, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "에스프레소가 쓴 진짜 이유, 바리스타들이 평생 연구하는 추출의 비밀",
+    date: "2026.08.01",
+    summary: "\"왜 카페에서 마신 에스프레소는 고소한데, 집에서 만든 건 항상 쓰기만 할까?\" — 이 질문의 답은 단순히 원두 탓이 아닙니다. 추출의 과학을 이해하는 순간, 당신의 커피는 완전히 달라집니다.",
+    link: "coffee-article-2026-08-01.html"
+  },
+  {
     id: 120, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "라떼아트가 안 되는 진짜 이유 — 카페에서 절대 안 알려주는 밀크 스티밍의 과학",
