@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 122, emoji: "🔥", category: "로스팅 & 원두 과학",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "생두가 커피가 되는 8분 — 로스팅의 화학반응, 당신이 몰랐던 진실",
+    date: "2026.08.02",
+    summary: "커피 한 잔에 850가지 이상의 향미 화합물이 들어 있다는 사실, 알고 계셨나요?     그런데 이 화합물들 중 대부분은 생두(Green Bean)에는 존재하지 않습니다.     전부 로스팅 과정에서 8~15분 사이에 새롭게 탄생하는 것들입니다.     커피 로스터는 단순히 콩을 굽는 사람이 아닙니다. 그들은 화학 반응을 지휘하는 과학자입니다.",
+    link: "coffee-article-2026-08-02.html"
+  },
+  {
     id: 121, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "에스프레소가 쓴 진짜 이유, 바리스타들이 평생 연구하는 추출의 비밀",
