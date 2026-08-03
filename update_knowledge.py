@@ -112,3 +112,24 @@ if __name__ == '__main__':
             print('[WARN] seo_fix.py 를 찾지 못했습니다. sitemap.xml 이 갱신되지 않았습니다.')
     except Exception as e:
         print('[WARN] SEO 정비 중 오류: %s' % e)
+
+    # ------------------------------------------------------------------
+    # 애드핏 광고 자동 주입 (2026-08-03 추가)
+    # 2026-06-25 ~ 08-02 사이 커피 아티클 37개에 광고가 통째로 빠진 채
+    # 39일간 배포된 사고가 있었다. 사람이 매번 스니펫을 넣는 방식으로는
+    # 또 빠지므로 스크립트가 강제 주입하도록 여기에 연결한다.
+    # 이 단계를 건너뛰면 새 글이 무수익 상태로 배포된다.
+    # ------------------------------------------------------------------
+    try:
+        import subprocess
+        repo_dir = os.path.dirname(os.path.abspath(__file__))
+        ads = os.path.join(repo_dir, 'ads_fix.py')
+        if os.path.exists(ads):
+            r = subprocess.run([sys.executable, ads], capture_output=True, text=True, cwd=repo_dir)
+            print((r.stdout or '').strip() or (r.stderr or '').strip())
+            if r.returncode != 0:
+                print('[WARN] ads_fix.py 실패 — 커밋 전에 `python3 ads_fix.py` 를 수동 실행하세요.')
+        else:
+            print('[WARN] ads_fix.py 를 찾지 못했습니다. 새 글에 광고가 없을 수 있습니다.')
+    except Exception as e:
+        print('[WARN] 광고 주입 중 오류: %s' % e)
