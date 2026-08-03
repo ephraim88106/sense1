@@ -42,6 +42,13 @@ SCOPE = "coffee-article*.html"
 UNIT_TOP = "DAN-hn8rh47xe9PjfTNC"      # 300x250 상단 배너
 UNIT_SIDE = "DAN-q3Gqza2plqVgg8uW"     # 160x600 사이드바
 
+# 새 도메인(*.ephseed.com) 전용 유닛 (2026-08-03 발급)
+# 애드핏 매체는 도메인 단위로 등록된다. 위의 옛 유닛은 *.pages.dev 매체에
+# 묶여 있어 새 도메인에서는 채워지지 않는다. 그래서 별도로 발급받았다.
+UNIT_NEW = "DAN-9S7Ka99jukqetMgb"
+UNIT_NEW_W = 300
+UNIT_NEW_H = 250
+
 # 광고를 넣지 않을 페이지 (약관·개인정보처리방침·에러·소유확인 파일 등)
 EXCLUDE = {
     "404.html",
@@ -59,11 +66,11 @@ TOP_AD = '''
 <!-- ============================================= -->
 <div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
     <ins class="kakao_ad_area" style="display:none;"
-    data-ad-unit="%s"
+    data-ad-unit="__UNIT_TOP__"
     data-ad-width="300"
     data-ad-height="250"></ins>
 </div>
-''' % UNIT_TOP
+'''.replace('__UNIT_TOP__', UNIT_TOP)
 
 BOTTOM_AD = '''
 <!-- ============================================= -->
@@ -72,17 +79,31 @@ BOTTOM_AD = '''
 <!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
 <!-- ============================================= -->
 <style>
-  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%%;transform:translateY(-50%%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
   @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
 </style>
 <div class="kakao-sidebar-fixed">
     <ins class="kakao_ad_area" style="display:none;"
-    data-ad-unit="%s"
+    data-ad-unit="__UNIT_SIDE__"
     data-ad-width="160"
     data-ad-height="600"></ins>
 </div>
-<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
-''' % UNIT_SIDE
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="__UNIT_NEW__"
+data-ad-width="__UNIT_NEW_W__"
+data-ad-height="__UNIT_NEW_H__"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+'''.replace('__UNIT_SIDE__', UNIT_SIDE).replace('__UNIT_NEW__', UNIT_NEW).replace('__UNIT_NEW_W__', str(UNIT_NEW_W)).replace('__UNIT_NEW_H__', str(UNIT_NEW_H))
 
 
 def inject(path, dry=False):
@@ -100,7 +121,8 @@ def inject(path, dry=False):
     new = new.replace("</body>", BOTTOM_AD + "\n</body>", 1)
 
     # 삽입 검증 — 실패하면 파일을 건드리지 않는다
-    if new.count("kakao_ad_area") != 2 or new.count("ba.min.js") != 1:
+    # CSS 선택자에도 kakao_ad_area 문자열이 들어가므로 <ins 태그만 센다
+    if new.count('<ins class="kakao_ad_area"') != 3 or new.count("ba.min.js") != 1:
         return "skip:삽입 검증 실패"
 
     if not dry:
