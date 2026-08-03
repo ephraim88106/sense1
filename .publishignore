@@ -1,0 +1,17 @@
+# publish.py 점검에서 제외할 파일 (glob 허용, # 는 주석)
+# 여기 적힌 파일은 sitemap 미포함·광고 없음 경고를 띄우지 않는다.
+
+# robots.txt 로 색인 차단 중인 페이지
+kca.html
+
+# 광고를 넣지 않기로 한 페이지 (2026-08-03 결정)
+# 성경 시리즈 — 트래픽 확인 후 필요하면 `python3 ads_fix.py --all` 로 일괄 적용
+barnabas*.html
+john_day*.html
+paul_day*.html
+peter_day*.html
+mary*.html
+stephen*.html
+
+# 주식보고서 아카이브
+*주식보고서.html
