@@ -32,7 +32,9 @@ GA_ID = "G-L6H7ZKF5GE"
 SITE_NAME = "KCA 바리스타 포털"
 OG_IMAGE = SITE + "/assets/og-default.png"
 # 네이버 서치어드바이저 HTML 태그 방식 content 값 (웹마스터도구에서 발급)
-NAVER_VERIFY = ""
+# coffee.ephseed.com 용 (2026-08-03 발급).
+# 주의: 이 값이 비어 있으면 seo_fix.py 실행 시마다 소유확인 태그를 지워버린다.
+NAVER_VERIFY = "0d44ca9b47a5e8f1d584a6f516ad1b3cf4a82faa"
 TODAY = datetime.date.today().isoformat()
 
 # robots.txt 에서 차단 중인 문서 + 사이트맵에 넣지 않을 것
@@ -118,7 +120,10 @@ def build_block(fname, src):
 
     parts = [BEGIN]
 
-    if NAVER_VERIFY and rel == "index.html":
+    # 2026-08-03: 이 함수의 인자는 fname 인데 rel 을 참조하고 있었다.
+    # NAVER_VERIFY 가 빈 문자열이면 단축 평가로 rel 이 평가되지 않아 드러나지 않던
+    # 잠복 버그다. 값을 채우는 순간 NameError 로 seo_fix.py 전체가 죽는다.
+    if NAVER_VERIFY and fname == "index.html":
         parts.append('<meta name="naver-site-verification" content="%s">' % NAVER_VERIFY)
 
     # description — 기존에 없을 때만 새로 넣는다
