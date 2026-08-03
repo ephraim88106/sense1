@@ -30,4 +30,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-Sitemap: https://sense1.pages.dev/sitemap.xml
+Sitemap: https://coffee.ephseed.com/sitemap.xml
