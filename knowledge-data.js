@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 125, emoji: "🌋", category: "원두 산지 & 테루아르",
+    categoryColor: { bg: "#ecfccb", text: "#3f6212" },
+    title: "해발 2,000m에서 무슨 일이 벌어지나 — 커피 맛을 결정짓는 고도의 비밀",
+    date: "2026.08.05",
+    summary: "마트에서 파는 저렴한 원두와 카페에서 한 잔에 8,000원 하는 스페셜티 커피의 결정적 차이는       브랜드가 아니라 그 원두가 자란 고도(海拔)에 있습니다.",
+    link: "coffee-article-2026-08-05.html"
+  },
+  {
     id: 124, emoji: "🏪", category: "카페 창업 & 운영 실전",
     categoryColor: { bg: "#fee2e2", text: "#991b1b" },
     title: "월 매출 1억인데 망했다 — 아무도 안 알려주는 카페 수익의 진실",
