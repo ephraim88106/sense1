@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>게이샤가 꽃향기인 진짜 이유 — 품종 DNA부터 발효 과학까지, 커피 맛의 설계도 완전 해부</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background-color: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      padding: 60px 20px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '☕';
+      position: absolute;
+      font-size: 200px;
+      opacity: 0.05;
+      top: -30px;
+      right: -20px;
+    }
+    .category-badge {
+      display: inline-block;
+      background: #c8860a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .hero-date {
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(22px, 4vw, 36px);
+      font-weight: 900;
+      line-height: 1.4;
+      max-width: 760px;
+      margin: 0 auto 20px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .hero-sub {
+      color: rgba(255,255,255,0.8);
+      font-size: 15px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Summary box */
+    .summary-box {
+      background: #fff;
+      border-left: 5px solid #c8860a;
+      border-radius: 0 12px 12px 0;
+      padding: 24px 28px;
+      margin: 40px 0 32px;
+      box-shadow: 0 2px 16px rgba(107,58,42,0.08);
+    }
+    .summary-box h3 {
+      color: #c8860a;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .summary-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .summary-box ul li {
+      padding: 5px 0 5px 22px;
+      position: relative;
+      font-size: 15px;
+      color: #3a2218;
+    }
+    .summary-box ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #c8860a;
+      font-weight: 700;
+    }
+
+    /* Hook paragraph */
+    .hook {
+      font-size: 18px;
+      font-weight: 500;
+      color: #3a2218;
+      background: #fff8ef;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin: 0 0 40px;
+      line-height: 1.7;
+      border: 1px solid #f0e0c0;
+    }
+
+    /* Section headers */
+    h2 {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 16px;
+      padding-left: 16px;
+      border-left: 4px solid #c8860a;
+      line-height: 1.4;
+    }
+    h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin: 28px 0 10px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: #3a2218;
+    }
+
+    /* Variety cards */
+    .variety-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin: 24px 0 32px;
+    }
+    .variety-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 12px rgba(107,58,42,0.09);
+      border-top: 3px solid var(--accent);
+    }
+    .variety-card .name {
+      font-size: 16px;
+      font-weight: 900;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .variety-card .origin {
+      font-size: 11px;
+      color: #999;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .variety-card .flavor {
+      font-size: 14px;
+      color: #4a2a1a;
+      line-height: 1.6;
+    }
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .tag {
+      background: #faf0e0;
+      color: #8b4a1a;
+      font-size: 11px;
+      padding: 3px 9px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    /* Process comparison */
+    .process-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0 32px;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(107,58,42,0.09);
+    }
+    .process-table thead tr {
+      background: #2c1810;
+      color: #fff;
+    }
+    .process-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+    .process-table td {
+      padding: 13px 16px;
+      font-size: 14px;
+      color: #3a2218;
+      border-bottom: 1px solid #f0e8d8;
+    }
+    .process-table tr:last-child td { border-bottom: none; }
+    .process-table tr:nth-child(even) td { background: #fffbf5; }
+    .badge-w { background:#e8f4fd; color:#1a6a9a; padding:2px 8px; border-radius:8px; font-size:12px; font-weight:700; }
+    .badge-n { background:#fdeee8; color:#9a3a1a; padding:2px 8px; border-radius:8px; font-size:12px; font-weight:700; }
+    .badge-h { background:#fdf5e8; color:#9a6a0a; padding:2px 8px; border-radius:8px; font-size:12px; font-weight:700; }
+
+    /* Tip box */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8ef 0%, #ffeec8 100%);
+      border: 1px solid #f0d890;
+      border-radius: 14px;
+      padding: 28px 30px;
+      margin: 36px 0;
+    }
+    .tip-box h3 {
+      color: #c8860a;
+      font-size: 15px;
+      font-weight: 900;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 14px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      background: #c8860a;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .tip-text {
+      font-size: 14px;
+      color: #3a2218;
+      line-height: 1.7;
+    }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* Callout */
+    .callout {
+      background: #2c1810;
+      color: #f5e6d0;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .callout strong { color: #c8860a; }
+
+    /* Ferment badge */
+    .ferment-new {
+      display: inline-block;
+      background: linear-gradient(90deg, #c8860a, #e8a030);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 10px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    /* Closing action */
+    .action-box {
+      background: #2c1810;
+      color: #f5e6d0;
+      border-radius: 16px;
+      padding: 32px 36px;
+      margin: 48px 0 32px;
+      text-align: center;
+    }
+    .action-box h3 {
+      color: #c8860a;
+      font-size: 20px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .action-box p {
+      color: #e0c8a8;
+      font-size: 15px;
+      margin-bottom: 0;
+    }
+    .action-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+      text-align: left;
+    }
+    .action-step {
+      background: rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #f5e6d0;
+    }
+    .action-step span {
+      color: #c8860a;
+      font-weight: 700;
+      margin-right: 8px;
+    }
+
+    /* Tags footer */
+    .article-footer {
+      border-top: 1px solid #e8dcc8;
+      padding: 28px 0 40px;
+      margin-top: 8px;
+    }
+    .hashtags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .hashtag {
+      color: #c8860a;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .footer-meta {
+      font-size: 12px;
+      color: #999;
+    }
+    .disclaimer {
+      font-size: 11px;
+      color: #bbb;
+      margin-top: 8px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 40px 16px 36px; }
+      h2 { font-size: 19px; }
+      .variety-grid { grid-template-columns: 1fr; }
+      .process-table th, .process-table td { font-size: 12px; padding: 10px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<meta name="description" content="같은 농장, 같은 고도, 심지어 같은 나무에서 따도 가공법 하나로 맛이 180° 바뀐다. 오늘은 그 비밀을 낱낱이 까발립니다.">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-06">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="게이샤가 꽃향기인 진짜 이유 — 품종 DNA부터 발효 과학까지, 커피 맛의 설계도 완전 해부">
+<meta property="og:description" content="같은 농장, 같은 고도, 심지어 같은 나무에서 따도 가공법 하나로 맛이 180° 바뀐다. 오늘은 그 비밀을 낱낱이 까발립니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-06">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-06T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-06T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-06#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-06", "headline": "게이샤가 꽃향기인 진짜 이유 — 품종 DNA부터 발효 과학까지, 커피 맛의 설계도 완전 해부", "description": "같은 농장, 같은 고도, 심지어 같은 나무에서 따도 가공법 하나로 맛이 180° 바뀐다. 오늘은 그 비밀을 낱낱이 까발립니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-06", "dateModified": "2026-08-06", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- HERO -->
+<div class="hero">
+  <div class="category-badge">커피 품종 &amp; 가공법</div>
+  <div class="hero-date">2026년 8월 6일 · 스페셜티 커피 바리스타의 깊이 있는 이야기</div>
+  <h1>게이샤가 꽃향기인 진짜 이유 —<br>품종 DNA부터 발효 과학까지,<br>커피 맛의 설계도 완전 해부</h1>
+  <p class="hero-sub">같은 농장, 같은 고도, 심지어 같은 나무에서 따도 가공법 하나로 맛이 180° 바뀐다. 오늘은 그 비밀을 낱낱이 까발립니다.</p>
+</div>
+
+<div class="container">
+
+  <!-- HOOK -->
+  <p class="hook">
+    카페에서 메뉴판을 보다 "워시드? 내추럴? 허니?" 앞에서 멈춰본 적 있으신가요? 혹은 게이샤 커피가 왜 한 잔에 3만 원이 넘는지 의아하셨던 적은요? 사실 바리스타들 사이에서도 이 얘기는 끝나지 않는 논쟁입니다. 오늘 저는 10년간 스페셜티 커피를 다루며 쌓은 이야기를 솔직하게 풀어드리겠습니다. 품종의 유전자와 가공법의 화학반응이 어떻게 맛을 결정하는지, 그리고 2026년 지금 가장 뜨거운 발효 트렌드까지 전부 담았습니다.
+  </p>
+
+  <!-- SUMMARY BOX -->
+  <div class="summary-box">
+    <h3>☕ 오늘 이 글에서 배울 것</h3>
+    <ul>
+      <li>게이샤, SL28, 버번, 카투아이 — 대표 품종 4종의 유전적 특성과 맛의 차이</li>
+      <li>워시드·내추럴·허니 가공법이 실제로 향미를 바꾸는 과학적 메커니즘</li>
+      <li>2026년 급부상 중인 무산소 발효(Anaerobic)와 공발효(Co-fermentation) 트렌드</li>
+      <li>원두 포장지의 가공법 표기를 읽고 맛을 예측하는 실전 팁</li>
+      <li>내일 당장 카페에서 써먹을 수 있는 품종별 추출 포인트</li>
+    </ul>
+  </div>
+
+  <!-- SECTION 1 -->
+  <h2>왜 "품종"이 먼저인가 — 맛의 DNA</h2>
+  <p>
+    커피 한 잔의 향미를 결정하는 요소는 크게 셋입니다: <strong>품종(Variety)</strong>, <strong>테루아(Terroir, 재배 환경)</strong>, <strong>가공법(Processing)</strong>. 이 중 품종은 가장 근본적인 설계도입니다. 아무리 좋은 가공을 해도, 유전적으로 플로럴 향 성분을 많이 만들지 못하는 품종에서 게이샤 같은 꽃향기를 끌어낼 수는 없습니다.
+  </p>
+  <p>
+    전 세계에서 재배되는 커피 품종은 100종이 훨씬 넘지만, 스페셜티 커피 씬에서 실질적으로 의미 있는 품종은 10~15종 정도입니다. 그 중 지금 가장 많이 언급되는 4가지를 깊이 파고들어 보겠습니다.
+  </p>
+
+  <!-- VARIETY GRID -->
+  <div class="variety-grid">
+    <div class="variety-card" style="--accent:#8b1a4a;">
+      <div class="name">게이샤 (Gesha)</div>
+      <div class="origin">에티오피아 → 파나마 → 전 세계</div>
+      <div class="flavor">자스민·베르가못·복숭아·파파야의 환상적인 플로럴 향. 산미가 밝고 깔끔하며 뒷맛이 길게 이어진다. 해발 1,500m 이상에서만 진가를 발휘.</div>
+      <div class="tag-row">
+        <span class="tag">꽃향기</span>
+        <span class="tag">시트러스</span>
+        <span class="tag">고가</span>
+      </div>
+    </div>
+    <div class="variety-card" style="--accent:#1a6a2a;">
+      <div class="name">SL28</div>
+      <div class="origin">케냐 Tanganyika 계통</div>
+      <div class="flavor">케냐 커피의 80%를 차지하는 대표 품종. 블랙커런트·자두 같은 진하고 복합적인 산미가 특징. 묵직한 바디와 와인 같은 뉘앙스.</div>
+      <div class="tag-row">
+        <span class="tag">블랙커런트</span>
+        <span class="tag">와인</span>
+        <span class="tag">강한 산미</span>
+      </div>
+    </div>
+    <div class="variety-card" style="--accent:#c8860a;">
+      <div class="name">버번 (Bourbon)</div>
+      <div class="origin">예멘 → 레위니옹 섬 → 중남미</div>
+      <div class="flavor">티피카와 함께 대부분 품종의 원조. 캐러멜·견과류·부드러운 초콜릿. 나무는 약하고 병충해에 취약하지만, 향미의 깊이는 타의 추종을 불허.</div>
+      <div class="tag-row">
+        <span class="tag">캐러멜</span>
+        <span class="tag">초콜릿</span>
+        <span class="tag">균형감</span>
+      </div>
+    </div>
+    <div class="variety-card" style="--accent:#4a7a9b;">
+      <div class="name">카투아이 (Catuai)</div>
+      <div class="origin">브라질 → 중남미 전역</div>
+      <div class="flavor">버번+티피카 계통의 개량종. 생산량이 많고 병충해에 강해 커머셜 시장의 주역. 가공법에 따라 향미 변화폭이 크다.</div>
+      <div class="tag-row">
+        <span class="tag">견과류</span>
+        <span class="tag">고생산성</span>
+        <span class="tag">범용성</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>바리스타의 한마디:</strong> 게이샤가 비싼 건 단순히 희귀해서가 아닙니다. 수확량이 일반 아라비카의 절반에 불과하고, 1,500m 이상 고지대에서만 특유의 향이 발현되며, 재배 자체가 까다롭습니다. 2024~2025 세계 바리스타 챔피언십 결선 진출자의 절반 이상이 게이샤를 선택한 건 우연이 아닙니다.
+  </div>
+
+  <!-- SECTION 2 -->
+  <h2>가공법이 맛을 '설계'한다 — 워시드·내추럴·허니의 과학</h2>
+  <p>
+    여러분이 마시는 커피는 빨간 체리 열매에서 시작됩니다. 그 체리를 어떻게 처리하느냐 — 즉 <strong>가공법(Processing)</strong>에 따라 같은 품종이어도 완전히 다른 맛이 납니다. 이게 바로 카페 메뉴판에 "워시드", "내추럴", "허니"가 적혀 있는 이유입니다.
+  </p>
+  <p>
+    핵심 원리는 간단합니다: <strong>과육과 점액질(Mucilage)이 생두에 얼마나, 얼마나 오래 붙어 있느냐</strong>가 향미의 방향을 결정합니다.
+  </p>
+
+  <table class="process-table">
+    <thead>
+      <tr>
+        <th>구분</th>
+        <th>과육 제거</th>
+        <th>점액질</th>
+        <th>건조 방식</th>
+        <th>향미 특성</th>
+        <th>리스크</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge-w">워시드</span></td>
+        <td>완전 제거</td>
+        <td>물 발효로 완전 제거</td>
+        <td>파치먼트 상태</td>
+        <td>깔끔·밝은 산미·테루아 표현력↑</td>
+        <td>낮음</td>
+      </tr>
+      <tr>
+        <td><span class="badge-n">내추럴</span></td>
+        <td>그대로 유지</td>
+        <td>그대로 유지</td>
+        <td>체리째 햇빛 건조</td>
+        <td>풍부한 과일향·묵직한 바디·단맛↑</td>
+        <td>과발효 위험</td>
+      </tr>
+      <tr>
+        <td><span class="badge-h">허니</span></td>
+        <td>제거</td>
+        <td>일부 남김 (20~100%)</td>
+        <td>점액질 붙은 채 건조</td>
+        <td>워시드+내추럴 중간·단맛과 산미 균형</td>
+        <td>중간</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>워시드 — 품종과 테루아의 순수한 목소리</h3>
+  <p>
+    과육을 제거하고 물에 16~36시간 담가 점액질을 발효·세척합니다. 이 과정에서 불필요한 당분과 과일 성분이 제거되어, 생두 본연의 맛 — 즉 <strong>품종의 유전자와 재배 환경(테루아)</strong>이 그대로 드러납니다. 에티오피아 예르가체프의 워시드는 레몬·자몽 같은 선명한 산미로 유명한데, 이게 바로 워시드의 힘입니다.
+  </p>
+
+  <h3>내추럴 — 체리째 말리는 전통의 마법</h3>
+  <p>
+    인류가 가장 오래 써온 방식입니다. 체리 과육의 당분과 유기산이 건조되는 수 주간 천천히 생두로 스며듭니다. 결과는? <strong>복합적인 과일향, 높은 바디감, 풍성한 단맛</strong>. 에티오피아 시다마 내추럴의 블루베리·딸기 향이 대표적입니다. 단, 관리가 소홀하면 과발효되어 쉰내·알코올 냄새가 납니다. 좋은 내추럴은 훌륭하지만, 나쁜 내추럴은 끔찍합니다.
+  </p>
+
+  <h3>허니 — 이름에 속지 마세요</h3>
+  <p>
+    '허니'는 꿀이 들어가서가 아니라, 점액질의 끈적한 질감이 꿀 같아서 붙은 이름입니다. 점액질을 얼마나 남기느냐에 따라 <strong>화이트→옐로우→레드→블랙 허니</strong>로 세분됩니다. 블랙 허니에 가까울수록 내추럴에 가까운 달콤함과 묵직한 바디, 화이트 허니에 가까울수록 워시드의 깔끔함을 닮아 갑니다.
+  </p>
+
+  <!-- INFOGRAPHIC SVG -->
+  <h2>한눈에 보는 가공법 스펙트럼</h2>
+
+  <svg viewBox="0 0 760 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;border-radius:14px;background:#fff;box-shadow:0 2px 16px rgba(107,58,42,0.09);display:block;margin:16px 0 32px;">
+    <!-- Background -->
+    <rect width="760" height="260" fill="#fff" rx="14"/>
+
+    <!-- Gradient bar -->
+    <defs>
+      <linearGradient id="procGrad" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%" stop-color="#e8f4fd"/>
+        <stop offset="45%" stop-color="#fdf5e8"/>
+        <stop offset="100%" stop-color="#fdeee8"/>
+      </linearGradient>
+    </defs>
+    <rect x="60" y="110" width="640" height="36" rx="18" fill="url(#procGrad)" stroke="#e0c8a8" stroke-width="1.5"/>
+
+    <!-- Markers on bar -->
+    <circle cx="100" cy="128" r="14" fill="#1a6a9a"/>
+    <text x="100" y="133" text-anchor="middle" fill="white" font-size="11" font-family="sans-serif" font-weight="700">W</text>
+
+    <circle cx="253" cy="128" r="14" fill="#b8a020"/>
+    <text x="253" y="133" text-anchor="middle" fill="white" font-size="9" font-family="sans-serif" font-weight="700">W-H</text>
+
+    <circle cx="380" cy="128" r="14" fill="#c8860a"/>
+    <text x="380" y="133" text-anchor="middle" fill="white" font-size="9" font-family="sans-serif" font-weight="700">H</text>
+
+    <circle cx="530" cy="128" r="14" fill="#9a3a1a"/>
+    <text x="530" y="133" text-anchor="middle" fill="white" font-size="9" font-family="sans-serif" font-weight="700">BH</text>
+
+    <circle cx="660" cy="128" r="14" fill="#6b1010"/>
+    <text x="660" y="133" text-anchor="middle" fill="white" font-size="11" font-family="sans-serif" font-weight="700">N</text>
+
+    <!-- Labels top -->
+    <text x="100" y="95" text-anchor="middle" fill="#1a6a9a" font-size="12" font-family="sans-serif" font-weight="700">Washed</text>
+    <text x="253" y="95" text-anchor="middle" fill="#b8a020" font-size="11" font-family="sans-serif" font-weight="700">White Honey</text>
+    <text x="380" y="95" text-anchor="middle" fill="#c8860a" font-size="12" font-family="sans-serif" font-weight="700">Red Honey</text>
+    <text x="530" y="95" text-anchor="middle" fill="#9a3a1a" font-size="11" font-family="sans-serif" font-weight="700">Black Honey</text>
+    <text x="660" y="95" text-anchor="middle" fill="#6b1010" font-size="12" font-family="sans-serif" font-weight="700">Natural</text>
+
+    <!-- Labels bottom: flavor -->
+    <text x="100" y="178" text-anchor="middle" fill="#1a6a9a" font-size="10" font-family="sans-serif">밝은 산미</text>
+    <text x="100" y="192" text-anchor="middle" fill="#1a6a9a" font-size="10" font-family="sans-serif">선명한 테루아</text>
+
+    <text x="380" y="178" text-anchor="middle" fill="#c8860a" font-size="10" font-family="sans-serif">단맛+산미</text>
+    <text x="380" y="192" text-anchor="middle" fill="#c8860a" font-size="10" font-family="sans-serif">균형</text>
+
+    <text x="660" y="178" text-anchor="middle" fill="#6b1010" font-size="10" font-family="sans-serif">과일향 풍부</text>
+    <text x="660" y="192" text-anchor="middle" fill="#6b1010" font-size="10" font-family="sans-serif">묵직한 바디</text>
+
+    <!-- Arrow indicators -->
+    <line x1="60" y1="218" x2="700" y2="218" stroke="#e0c8a8" stroke-width="1.5" marker-end="url(#arr)"/>
+    <defs>
+      <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L0,6 L8,3 z" fill="#c8860a"/>
+      </marker>
+    </defs>
+    <text x="60" y="238" fill="#999" font-size="11" font-family="sans-serif">← 깔끔·산미·투명함</text>
+    <text x="660" y="238" text-anchor="end" fill="#999" font-size="11" font-family="sans-serif">단맛·바디·복합성 →</text>
+
+    <text x="380" y="55" text-anchor="middle" fill="#2c1810" font-size="14" font-family="sans-serif" font-weight="700">커피 가공법 풍미 스펙트럼</text>
+  </svg>
+
+  <!-- SECTION 3 -->
+  <h2>2026년 가장 뜨거운 트렌드 — 무산소 발효 &amp; 공발효 <span class="ferment-new">NEW</span></h2>
+  <p>
+    워시드·내추럴·허니가 '고전'이라면, 지금 스페셜티 커피 씬을 뒤흔드는 건 <strong>무산소 발효(Anaerobic Fermentation)</strong>와 <strong>공발효(Co-fermentation)</strong>입니다. 2026년에는 이 방식이 경쟁 무대의 노블티를 넘어, 일반 카페에서도 만날 수 있는 주류 가공법으로 자리 잡고 있습니다.
+  </p>
+
+  <h3>무산소 발효란?</h3>
+  <p>
+    커피 체리를 밀폐 탱크에 넣고 산소를 제거합니다. 산소 없이 활동하는 혐기성 미생물들이 당분을 분해하면서 특별한 향미 전구체(Flavor Precursor)를 만들어 냅니다. 결과는? <strong>라즈베리·화이트 와인·망고·시나몬</strong> 같은 강렬하고 독특한 향미. 일반 가공법으로는 절대 나오지 않는 맛입니다.
+  </p>
+
+  <h3>공발효 — 맛을 '디자인'하다</h3>
+  <p>
+    공발효는 밀폐 탱크 안에 커피 외에 다른 재료를 함께 넣어 발효합니다. 망고 과육, 딸기, 계피, 와인 효모 등이 대표적입니다. 브루어리에서 맥주 효모를 선택하듯, 생산자가 커피의 향미를 '설계'하는 것입니다. 2026년에는 특정 효모 균주를 접종해 발효 방향을 정밀하게 제어하는 <strong>접종 발효(Inoculated Fermentation)</strong>까지 등장했습니다.
+  </p>
+
+  <div class="callout">
+    <strong>논쟁의 중심:</strong> 바리스타 커뮤니티 내에서 공발효 커피를 두고 "이건 커피인가, 음료인가?"라는 논쟁이 뜨겁습니다. 일부는 이를 테루아와 품종의 본질적 향미를 가리는 조작으로 보고, 다른 쪽은 새로운 표현의 가능성으로 봅니다. 정답은 없습니다. 중요한 건 여러분이 그 맛을 즐기느냐입니다.
+  </div>
+
+  <!-- SECTION 4 -->
+  <h2>품종×가공법 조합 — 바리스타가 실제로 추천하는 황금 매칭</h2>
+  <p>
+    품종과 가공법은 서로 상호작용합니다. 어떤 조합은 환상적이고, 어떤 조합은 의외로 실망스럽습니다. 10년간 수백 종의 생두를 다루며 정리한 황금 매칭 3가지입니다.
+  </p>
+
+  <h3>① 게이샤 × 워시드 — 플로럴의 정점</h3>
+  <p>
+    게이샤 본연의 자스민·베르가못 향을 가장 선명하게 표현합니다. 내추럴 가공하면 과일향이 플로럴을 덮어버려 오히려 게이샤다움을 잃을 수 있습니다. 진정한 게이샤를 경험하고 싶다면 워시드를 선택하세요.
+  </p>
+
+  <h3>② SL28 × 내추럴 — 케냐의 폭발적 과일맛</h3>
+  <p>
+    SL28이 가진 블랙커런트·자두 성분에 내추럴의 과일향이 더해지면 믿기 어려울 만큼 풍성한 컵이 됩니다. 와인 애호가라면 이 조합을 꼭 경험해 보세요. 단, 과발효를 경계해야 합니다.
+  </p>
+
+  <h3>③ 버번 × 허니 — 달콤한 균형의 정석</h3>
+  <p>
+    버번의 캐러멜·초콜릿 성분에 허니 가공의 단맛이 겹칩니다. 강하지도 약하지도 않은, 누구에게나 편안한 커피가 탄생합니다. 카페 메뉴로 가장 성공하기 쉬운 조합이기도 합니다.
+  </p>
+
+  <!-- TIP BOX -->
+  <div class="tip-box">
+    <h3>💡 바리스타 실전 팁 3가지 — 내일 당장 써먹기</h3>
+    <div class="tip-item">
+      <div class="tip-num">1</div>
+      <div class="tip-text">
+        <strong>원두 포장지를 꼭 읽으세요.</strong> "Ethiopia Yirgacheffe Washed"가 적혀 있다면 밝고 깔끔한 레몬산미를, "Brazil Natural"이라면 초콜릿과 견과류의 묵직함을 기대하세요. 가공법 표기만 봐도 70%는 맛을 예측할 수 있습니다.
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">2</div>
+      <div class="tip-text">
+        <strong>내추럴·허니 원두는 추출 온도를 1~2℃ 낮추세요.</strong> 당분 함량이 높아 고온 추출 시 쓴맛이 부각됩니다. 에어로프레스라면 80~82℃, 푸어오버라면 88~90℃를 추천합니다. 워시드는 90~93℃가 적절합니다.
+      </div>
+    </div>
+    <div class="tip-item">
+      <div class="tip-num">3</div>
+      <div class="tip-text">
+        <strong>무산소·공발효 커피를 처음 만나면 에스프레소보다 필터로 시작하세요.</strong> 에스프레소는 발효 향미를 극단적으로 증폭시켜 낯설게 느껴질 수 있습니다. 푸어오버나 에어로프레스로 먼저 맛의 구조를 파악한 후 에스프레소로 도전하면 훨씬 즐길 수 있습니다.
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 5 - INFOGRAPHIC 2 -->
+  <h2>추출 온도 가이드 — 가공법별 최적 범위</h2>
+
+  <svg viewBox="0 0 740 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;border-radius:14px;background:#fff;box-shadow:0 2px 16px rgba(107,58,42,0.09);display:block;margin:16px 0 32px;">
+    <rect width="740" height="200" fill="#fff" rx="14"/>
+    <text x="370" y="36" text-anchor="middle" fill="#2c1810" font-size="14" font-family="sans-serif" font-weight="700">가공법별 권장 추출 온도 (푸어오버 기준)</text>
+
+    <!-- Bars -->
+    <!-- Washed -->
+    <rect x="80" y="60" width="180" height="32" rx="6" fill="#1a6a9a" opacity="0.85"/>
+    <text x="170" y="81" text-anchor="middle" fill="white" font-size="13" font-family="sans-serif" font-weight="700">90 – 93°C</text>
+    <text x="170" y="114" text-anchor="middle" fill="#1a6a9a" font-size="12" font-family="sans-serif" font-weight="600">워시드</text>
+
+    <!-- Honey -->
+    <rect x="290" y="60" width="160" height="32" rx="6" fill="#c8860a" opacity="0.85"/>
+    <text x="370" y="81" text-anchor="middle" fill="white" font-size="13" font-family="sans-serif" font-weight="700">88 – 91°C</text>
+    <text x="370" y="114" text-anchor="middle" fill="#c8860a" font-size="12" font-family="sans-serif" font-weight="600">허니</text>
+
+    <!-- Natural -->
+    <rect x="480" y="60" width="180" height="32" rx="6" fill="#9a3a1a" opacity="0.85"/>
+    <text x="570" y="81" text-anchor="middle" fill="white" font-size="13" font-family="sans-serif" font-weight="700">86 – 90°C</text>
+    <text x="570" y="114" text-anchor="middle" fill="#9a3a1a" font-size="12" font-family="sans-serif" font-weight="600">내추럴</text>
+
+    <!-- Note -->
+    <text x="370" y="158" text-anchor="middle" fill="#999" font-size="11" font-family="sans-serif">* 에스프레소는 93~96°C 유지 (가공법과 무관하게 압력으로 제어)</text>
+    <text x="370" y="175" text-anchor="middle" fill="#999" font-size="11" font-family="sans-serif">* 고지대(1,800m↑) 워시드 게이샤는 96°C까지 올려도 좋음</text>
+  </svg>
+
+  <!-- CLOSING -->
+  <div class="action-box">
+    <h3>🎯 내일 당장 해볼 것</h3>
+    <p>지식이 경험이 되는 건 직접 해봤을 때입니다. 아래 세 가지 중 하나부터 시작해보세요.</p>
+    <div class="action-steps">
+      <div class="action-step"><span>STEP 1</span>집에 있는 원두 포장지를 꺼내 가공법을 확인하세요. 워시드·내추럴·허니 중 어떤 것인가요?</div>
+      <div class="action-step"><span>STEP 2</span>스페셜티 카페에서 같은 산지·다른 가공법 두 잔을 나란히 시음해 보세요 (Side-by-Side). 차이가 선명하게 느껴집니다.</div>
+      <div class="action-step"><span>STEP 3</span>메뉴판에 "무산소" 또는 "Anaerobic"이 보이면 망설이지 말고 주문해 보세요. 당신의 커피 세계가 넓어집니다.</div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="article-footer">
+    <div class="hashtags">
+      <span class="hashtag">#스페셜티커피</span>
+      <span class="hashtag">#커피품종</span>
+      <span class="hashtag">#게이샤커피</span>
+      <span class="hashtag">#워시드내추럴허니</span>
+      <span class="hashtag">#커피가공법</span>
+      <span class="hashtag">#무산소발효</span>
+      <span class="hashtag">#바리스타팁</span>
+      <span class="hashtag">#SL28</span>
+      <span class="hashtag">#커피트렌드2026</span>
+      <span class="hashtag">#커피공부</span>
+      <span class="hashtag">#specialtycoffee</span>
+      <span class="hashtag">#coffeescience</span>
+    </div>
+    <div class="footer-meta">작성일: 2026년 8월 6일 &nbsp;|&nbsp; 스페셜티 커피 바리스타 10년 경력의 깊이 있는 이야기</div>
+    <div class="disclaimer">본 아티클은 스페셜티 커피 바리스타의 실무 경험과 공개된 커피 연구 자료를 바탕으로 작성되었습니다. 품종·가공법별 향미는 산지·로스팅·추출 방식에 따라 달라질 수 있습니다.</div>
+  </div>
+
+</div><!-- /container -->
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
