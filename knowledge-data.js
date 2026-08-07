@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 127, emoji: "📈", category: "스페셜티 커피 트렌드",
+    categoryColor: { bg: "#e0f2fe", text: "#0369a1" },
+    title: "전통 커피를 처음으로 꺾었다 — 2026년 스페셜티 커피 혁명의 실체",
+    date: "2026.08.07",
+    summary: "2026년 6월, 미국에서 처음으로 스페셜티 커피가 전통 커피의 하루 소비량을 추월했습니다. 미국 성인의 47%가 하루에 스페셜티 커피를 마셨고, 전통 커피는 42%에 머물렀습니다. 수십 년간 시장을 지배하던 질서가 조용히 무너진 순간입니다. 그리고 이 변화는 미국만의 이야기가 아닙니다.",
+    link: "coffee-article-2026-08-07.html"
+  },
+  {
     id: 126, emoji: "☕", category: "커피 품종 & 가공법",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "게이샤가 꽃향기인 진짜 이유 — 품종 DNA부터 발효 과학까지, 커피 맛의 설계도 완전 해부",
