@@ -133,3 +133,39 @@ if __name__ == '__main__':
             print('[WARN] ads_fix.py 를 찾지 못했습니다. 새 글에 광고가 없을 수 있습니다.')
     except Exception as e:
         print('[WARN] 광고 주입 중 오류: %s' % e)
+
+    # ------------------------------------------------------------------
+    # 관련 글 내부 링크 자동 삽입 (2026-08-08 추가)
+    # 새 글뿐 아니라 기존 글의 관련 글 목록도 갱신한다
+    # (새 글이 추가되면 같은 주제 기존 글에 새 글이 관련 글로 뜨도록)
+    # ------------------------------------------------------------------
+    try:
+        repo_dir = os.path.dirname(os.path.abspath(__file__))
+        il = os.path.join(repo_dir, 'internal_links.py')
+        if os.path.exists(il):
+            r = subprocess.run([sys.executable, il], capture_output=True, text=True, cwd=repo_dir)
+            print((r.stdout or '').strip() or (r.stderr or '').strip())
+        else:
+            print('[WARN] internal_links.py 없음 — 관련 글 미삽입')
+    except Exception as e:
+        print('[WARN] 관련 글 삽입 중 오류: %s' % e)
+
+    # ------------------------------------------------------------------
+    # IndexNow 즉시 색인 신청 (2026-08-08 추가)
+    # 새 글 URL을 Bing·Yandex·IndexNow 네트워크에 즉시 통보한다
+    # ------------------------------------------------------------------
+    try:
+        from importlib.util import spec_from_file_location, module_from_spec
+        repo_dir = os.path.dirname(os.path.abspath(__file__))
+        ix_path  = os.path.join(repo_dir, 'indexnow_notify.py')
+        if os.path.exists(ix_path):
+            spec = spec_from_file_location("indexnow_notify", ix_path)
+            ix   = module_from_spec(spec)
+            spec.loader.exec_module(ix)
+            # URL은 .html 확장자 없는 형태 (Cloudflare Pages canonical)
+            article_slug = args.html.replace('.html', '')
+            ix.notify(f"https://coffee.ephseed.com/{article_slug}")
+        else:
+            print('[WARN] indexnow_notify.py 없음 — IndexNow 미신청')
+    except Exception as e:
+        print('[WARN] IndexNow 신청 중 오류: %s' % e)
