@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>그라인더 분쇄도 조절 — 기구별 굵기 기준과 마이크론 비교 | 바리스타 스페셜티</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<meta name="description" content="에스프레소 180~380µm, 푸어오버 400~950µm — 기구별 분쇄도 기준과 그라인더 숫자 읽는 법, 맛으로 되짚는 조절 순서 정리">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-12">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="그라인더 분쇄도 조절 — 기구별 굵기 기준과 마이크론 비교 | 바리스타 스페셜티">
+<meta property="og:description" content="에스프레소 180~380µm, 푸어오버 400~950µm — 기구별 분쇄도 기준과 그라인더 숫자 읽는 법, 맛으로 되짚는 조절 순서 정리">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-12">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-12T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-12T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-12#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-12", "headline": "그라인더 분쇄도 조절 — 기구별 굵기 기준과 마이크론 비교 | 바리스타 스페셜티", "description": "에스프레소 180~380µm, 푸어오버 400~950µm — 기구별 분쇄도 기준과 그라인더 숫자 읽는 법, 맛으로 되짚는 조절 순서 정리", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-12", "dateModified": "2026-08-12", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 커피 상식</span>
+      <span class="badge">분쇄도</span>
+      <span class="badge">추출 기초</span>
+    </div>
+    <h1>그라인더 분쇄도 조절<br/>— 기구별 굵기 기준과 마이크론 비교</h1>
+    <p class="subtitle">에스프레소 180~380µm, 푸어오버 400~950µm — 기구별 분쇄도 기준과 그라인더 숫자 읽는 법, 맛으로 되짚는 조절 순서 정리</p>
+    <div class="meta-row">
+      <span>📅 2026년 8월 12일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+
+    <!-- 훅 -->
+    <div class="hook">
+      "레시피는 그대로인데 왜 오늘은 시고, 어제는 썼을까?"<br/>
+      원두 무게와 물 온도를 아무리 정확히 맞춰도 <strong>분쇄도가 어긋나면 나머지 변수는 의미를 잃습니다.</strong> 분쇄도는 물이 커피와 만나는 표면적과 통과 속도를 동시에 바꾸는, 사실상 유일한 변수이기 때문입니다.
+    </div>
+
+    <!-- 핵심 요약 박스 -->
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>기구별 굵기 기준 — 튀르크식부터 콜드브루까지 마이크론 비교표</li>
+        <li>그라인더 숫자가 브랜드마다 다른 이유와, 숫자 대신 봐야 할 것</li>
+        <li>맛으로 되짚는 조절 순서 — 신맛이 날 때와 쓴맛이 날 때</li>
+        <li>에스프레소 다이얼인: 시간·수율로 굵기를 확정하는 방법</li>
+        <li>미분(fines)과 균일도가 같은 굵기에서도 맛을 가르는 이유</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">분쇄도는 왜 맛을 결정하는가</h2>
+    <p>커피 추출은 물이 원두 입자 속으로 스며들어 성분을 녹여 나오는 과정입니다. 같은 무게의 원두라도 <strong>잘게 갈수록 물과 닿는 표면적이 급격히 늘어나고</strong>, 동시에 입자 사이의 틈이 좁아져 물이 통과하는 속도는 느려집니다. 표면적이 늘고 접촉 시간까지 길어지므로 성분이 더 많이 녹아 나옵니다.</p>
+    <p>스페셜티 커피 협회(SCA)의 추출 관리 차트는 이 결과를 두 축으로 정리합니다. 가로축은 원두에서 녹아 나온 성분의 비율인 <strong>수율(Extraction – Solubles Yield)</strong>로 14~26% 구간을, 세로축은 물에 녹은 농도인 <strong>TDS(Strength – Solubles Concentration)</strong>로 0.90~1.80% 구간을 표시합니다. 이 가운데 일반적으로 권장되는 영역이 수율 18~22% 부근이며, 그 아래는 과소추출, 위는 과다추출로 분류됩니다.</p>
+    <p>여기서 중요한 점은 <strong>수율을 가장 크게 움직이는 손잡이가 분쇄도라는 것</strong>입니다. 물 온도를 2~3℃ 바꾸거나 시간을 10초 늘리는 것보다, 분쇄도를 한 단계 조이는 편이 수율을 훨씬 크게 끌어올립니다. 그래서 대부분의 추출 교본이 "다른 변수를 고정하고 분쇄도부터 맞춰라"라고 안내합니다.</p>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">14~26%</span><span class="label">SCA 차트가 다루는<br/>수율 전체 범위</span></div>
+      <div class="data-card"><span class="num">18~22%</span><span class="label">일반적으로 권장되는<br/>수율 구간</span></div>
+      <div class="data-card"><span class="num">55g/L</span><span class="label">골든컵 기준<br/>물 1L당 원두량</span></div>
+      <div class="data-card"><span class="num">1:15~1:18</span><span class="label">필터 추출에서<br/>흔히 쓰는 비율</span></div>
+    </div>
+
+    <h2 class="section-title">기구별 굵기 기준 — 마이크론 비교표</h2>
+    <p>분쇄 입자의 크기는 마이크론(µm, 1,000분의 1mm)으로 표기합니다. 아래 표는 널리 인용되는 기구별 권장 범위입니다. 어디까지나 <strong>출발점</strong>이며, 그라인더·원두·로스팅 정도·필터·물 온도에 따라 실제 최적값은 달라집니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>추출 기구</th><th>권장 범위(µm)</th><th>체감 굵기</th><th>접촉 시간</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>튀르크식(이브릭)</td><td class="em">40~220</td><td>밀가루에 가까움</td><td>수 분</td></tr>
+        <tr><td>에스프레소</td><td class="em">180~380</td><td>고운 설탕</td><td>25~30초</td></tr>
+        <tr><td>모카포트</td><td class="em">360~660</td><td>가는 모래</td><td>수 분</td></tr>
+        <tr><td>에어로프레스</td><td class="em">320~960</td><td>레시피에 따라 폭넓음</td><td>1~3분</td></tr>
+        <tr><td>V60·푸어오버</td><td class="em">400~950</td><td>굵은 설탕</td><td>2분 30초~3분 30초</td></tr>
+        <tr><td>케멕스</td><td class="em">600~900</td><td>굵은 설탕보다 큼</td><td>4분 내외</td></tr>
+        <tr><td>커핑</td><td class="em">700~1,200</td><td>거친 모래</td><td>4분</td></tr>
+        <tr><td>프렌치프레스</td><td class="em">1,000~1,200</td><td>굵은 소금</td><td>4분</td></tr>
+        <tr><td>콜드브루</td><td class="em">900~1,500</td><td>가장 굵음</td><td>8~24시간</td></tr>
+      </tbody>
+    </table>
+
+    <p>표를 세로로 읽으면 규칙이 보입니다. <strong>물과 닿는 시간이 짧을수록 곱게, 길수록 굵게</strong> 갑니다. 에스프레소는 30초 안에 성분을 뽑아야 하므로 극단적으로 곱고, 8시간 이상 담가 두는 콜드브루는 굵게 갈아도 충분히 추출됩니다. 프렌치프레스가 굵은 또 하나의 이유는 금속 필터가 미세 입자를 걸러 내지 못해, 곱게 갈면 잔 바닥에 침전물이 남고 계속 추출이 진행되기 때문입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">범위가 겹치는 이유</div>
+      에어로프레스(320~960µm)처럼 범위가 넓은 기구는 레시피 자체가 다양하기 때문입니다. 압력을 주는 시간과 침지 시간을 어떻게 잡느냐에 따라 에스프레소에 가깝게도, 푸어오버에 가깝게도 운용할 수 있습니다.
+    </div>
+
+    <h2 class="section-title">그라인더 숫자가 브랜드마다 다른 이유</h2>
+    <p>"핸드드립은 몇 번인가요"라는 질문에 하나의 답이 없는 이유는 단순합니다. <strong>그라인더 눈금은 마이크론 단위가 아니라 날 사이 간격을 몇 칸으로 나눴는지를 표시한 것</strong>이기 때문입니다. 같은 '20'이라도 기기마다 실제 간격이 다르고, 날의 모양과 크기가 다르면 같은 간격에서도 나오는 입자 분포가 달라집니다.</p>
+    <p>참고할 만한 것은 숫자가 아니라 <strong>한 칸당 변화량</strong>입니다. 핸드밀은 보통 한 칸(클릭)의 변화가 작아 미세 조정에 유리하고, 무단(스텝리스) 방식은 원하는 만큼 연속적으로 조일 수 있습니다. 반면 스텝 방식 전동 그라인더는 한 칸의 폭이 커서, 에스프레소 구간에서는 한 칸만 움직여도 추출 시간이 5초 이상 흔들리기도 합니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">숫자 대신 기록해야 할 세 가지</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>기준점</strong> — 날이 서로 닿는 지점(0점)에서 몇 칸을 풀었는지. 기기가 바뀌어도 재현할 수 있는 유일한 좌표입니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>결과 시간</strong> — 그 설정에서 추출이 몇 초 걸렸는지. 굵기의 간접 측정값 역할을 합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>원두 조건</strong> — 로스팅 정도와 볶은 날짜. 같은 설정이라도 로스팅이 강할수록 원두가 잘 부서져 더 곱게 갈립니다.</div></div>
+    </div>
+
+    <h2 class="section-title">맛으로 되짚는 조절 순서</h2>
+    <p>측정 장비 없이도 조절은 가능합니다. 맛이 곧 수율의 지표이기 때문입니다. 순서는 <strong>한 번에 하나씩, 분쇄도부터</strong>입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>느껴지는 맛</th><th>추정 상태</th><th>조치</th><th>다음 확인</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>날카로운 신맛, 짠맛, 여운이 짧음</td><td class="em">과소추출</td><td>한 단계 곱게</td><td>추출 시간이 늘었는지</td></tr>
+        <tr><td>쓴맛, 텁텁함, 마른 듯한 여운</td><td class="em">과다추출</td><td>한 단계 굵게</td><td>추출 시간이 줄었는지</td></tr>
+        <tr><td>밍밍하고 물 같음</td><td>농도 부족</td><td>비율을 1:16 → 1:15로</td><td>맛의 밀도 변화</td></tr>
+        <tr><td>진하지만 거칠고 쓴맛</td><td>농도 과다 + 과다추출</td><td>굵게 + 비율 완화</td><td>쓴맛이 먼저 빠지는지</td></tr>
+      </tbody>
+    </table>
+
+    <p>주의할 점은 <strong>신맛과 쓴맛이 동시에 느껴지는 경우</strong>입니다. 이는 입자 크기가 고르지 않아 잔 안에서 과소추출과 과다추출이 함께 일어난 상태일 수 있습니다. 이때는 굵기를 움직이기보다 물 붓는 방식과 층의 평탄도를 먼저 점검하는 편이 낫습니다.</p>
+
+    <h2 class="section-title">에스프레소 — 시간으로 굵기를 확정한다</h2>
+    <p>에스프레소는 굵기 변화에 가장 민감한 기구입니다. 그래서 굵기를 눈으로 판단하지 않고 <strong>결과 시간으로 역산</strong>합니다. 널리 쓰이는 출발점은 원두 대비 추출량 1:2, 시간 25~30초입니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">다이얼인 4단계</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text">원두량과 목표 추출량을 <strong>먼저 고정</strong>합니다. 예: 원두 18g → 추출액 36g.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text">한 잔을 내리고 목표 추출량에 도달한 <strong>시간을 측정</strong>합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text">25초보다 빠르면 <strong>한 칸 곱게</strong>, 30초보다 느리면 <strong>한 칸 굵게</strong> 조정합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text">시간이 범위에 들어오면 그때 <strong>맛으로 미세 조정</strong>합니다. 시간과 맛이 충돌하면 맛을 우선합니다.</div></div>
+    </div>
+
+    <p>조정할 때는 <strong>그라인더 안에 남은 이전 굵기의 원두를 비워 내는 과정</strong>을 잊지 마세요. 눈금을 바꾼 직후 첫 몇 그램은 이전 설정의 입자가 섞여 나오므로, 그대로 내리면 조정 결과를 잘못 읽게 됩니다.</p>
+
+    <h2 class="section-title">핸드드립·프렌치프레스·콜드브루</h2>
+    <p><strong>핸드드립·푸어오버</strong>는 400~950µm 범위 안에서 총 추출 시간을 지표로 삼습니다. 1인분 기준 2분 30초~3분 30초를 벗어나 물이 너무 빨리 빠지면 굵고, 물이 고여 4분을 넘기면 곱다는 신호입니다. 다만 물을 붓는 속도와 층의 상태에 따라서도 시간이 흔들리므로, 굵기를 바꾸기 전에 붓는 방식부터 일정하게 만드는 편이 순서상 맞습니다.</p>
+    <p><strong>프렌치프레스</strong>는 1,000~1,200µm로 굵게 갈되, 4분이 지나면 반드시 눌러 분리해야 합니다. 굵게 갈아도 계속 담가 두면 추출이 이어져 쓴맛이 올라옵니다.</p>
+    <p><strong>콜드브루</strong>는 900~1,500µm의 가장 굵은 구간을 씁니다. 8~24시간이라는 긴 시간이 굵기를 보상하기 때문입니다. 여기서 곱게 갈면 시간이 그대로 유지되므로 과다추출로 직행합니다. 시간을 줄여 보정하려 들기보다 굵기를 지키는 편이 안전합니다.</p>
+
+    <h2 class="section-title">같은 굵기인데 맛이 다른 이유 — 미분과 균일도</h2>
+    <p>분쇄도를 아무리 정확히 맞춰도 그라인더가 만들어 내는 것은 하나의 크기가 아니라 <strong>크기의 분포</strong>입니다. 100µm 미만의 아주 작은 입자(미분, fines)와, 목표보다 큰 덩어리(볼더)가 항상 함께 나옵니다. 미분은 표면적이 커서 빠르게 과다추출되고 볼더는 속까지 물이 닿지 못해 과소추출됩니다. 한 잔 안에서 두 가지가 섞이는 것입니다.</p>
+    <p>24종의 에스프레소 그라인더에서 얻은 300여 건의 입도 분포를 분석한 자료에 따르면, 분포는 단순한 이봉형이 아니라 <strong>미분·주 피크·조대 입자로 이루어진 다성분 구조</strong>에 가깝습니다. 또한 에스프레소 다이얼인에서 실제로 변하는 것은 굵은 입자의 위치보다 <strong>미분의 양</strong>이며, 굵기를 바꿔도 미분 피크 자체는 8µm 정도밖에 이동하지 않았습니다.</p>
+    <p>날의 형태도 영향을 줍니다. 같은 자료에서 <strong>평날(flat)이 원뿔날(conical)보다 평균적으로 더 균일한 분포를 보였고</strong>, 원뿔날은 상대적으로 봉우리가 넓게 퍼지는 경향이 확인됐습니다. 다만 개체 간 차이가 커서 겹치는 구간이 넓었고, 날이 크다고 해서 자동으로 분포가 좋아지지는 않았습니다. 결론적으로 <strong>날의 크기보다 형상이 더 중요한 변수</strong>였습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">실전에서의 의미</div>
+      "미분이 무조건 나쁘다"고 보기는 어렵습니다. 같은 자료에서 분포가 균일한 그라인더일수록 에스프레소 다이얼인 시 오히려 더 많은 미분 비율을 필요로 했습니다. 미분은 저항을 만들어 압력을 유지하는 역할도 하기 때문입니다. 목표는 미분 제거가 아니라 <strong>재현 가능한 분포를 유지하는 것</strong>입니다.
+    </div>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">Q1. 분쇄도만 바꾸면 맛이 확실히 달라지나요?</div>
+      네. 분쇄도는 표면적과 물의 통과 속도를 동시에 바꾸기 때문에 단일 변수 중 수율에 미치는 영향이 가장 큽니다. 다만 원두량·물량·온도를 고정한 상태에서 한 번에 한 단계씩 움직여야 변화의 원인을 읽을 수 있습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q2. 제 그라인더 숫자는 몇 번이 맞나요?</div>
+      브랜드와 모델마다 한 칸의 간격이 달라 특정 숫자를 그대로 옮길 수 없습니다. 날이 맞닿는 0점에서 몇 칸을 풀었는지와, 그 설정에서 나온 추출 시간을 함께 기록하는 방식이 더 안정적입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q3. 로스팅 정도가 달라지면 굵기도 바꿔야 하나요?</div>
+      일반적으로 그렇습니다. 강하게 볶은 원두는 조직이 무르고 잘 부서져 같은 설정에서도 더 곱게 갈리며, 성분도 더 빨리 녹아 나옵니다. 강배전으로 바꿨을 때 쓴맛이 늘었다면 한 단계 굵게 여는 것이 첫 번째 대응입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q4. 칼날식(블레이드) 분쇄기로도 조절이 되나요?</div>
+      크기를 지정하는 것이 아니라 잘게 쳐서 부수는 방식이라 분포가 넓게 퍼집니다. 굵은 입자와 미분이 동시에 많아 특정 마이크론 구간을 겨냥하기 어렵습니다. 침지식인 프렌치프레스나 콜드브루에서는 상대적으로 영향이 덜하지만, 에스프레소에는 적합하지 않습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q5. 미리 갈아 둔 원두를 써도 되나요?</div>
+      갈면 표면적이 수십 배로 늘어 향 성분의 휘발과 산화가 빨라집니다. 기구에 맞는 굵기를 맞췄더라도 시간이 지날수록 같은 설정에서 다른 맛이 나기 때문에, 추출 직전에 갈아 쓰는 편이 조절의 기준을 유지하는 데 유리합니다.
+    </div>
+
+    <!-- 마무리 -->
+    <div class="closing-box">
+      <h3>☕ 정리하면</h3>
+      <p>분쇄도는 <strong>표면적과 통과 속도를 동시에 바꾸는 변수</strong>여서, 수율을 가장 크게 움직입니다. 다른 변수를 고정하고 여기서부터 맞추는 것이 순서입니다.</p>
+      <p>기구별 기준은 <strong>에스프레소 180~380µm, 푸어오버 400~950µm, 프렌치프레스 1,000~1,200µm, 콜드브루 900~1,500µm</strong>입니다. 접촉 시간이 짧을수록 곱게, 길수록 굵게 갑니다.</p>
+      <p>그라인더 숫자는 기기마다 의미가 다릅니다. 숫자 대신 <strong>0점에서 몇 칸을 풀었는지와 추출 시간</strong>을 기록하세요.</p>
+      <p>맛이 시면 곱게, 쓰면 굵게. 에스프레소는 <strong>1:2 비율에 25~30초</strong>를 기준선으로 잡고 시간으로 역산하면 됩니다.</p>
+      <p>같은 굵기에서도 맛이 갈리는 이유는 <strong>미분과 균일도</strong>입니다. 미분을 없애는 것이 목표가 아니라, 같은 분포를 매번 재현하는 것이 목표입니다.</p>
+    </div>
+
+    
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-08"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">당신의 커피가 매일 맛이 다른 진짜 이유 — 추출의 과학, 프로 바리스타도 틀리는 변수들</div><div class="rc-date">2026. 08. 08</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-01"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">에스프레소가 쓴 진짜 이유, 바리스타들이 평생 연구하는 추출의 비밀</div><div class="rc-date">2026. 08. 01</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-29"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">커피 맛 80%는 추출에서 결정됩니다 — 바리스타 10년이 숨겨온 추출의 비밀</div><div class="rc-date">2026. 07. 29</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#분쇄도</span>
+      <span class="tag">#그라인더</span>
+      <span class="tag">#마이크론</span>
+      <span class="tag">#에스프레소</span>
+      <span class="tag">#핸드드립</span>
+      <span class="tag">#푸어오버</span>
+      <span class="tag">#프렌치프레스</span>
+      <span class="tag">#콜드브루</span>
+      <span class="tag">#다이얼인</span>
+      <span class="tag">#홈카페</span>
+    </div>
+
+    <!-- 푸터 -->
+    <div class="footer">
+      <p>✍️ 작성일: 2026년 8월 12일 | 바리스타 스페셜티 커피 저널</p>
+      <p>수율·농도 기준은 SCA 추출 관리 차트(Brewing Control Chart, 2019 개정판), 기구별 마이크론 범위는 공개된 분쇄도 차트 자료, 입도 분포와 날 형상 비교는 24종 에스프레소 그라인더 300여 건 입도 분포 분석 자료를 참고했습니다. 제시한 수치는 출발점이며 그라인더·원두·로스팅 정도·물 조건에 따라 최적값은 달라질 수 있습니다.</p>
+    </div>
+
+
+  </div><!-- /article-body -->
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
