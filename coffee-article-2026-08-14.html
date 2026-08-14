@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>원두 보관법 — 냉동 보관 가능 여부와 개봉 후 보관기간 기준 | 바리스타 스페셜티</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<meta name="description" content="실온 1~3주, 냉동 3~4개월 — 산소·수분·열·빛 기준으로 정리한 보관 기간과 냉동·냉장 판단, 용기 고르는 기준">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-14">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="원두 보관법 — 냉동 보관 가능 여부와 개봉 후 보관기간 기준 | 바리스타 스페셜티">
+<meta property="og:description" content="실온 1~3주, 냉동 3~4개월 — 산소·수분·열·빛 기준으로 정리한 보관 기간과 냉동·냉장 판단, 용기 고르는 기준">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-14">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-14T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-14T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-14#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-14", "headline": "원두 보관법 — 냉동 보관 가능 여부와 개봉 후 보관기간 기준 | 바리스타 스페셜티", "description": "실온 1~3주, 냉동 3~4개월 — 산소·수분·열·빛 기준으로 정리한 보관 기간과 냉동·냉장 판단, 용기 고르는 기준", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-14", "dateModified": "2026-08-14", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 커피 상식</span>
+      <span class="badge">원두 보관</span>
+      <span class="badge">신선도 관리</span>
+    </div>
+    <h1>원두 보관법<br/>— 냉동 보관 가능 여부와 개봉 후 보관기간 기준</h1>
+    <p class="subtitle">실온 1~3주, 냉동 3~4개월 — 산소·수분·열·빛 기준으로 정리한 보관 기간과 냉동·냉장 판단, 용기 고르는 기준</p>
+    <div class="meta-row">
+      <span>📅 2026년 8월 14일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 9분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+
+    <!-- 훅 -->
+    <div class="hook">
+      "한 봉지 사면 두 달은 마시는데, 왜 뒤로 갈수록 맛이 없어질까?"<br/>
+      원두는 상해서 못 먹게 되는 것이 아니라 <strong>향이 조용히 빠져나갑니다</strong>. 그래서 기한보다 먼저 봐야 할 것은 봉지가 아니라 <strong>산소·수분·열·빛</strong> 네 가지입니다.
+    </div>
+
+    <!-- 핵심 요약 박스 -->
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>홀빈과 분쇄 커피의 실제 신선 기간 — 기관이 제시하는 숫자 그대로</li>
+        <li>산소 농도가 유통기한을 20배까지 바꾼다는 측정치</li>
+        <li>냉동은 되는가 — 2016·2018·2023년 연구가 각각 무엇을 보여줬는지</li>
+        <li>냉장은 왜 출처마다 답이 갈리는가, 그리고 실제 위험은 어디에 있는지</li>
+        <li>밀폐 용기·밸브 봉지·진공 포장의 효과를 숫자로 비교</li>
+        <li>국내 원두 봉지의 소비기한·품질유지기한·로스팅 일자를 읽는 법</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">1. 원두를 상하게 하는 것은 네 가지입니다</h2>
+    <p>미국 전미커피협회(NCA)는 보관 지침을 아주 단순하게 정리합니다. 원두를 <strong>공기·수분·열·빛</strong>으로부터 지키라는 것입니다. 협회는 이 넷을 커피의 "가장 큰 적"이라고 표현합니다. 순서를 바꿔 말하면, 이 넷을 막지 못하는 보관법은 용기가 아무리 비싸도 효과가 없습니다.</p>
+    <p>여기서 가장 중요한 것은 <strong>공기, 정확히는 산소</strong>입니다. 로스팅된 원두는 다공질 구조라 표면적이 넓고, 그 안의 지방 성분이 산소와 만나 산화합니다. 동시에 향을 만드는 휘발성 성분은 밖으로 빠져나갑니다. 맛이 떨어지는 과정은 이 두 가지가 함께 진행되는 것이지, 곰팡이가 피거나 부패하는 것과는 다릅니다.</p>
+    <p>수분도 무시할 수 없습니다. NCA는 커피를 <strong>흡습성(hygroscopic) 물질</strong>로 규정합니다. 주변 공기에서 수분을 빨아들일 뿐 아니라 <strong>냄새와 맛까지 흡수해 붙잡아 둡니다</strong>. 냉장고에 그냥 넣어 두면 안 되는 이유가 여기서 나옵니다.</p>
+
+    <h2 class="section-title">2. 며칠까지 신선한가 — 기관이 제시하는 숫자</h2>
+    <p>먼저 기준선이 되는 시간표부터 봅니다. NCA의 보관 가이드와 스페셜티커피협회(SCA)의 자료를 함께 놓으면 대략 다음과 같습니다.</p>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1~3주</span><div class="label">홀빈(통원두)<br/>실온 밀폐 기준</div></div>
+      <div class="data-card"><span class="num">1~2주</span><div class="label">분쇄 커피<br/>실온 밀폐 기준</div></div>
+      <div class="data-card"><span class="num">3~4개월</span><div class="label">냉동 보관<br/>NCA 제시 상한</div></div>
+    </div>
+
+    <p>NCA는 아예 <strong>"1~2주 안에 마실 만큼만 소량으로 사라"</strong>고 권합니다. 대용량이 단위 가격은 싸지만, 뒤쪽 절반을 향이 빠진 상태로 마시게 된다면 실제로는 손해라는 뜻입니다.</p>
+    <p>왜 이 기간이 짧은지는 로스팅 직후의 화학 변화를 보면 이해가 됩니다. SCA 자료에 따르면 로스팅으로 생긴 이산화탄소는 <strong>로스팅 후 약 20일 동안 빠르게 배출되고, 그 이후로는 방출 속도가 급격히 느려집니다.</strong> 이 이산화탄소는 원두 내부를 채우고 있는 동안 산소가 들어오지 못하게 막아 주는 보호 가스 역할을 합니다. 탄소가 이미 산소와 결합해 있어 향 성분이나 오일을 산화시키지 못하기 때문입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">그래서 이렇게 됩니다</div>
+      가스가 빠져나간 자리에는 <strong>공기가 들어옵니다.</strong> 로스팅 후 3주쯤부터 맛이 눅눅해지는 것은 우연이 아니라, 보호 가스가 거의 소진되고 산화가 본격화되는 시점과 겹칩니다.
+    </div>
+
+    <p>관능 평가로도 확인됩니다. SCA가 정리한 문헌 리뷰에 인용된 연구들에 따르면, 훈련된 평가자는 <strong>로스팅 1주 후부터</strong> 산소에 노출된 시료와 그렇지 않은 시료를 구별해 냈습니다. 향 성분 중 특히 예민한 메탄티올은 <strong>8일 만에 초기량의 30% 수준</strong>까지 떨어집니다. 공기 포장 상태로 <strong>4개월</strong>이 지나면 훈련된 평가자가 산패한 냄새를 감지했습니다.</p>
+
+    <h2 class="section-title">3. 산소 농도가 기한을 20배까지 바꿉니다</h2>
+    <p>보관 이야기에서 가장 인상적인 수치가 여기 있습니다. SCA 문헌 리뷰에 인용된 측정치는 이렇습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>조건</th><th>결과</th><th>출처(SCA 리뷰 인용)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">산소 농도를 0.5%로 낮춤</td><td class="em">유통기한 약 20배 증가</td><td>Labuza et al. 2001</td></tr>
+        <tr><td>산소 농도 1% 증가</td><td>열화 속도 10% 증가</td><td>Cardelli &amp; Labuza 2001</td></tr>
+        <tr><td>진공 포장 vs 공기 포장</td><td>스테일링 속도 5배 낮음</td><td>Nicoli et al. 1993</td></tr>
+        <tr><td>질소 충전 포장</td><td>기한 3개월 → 6개월</td><td>Alves et al. 2001</td></tr>
+      </tbody>
+    </table>
+
+    <p>다만 오해하기 쉬운 부분이 있어 짚어 둡니다. 위 수치는 모두 <strong>산업용 포장 공정</strong>에서 나온 값입니다. 가정용 진공 캐니스터로 같은 효과가 난다는 뜻이 아닙니다. 가정용 기구의 효과를 정량 측정한 신뢰할 만한 자료는 확인되지 않습니다.</p>
+    <p>그리고 산소는 완전히 막기 어렵습니다. 1974년 연구에서는 <strong>잔류 산소가 2% 미만이어도</strong> 원두 내부로 확산해 산화를 일으켰습니다. 가정에서 할 수 있는 일은 산소를 없애는 것이 아니라 <strong>봉지를 여는 횟수와 노출 시간을 줄이는 것</strong>입니다.</p>
+
+    <h2 class="section-title">4. 냉동 보관 — 해도 되고, 근거도 있습니다</h2>
+    <p>결론부터 적으면 <strong>냉동은 유효한 선택</strong>입니다. 다만 조건이 붙습니다.</p>
+    <p>먼저 향 보존 쪽 근거입니다. 2018년 학술지 <em>Beverages</em>에 실린 연구는 갓 볶은 원두를 <strong>영하 20℃ 냉동과 25℃ 실온에서 각각 9주</strong> 보관한 뒤 비교했습니다. 실온 시료에서는 향 성분인 메탄티올이 <strong>검출되지 않았지만</strong>, 냉동 시료에는 약 <strong>절반이 남아 있었습니다.</strong> 다이아세틸을 포함한 9종의 휘발성 성분은 보관 시료 전체에서 완전히 사라졌습니다. 저자들은 갓 볶은 원두를 냉동 보관하고 실온 보관은 피하라고 권고했습니다.</p>
+    <p>두 번째는 조금 의외의 이점입니다. 2016년 <em>Scientific Reports</em>에 실린 연구는 원두 온도를 낮춰 분쇄하면 <strong>입자 크기 분포가 좁아지고 평균 입자가 작아진다</strong>고 보고했습니다. 실온 대비 극저온에서 최빈 입자 직경이 31% 줄었고, 중요한 것은 <strong>가장 큰 변화가 실온에서 영하 19℃로 내려가는 구간에서 나타났다</strong>는 점입니다. 액체질소가 아니라 가정용 냉동실 온도만으로도 의미가 있다는 뜻입니다. 입자가 고르면 추출이 균일해집니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">정확히 짚어 둘 것</div>
+      "얼린 채로 바로 갈아라"는 조언은 업계 관행이며, SCA나 NCA의 공식 지침으로 확인되지는 않습니다. 다만 위 연구가 <strong>차가운 상태에서 분쇄할 때</strong>의 물리적 이점을 보여 준 것은 사실입니다. 반대로 꺼내 두었다 녹은 뒤 다시 얼리는 것은 결로만 반복시키므로 피해야 합니다.
+    </div>
+
+    <p>다만 냉동을 과대평가해서도 안 됩니다. 2023년 <em>Scientific Reports</em>는 영하 10℃·10℃·20℃에서 12개월까지 추적한 결과, <strong>20℃ 보관이 가장 빨리 노화했고 영하 10℃와 10℃는 서로 비슷하게 좋았다</strong>고 보고했습니다. 즉 온도를 낮추는 것 자체가 핵심이며, "냉장보다 냉동이 반드시 낫다"는 주장은 이 연구로는 뒷받침되지 않습니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">냉동할 때 지킬 것</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>완전히 밀폐되는 용기</strong>에 담습니다. NCA는 "진짜로 공기가 통하지 않는 용기"라는 표현을 씁니다. 일반 지퍼백은 부족합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text">꺼낼 때는 <strong>일주일치 이내로 빠르게</strong> 덜어 내고, <strong>결로가 생기기 전에</strong> 나머지를 바로 되돌립니다. NCA가 명시한 절차입니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text">그러려면 <strong>소분해서 얼리는 편</strong>이 실용적입니다. 큰 통 하나를 매일 여닫으면 결로와 냄새 흡수가 반복됩니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text">기간은 <strong>3~4개월</strong>을 상한으로 잡습니다. 가정용 냉동실 용기도 소량의 산소는 통과시키므로 무한정 보존되지는 않습니다.</div></div>
+    </div>
+
+    <h2 class="section-title">5. 냉장 보관 — 출처가 갈리는 이유</h2>
+    <p>냉장은 답이 하나로 모이지 않습니다. 자료마다 결론이 다른데, 자세히 보면 <strong>서로 다른 것을 측정하고 있어서</strong> 그렇습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>입장</th><th>근거</th><th>측정 대상</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">냉장이 낫다</td><td>2024년 <em>Foods</em> — 개봉 후 1개월, 5℃가 20℃보다 향 성분 보존 우수</td><td>온도 그 자체</td></tr>
+        <tr><td class="em">냉장이 낫다</td><td>2023년 <em>Scientific Reports</em> — 10℃가 20℃보다 확연히 우수</td><td>온도 그 자체</td></tr>
+        <tr><td>냉장은 권하지 않는다</td><td>NCA — 냉장 홀빈 권장 기간 2주(실온 1~3주보다 짧음)</td><td>결로·냄새·개폐 습관</td></tr>
+      </tbody>
+    </table>
+
+    <p>2024년 <em>Foods</em>는 5℃와 20℃에서 각각 한 달을 둔 뒤 44종의 휘발성 성분을 분석했습니다. 20℃ 시료는 흙 냄새·날카로운 맛·스모키한 느낌이 올라가고 초콜릿 같은 단맛은 떨어졌습니다. 연구진의 결론은 낮은 온도가 향 성분 변화를 늦춘다는 것이었습니다. 온도만 놓고 보면 냉장은 분명 유리합니다.</p>
+    <p>반면 NCA가 경계하는 것은 온도가 아니라 <strong>냉장고라는 환경</strong>입니다. 문을 여닫을 때마다 습한 공기가 닿아 결로가 생기고, 커피는 흡습성이라 그 수분과 함께 <strong>김치·생선 같은 주변 냄새까지 흡수합니다.</strong> 그래서 NCA는 냉장 보관 기간을 실온보다 오히려 짧게 잡습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">두 입장을 합치면</div>
+      냉장의 위험은 <strong>온도가 아니라 용기와 꺼내는 빈도</strong>에 있습니다. 완전 밀폐가 되고 하루에 한 번만 여는 조건이라면 냉장은 합리적입니다. 반대로 봉지째 냉장고에 넣고 아침저녁으로 여닫는다면, 그냥 서늘한 찬장에 두는 편이 낫습니다.
+    </div>
+
+    <h2 class="section-title">6. 용기 — 무엇을 기준으로 고르나</h2>
+    <p>NCA의 용기 지침은 세 가지로 요약됩니다. <strong>밀폐될 것, 불투명할 것, 서늘하고 어두운 곳에 둘 것.</strong> 투명한 유리 캐니스터는 보기에는 좋지만 빛을 통과시켜 맛을 해칩니다. 오븐이나 식기세척기 근처 수납장, 오후 햇빛이 강하게 드는 자리도 피하라고 명시합니다.</p>
+    <p>구입한 봉지 그대로 두는 것에 대해서도 협회는 <strong>소매 포장에서 꺼내 밀폐 용기로 옮기라</strong>고 안내합니다. 특히 이미 분쇄된 커피라면 더 그렇습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>보관 방식</th><th>확인된 효과</th><th>주의점</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">원웨이 밸브 봉지</td><td>내부 산소 0%, 이산화탄소 40% 이상 유지</td><td>한 조사에서 시료의 절반에 실링 누출 발견</td></tr>
+        <tr><td>산업용 진공 포장</td><td>공기 포장 대비 스테일링 5배 느림</td><td>가정용 캐니스터와 동일하게 볼 수 없음</td></tr>
+        <tr><td>질소 충전</td><td>기한 2배(3 → 6개월)</td><td>가정에서 재현 불가</td></tr>
+        <tr><td>밀폐 + 불투명 용기</td><td>NCA 공식 권장</td><td>수치화된 데이터는 없음</td></tr>
+      </tbody>
+    </table>
+
+    <p>정리하면, 가정에서 현실적으로 통제할 수 있는 변수는 <strong>밀폐·차광·온도·개봉 빈도</strong> 네 가지뿐입니다. 나머지는 로스터가 포장 단계에서 이미 결정합니다. 그래서 <strong>밸브가 달린 봉지에 로스팅 일자가 찍힌 원두를 소량 사는 것</strong>이, 값비싼 보관 용기보다 결과에 더 크게 작용합니다.</p>
+
+    <h2 class="section-title">7. 분쇄한 커피는 시계가 다르게 갑니다</h2>
+    <p>같은 원두라도 갈아 두면 이야기가 완전히 달라집니다. SCA 자료가 인용한 측정에 따르면 <strong>분쇄 커피의 가스 방출 속도는 홀빈의 약 두 배</strong>입니다(온도 10℃ 상승당 반응 속도 배수인 Q10 기준). 표면적이 수십 배로 늘어나니 당연한 결과입니다.</p>
+    <p>구체적인 관찰도 있습니다. 2001년 연구는 지질 산화에서 생기는 냄새 성분이 <strong>분쇄 후 24시간 구간</strong>에 뚜렷하게 나타난다고 보고했습니다. SCA는 이를 두고 "홀빈에서 몇 주 걸리는 일이 분쇄하면 몇 분 안에 일어난다"고 표현합니다. 이 문장은 정량 측정치가 아니라 비유지만, 방향은 모든 자료가 일치합니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">현실적인 절충</div>
+      그라인더가 없어 분쇄 상태로 살 수밖에 없다면, <strong>2주 안에 다 마실 양</strong>만 사고 <strong>밀폐 용기에 옮겨</strong> 두십시오. NCA가 밀폐 용기를 특히 분쇄 커피에 강조하는 이유입니다.
+    </div>
+
+    <h2 class="section-title">8. 국내 원두 봉지의 날짜를 읽는 법</h2>
+    <p>마지막으로 실무적인 부분입니다. 국내 원두 봉지에는 세 종류의 날짜가 섞여 나옵니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>표기</th><th>의미</th><th>법적 지위</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">소비기한</td><td>그때까지 먹어도 안전한 기한</td><td>2023년 1월 시행, 표시 의무</td></tr>
+        <tr><td class="em">품질유지기한</td><td>고유 품질이 유지되는 기한</td><td>볶은커피는 소비기한과 택일 표시 가능</td></tr>
+        <tr><td>로스팅 일자(제조일)</td><td>볶은 날</td><td class="em">의무 아님 — 업계 자율 표기</td></tr>
+      </tbody>
+    </table>
+
+    <p>「식품등의 표시기준」은 볶은커피를 포함한 고체 커피에 대해 <strong>소비기한 또는 품질유지기한 중 하나를 표시</strong>하도록 하고 있습니다. 그래서 국내 원두 봉지에 "품질유지기한"이 자주 보이는 것입니다. 반면 <strong>제조연월일 표시가 의무인 품목에 커피는 포함되지 않습니다.</strong> 아이스크림류·빙과·식용얼음·설탕류 같은 품목만 해당합니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">그래서 무엇을 보나</div>
+      맛을 기준으로 산다면 봐야 할 것은 기한이 아니라 <strong>로스팅 일자</strong>입니다. 그런데 그것은 법이 요구하지 않는 정보라, <strong>표기해 둔 로스터리가 스스로 신선도에 자신이 있다는 신호</strong>로 읽는 편이 실용적입니다. 기한만 길게 적힌 봉지는 언제 볶았는지 알 방법이 없습니다.
+    </div>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">Q1. 원두를 냉동실에 넣어도 되나요?</div>
+      됩니다. 다만 완전 밀폐 용기에 소분해서 넣고, 꺼낼 때는 일주일치 이내로 빠르게 덜어 낸 뒤 결로가 생기기 전에 되돌려야 합니다. 기간은 3~4개월을 상한으로 봅니다. 녹였다 다시 얼리는 것만은 피하십시오.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q2. 냉장과 냉동 중 어느 쪽이 낫나요?</div>
+      12개월까지 추적한 2023년 연구에서는 영하 10℃와 10℃의 결과가 비슷했고, 20℃만 확연히 나빴습니다. 즉 온도를 낮추는 것 자체가 핵심이라 어느 쪽이든 큰 차이는 없습니다. 실제 차이는 밀폐 상태와 여닫는 횟수에서 생깁니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q3. 개봉하지 않은 봉지는 얼마나 두어도 되나요?</div>
+      밸브가 달린 봉지는 내부 산소가 거의 0%로 유지되므로 개봉 전에는 상당히 오래 갑니다. 다만 한 조사에서 시료의 절반에 실링 누출이 발견됐고, 진공 포장 홀빈이라도 9개월부터 관능 품질이 떨어지기 시작했다는 보고가 있습니다. 개봉 전이라도 로스팅 후 2~3개월 안에 여는 편이 낫습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q4. 갈아 놓은 커피는 며칠까지 괜찮나요?</div>
+      NCA 기준으로 실온 밀폐 시 1~2주입니다. 홀빈의 1~3주보다 짧습니다. 분쇄 커피는 가스 방출 속도가 홀빈의 약 두 배이고, 지질 산화로 생기는 냄새 성분이 분쇄 후 24시간 구간에 나타납니다. 밀폐 용기 사용이 특히 중요합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q5. 봉지에 적힌 기한이 남았는데 맛이 없습니다. 상한 건가요?</div>
+      상한 것이 아니라 향이 빠진 것입니다. 품질유지기한은 안전과 품질의 하한선을 뜻할 뿐, 향미가 가장 좋은 구간을 알려 주지 않습니다. 로스팅 후 1주부터 훈련된 평가자가 차이를 감지하고, 공기에 노출된 상태로 4개월이 지나면 산패한 냄새가 잡힙니다. 기한이 아니라 로스팅 일자를 기준으로 삼으십시오.
+    </div>
+
+    <!-- 마무리 -->
+    <div class="closing-box">
+      <h3>☕ 정리하면</h3>
+      <p>막아야 할 것은 <strong>공기·수분·열·빛</strong> 네 가지입니다. 이 넷을 막지 못하면 용기의 가격은 의미가 없습니다.</p>
+      <p>실온 밀폐 기준으로 <strong>홀빈 1~3주, 분쇄 커피 1~2주</strong>입니다. NCA는 아예 1~2주치만 사라고 권합니다.</p>
+      <p>산소는 결정적입니다. <strong>농도를 0.5%로 낮추면 기한이 약 20배</strong> 늘어납니다. 가정에서 통제할 수 있는 것은 봉지를 여는 횟수입니다.</p>
+      <p>냉동은 유효합니다. <strong>9주 뒤 향 성분이 절반 남았고</strong>, 차게 갈면 입자도 고르게 나옵니다. 다만 <strong>완전 밀폐·소분·3~4개월</strong>이 조건입니다.</p>
+      <p>냉장은 온도만 보면 유리하지만 <strong>결로와 냄새 흡수</strong>가 변수입니다. 밀폐가 안 되면 서늘한 찬장이 낫습니다.</p>
+      <p>마지막으로 봉지에서 볼 것은 기한이 아니라 <strong>로스팅 일자</strong>입니다. 국내법상 의무 표기가 아니므로, 적어 둔 로스터리를 고르는 것 자체가 하나의 기준이 됩니다.</p>
+    </div>
+
+
+    
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-02"><div class="rc-cat">🔥 로스팅 & 원두 과학</div><div class="rc-title">생두가 커피가 되는 8분 — 로스팅의 화학반응, 당신이 몰랐던 진실</div><div class="rc-date">2026. 08. 02</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-30"><div class="rc-cat">🔥 로스팅 & 원두 과학</div><div class="rc-title">원두가 &#39;맛있어지는&#39; 순간 — 로스팅 화학반응의 비밀과 원두를 죽이는 보관 실수</div><div class="rc-date">2026. 07. 30</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-23"><div class="rc-cat">🔥 로스팅 & 원두 과학</div><div class="rc-title">당신의 원두가 맛없는 진짜 이유 — 로스팅의 숨겨진 과학</div><div class="rc-date">2026. 07. 23</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#원두보관</span>
+      <span class="tag">#보관법</span>
+      <span class="tag">#냉동보관</span>
+      <span class="tag">#냉장보관</span>
+      <span class="tag">#신선도</span>
+      <span class="tag">#디개싱</span>
+      <span class="tag">#소비기한</span>
+      <span class="tag">#품질유지기한</span>
+      <span class="tag">#로스팅일자</span>
+      <span class="tag">#홈카페</span>
+    </div>
+
+    <!-- 푸터 -->
+    <div class="footer">
+      <p>✍️ 작성일: 2026년 8월 14일 | 바리스타 스페셜티 커피 저널</p>
+      <p>보관 조건·기간 기준은 전미커피협회(NCA) 보관 가이드, 산소·스테일링 측정치와 디개싱 20일 기준은 스페셜티커피협회(SCA) 문헌 리뷰 및 Coffee Decoded 자료, 냉동·저온 효과는 Scientific Reports(2016·2023)·Beverages(2018)·Foods(2024), 국내 표기 규정은 식품의약품안전처 「식품등의 표시기준」을 참고했습니다. 제시한 기간은 출발점이며 포장 상태·개봉 빈도·보관 환경에 따라 달라질 수 있습니다.</p>
+    </div>
+
+  </div><!-- /article-body -->
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
