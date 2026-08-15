@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>핸드드립 내리는법 — 물 온도와 뜸들이기 시간, 물줄기 붓는 순서 | 바리스타 스페셜티</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<meta name="description" content="물 온도 90~96℃, 뜸 30~45초, 총 2분 30초~3분 30초 — SCA 기준과 2020년 연구로 확인한 비율·시간·붓는 순서 정리">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-15">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="핸드드립 내리는법 — 물 온도와 뜸들이기 시간, 물줄기 붓는 순서 | 바리스타 스페셜티">
+<meta property="og:description" content="물 온도 90~96℃, 뜸 30~45초, 총 2분 30초~3분 30초 — SCA 기준과 2020년 연구로 확인한 비율·시간·붓는 순서 정리">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-15">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-15T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-15T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-15#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-15", "headline": "핸드드립 내리는법 — 물 온도와 뜸들이기 시간, 물줄기 붓는 순서 | 바리스타 스페셜티", "description": "물 온도 90~96℃, 뜸 30~45초, 총 2분 30초~3분 30초 — SCA 기준과 2020년 연구로 확인한 비율·시간·붓는 순서 정리", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-15", "dateModified": "2026-08-15", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법</span>
+      <span class="badge">핸드드립</span>
+      <span class="badge">물 온도·뜸</span>
+    </div>
+    <h1>핸드드립 내리는법<br/>— 물 온도와 뜸들이기 시간, 물줄기 붓는 순서</h1>
+    <p class="subtitle">물 온도 90~96℃, 뜸 30~45초, 총 2분 30초~3분 30초 — SCA 기준과 2020년 연구로 확인한 비율·시간·붓는 순서 정리</p>
+    <div class="meta-row">
+      <span>📅 2026년 8월 15일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 9분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+
+    <!-- 훅 -->
+    <div class="hook">
+      "같은 원두, 같은 저울인데 왜 어제와 오늘 맛이 다를까?"<br/>
+      핸드드립에서 결과를 가르는 것은 손목 각도가 아니라 <strong>물 온도·뜸 시간·붓는 순서</strong> 세 가지입니다. 기록하지 않으면 매번 다른 커피가 나옵니다.
+    </div>
+
+    <!-- 핵심 요약 박스 -->
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>물 온도의 국제 기준값 — SCA 규격이 명시한 온도 구간과 측정 시점</li>
+        <li>"93℃가 정답"이라는 통념을 검증한 2020년 연구 결과</li>
+        <li>뜸들이기에 붓는 물의 양과 시간, 그리고 그 근거의 수준</li>
+        <li>20g 기준 실제 붓는 순서 — 누적 물량과 시각을 적은 표</li>
+        <li>맛으로 되짚는 진단 — 시거나 쓸 때 무엇부터 손대는지</li>
+        <li>수돗물을 그대로 써도 되는지 — 경도·알칼리도 기준값</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">1. 먼저 정할 것은 비율입니다</h2>
+    <p>물 온도부터 묻는 분이 많지만, 순서상 먼저 정해야 하는 것은 <strong>원두와 물의 비율</strong>입니다. 비율이 흔들리면 온도를 아무리 정확히 맞춰도 농도가 매번 달라지기 때문입니다.</p>
+    <p>스페셜티커피협회(SCA)의 가정용 브루어 규격인 <strong>SCA Standard 310-2021</strong>은 기준 비율을 <strong>신선한 물 1.000kg당 원두 55g</strong>으로 명시합니다. 물 1L에 55g, 환산하면 약 <strong>1:18</strong>입니다. 같은 규격은 목표 농도를 <strong>TDS 1.15~1.55%</strong> 구간으로 제시합니다.</p>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">55 g/L</span><div class="label">SCA 310-2021<br/>기준 비율(약 1:18)</div></div>
+      <div class="data-card"><span class="num">90~96℃</span><div class="label">SCA 310-2021<br/>슬러리 온도 구간</div></div>
+      <div class="data-card"><span class="num">1.15~1.55%</span><div class="label">SCA 310-2021<br/>목표 농도(TDS)</div></div>
+    </div>
+
+    <p>국내 카페와 홈카페에서 흔히 쓰는 <strong>1:15~1:17</strong>은 이보다 진한 쪽입니다. 어느 쪽이 옳다기보다, 55g/L을 기준선으로 두고 취향에 따라 진하게 또는 연하게 옮겨 간다고 이해하는 편이 정확합니다. 중요한 것은 <strong>한 번 정한 비율을 기록해 두는 것</strong>입니다. 비율을 고정해야 나머지 변수의 효과가 눈에 보입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">계량 기준</div>
+      물의 양은 부피(ml)가 아니라 <strong>무게(g)</strong>로 재는 편이 정확합니다. 물 1ml는 상온에서 약 1g이라 숫자는 비슷하지만, 드립 도중 눈금을 읽는 것보다 저울 위에서 무게를 보는 쪽이 오차가 작습니다. 원두 20g에 물 360g이면 1:18, 물 320g이면 1:16입니다.
+    </div>
+
+    <h2 class="section-title">2. 물 온도 — 기준값과, 실제로 중요한 정도</h2>
+    <p>SCA 310-2021은 온도를 이렇게 규정합니다. <strong>"전체 물의 33%가 커피에 분사된 시점까지 슬러리 온도가 90~96℃ 구간에 도달해야 한다"</strong>는 것입니다. 여기서 슬러리란 물과 커피 가루가 섞인 상태를 말합니다. 즉 <strong>주전자 안의 물 온도가 아니라 커피와 만난 뒤의 온도</strong>가 기준입니다.</p>
+    <p>이 차이는 실전에서 꽤 큽니다. 드리퍼와 서버가 차가우면 물이 닿는 순간 몇 도가 떨어집니다. 그래서 종이 필터를 헹구는 <strong>린싱</strong> 과정이 필터 냄새 제거뿐 아니라 기구 예열 역할을 겸합니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">주전자 온도를 맞추는 현실적인 방법</div>
+      온도계가 없다면 <strong>끓인 뒤 30초에서 1분 정도</strong> 두었다가 붓습니다. 주전자 크기와 실온에 따라 다르지만 대체로 92~95℃ 부근으로 내려옵니다. 갓 끓은 물을 바로 부으면 100℃에 가까워 기준 상단을 넘습니다.
+    </div>
+
+    <p>그런데 온도에 지나치게 매달릴 필요는 없다는 연구가 있습니다. 2020년 <em>Scientific Reports</em>에 실린 Batali·Ristenpart·Guinard의 논문은 브루잉 온도를 <strong>87℃·90℃·93℃</strong> 세 조건으로 나누고, 농도(TDS)와 수율(PE)을 고정한 채 훈련된 패널로 관능 평가를 했습니다. 결과는 <strong>"브루잉 온도는 농도와 수율이 같다면 드립 커피의 관능 특성에 별다른 영향을 주지 않는다"</strong>였습니다. 31개 평가 항목 중 차이가 나타난 것은 <em>고소함(Nutty)</em> 하나뿐이었습니다.</p>
+    <p>같은 연구에서 실제로 맛을 갈랐던 것은 <strong>농도와 수율</strong>이었습니다. 농도가 높을수록 쓴맛·떫은맛·로스티 계열이 강해졌고, 수율이 높을수록 신맛과 과일 향이 줄고 로스팅 향이 늘었습니다. 연구진의 표현을 빌리면 <strong>"어떤 경로로 갔느냐가 아니라 어디에 도착했느냐가 중요하다"</strong>는 것입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">그래서 이렇게 정리됩니다</div>
+      온도는 <strong>90~96℃ 구간 안에 들어와 있으면 충분</strong>합니다. 1℃ 단위로 맞추는 노력보다, 같은 비율에서 <strong>분쇄도와 붓는 속도로 농도를 맞추는 연습</strong>이 결과를 더 크게 바꿉니다. 다만 이 결론은 <strong>구간 안쪽</strong>에서의 이야기입니다. 80℃ 아래로 내려가면 추출 자체가 부족해집니다.
+    </div>
+
+    <h2 class="section-title">3. 뜸들이기 — 물의 양과 시간</h2>
+    <p>뜸들이기(블루밍)는 본격적으로 붓기 전에 소량의 물로 가루 전체를 적시고 잠시 기다리는 과정입니다. 목적은 <strong>로스팅 과정에서 원두 안에 갇힌 이산화탄소를 빼내는 것</strong>입니다. 가스가 남아 있으면 물이 커피 층을 고르게 통과하지 못하고 밀려나면서 추출이 불균일해집니다.</p>
+    <p>업계에서 널리 쓰는 기준은 <strong>원두 무게의 2~3배 물</strong>을 붓고 <strong>30~45초</strong> 기다리는 것입니다. 원두 20g이면 물 40~60g입니다. 다만 이 숫자가 SCA 규격에 명시된 값은 아닙니다. SCA 310-2021은 온도·비율·농도를 규정하지만 뜸 시간은 규정하지 않습니다. <strong>기구 제조사 매뉴얼과 현장 관행에서 수렴한 값</strong>으로 이해하는 편이 정확합니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>상황</th><th>부풀어 오르는 정도</th><th>조정</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">로스팅 3~10일</td><td>크게 부풂 — 거품이 솟음</td><td>45초까지 길게, 물도 3배까지</td></tr>
+        <tr><td>로스팅 2~4주</td><td>보통</td><td>30~40초, 물 2~2.5배</td></tr>
+        <tr><td>로스팅 1개월 이상</td><td>거의 부풀지 않음</td><td>30초면 충분 — 가스가 이미 빠짐</td></tr>
+      </tbody>
+    </table>
+
+    <p>부풀지 않는다고 실패한 것은 아닙니다. 앞선 글에서 다뤘듯 로스팅 후 시간이 지날수록 이산화탄소는 빠져나가므로, <strong>부푸는 정도는 신선도의 지표</strong>일 뿐 맛의 보증은 아닙니다. 반대로 갓 볶은 원두는 가스가 많아 뜸을 짧게 주면 이후 물빠짐이 불안정해집니다.</p>
+
+    <h2 class="section-title">4. 붓는 순서 — 20g 기준 실제 진행</h2>
+    <p>아래는 원두 20g, 물 320g(1:16), 원뿔형 드리퍼를 기준으로 한 진행표입니다. 물량은 <strong>누적값</strong>이며, 시각은 첫 물이 닿은 순간을 0초로 봅니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>시각</th><th>동작</th><th>누적 물량</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">-0:30</td><td>종이 필터 린싱 · 드리퍼와 서버 예열 · 헹군 물 버리기</td><td>—</td></tr>
+        <tr><td class="em">0:00</td><td>중앙부터 바깥으로 나선을 그리며 가루 전체를 적심</td><td>40~50g</td></tr>
+        <tr><td>0:00~0:40</td><td>뜸 — 기다림. 가루가 부푸는 것을 관찰</td><td>40~50g</td></tr>
+        <tr><td class="em">0:40</td><td>1차 본추출 — 중앙에서 500원 동전 크기로 천천히</td><td>150g</td></tr>
+        <tr><td>1:20</td><td>2차 — 물이 절반쯤 내려갔을 때 다시 붓기</td><td>240g</td></tr>
+        <tr><td>1:50</td><td>3차 — 마지막, 가장자리 가루를 안쪽으로 정리</td><td>320g</td></tr>
+        <tr><td class="em">2:30~3:30</td><td>물이 다 내려가면 드리퍼 분리</td><td>완료</td></tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <div class="tip-title">붓는 동안 지킬 것</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>물줄기는 가늘고 일정하게.</strong> 굵게 부으면 가루가 파여 물길이 생기고, 그 길로만 물이 빠지면서 추출이 얕아집니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>가장자리 벽면에 직접 붓지 않습니다.</strong> 필터 벽을 타고 흐른 물은 커피 층을 통과하지 않고 그대로 내려갑니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>물이 완전히 빠지기 전에</strong> 다음 물을 붓습니다. 층이 마르면 그 사이 온도가 떨어지고 추출이 끊깁니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>총 시간은 2분 30초~3분 30초</strong>를 목표로 잡습니다. 이는 규격값이 아니라 원뿔형 드리퍼에서 통용되는 범위입니다.</div></div>
+    </div>
+
+    <h2 class="section-title">5. 맛으로 되짚는 진단</h2>
+    <p>맛이 어긋났을 때 손댈 곳은 정해져 있습니다. 앞의 2020년 연구가 보여 준 방향을 실전용으로 옮기면 다음과 같습니다. 신맛은 추출이 덜 된 신호, 쓴맛과 떫은맛은 과하게 뽑힌 신호로 읽습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>증상</th><th>가장 흔한 원인</th><th>먼저 바꿀 것</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">시고 맹물 같다</td><td>추출 부족 — 물이 너무 빨리 빠짐</td><td>분쇄를 한 단계 가늘게</td></tr>
+        <tr><td class="em">쓰고 텁텁하다</td><td>과다 추출 — 물이 너무 오래 머묾</td><td>분쇄를 한 단계 굵게</td></tr>
+        <tr><td>향은 좋은데 밍밍하다</td><td>농도 부족</td><td>물량을 줄여 비율을 1:15~1:16으로</td></tr>
+        <tr><td>진한데 거칠다</td><td>농도 과다</td><td>물량을 늘려 1:17~1:18로</td></tr>
+        <tr><td>매번 결과가 다르다</td><td>붓는 속도가 일정하지 않음</td><td>저울 위에서 시간·물량을 함께 기록</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      <div class="note-label">한 번에 하나만</div>
+      분쇄도와 물 온도와 비율을 동시에 바꾸면 무엇이 효과가 있었는지 알 수 없습니다. <strong>한 번에 한 가지만 바꾸고 결과를 적어 두십시오.</strong> 세 번만 반복해도 자기 원두의 기준값이 잡힙니다.
+    </div>
+
+    <h2 class="section-title">6. 물 — 수돗물을 그대로 써도 되나</h2>
+    <p>추출된 액체의 98% 이상이 물이므로 물의 성분은 결과에 직접 관여합니다. SCA가 25 매거진에서 정리한 기준을 보면 <strong>총경도 20~250ppm(CaCO₃ 환산)</strong>, <strong>알칼리도 최소 20ppm</strong>이 언급됩니다. 참고로 미국 수돗물 평균은 알칼리도 약 150ppm, 총경도 약 170ppm으로 제시됩니다.</p>
+    <p>알칼리도는 산을 중화하는 완충 능력입니다. 이 값이 높으면 커피의 산미가 눌려 밋밋해지고, 지나치게 낮으면 신맛이 날카롭게 튑니다. 경도가 높으면 기구에 스케일이 끼는 문제도 함께 생깁니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">가정에서 할 수 있는 선택</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>정수 필터를 거친 물</strong>이 가장 무난합니다. 염소 냄새를 제거하는 것만으로도 향의 선명도가 달라집니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>증류수나 정제수 단독 사용은 피합니다.</strong> 미네랄이 거의 없으면 추출이 제대로 일어나지 않습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text">생수를 쓴다면 라벨의 <strong>경도 수치</strong>를 확인합니다. 경도가 매우 높은 제품은 커피용으로 적합하지 않습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text">한 번 끓였던 물을 다시 끓여 쓰는 것은 권하지 않습니다. 용존 산소가 줄어 향이 둔해진다고 보는 견해가 일반적입니다.</div></div>
+    </div>
+
+    <h2 class="section-title">7. 드리퍼가 달라지면 무엇이 달라지나</h2>
+    <p>기구를 바꾸면 <strong>물이 빠지는 속도</strong>가 달라집니다. 그 결과 같은 분쇄도라도 접촉 시간이 달라져 농도가 변합니다. 기구를 바꿀 때 분쇄도를 함께 조정해야 하는 이유입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>형태</th><th>물빠짐</th><th>맞추는 방향</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">원뿔형 · 큰 단일 추출구</td><td>빠름</td><td>가늘게 갈고 천천히 붓기</td></tr>
+        <tr><td class="em">사다리꼴 · 작은 구멍 여러 개</td><td>느림</td><td>굵게 갈고 물줄기를 안정적으로</td></tr>
+        <tr><td>평평한 바닥형</td><td>중간 — 층이 고르게 잠김</td><td>층 두께가 얇아 균일한 편</td></tr>
+      </tbody>
+    </table>
+
+    <p>분쇄 굵기 자체는 앞서 다룬 기준을 그대로 씁니다. 푸어오버 계열은 대체로 <strong>400~950µm</strong> 범위에 놓이며, 같은 그라인더 숫자라도 기구가 달라지면 이 안에서 위치가 이동합니다.</p>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">Q1. 물 온도는 정확히 몇 도가 맞나요?</div>
+      SCA 310-2021은 물이 커피와 섞인 슬러리 온도가 90~96℃ 구간에 도달하도록 규정합니다. 다만 2020년 <em>Scientific Reports</em> 연구는 농도와 수율을 같게 맞추면 87℃와 93℃ 사이에 관능 차이가 거의 없다고 보고했습니다. 구간 안에 들어와 있으면 충분하며, 1℃ 단위 조정보다 분쇄도와 붓는 속도가 결과를 더 크게 바꿉니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q2. 뜸은 몇 초가 적당한가요?</div>
+      원두 무게의 2~3배 물을 붓고 30~45초가 일반적인 관행입니다. 로스팅한 지 얼마 안 된 원두일수록 가스가 많아 길게, 한 달이 지난 원두는 30초면 충분합니다. 이 값은 SCA 규격에 명시된 수치가 아니라 기구 매뉴얼과 현장에서 수렴한 기준입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q3. 커피가 계속 시게 나옵니다. 온도를 올려야 하나요?</div>
+      온도보다 분쇄도를 먼저 봅니다. 신맛은 대개 추출 부족의 신호이고, 가장 큰 원인은 분쇄가 굵어 물이 빨리 빠지는 것입니다. 분쇄를 한 단계 가늘게 하고 총 시간이 2분 30초 이상 나오는지 확인하십시오. 그래도 같다면 물량을 줄여 비율을 진하게 옮깁니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q4. 총 추출 시간은 얼마가 기준인가요?</div>
+      원뿔형 드리퍼에서 20g 안팎을 내릴 때 2분 30초~3분 30초가 통용되는 범위입니다. SCA 310-2021은 브루잉 시간을 규정하지 않으므로 절대 기준은 아닙니다. 시간 자체를 맞추기보다, 같은 분쇄도에서 시간이 크게 달라졌다면 붓는 속도나 물길이 흐트러진 신호로 읽는 편이 유용합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q5. 종이 필터는 꼭 헹궈야 하나요?</div>
+      권장됩니다. 종이 맛과 냄새를 줄이는 효과가 있고, 동시에 드리퍼와 서버를 예열해 초기 온도 하락을 막아 줍니다. SCA 규격이 슬러리 온도를 기준으로 삼는 만큼, 차가운 기구에 붓는 것은 실제 접촉 온도를 떨어뜨립니다. 헹군 물은 반드시 버리고 시작합니다.
+    </div>
+
+    <!-- 마무리 -->
+    <div class="closing-box">
+      <h3>☕ 정리하면</h3>
+      <p>먼저 <strong>비율</strong>을 고정합니다. SCA 기준은 물 1L당 원두 55g(약 1:18)이고, 진하게 마시려면 1:15~1:16으로 옮깁니다.</p>
+      <p>물 온도는 <strong>90~96℃ 구간</strong>이면 충분합니다. 2020년 연구는 농도와 수율이 같으면 87~93℃ 사이에 관능 차이가 거의 없다고 보고했습니다.</p>
+      <p>뜸은 <strong>원두 무게의 2~3배 물로 30~45초</strong>가 관행입니다. 갓 볶은 원두일수록 길게 줍니다.</p>
+      <p>붓기는 <strong>가늘고 일정하게, 중앙에서 나선으로</strong>. 벽면에 직접 붓지 않고, 층이 마르기 전에 다음 물을 올립니다.</p>
+      <p>맛이 어긋나면 <strong>한 번에 한 가지만</strong> 바꿉니다. 시면 가늘게, 쓰면 굵게가 첫 번째 손잡이입니다.</p>
+      <p>마지막으로 물입니다. <strong>총경도 20~250ppm, 알칼리도 20ppm 이상</strong>이 기준선이며, 정수 필터를 거친 물이 가장 무난합니다.</p>
+    </div>
+
+
+
+    
+
+
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-13"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">콜드브루 만드는법 — 물 비율과 침출 시간, 더치커피와의 차이</div><div class="rc-date">2026. 08. 13</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-12"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">그라인더 분쇄도 조절 — 기구별 굵기 기준과 마이크론 비교</div><div class="rc-date">2026. 08. 12</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-08"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">당신의 커피가 매일 맛이 다른 진짜 이유 — 추출의 과학, 프로 바리스타도 틀리는 변수들</div><div class="rc-date">2026. 08. 08</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#핸드드립</span>
+      <span class="tag">#푸어오버</span>
+      <span class="tag">#물온도</span>
+      <span class="tag">#뜸들이기</span>
+      <span class="tag">#블루밍</span>
+      <span class="tag">#추출시간</span>
+      <span class="tag">#드리퍼</span>
+      <span class="tag">#브루잉비율</span>
+      <span class="tag">#홈카페</span>
+    </div>
+
+    <!-- 푸터 -->
+    <div class="footer">
+      <p>✍️ 작성일: 2026년 8월 15일 | 바리스타 스페셜티 커피 저널</p>
+      <p>비율·온도·농도 기준값은 스페셜티커피협회(SCA) Standard 310-2021, 브루잉 온도의 관능 영향은 Batali·Ristenpart·Guinard의 Scientific Reports(2020) 연구, 물 경도·알칼리도 기준은 SCA 25 매거진 자료를 참고했습니다. 뜸 시간·총 추출 시간은 규격값이 아닌 기구 매뉴얼·현장 관행 기준임을 본문에 명시했습니다.</p>
+    </div>
+
+  </div><!-- /article-body -->
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
