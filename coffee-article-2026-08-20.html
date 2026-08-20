@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>에어로프레스 레시피 — 분쇄도와 물 온도, 정방향·역방향 차이 | 바리스타 스페셜티</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<meta name="description" content="제조사 공식 기준인 14~15g·80~85℃·중간 가는 분쇄를 출발점으로, 정방향과 역방향의 차이와 필터별 굵기 조정까지 정리">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="article:published_time" content="2026-08-20T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-20T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-20#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-20", "headline": "에어로프레스 레시피 — 분쇄도와 물 온도, 정방향·역방향 차이 | 바리스타 스페셜티", "description": "제조사 공식 기준인 14~15g·80~85℃·중간 가는 분쇄를 출발점으로, 정방향과 역방향의 차이와 필터별 굵기 조정까지 정리", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-20", "dateModified": "2026-08-20", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-20">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="에어로프레스 레시피 — 분쇄도와 물 온도, 정방향·역방향 차이 | 바리스타 스페셜티">
+<meta property="og:description" content="제조사 공식 기준인 14~15g·80~85℃·중간 가는 분쇄를 출발점으로, 정방향과 역방향의 차이와 필터별 굵기 조정까지 정리">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-20">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-20T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-20T09:00:00+09:00">
+<!-- SEO:END -->
+</head>
+<body>
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법</span>
+      <span class="badge">에어로프레스</span>
+      <span class="badge">분쇄도·물 온도</span>
+    </div>
+    <h1>에어로프레스 레시피<br/>— 분쇄도와 물 온도, 정방향·역방향 차이</h1>
+    <p class="subtitle">제조사 공식 기준인 80~85℃·14~15g·중간 가는 분쇄를 출발점으로, 침지 시간과 프레스 속도를 어떻게 조정할지 정리했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 8월 20일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 9분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+
+    <!-- 훅 -->
+    <div class="hook">
+      "레시피를 찾아봤는데 사람마다 다 다릅니다. 뭘 따라야 하나요?"<br/>
+      에어로프레스는 변수를 묶어 두지 않은 기구입니다. 그래서 레시피가 수백 가지로 갈립니다. 기준선 하나를 먼저 세우고 거기서 한 가지씩 움직이는 편이, 남의 레시피를 옮겨 적는 것보다 빠릅니다.
+    </div>
+
+    <!-- 핵심 요약 -->
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>제조사가 공식으로 제시하는 원두량·물 온도·분쇄 굵기의 정확한 수치</li>
+        <li>물 온도를 80~85℃로 낮춰 잡는 이유와 로스팅 정도별 기준</li>
+        <li>분쇄 굵기의 위치 — 드립과 에스프레소 사이에서 어디쯤인가</li>
+        <li>정방향과 역방향(거꾸로 꽂는 방식)이 실제로 무엇을 바꾸는가</li>
+        <li>종이 필터와 스테인리스 필터를 바꿀 때 굵기를 함께 손봐야 하는 이유</li>
+        <li>비율을 정하는 기준 — 진하게 뽑고 물을 타는 방식이 통하는 구조</li>
+        <li>맛이 어긋났을 때 무엇부터 한 단계 움직일지 정리한 표</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">1. 에어로프레스는 침지식이면서 압력을 쓴다</h2>
+    <p>에어로프레스는 스탠퍼드 공대 강사였던 앨런 애들러가 2004년에 시제품을 만들어 2005년 11월 시애틀 커피페스트에서 처음 공개한 기구입니다. 구조는 단순합니다. 원통에 가루와 물을 넣어 담가 두었다가, 플런저를 눌러 필터 밖으로 밀어냅니다.</p>
+    <p>여기서 성격이 갈립니다. 프렌치프레스처럼 <strong>담가 두는 침지식</strong>인데, 마지막에 <strong>손으로 미는 압력</strong>이 더해집니다. 이 압력은 액체를 필터 밖으로 내보내는 역할이 주된 것이지, 에스프레소 머신의 9바처럼 추출을 지배하는 힘이 아닙니다.</p>
+    <p>그래서 "에어로프레스로 에스프레소를 만든다"는 표현은 정확하지 않습니다. 아주 진한 농도의 커피는 만들 수 있지만, 압력의 크기가 다르므로 같은 음료가 되지는 않습니다. 기대치를 여기서 맞춰 두면 나머지 조정이 훨씬 수월합니다.</p>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">14~15g</span><span class="label">공식 기준 원두량(1잔)</span></div>
+      <div class="data-card"><span class="num">80~85℃</span><span class="label">공식 권장 물 온도</span></div>
+      <div class="data-card"><span class="num">중간 가늘게</span><span class="label">드립과 에스프레소 사이</span></div>
+      <div class="data-card"><span class="num">18~22%</span><span class="label">SCA가 제시하는 적정 수율</span></div>
+    </div>
+
+    <h2 class="section-title">2. 공식 기준 — 여기서 출발한다</h2>
+    <p>제조사가 안내하는 값은 의외로 구체적입니다. 원두는 <strong>수북하게 뜬 계량스푼 한 술, 무게로는 1잔당 14~15g</strong>입니다. 굵기는 <strong>중간 가는 분쇄(medium-fine)</strong>로, 위치는 <strong>드립용과 에스프레소용 사이</strong>라고 설명합니다.</p>
+    <p>붓는 방법에도 지침이 있습니다. 물을 붓기 전에 <strong>가볍게 흔들어 가루층을 평평하게 만들고</strong>, 물은 <strong>천천히</strong> 부으라는 것입니다. 층이 한쪽으로 기울어 있으면 물이 얕은 쪽으로만 빠지고, 그쪽만 과하게 뽑히면서 맛이 갈라집니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">기준선을 먼저 고정한다</div>
+      레시피를 바꿀 때는 <strong>한 번에 한 가지만</strong> 움직입니다. 굵기와 온도를 동시에 바꾸면 무엇이 효과가 있었는지 알 수 없습니다. 원두량과 물의 양을 저울로 고정해 두고, 굵기 → 시간 → 온도 순으로 하나씩 확인하는 것이 가장 빠른 길입니다.
+    </div>
+
+    <h2 class="section-title">3. 물 온도 — 왜 끓는 물이 아닌가</h2>
+    <p>제조사 권장값은 <strong>다크 로스트 80℃(175℉), 미디엄·라이트 로스트 85℃(185℉)</strong>입니다. 드립에서 흔히 쓰는 90~93℃보다 낮습니다.</p>
+    <p>이유는 접촉 방식에 있습니다. 드립은 물이 가루층을 흘러 지나가지만, 에어로프레스는 물이 가루 전체를 감싸고 머무릅니다. 같은 온도라면 담가 두는 쪽이 더 많이, 더 빨리 뽑힙니다. 온도를 낮추는 것은 그 속도를 늦춰 쓴맛 쪽으로 넘어가는 것을 막는 조치입니다.</p>
+    <p>로스팅이 강할수록 온도를 더 낮추는 것도 같은 맥락입니다. 다크 로스트는 세포 조직이 더 부서져 있어 성분이 쉽게 빠져나옵니다. 반대로 라이트 로스트는 단단해서 잘 안 나오므로 온도를 조금 올려 잡습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>로스팅 정도</th><th>권장 온도</th><th>온도를 어긋냈을 때</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>다크 로스트</td><td class="em">약 80℃</td><td>높이면 탄 맛·재 맛이 앞으로 나옴</td></tr>
+        <tr><td>미디엄 로스트</td><td class="em">약 85℃</td><td>낮추면 단맛이 덜 열리고 밋밋해짐</td></tr>
+        <tr><td>라이트 로스트</td><td class="em">85℃ 이상</td><td>낮으면 신맛만 남고 뒷맛이 짧아짐</td></tr>
+      </tbody>
+    </table>
+
+    <p>온도계가 없다면 끓인 물을 다른 잔에 한 번 옮겨 담고 30초에서 1분 정도 두면 대체로 그 범위에 들어옵니다. 계절과 잔의 재질에 따라 달라지므로 정확한 값은 아니지만, 끓는 물을 바로 붓는 것보다는 훨씬 안정적입니다.</p>
+
+    <h2 class="section-title">4. 분쇄 굵기 — 시간과 짝을 이룬다</h2>
+    <p>굵기는 단독으로 정하는 값이 아닙니다. <strong>담가 두는 시간과 짝</strong>입니다. 짧게 담글수록 가늘게, 길게 담글수록 굵게 가는 것이 방향입니다.</p>
+    <p>기준선은 제조사가 말하는 중간 가는 굵기, 담그는 시간은 대체로 <strong>30초에서 1분 남짓</strong>입니다. 이 조합에서 시작해 결과를 보고 움직입니다. 시간을 2분 이상으로 늘리는 레시피도 널리 쓰이는데, 그때는 굵기를 함께 굵혀야 균형이 맞습니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">굵기를 정하는 순서</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text">기준 굵기로 한 잔 내리고 <strong>맛을 먼저 판단</strong>합니다. 신맛이 앞서면 덜 뽑힌 것, 쓰고 텁텁하면 과하게 뽑힌 것입니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text">덜 뽑혔으면 <strong>한 단계 가늘게</strong>, 과하면 <strong>한 단계 굵게</strong> 갑니다. 시간은 그대로 둡니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text">굵기를 두 단계 이상 움직여도 안 잡히면 그때 <strong>시간이나 온도</strong>를 손댑니다. 순서를 지키는 것이 핵심입니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-text">누르는 데 힘이 몹시 들거나 30초 넘게 걸리면 <strong>지나치게 가는 것</strong>입니다. 무리해서 밀지 말고 굵기를 되돌립니다.</div>
+      </div>
+    </div>
+
+    <p>미분이 많은 저가 그라인더에서는 같은 눈금이라도 결과가 덜 일정합니다. 담그는 시간을 조금 길게 잡고 굵기를 한 단계 굵히면 미분의 영향이 줄어드는 경우가 많습니다.</p>
+
+    <h2 class="section-title">5. 정방향과 역방향의 차이</h2>
+    <p>정방향은 설명서대로 잔 위에 세워 두고 쓰는 방식이고, 역방향은 플런저를 아래에 두고 <strong>기구를 거꾸로 세워</strong> 담근 뒤 마지막에 뒤집는 방식입니다.</p>
+    <p>제조사도 이 방식의 존재를 안내하고 있습니다. 사람들이 역방향을 쓰는 이유는 <strong>커피가 미리 아래로 새어 나가는 것을 막고 담그는 시간을 온전히 통제하기 위해서</strong>라고 설명합니다. 다만 공식 기본 사용법으로 제시하는 것은 정방향입니다.</p>
+    <p>정리하면 역방향이 바꾸는 것은 <strong>맛의 원리가 아니라 시간의 통제권</strong>입니다. 침지 시간을 2~3분으로 길게 잡거나 굵게 갈아 쓸 때 실익이 생깁니다. 30초 내외로 짧게 뽑는다면 새어 나가는 양이 적어 차이가 거의 없습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>정방향</th><th>역방향</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>제조사 기본 안내</td><td class="em">기본 사용법</td><td>존재를 안내(선택)</td></tr>
+        <tr><td>담그는 동안 흘러내림</td><td>조금씩 발생</td><td class="em">거의 없음</td></tr>
+        <tr><td>긴 침지(2분 이상)</td><td>통제가 어려움</td><td class="em">유리함</td></tr>
+        <tr><td>뒤집는 동작</td><td class="em">없음</td><td>필요 — 화상 위험</td></tr>
+        <tr><td>초보자 권장도</td><td class="em">높음</td><td>익숙해진 뒤</td></tr>
+      </tbody>
+    </table>
+
+    <div class="note-box">
+      <div class="note-label">역방향을 쓸 때 주의</div>
+      뜨거운 물이 든 상태로 기구를 뒤집는 동작이 들어갑니다. 필터 캡이 덜 잠겼거나 플런저가 충분히 들어가 있지 않으면 <strong>내용물이 쏟아질 수 있습니다.</strong> 캡을 끝까지 돌려 잠갔는지 확인하고, 잔을 기구 위에 덮은 뒤 잔과 기구를 함께 잡고 뒤집습니다. 넓고 낮은 잔보다 입구가 좁고 안정적인 잔이 안전합니다.
+    </div>
+
+    <h2 class="section-title">6. 필터를 바꾸면 굵기도 함께 바꾼다</h2>
+    <p>기본으로 들어 있는 종이 필터와 별매 스테인리스 필터는 결과가 다릅니다. 제조사 설명은 이렇습니다. <strong>스테인리스 필터는 기름 성분을 통과시켜 바디감이 더 있는 잔</strong>이 되고, <strong>종이 필터는 그 기름을 걸러 더 깔끔하고 가루 없는 잔</strong>이 됩니다.</p>
+    <p>중요한 것은 그다음 안내입니다. 금속 필터는 구멍이 더 열려 있어 물이 빠르게 지나가므로, <strong>종이 필터를 쓸 때보다 조금 더 가늘게 갈아 쓰라</strong>고 명시합니다. 필터만 바꾸고 굵기를 그대로 두면 같은 레시피인데 싱거워지는 일이 여기서 생깁니다.</p>
+    <p>스테인리스 필터는 식품용 316 스테인리스를 쓰며 반복해 세척해 쓸 수 있고, 종이 필터는 1회용이지만 퇴비화가 가능합니다. 취향과 관리 편의로 고르되, 바꿀 때는 굵기를 함께 손보는 것을 잊지 마십시오.</p>
+
+    <h2 class="section-title">7. 비율 — 진하게 뽑고 물을 타는 구조</h2>
+    <p>SCA가 제시하는 기준선은 <strong>수율 18~22%</strong>, 물과 원두의 비율은 대략 <strong>1:15~1:17</strong> 구간입니다. 이 값은 특정 기구용이 아니라 일반적인 균형점입니다.</p>
+    <p>그런데 에어로프레스 레시피는 1:8이나 1:10처럼 훨씬 진한 비율로 뽑은 뒤, 잔에 뜨거운 물을 더해 마시는 방식이 많습니다. 이 방식이 통하는 이유는 <strong>농도와 수율이 서로 다른 값</strong>이기 때문입니다. 진하게 뽑은 액체에 물을 더하면 농도만 내려가고, 원두에서 얼마나 뽑아냈는지는 그대로입니다.</p>
+    <p>정리하면 이렇습니다. <strong>얼마나 뽑을지는 굵기와 시간과 온도로 정하고, 얼마나 진하게 마실지는 나중에 더하는 물로 정합니다.</strong> 두 가지를 나눠 생각하면 조정이 훨씬 단순해집니다. 기구가 작아 한 번에 담기는 물의 양이 제한되는 문제도 이 방식으로 해결됩니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>증상</th><th>대개의 원인</th><th>먼저 바꿀 것</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>시고 뒷맛이 짧다</td><td class="em">덜 뽑힘</td><td>한 단계 가늘게 또는 온도 조금 올리기</td></tr>
+        <tr><td>쓰고 입안이 텁텁하다</td><td class="em">과하게 뽑힘</td><td>한 단계 굵게 또는 온도 낮추기</td></tr>
+        <tr><td>맹물처럼 밍밍하다</td><td class="em">농도 부족</td><td>더하는 물 줄이기 · 원두량 늘리기</td></tr>
+        <tr><td>누르는 데 힘이 너무 든다</td><td class="em">지나치게 가는 분쇄</td><td>굵기 되돌리기, 무리해서 밀지 않기</td></tr>
+        <tr><td>순식간에 쑥 눌린다</td><td class="em">지나치게 굵은 분쇄</td><td>한 단계 가늘게 · 침지 시간 늘리기</td></tr>
+        <tr><td>같은 레시피인데 싱거워졌다</td><td class="em">필터를 금속으로 교체</td><td>종이 기준보다 가늘게 조정</td></tr>
+        <tr><td>맛이 잔마다 들쭉날쭉하다</td><td class="em">가루층이 기울어짐</td><td>붓기 전 흔들어 평평하게 · 천천히 붓기</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">Q1. 검색하면 나오는 레시피가 다 다른데 어느 것이 맞나요?</div>
+      전부 성립합니다. 에어로프레스는 굵기·온도·시간·비율을 모두 사용자가 정하는 구조라, 서로 다른 조합이 각각의 균형점을 갖습니다. <strong>다만 남의 레시피는 그 사람의 그라인더와 원두를 전제로 합니다.</strong> 그대로 옮기면 재현되지 않는 것이 정상입니다. 공식 기준(14~15g, 80~85℃, 중간 가는 분쇄)에서 시작해 굵기부터 한 단계씩 움직이는 편이 결과가 빠릅니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q2. 세게 눌러야 더 진해지나요?</div>
+      아닙니다. 진하기를 정하는 것은 <strong>원두량과 물의 양</strong>이고, 얼마나 뽑히는지는 굵기·온도·시간이 정합니다. 미는 힘은 액체를 필터 밖으로 내보내는 역할에 가깝습니다. 세게 밀면 오히려 미분이 필터에 눌려 붙어 저항이 커지고, 기구에 무리가 갑니다. <strong>20~30초에 걸쳐 천천히</strong> 내려간다는 감각으로 밀고, 힘이 과하게 든다면 힘을 더하지 말고 굵기를 되돌리십시오.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q3. 마지막에 나는 "쉬익" 소리까지 눌러야 하나요?</div>
+      취향의 영역입니다. 끝까지 눌러 공기가 빠지는 소리가 날 때까지 밀면 액체를 최대한 받아낼 수 있지만, 그 마지막 구간에는 <strong>가루층에 남아 있던 과하게 뽑힌 성분</strong>이 함께 나옵니다. 쓴맛이나 텁텁함이 신경 쓰인다면 소리가 나기 직전에 멈추십시오. 대회 레시피에서 이 지점을 끊는 경우가 많은 것도 같은 이유입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q4. 아이스로 만들 때도 같은 레시피를 쓰나요?</div>
+      그대로 쓰면 얼음이 녹으면서 싱거워집니다. 방법은 두 가지입니다. <strong>원두량을 그대로 두고 붓는 물을 줄여 진하게 뽑은 뒤</strong> 얼음 위에 바로 내리거나, 잔에 담을 얼음의 무게만큼을 미리 계산해 물의 총량에서 빼는 방식입니다. 뜨거운 액체가 얼음에 바로 닿으면 향이 갇혀 신선한 인상이 오래 남습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q5. 사용 후 세척은 어떻게 하나요?</div>
+      플런저를 끝까지 밀어 <strong>가루 덩어리를 통째로 밀어내는 것</strong>이 기본입니다. 필터 캡을 열고 그대로 밀면 젖은 가루가 한 덩어리로 떨어집니다. 그 뒤 고무 실링과 원통을 물로 헹구면 대체로 끝납니다. 고무 실링은 소모품이라 굳거나 탄력이 떨어지면 교체 대상입니다. 스테인리스 필터는 세척 후 반복해 쓸 수 있습니다.
+    </div>
+
+    <!-- 마무리 -->
+    <div class="closing-box">
+      <h3>☕ 정리하면</h3>
+      <p>공식 기준선은 <strong>원두 14~15g, 물 온도 80℃(다크)~85℃(미디엄·라이트), 중간 가는 분쇄</strong>입니다. 여기서 출발합니다.</p>
+      <p>온도를 드립보다 낮게 잡는 이유는 <strong>담가 두는 방식이라 같은 온도에서 더 빨리 뽑히기 때문</strong>입니다.</p>
+      <p>굵기는 <strong>담그는 시간과 짝</strong>입니다. 짧게 담글수록 가늘게, 길게 담글수록 굵게 갑니다.</p>
+      <p>역방향이 바꾸는 것은 맛이 아니라 <strong>시간의 통제권</strong>입니다. 긴 침지에서 실익이 있고, 뒤집을 때 화상에 주의합니다.</p>
+      <p>필터를 금속으로 바꾸면 <strong>종이 기준보다 가늘게</strong> 조정합니다. 제조사가 명시한 안내입니다.</p>
+      <p>얼마나 뽑을지는 굵기·시간·온도로, <strong>얼마나 진하게 마실지는 나중에 더하는 물</strong>로 정합니다.</p>
+    </div>
+
+  </div>
+
+
+</div><!-- /container -->
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-19"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">모카포트 사용법 — 물 양과 분쇄도, 불 세기 조절 순서</div><div class="rc-date">2026. 08. 19</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-18"><div class="rc-cat">☕ 추출</div><div class="rc-title">아메리카노 카페인 함량 비교 — 에스프레소·드립·콜드브루 기준</div><div class="rc-date">2026. 08. 18</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-15"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">핸드드립 내리는법 — 물 온도와 뜸들이기 시간, 물줄기 붓는 순서</div><div class="rc-date">2026. 08. 15</div></a></div></div>
+<!-- RELATED:END -->
+</body>
+</html>
