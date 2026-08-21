@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>에스프레소 크레마 색과 양 보는법 — 잘 나올 때와 안 나올 때 차이 | 바리스타 스페셜티</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<meta name="description" content="크레마는 음료 부피의 10% 이상을 차지하는 거품층입니다. 색·두께·지속시간이 각각 알려주는 것과, 적게 나올 때 신선도·분쇄도·압력·품종을 확인하는 순서를 정리">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="article:published_time" content="2026-08-21T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-21T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-21#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-21", "headline": "에스프레소 크레마 색과 양 보는법 — 잘 나올 때와 안 나올 때 차이 | 바리스타 스페셜티", "description": "크레마는 음료 부피의 10% 이상을 차지하는 거품층입니다. 색·두께·지속시간이 각각 알려주는 것과, 적게 나올 때 신선도·분쇄도·압력·품종을 확인하는 순서를 정리", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-21", "dateModified": "2026-08-21", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-21">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="에스프레소 크레마 색과 양 보는법 — 잘 나올 때와 안 나올 때 차이 | 바리스타 스페셜티">
+<meta property="og:description" content="크레마는 음료 부피의 10% 이상을 차지하는 거품층입니다. 색·두께·지속시간이 각각 알려주는 것과, 적게 나올 때 신선도·분쇄도·압력·품종을 확인하는 순서를 정리">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-21">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-21T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-21T09:00:00+09:00">
+<!-- SEO:END -->
+</head>
+<body>
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법</span>
+      <span class="badge">크레마</span>
+      <span class="badge">색·양·지속시간</span>
+    </div>
+    <h1>에스프레소 크레마 색과 양 보는법<br/>— 잘 나올 때와 안 나올 때 차이</h1>
+    <p class="subtitle">크레마는 음료 부피의 10% 이상을 차지하는 거품층입니다. 색·두께·지속시간이 각각 무엇을 알려주는지, 적게 나올 때 무엇부터 확인할지 측정값을 기준으로 정리했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 8월 21일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 9분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+
+    <!-- 훅 -->
+    <div class="hook">
+      "크레마가 두껍게 올라오면 잘 뽑힌 건가요?"<br/>
+      절반만 맞습니다. 크레마는 추출 상태를 알려주는 신호이면서, 동시에 원두의 품종과 로스팅 정도만으로도 크게 달라지는 값입니다. 무엇이 무엇을 알려주는지 갈라 두면 잔을 보고 판단할 수 있는 것과 없는 것이 분명해집니다.
+    </div>
+
+    <!-- 핵심 요약 -->
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>크레마가 무엇으로 이루어져 있는가 — 기체·유화·미세입자의 3층 구조</li>
+        <li>양의 기준 — 잘 뽑힌 잔에서 음료 부피의 몇 %인가</li>
+        <li>색의 기준 — 국제 인증 규격이 명시한 헤이즐넛~진한 갈색</li>
+        <li>지속시간 — 몇 분까지 버티는 것이 정상 범위인가</li>
+        <li>크레마가 적거나 없을 때 확인하는 순서 — 신선도·분쇄도·압력·품종</li>
+        <li>크레마가 많다고 맛이 좋아지지는 않는 구조적 근거</li>
+        <li>증상별로 원인과 조치를 정리한 표</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">1. 크레마는 거품이자 유화층이다</h2>
+    <p>크레마는 단순한 거품이 아닙니다. 학술 문헌은 이를 <strong>기체 방울이 수중유적형(오일 인 워터) 유화액 안에 분산되어 있고, 거기에 고체 커피 입자가 함께 섞여 있는 복합 계</strong>로 정의합니다. 세 가지가 동시에 있어야 성립합니다.</p>
+    <p>기체는 대부분 <strong>이산화탄소</strong>입니다. 로스팅 중 원두 내부에 갇혔던 가스가 9바 안팎의 압력에서 물에 녹아 있다가, 잔으로 나오면서 압력이 풀리자 방울로 터져 나옵니다. 탄산음료 뚜껑을 열 때와 같은 원리입니다.</p>
+    <p>그 방울을 감싸 유지하는 것이 <strong>고분자 다당류와 멜라노이딘·단백질 성분</strong>입니다. 연구에서는 거품을 만드는 성분을 두 갈래로 나누는데, 하나는 만난과 아라비노갈락탄 중심의 고분자 다당류(분자량 34,000~47,000)로 거품을 <strong>버티게</strong> 하고, 다른 하나는 멜라노이딘-단백질 계열(분자량 8,500~17,000)로 거품이 <strong>잘 생기게</strong> 합니다.</p>
+    <p>여기에 50μm 이하의 미세한 커피 입자가 방울 표면에 달라붙어 물리적으로 막을 지탱합니다. 아라비카 에스프레소의 기포 크기는 대체로 <strong>10~150μm</strong> 범위의 단봉 분포를 보인다고 보고됩니다.</p>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">10% 이상</span><span class="label">잘 뽑힌 잔에서 크레마가 차지하는 부피</span></div>
+      <div class="data-card"><span class="num">10~150μm</span><span class="label">아라비카 크레마의 기포 크기</span></div>
+      <div class="data-card"><span class="num">4.0~8.6mg/g</span><span class="label">분쇄 직후 원두의 CO₂ 함량</span></div>
+      <div class="data-card"><span class="num">약 120초</span><span class="label">국제 인증 규격의 크레마 최소 지속시간</span></div>
+    </div>
+
+    <h2 class="section-title">2. 양 — 부피의 10% 이상이 기준선이다</h2>
+    <p>문헌이 제시하는 기준은 명확합니다. 제대로 준비된 에스프레소에서 크레마는 <strong>음료 전체 부피의 최소 10%</strong>를 차지합니다. 25~30mL 한 잔이라면 2.5~3mL 이상입니다.</p>
+    <p>실측 범위는 조건에 따라 <strong>1.2~12mL</strong>까지 크게 벌어집니다. 이 편차를 가장 잘 설명하는 변수가 <strong>원두에 남아 있는 이산화탄소의 양</strong>입니다. CO₂가 0.25mg/g 수준이면 거품은 약 2.5mL, 4.5mg/g이면 약 12mL로 거의 직선 관계를 그립니다.</p>
+    <p>즉 크레마의 양은 <strong>대체로 신선도의 함수</strong>입니다. 분쇄 직후 원두의 CO₂는 4.0~8.6mg/g(평균 약 5.7mg/g)인데, <strong>분쇄하고 나면 그중 70% 이상이 빠져나갑니다.</strong> 분쇄 후 24시간을 두면 거품 부피가 10mL에서 6.5mL로 줄었다는 측정 결과도 있습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">미리 갈아 둔 원두로는 크레마가 안 나오는 이유</div>
+      원두를 통째로 두면 CO₂는 껍질 안에 갇혀 천천히 빠집니다. 갈아 두면 표면적이 폭발적으로 늘어 <strong>수 시간 안에 대부분 날아갑니다.</strong> 크레마를 회복시키는 가장 확실한 조치는 압력을 올리거나 온도를 만지는 것이 아니라 <strong>내리기 직전에 가는 것</strong>입니다.
+    </div>
+
+    <h2 class="section-title">3. 색 — 헤이즐넛에서 진한 갈색 사이</h2>
+    <p>이탈리아 에스프레소 인증 규격은 크레마를 <strong>"결이 아주 고운 두꺼운 크림층, 헤이즐넛빛에서 진한 갈색으로 기우는 색"</strong>으로 규정합니다. 같은 규격은 잔당 약 25mL, 추출 25초 안팎, 그룹헤드 온도 88℃대(자료에 따라 90℃대 초반까지 폭넓게 제시됩니다)를 함께 제시합니다.</p>
+    <p>색이 기준에서 벗어날 때 읽는 방향은 이렇습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>크레마 색</th><th>대체로 뜻하는 것</th><th>맛에서 확인할 것</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>옅은 베이지·흰빛</td><td class="em">덜 뽑힘 · 분쇄가 굵음</td><td>날카로운 신맛, 짧은 뒷맛</td></tr>
+        <tr><td>헤이즐넛~황금 갈색</td><td class="em">기준 범위</td><td>단맛과 산미의 균형</td></tr>
+        <tr><td>진한 갈색·검붉은 빛</td><td class="em">과하게 뽑힘 · 분쇄가 가늚</td><td>쓴맛, 텁텁하게 남는 뒷맛</td></tr>
+        <tr><td>가운데가 뚫리고 얼룩짐</td><td class="em">채널링(물길 쏠림)</td><td>같은 잔 안에서 맛이 갈림</td></tr>
+      </tbody>
+    </table>
+
+    <p>다만 색만으로 단정하면 틀립니다. <strong>로스팅이 강할수록 크레마는 원래 어둡습니다.</strong> 다크 로스트로 알맞게 뽑은 잔과 미디엄 로스트로 과하게 뽑은 잔이 비슷한 색을 낼 수 있습니다. 색은 어디까지나 <strong>같은 원두를 반복해서 내릴 때의 비교 지표</strong>로 쓰는 것이 정확합니다.</p>
+
+    <h2 class="section-title">4. 지속시간 — 몇 분까지가 정상인가</h2>
+    <p>인증 규격은 <strong>추출 후 최소 120초</strong> 동안 크레마가 유지될 것을 요구합니다. 이 정도면 마시기 시작할 때까지는 버틴다는 뜻입니다.</p>
+    <p>실험실 조건에서는 훨씬 길게 측정됩니다. 액체 표면이 드러날 때까지의 시간이 <strong>6분에서 48분</strong>까지 분포하고, <strong>중간 정도의 로스팅에서 최대(34~49분)</strong>를 보입니다. 흥미로운 것은 아주 강한 다크 로스트에서 다시 짧아진다는 점인데, 열이 거품을 지탱하는 다당류를 분해해 버리기 때문입니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">크레마 지속시간을 읽는 순서</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text">잔을 내린 뒤 <strong>2분을 세어 봅니다.</strong> 그 안에 액체 표면이 드러나면 신선도나 추출 어느 쪽에 문제가 있습니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text">스푼으로 크레마를 살짝 갈랐을 때 <strong>자국이 서서히 메워지면</strong> 점성과 유화가 살아 있는 상태입니다. 즉시 갈라지면 거품이 약합니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text">거품이 <strong>크고 성긴 방울</strong>로 보이면 오래 못 갑니다. 잘 나온 크레마는 육안으로 방울이 잘 구분되지 않습니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-text">같은 원두로 <strong>날짜만 바꿔 가며</strong> 지속시간을 재 보면, 그 원두의 최적 숙성 구간이 눈에 보이게 나타납니다.</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">5. 크레마가 적거나 없을 때 — 확인 순서</h2>
+    <p>원인은 대체로 정해져 있습니다. 확률이 높은 것부터 봅니다.</p>
+    <p><strong>① 신선도.</strong> 앞서 본 대로 거품 부피는 CO₂ 함량을 거의 그대로 따라갑니다. 로스팅 일자가 오래되었거나 미리 갈아 둔 원두라면 다른 조정은 소용이 적습니다. 반대로 <strong>로스팅 직후 며칠 이내</strong>의 원두는 가스가 과해 추출이 불안정해지기도 합니다.</p>
+    <p><strong>② 분쇄도와 다지기.</strong> 굵으면 물이 빨리 지나가 압력이 걸리지 않고, 가스가 녹아들 시간도 부족합니다. 추출 시간이 기준보다 눈에 띄게 짧다면 여기부터 봅니다.</p>
+    <p><strong>③ 압력.</strong> 거품 부피는 압력이 오를수록 늘어나며, 실험에서는 5.1mL에서 6.9mL로 증가하는 구간이 보고됩니다. 다만 압력은 사용자가 손대기 어려운 값이므로 앞의 두 가지를 먼저 확인하는 편이 효율적입니다.</p>
+    <p><strong>④ 품종.</strong> 로부스타는 CO₂가 더 많고(약 6.9mg/g 대 아라비카 약 4.6mg/g) 지질은 더 적어(0.55mg/mL 대 1.80mg/mL) <strong>구조적으로 크레마가 더 잘, 더 많이 생깁니다.</strong> 이탈리아식 블렌드가 로부스타를 섞는 이유 중 하나입니다. 대신 방울이 굵고 배수가 빨라 오래가지는 않습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>증상</th><th>가장 가능성 높은 원인</th><th>조치</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>크레마가 거의 없다</td><td class="em">원두가 오래됨 · 미리 갈아 둠</td><td>내리기 직전에 분쇄 · 로스팅 일자 확인</td></tr>
+        <tr><td>옅고 금방 사라진다</td><td class="em">분쇄가 굵어 추출이 빠름</td><td>한 단계 가늘게 · 추출 시간 재확인</td></tr>
+        <tr><td>진하고 쓴맛이 강하다</td><td class="em">과다 추출</td><td>한 단계 굵게 · 원두량 재확인</td></tr>
+        <tr><td>가운데가 뚫린다</td><td class="em">채널링 · 다지기 불균일</td><td>가루층 평탄화 후 수평으로 다지기</td></tr>
+        <tr><td>거품이 굵고 비눗방울 같다</td><td class="em">가스는 많으나 막이 약함</td><td>로스팅 직후라면 며칠 숙성 후 재시도</td></tr>
+        <tr><td>양은 많은데 맛이 밋밋하다</td><td class="em">로부스타 비율이 높은 블렌드</td><td>원두 구성 확인 — 크레마 양과 맛은 별개</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">6. 크레마가 많다고 맛이 좋아지지는 않는다</h2>
+    <p>이 부분이 가장 오해가 많습니다. 크레마의 양을 키우는 조건과 맛을 좋게 하는 조건이 <strong>완전히 겹치지는 않습니다.</strong></p>
+    <p>거품 부피를 늘리는 요인으로 보고된 것은 강한 로스팅, 높은 압력, 많은 원두량, 강한 다지기, 그리고 로부스타 비율입니다. 이 중 강한 로스팅과 로부스타 비율은 <strong>맛의 방향을 별도로 바꾸는 변수</strong>입니다. 크레마를 최대화하겠다고 이 값들을 밀면 쓴맛과 탄 맛이 함께 올라옵니다.</p>
+    <p>반대로 거품을 방해하는 성분도 있습니다. <strong>커피 오일 자체는 거품 형성을 억제합니다.</strong> 지질이 많은 아라비카가 로부스타보다 크레마가 얇은 것도 이 때문입니다. 그런데 그 오일은 향과 바디를 만드는 성분이기도 합니다. 크레마가 얇은 아라비카 싱글 오리진이 더 맛있는 경우가 흔한 것은 모순이 아니라 구조입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">크레마로 판단할 수 있는 것과 없는 것</div>
+      <strong>판단할 수 있는 것</strong> — 원두의 신선도, 추출 속도가 적정했는지, 물길이 고르게 지나갔는지.<br/>
+      <strong>판단할 수 없는 것</strong> — 원두의 품질, 로스팅의 완성도, 최종적인 맛의 좋고 나쁨. 이것들은 결국 <strong>마셔 봐야</strong> 압니다. 크레마는 진단 도구이지 점수표가 아닙니다.
+    </div>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">Q1. 크레마가 두꺼우면 좋은 원두인가요?</div>
+      아닙니다. 두께를 가장 크게 좌우하는 것은 <strong>원두에 남은 CO₂ 양</strong>이고, 그 다음이 품종과 로스팅 정도입니다. 로부스타는 아라비카보다 CO₂가 약 1.5배 많고 지질은 3분의 1 수준이라 <strong>품질과 무관하게 크레마가 두껍게 나옵니다.</strong> 크레마는 "신선한가"와 "고르게 뽑혔는가"를 알려주지, "좋은 원두인가"를 알려주지는 않습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q2. 크레마를 걷어내고 마셔야 하나요?</div>
+      취향의 영역입니다. 거품을 만드는 멜라노이딘-단백질 성분에는 <strong>커피 향과 쓴맛이 함께 실려 있습니다.</strong> 그래서 걷어내면 쓴맛이 다소 줄지만 향도 함께 줄어듭니다. 다만 크레마를 그대로 둔 채 오래 방치하면 거품이 꺼지면서 그 성분이 액체로 섞여 들어가므로, <strong>내린 직후에 스푼으로 한 번 저어 섞은 뒤 마시는 것</strong>이 맛을 균일하게 하는 일반적인 방법입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q3. 크레마 가운데가 뚫리면서 색이 얼룩덜룩합니다.</div>
+      <strong>채널링</strong>입니다. 가루층에 밀도가 낮은 통로가 생겨 물이 그쪽으로만 몰려 지나간 상태입니다. 그 통로 주변은 과하게, 나머지는 덜 뽑히므로 같은 잔 안에서 맛이 갈립니다. 원인은 대체로 <strong>가루층이 기울었거나 다지기가 한쪽으로 눌린 것</strong>입니다. 붓기 전에 표면을 평평하게 고르고 탬퍼를 수평으로 눌러 확인하십시오. 분쇄 굵기를 바꾸기 전에 이것부터 봅니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q4. 크레마의 기름 성분이 콜레스테롤에 나쁘다던데 사실인가요?</div>
+      크레마 자체보다 <strong>여과 방식</strong>의 문제입니다. 커피의 지질에는 카페스톨·카웨올이라는 디테르펜이 들어 있고, 이 성분은 LDL 콜레스테롤을 올리는 것으로 알려져 있습니다. <strong>종이 필터는 이를 거의 대부분 걸러냅니다.</strong> 반면 끓여 마시는 방식, 일부 자동판매 기계 커피, 그리고 에스프레소는 상대적으로 많이 남습니다. 2025년 발표된 스웨덴 연구에서도 에스프레소는 <strong>편차가 매우 크다</strong>고 보고되었습니다. 하루 몇 잔을 어떤 방식으로 마시는지가 관건이며, 걱정된다면 종이 필터를 쓰는 방식으로 바꾸는 것이 직접적인 조치입니다. 개별적인 건강 판단은 의료 전문가와 상의하십시오.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q5. 캡슐 머신은 오래된 캡슐에서도 크레마가 잘 나옵니다. 왜 그런가요?</div>
+      구조가 다르기 때문입니다. 캡슐과 일부 가정용 자동 머신은 <strong>추출구에 좁은 구멍이나 압력 밸브를 두어 기계적으로 거품을 만들어냅니다.</strong> 원두에 남은 CO₂로 자연히 생긴 거품이 아니라, 액체를 강제로 통과시켜 만든 거품에 가깝습니다. 그래서 양은 많아도 방울이 굵고 금방 꺼지는 경우가 많습니다. <strong>같은 기준으로 원두 머신의 크레마와 비교하지 않는 편</strong>이 정확합니다.
+    </div>
+
+    <!-- 마무리 -->
+    <div class="closing-box">
+      <h3>☕ 정리하면</h3>
+      <p>크레마는 <strong>CO₂ 방울 + 오일 유화층 + 미세 커피 입자</strong>가 함께 만드는 구조이고, 잘 뽑힌 잔에서 <strong>음료 부피의 10% 이상</strong>을 차지합니다.</p>
+      <p>양을 좌우하는 최대 변수는 <strong>원두에 남은 CO₂</strong>입니다. 분쇄하면 70% 이상이 날아가므로 <strong>내리기 직전에 가는 것</strong>이 가장 확실한 조치입니다.</p>
+      <p>색의 기준은 <strong>헤이즐넛빛에서 진한 갈색</strong>입니다. 옅으면 덜 뽑힘, 지나치게 진하면 과다 추출 쪽입니다. 단 <strong>같은 원두끼리 비교할 때만</strong> 유효합니다.</p>
+      <p>지속시간은 인증 규격 기준 <strong>최소 120초</strong>, 실험 조건에서는 <strong>중간 로스팅에서 가장 깁니다.</strong></p>
+      <p>크레마가 없을 때는 <strong>신선도 → 분쇄도 → 압력 → 품종</strong> 순으로 확인합니다.</p>
+      <p>그리고 <strong>크레마의 양은 맛의 점수가 아닙니다.</strong> 오일은 거품을 억제하지만 향과 바디를 만듭니다. 얇은 크레마가 더 맛있는 경우는 흔합니다.</p>
+    </div>
+
+  </div>
+
+
+</div><!-- /container -->
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-20"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">에어로프레스 레시피 — 분쇄도와 물 온도, 정방향·역방향 차이</div><div class="rc-date">2026. 08. 20</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-19"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">모카포트 사용법 — 물 양과 분쇄도, 불 세기 조절 순서</div><div class="rc-date">2026. 08. 19</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-18"><div class="rc-cat">☕ 추출</div><div class="rc-title">아메리카노 카페인 함량 비교 — 에스프레소·드립·콜드브루 기준</div><div class="rc-date">2026. 08. 18</div></a></div></div>
+<!-- RELATED:END -->
+</body>
+</html>
