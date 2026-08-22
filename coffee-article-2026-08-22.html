@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>에스프레소 머신 청소 주기 — 백플러싱과 포터필터 세척 순서 | 바리스타 스페셜티</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<meta name="description" content="기름때는 맛을, 물때는 고장을 만듭니다. 매일·주간·분기별로 무엇을 해야 하는지, 제조사 매뉴얼이 명시한 수치를 기준으로 정리했습니다">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-22">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="에스프레소 머신 청소 주기 — 백플러싱과 포터필터 세척 순서 | 바리스타 스페셜티">
+<meta property="og:description" content="기름때는 맛을, 물때는 고장을 만듭니다. 매일·주간·분기별로 무엇을 해야 하는지, 제조사 매뉴얼이 명시한 수치를 기준으로 정리했습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-22">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-22T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-22T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-22#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-22", "headline": "에스프레소 머신 청소 주기 — 백플러싱과 포터필터 세척 순서 | 바리스타 스페셜티", "description": "기름때는 맛을, 물때는 고장을 만듭니다. 매일·주간·분기별로 무엇을 해야 하는지, 제조사 매뉴얼이 명시한 수치를 기준으로 정리했습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-22", "dateModified": "2026-08-22", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법</span>
+      <span class="badge">머신 관리</span>
+      <span class="badge">백플러싱·수질</span>
+    </div>
+    <h1>에스프레소 머신 청소 주기<br/>— 백플러싱과 포터필터 세척 순서</h1>
+    <p class="subtitle">기름때는 맛을, 물때는 고장을 만듭니다. 매일·주간·분기별로 무엇을 해야 하는지, 제조사 매뉴얼이 명시한 수치를 기준으로 정리했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 8월 22일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 9분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+
+    <!-- 훅 -->
+    <div class="hook">
+      "원두도 그대로고 세팅도 안 바꿨는데 어느 날부터 텁텁합니다."<br/>
+      이 질문의 답이 머신 안에 남은 기름때인 경우가 생각보다 많습니다. 커피 오일은 시간이 지나면 산패하고, 산패한 기름은 다음 잔에 그대로 섞입니다. 청소는 위생 문제이기 전에 <strong>맛을 일정하게 유지하는 절차</strong>입니다.
+    </div>
+
+    <!-- 핵심 요약 -->
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>남은 기름때가 왜 맛을 바꾸는가 — 유리지방산이 쌓이는 구조</li>
+        <li>매일 해야 하는 것과 마감에만 하면 되는 것의 구분</li>
+        <li>백플러싱 순서 — 세제 양, 횟수, 헹굼까지 제조사 안내 기준</li>
+        <li>스팀완드·포터필터를 즉시 처리해야 하는 이유</li>
+        <li>일간·주간·월간·분기별 주기표</li>
+        <li>가스켓과 디퓨저(샤워 스크린) 교체 간격 — 제조사 명시값</li>
+        <li>물때를 만드는 수질 기준과 그라인더 점검 시점</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">1. 기름때가 맛을 바꾸는 구조</h2>
+    <p>볶은 원두에는 지질이 상당량 들어 있고, 에스프레소를 내릴 때 그중 일부가 물과 함께 빠져나옵니다. 이 오일이 바스켓·디퓨저·그룹헤드 내부·배수 경로에 얇게 남습니다. 문제는 <strong>남은 오일이 공기와 열에 노출된 채로 방치된다는 점</strong>입니다.</p>
+    <p>분쇄한 커피의 지방을 180일간 추적한 연구를 보면, 지방산 조성 자체는 크게 변하지 않지만 <strong>유리지방산(FFA)은 저장 기간 내내 꾸준히 늘어납니다.</strong> 아라비카 100% 시료의 초기 유리지방산은 지방 100g당 730.2mg, 아라비카·로부스타 80:20 블렌드는 1108.5mg으로 시작해 블렌드 쪽이 더 빠르게 증가했습니다. 유리지방산의 축적은 품질 저하의 지표로 쓰입니다.</p>
+    <p>머신 안에 남은 오일은 이보다 훨씬 가혹한 조건에 있습니다. 하루에도 여러 번 90℃ 안팎으로 데워지고 식기를 반복하기 때문입니다. 그래서 <strong>어제의 잔여물이 오늘 잔의 뒷맛을 텁텁하게 만드는 일</strong>이 실제로 일어납니다.</p>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">10초 × 5회</span><span class="label">수동 백플러싱 1주기 권장 방식</span></div>
+      <div class="data-card"><span class="num">3~4개월</span><span class="label">그룹 가스켓·디퓨저 교체 간격</span></div>
+      <div class="data-card"><span class="num">70~100ppm</span><span class="label">제조사 권장 총경도</span></div>
+      <div class="data-card"><span class="num">0~0.1ppm</span><span class="label">총염소 허용 범위</span></div>
+    </div>
+
+    <h2 class="section-title">2. 매일 하는 것 — 영업 중과 마감</h2>
+    <p>매일 하는 청소는 두 갈래로 나뉩니다. <strong>사용 직후에 바로 하는 것</strong>과 <strong>마감에 한 번 몰아서 하는 것</strong>입니다. 앞쪽을 미루면 뒤쪽에서 두 배로 힘들어집니다.</p>
+    <p><strong>사용 직후.</strong> 스팀완드는 우유를 데운 즉시 젖은 행주로 닦고 짧게 스팀을 뿜어 냅니다. 제조사 매뉴얼은 이 절차를 <strong>"노즐 내부에 침전물이 생기지 않도록"</strong> 하는 필수 조치로 명시합니다. 굳은 우유 단백질은 몇 분만 지나도 잘 지워지지 않고, 노즐 구멍을 막으면 스팀 압력이 떨어져 거품 품질이 함께 나빠집니다.</p>
+    <p>포터필터는 추출이 끝나면 퍽을 털어 내고 물로 헹군 뒤 그룹에 다시 꽂아 예열 상태를 유지합니다. 젖은 채로 커피가 눌어붙게 두지 않는 것이 핵심입니다.</p>
+    <p><strong>마감.</strong> 세제를 쓴 백플러싱, 바스켓·포터필터 담금 세척, 드립 트레이와 배수구 세척, 그라인더 호퍼와 도징 부위 닦기를 이때 처리합니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">가정용과 상업용의 차이</div>
+      제조사는 상업 환경 기준으로 <strong>2~4시간마다, 그리고 마감에</strong> 물 백플러싱을 권합니다. 하루에 두세 잔을 내리는 가정에서는 이 빈도가 과합니다. <strong>사용한 날 마감에 물 백플러싱, 주 1회 세제 백플러싱</strong> 정도가 현실적인 기준선입니다. 다만 우유를 자주 쓴다면 스팀완드 관리는 상업용과 동일하게 즉시 처리해야 합니다.
+
+    </div>
+
+    <h2 class="section-title">3. 백플러싱 — 순서와 세제 양</h2>
+    <p>백플러싱은 구멍이 없는 <strong>블라인드 바스켓(무공 필터)</strong>을 끼워 물이 빠져나가지 못하게 만든 뒤, 펌프 압력으로 물을 그룹헤드 안쪽으로 되돌려 보내는 방식입니다. 추출 방향과 반대로 흐르게 해 솔레노이드 밸브와 배수 경로에 낀 기름때를 씻어 냅니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">세제 백플러싱 순서</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text">포터필터에 <strong>블라인드 바스켓</strong>을 끼우고 전용 세제를 <strong>½ 티스푼 정도</strong> 넣습니다. 양을 늘려도 효과가 비례해 늘지 않으며 헹굼만 어려워집니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text">그룹에 체결하고 추출 버튼을 <strong>10초 켜고 껐다를 5회</strong> 반복합니다. 자동 세척 기능이 있는 기종은 그 사이클을 그대로 쓰면 되고, 대체로 <strong>2분 남짓</strong> 걸립니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>디퓨저(분산망)는 떼지 않은 채로</strong> 진행합니다. 떼어 내면 녹지 않은 세제 입자가 그룹 안으로 빨려 들어갈 수 있고, 어차피 그 부품도 함께 씻겨야 합니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-text">세제 사이클이 끝나면 바스켓을 비우고 <strong>물만 넣어 같은 사이클을 한 번 더</strong> 돌립니다. 헹굼을 건너뛰면 다음 잔에서 비누 맛이 납니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">5</div>
+        <div class="tip-text">일반 바스켓으로 바꿔 끼우고 <strong>온수를 여러 번 흘려보내</strong> 마무리합니다. 그룹이 여러 개면 <strong>그룹마다 따로</strong> 해야 합니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">6</div>
+        <div class="tip-text">다음 영업 첫 잔은 <strong>버리는 잔</strong>으로 잡습니다. 헹굼이 남았는지 확인하는 가장 확실한 방법입니다.</div>
+      </div>
+    </div>
+
+    <p>주의할 점이 하나 있습니다. <strong>3방 밸브(솔레노이드)가 없는 기종은 세제 백플러싱을 하면 안 됩니다.</strong> 물이 빠져나갈 경로가 없어 압력이 엉뚱한 곳으로 걸립니다. 가정용 소형 머신 중에 이런 구조가 있으므로 매뉴얼에서 백플러싱 가능 여부를 먼저 확인해야 합니다.</p>
+
+    <h2 class="section-title">4. 주기표 — 일·주·월·분기</h2>
+    <p>제조사 매뉴얼의 정기 점검 항목과 일반적인 매장 운영 기준을 함께 정리하면 다음과 같습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>주기</th><th>항목</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>사용 직후</td><td class="em">스팀완드 닦기 + 짧은 퍼징</td><td>침전물 형성 방지, 매뉴얼 명시</td></tr>
+        <tr><td>매일 마감</td><td class="em">세제 백플러싱, 드립 트레이·배수구</td><td>가정용은 사용한 날 물 백플러싱</td></tr>
+        <tr><td>매일 마감</td><td class="em">바스켓·포터필터 담금 세척</td><td>포터필터 손잡이는 물에 담그지 않음</td></tr>
+        <tr><td>주 1회</td><td class="em">그라인더 호퍼·도저 청소</td><td>기름 밴 곳은 마른 천 위주</td></tr>
+        <tr><td>월 1회</td><td class="em">디퓨저 분해 세척, 개스킷 상태 확인</td><td>체결각이 틀어지면 교체 신호</td></tr>
+        <tr><td>3~4개월</td><td class="em">그룹 가스켓·디퓨저 교체</td><td>매뉴얼 정기 교체 항목</td></tr>
+        <tr><td>6~8개월</td><td class="em">수위 감지 프로브 청소, 급수 밸브 점검</td><td>매뉴얼 정기 점검 항목</td></tr>
+        <tr><td>연 1회</td><td class="em">수질(경도) 측정</td><td>범위를 벗어나면 보증 제외 사유</td></tr>
+      </tbody>
+    </table>
+
+    <p>가스켓은 소모품입니다. 굳으면 포터필터를 끼울 때 <strong>손잡이가 점점 더 왼쪽으로 돌아가고</strong>, 체결부에서 물이 새거나 추출 중 쉬익 소리가 납니다. 이 증상이 보이면 주기와 관계없이 교체합니다.</p>
+
+    <h2 class="section-title">5. 물때 — 수질을 먼저 맞춘다</h2>
+    <p>기름때가 맛의 문제라면 <strong>물때(스케일)는 고장의 문제</strong>입니다. 칼슘과 마그네슘이 보일러와 열교환기 내벽에 굳으면 열전달이 나빠지고, 심해지면 배관을 막습니다. 이미 굳은 뒤에 제거하는 것보다 <strong>애초에 생기지 않는 물을 쓰는 편</strong>이 훨씬 쉽습니다.</p>
+    <p>제조사가 매뉴얼에 명시한 급수 조건은 다음과 같습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>항목</th><th>기준값</th><th>벗어나면</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>총경도</td><td class="em">70~100ppm (약 4~6 독일경도)</td><td>낮으면 부식, 높으면 물때</td></tr>
+        <tr><td>pH</td><td class="em">6.5~8.5</td><td>산성 쪽은 금속 부식 위험</td></tr>
+        <tr><td>총염소</td><td class="em">0~0.1ppm</td><td>맛에 직접 영향, 고무 부품 손상</td></tr>
+        <tr><td>염화물</td><td class="em">50mg/L 이하</td><td>스테인리스 공식(孔蝕) 위험</td></tr>
+      </tbody>
+    </table>
+
+    <p>업계 협회가 제시한 권장 범위는 이보다 폭이 넓어 <strong>총경도 50~175ppm, 알칼리도 40~75ppm</strong> 수준으로 제시됩니다. 자료마다 값이 갈리는 이유는 <strong>맛에 좋은 물과 기계에 안전한 물이 완전히 같지 않기 때문</strong>입니다. 경도가 높으면 추출 성분을 잘 끌어내지만 물때가 늘고, 낮으면 기계는 편하지만 맛이 밋밋해집니다. 실무에서는 <strong>기계 기준을 먼저 맞추고 그 안에서 맛을 조정</strong>하는 순서가 안전합니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">정수 필터를 달았다고 끝난 것이 아니다</div>
+      연수 필터와 정수 카트리지는 <strong>처리 용량이 정해진 소모품</strong>입니다. 용량을 넘기면 그때부터는 그냥 수돗물이 지나갑니다. 설치일과 교체 예정일을 필터 몸통에 적어 두고, 연 1회는 실제 경도를 측정해 확인하는 편이 확실합니다.
+    </div>
+
+    <h2 class="section-title">6. 그라인더 — 청소와 마모는 다른 문제다</h2>
+    <p>그라인더에서 나오는 잡맛은 두 가지 원인이 겹쳐 있습니다. 하나는 <strong>날 주변에 눌어붙은 오래된 커피 가루</strong>이고, 다른 하나는 <strong>날 자체의 마모</strong>입니다. 청소로 해결되는 것은 앞쪽뿐입니다.</p>
+    <p>호퍼와 날 주변은 마른 솔로 털어 내는 것이 기본입니다. 물로 씻으면 잔여 수분이 가루와 엉겨 더 심하게 굳습니다. 세척용 전용 정제를 쓸 때는 사용 후 원두 20~30g을 갈아 버려 잔여물을 밀어냅니다.</p>
+    <p>날 마모는 청소로 되돌릴 수 없습니다. 제조사는 날 수명이 <strong>분쇄량·로스팅 정도·분쇄 굵기에 따라 달라진다</strong>고 설명합니다. 같은 양이라도 <strong>가늘게 가는 에스프레소용이 굵게 가는 필터용보다 마모가 빠르고</strong>, 밀도가 높은 약배전이 강배전보다 날에 부담을 더 줍니다. 그래서 "몇 개월"이 아니라 <strong>누적 분쇄량과 증상</strong>으로 판단합니다.</p>
+    <p>교체를 검토할 신호는 다음과 같습니다.</p>
+    <ul>
+      <li>세팅을 바꾸지 않았는데 <strong>맛의 균형이 무너지고 밋밋해진다</strong></li>
+      <li>분쇄 결과가 <strong>덩어리지고 배출이 고르지 않다</strong></li>
+      <li>같은 시간을 갈아도 <strong>도징 편차가 커진다</strong></li>
+      <li>모터에 부하가 걸려 <strong>소리가 커지고 발열이 늘어난다</strong></li>
+      <li>가는 쪽으로 조절하기가 <strong>점점 어려워진다</strong></li>
+    </ul>
+
+    <h2 class="section-title">7. 자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">Q. 세제 없이 물로만 백플러싱해도 되나요?</div>
+      물만으로도 배수 경로의 굵은 잔여물은 상당 부분 빠집니다. 다만 <strong>기름때는 물로 지워지지 않습니다.</strong> 물 백플러싱은 자주, 세제 백플러싱은 주기적으로 — 두 가지를 나눠서 생각하는 편이 맞습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 식초나 구연산으로 대신해도 되나요?</div>
+      기름때 제거용 세제와 물때 제거용 산성 세정제는 <strong>용도가 다릅니다.</strong> 산은 기름을 녹이지 못하고, 반대로 알칼리성 세제는 물때에 듣지 않습니다. 게다가 가정용 산성 용액은 농도가 일정하지 않아 고무 부품과 금속에 손상을 줄 수 있습니다. <strong>기기 매뉴얼이 지정한 제품</strong>을 쓰는 것이 안전합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 포터필터를 세제 물에 통째로 담가도 되나요?</div>
+      바스켓과 금속 부분은 담가도 되지만 <strong>플라스틱·나무 손잡이는 담그지 않습니다.</strong> 세제가 스며들어 냄새가 배거나 접합부가 상합니다. 손잡이를 물 밖에 두고 바스켓 쪽만 잠기게 담그는 방식이 일반적입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 한동안 안 쓴 머신은 어떻게 다시 켜나요?</div>
+      보일러와 배관에 고인 물부터 <strong>충분히 흘려보내 교체</strong>합니다. 그룹에서 온수를 여러 번 빼내고, 스팀도 한 번 길게 뿜어 냅니다. 그다음 세제 백플러싱을 하고 첫 두 잔은 버립니다. 몇 주 이상 방치했다면 <strong>가스켓 경화와 필터 만료</strong>를 함께 확인합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 청소만 잘하면 쓴맛이 사라지나요?</div>
+      아닙니다. 청소는 <strong>변수 하나를 제거하는 일</strong>입니다. 잔여물을 없앤 상태에서도 쓴맛이 남는다면 분쇄도·온도·추출 시간 쪽을 봐야 합니다. 다만 머신이 더러운 상태에서는 그 조정의 결과를 믿을 수 없습니다. <strong>청소가 먼저이고 세팅이 다음</strong>인 이유입니다.
+    </div>
+
+    <div class="summary-box">
+      <h3>정리</h3>
+      <p>스팀완드는 <strong>쓰는 즉시</strong>, 백플러싱은 <strong>마감에</strong>, 가스켓과 디퓨저는 <strong>3~4개월마다</strong>, 수질은 <strong>연 1회</strong> 확인합니다.</p>
+      <p>세제 백플러싱은 블라인드 바스켓에 세제 ½ 티스푼, <strong>10초씩 5회</strong>, 그다음 <strong>물만으로 한 번 더</strong>가 기본형입니다. 분산망은 떼지 않고, 그룹이 여럿이면 따로 합니다.</p>
+      <p>물때는 제거보다 예방이 쉽습니다. <strong>총경도 70~100ppm, 염소 0.1ppm 이하</strong>를 맞춰 두면 대부분의 스케일 문제는 시작되지 않습니다.</p>
+      <p>그리고 <strong>청소로 되돌릴 수 있는 것과 없는 것을 구분</strong>해야 합니다. 기름때는 청소의 영역이고, 날 마모와 가스켓 경화는 교체의 영역입니다.</p>
+    </div>
+
+  </div>
+
+
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-21"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">에스프레소 크레마 색과 양 보는법 — 잘 나올 때와 안 나올 때 차이</div><div class="rc-date">2026. 08. 21</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-20"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">에어로프레스 레시피 — 분쇄도와 물 온도, 정방향·역방향 차이</div><div class="rc-date">2026. 08. 20</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-19"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">모카포트 사용법 — 물 양과 분쇄도, 불 세기 조절 순서</div><div class="rc-date">2026. 08. 19</div></a></div></div>
+<!-- RELATED:END -->
+</body>
+</html>
