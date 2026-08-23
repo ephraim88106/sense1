@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>내추럴 워시드 차이 — 가공방식별 맛과 향, 원두 고르는 기준 | 바리스타 스페셜티</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<meta name="description" content="과육을 언제 벗기느냐가 맛을 갈라놓습니다. 워시드·내추럴·허니의 공정과 발효·건조 기준, 성분·컵 점수 비교까지 연구 수치로 정리했습니다">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-23">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="내추럴 워시드 차이 — 가공방식별 맛과 향, 원두 고르는 기준 | 바리스타 스페셜티">
+<meta property="og:description" content="과육을 언제 벗기느냐가 맛을 갈라놓습니다. 워시드·내추럴·허니의 공정과 발효·건조 기준, 성분·컵 점수 비교까지 연구 수치로 정리했습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-23">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-23T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-23T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-23#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-23", "headline": "내추럴 워시드 차이 — 가공방식별 맛과 향, 원두 고르는 기준 | 바리스타 스페셜티", "description": "과육을 언제 벗기느냐가 맛을 갈라놓습니다. 워시드·내추럴·허니의 공정과 발효·건조 기준, 성분·컵 점수 비교까지 연구 수치로 정리했습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-23", "dateModified": "2026-08-23", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 품종 & 가공법</span>
+      <span class="badge">가공방식</span>
+      <span class="badge">워시드·내추럴·허니</span>
+    </div>
+    <h1>내추럴 워시드 차이<br/>— 가공방식별 맛과 향, 원두 고르는 기준</h1>
+    <p class="subtitle">과육을 언제 벗기느냐가 맛을 갈라놓습니다. 워시드·내추럴·허니의 공정과 발효·건조 기준, 성분·컵 점수 비교까지 연구 수치로 정리했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 8월 23일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 9분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+
+    <!-- 훅 -->
+    <div class="hook">
+      "같은 에티오피아인데 하나는 딸기 같고 하나는 홍차 같습니다. 왜 이렇게 다른가요?"<br/>
+      품종도 같고 농장도 같은데 맛이 갈리는 경우, 원인은 대개 <strong>가공방식</strong>입니다. 커피 열매에서 씨앗을 꺼내는 방법이 서너 갈래로 나뉘고, 그 선택이 씨앗 안에 남는 당과 산의 양을 바꿔 놓기 때문입니다.
+    </div>
+
+    <!-- 핵심 요약 -->
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>세 방식이 갈라지는 지점 — 과육을 언제 벗기느냐</li>
+        <li>워시드의 발효 시간과 건조 일수 — 국제기구 자료의 기준값</li>
+        <li>내추럴이 오래 걸리는 이유 — 말려야 할 수분의 양</li>
+        <li>허니의 색 이름이 뜻하는 것 — 점액질을 얼마나 남기는가</li>
+        <li>성분 차이 — 자당·과당·클로로겐산 실측 비교</li>
+        <li>컵 점수와 향미 표현 — 어느 쪽이 더 좋은 커피인가</li>
+        <li>봉투를 보고 고르는 기준과 추출할 때의 차이</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">1. 세 방식이 갈라지는 지점</h2>
+    <p>커피 열매는 겉껍질, 과육, 점액질, 파치먼트(내과피), 은피, 그리고 씨앗으로 이루어져 있습니다. 우리가 볶는 것은 맨 안쪽 씨앗이고, 가공이란 <strong>그 바깥을 벗겨 내면서 수분을 말리는 일</strong>입니다.</p>
+    <p>방식이 나뉘는 기준은 하나뿐입니다. <strong>말리기 전에 벗기느냐, 말린 뒤에 벗기느냐, 절반만 벗기느냐.</strong></p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>방식</th><th>과육 제거 시점</th><th>점액질</th><th>말리는 대상</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">워시드(습식)</td><td>건조 전 즉시</td><td>발효로 벗겨 냄</td><td>파치먼트만</td></tr>
+        <tr><td class="em">허니(펄프드 내추럴)</td><td>건조 전 즉시</td><td>일부 또는 전부 남김</td><td>점액질 붙은 파치먼트</td></tr>
+        <tr><td class="em">내추럴(건식)</td><td>완전히 마른 뒤</td><td>그대로 붙어 있음</td><td>열매 통째</td></tr>
+      </tbody>
+    </table>
+
+    <p>이 한 줄의 차이가 나머지를 전부 결정합니다. 말릴 대상에 과육이 붙어 있으면 <strong>말려야 할 수분이 늘고, 시간이 늘고, 그동안 미생물이 활동할 시간도 늘어납니다.</strong> 태국 아라비카를 대상으로 세 방식을 비교한 연구에서 건조를 시작할 때의 수분 함량은 <strong>건식 73.45%</strong>였던 반면 습식과 허니는 <strong>51.80~53.69%</strong>였습니다.</p>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">24~36시간</span><span class="label">워시드 발효조 체류 시간</span></div>
+      <div class="data-card"><span class="num">8~10일</span><span class="label">워시드 태양건조 기간</span></div>
+      <div class="data-card"><span class="num">최대 4주</span><span class="label">내추럴 건조 기간</span></div>
+      <div class="data-card"><span class="num">11%</span><span class="label">건조 목표 수분 함량</span></div>
+    </div>
+
+    <h2 class="section-title">2. 워시드 — 발효조에서 벗겨 낸다</h2>
+    <p>워시드는 수확한 열매를 물에 띄워 미숙두와 벌레 먹은 것을 걸러 낸 뒤, 기계로 과육을 벗기고 <strong>파치먼트에 붙은 점액질만 남긴 상태로 발효조에 담그는</strong> 방식입니다.</p>
+    <p>점액질은 물로 문질러서는 잘 떨어지지 않습니다. 펙틴질이 씨앗을 감싸고 있어서, <strong>미생물과 효소가 그 결합을 끊어 줄 때까지 기다려야</strong> 합니다. 국제기구 자료가 제시하는 발효 시간은 <strong>24~36시간</strong>이며, 이 폭이 생기는 이유는 <strong>온도, 점액질 층의 두께, 효소의 농도</strong>가 산지마다 다르기 때문입니다.</p>
+    <p>발효가 끝나면 물로 씻어 남은 점액질을 완전히 제거하고 건조에 들어갑니다. 태양건조 기준으로 <strong>8~10일</strong> 걸리며, 목표는 수분 함량 <strong>11%</strong>입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">발효는 '썩히는 것'이 아니다</div>
+      워시드의 발효는 <strong>점액질을 벗기기 위한 수단</strong>이지 맛을 만들기 위한 목적이 아닙니다. 그래서 현장 지침은 "점액질이 충분히 풀릴 만큼의 <strong>가장 짧은 발효가 최적</strong>"이라고 명시합니다. 필요 이상으로 오래 두면 과발효 특유의 시큼하고 지저분한 맛이 씨앗에 배어듭니다.
+
+    </div>
+
+    <p>다만 발효가 맛에 아무 기여도 하지 않는다는 뜻은 아닙니다. 36시간 수중 발효를 거친 시료와 기계로 점액질만 제거한 시료를 비교한 연구에서, 발효를 거친 쪽은 <strong>에탄올, 이소아밀알코올, 3-메틸부탄알, 벤즈알데하이드, 아세트알데하이드, 에틸아세테이트</strong>가 뚜렷하게 높게 나왔고, 관능 평가에서도 <strong>향미·아로마·산미·바디·균일성</strong>이 모두 높은 점수를 받았습니다. 확인된 휘발성 물질은 79종이었습니다.</p>
+
+    <h2 class="section-title">3. 내추럴 — 통째로 말린다</h2>
+    <p>내추럴은 열매를 <strong>그대로 널어 말리는</strong> 가장 오래된 방식입니다. 물이 귀한 산지에서 시작됐지만, 지금은 물이 충분한 곳에서도 맛 때문에 일부러 선택합니다.</p>
+    <p>말려야 할 대상이 열매 전체이므로 시간이 길어집니다. 국제기구 자료는 <strong>최적 수분 11%에 도달하기까지 최대 4주</strong>가 걸린다고 설명합니다. 앞서 본 태국 연구에서도 건식 시료의 건조가 가장 오래 걸려 <strong>약 28일</strong>이 소요됐습니다.</p>
+    <p>이 기간 동안 씨앗은 <strong>당이 들어 있는 과육에 계속 둘러싸인 채</strong>로 있습니다. 그래서 과일 향과 단맛이 씨앗 쪽으로 옮겨 갈 여지가 커지고, 동시에 <strong>실패할 여지도 함께 커집니다.</strong></p>
+
+    <div class="tip-box">
+      <div class="tip-title">내추럴이 까다로운 이유</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>말려야 할 수분이 훨씬 많습니다.</strong> 곰팡이 예방 지침은 건식 가공이 습식보다 <strong>거의 두 배의 수분</strong>을 제거해야 한다고 지적합니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>위험 구간에 머무는 시간이 깁니다.</strong> 오크라톡신을 만드는 곰팡이는 수분활성도 <strong>0.80~0.95</strong> 구간에서 자랍니다. 그 아래(약 0.78~0.76)로 내려가면 자라지 못하고, 위(0.95 초과)에서는 다른 미생물에 밀립니다. 즉 <strong>말리는 도중이 가장 위험합니다.</strong></div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text">그래서 지침은 이 구간을 <strong>5일 이내로 통과</strong>시키라고 권합니다. 뒤집어 주는 횟수, 층의 두께, 비 올 때 덮는 관리가 품질을 가릅니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-text">저장 단계의 최대 허용 수분은 <strong>파치먼트 12%, 체리 13%</strong>로 제시됩니다. 덜 마른 채로 포대에 담기면 그때부터 문제가 시작됩니다.</div>
+      </div>
+    </div>
+
+    <p>잘 만든 내추럴이 화려한 대신 편차가 크다는 평가는 여기서 나옵니다. 같은 농장, 같은 해에도 <strong>건조장 관리에 따라 결과가 갈리기</strong> 때문입니다.</p>
+
+    <h2 class="section-title">4. 허니 — 점액질을 얼마나 남기는가</h2>
+    <p>허니는 과육은 벗기되 <strong>점액질을 씻어 내지 않고 붙인 채로 말리는</strong> 방식입니다. 펄프드 내추럴이라고도 부릅니다. 벌꿀이 들어가는 것이 아니라, 점액질이 마르면서 끈적해지는 모습에서 온 이름입니다.</p>
+    <p>색 이름은 <strong>남긴 점액질의 양과 건조 조건</strong>을 가리킵니다. 문헌이 정리한 범위는 <strong>20~80%</strong>이며, 대체로 다음과 같이 구분합니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>남기는 점액질</th><th>건조 기간</th><th>건조 조건</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">옐로 허니</td><td>약 25%</td><td>약 8일</td><td>차광 거의 없음 — 가장 빨리 마름</td></tr>
+        <tr><td class="em">레드 허니</td><td>약 50%</td><td>약 12일</td><td>부분 차광</td></tr>
+        <tr><td class="em">블랙 허니</td><td>거의 100%</td><td>약 30일</td><td>완전 차광 — 가장 느리게 마름</td></tr>
+      </tbody>
+    </table>
+
+    <p>천천히 말릴수록 점액질이 씨앗과 닿아 있는 시간이 길어지고, 그만큼 단맛과 바디가 올라가는 대신 관리 난도가 올라갑니다. <strong>블랙 허니가 내추럴에 가깝고, 옐로 허니가 워시드에 가깝다</strong>고 이해하면 대체로 맞습니다.</p>
+
+    <h2 class="section-title">5. 성분 차이 — 무엇이 얼마나 남는가</h2>
+    <p>맛의 차이를 감각이 아니라 수치로 확인한 자료가 있습니다. 태국 아라비카를 세 방식으로 가공해 생두 성분을 비교한 연구입니다. 아래는 같은 건조 조건(제어 환경 건조)에서의 값입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>항목</th><th>내추럴(건식)</th><th>허니</th><th>워시드(습식)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>자당(수크로스)</td><td>6.15%</td><td class="em">9.55%</td><td>5.15%</td></tr>
+        <tr><td>과당(프럭토스)</td><td class="em">3.75%</td><td>—</td><td>1.30%</td></tr>
+        <tr><td>클로로겐산</td><td class="em">205.38mg/mL</td><td>109.08mg/mL</td><td>79.61mg/mL</td></tr>
+        <tr><td>카페인</td><td class="em">1.01mg/mL</td><td>0.92mg/mL</td><td>0.91mg/mL</td></tr>
+        <tr><td>건조 전 수분</td><td class="em">73.45%</td><td colspan="2">51.80~53.69%</td></tr>
+      </tbody>
+    </table>
+
+    <p>읽는 방법은 이렇습니다. <strong>허니는 자당이 가장 높습니다.</strong> 점액질의 당이 씨앗 쪽에 남기 때문입니다. <strong>내추럴은 과당과 클로로겐산, 카페인이 가장 높습니다.</strong> 열매가 붙어 있는 시간이 가장 길어서입니다. <strong>워시드는 전반적으로 가장 낮습니다.</strong> 연구진의 표현대로 습식 공정이 일부 성분을 씻어 내기 때문입니다.</p>
+    <p>클로로겐산은 로스팅 과정에서 분해되며 쓴맛과 떫은맛의 전구체가 되는 물질입니다. 자당은 마이야르 반응과 캐러멜화를 거쳐 단맛과 갈색 향으로 이어집니다. 그래서 <strong>같은 로스팅 프로파일을 그대로 적용하면 결과가 달라집니다.</strong> 가공방식이 바뀌면 로스팅도 손봐야 하는 이유입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">주의 — 하나의 산지, 하나의 연구입니다</div>
+      위 수치는 특정 산지·품종·수확 연도의 시료를 비교한 결과입니다. <strong>모든 내추럴이 모든 워시드보다 카페인이 높다는 뜻은 아닙니다.</strong> 방향성을 보는 근거로 쓰되, 절대적인 순위표로 읽지 않는 편이 안전합니다.
+    </div>
+
+    <h2 class="section-title">6. 맛 차이와 컵 점수</h2>
+    <p>대사체 분석으로 세 방식을 비교한 다른 연구에서는 흥미로운 구도가 나왔습니다. <strong>내추럴과 워시드 사이에서는 137개 화합물이 유의하게 달랐지만, 허니와 워시드 사이에서는 20개뿐</strong>이었습니다. 허니는 이름의 인상과 달리 <strong>성분 구성으로 보면 워시드 쪽에 훨씬 가깝습니다.</strong></p>
+    <p>같은 연구의 커핑 점수와 향미 표현은 다음과 같았습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>방식</th><th>커핑 점수</th><th>주요 향미 표현</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">워시드</td><td>79.50</td><td>고소한 견과, 꽃, 오렌지</td></tr>
+        <tr><td class="em">내추럴</td><td>77.75</td><td>꽃, 오렌지 계열 과일, 구운 호두</td></tr>
+        <tr><td class="em">허니</td><td>77.25</td><td>구운 호두</td></tr>
+      </tbody>
+    </table>
+
+    <p>이 표를 "워시드가 제일 좋다"로 읽으면 곤란합니다. 세 점수의 차이는 2.25점이고, 시료는 한 산지의 것입니다. 오히려 문헌이 반복해서 말하는 것은 <strong>경향의 차이</strong>입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>워시드</th><th>내추럴</th><th>허니</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>산미</td><td class="em">뚜렷함</td><td>낮은 편</td><td>중간</td></tr>
+        <tr><td>바디</td><td>가벼운 편</td><td class="em">두꺼움</td><td>중간~두꺼움</td></tr>
+        <tr><td>단맛</td><td>중간</td><td>높음</td><td class="em">높음</td></tr>
+        <tr><td>깔끔함</td><td class="em">높음</td><td>낮은 편</td><td>중간</td></tr>
+        <tr><td>편차</td><td class="em">작음</td><td>큼</td><td>중간</td></tr>
+        <tr><td>발효 의존도</td><td>통제된 발효</td><td>가장 큼</td><td>가장 작음</td></tr>
+      </tbody>
+    </table>
+
+    <p>정리하면 워시드는 <strong>산지의 성격이 그대로 드러나는 방식</strong>이고, 내추럴은 <strong>가공이 맛의 상당 부분을 만드는 방식</strong>입니다. 허니는 그 사이에서 <strong>단맛 쪽으로 치우친 절충안</strong>에 가깝습니다.</p>
+
+    <h2 class="section-title">7. 봉투를 보고 고르는 기준</h2>
+    <p>원두 봉투에는 대개 산지·품종·가공방식·로스팅 정도가 적혀 있습니다. 가공방식 표기를 어떻게 활용할지 정리하면 다음과 같습니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">이럴 때 이 방식</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>산지별 개성을 비교해 보고 싶다</strong> → 워시드. 가공의 영향이 가장 적어 콜롬비아와 에티오피아의 차이가 선명하게 드러납니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>과일 향이 확실한 커피를 찾는다</strong> → 내추럴. 다만 로스터의 관리 수준에 따라 결과 편차가 큽니다. 신뢰할 만한 곳에서 사는 편이 중요합니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>산미는 부담스럽고 단맛은 원한다</strong> → 허니. 특히 레드·블랙 허니는 바디와 단맛이 함께 올라옵니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-text"><strong>우유를 섞어 마신다</strong> → 내추럴이나 블랙 허니 쪽이 바디가 남아 우유에 묻히지 않습니다. 워시드는 라이트 로스팅과 만나면 우유 속에서 사라지는 경우가 있습니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">5</div>
+        <div class="tip-text"><strong>매일 같은 맛이 필요하다</strong> → 워시드. 편차가 가장 작아 매장 기본 원두로 쓰기 좋습니다.</div>
+      </div>
+    </div>
+
+    <p>추출할 때의 조정도 방향이 있습니다. 내추럴과 블랙 허니는 <strong>당이 많아 잘 녹아 나오므로</strong> 같은 세팅에서 과다추출로 기울기 쉽습니다. 물 온도를 조금 낮추거나 분쇄를 한 단계 굵게 잡는 편이 안전합니다. 반대로 워시드는 <strong>덜 뽑히면 시고 날카롭게</strong> 느껴지므로 온도를 조금 높이거나 시간을 늘려 봅니다.</p>
+
+    <h2 class="section-title">8. 자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">Q. 무산소 발효는 네 번째 방식인가요?</div>
+      별개의 축입니다. <strong>산소를 차단한 통에서 발효시키는 단계</strong>를 뜻하며, 그 뒤에 워시드로 갈 수도 있고 내추럴로 갈 수도 있습니다. 봉투에 "무산소 내추럴"처럼 두 단어가 함께 적히는 이유가 여기 있습니다. 앞의 표기는 발효 조건, 뒤의 표기는 건조 방식이라고 읽으면 됩니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 내추럴이 카페인이 더 많은가요?</div>
+      위 연구에서는 건식 1.01mg/mL, 허니 0.92, 습식 0.91로 <strong>건식이 근소하게 높게</strong> 나왔습니다. 다만 차이가 크지 않고 시료가 한정적입니다. 실제 잔의 카페인은 <strong>품종과 사용한 원두 양</strong>이 훨씬 크게 좌우합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 허니 커피에서 단맛이 안 느껴집니다</div>
+      허니는 성분상 워시드에 가깝습니다(차이 나는 화합물 20개). 옐로 허니라면 <strong>워시드와 구분하기 어려운 경우가 정상</strong>입니다. 단맛을 확실히 원한다면 레드나 블랙 표기를 확인하고, 로스팅이 지나치게 밝지 않은 것을 고르는 편이 낫습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 워시드는 물을 많이 써서 환경에 나쁜가요?</div>
+      습식 공정은 <strong>상당한 양의 물과 전용 설비</strong>를 필요로 하는 것이 맞습니다. 그래서 물이 부족한 산지에서는 애초에 선택지가 아니고, 폐수 처리를 갖춘 농장과 그렇지 않은 농장의 차이도 큽니다. 다만 <strong>건식은 건조 면적과 노동력</strong>을 더 요구하므로 어느 쪽이 절대적으로 낫다고 말하기는 어렵습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 가공방식이 표기되지 않은 원두는 어떤가요?</div>
+      대량 유통 원두는 표기가 생략되는 경우가 많습니다. 산지로 어느 정도 추정은 가능합니다. 브라질은 건식과 펄프드 내추럴 비중이 크고, 중미와 콜롬비아는 습식이 일반적입니다. <strong>다만 추정일 뿐이므로 맛으로 판단하는 편이 확실합니다.</strong>
+    </div>
+
+    <div class="summary-box">
+      <h3>정리</h3>
+      <p>세 방식을 가르는 것은 <strong>과육을 언제 벗기느냐</strong> 하나입니다. 워시드는 건조 전에 발효로 벗기고(<strong>24~36시간</strong>), 내추럴은 통째로 말린 뒤 벗기며(<strong>최대 4주</strong>), 허니는 점액질을 <strong>20~80%</strong> 남긴 채 말립니다.</p>
+      <p>성분으로 보면 <strong>허니는 자당이, 내추럴은 과당·클로로겐산·카페인이 높고, 워시드는 전반적으로 낮습니다.</strong> 습식 공정이 일부 성분을 함께 씻어 내기 때문입니다.</p>
+      <p>맛의 경향은 <strong>워시드=산미와 깔끔함, 내추럴=바디와 과일 향, 허니=단맛</strong>이며, 편차는 정확히 그 반대 순서로 커집니다.</p>
+      <p>어느 방식이 더 우수하다는 순위는 없습니다. <strong>무엇을 드러내고 무엇을 감출지의 선택</strong>이고, 잘 만든 커피는 세 방식 모두에서 나옵니다.</p>
+    </div>
+
+  </div>
+
+
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+
+
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-11"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">디카페인 원두 만드는 법 — 카페인 제거 공정 3가지와 잔류량 기준</div><div class="rc-date">2026. 08. 11</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-06"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">게이샤가 꽃향기인 진짜 이유 — 품종 DNA부터 발효 과학까지, 커피 맛의 설계도 완전 해부</div><div class="rc-date">2026. 08. 06</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-27"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">게이샤가 kg당 3천만원인 이유 — 품종과 가공법이 커피 맛을 결정하는 과학</div><div class="rc-date">2026. 07. 27</div></a></div></div>
+<!-- RELATED:END -->
+</body>
+</html>
