@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>싱글 오리진 뜻 — 블렌드와의 차이와 맛 특성 비교 | 바리스타 스페셜티</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<meta name="description" content="&#x27;한 곳&#x27;의 범위는 나라부터 구획까지 네 단계입니다. 블렌드를 만드는 이유와 구성비 기준, 종별 성분과 세계 생산 비중을 자료 수치로 정리했습니다">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-24">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="싱글 오리진 뜻 — 블렌드와의 차이와 맛 특성 비교 | 바리스타 스페셜티">
+<meta property="og:description" content="&#x27;한 곳&#x27;의 범위는 나라부터 구획까지 네 단계입니다. 블렌드를 만드는 이유와 구성비 기준, 종별 성분과 세계 생산 비중을 자료 수치로 정리했습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-24">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-24T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-24T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-24#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-24", "headline": "싱글 오리진 뜻 — 블렌드와의 차이와 맛 특성 비교 | 바리스타 스페셜티", "description": "'한 곳'의 범위는 나라부터 구획까지 네 단계입니다. 블렌드를 만드는 이유와 구성비 기준, 종별 성분과 세계 생산 비중을 자료 수치로 정리했습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-24", "dateModified": "2026-08-24", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🌋 원두 산지 & 테루아르</span>
+      <span class="badge">싱글 오리진</span>
+      <span class="badge">블렌드</span>
+    </div>
+    <h1>싱글 오리진 뜻<br/>— 블렌드와의 차이와 맛 특성 비교</h1>
+    <p class="subtitle">'한 곳'의 범위는 나라부터 구획까지 네 단계입니다. 블렌드를 만드는 이유와 구성비 기준, 종별 성분과 세계 생산 비중을 자료 수치로 정리했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 8월 24일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 9분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+
+    <!-- 훅 -->
+    <div class="hook">
+      "싱글 오리진이라고 적혀 있으면 좋은 커피인가요?"<br/>
+      봉투에 <strong>싱글 오리진</strong>이라고 적혀 있어도, 그 말이 가리키는 범위는 나라 하나일 수도 있고 농장의 한 구획일 수도 있습니다. 이 표기를 강제하는 법적 정의가 없기 때문입니다. 반대로 블렌드는 품질이 낮아서 섞은 것이 아니라, 대개 <strong>일관성과 가격을 맞추기 위해</strong> 섞은 것입니다.
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>싱글 오리진의 뜻 — '한 곳'이 가리키는 네 단계의 범위</li>
+        <li>표기를 검증하는 제도가 지금 어떻게 바뀌고 있는가</li>
+        <li>로스터가 블렌드를 만드는 세 가지 이유</li>
+        <li>프리블렌딩과 포스트블렌딩의 차이</li>
+        <li>아라비카와 로부스타의 성분 실측값과 세계 생산 비중</li>
+        <li>맛의 차이 — 개성과 편차, 일관성의 교환</li>
+        <li>봉투를 보고 고르는 기준</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">1. 싱글 오리진 뜻 — '한 곳'의 범위는 네 단계다</h2>
+    <p>싱글 오리진은 말 그대로 <strong>한 곳에서 온 커피</strong>를 뜻합니다. 문제는 그 '한 곳'의 크기를 정해 주는 공통 규격이 없다는 점입니다. 원산지 표기는 유통 관행일 뿐이어서, 실제로는 다음 네 단계가 모두 같은 이름으로 팔립니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>표기 단위</th><th>예시</th><th>알 수 있는 것</th><th>추적 가능성</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">국가</td><td>브라질, 베트남</td><td>대략의 재배 조건</td><td>가장 낮음</td></tr>
+        <tr><td class="em">지역</td><td>예가체페, 우일라</td><td>고도·기후대의 경향</td><td>중간</td></tr>
+        <tr><td class="em">협동조합·워시스테이션</td><td>○○ 조합 ○○년산</td><td>가공 관리 주체</td><td>비교적 높음</td></tr>
+        <tr><td class="em">농장·구획(로트)</td><td>○○ 농장 ○○구획</td><td>품종·고도·가공까지 특정</td><td>가장 높음</td></tr>
+      </tbody>
+    </table>
+
+    <p>같은 값을 주고도 어떤 봉투는 나라 이름만, 어떤 봉투는 구획 번호까지 알려 줍니다. <strong>정보의 양이 곧 품질은 아니지만, 재현 가능성은 정보의 양을 따라갑니다.</strong> 마음에 든 커피를 다음에 다시 사고 싶다면 국가 표기만으로는 같은 것을 찾기 어렵습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">'단일 농장'과 '단일 로트'는 다르다</div>
+      한 농장이라도 고도와 품종, 수확 시기가 다른 여러 구획을 한 자루에 섞어 담을 수 있습니다. 그것도 싱글 오리진입니다. <strong>가장 좁은 단위는 로트</strong>이고, 표기가 좁아질수록 그해의 작황과 가공 관리가 그대로 잔에 드러납니다.
+    </div>
+
+    <h2 class="section-title">2. 표기를 검증하는 제도는 지금 바뀌는 중이다</h2>
+    <p>지금까지 원산지 표기는 대체로 <strong>판매자의 설명에 기대는 정보</strong>였습니다. 이 구조가 제도 쪽에서 먼저 흔들리고 있습니다.</p>
+    <p>유럽연합의 산림전용 방지 규정(EUDR)은 커피를 대상 품목에 포함하고 있으며, EU 집행위원회는 <strong>2026년 12월 30일부터</strong> 역내에 출시·판매되거나 역외로 수출되는 해당 품목이 산림 전용과 무관해야 한다고 안내하고 있습니다. 이를 증명하기 위해 <strong>재배·수확된 장소의 위치 정보</strong>가 요구될 수 있습니다.</p>
+    <p>이 규정의 목적은 라벨 표기의 진위 확인이 아니라 산림 보호입니다. 다만 결과적으로 <strong>필지 단위의 위치 정보가 공급망에 쌓이게 되므로</strong>, 산지 표기의 근거가 지금보다 단단해질 가능성이 있습니다. 소규모 사업자에게는 별도의 완화된 규정이 적용됩니다.</p>
+
+    <h2 class="section-title">3. 블렌드를 만드는 세 가지 이유</h2>
+    <p>블렌드를 '남은 원두를 섞은 것'으로 오해하는 경우가 많습니다. 실무에서 블렌드를 설계하는 이유는 대체로 셋으로 나뉩니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">로스터가 블렌드를 쓰는 이유</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>맛의 균형입니다.</strong> 단맛·산미·바디·여운이 서로를 보완하도록 구성합니다. 한 가지 원두로는 특정 축이 비는 경우가 있어, 그 자리를 다른 원두로 채웁니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>목표 가격입니다.</strong> 소매 진열가를 맞추면서 마진을 유지하려면 구성비 조정이 필요합니다. 값이 높은 원두를 소량만 쓰고 기본 골격은 저렴한 원두로 잡는 방식입니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>재고와 일관성입니다.</strong> 산지 사정으로 한 구성 요소가 떨어져도 다른 원두로 대체해 <strong>같은 이름의 맛을 유지</strong>할 수 있습니다. 품질이 처지는 로트를 소수 비율로 섞어 소진하는 용도로 쓰이기도 합니다.</div>
+      </div>
+    </div>
+
+    <p>구성 요소의 수에 대해서는 <strong>두세 가지, 필요하면 넷까지</strong>가 실무 권장입니다. 흔히 쓰는 배합은 동일 비율, 70:30, 50:30:20 같은 형태입니다. 중요한 기준이 하나 더 있습니다. <strong>비율이 25% 아래로 내려가면 최종 맛에 실제로 영향을 줄 가능성이 떨어진다</strong>는 점입니다. 특히 에스프레소에서 그렇습니다.</p>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">2~3종</span><span class="label">권장 구성 요소 수</span></div>
+      <div class="data-card"><span class="num">25%</span><span class="label">맛에 기여하는 최소 구성비</span></div>
+      <div class="data-card"><span class="num">70:30</span><span class="label">가장 흔한 2종 배합</span></div>
+      <div class="data-card"><span class="num">50:30:20</span><span class="label">3종 배합의 기본형</span></div>
+    </div>
+
+    <p>봉투에 "○○ 20%"라고 적힌 구성 요소가 있다면, 그 원두의 개성을 기대하고 사는 것은 무리일 수 있습니다. <strong>이름값을 빌려 온 표기</strong>일 가능성을 함께 고려하는 편이 좋습니다.</p>
+
+    <h2 class="section-title">4. 프리블렌딩과 포스트블렌딩 — 언제 섞느냐</h2>
+    <p>같은 블렌드라도 <strong>볶기 전에 섞느냐, 볶은 뒤에 섞느냐</strong>에 따라 결과가 달라집니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>프리블렌딩(볶기 전 혼합)</th><th>포스트블렌딩(볶은 뒤 혼합)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">공정</td><td>한 번만 볶음 — 단순함</td><td>원두별로 따로 볶고 합침</td></tr>
+        <tr><td class="em">보관</td><td>저장 용기 하나면 충분</td><td>원두별 보관 후 계량·혼합</td></tr>
+        <tr><td class="em">로스팅 조절</td><td>구성 요소별 최적화 불가</td><td>각 원두에 맞는 프로파일 적용</td></tr>
+        <tr><td class="em">외관</td><td>수분·밀도·크기가 다르면 <strong>색이 고르지 않게</strong> 나옴</td><td>비교적 고름</td></tr>
+        <tr><td class="em">시제품 개발</td><td>배합을 바꿀 때마다 다시 볶아야 함</td><td>즉시 비율을 바꿔 시음 가능</td></tr>
+        <tr><td class="em">추출 균일성</td><td>발현 정도가 균일해 유리</td><td>로스팅이 갈리면 편차 발생 여지</td></tr>
+      </tbody>
+    </table>
+
+    <p>정리하면 프리블렌딩은 <strong>생산 효율과 추출 균일성</strong>, 포스트블렌딩은 <strong>개발 유연성과 원두별 최적화</strong>가 강점입니다. 생두의 수분·밀도·크기가 크게 다른 조합일수록 프리블렌딩의 부담이 커집니다.</p>
+
+    <h2 class="section-title">5. 아라비카와 로부스타 — 블렌드에서 가장 자주 갈리는 축</h2>
+    <p>블렌드 이야기에서 빠지지 않는 것이 <strong>종의 배합</strong>입니다. 시장 규모부터 보면 이 논의의 위치가 분명해집니다. 국제커피기구(ICO) 집계로 <strong>2024/25 커피 연도의 세계 생산량은 60kg들이 1억 7,751만 3천 자루</strong>였고, 그중 <strong>아라비카가 1억 206만 5천 자루(57.5%)</strong>, <strong>로부스타가 7,544만 8천 자루(42.5%)</strong>였습니다. 생두 수출에서 아라비카가 차지한 비중은 <strong>63.4%</strong>로 전년의 63.7%보다 낮아졌습니다.</p>
+    <p>성분에서는 <strong>카페인이 가장 안정적인 구분 지표</strong>입니다. 로스팅 정도와 무관하게 값이 유지되기 때문입니다.</p>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1.35g</span><span class="label">아라비카 카페인 (100g당)</span></div>
+      <div class="data-card"><span class="num">2.18g</span><span class="label">로부스타 카페인 (100g당)</span></div>
+      <div class="data-card"><span class="num">57.5%</span><span class="label">세계 생산 중 아라비카 비중</span></div>
+      <div class="data-card"><span class="num">42.5%</span><span class="label">세계 생산 중 로부스타 비중</span></div>
+    </div>
+
+    <p>반대로 열에 약한 성분은 로스팅 정도에 따라 크게 달라집니다. 같은 연구에서 클로로겐산(5-CQA)은 <strong>약배전에서 아라비카 1.79g·로부스타 2.02g</strong>이었지만 <strong>강배전에서는 각각 0.26g·0.09g</strong>으로 떨어졌습니다. 트리고넬린은 약배전에서 아라비카 0.93g·로부스타 0.68g, 강배전에서 0.30g·0.12g이었습니다. 모두 100g 기준입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">로부스타가 섞였다 = 나쁜 블렌드는 아니다</div>
+      이탈리아식 에스프레소 블렌드는 바디와 크레마를 위해 로부스타를 의도적으로 넣는 경우가 많습니다. 문제는 <strong>넣었다는 사실이 아니라 표기하지 않는 것</strong>입니다. 카페인에 민감하다면 종 구성이 실제로 영향을 주므로, 표기가 없는 저가 블렌드는 값을 예측하기 어렵습니다.
+    </div>
+
+    <h2 class="section-title">6. 맛의 차이는 좋고 나쁨이 아니라 편차와 일관성이다</h2>
+    <p>싱글 오리진과 블렌드를 우열로 비교하기 어려운 이유는, 두 가지가 서로 다른 것을 목표로 삼기 때문입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>항목</th><th>싱글 오리진</th><th>블렌드</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">지향</td><td>산지 특성의 표현</td><td>설계한 맛의 재현</td></tr>
+        <tr><td class="em">개성</td><td>뚜렷한 편 — 특정 향미가 앞으로 나옴</td><td>균형 위주 — 튀는 축이 적음</td></tr>
+        <tr><td class="em">해마다의 변화</td><td>작황·가공에 따라 달라짐</td><td>구성 조정으로 흡수</td></tr>
+        <tr><td class="em">공급 안정성</td><td>수확 시기에 묶임</td><td>연중 유지 설계 가능</td></tr>
+        <tr><td class="em">주 용도</td><td>드립·필터 — 향미 확인</td><td>에스프레소·우유 음료</td></tr>
+      </tbody>
+    </table>
+
+    <p>공급 문제는 제도적으로도 확인됩니다. ICO는 <strong>커피 연도를 매년 10월 1일 시작</strong>으로 정의하고, 작황 연도는 국가에 따라 <strong>4월·7월·10월</strong> 세 가지로 나누어 집계합니다. 예컨대 브라질의 2020/21 작황 연도는 2020년 4월 1일에 시작해 2021년 3월 31일에 끝났습니다. 산지마다 수확기가 다르다는 뜻이고, <strong>같은 농장의 같은 로트는 해가 바뀌면 사라집니다.</strong></p>
+    <p>그래서 마음에 든 싱글 오리진을 계속 마시려면 재고를 확인해 두어야 하고, 같은 맛을 매일 같은 조건으로 내려면 블렌드가 유리합니다. 카페가 시그니처 메뉴에 블렌드를 쓰는 이유가 여기 있습니다.</p>
+
+    <h2 class="section-title">7. 라벨은 혀보다 먼저 작동한다</h2>
+    <p>표기에 대해 한 가지 더 짚어 둘 것이 있습니다. <strong>라벨에 적힌 정보 자체가 맛의 평가를 바꿉니다.</strong></p>
+    <p>스페셜티 커피 소비자 <strong>180명</strong>을 대상으로 한 연구에서, 같은 커피를 두고 라벨만 바꿔 제시했습니다. 0~10 척도로 측정한 결과 시음 전 기대 산미는 <strong>'발효' 표기 7.0, 정보 없음 4.0, '탄산 침용' 5.8</strong>이었고, 좋아할 것이라는 기대는 <strong>정보 없음 8.0, 탄산 침용 7.1, 발효 6.6</strong> 순이었습니다.</p>
+    <p>마신 뒤에도 차이는 남았습니다. 지각된 산미는 <strong>'발효' 6.3 대 정보 없음 4.6</strong>, 단맛은 <strong>5.2 대 6.4</strong>, 선호도는 <strong>6.4 대 7.0</strong>, 구매 의향은 <strong>6.2 대 6.8</strong>로 모두 통계적으로 유의한 차이를 보였습니다. 같은 잔이었는데도 그렇습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">이 결과를 어떻게 쓸 것인가</div>
+      표기를 무시하라는 뜻이 아닙니다. <strong>표기가 기대를 만들고 기대가 지각을 끌어당긴다</strong>는 사실을 알고 있으면 충분합니다. 새 원두를 평가할 때는 정보를 먼저 읽지 말고 <strong>마신 뒤에 라벨을 확인하는 순서</strong>로 바꿔 보면 자기 취향을 더 정확하게 알 수 있습니다.
+    </div>
+
+    <h2 class="section-title">8. 살 때 확인할 것</h2>
+
+    <div class="tip-box">
+      <div class="tip-title">봉투에서 순서대로 볼 항목</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>산지 표기의 단위입니다.</strong> 국가만 적혀 있는지, 지역·농장·로트까지 있는지 봅니다. 재구매를 염두에 둔다면 단위가 좁을수록 유리합니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>로스팅 날짜입니다.</strong> 유통기한이 아니라 볶은 날짜가 적혀 있는지 확인합니다. 싱글 오리진이든 블렌드든 이 항목이 맛에 미치는 영향이 가장 큽니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>블렌드라면 구성비입니다.</strong> 비율이 적혀 있지 않으면 어떤 원두가 골격인지 알 수 없습니다. 25% 미만으로 표기된 구성 요소는 맛의 주역이 아닐 가능성이 큽니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-text"><strong>용도입니다.</strong> 드립으로 향미를 확인하고 싶다면 싱글 오리진이, 우유를 넣거나 매일 같은 맛을 내야 한다면 블렌드가 대체로 편합니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">5</div>
+        <div class="tip-text"><strong>종 표기입니다.</strong> 카페인이 신경 쓰인다면 아라비카·로부스타 구성이 적혀 있는지 봅니다. 100g당 카페인이 1.35g과 2.18g으로 갈리기 때문입니다.</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">싱글 오리진이 블렌드보다 좋은 커피인가요?</div>
+      아닙니다. 목적이 다릅니다. 싱글 오리진은 산지의 특성을 드러내는 데, 블렌드는 설계한 맛을 반복해서 재현하는 데 유리합니다. 잘 만든 블렌드는 값이 비싼 싱글 오리진보다 좋은 평가를 받기도 합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">싱글 오리진이면 한 농장에서 온 것인가요?</div>
+      보장되지 않습니다. 표기를 강제하는 공통 규격이 없어서 국가 단위로 쓰이는 경우도 흔합니다. 농장 단위인지 확인하려면 <strong>농장명이나 로트 번호</strong>가 적혀 있는지 보아야 합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">블렌드에 로부스타가 들어가면 품질이 떨어지나요?</div>
+      그렇게 단정할 수 없습니다. 에스프레소에서 바디와 크레마를 위해 의도적으로 넣는 경우가 많습니다. 다만 카페인이 아라비카의 1.6배 수준이므로, 카페인에 민감하다면 구성 표기를 확인하는 편이 좋습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">같은 싱글 오리진을 다시 샀는데 맛이 다릅니다</div>
+      해가 바뀌면 같은 로트가 존재하지 않습니다. ICO 기준으로 작황 연도는 국가별로 4월·7월·10월에 시작하며, 수확기가 지나면 그해의 로트는 소진됩니다. 로스팅 정도와 볶은 날짜도 함께 비교해 보시기 바랍니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">에스프레소에는 블렌드를 써야 하나요?</div>
+      의무는 아닙니다. 다만 에스프레소는 농도가 높아 개별 향미가 강하게 드러나고, 구성 요소가 25% 미만이면 영향이 줄어든다는 실무 기준도 에스프레소에서 나온 것입니다. 매장에서 매일 같은 맛을 내야 한다면 블렌드가 관리하기 쉽습니다.
+    </div>
+
+    <div class="summary-box">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>싱글 오리진에는 법적 정의가 없습니다.</strong> 국가·지역·조합·농장(로트)의 네 단계가 모두 같은 이름으로 팔립니다.</li>
+        <li><strong>EUDR은 커피를 대상 품목에 포함합니다.</strong> EU 집행위원회는 2026년 12월 30일부터 적용된다고 안내하며, 재배 위치 정보가 요구될 수 있습니다.</li>
+        <li><strong>블렌드의 이유는 균형·가격·재고입니다.</strong> 구성은 2~3종, 배합은 70:30이나 50:30:20이 흔하고, <strong>25% 미만은 맛에 기여하기 어렵습니다.</strong></li>
+        <li><strong>프리블렌딩은 효율과 균일성, 포스트블렌딩은 유연성</strong>이 강점입니다. 수분·밀도·크기가 다르면 프리블렌딩에서 색이 고르지 않게 나옵니다.</li>
+        <li><strong>2024/25 세계 생산은 1억 7,751만 자루</strong>로 아라비카 57.5%·로부스타 42.5%였고, 카페인은 100g당 <strong>1.35g 대 2.18g</strong>입니다.</li>
+        <li><strong>라벨은 지각을 바꿉니다.</strong> 같은 커피라도 표기에 따라 산미 6.3 대 4.6, 선호도 6.4 대 7.0으로 갈렸습니다.</li>
+      </ul>
+    </div>
+
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-05"><div class="rc-cat">🌋 원두 산지 & 테루아르</div><div class="rc-title">해발 2,000m에서 무슨 일이 벌어지나 — 커피 맛을 결정짓는 고도의 비밀</div><div class="rc-date">2026. 08. 05</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-26"><div class="rc-cat">🌋 원두 산지 & 테루아르</div><div class="rc-title">커피 맛의 80%는 고도가 결정한다 — 바리스타가 안 알려주던 테루아르의 진실</div><div class="rc-date">2026. 07. 26</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-19"><div class="rc-cat">🌋 산지 & 테루아르</div><div class="rc-title">해발 2,000m에서 자란 원두, 왜 이렇게 맛있을까? — 고도가 커피 맛을 결정하는 놀라운 과학</div><div class="rc-date">2026. 07. 19</div></a></div></div>
+<!-- RELATED:END -->
+</body>
+</html>
