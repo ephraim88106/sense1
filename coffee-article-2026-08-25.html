@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>카페라떼 카푸치노 차이 — 우유 양과 거품 두께로 구분하는 기준 | 바리스타 스페셜티</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<meta name="description" content="두 음료를 가르는 것은 우유의 양이 아니라 거품의 두께입니다. 대회 규정과 이탈리아 인증 규격, 잔 용량과 스팀 온도 기준을 자료 수치로 정리했습니다">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-25">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="카페라떼 카푸치노 차이 — 우유 양과 거품 두께로 구분하는 기준 | 바리스타 스페셜티">
+<meta property="og:description" content="두 음료를 가르는 것은 우유의 양이 아니라 거품의 두께입니다. 대회 규정과 이탈리아 인증 규격, 잔 용량과 스팀 온도 기준을 자료 수치로 정리했습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-25">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-25T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-25T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-25#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-25", "headline": "카페라떼 카푸치노 차이 — 우유 양과 거품 두께로 구분하는 기준 | 바리스타 스페셜티", "description": "두 음료를 가르는 것은 우유의 양이 아니라 거품의 두께입니다. 대회 규정과 이탈리아 인증 규격, 잔 용량과 스팀 온도 기준을 자료 수치로 정리했습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-25", "dateModified": "2026-08-25", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🎨 바리스타 스킬 &amp; 라떼아트</span>
+      <span class="badge">카푸치노</span>
+      <span class="badge">카페라떼</span>
+    </div>
+    <h1>카페라떼 카푸치노 차이<br/>— 우유 양과 거품 두께로 구분하는 기준</h1>
+    <p class="subtitle">두 음료를 가르는 것은 우유의 양이 아니라 거품의 두께입니다. 대회 규정과 이탈리아 인증 규격, 잔 용량과 스팀 온도 기준을 자료 수치로 정리했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 8월 25일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 9분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+    <!-- 훅 -->
+    <div class="hook">
+      "카페라떼랑 카푸치노, 우유 양만 다른 건가요?"<br/>
+      아닙니다. 두 잔에 들어가는 <strong>우유의 절대량은 생각보다 비슷할 때가 많습니다.</strong> 갈리는 것은 그 우유를 스팀하면서 <strong>공기를 얼마나 넣었는가</strong>, 그래서 잔 위에 <strong>거품층이 몇 밀리미터로 앉는가</strong>입니다. 같은 200ml 우유라도 공기를 더 넣으면 부피가 늘어 카푸치노가 되고, 덜 넣으면 라떼가 됩니다.
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>카푸치노를 정의하는 국제 기준의 실제 수치 — 잔 용량과 거품 두께</li>
+        <li>카페라떼에 공식 규격이 없는 이유와, 그래도 통용되는 실무 기준</li>
+        <li>플랫화이트를 포함한 세 음료의 잔·에스프레소·우유·거품 비교표</li>
+        <li>거품 두께를 결정하는 스팀 동작과, 60~65℃가 상한인 화학적 이유</li>
+        <li>한국커피협회(KCA) 바리스타 2급 실기에서 라떼가 아닌 카푸치노를 평가하는 이유</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">1. 카푸치노에는 숫자로 된 기준이 있습니다</h2>
+
+    <p>세 음료 중 규격이 가장 또렷한 쪽은 카푸치노입니다. 월드 바리스타 챔피언십(WBC)은 오랫동안 카푸치노를 <strong>"5~6온스(약 150~180ml)의 커피·우유 음료로, 싱글 에스프레소와 텍스처드 밀크로 만들며 거품 깊이가 최소 1cm 이상(수직으로 측정)"</strong>이라고 규정해 왔습니다. 여기서 중요한 것은 <strong>거품을 위에서 보는 게 아니라 옆에서 재는 항목</strong>으로 정의했다는 점입니다.</p>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">150~180<span style="font-size:15px">ml</span></span><div class="label">카푸치노 완성 용량<br/>(WBC 5~6온스 기준)</div></div>
+      <div class="data-card"><span class="num">10<span style="font-size:15px">mm↑</span></span><div class="label">카푸치노 최소 거품 깊이<br/>(수직 측정)</div></div>
+      <div class="data-card"><span class="num">5<span style="font-size:15px">mm</span></span><div class="label">라떼·플랫화이트<br/>마이크로폼 두께</div></div>
+      <div class="data-card"><span class="num">60~65<span style="font-size:15px">℃</span></span><div class="label">스팀 종료 온도<br/>(70℃ 넘기지 않음)</div></div>
+    </div>
+
+    <p>다만 이 규격도 고정된 것은 아닙니다. WBC는 2016년에 카푸치노의 <strong>총량 150ml 고정 조항을 없애고 "바리스타가 원하는 양"으로 바꿨습니다.</strong> 그리고 2026년 대회 규정에서는 카푸치노라는 별도 항목 자체가 사라져, <strong>"밀크 비버리지(milk beverage)"</strong>라는 이름으로 통합됐습니다. 현행 문구는 "싱글 에스프레소 한 잔과 대회 제공 머신으로 스팀한 우유의 조합으로, 풍부하고 단 우유와 에스프레소의 조화로운 균형을 내야 한다"는 정도만 요구합니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">그래서 지금은 기준이 없어진 건가요?</div>
+      대회 채점 기준에서 빠졌을 뿐, 카페 현장과 교육 과정에서는 <strong>1cm 거품</strong>이 여전히 카푸치노를 가르는 실질적 선으로 쓰입니다. 대회가 규정을 푼 이유는 "카푸치노가 아니어도 된다"가 아니라, 선수가 잔 크기와 배합을 스스로 설계할 여지를 넓히기 위해서였습니다.
+    </div>
+
+    <h2 class="section-title">2. 이탈리아 인증 규격은 우유를 100ml로 못 박습니다</h2>
+
+    <p>이탈리아 에스프레소 협회(INEI, Istituto Nazionale Espresso Italiano)가 인증하는 <strong>이탈리아 카푸치노</strong>의 규격은 훨씬 구체적입니다.</p>
+
+    <table class="compare-table">
+      <thead><tr><th>항목</th><th>인증 이탈리아 카푸치노 규격</th></tr></thead>
+      <tbody>
+        <tr><td>에스프레소</td><td class="em">25ml</td></tr>
+        <tr><td>우유(스팀 전)</td><td class="em">100ml</td></tr>
+        <tr><td>스팀 후 부피</td><td>약 <span class="em">125ml</span> (공기가 들어가 약 25% 증가)</td></tr>
+        <tr><td>잔 용량</td><td>150~160ml 도기 잔</td></tr>
+        <tr><td>우유 시작 온도</td><td>3~5℃ (냉장 상태)</td></tr>
+        <tr><td>완성 온도</td><td class="em">약 55℃</td></tr>
+      </tbody>
+    </table>
+
+    <p>여기서 눈여겨볼 숫자는 <strong>100ml가 125ml가 된다</strong>는 대목입니다. 우유 자체는 늘지 않습니다. <strong>늘어난 25ml는 전부 공기입니다.</strong> 카푸치노와 라떼의 차이를 한 문장으로 줄이면 바로 이 공기의 양입니다.</p>
+
+    <p>역사적으로 카푸치노는 훨씬 큰 음료였습니다. 이름은 1800년대 빈의 <strong>카푸치너(kapuziner)</strong>에서 왔고, 커피에 우유나 크림을 섞어 카푸친 수도회 수사의 갈색 수도복 빛깔을 맞춘 데서 유래했습니다. 이후 잔은 약 220ml에서 <strong>120~180ml로 줄었고, 거품이 차지하는 비율도 약 50%에서 20~25%로 내려왔습니다.</strong> 지금 우리가 마시는 카푸치노는 100년 전보다 작고 거품이 얇은 음료입니다.</p>
+
+    <h2 class="section-title">3. 카페라떼에는 공식 규격이 없습니다</h2>
+
+    <p>반대로 카페라떼는 인증 기관이 숫자로 정의해 둔 규격이 없습니다. <strong>이탈리아어 카페라테(caffè latte)는 말 그대로 "커피 우유"</strong>이고, 원래 가정에서 마시던 아침 음료에 가까웠습니다. 그래서 라떼의 기준은 규정이 아니라 관행으로 굳었습니다.</p>
+
+    <p>통용되는 실무 기준은 이렇습니다. 잔은 <strong>약 225ml 이상</strong>으로 카푸치노보다 크고, 우유가 더 많이 들어가며, 위에 얹히는 마이크로폼은 <strong>약 5mm 안팎으로 얇습니다.</strong> 2022년 월드 라떼아트 챔피언 카르멘 클레멘테(Carmen Clemente)도 "카푸치노는 최소 1cm의 마이크로폼이 필요하다"고 말하면서, 라떼와 플랫화이트는 그 절반 수준인 0.5cm 대로 구분합니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">라떼가 카푸치노보다 항상 큰 것은 아닙니다</div>
+      한국 카페의 기본 사이즈(대개 355ml 안팎)에서는 라떼와 카푸치노를 <strong>같은 잔</strong>에 내는 곳이 많습니다. 이 경우 우유 양은 거의 같고, 갈리는 것은 <strong>공기를 넣는 시간</strong>뿐입니다. 잔 크기로 두 음료를 구분하려 하면 이 지점에서 설명이 어긋납니다.
+    </div>
+
+    <h2 class="section-title">4. 플랫화이트가 끼어들면 기준이 하나 더 생깁니다</h2>
+
+    <p>플랫화이트는 1980년대 호주·뉴질랜드에서 자리 잡은 음료로, 라떼보다 우유가 적고 거품이 더 얇습니다. 커피 저술가 아네트 몰드바(Anette Moldvaer)의 기준은 <strong>더블 에스프레소 50ml + 스팀 우유 약 130ml + 마이크로폼 5mm</strong>입니다. 잔은 호주에서 약 200ml, 뉴질랜드에서 약 175ml가 흔합니다.</p>
+
+    <p>즉 플랫화이트는 <strong>"작은 라떼"가 아니라 "커피 비중이 높은 라떼"</strong>입니다. 우유는 라떼보다 적은데 에스프레소는 두 배로 들어가므로, 같은 잔에서 커피 맛이 훨씬 앞으로 나옵니다.</p>
+
+    <h2 class="section-title">5. 한 표로 정리하면</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>카푸치노</th><th>카페라떼</th><th>플랫화이트</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>공식 규격</td><td class="em">있음(대회·INEI)</td><td>없음</td><td>없음</td></tr>
+        <tr><td>잔 용량</td><td>150~180ml</td><td class="em">225ml 이상</td><td>175~200ml</td></tr>
+        <tr><td>에스프레소</td><td>싱글(약 25~30ml)</td><td>싱글~더블</td><td class="em">더블(약 50ml)</td></tr>
+        <tr><td>거품 두께</td><td class="em">10mm 이상</td><td>약 5mm</td><td>약 5mm 이하</td></tr>
+        <tr><td>거품 질감</td><td>도톰하고 탄력 있음</td><td>얇고 부드러움</td><td>표면이 광택 있게 매끈</td></tr>
+        <tr><td>커피 존재감</td><td>중간</td><td>약함</td><td class="em">강함</td></tr>
+        <tr><td>마실 때 첫인상</td><td>거품이 먼저 닿음</td><td>우유가 먼저 닿음</td><td>커피와 우유가 같이 닿음</td></tr>
+      </tbody>
+    </table>
+
+    <p>표의 항목 중 <strong>실제로 구분에 쓸 수 있는 것은 거품 두께 한 줄</strong>입니다. 잔 크기와 에스프레소 잔 수는 매장마다 다르고, 커피 존재감은 원두에 따라 뒤집힙니다. 옆에서 봤을 때 거품층이 손가락 한 마디 가까이 올라와 있으면 카푸치노, 표면에 얇게 덮여 있으면 라떼나 플랫화이트로 보면 대체로 맞습니다.</p>
+
+    <h2 class="section-title">6. 거품 두께는 스팀 초반 몇 초에서 결정됩니다</h2>
+
+    <p>거품 두께는 완성 후에 조절할 수 없습니다. <strong>스팀 노즐이 우유 표면 근처에서 공기를 빨아들이는 초반 구간</strong>에서 이미 정해집니다. 이 구간이 길면 부피가 크게 늘어 카푸치노가 되고, 짧으면 라떼가 됩니다. 그다음 노즐을 우유 속에 넣고 회전시키는 구간은 <strong>공기를 더 넣는 단계가 아니라 이미 들어간 거품을 잘게 부수는 단계</strong>입니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">두 음료를 나눠 만드는 순서</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text">우유는 <strong>3~5℃ 냉장 상태</strong>로 시작합니다. 미지근한 우유는 공기 주입 구간이 짧아져 거품 두께를 조절할 여유가 사라집니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>공기 주입 구간</strong> — 노즐 끝을 표면 가까이 두고 "치익" 소리를 냅니다. 카푸치노는 이 소리를 라떼보다 길게 유지해 부피를 약 20~25% 늘립니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>회전 구간</strong> — 노즐을 우유 속으로 넣어 소리를 끄고 소용돌이를 만듭니다. 여기서 굵은 거품이 마이크로폼으로 바뀝니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>60~65℃에서 멈춥니다.</strong> 피처 표면이 손등에 뜨겁게 느껴지는 지점이 대략 이 부근입니다.</div></div>
+      <div class="tip-item"><div class="tip-num">5</div><div class="tip-text">피처를 <strong>바닥에 한 번 쳐 큰 기포를 없애고, 돌려서 거품과 우유를 다시 섞습니다.</strong> 이 과정을 건너뛰면 거품이 위로 떠 라떼도 카푸치노처럼 보입니다.</div></div>
+    </div>
+
+    <h2 class="section-title">7. 70℃를 넘기면 안 되는 이유는 화학입니다</h2>
+
+    <p>스팀 온도 상한은 취향 문제가 아닙니다. 우유 유청 단백질인 <strong>β-락토글로불린</strong>은 약 60℃에서 지방구 표면 단백질과 반응하기 시작하고, <strong>본격적인 변성은 약 70℃부터</strong> 일어납니다. 60~65℃ 구간에서는 변성이 가볍게 시작되며 점도가 약간 올라, 공기 방울 둘레에 그물망 같은 구조가 만들어집니다. 이것이 마이크로폼이 무너지지 않고 버티는 원리입니다.</p>
+
+    <p>그런데 <strong>70℃를 넘기면 거품이 건조하고 두꺼워지며, 물이 빠지고(드레인) 더 빨리 무너집니다.</strong> 라떼아트가 그려지지 않는 원인의 상당수가 여기 있습니다. 온도가 더 올라가면 유당과 단백질 사이에서 갈변 반응이 일어나 익힌 우유 냄새가 납니다. 서빙 온도로는 55~60℃가 권장됩니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">뜨겁게 달라는 손님이 있습니다</div>
+      온도를 올리면 거품이 먼저 손해를 봅니다. 라떼아트가 필요 없는 주문이라면 우유 온도를 높이고, 아트가 들어가는 잔이라면 스팀은 65℃ 안에서 끝낸 뒤 <strong>잔을 미리 데워</strong> 체감 온도를 올리는 편이 낫습니다.
+    </div>
+
+    <h2 class="section-title">8. 자격시험이 라떼가 아니라 카푸치노를 보는 이유</h2>
+
+    <p>한국커피협회(KCA) 바리스타 2급 실기 평가는 <strong>준비 평가·에스프레소 평가·카푸치노 평가·서비스 기술 평가</strong>로 구성되고, 준비 및 시연 시간은 15분입니다. 여러 우유 음료 중 카푸치노가 평가 대상인 데에는 이유가 있습니다.</p>
+
+    <p><strong>카푸치노는 거품 두께라는 채점 가능한 기준을 가진 유일한 음료</strong>이기 때문입니다. 라떼는 규격이 없어 "잘 만들었다"를 숫자로 판정하기 어렵지만, 카푸치노는 옆에서 재면 됩니다. 공기 주입을 못 하면 거품이 모자라고, 과하게 하면 굵은 기포가 남습니다. <strong>한 잔으로 스팀 실력의 양극단이 모두 드러나는 구조</strong>입니다.</p>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">카푸치노가 라떼보다 카페인이 적나요?</div>
+      대개 같습니다. 두 음료 모두 싱글 에스프레소로 만들면 커피 양이 동일하기 때문입니다. 잔이 크다고 카페인이 늘지 않습니다. <strong>더블로 뽑는 플랫화이트나 라지 사이즈 라떼가 오히려 더 많을 수 있습니다.</strong>
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">칼로리 차이는 어디서 생기나요?</div>
+      우유 양에서 생깁니다. 카푸치노는 우유의 일부가 공기로 부풀어 있어, 같은 잔이라도 실제 들어간 우유가 라떼보다 적습니다. <strong>거품이 많을수록 우유가 적게 들어간다</strong>고 보면 대체로 맞습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">거품이 두꺼운데 굵은 기포가 보입니다</div>
+      공기는 충분히 넣었지만 회전 구간이 짧았던 경우입니다. 노즐을 우유 속에 더 깊이 넣고 소용돌이를 오래 돌려 기포를 잘게 부수세요. 거품 두께와 거품 입자 크기는 <strong>서로 다른 단계에서 결정됩니다.</strong>
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">우유를 바꾸면 두께가 달라지나요?</div>
+      달라집니다. 지방이 많은 우유는 낮은 온도에서 더 진하고 부드러운 거품이 나고, 저지방 우유는 상대적으로 높은 온도에서 거품이 더 안정적으로 버팁니다. <strong>평소 쓰던 우유를 바꾸면 공기 주입 시간도 다시 잡아야 합니다.</strong>
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">카푸치노에 시나몬 가루를 뿌리는 게 맞나요?</div>
+      규격에 있는 항목은 아닙니다. 이탈리아 인증 규격은 표면에 갈색 테두리가 도는 흰색을 기준으로 삼을 뿐, 향신료를 요구하지 않습니다. <strong>취향의 영역</strong>으로 보면 됩니다.
+    </div>
+
+    <div class="closing-box">
+      <h3>결국 구분 기준은 하나입니다</h3>
+      <p>카페라떼와 카푸치노를 우유의 양으로 나누려 하면 매장마다 답이 달라집니다. 잔 크기도, 에스프레소 잔 수도 통일돼 있지 않기 때문입니다.</p>
+      <p>남는 기준은 <strong>거품 두께</strong> 하나입니다. 1cm 이상이면 카푸치노, 5mm 안팎이면 라떼나 플랫화이트입니다. 그리고 그 두께는 스팀 초반 몇 초, 노즐이 공기를 빨아들이는 시간에서 이미 정해집니다.</p>
+    </div>
+
+    
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-16"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">우유 스팀 하는법 — 공기 주입 시점과 적정 온도, 거품 내는 순서</div><div class="rc-date">2026. 08. 16</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-03"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">라떼아트가 안 예쁜 진짜 이유 — 바리스타 10년이 밝히는 밀크 스티밍의 물리학</div><div class="rc-date">2026. 08. 03</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-31"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">라떼아트가 안 되는 진짜 이유 — 카페에서 절대 안 알려주는 밀크 스티밍의 과학</div><div class="rc-date">2026. 07. 31</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#카페라떼</span>
+      <span class="tag">#카푸치노</span>
+      <span class="tag">#플랫화이트</span>
+      <span class="tag">#우유스팀</span>
+      <span class="tag">#마이크로폼</span>
+      <span class="tag">#바리스타2급</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>카푸치노에는 숫자 기준이 있습니다.</strong> WBC는 5~6온스(약 150~180ml)에 거품 깊이 최소 1cm(수직 측정)로 규정해 왔고, 2016년 150ml 고정 조항을 없앤 뒤 2026년 규정에서는 "밀크 비버리지"로 통합했습니다.</li>
+        <li><strong>이탈리아 인증 규격은 에스프레소 25ml + 우유 100ml</strong>이며, 스팀 후 약 125ml로 부풀고 잔은 150~160ml, 완성 온도는 약 55℃입니다. 늘어난 25ml는 전부 공기입니다.</li>
+        <li><strong>카페라떼에는 공식 규격이 없습니다.</strong> 잔 약 225ml 이상에 마이크로폼 5mm 안팎이 관행으로 통용됩니다.</li>
+        <li><strong>플랫화이트는 더블 에스프레소 50ml + 우유 약 130ml + 폼 5mm</strong>로, 라떼보다 우유가 적고 커피 비중이 높습니다.</li>
+        <li><strong>거품 두께는 스팀 초반 공기 주입 구간에서 결정됩니다.</strong> 회전 구간은 거품을 잘게 부수는 단계이지 두께를 바꾸는 단계가 아닙니다.</li>
+        <li><strong>스팀은 60~65℃에서 멈춥니다.</strong> β-락토글로불린은 약 60℃에서 반응을 시작해 70℃부터 본격 변성되며, 그 위에서는 거품이 건조해지고 물이 빠져 빨리 무너집니다.</li>
+        <li><strong>KCA 바리스타 2급 실기는 카푸치노를 평가합니다.</strong> 거품 두께라는 채점 가능한 기준이 있는 음료이기 때문입니다.</li>
+      </ul>
+    </div>
+
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
