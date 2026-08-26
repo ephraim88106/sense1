@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2급 실기 순서 — 시험 절차와 평가 항목, 배점 기준 정리 | 바리스타 스페셜티</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<meta name="description" content="한국커피협회 바리스타 2급 실기는 준비 및 시연시간 15분 안에 에스프레소 4잔과 카푸치노 4잔을 냅니다. 평가 4범주와 기술 60점·감각 40점 배점, 합격 기준을 협회 규정으로 정리했습니다">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-26">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="2급 실기 순서 — 시험 절차와 평가 항목, 배점 기준 정리 | 바리스타 스페셜티">
+<meta property="og:description" content="한국커피협회 바리스타 2급 실기는 준비 및 시연시간 15분 안에 에스프레소 4잔과 카푸치노 4잔을 냅니다. 평가 4범주와 기술 60점·감각 40점 배점, 합격 기준을 협회 규정으로 정리했습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-26">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-26T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-26T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-26#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-26", "headline": "2급 실기 순서 — 시험 절차와 평가 항목, 배점 기준 정리 | 바리스타 스페셜티", "description": "한국커피협회 바리스타 2급 실기는 준비 및 시연시간 15분 안에 에스프레소 4잔과 카푸치노 4잔을 냅니다. 평가 4범주와 기술 60점·감각 40점 배점, 합격 기준을 협회 규정으로 정리했습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-26", "dateModified": "2026-08-26", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🎨 바리스타 스킬 &amp; 라떼아트</span>
+      <span class="badge">자격시험</span>
+      <span class="badge">실기</span>
+    </div>
+    <h1>2급 실기 순서<br/>— 시험 절차와 평가 항목, 배점 기준 정리</h1>
+    <p class="subtitle">한국커피협회 바리스타 2급 실기는 준비 및 시연시간 15분 안에 에스프레소 4잔과 카푸치노 4잔을 냅니다. 평가 4범주와 기술 60점·감각 40점 배점, 합격 기준을 협회 규정으로 정리했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 8월 26일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 9분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+    <!-- 훅 -->
+    <div class="hook">
+      "2급 실기, 대체 15분 동안 뭘 하는 건가요?"<br/>
+      실기시험이 어려운 이유는 기술이 아니라 <strong>순서와 시간</strong>입니다. 한국커피협회 규정이 정한 시간은 <strong>준비 및 시연시간 15분</strong>, 그 안에 내야 하는 잔은 <strong>에스프레소 4잔과 카푸치노 4잔</strong>입니다. 이 두 숫자를 먼저 몸에 붙여 놓으면, 연습에서 무엇을 줄여야 하는지가 보입니다.
+    </div>
+
+    <h2 class="section-title">1. 15분 안에 무엇을 평가하는가</h2>
+    <p>협회 자격시험규정은 바리스타 2급 실기의 평가 범주를 네 가지로 명시하고 있습니다. <strong>준비 평가, 에스프레소 평가, 카푸치노 평가, 서비스 기술 평가</strong>입니다. 평가는 <strong>기술적 평가와 감각적 평가</strong>로 나뉘고, 응시자 1인을 <strong>평가자 2인</strong>이 함께 봅니다.</p>
+    <p>즉 커피 맛만 보는 시험이 아닙니다. 잔을 데워 놓았는지, 동선이 정리돼 있는지, 잔을 어떻게 내려놓는지가 <strong>별도 범주로 점수화</strong>됩니다. 맛에서 만회하겠다는 전략이 잘 통하지 않는 구조입니다.</p>
+
+    <div class="data-highlight">
+      <div class="data-card"><div class="num">15분</div><div class="label">준비 및 시연시간</div></div>
+      <div class="data-card"><div class="num">4범주</div><div class="label">준비·에스프레소·카푸치노·서비스</div></div>
+      <div class="data-card"><div class="num">2인</div><div class="label">응시자 1인당 평가자</div></div>
+      <div class="data-card"><div class="num">60점</div><div class="label">합격선(100점 만점)</div></div>
+    </div>
+
+    <h2 class="section-title">2. 배점 — 기술 60점, 감각 40점</h2>
+    <p>협회 시험안내에 따르면 실기 100점은 <strong>기술 60점 + 감각 40점</strong>으로 나뉩니다. 배점이 기술 쪽에 더 실려 있다는 점이 연습 방향을 정해 줍니다. 추출 맛을 마지막 5%까지 끌어올리는 것보다, <strong>탬핑·퍼징·잔 다루기처럼 눈에 보이는 동작을 일정하게 만드는 편</strong>이 점수 효율이 좋습니다.</p>
+    <p>합격 기준은 <strong>필기·실기 모두 60점 이상</strong>이며, 규정은 <strong>항목 간 과락이 없다</strong>고 명시합니다. 한 범주에서 크게 무너져도 다른 범주로 메울 수 있다는 뜻입니다. 다만 서비스 기술 평가처럼 준비만으로 확보되는 점수를 놓치면 메울 여지가 그만큼 줄어듭니다.</p>
+
+    <table class="compare-table">
+      <tr><th>구분</th><th>내용</th><th>비고</th></tr>
+      <tr><td class="em">총점</td><td>100점</td><td>기술 60 + 감각 40</td></tr>
+      <tr><td class="em">합격선</td><td>60점 이상</td><td>필기·실기 동일</td></tr>
+      <tr><td class="em">과락</td><td>없음</td><td>항목 간 과락 조항 없음</td></tr>
+      <tr><td class="em">평가 방식</td><td>기술적 + 감각적</td><td>평가자 2인</td></tr>
+    </table>
+
+    <h2 class="section-title">3. 제출 음료 — 에스프레소 4잔, 카푸치노 4잔</h2>
+    <p>협회 시험안내가 밝힌 2급 제출 사양은 <strong>에스프레소 4잔 평가, 카푸치노 4잔 평가</strong>입니다. 총 8잔을 15분 안에 준비·시연·정리까지 마쳐야 합니다.</p>
+    <p>여기서 시간 계산이 나옵니다. 8잔을 15분에 나누면 잔당 2분이 채 안 되고, 그 안에 잔 예열과 그라인더 세팅, 마무리 정리가 함께 들어갑니다. <strong>한 잔이라도 다시 뽑으면 뒤가 전부 밀립니다.</strong> 연습에서 재추출 없이 8잔을 끝내는 리허설을 반복해야 하는 이유입니다.</p>
+    <p>2급 카푸치노에는 라떼아트 도안 지정이 없습니다. 1급이 <strong>하트 2잔, 3단 튤립 2잔</strong>을 지정하는 것과 대비됩니다. 2급은 도안 난이도가 아니라 <strong>네 잔의 균일함</strong>이 관건입니다.</p>
+
+    <h2 class="section-title">4. 시연을 시간 순으로 나누면</h2>
+    <p>규정은 세부 동선을 지정하지 않고 "준비 및 시연시간 15분"으로만 묶습니다. 그래서 15분을 어떻게 쪼갤지는 응시자의 설계 영역입니다. 평가 범주 순서를 그대로 따라가는 배분이 가장 안전합니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text"><strong>준비</strong> — 잔 예열, 도구 배치, 그라인더 분쇄도 확인과 시험 추출. 준비 평가가 여기서 끝납니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text"><strong>에스프레소 4잔</strong> — 퍼징, 도징, 레벨링, 탬핑, 즉시 추출. 잔은 이미 데워져 있어야 합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text"><strong>카푸치노 4잔</strong> — 샷을 먼저 받아 두고 우유를 한 번에 스팀해 네 잔에 나눠 붓습니다. 스팀을 네 번 하면 시간이 부족합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text"><strong>서비스와 정리</strong> — 잔을 내는 방향, 손잡이 위치, 작업대 청소. 마지막 1~2분을 미리 떼어 놓습니다.</span></div>
+    </div>
+
+    <h2 class="section-title">5. 잔의 기준을 무엇에 맞출 것인가</h2>
+    <p>협회 규정은 음료의 세부 수치(잔 용량, 거품 두께 등)를 공개 규정 페이지에 두지 않습니다. 그래서 연습 목표를 잡을 때는 <strong>국제적으로 통용되는 인증 규격</strong>을 참고 기준으로 삼는 편이 실용적입니다. 이탈리아 에스프레소 협회(INEI)의 인증 규격은 다음과 같습니다.</p>
+
+    <table class="compare-table">
+      <tr><th>항목</th><th>에스프레소</th><th>카푸치노</th></tr>
+      <tr><td class="em">원두 사용량</td><td>7g ± 0.5</td><td>에스프레소 25ml 기준</td></tr>
+      <tr><td class="em">추출수 온도</td><td>88℃ ± 2</td><td>—</td></tr>
+      <tr><td class="em">압력</td><td>9bar ± 1</td><td>—</td></tr>
+      <tr><td class="em">시간</td><td>25초 ± 5</td><td>—</td></tr>
+      <tr><td class="em">완성 용량</td><td>25ml ± 2.5</td><td>우유 100ml → 스팀 후 약 125ml</td></tr>
+      <tr><td class="em">잔</td><td>50~100ml</td><td>150~160ml</td></tr>
+      <tr><td class="em">제공 온도</td><td>67℃ ± 3</td><td>약 55℃</td></tr>
+    </table>
+
+    <p>이 수치는 협회 채점표가 아니라 <strong>참고용 목표값</strong>입니다. 다만 "카푸치노 우유 100ml가 스팀 후 125ml가 된다"는 대목은 그대로 쓸모가 있습니다. 늘어난 25ml가 전부 공기라는 뜻이고, <strong>거품 두께는 스팀 초반 공기 주입 구간에서 이미 정해진다</strong>는 이야기이기 때문입니다.</p>
+
+    <h2 class="section-title">6. 필기와 실기의 관계</h2>
+    <p>필기는 <strong>50문항·50분·사지선다형</strong>이고 출제범위는 커피학 개론, 커피 로스팅과 향미 평가, 커피 추출입니다. 응시자격 제한은 없어 누구나 볼 수 있습니다.</p>
+    <p>중요한 조항은 유효기간입니다. <strong>필기 합격자는 합격일로부터 2년간 실기 응시 자격</strong>을 갖습니다. 실기에서 한 번 떨어져도 2년 안에는 필기를 다시 볼 필요가 없다는 뜻이므로, 필기를 먼저 확보해 두고 실기를 여유 있게 준비하는 순서가 유리합니다.</p>
+    <p>취득한 자격증 자체에는 <strong>유효기간이 없고 갱신도 필요 없습니다.</strong></p>
+
+    <h2 class="section-title">7. 1급과 무엇이 다른가</h2>
+    <p>2급과 1급은 평가 범주와 시연 시간이 동일합니다. 갈리는 것은 <strong>응시자격, 필기 구성, 카푸치노 도안</strong>입니다.</p>
+
+    <table class="compare-table">
+      <tr><th>구분</th><th>2급</th><th>1급</th></tr>
+      <tr><td class="em">응시자격</td><td>제한 없음</td><td class="em">2급 취득 후 필기 응시</td></tr>
+      <tr><td class="em">필기</td><td>50문항 / 50분</td><td>50문항 / 50분 + 영어 문항 10% 내외</td></tr>
+      <tr><td class="em">시연시간</td><td>15분</td><td>15분</td></tr>
+      <tr><td class="em">카푸치노</td><td>4잔(도안 지정 없음)</td><td class="em">4잔 — 하트 2, 3단 튤립 2</td></tr>
+      <tr><td class="em">검정료</td><td>필기 33,000원 / 실기 66,000원</td><td>필기 44,000원 / 실기 99,000원</td></tr>
+    </table>
+
+    <h2 class="section-title">8. 접수와 응시에서 점수 밖으로 떨어지는 것들</h2>
+    <p>기술과 무관하게 응시 자체가 막히거나 자격이 취소되는 조항이 있습니다. 시험장에서 되돌릴 수 없는 항목들이라 미리 확인해 두는 편이 낫습니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text"><strong>신분증 미소지는 응시 불가</strong>입니다. 주민등록증·운전면허증·여권·외국인등록증 등이 인정되며, 2022년 4월부터 모바일 신분증도 인정됩니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text"><strong>부정행위는 합격 취소에 더해 2회에 한해 응시자격이 제한</strong>됩니다. 시험 중 대화, 대리시험, 답안지 교환이 여기 해당합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text"><strong>시험 3일 전부터는 취소가 불가</strong>합니다. 사망·입원 등 특별 사유는 50% 환불이 적용됩니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text">검정료는 <strong>필기 33,000원 + 실기 66,000원, 합계 99,000원</strong>입니다. 실기 재응시 때는 실기 검정료만 다시 냅니다.</span></div>
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">15분 안에 8잔이 정말 가능한가요?</div>
+      가능합니다. 다만 <strong>재추출 여유가 거의 없습니다.</strong> 준비 단계에서 분쇄도를 확정해 두고, 카푸치노는 우유를 한 번에 스팀해 네 잔으로 나누는 설계를 미리 잡아 두어야 합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">한 범주를 크게 망치면 바로 탈락인가요?</div>
+      아닙니다. 규정은 <strong>항목 간 과락이 없다</strong>고 명시합니다. 총점 60점을 넘기면 됩니다. 다만 준비·서비스처럼 연습만으로 확보되는 점수를 흘리면 만회 폭이 좁아집니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">실기에 떨어지면 필기부터 다시 봐야 하나요?</div>
+      2년 안이라면 필요 없습니다. <strong>필기 합격일로부터 2년간 실기 응시 자격</strong>이 유지되므로 그 기간에는 실기만 다시 접수하면 됩니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">2급 카푸치노도 라떼아트를 해야 하나요?</div>
+      2급에는 <strong>도안 지정이 없습니다.</strong> 하트 2잔·3단 튤립 2잔이 지정되는 것은 1급입니다. 2급은 도안 난이도보다 네 잔의 거품 상태를 균일하게 맞추는 쪽이 중요합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">자격증을 나중에 갱신해야 하나요?</div>
+      필요 없습니다. 협회는 바리스타 자격증을 <strong>유효기간이 없는 비갱신 자격</strong>으로 안내하고 있습니다.
+    </div>
+
+    <div class="closing-box">
+      <h3>연습은 시계를 놓고 시작합니다</h3>
+      <p>2급 실기에서 갈리는 지점은 추출 실력보다 <strong>15분이라는 상자에 8잔을 넣는 설계</strong>입니다. 준비에서 몇 분을 쓸지, 카푸치노 우유를 몇 번에 스팀할지, 정리에 몇 초를 남길지를 미리 정해 놓으면 시험장에서 판단할 일이 줄어듭니다.</p>
+      <p>배점이 기술 60점에 실려 있다는 사실도 같은 방향을 가리킵니다. <strong>매번 같게 나오는 동작</strong>이 결국 점수입니다.</p>
+    </div>
+
+    
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-25"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">카페라떼 카푸치노 차이 — 우유 양과 거품 두께로 구분하는 기준</div><div class="rc-date">2026. 08. 25</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-16"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">우유 스팀 하는법 — 공기 주입 시점과 적정 온도, 거품 내는 순서</div><div class="rc-date">2026. 08. 16</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-03"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">라떼아트가 안 예쁜 진짜 이유 — 바리스타 10년이 밝히는 밀크 스티밍의 물리학</div><div class="rc-date">2026. 08. 03</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#자격시험</span>
+      <span class="tag">#실기시험</span>
+      <span class="tag">#한국커피협회</span>
+      <span class="tag">#카푸치노</span>
+      <span class="tag">#에스프레소</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>준비 및 시연시간은 15분</strong>이고, 평가 범주는 준비·에스프레소·카푸치노·서비스 기술 네 가지입니다. 응시자 1인을 평가자 2인이 봅니다.</li>
+        <li><strong>제출 음료는 에스프레소 4잔과 카푸치노 4잔</strong>, 총 8잔입니다. 잔당 2분이 채 안 되므로 재추출 여유가 거의 없습니다.</li>
+        <li><strong>배점은 기술 60점 + 감각 40점</strong>입니다. 눈에 보이는 동작의 일관성이 점수 효율이 높습니다.</li>
+        <li><strong>합격선은 필기·실기 모두 60점이고 항목 간 과락은 없습니다.</strong></li>
+        <li><strong>필기 합격 후 2년간 실기 응시 자격</strong>이 유지되며, 자격증 자체는 유효기간 없는 비갱신 자격입니다.</li>
+        <li><strong>1급과의 차이는 응시자격·영어 문항·카푸치노 도안</strong>입니다. 1급은 하트 2잔과 3단 튤립 2잔이 지정됩니다.</li>
+        <li><strong>검정료는 필기 33,000원 + 실기 66,000원</strong>이며, 신분증 미소지는 응시 불가입니다.</li>
+      </ul>
+    </div>
+
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
