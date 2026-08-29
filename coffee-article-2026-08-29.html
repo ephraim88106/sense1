@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>프렌치프레스 사용법 — 분쇄도와 우려내는 시간, 침전물 줄이는 순서 | 바리스타 스페셜티</title>
+  <meta name="description" content="프렌치프레스는 금속 메시로 거르는 침출식 기구입니다. 굵은 분쇄도와 90~96도의 물, 물 1L당 커피 55g을 기준으로 4분 안팎 우린 뒤 플런저를 내리고 바로 옮겨 담으면 침전물과 과다추출을 함께 줄일 수 있습니다">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-29">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="프렌치프레스 사용법 — 분쇄도와 우려내는 시간, 침전물 줄이는 순서 | 바리스타 스페셜티">
+<meta property="og:description" content="프렌치프레스는 금속 메시로 거르는 침출식 기구입니다. 굵은 분쇄도와 90~96도의 물, 물 1L당 커피 55g을 기준으로 4분 안팎 우린 뒤 플런저를 내리고 바로 옮겨 담으면 침전물과 과다추출을 함께 줄일 수 있습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-29">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-29T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-29T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-29#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-29", "headline": "프렌치프레스 사용법 — 분쇄도와 우려내는 시간, 침전물 줄이는 순서 | 바리스타 스페셜티", "description": "프렌치프레스는 금속 메시로 거르는 침출식 기구입니다. 굵은 분쇄도와 90~96도의 물, 물 1L당 커피 55g을 기준으로 4분 안팎 우린 뒤 플런저를 내리고 바로 옮겨 담으면 침전물과 과다추출을 함께 줄일 수 있습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-29", "dateModified": "2026-08-29", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법 심층 가이드</span>
+      <span class="badge">침출식 추출</span>
+      <span class="badge">기구 사용법</span>
+    </div>
+    <h1>프렌치프레스 사용법<br/>— 분쇄도와 우려내는 시간, 침전물 줄이는 순서</h1>
+    <p class="subtitle">프렌치프레스는 금속 메시로 거르는 침출식 기구입니다. 굵은 분쇄도와 90~96℃의 물, 물 1L당 커피 55g을 기준으로 4분 안팎 우린 뒤 플런저를 내리고 바로 옮겨 담으면 침전물과 과다추출을 함께 줄일 수 있습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 8월 29일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+    <!-- 훅 -->
+    <div class="hook">
+      "굵게 갈아서 4분만 두면 되는 거 아닌가요?"<br/>
+      맞습니다. 다만 그 두 숫자만 지키면 <strong>잔 바닥에 가라앉는 가루</strong>와 <strong>식은 뒤 갑자기 써지는 맛</strong>이 거의 매번 따라옵니다. 프렌치프레스는 <strong>거르는 기구가 아니라 담가 두는 기구</strong>라서, 플런저를 내린 다음에 무엇을 하느냐가 맛을 절반쯤 결정합니다.
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>프렌치프레스가 핸드드립과 근본적으로 다른 지점 — 침출식과 투과식</li>
+        <li>굵게 갈아야 하는 이유와, 실제 실험에서 쓰인 입자 크기 범위</li>
+        <li>물 온도·비율의 국제 기준값과 그 출처</li>
+        <li>침전물을 줄이는 일곱 단계 순서</li>
+        <li>쓸 때·싱거울 때 무엇부터 바꿔야 하는가</li>
+        <li>종이 필터로 내린 커피와 성분이 어떻게 달라지는가</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">1. 담가서 뽑는 기구입니다</h2>
+    <p>핸드드립은 물이 커피층을 <strong>통과하면서</strong> 성분을 씻어 내는 투과식입니다. 물은 계속 새 물로 바뀌고, 다 내려간 순간 추출이 끝납니다. 프렌치프레스는 반대로 <strong>물과 커피를 한 통에 담가 두는 침출식</strong>입니다. 같은 물이 계속 커피와 닿아 있으므로, 시간이 지날수록 물 쪽의 농도가 올라가고 추출 속도는 점점 느려집니다.</p>
+
+    <p>여기서 두 가지가 따라옵니다. 첫째, <strong>물줄기를 붓는 기술이 거의 필요 없습니다.</strong> 손기술이 결과를 좌우하지 않으니 재현성이 높습니다. 둘째, <strong>끝나는 시점을 사람이 정해 줘야 합니다.</strong> 플런저를 내려도 커피 가루는 여전히 물속에 있습니다. 그대로 두면 추출은 계속됩니다. 이것이 프렌치프레스에서 가장 자주 놓치는 부분입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">기구 구조</div>
+      플런저 끝의 금속 메시는 <strong>종이 필터처럼 미세 입자를 잡아 두는 장치가 아닙니다.</strong> 굵은 가루를 아래로 눌러 두는 역할에 가깝고, 미분(아주 고운 가루)과 커피 오일은 그대로 통과합니다. 프렌치프레스 커피가 묵직하고 입안 질감이 두꺼운 이유이자, 바닥에 가루가 남는 이유이기도 합니다.
+    </div>
+
+    <h2 class="section-title">2. 굵게 가는 이유는 시간에 있습니다</h2>
+    <p>분쇄도를 굵게 잡는 이유는 흔히 "메시를 통과하지 않게 하려고"라고 설명되지만, 절반만 맞는 말입니다. 더 큰 이유는 <strong>접촉 시간이 길기 때문</strong>입니다. 에스프레소는 30초 안팎, 핸드드립은 2~3분인데 프렌치프레스는 4분 안팎을 담가 둡니다. 같은 굵기로 갈면 그 시간 동안 성분이 과하게 빠져나와 쓴맛과 떫은맛이 앞섭니다.</p>
+
+    <p>침출식 추출을 다룬 2023년 <em>Applied Food Research</em> 연구는 입자 크기를 <strong>부피가중 평균 직경 282~1,057μm</strong> 범위에서, 침출 시간을 <strong>5분에서 18시간까지</strong>, 비율을 <strong>1:3~1:11</strong> 범위에서 바꿔 가며 비교했습니다. 결과는 방향이 분명했습니다. <strong>입자가 작을수록, 온도가 높을수록 추출 효율이 올라갔습니다.</strong> 뒤집어 말하면, 뜨거운 물로 오래 담그는 프렌치프레스에서는 <strong>입자를 키우는 것이 과다추출을 막는 가장 직접적인 수단</strong>입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>기구</th><th>접촉 시간</th><th>분쇄 굵기 감각</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">에스프레소</td><td>25~30초</td><td>밀가루와 설탕 사이</td></tr>
+        <tr><td class="em">핸드드립</td><td>2~3분</td><td>굵은 설탕</td></tr>
+        <tr><td class="em">프렌치프레스</td><td>4분 안팎</td><td>굵은 소금 · 거친 빵가루</td></tr>
+        <tr><td class="em">콜드브루(침출)</td><td>8~18시간</td><td>프렌치프레스보다 조금 더 굵게</td></tr>
+      </tbody>
+    </table>
+
+    <p>손으로 확인하는 방법이 하나 있습니다. 간 가루를 손가락으로 문질렀을 때 <strong>알갱이 하나하나가 따로 느껴지면</strong> 적당하고, <strong>손끝에 분가루처럼 묻어나면</strong> 너무 곱습니다. 미분이 많은 상태로 4분을 담그면, 아무리 시간을 정확히 지켜도 침전물과 쓴맛이 같이 옵니다.</p>
+
+    <h2 class="section-title">3. 물 온도와 비율의 기준값</h2>
+    <p>비율과 온도는 감으로 잡지 않아도 됩니다. 스페셜티커피협회(SCA)가 가정용 브루어에 대해 정한 <strong>SCA 표준 310-2021</strong>이 숫자를 명시하고 있습니다.</p>
+
+    <div class="data-highlight">
+      <div class="data-card"><div class="num">55g</div><div class="label">물 1L당 커피 양</div></div>
+      <div class="data-card"><div class="num">90~96℃</div><div class="label">추출 물 온도</div></div>
+      <div class="data-card"><div class="num">1.15~1.55%</div><div class="label">기준 비율에서의 농도</div></div>
+    </div>
+
+    <p>물 1L당 55g은 대략 <strong>1:18</strong>입니다. 프렌치프레스에서는 이보다 조금 진하게 잡는 경우가 많아 <strong>1:15~1:17</strong>이 흔히 쓰이지만, 어느 쪽을 택하든 <strong>저울로 재는 것</strong>이 계량스푼보다 훨씬 재현성이 높습니다. 원두는 배전도와 밀도에 따라 같은 부피에서도 무게가 크게 달라지기 때문입니다.</p>
+
+    <p>같은 표준은 물 자체의 조건도 정하고 있습니다. <strong>냄새가 없고 염소가 없어야 하며, 칼슘 경도는 CaCO₃ 기준 50~175ppm, 알칼리도는 40~70ppm, pH는 6~8</strong>입니다. 정수기 물이나 생수를 쓰라는 조언의 근거가 여기에 있습니다. 특히 <strong>염소 냄새</strong>는 원두를 아무리 좋은 것으로 바꿔도 지워지지 않습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      SCA 표준 310-2021은 <strong>우려내는 시간을 못 박아 두지 않습니다.</strong> 흔히 쓰이는 "4분"은 표준이 정한 값이 아니라 실무에서 굳어진 관례에 가깝습니다. 그래서 3분에서 5분 사이를 <strong>자기 원두에 맞춰 조정할 여지</strong>가 있다고 보는 편이 정확합니다.
+    </div>
+
+    <h2 class="section-title">4. 침전물을 줄이는 일곱 단계</h2>
+    <p>순서 자체는 단순합니다. 다만 5번부터 7번을 생략하는 경우가 많고, 잔 바닥의 가루는 대부분 거기서 생깁니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">프렌치프레스 추출 순서</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text"><strong>기구를 예열합니다.</strong> 유리 비커에 뜨거운 물을 부어 데운 뒤 버립니다. 차가운 유리는 물 온도를 몇 도씩 떨어뜨립니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text"><strong>원두를 굵게 갈아 계량합니다.</strong> 물 500g이면 커피 28~33g이 기준 구간입니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text"><strong>물의 절반을 붓고 30초 기다립니다.</strong> 가스가 빠지면서 부풀어 오릅니다. 이때 숟가락으로 가볍게 저어 가루를 전부 적십니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text"><strong>나머지 물을 붓고 뚜껑을 덮습니다.</strong> 플런저는 아직 내리지 않고 표면에 살짝 걸쳐만 둡니다. 온도를 유지하기 위해서입니다.</span></div>
+      <div class="tip-item"><span class="tip-num">5</span><span class="tip-text"><strong>4분이 되면 표면의 거품층을 걷어 냅니다.</strong> 숟가락 두 개로 위에 뜬 가루와 거품을 떠서 버립니다. 이 층에 미분이 몰려 있습니다.</span></div>
+      <div class="tip-item"><span class="tip-num">6</span><span class="tip-text"><strong>플런저를 천천히 내립니다.</strong> 5초 이상에 걸쳐 내립니다. 빠르게 누르면 바닥의 가루가 위로 솟구쳐 다시 섞입니다.</span></div>
+      <div class="tip-item"><span class="tip-num">7</span><span class="tip-text"><strong>바로 다른 용기에 옮겨 담습니다.</strong> 비커에 남겨 두면 추출이 계속돼 시간이 지날수록 써집니다. 마지막 한 모금은 따르지 않고 남깁니다.</span></div>
+    </div>
+
+    <p>다섯 번째 단계인 <strong>거품층 걷어 내기</strong>는 커핑에서 쓰는 방식과 같습니다. 이 한 단계만 추가해도 잔에 넘어오는 미분이 눈에 띄게 줄어듭니다. 일곱 번째의 <strong>옮겨 담기</strong>는 두 잔 이상 만들 때 특히 중요합니다. 첫 잔과 마지막 잔의 맛이 달라지는 원인이 대부분 여기에 있습니다.</p>
+
+    <h2 class="section-title">5. 맛이 어긋날 때 무엇부터 바꾸는가</h2>
+    <p>한 번에 두 가지를 바꾸면 무엇이 효과가 있었는지 알 수 없습니다. <strong>한 번에 하나씩</strong> 조정합니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>증상</th><th>먼저 의심할 것</th><th>조정 방향</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">쓰고 텁텁하다</td><td>과다추출</td><td>분쇄도를 굵게 → 시간을 3분 30초로 → 온도를 90℃ 쪽으로</td></tr>
+        <tr><td class="em">시고 밍밍하다</td><td>과소추출</td><td>분쇄도를 조금 곱게 → 시간을 4분 30초로 → 온도를 96℃ 쪽으로</td></tr>
+        <tr><td class="em">농도는 맞는데 밍밍하다</td><td>비율</td><td>물 양은 그대로 두고 원두를 2~3g 늘립니다</td></tr>
+        <tr><td class="em">잔 바닥에 가루가 많다</td><td>미분 · 순서</td><td>거품층 걷어 내기와 옮겨 담기를 추가 → 그래도 남으면 분쇄도를 굵게</td></tr>
+        <tr><td class="em">식으면서 급격히 써진다</td><td>비커에 방치</td><td>추출 직후 반드시 다른 용기로 옮깁니다</td></tr>
+      </tbody>
+    </table>
+
+    <p>순서에 뜻이 있습니다. <strong>분쇄도가 가장 크게 움직이고, 시간이 그다음, 온도가 마지막</strong>입니다. 온도부터 손대면 변화 폭이 작아 원인을 찾기 어렵습니다.</p>
+
+    <h2 class="section-title">6. 종이 필터와 무엇이 다른가</h2>
+    <p>금속 메시는 커피 오일을 그대로 통과시킵니다. 이 오일에는 <strong>카페스톨·카월</strong>이라는 지질 성분이 들어 있는데, 종이 필터는 이를 상당 부분 걸러 냅니다. 2025년 <em>Nutrition, Metabolism and Cardiovascular Diseases</em>에 실린 측정 연구는 추출 방식별 농도 차이를 이렇게 보고했습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>추출 방식</th><th>카페스톨</th><th>카월</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">종이 필터(가정용 드립)</td><td>12mg/L(중앙값)</td><td>8mg/L</td></tr>
+        <tr><td class="em">프렌치프레스 · 퍼컬레이터</td><td>약 90mg/L</td><td>약 70mg/L</td></tr>
+        <tr><td class="em">끓인 커피(무여과)</td><td>939mg/L</td><td>678mg/L</td></tr>
+        <tr><td>끓인 커피 + 천 필터</td><td>28mg/L</td><td>21mg/L</td></tr>
+      </tbody>
+    </table>
+
+    <p>연구진의 결론은 <strong>"대부분의 기계 추출 커피는 종이 필터 커피보다 디터펜 농도가 높지만, 무여과 커피보다는 낮다"</strong>였습니다. 프렌치프레스는 그 중간에 있습니다. 이 성분이 프렌치프레스의 <strong>두툼한 질감과 긴 여운을 만드는 정체</strong>이기도 합니다. 콜레스테롤 수치를 관리 중이라면 방식 선택에 참고할 만하고, 그렇지 않다면 그것이 이 기구를 쓰는 이유가 됩니다.</p>
+
+    <h2 class="section-title">7. 관리에서 한 가지만 지킨다면</h2>
+    <p><strong>메시 분해 세척</strong>입니다. 플런저 끝은 보통 나사로 분해되며, 그 사이에 낀 커피 오일은 산패해 다음 잔에 묵은 기름 냄새를 남깁니다. 겉면만 헹구는 것으로는 지워지지 않습니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">관리 체크리스트</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text"><strong>사용 직후</strong> 젖은 가루를 버리고 비커를 헹굽니다. 굳으면 떼기 어렵습니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text"><strong>주 1회</strong> 플런저를 분해해 판과 스프링, 메시를 따로 닦습니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text"><strong>완전히 말린 뒤</strong> 조립합니다. 젖은 채로 조여 두면 금속 사이에서 냄새가 자랍니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text"><strong>유리 비커에 금이 갔다면</strong> 교체합니다. 뜨거운 물과 누르는 힘이 함께 걸리는 부위입니다.</span></div>
+    </div>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">우려내는 시간은 정확히 4분이어야 하나요?</div>
+      아닙니다. SCA 표준은 가정용 브루어의 물 온도(90~96℃)와 비율(물 1L당 55g)은 정하고 있지만 <strong>침출 시간을 규정하지는 않습니다.</strong> 4분은 널리 쓰이는 출발점이며, 강배전 원두는 3분 30초 쪽이, 약배전 원두는 4분 30초 쪽이 맞는 경우가 많습니다. <strong>한 번에 30초씩만</strong> 움직여 보시기 바랍니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">플런저를 내린 뒤 그대로 둬도 되나요?</div>
+      권하지 않습니다. 메시 아래에는 여전히 커피 가루가 물에 잠겨 있어 <strong>추출이 계속됩니다.</strong> 10분쯤 지나면 처음 따른 잔과 확연히 다른 맛이 납니다. 두 잔 이상 만든다면 추출 직후 서버나 보온병으로 옮겨 담는 편이 안전합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">전용 그라인더가 없으면 어떻게 하나요?</div>
+      칼날식 분쇄기는 입자 크기가 고르지 않아 굵은 알갱이와 미분이 섞입니다. 이 경우 <strong>짧게 여러 번 끊어 갈고</strong>, 추출 후 <strong>거품층 걷어 내기와 옮겨 담기를 반드시 지키는</strong> 쪽이 현실적입니다. 매장에서 갈아 온다면 "프렌치프레스용"이라고 말하면 됩니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">프렌치프레스로 콜드브루도 되나요?</div>
+      됩니다. 같은 침출식이기 때문입니다. 다만 분쇄도를 <strong>뜨거운 물로 낼 때보다 조금 더 굵게</strong> 잡고, 냉장에서 8~18시간 담급니다. 뜨거운 물과 찬물은 뽑히는 성분 자체가 달라, 앞서 언급한 연구에서도 냉침출 커피는 열수 추출보다 <strong>산도가 낮고(pH 5.38 대 5.18) 폴리페놀 함량도 낮게</strong> 측정됐습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">거품층을 걷어 내면 향까지 버리는 것 아닌가요?</div>
+      일부 향은 함께 사라집니다. 그래서 이 단계는 <strong>선택</strong>입니다. 향의 화사함을 우선한다면 걷지 말고 대신 <strong>분쇄도를 한 단계 굵게</strong> 조정해 미분 자체를 줄이는 방법이 있습니다. 침전물이 거슬리는지, 향이 아쉬운지에 따라 고르시면 됩니다.
+    </div>
+
+    <div class="closing-box">
+      <h3>기술이 아니라 순서가 결정합니다</h3>
+      <p>프렌치프레스는 배우는 데 가장 짧은 시간이 드는 기구입니다. 물줄기도, 뜸 들이는 감각도 필요 없습니다. 대신 <strong>굵게 갈기 · 4분 안팎 · 걷어 내기 · 옮겨 담기</strong> 네 가지를 지키는지가 잔의 차이를 만듭니다.</p>
+      <p>오늘 한 가지만 바꾼다면 <strong>마지막 단계</strong>를 권합니다. 다 내린 커피를 비커에 두지 말고 바로 옮겨 담아 보십시오. 원두도 기구도 그대로인데 맛이 달라지는 것을 가장 빨리 확인할 수 있는 지점입니다.</p>
+    </div>
+
+    
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-27"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">그라인더 청소 주기 — 청소 알약 사용법과 찌꺼기 제거 순서</div><div class="rc-date">2026. 08. 27</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-22"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">에스프레소 머신 청소 주기 — 백플러싱과 포터필터 세척 순서</div><div class="rc-date">2026. 08. 22</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-21"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">에스프레소 크레마 색과 양 보는법 — 잘 나올 때와 안 나올 때 차이</div><div class="rc-date">2026. 08. 21</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#프렌치프레스</span>
+      <span class="tag">#침출식추출</span>
+      <span class="tag">#분쇄도</span>
+      <span class="tag">#SCA기준</span>
+      <span class="tag">#침전물</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>프렌치프레스는 침출식</strong>이라 물과 커피가 계속 닿아 있고, 끝나는 시점을 사람이 정해야 합니다.</li>
+        <li><strong>굵게 가는 이유는 접촉 시간이 길기 때문</strong>입니다. 침출 연구에서도 입자가 작을수록·온도가 높을수록 추출이 빨라졌습니다.</li>
+        <li><strong>SCA 표준 310-2021 기준은 물 1L당 커피 55g, 물 온도 90~96℃</strong>이며 물은 염소가 없고 칼슘 경도 50~175ppm, pH 6~8이어야 합니다.</li>
+        <li><strong>표준은 침출 시간을 규정하지 않습니다.</strong> 4분은 관례이므로 3분 30초~4분 30초에서 조정할 수 있습니다.</li>
+        <li><strong>거품층 걷어 내기와 즉시 옮겨 담기</strong>가 침전물과 뒷맛 쓴맛을 줄이는 가장 확실한 두 단계입니다.</li>
+        <li><strong>맛 조정은 분쇄도 → 시간 → 온도 순서</strong>로 하나씩 바꿉니다.</li>
+        <li><strong>금속 메시는 커피 오일을 통과시켜</strong> 종이 필터 커피보다 디터펜 농도가 높습니다(약 90mg/L 대 12mg/L).</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
