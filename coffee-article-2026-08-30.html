@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>약배전 중배전 강배전 차이 — 배전도별 맛과 분쇄도 조절법 | 바리스타 스페셜티</title>
+  <meta name="description" content="배전도는 볶은 시간이 아니라 원두 색으로 정합니다. 애그트론 수치 구간과 1차·2차 크랙 온도(201~208℃ / 225~232℃), 배전도가 깊어질수록 산미가 줄고 쓴맛이 오르는 이유, 그리고 배전도에 맞춰 분쇄도와 물 온도를 옮기는 방향을 정리했습니다">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-30">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="약배전 중배전 강배전 차이 — 배전도별 맛과 분쇄도 조절법 | 바리스타 스페셜티">
+<meta property="og:description" content="배전도는 볶은 시간이 아니라 원두 색으로 정합니다. 애그트론 수치 구간과 1차·2차 크랙 온도(201~208℃ / 225~232℃), 배전도가 깊어질수록 산미가 줄고 쓴맛이 오르는 이유, 그리고 배전도에 맞춰 분쇄도와 물 온도를 옮기는 방향을 정리했습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-30">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-30T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-30T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-30#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-30", "headline": "약배전 중배전 강배전 차이 — 배전도별 맛과 분쇄도 조절법 | 바리스타 스페셜티", "description": "배전도는 볶은 시간이 아니라 원두 색으로 정합니다. 애그트론 수치 구간과 1차·2차 크랙 온도(201~208℃ / 225~232℃), 배전도가 깊어질수록 산미가 줄고 쓴맛이 오르는 이유, 그리고 배전도에 맞춰 분쇄도와 물 온도를 옮기는 방향을 정리했습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-30", "dateModified": "2026-08-30", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🔥 로스팅 &amp; 원두 과학</span>
+      <span class="badge">배전도</span>
+      <span class="badge">애그트론</span>
+    </div>
+    <h1>약배전 중배전 강배전 차이<br/>— 배전도별 맛과 분쇄도 조절법</h1>
+    <p class="subtitle">배전도는 볶은 시간이 아니라 원두 색으로 정합니다. 1차 크랙(201~208℃)과 2차 크랙(225~232℃)이 구간을 나누고, 배전이 깊어질수록 클로로겐산이 줄어 산미가 사라집니다. 배전도를 바꿨다면 분쇄도와 물 온도도 함께 옮겨야 합니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 8월 30일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+    <!-- 훅 -->
+    <div class="hook">
+      "중배전을 샀는데 왜 매번 맛이 다를까요?"<br/>
+      같은 이름이라도 <strong>로스터마다 붙이는 지점이 다르기</strong> 때문입니다. 배전도는 볶은 시간이 아니라 <strong>원두 색으로 정하는 값</strong>이고, 그 색이 바뀌면 원두의 조직과 성분이 함께 바뀝니다. 그래서 배전도를 바꾸면 <strong>분쇄도와 물 온도도 같이 옮겨야</strong> 합니다.
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>배전도를 시간이 아니라 색으로 정하는 이유와 국제적으로 쓰이는 수치 기준</li>
+        <li>1차 크랙·2차 크랙이 일어나는 원두 내부 온도와 그 원리</li>
+        <li>약배전·중배전·강배전 각각에서 표면·향미·산미가 어떻게 달라지는가</li>
+        <li>협회 커핑이 기준으로 삼는 배전 구간과 그 근거</li>
+        <li>배전도가 바뀔 때 분쇄도와 물 온도를 어느 방향으로 옮겨야 하는가</li>
+        <li>카페인과 클로로겐산이 배전도에 따라 실제로 어떻게 변하는가</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">1. 배전도는 시간이 아니라 색으로 정합니다</h2>
+    <p>"몇 분 볶았느냐"로 배전도를 말하는 경우가 많지만, 실무에서 쓰이는 기준은 <strong>시간이 아니라 색</strong>입니다. 같은 12분이라도 생두의 밀도와 수분, 로스터의 크기와 화력에 따라 결과가 전혀 달라지기 때문입니다. 그래서 업계는 근적외선으로 원두 표면의 밝기를 재는 <strong>애그트론(Agtron) 수치</strong>를 공통 언어로 씁니다. 숫자가 클수록 밝고, 작을수록 어둡습니다.</p>
+
+    <p>커피 전문 평가 매체 <em>Coffee Review</em>가 공개한 애그트론 M-Basic(고메) 스케일 기준 구간은 다음과 같습니다. 국내에서 흔히 쓰는 "약·중·강"이 어디에 대응하는지 확인하는 용도로 보시면 됩니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>애그트론 수치</th><th>표면과 색</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">라이트(약배전)</td><td>80 초과</td><td>밝은 갈색~시나몬색, 기름기 없음</td></tr>
+        <tr><td class="em">미디엄 라이트</td><td>70~80</td><td>조금 밝은 갈색, 표면이 마름</td></tr>
+        <tr><td class="em">미디엄(중배전)</td><td>60~70</td><td>중간 갈색, 표면이 마름</td></tr>
+        <tr><td class="em">미디엄 다크</td><td>50~60</td><td>진한 갈색, 기름 방울이 맺히기 시작</td></tr>
+        <tr><td class="em">다크(강배전)</td><td>40~50</td><td>흑갈색, 기름 반점에서 광택까지</td></tr>
+        <tr><td class="em">베리 다크</td><td>25~40</td><td>검은 표면에 기름이 고르게 번짐</td></tr>
+      </tbody>
+    </table>
+
+    <p>표를 보면 <strong>기름이 배어나는 지점이 대략 애그트론 60 아래</strong>라는 것을 알 수 있습니다. 원두 봉투를 열었을 때 표면이 뽀얗게 말라 있으면 중배전 이하, 손에 기름이 묻으면 중강배전 이상이라고 어림잡을 수 있는 근거가 여기에 있습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">용어 정리</div>
+      국내 봉투에 자주 보이는 <strong>시티(City) · 풀시티(Full City) · 프렌치(French) · 이탈리안(Italian)</strong>은 미국·유럽에서 굳어진 배전 단계 이름입니다. 미국국립커피협회도 이 이름들을 소개하되 <strong>각 이름에 대응하는 정확한 온도나 수치를 규정하지는 않는다고</strong> 밝히고 있습니다. 즉 이 이름들은 로스터마다 다르게 쓰일 수 있는 관용어이고, 객관적 비교가 필요할 때는 애그트론 수치를 확인하는 편이 정확합니다.
+    </div>
+
+    <h2 class="section-title">2. 두 번의 크랙이 구간을 나눕니다</h2>
+    <p>배전도의 경계는 로스터가 임의로 나눈 것이 아니라, 원두 안에서 실제로 일어나는 <strong>두 번의 파열음</strong>을 기준으로 잡혀 있습니다.</p>
+
+    <div class="data-highlight">
+      <div class="data-card"><div class="num">201~208℃</div><div class="label">1차 크랙 원두 내부 온도</div></div>
+      <div class="data-card"><div class="num">225~232℃</div><div class="label">2차 크랙 원두 내부 온도</div></div>
+      <div class="data-card"><div class="num">10~12%</div><div class="label">생두에 남아 있는 수분</div></div>
+    </div>
+
+    <p>두 크랙은 소리만 다른 것이 아니라 <strong>원인 자체가 다릅니다.</strong> 로스팅 자료를 오래 축적해 온 스위트마리아스의 기술 문서에 따르면, <strong>1차 크랙은 생두에 남은 10~12%의 수분이 수증기로 바뀌면서 만드는 압력</strong>이 원두 조직을 밀어낼 때 발생합니다. 이때 원두는 부풀고 가운데 센터컷이 벌어집니다.</p>
+
+    <p>반면 <strong>2차 크랙은 물이 아니라 이산화탄소가 원인</strong>입니다. 앞선 가열로 조직이 이미 푸석해진 상태에서 내부에 쌓인 이산화탄소·일산화탄소·질소의 압력이 한계를 넘으면서 조직이 갈라집니다. 그래서 1차가 "퍽" 하고 터지는 소리라면 2차는 잔가지가 부러지는 듯한 잔소리에 가깝습니다.</p>
+
+    <p>여기서 실무적인 기준이 나옵니다. <strong>1차 크랙이 끝난 직후에서 2차 크랙 직전까지가 약배전~중배전 구간</strong>이고, <strong>2차 크랙이 시작된 이후가 강배전 구간</strong>입니다. 봉투 뒷면의 배전 표기를 볼 때, 이 두 지점 중 어디를 지났는지로 읽으면 이해가 빠릅니다.</p>
+
+    <h2 class="section-title">3. 약배전 — 산미가 남고 표면이 마른 구간</h2>
+    <p>약배전은 1차 크랙을 지난 직후에 배출한 상태입니다. 열을 덜 받았으므로 <strong>생두가 원래 가지고 있던 성분이 가장 많이 남아 있습니다.</strong> 산지와 품종, 가공방식의 차이가 잔에서 뚜렷하게 드러나는 이유입니다.</p>
+
+    <p>이 구간의 특징을 가르는 핵심 성분이 <strong>클로로겐산</strong>입니다. 2021년 <em>Molecules</em>에 실린 HPLC 측정 연구는 같은 원두를 배전도만 바꿔 분석했는데, 클로로겐산은 생두 543.23mg/L에서 <strong>약배전 270.93 → 중배전 187.45 → 강배전 90.53mg/L</strong>로 계단처럼 줄었습니다. 생두 대비 약 6분의 1까지 떨어진 것입니다. 클로로겐산은 커피 산미와 밝은 인상에 관여하는 성분이라, 이 감소 곡선이 곧 <strong>"배전도가 깊어질수록 산미가 사라진다"는 현상의 물질적 근거</strong>가 됩니다.</p>
+
+    <p>감각 평가에서도 방향이 같습니다. 2024년 <em>Chemosensors</em>에 실린 전자혀 연구는 네 단계 배전도(L* 25 · 22.5 · 19.5 · 17)를 비교해 <strong>배전도가 깊어질수록 산미 지표가 일관되게 낮아지고 쓴맛 지표는 반대로 올라간다</strong>고 보고했습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">약배전을 고를 때</div>
+      약배전 원두는 <strong>조직이 단단하고 밀도가 높습니다.</strong> 성분이 잘 빠져나오지 않으므로, 같은 레시피로 내리면 밍밍하고 시기만 한 잔이 되기 쉽습니다. 이 경우 원두 탓이 아니라 <strong>추출 조건이 배전도를 못 따라간 것</strong>일 가능성이 높습니다. 조정 방향은 6번 항목에 정리했습니다.
+    </div>
+
+    <h2 class="section-title">4. 중배전 — 협회 커핑이 기준으로 삼는 구간</h2>
+    <p>중배전은 산미와 단맛, 바디가 가장 균형을 이루는 구간으로 평가됩니다. 여기에는 근거가 있습니다. <strong>스페셜티커피협회(SCA)의 커핑 프로토콜이 평가용 샘플 로스팅을 이 부근으로 못 박아 두었기</strong> 때문입니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">SCA 커핑 프로토콜의 샘플 배전 규정</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text"><strong>홀빈 애그트론 58 · 분쇄 후 63</strong>(M-Basic 고메 스케일), 허용 오차 ±1점. "라이트~라이트 미디엄"에 해당하는 구간입니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text"><strong>로스팅 시간은 8분 이상 12분 이하.</strong> 너무 빠르거나 느린 로스팅은 같은 색이어도 맛이 달라지기 때문입니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text"><strong>스코칭·티핑(눌음·끝점 탐)이 보이지 않아야 하며</strong>, 배출 후 즉시 공랭합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text"><strong>커핑 24시간 이내에 로스팅하고, 최소 8시간 휴지</strong>시킨 뒤 평가합니다.</span></div>
+    </div>
+
+    <p>주목할 부분은 협회가 평가 기준으로 삼은 지점이 <strong>강배전이 아니라 밝은 쪽</strong>이라는 사실입니다. 어두운 배전은 산지 특성을 덮어 버려 원두 사이의 차이를 구분하기 어렵게 만들기 때문입니다. 다만 이것은 <strong>"평가에 유리한 배전"이지 "가장 맛있는 배전"이라는 뜻은 아닙니다.</strong> 마시는 목적과 기구에 따라 적정 구간은 얼마든지 달라집니다.</p>
+
+    <h2 class="section-title">5. 강배전 — 쓴맛이 앞서고 기름이 배어나는 구간</h2>
+    <p>강배전은 2차 크랙 이후 구간입니다. 이 지점을 지나면 원두는 세 가지가 동시에 바뀝니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>바뀌는 것</th><th>내용</th><th>잔에서의 결과</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">표면</td><td>내부 오일이 밖으로 밀려 나와 광택이 생김</td><td>산패가 빨라져 보관 기간이 짧아짐</td></tr>
+        <tr><td class="em">조직</td><td>가스 팽창으로 다공질이 되어 부서지기 쉬움</td><td>성분이 빨리 빠져나와 과다추출 위험</td></tr>
+        <tr><td class="em">성분</td><td>클로로겐산 급감, 쓴맛 관련 화합물 증가</td><td>산미가 사라지고 탄 향·다크초콜릿 인상</td></tr>
+      </tbody>
+    </table>
+
+    <p>강배전에서 흔히 오해되는 지점이 <strong>표면의 기름</strong>입니다. 기름이 보인다고 해서 상한 것은 아닙니다. 배전도가 깊어지면서 조직 안쪽의 오일이 밖으로 밀려 나온 정상적인 현상입니다. 다만 <strong>공기와 직접 닿는 면적이 늘어난 상태</strong>이므로, 같은 조건에서 밝은 배전 원두보다 산패가 빠르다는 점은 사실입니다. 강배전 원두를 조금씩 자주 사라는 조언의 근거가 이것입니다.</p>
+
+    <h2 class="section-title">6. 배전도가 바뀌면 분쇄도와 물 온도도 바꿉니다</h2>
+    <p>같은 레시피를 배전도만 바꿔서 그대로 쓰면 거의 반드시 어긋납니다. 원두의 <strong>구조 자체가 달라졌기</strong> 때문입니다. 로스팅 데이터 분석 회사 크롭스터는 이 관계를 한 문장으로 정리합니다. <strong>"어두운 배전이 밝은 배전보다 추출하기 쉽다. 다공질이라 가용 성분을 더 쉽게 내어놓기 때문이다."</strong> 같은 조건으로 내리면 강배전 쪽의 추출 수율이 더 높게 나온다는 뜻입니다.</p>
+
+    <p>그래서 조정 방향은 좌우 대칭입니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">배전도별 추출 조정 방향</div>
+      <div class="tip-item"><span class="tip-num">약</span><span class="tip-text"><strong>약배전: 더 곱게 · 더 뜨겁게 · 조금 더 길게.</strong> 조직이 단단해 성분이 잘 안 나오므로 추출을 밀어 올려야 합니다. 시고 밍밍하면 이 방향입니다.</span></div>
+      <div class="tip-item"><span class="tip-num">중</span><span class="tip-text"><strong>중배전: 기본값을 그대로.</strong> 대부분의 레시피와 기구 권장값이 이 구간을 전제로 쓰여 있습니다.</span></div>
+      <div class="tip-item"><span class="tip-num">강</span><span class="tip-text"><strong>강배전: 더 굵게 · 물 온도는 낮은 쪽으로 · 조금 짧게.</strong> 그냥 두면 과다추출로 넘어가 재와 탄 맛이 앞섭니다. 쓰고 텁텁하면 이 방향입니다.</span></div>
+    </div>
+
+    <p>분쇄도의 영향력이 배전도에 따라 달라진다는 점도 확인돼 있습니다. 앞서 언급한 <em>Chemosensors</em> 연구는 입자 크기를 중앙값 <strong>600 · 796 · 1,055 · 1,400μm</strong> 네 단계로 바꿔 가며 비교했는데, <strong>분쇄도가 산미에 미치는 영향은 밝은 배전에서 더 크고, 쓴맛에 미치는 영향은 어두운 배전에서 더 컸습니다.</strong> 강배전 원두에서 분쇄도를 조금만 곱게 해도 급격히 써지는 경험이 여기서 설명됩니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">주의할 점</div>
+      같은 연구에서 <strong>농도(TDS)는 약 1.18~1.26%, 추출 수율은 16.6~20.1%</strong>로 측정됐는데, 연구진은 <strong>이 두 숫자만으로는 배전도 차이를 구분하지 못한다</strong>고 지적했습니다. 즉 리프랙토미터 수치가 목표 구간에 들어와 있어도 배전도가 안 맞으면 맛은 어긋날 수 있습니다. <strong>숫자는 재현을 위한 도구이지 정답표가 아닙니다.</strong>
+    </div>
+
+    <h2 class="section-title">7. 카페인은 어느 쪽이 많은가</h2>
+    <p>"약배전이 카페인이 더 많다"는 말과 "강배전이 더 세다"는 말이 함께 돌아다닙니다. 실제 측정값을 보면 <strong>둘 다 정확하지 않습니다.</strong></p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>상태</th><th>카페인</th><th>클로로겐산</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">생두</td><td>166.72 mg/L</td><td>543.23 mg/L</td></tr>
+        <tr><td class="em">약배전</td><td>196.35 mg/L</td><td>270.93 mg/L</td></tr>
+        <tr><td class="em">중배전</td><td>203.63 mg/L</td><td>187.45 mg/L</td></tr>
+        <tr><td class="em">강배전</td><td>189.85 mg/L</td><td>90.53 mg/L</td></tr>
+      </tbody>
+    </table>
+
+    <p>2021년 <em>Molecules</em> 측정에서 카페인은 <strong>중배전에서 가장 높고 강배전에서 조금 떨어지는</strong> 완만한 곡선을 그렸습니다. 배전도 사이의 차이는 클로로겐산처럼 크지 않습니다. 같은 해 <em>Processes</em>에 실린 다른 연구에서는 산지에 따라 <strong>강배전에서 카페인이 가장 높게 나온 표본도 있어</strong>, 방향이 원두마다 달라질 수 있음을 보여 줍니다.</p>
+
+    <p>정리하면 <strong>카페인은 배전도에 크게 좌우되지 않습니다.</strong> 잔에 들어가는 카페인 양을 실제로 결정하는 것은 배전도보다 <strong>원두를 몇 그램 썼는지와 어떤 방식으로 얼마나 뽑았는지</strong>입니다. 다만 계량을 <strong>부피(스푼)로 하면</strong> 이야기가 달라집니다. 강배전 원두는 부풀어 밀도가 낮아 같은 부피에 든 원두 무게가 적기 때문입니다. <strong>저울로 무게를 재는 것</strong>이 이 혼란을 없애는 가장 간단한 방법입니다.</p>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">시티, 풀시티는 약·중·강 중 어디에 해당하나요?</div>
+      관례적으로 <strong>시티는 중배전, 풀시티는 중강배전, 프렌치와 이탈리안은 강배전</strong> 쪽으로 통합니다. 다만 미국국립커피협회도 이 이름들을 소개할 뿐 각각의 온도나 색 기준을 규정하지는 않습니다. <strong>로스터마다 같은 이름을 다른 지점에 붙일 수 있으므로</strong>, 정확히 비교하려면 애그트론 수치나 실제 원두 색을 확인하는 편이 낫습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">표면에 기름이 배어난 원두는 오래된 건가요?</div>
+      꼭 그렇지는 않습니다. <strong>애그트론 60 아래 구간부터는 배전 과정에서 자연스럽게 기름이 표면으로 나옵니다.</strong> 갓 볶은 강배전 원두도 광택이 있을 수 있습니다. 다만 기름이 공기와 닿아 있는 상태이므로 산패는 빠릅니다. 밝은 배전 원두인데 표면이 번들거린다면 그때는 보관 상태를 의심해 볼 만합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">산미가 싫으면 무조건 강배전을 고르면 되나요?</div>
+      산미를 줄이는 데는 확실히 효과가 있습니다. 클로로겐산이 크게 줄어들기 때문입니다. 다만 <strong>산미와 함께 산지 특성도 함께 사라지고, 대신 쓴맛과 탄 향이 올라옵니다.</strong> 산미만 줄이고 싶다면 배전도를 바꾸기 전에 <strong>물 온도를 낮추거나 분쇄도를 굵게 하는 조정</strong>을 먼저 시도해 보시는 편을 권합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">배전도가 깊으면 위에 부담이 덜한가요?</div>
+      단정할 수 없습니다. 배전이 깊어지면 클로로겐산은 확실히 줄지만, 커피의 산도는 클로로겐산 하나로만 결정되지 않습니다. 개인차도 큽니다. <strong>속이 불편한 경험이 반복된다면 배전도만 바꾸기보다 섭취량과 공복 여부를 함께 조정하고</strong>, 증상이 이어지면 의료진과 상의하시는 편이 안전합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">봉투에 배전도 표기가 없으면 어떻게 확인하나요?</div>
+      두 가지를 봅니다. 첫째 <strong>색</strong>입니다. 시나몬빛에 가까우면 약배전, 초콜릿색이면 중배전, 흑갈색이면 강배전 쪽입니다. 둘째 <strong>표면</strong>입니다. 뽀얗게 마른 상태면 중배전 이하, 광택이 있거나 손에 기름이 묻으면 중강배전 이상입니다. 원두를 부러뜨렸을 때 <strong>쉽게 바스러지면 배전이 깊은 쪽</strong>이라는 것도 참고가 됩니다.
+    </div>
+
+    <div class="closing-box">
+      <h3>이름보다 색과 표면을 보십시오</h3>
+      <p>배전도 이름은 로스터마다 다르게 붙습니다. 그래서 "중배전을 샀는데 생각한 맛이 아니다"라는 일이 자주 생깁니다. 이름 대신 <strong>색과 표면 상태, 그리고 가능하면 애그트론 수치</strong>를 확인하는 습관이 이 혼란을 대부분 없애 줍니다.</p>
+      <p>그리고 배전도를 바꿨다면 <strong>추출 조건도 함께 옮겨 주십시오.</strong> 밝은 쪽으로 갔다면 곱게·뜨겁게, 어두운 쪽으로 갔다면 굵게·낮은 온도로. 원두를 탓하기 전에 이 한 단계만 맞춰도 잔의 인상이 달라집니다.</p>
+    </div>
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-17"><div class="rc-cat">🔥 로스팅 & 원두 과학</div><div class="rc-title">원두 산미 뜻 — 신맛이 강해지는 조건과 줄이는 방법</div><div class="rc-date">2026. 08. 17</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-14"><div class="rc-cat">🔥 로스팅 & 보관 과학</div><div class="rc-title">원두 보관법 — 냉동 보관 가능 여부와 개봉 후 보관기간 기준</div><div class="rc-date">2026. 08. 14</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-02"><div class="rc-cat">🔥 로스팅 & 원두 과학</div><div class="rc-title">생두가 커피가 되는 8분 — 로스팅의 화학반응, 당신이 몰랐던 진실</div><div class="rc-date">2026. 08. 02</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#배전도</span>
+      <span class="tag">#약배전</span>
+      <span class="tag">#강배전</span>
+      <span class="tag">#애그트론</span>
+      <span class="tag">#분쇄도조절</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>배전도는 시간이 아니라 색으로 정합니다.</strong> 애그트론 M-Basic 기준 라이트 80 초과, 미디엄 60~70, 다크 40~50입니다.</li>
+        <li><strong>기름이 배어나는 경계는 대략 애그트론 60</strong>입니다. 표면이 마르면 중배전 이하, 광택이 있으면 중강배전 이상입니다.</li>
+        <li><strong>1차 크랙은 수분이, 2차 크랙은 이산화탄소가 만듭니다.</strong> 각각 원두 내부 201~208℃, 225~232℃ 부근입니다.</li>
+        <li><strong>클로로겐산은 배전이 깊어질수록 급감합니다.</strong> 생두 543 → 약배전 271 → 중배전 187 → 강배전 91mg/L. 산미가 사라지는 물질적 이유입니다.</li>
+        <li><strong>SCA 커핑 기준 배전은 홀빈 애그트론 58 · 분쇄 63</strong>, 로스팅 8~12분, 휴지 8시간 이상입니다.</li>
+        <li><strong>어두운 배전은 다공질이라 추출이 쉽습니다.</strong> 약배전은 곱게·뜨겁게, 강배전은 굵게·낮은 온도로 옮깁니다.</li>
+        <li><strong>카페인은 배전도에 크게 좌우되지 않습니다.</strong> 중배전에서 가장 높게 측정됐고 차이는 완만했습니다. 부피가 아니라 무게로 계량하십시오.</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
