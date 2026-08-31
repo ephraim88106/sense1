@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>아라비카 로부스타 차이 — 카페인 함량과 재배 조건, 맛 비교 | 바리스타 스페셜티</title>
+  <meta name="description" content="아라비카와 로부스타(카네포라)는 등급이 아니라 염색체 수부터 다른 별개의 종입니다. FAO 기준 생육 온도(15~24℃ / 24~30℃), USDA 2025/26 생산 비중 53 대 47, ICO 2026년 6월 시세, 생두 카페인 1.09% 대 2.09% 측정값으로 차이를 정리했습니다">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-08-31">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="아라비카 로부스타 차이 — 카페인 함량과 재배 조건, 맛 비교 | 바리스타 스페셜티">
+<meta property="og:description" content="아라비카와 로부스타(카네포라)는 등급이 아니라 염색체 수부터 다른 별개의 종입니다. FAO 기준 생육 온도(15~24℃ / 24~30℃), USDA 2025/26 생산 비중 53 대 47, ICO 2026년 6월 시세, 생두 카페인 1.09% 대 2.09% 측정값으로 차이를 정리했습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-08-31">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-08-31T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-08-31T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-08-31#page", "url": "https://coffee.ephseed.com/coffee-article-2026-08-31", "headline": "아라비카 로부스타 차이 — 카페인 함량과 재배 조건, 맛 비교 | 바리스타 스페셜티", "description": "아라비카와 로부스타(카네포라)는 등급이 아니라 염색체 수부터 다른 별개의 종입니다. FAO 기준 생육 온도(15~24℃ / 24~30℃), USDA 2025/26 생산 비중 53 대 47, ICO 2026년 6월 시세, 생두 카페인 1.09% 대 2.09% 측정값으로 차이를 정리했습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-08-31", "dateModified": "2026-08-31", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 커피 품종 &amp; 가공법</span>
+      <span class="badge">아라비카</span>
+      <span class="badge">로부스타</span>
+    </div>
+    <h1>아라비카 로부스타 차이<br/>— 카페인 함량과 재배 조건, 맛 비교</h1>
+    <p class="subtitle">두 종은 같은 작물의 등급이 아니라 염색체 수부터 다른 별개의 식물입니다. 카페인은 약 두 배 차이가 나고, 자랄 수 있는 온도와 고도가 다르며, 국제 시세도 다르게 매겨집니다. 봉투의 "아라비카 100%"가 무엇을 보증하고 무엇을 보증하지 않는지까지 정리했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 8월 31일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+    <!-- 훅 -->
+    <div class="hook">
+      "로부스타는 싸구려 원두 아닌가요?"<br/>
+      가격만 보면 그렇게 보입니다. 하지만 두 이름은 <strong>같은 작물의 상·하 등급이 아니라 서로 다른 식물의 학명</strong>입니다. 염색체 수가 다르고, 견디는 온도가 다르고, 카페인 함량이 약 두 배 차이 납니다. 왜 값이 갈리는지는 그 차이를 먼저 봐야 설명이 됩니다.
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>두 종이 식물학적으로 어떻게 다른가 — 염색체 수와 아라비카의 잡종 기원</li>
+        <li>각각이 자랄 수 있는 온도·고도·강수 조건과 병해에 대한 강약</li>
+        <li>최신 생산 통계로 본 실제 비중 — "7 대 3"이 지금도 맞는가</li>
+        <li>국제 시세에서 두 종의 가격이 얼마나 벌어져 있는가</li>
+        <li>카페인·단백질·탄수화물 측정값과 맛으로 이어지는 경로</li>
+        <li>"아라비카 100%" 표기가 보증하는 것과 보증하지 않는 것</li>
+      </ul>
+    </div>
+
+    <h2 class="section-title">1. 등급이 아니라 서로 다른 식물입니다</h2>
+    <p>먼저 이름부터 정리하겠습니다. 아라비카의 학명은 <strong>Coffea arabica</strong>이고, 흔히 로부스타라 부르는 쪽의 정확한 종명은 <strong>Coffea canephora</strong>입니다. 로부스타는 이 종 안의 대표적인 품종군을 가리키는 말이 굳어져 종 이름처럼 쓰이고 있습니다. 여기에 리베리카(<em>Coffea liberica</em>)를 더한 셋을 국내 자격시험에서는 흔히 <strong>3대 원종</strong>으로 묶어 다룹니다.</p>
+
+    <p>둘의 차이는 재배 방식이나 가공 방식에서 생긴 것이 아닙니다. <strong>유전체 자체가 다릅니다.</strong> 카네포라를 비롯한 대부분의 커피나무는 염색체를 22개 가진 이배체입니다. 그런데 아라비카만 <strong>44개</strong>를 가진 <strong>이질사배체(allotetraploid)</strong>입니다. 야생에서 <em>Coffea canephora</em>와 <em>Coffea eugenioides</em> 두 이배체 종이 교잡하면서 염색체 수가 두 배로 늘어난 결과입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">아라비카는 로부스타의 자손이기도 합니다</div>
+      즉 <strong>로부스타는 아라비카의 조상 중 한쪽</strong>입니다. "고급 원두와 저급 원두"라는 통념과 달리, 계통상으로는 부모와 자식에 가까운 관계입니다. 게다가 World Coffee Research가 인용한 연구에 따르면 오늘날 재배되는 아라비카의 다양성은 <strong>사실상 하나의 조상 개체에서 갈라져 나온 것</strong>으로 분석됩니다. 아라비카가 병해에 유독 약한 배경에 이 좁은 유전 다양성이 있습니다.
+    </div>
+
+    <h2 class="section-title">2. 자랄 수 있는 환경이 다릅니다</h2>
+    <p>두 종이 같은 밭에서 경쟁하지 않는 이유는 단순합니다. <strong>살 수 있는 온도 구간이 겹치지 않기 때문</strong>입니다. FAO 자료가 제시하는 생육 조건은 다음과 같습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>항목</th><th>아라비카</th><th>로부스타(카네포라)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>적정 평균 기온</td><td class="em">15~24℃</td><td class="em">24~30℃</td></tr>
+        <tr><td>저온 내성</td><td>상대적으로 강함</td><td>15℃ 아래는 견디지 못함</td></tr>
+        <tr><td>재배 고도</td><td>고지대 · 구릉지 중심</td><td>해수면~약 800m</td></tr>
+        <tr><td>더위·건조</td><td>약함</td><td>더 잘 견딤</td></tr>
+        <tr><td>연 강수량</td><td colspan="2">1,500~3,000mm (아라비카는 이보다 적어도 가능)</td></tr>
+      </tbody>
+    </table>
+
+    <p>아라비카를 더 좁혀 보면, 학술 문헌에서 제시하는 <strong>최적 연평균 기온은 18~21℃</strong>입니다. 열대 지역에서 이 온도대를 얻으려면 위도가 아니라 고도로 올라가는 수밖에 없습니다. "아라비카는 고산지대에서 자란다"는 말은 취향의 문제가 아니라 <strong>온도를 맞추기 위한 물리적 조건</strong>인 셈입니다.</p>
+
+    <p>병해에서도 갈립니다. 커피나무 최대의 병해인 <strong>커피 녹병(<em>Hemileia vastatrix</em>)</strong>은 아라비카를 가장 심하게 공격합니다. 방제하지 않으면 수확 손실이 30%에 이를 수 있다고 보고됩니다. 녹병균 포자의 발아 최적 온도는 22~24℃이며 높은 습도에서 감염이 잘 일어납니다. 카네포라 계열이 상대적으로 강건해 "robusta(강건한)"라는 이름이 붙은 배경이 여기에 있습니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">여기서 가격 차이의 절반이 설명됩니다</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>땅값과 인건비</strong> — 아라비카는 경사진 고지대에서 재배되는 경우가 많아 기계 수확이 어렵고 손 수확 비중이 높습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>수확량</strong> — 카네포라는 저지대에서 평지 재배가 가능하고 병해에 강해 단위 면적당 관리 부담이 적습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>위험</strong> — 녹병과 서리, 고온에 대한 취약성이 아라비카 쪽에 몰려 있어 작황 변동이 큽니다.</div></div>
+    </div>
+
+    <h2 class="section-title">3. "아라비카 7 대 로부스타 3"은 지금도 맞을까</h2>
+    <p>오랫동안 통용된 비율이지만, 최근 통계는 그렇지 않습니다. 미국 농무부 해외농업국(USDA FAS)이 2026년 7월 발표한 세계 커피 수급 자료의 수치는 다음과 같습니다. 단위는 60kg 백 기준 백만 포대입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>연도</th><th>전체</th><th>아라비카</th><th>로부스타</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>2025/26</td><td>178.8</td><td class="em">94.4</td><td class="em">84.4</td></tr>
+        <tr><td>2026/27 (전망)</td><td>189.7</td><td class="em">105.9</td><td class="em">83.8</td></tr>
+      </tbody>
+    </table>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">52.8%</span><span class="label">2025/26 아라비카 비중<br/>(USDA FAS 기준)</span></div>
+      <div class="data-card"><span class="num">47.2%</span><span class="label">2025/26 로부스타 비중</span></div>
+      <div class="data-card"><span class="num">31.4</span><span class="label">베트남 로부스타 생산<br/>(백만 포대)</span></div>
+    </div>
+
+    <p>2025/26 기준으로는 <strong>대략 53 대 47</strong>입니다. 통념보다 훨씬 팽팽합니다. 국가별로 보면 아라비카는 브라질 47.5, 콜롬비아 13.4, 에티오피아 12.1 순이고, 로부스타는 베트남 31.4, 브라질 24.4, 인도네시아 10.0 순입니다. <strong>브라질은 양쪽 모두에서 최상위권</strong>이라 브라질의 작황 하나가 두 시세에 함께 영향을 줍니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">숫자를 읽을 때 주의할 점</div>
+      2026/27 전망에서 아라비카가 크게 늘어난 것은 브라질의 격년 결실 주기가 상승 국면에 들어간 영향이 큽니다. <strong>한 해 수치만으로 장기 추세를 단정하기는 어렵습니다.</strong> 다만 로부스타 비중이 과거의 "3할"보다 높은 수준에 올라와 있다는 점은 여러 해에 걸쳐 확인되는 흐름입니다.
+    </div>
+
+    <h2 class="section-title">4. 국제 시세에서 두 종의 가격 차이</h2>
+    <p>국제커피기구(ICO)는 커피를 네 그룹으로 나눠 지표 가격을 발표합니다. 앞의 세 그룹은 아라비카이고 마지막 하나가 로부스타입니다. 2026년 6월 월간 보고서의 평균값은 다음과 같습니다. 단위는 파운드당 미국 센트입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>그룹</th><th>2026년 6월 평균</th><th>구분</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>콜롬비아 마일드</td><td class="em">324.60</td><td>아라비카(워시드)</td></tr>
+        <tr><td>아더 마일드</td><td class="em">307.83</td><td>아라비카(워시드)</td></tr>
+        <tr><td>브라질 내추럴</td><td class="em">272.01</td><td>아라비카(내추럴)</td></tr>
+        <tr><td>로부스타</td><td class="em">169.39</td><td>카네포라</td></tr>
+        <tr><td>ICO 종합지표(I-CIP)</td><td>248.90</td><td>전체 평균</td></tr>
+      </tbody>
+    </table>
+
+    <p>로부스타는 브라질 내추럴의 약 62%, 콜롬비아 마일드의 약 52% 수준입니다. 다만 이 격차는 고정된 값이 아닙니다. 같은 달에 브라질 내추럴은 전월 대비 7.4% 내렸고 로부스타는 1.7% 올랐습니다. <strong>아라비카 작황이 나쁜 해에는 격차가 좁아지고, 좋은 해에는 벌어집니다.</strong> 블렌드에서 로부스타 비중을 조정하는 로스터가 있는 것도 이 변동 때문입니다.</p>
+
+    <h2 class="section-title">5. 성분 — 카페인이 약 두 배입니다</h2>
+    <p>맛의 차이를 감각이 아니라 성분으로 확인해 보겠습니다. 2023년 <em>BIOTROPIA</em>에 실린 인도네시아 린자니 지오파크(롬복) 지역 생두 분석에서 측정된 값입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>성분(생두 기준)</th><th>아라비카</th><th>로부스타</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>카페인</td><td class="em">평균 1.09%</td><td class="em">평균 2.09%</td></tr>
+        <tr><td>단백질</td><td>11.06~12.02%</td><td>13.55~14.50%</td></tr>
+        <tr><td>탄수화물</td><td class="em">65.46%</td><td class="em">52.95%</td></tr>
+        <tr><td>수분</td><td>8.11~9.09%</td><td>9.07~9.20%</td></tr>
+      </tbody>
+    </table>
+
+    <p>가장 크고 일관되게 확인되는 차이가 <strong>카페인</strong>입니다. 이 표본에서 로부스타는 아라비카의 약 1.9배였습니다. 카페인 자체가 쓴맛을 내는 물질이므로, 이 차이는 그대로 잔에서 느껴지는 <strong>쓴맛의 기본값</strong>으로 이어집니다.</p>
+
+    <p>탄수화물 쪽도 눈여겨볼 만합니다. 로스팅에서 갈변과 향미를 만드는 반응은 당과 아미노산이 재료입니다. <strong>당 성분이 적으면 로스팅으로 끌어낼 수 있는 단맛과 향의 폭도 줄어듭니다.</strong> 로부스타에서 흔히 지적되는 "곡물·고무 같은 향"과 얕은 단맛의 배경에는 이 원료 차이가 있습니다.</p>
+
+    <p>여기에 <strong>클로로겐산</strong>이 더해집니다. 두 종의 클로로겐산 조성 차이는 <strong>생두가 아라비카인지 로부스타인지를 판별하는 지표로 쓰일 만큼</strong> 뚜렷합니다. 2019년 <em>Food Research International</em>에 이 방법을 다룬 연구가 실려 있습니다. 로부스타 쪽이 대체로 높으며, 클로로겐산은 로스팅 과정에서 분해되며 떫고 쓴 계열의 성분을 남깁니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">수치를 그대로 옮기지 마십시오</div>
+      위 표는 <strong>특정 산지의 특정 표본</strong> 측정값입니다. 지질 함량처럼 연구와 산지에 따라 방향이 엇갈리는 항목도 있습니다. <strong>"로부스타 카페인이 대략 두 배"</strong> 정도가 여러 연구에서 반복 확인되는 수준이고, 소수점까지 일반화할 수 있는 값은 아닙니다.
+    </div>
+
+    <h2 class="section-title">6. 그래서 맛은 어떻게 다른가</h2>
+    <p>지금까지의 조건을 잔으로 옮기면 대체로 이런 경향이 나타납니다. 절대적인 규칙이 아니라 <strong>평균적인 경향</strong>으로 읽어 주십시오.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>감각 항목</th><th>아라비카</th><th>로부스타</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>산미</td><td>뚜렷한 편</td><td>낮은 편</td></tr>
+        <tr><td>쓴맛</td><td>상대적으로 약함</td><td class="em">강함</td></tr>
+        <tr><td>단맛·향의 폭</td><td class="em">넓음</td><td>좁음</td></tr>
+        <tr><td>바디</td><td>가볍거나 중간</td><td class="em">묵직함</td></tr>
+        <tr><td>크레마</td><td>보통</td><td class="em">두껍고 오래감</td></tr>
+      </tbody>
+    </table>
+
+    <p>에스프레소 블렌드에 로부스타를 소량 섞는 관행은 이 표의 마지막 두 줄 때문입니다. <strong>바디와 크레마를 보강하고 우유에 묻히지 않는 무게감을 얻기 위해서</strong>입니다. 이탈리아식 블렌드에서 흔히 볼 수 있는 방식이고, 원가 절감만이 이유인 것은 아닙니다.</p>
+
+    <p>또 하나 짚어 둘 점이 있습니다. <strong>로부스타에도 별도의 품질 평가 체계가 있습니다.</strong> 커피품질연구소(CQI)는 아라비카와 별개로 <strong>Q Robusta Grader</strong> 과정과 파인 로부스타 기준·커핑 폼을 운영합니다. 우간다 커피개발청과 협력해 만들어진 프로그램으로, 2024년판 프로그램 안내서에 명시돼 있습니다. <strong>"로부스타 = 저급"이 아니라 "평가 기준이 다른 종"</strong>이라고 보는 편이 현재 업계의 관점에 가깝습니다.</p>
+
+    <h2 class="section-title">7. 원두를 고를 때 실제로 볼 것</h2>
+    <div class="tip-box">
+      <div class="tip-title">봉투 앞에서 확인하는 순서</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>종 표기</strong> — 아라비카 100%인지, 블렌드인지, 로부스타 비율이 적혀 있는지 봅니다. 비율을 밝히는 로스터가 늘고 있습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>산지와 고도</strong> — 아라비카라면 고도 표기가 향미 폭의 참고가 됩니다. 종 표기보다 이쪽이 정보량이 많습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>로스팅 날짜</strong> — 종이 무엇이든 이 항목이 잔의 인상에 가장 크게 작용합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>용도</strong> — 산미와 향을 보려면 아라비카 싱글, 우유 음료에서 커피 맛이 남기를 원하면 로부스타가 섞인 블렌드가 유리할 수 있습니다.</div></div>
+    </div>
+
+    <p>정리하면 <strong>종은 출발점이지 결론이 아닙니다.</strong> 잘 관리된 로부스타가 방치된 아라비카보다 나은 잔을 내는 경우는 얼마든지 있습니다. 종 표기는 "이 원두가 어느 방향의 맛을 가질 가능성이 높은가"를 알려주는 첫 번째 단서 정도로 쓰는 편이 적당합니다.</p>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">"아라비카 100%"는 품질 보증인가요?</div>
+      아닙니다. 그 표기가 보증하는 것은 <strong>사용된 원두의 종</strong>뿐입니다. 등급, 결점두 비율, 로스팅 날짜, 보관 상태는 아무것도 담기지 않습니다. 아라비카 중에도 저지대에서 대량 재배된 저가 원두가 있고, 이런 원두가 잘 관리된 파인 로부스타보다 낮게 평가되는 일도 있습니다. <strong>종 표기보다 산지·고도·로스팅 날짜 세 가지를 확인</strong>하는 편이 실질적입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">카페인을 줄이고 싶으면 아라비카를 고르면 되나요?</div>
+      방향은 맞습니다. 생두 기준 카페인이 대략 절반 수준이기 때문입니다. 다만 <strong>잔에 들어가는 카페인 양은 종보다 사용한 원두의 양과 추출 방식에 훨씬 크게 좌우됩니다.</strong> 아라비카로 두 잔을 마시면 로부스타 한 잔보다 많아질 수 있습니다. 카페인을 확실히 줄여야 한다면 종을 바꾸는 것보다 <strong>디카페인 원두를 쓰거나 잔 수를 줄이는 쪽</strong>이 효과가 큽니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">인스턴트 커피에 로부스타가 많이 쓰이는 이유는 뭔가요?</div>
+      원가와 공정 두 가지입니다. 시세가 아라비카의 절반 수준인 데다, <strong>가용성 고형분이 많아 같은 생두에서 얻는 추출물의 양이 유리</strong>합니다. 강한 쓴맛과 묵직한 바디도 물에 타서 마시는 형태에서는 오히려 존재감으로 작용합니다. 다만 최근에는 아라비카 비중을 높인 제품이나 종을 명시한 제품도 늘고 있어, <strong>인스턴트 = 로부스타라고 단정하기는 어렵습니다.</strong>
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">리베리카는 어디에 속하나요?</div>
+      3대 원종 중 셋째입니다. 생산량이 세계 전체에서 차지하는 비중이 매우 작아 <strong>ICO나 USDA의 주요 통계에서는 별도 항목으로 잡히지 않는 수준</strong>입니다. 국내 자격시험에서는 세 원종을 함께 묻는 문항이 나오므로 이름과 특징 정도는 정리해 두는 편이 좋습니다. 시장에서 실제로 마주치는 것은 사실상 아라비카와 카네포라 둘입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">로부스타가 섞인 블렌드는 피해야 하나요?</div>
+      용도에 따라 다릅니다. <strong>산지 특성을 그대로 보고 싶은 핸드드립</strong>이라면 아라비카 싱글 쪽이 목적에 맞습니다. 반대로 <strong>우유를 많이 넣는 음료나 크레마가 중요한 에스프레소</strong>에서는 로부스타가 섞인 블렌드가 더 나은 결과를 내는 경우가 흔합니다. 문제는 로부스타가 들어간 것 자체가 아니라 <strong>비율을 밝히지 않는 것</strong>입니다.
+    </div>
+
+    <div class="closing-box">
+      <h3>종은 첫 번째 단서일 뿐입니다</h3>
+      <p>아라비카와 로부스타는 등급의 위아래가 아니라 <strong>염색체 수부터 다른 두 식물</strong>입니다. 자라는 온도가 다르고, 병해에 대한 강약이 다르고, 카페인이 약 두 배 차이 납니다. 가격이 갈리는 이유는 그 조건들의 합계이지 품질 하나가 아닙니다.</p>
+      <p>그리고 최근 통계에서 두 종의 생산 비중은 <strong>대략 53 대 47</strong>까지 좁혀져 있습니다. 로부스타를 예외 취급하던 시절의 감각은 이미 시장과 맞지 않습니다. <strong>봉투에서는 종보다 산지·고도·로스팅 날짜를 먼저 확인하십시오.</strong> 잔의 인상을 바꾸는 힘은 그쪽이 더 큽니다.</p>
+    </div>
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-23"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">내추럴 워시드 차이 — 가공방식별 맛과 향, 원두 고르는 기준</div><div class="rc-date">2026. 08. 23</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-11"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">디카페인 원두 만드는 법 — 카페인 제거 공정 3가지와 잔류량 기준</div><div class="rc-date">2026. 08. 11</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-06"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">게이샤가 꽃향기인 진짜 이유 — 품종 DNA부터 발효 과학까지, 커피 맛의 설계도 완전 해부</div><div class="rc-date">2026. 08. 06</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#아라비카</span>
+      <span class="tag">#로부스타</span>
+      <span class="tag">#카네포라</span>
+      <span class="tag">#카페인함량</span>
+      <span class="tag">#원두고르는법</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>등급이 아니라 다른 종입니다.</strong> 아라비카는 염색체 44개의 이질사배체, 카네포라(로부스타)는 22개의 이배체입니다.</li>
+        <li><strong>아라비카는 로부스타의 자손이기도 합니다.</strong> 카네포라와 유게니오이데스의 자연 교잡으로 생겼습니다.</li>
+        <li><strong>적정 기온이 다릅니다.</strong> FAO 기준 아라비카 15~24℃, 로부스타 24~30℃이며 로부스타는 15℃ 아래를 못 견딥니다.</li>
+        <li><strong>비중은 53 대 47입니다.</strong> USDA FAS 2025/26 기준 아라비카 94.4 · 로부스타 84.4 백만 포대로, "7 대 3"은 더 이상 맞지 않습니다.</li>
+        <li><strong>시세는 약 1.6배 차이입니다.</strong> ICO 2026년 6월 로부스타 169.39 대 브라질 내추럴 272.01 US센트/lb.</li>
+        <li><strong>카페인은 약 두 배입니다.</strong> 생두 기준 아라비카 1.09% 대 로부스타 2.09% (BIOTROPIA 2023 측정).</li>
+        <li><strong>"아라비카 100%"는 종만 보증합니다.</strong> 등급·결점두·로스팅 날짜는 담기지 않습니다. 산지·고도·로스팅 날짜를 함께 보십시오.</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
