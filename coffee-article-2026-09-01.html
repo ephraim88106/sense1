@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>에스프레소 샷 시간 기준 — 25~30초 재는 시점과 조절 방법 | 바리스타 스페셜티</title>
+  <meta name="description" content="에스프레소 25~30초는 목표가 아니라 분쇄도의 결과입니다. SCAA 정의(20~30초·9~10기압·90.5~96.1℃)와 바리스타 설문 실측값(51%가 25~30초, 평균 산출 36.5g, 비율 1:2), 타이머를 누르는 시점, 시간이 안 맞을 때 조절 순서를 정리했습니다">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-09-01">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="에스프레소 샷 시간 기준 — 25~30초 재는 시점과 조절 방법 | 바리스타 스페셜티">
+<meta property="og:description" content="에스프레소 25~30초는 목표가 아니라 분쇄도의 결과입니다. SCAA 정의(20~30초·9~10기압·90.5~96.1℃)와 바리스타 설문 실측값(51%가 25~30초, 평균 산출 36.5g, 비율 1:2), 타이머를 누르는 시점, 시간이 안 맞을 때 조절 순서를 정리했습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-09-01">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-09-01T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-09-01T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-09-01#page", "url": "https://coffee.ephseed.com/coffee-article-2026-09-01", "headline": "에스프레소 샷 시간 기준 — 25~30초 재는 시점과 조절 방법 | 바리스타 스페셜티", "description": "에스프레소 25~30초는 목표가 아니라 분쇄도의 결과입니다. SCAA 정의(20~30초·9~10기압·90.5~96.1℃)와 바리스타 설문 실측값(51%가 25~30초, 평균 산출 36.5g, 비율 1:2), 타이머를 누르는 시점, 시간이 안 맞을 때 조절 순서를 정리했습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-09-01", "dateModified": "2026-09-01", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법 심층 가이드</span>
+      <span class="badge">에스프레소</span>
+      <span class="badge">샷 시간</span>
+    </div>
+    <h1>에스프레소 샷 시간 기준<br/>— 25~30초 재는 시점과 조절 방법</h1>
+    <p class="subtitle">25~30초는 지켜야 할 목표가 아니라 분쇄도가 맞았을 때 따라오는 결과입니다. 국제 정의의 원문 수치, 현장 바리스타들이 실제로 쓰는 값, 타이머를 누르는 시점, 시간이 안 맞을 때 무엇부터 건드려야 하는지를 순서대로 정리했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 9월 1일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+    <!-- 훅 -->
+    <div class="hook">
+      "25초에 맞췄는데 왜 맛이 매번 다를까요?"<br/>
+      시간을 맞췄는데 맛이 흔들린다면, 시간을 목표로 삼았기 때문일 가능성이 큽니다. <strong>25~30초는 지켜야 할 값이 아니라 분쇄도가 맞았을 때 따라오는 결과</strong>입니다. 국제 정의의 원문도 "브루 타임이 20~30초가 되도록 분쇄도를 잡는다"고 적혀 있습니다.
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>25~30초라는 숫자가 어느 정의에서 나온 값이고 원문이 어떻게 적혀 있는가</li>
+        <li>현장 바리스타들이 실제로 쓰는 투입량·산출량·시간·온도·압력의 실측 분포</li>
+        <li>타이머를 언제 누르는가 — 펌프 작동 시점과 첫 방울 시점의 차이</li>
+        <li>시간보다 먼저 정해야 하는 값과, 시간이 안 맞을 때 건드리는 순서</li>
+        <li>더 곱게 갈아도 시간이 늘지 않고 맛이 나빠지는 지점이 존재하는 이유</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">20~30초</span><span class="label">SCAA 정의가 적은 브루 타임 범위</span></div>
+      <div class="data-card"><span class="num">51%</span><span class="label">평균 추출 시간이 25~30초라고 답한 바리스타 비율</span></div>
+      <div class="data-card"><span class="num">1:2</span><span class="label">가장 흔한 투입량 대 산출량 비율</span></div>
+      <div class="data-card"><span class="num">8.5bar</span><span class="label">설문에서 집계된 평균 추출 압력</span></div>
+    </div>
+
+    <h2 class="section-title">1. 25~30초는 어디서 나온 숫자인가</h2>
+    <p>이 숫자의 출처는 미국 스페셜티커피협회(SCAA)가 오래 써 온 에스프레소 정의입니다. 스페셜티커피협회(SCA)가 발행하는 <em>25 Magazine</em>에 인용된 원문은 다음과 같습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">SCAA 에스프레소 정의 (원문 요지)</div>
+      에스프레소는 <strong>7~9g</strong>(더블은 14~18g)의 커피에 <strong>90.5~96.1℃</strong>의 물을 <strong>9~10기압</strong>으로 통과시켜 만든 <strong>25~35mL</strong>(더블은 그 두 배)의 음료이며, <strong>분쇄도는 브루 타임이 20~30초가 되도록</strong> 잡는다.
+    </div>
+
+    <p>문장의 구조를 보면 시간이 놓인 자리가 분명해집니다. 정의는 "20~30초 동안 내리라"고 말하지 않고 <strong>"브루 타임이 20~30초가 되도록 분쇄도를 잡으라"</strong>고 말합니다. 즉 시간은 조작하는 손잡이가 아니라 <strong>분쇄도가 맞았는지 알려주는 눈금</strong>입니다. 그래서 분쇄도를 그대로 두고 시간만 늘리거나 줄이면, 맞춘 것은 숫자뿐이고 맛은 따라오지 않습니다.</p>
+
+    <p>한 가지 더 짚어 둘 점이 있습니다. 위 정의의 투입량은 싱글 7~9g 기준입니다. 오늘날 카페에서 "에스프레소 한 잔"이라고 부르는 것은 대부분 더블이고, 실제 투입량은 그보다 큽니다. <strong>정의를 그대로 옮기기 전에 지금 쓰는 바스켓이 몇 그램짜리인지부터 확인</strong>해야 하는 이유입니다.</p>
+
+    <h2 class="section-title">2. 현장에서 실제로 쓰는 값</h2>
+    <p>정의와 현장이 얼마나 일치하는지는 실측으로 확인할 수 있습니다. 미국 바리스타 길드가 진행한 에스프레소 설문 결과를 SCA가 정리한 수치는 다음과 같습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>항목</th><th>설문 결과</th><th>정의와의 관계</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>투입량</td><td class="em">18~20g (66%)</td><td>정의의 더블 상한(18g)을 넘는 응답이 흔함</td></tr>
+        <tr><td>산출량</td><td class="em">평균 36.5g</td><td>무게로 재는 응답이 82%</td></tr>
+        <tr><td>비율</td><td class="em">1:2 (범위 1:1.5~1:2.5)</td><td>정의에는 없는, 현장이 만든 기준</td></tr>
+        <tr><td>추출 시간</td><td class="em">25~30초 (51%)</td><td>정의의 20~30초 안에 들어옴</td></tr>
+        <tr><td>물 온도</td><td class="em">평균 약 93.5℃</td><td>정의의 90.5~96.1℃ 중간값 부근</td></tr>
+        <tr><td>압력</td><td class="em">평균 8.5bar (최빈값 9bar)</td><td>정의의 9~10기압보다 다소 낮음</td></tr>
+        <tr><td>프리인퓨전</td><td class="em">사용 52%</td><td>정의에는 언급이 없는 변수</td></tr>
+      </tbody>
+    </table>
+
+    <p>읽어 낼 것이 세 가지 있습니다. 첫째, <strong>시간은 정의와 거의 일치</strong>합니다. 절반이 넘는 응답이 25~30초 구간에 몰려 있습니다. 둘째, <strong>투입량과 압력은 정의에서 조금씩 벗어나 있습니다.</strong> 투입량은 더 많아졌고 압력은 더 낮아졌습니다. 셋째, 정의에 아예 없던 두 가지가 현장의 표준이 되었습니다. <strong>무게로 재는 산출량과 그로부터 나오는 비율</strong>, 그리고 <strong>프리인퓨전</strong>입니다. 이 두 가지가 다음 두 절의 주제입니다.</p>
+
+    <h2 class="section-title">3. 타이머를 언제 누르는가 — 같은 잔도 5초 이상 갈린다</h2>
+    <p>"에스프레소 추출 시간"을 검색하면 함께 따라오는 질문이 "언제부터 재는가"입니다. 기준이 두 가지 있기 때문입니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">두 가지 시작 기준</div>
+      <div class="tip-item">
+        <div class="tip-num">A</div>
+        <div class="tip-text"><strong>펌프가 돌기 시작한 순간</strong> — 버튼을 누른 시점부터 잽니다. 프리인퓨전 시간이 전부 포함됩니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">B</div>
+        <div class="tip-text"><strong>첫 방울이 떨어진 순간</strong> — 액체가 나오기 시작할 때부터 잽니다. 프리인퓨전 구간은 빠집니다.</div>
+      </div>
+    </div>
+
+    <p>제조사 안내는 A쪽입니다. 라 마르조코의 다이얼링 가이드는 <strong>"타이머는 물이 바스켓 안의 커피에 닿는 순간 시작해야 한다"</strong>고 명시합니다. 프리인퓨전을 쓰는 기기라면 그 구간도 물이 커피에 닿아 있는 시간이므로 함께 세는 것이 맞습니다.</p>
+
+    <p>왜 중요한가 하면, <strong>기준을 바꾸는 것만으로 같은 잔의 기록이 몇 초씩 달라지기 때문</strong>입니다. 프리인퓨전을 5초 걸어 두었다면 A 기준 30초짜리 샷이 B 기준으로는 25초로 적힙니다. 설문에서 절반 넘는 응답자가 프리인퓨전을 쓴다고 답한 만큼, 남의 레시피를 그대로 옮길 때는 <strong>그 숫자가 어느 기준으로 잰 값인지</strong>부터 확인해야 합니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">기록할 때의 원칙</div>
+      기준 자체는 A든 B든 하나로 고정만 하면 됩니다. 문제는 <strong>기록에 기준이 빠져 있는 것</strong>입니다. 노트에는 "28초"가 아니라 <strong>"펌프 기준 28초(프리인퓨전 5초 포함)"</strong>처럼 적어 두십시오. 다음 주의 자신이 같은 잔을 재현할 수 있는지가 여기서 갈립니다.
+    </div>
+
+    <h2 class="section-title">4. 시간보다 먼저 정해야 하는 값 — 비율</h2>
+    <p>에스프레소 한 잔에는 서로 맞물린 숫자가 셋 있습니다. <strong>투입량 · 산출량 · 시간</strong>입니다. 이 셋을 동시에 목표로 삼으면 하나를 맞출 때마다 다른 하나가 어긋납니다. 그래서 현장의 순서는 이렇게 굳어졌습니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">다이얼링 순서</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>투입량을 고정합니다.</strong> 바스켓 용량에 맞춰 정하고, 이후에는 건드리지 않습니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>산출량을 비율로 정합니다.</strong> 1:2가 기본입니다. 18g을 넣었다면 36g을 받습니다. 저울로 잰 무게 기준입니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>남은 시간을 분쇄도로 맞춥니다.</strong> 위 두 값을 지킨 상태에서 시간이 목표 구간에 들어오도록 굵기만 움직입니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-text"><strong>맛으로 미세 조정합니다.</strong> 숫자가 들어왔는데 시거나 쓰면 비율을 한 단계 옮깁니다.</div>
+      </div>
+    </div>
+
+    <p>비율을 바꾸면 목표 시간도 함께 움직입니다. 라 마르조코가 공개한 다이얼링 예시를 보면 이 관계가 드러납니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>스타일</th><th>투입 → 산출</th><th>비율</th><th>시간</th><th>물 온도</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>리스트레토(전통)</td><td>14g → 14g</td><td class="em">1:1</td><td>25초</td><td>90~93℃</td></tr>
+        <tr><td>룽고(전통)</td><td>7g → 21g</td><td class="em">1:3</td><td>20초</td><td>90~93℃</td></tr>
+        <tr><td>노르말레(모던)</td><td>17g → 34g</td><td class="em">1:2</td><td>40초</td><td>93~96℃</td></tr>
+        <tr><td>룽고(모던)</td><td>17g → 51g</td><td class="em">1:3</td><td>45초</td><td>93~96℃</td></tr>
+      </tbody>
+    </table>
+
+    <p>표에서 눈에 띄는 것은 <strong>모던 쪽의 시간이 40초를 넘긴다는 점</strong>입니다. 약배전 원두를 낮은 압력과 높은 온도로 길게 뽑는 방식에서는 40초대가 정상 범위입니다. 25~30초가 모든 잔에 적용되는 상수가 아니라 <strong>특정 조건(중배전·9기압 안팎·1:2)에서 관측되는 값</strong>이라는 뜻입니다. 원두와 기기의 조건이 다르면 목표 구간도 옮겨 잡아야 합니다.</p>
+
+    <h2 class="section-title">5. 시간이 안 맞을 때 건드리는 순서</h2>
+    <p>목표보다 빠르게 흘러내리거나 느리게 맺힐 때, 손대는 순서가 정해져 있습니다. 영향이 큰 것부터 하나씩 움직이고, 한 번에 하나만 바꿉니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>증상</th><th>1순위 조치</th><th>보조 조치</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>시간이 짧다 (물처럼 흐름)</td><td class="em">분쇄도를 한 단계 곱게</td><td>투입량을 0.5g 늘려 베드를 두껍게</td></tr>
+        <tr><td>시간이 길다 (방울로 맺힘)</td><td class="em">분쇄도를 한 단계 굵게</td><td>투입량을 0.5g 줄임</td></tr>
+        <tr><td>시간은 맞는데 시다</td><td class="em">비율을 1:2.2~1:2.5로 늘림</td><td>물 온도를 1~2℃ 올림</td></tr>
+        <tr><td>시간은 맞는데 쓰다</td><td class="em">비율을 1:1.7~1:1.8로 줄임</td><td>물 온도를 1~2℃ 내림</td></tr>
+        <tr><td>매번 시간이 들쭉날쭉</td><td class="em">분배·탬핑을 점검</td><td>도징 편차와 그라인더 잔여분 확인</td></tr>
+      </tbody>
+    </table>
+
+    <div class="tip-box">
+      <div class="tip-title">조절할 때의 다섯 가지 원칙</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>한 번에 하나만 바꿉니다.</strong> 분쇄도와 투입량을 같이 옮기면 무엇이 효과를 냈는지 알 수 없습니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>분쇄도는 한 클릭씩</strong> 움직입니다. 에스프레소 구간에서는 한 클릭이 몇 초 단위의 차이를 냅니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>굵기를 바꾼 뒤에는 한 샷을 버립니다.</strong> 그라인더 통로에 이전 굵기의 가루가 남아 있어 첫 잔이 섞입니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-text"><strong>저울과 타이머를 함께 씁니다.</strong> 시간만 보면 산출량이 흔들리고, 산출량만 보면 흐름 속도를 놓칩니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">5</div>
+        <div class="tip-text"><strong>바꾼 값을 기록합니다.</strong> 원두·투입량·산출량·시간·기준(펌프/첫 방울)까지 한 줄이면 충분합니다.</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">6. 더 곱게 갈아도 시간이 늘지 않는 지점</h2>
+    <p>"느리게 만들고 싶으면 곱게 간다"는 원칙에는 한계가 있습니다. 학술지 <em>Matter</em>에 실린 에스프레소 추출 모델링·실험 연구가 그 지점을 수치로 보여 줍니다.</p>
+
+    <p>이 연구에서 6기압 조건으로 굵기를 단계별로 좁혀 갔을 때, 추출 시간은 <strong>가장 굵은 설정에서 24.0초, 가장 고운 설정에서 37.6초</strong>로 예상대로 늘어났습니다. 그런데 <strong>실제로 뽑혀 나온 성분의 비율(수율)은 일정 지점을 넘어서면 오히려 떨어졌습니다.</strong> 연구진이 관측한 전환점은 특정 굵기 설정 부근이었고, 그보다 곱게 간 구간에서는 모델이 예측한 값과 실측값의 차이가 <strong>2.6% → 6.1% → 13.1%</strong>로 벌어졌습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">왜 벌어지는가 — 채널링</div>
+      너무 고운 가루가 많아지면 커피 베드의 일부가 막히고, 물은 저항이 약한 통로로 몰려 흐릅니다. 연구진은 이를 <strong>부분적으로 막힌 흐름</strong>이라고 표현했습니다. 물이 지나가지 않은 구역은 <strong>거의 추출되지 않은 채로 남습니다.</strong> 시간은 길어지는데 맛은 나빠지는 구간이 바로 여기입니다.
+    </div>
+
+    <p>연구진이 제안한 대안은 방향이 반대였습니다. <strong>투입량을 약 25% 줄이고 분쇄도를 눈에 띄게 굵게</strong> 가는 방식입니다. 20g을 넣어 40g을 받던 레시피를 <strong>15g을 넣어 40g을 받는 쪽</strong>으로 바꾸자 추출은 빨라졌고, 수율은 업계가 선호하는 17~23% 구간 안쪽인 <strong>약 22%</strong>에 들어왔으며, 무엇보다 <strong>잔마다의 편차가 줄었습니다.</strong></p>
+
+    <p>실무로 옮기면 이렇게 됩니다. 시간을 늘리려고 굵기를 계속 조이는데도 맛이 나아지지 않는다면, 그 방향은 이미 한계를 넘었을 가능성이 큽니다. <strong>굵기를 되돌리고 투입량을 줄여 비율로 맞추는 쪽</strong>을 한 번 시도해 볼 가치가 있습니다.</p>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">25초를 못 맞추면 잘못 내린 건가요?</div>
+      아닙니다. 정의가 말하는 20~30초는 <strong>싱글 7~9g에 9~10기압이라는 조건이 붙은 값</strong>입니다. 투입량이 많거나 압력이 낮거나 배전이 밝으면 목표 구간 자체가 옮겨 갑니다. 제조사 예시에서도 모던 스타일 1:2 레시피의 시간이 40초로 제시됩니다. <strong>판단 기준은 시간이 아니라 같은 조건에서 같은 시간이 재현되는가</strong>입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">프리인퓨전을 쓰면 시간을 어떻게 세나요?</div>
+      제조사 안내를 따르면 <strong>물이 커피에 닿는 순간부터</strong>이므로 프리인퓨전 구간도 포함합니다. 이때 목표 시간은 프리인퓨전 길이만큼 뒤로 밀린다고 보는 편이 자연스럽습니다. 5초를 걸었다면 기존 목표 28초는 33초 부근이 됩니다. 중요한 것은 <strong>어제와 오늘의 기준을 같게 두는 것</strong>입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">시간만 보고 맛을 판단할 수 있나요?</div>
+      어렵습니다. 시간은 <strong>물이 베드를 통과한 속도</strong>를 알려줄 뿐, 얼마나 뽑혔는지는 알려주지 않습니다. 같은 28초라도 채널링이 있으면 수율이 낮게 나옵니다. 숫자로 확인하려면 <strong>산출량 무게</strong>를, 더 정확히 보려면 <strong>농도 측정을 통한 수율</strong>을 함께 봐야 합니다. 위 연구가 선호 구간으로 언급한 값은 17~23%입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">원두를 바꿨더니 시간이 확 달라졌습니다</div>
+      정상입니다. 같은 굵기라도 <strong>배전 정도에 따라 원두의 조직과 부서지는 방식이 다르고</strong>, 로스팅 후 경과일에 따라 남아 있는 가스의 양도 다릅니다. 밝게 볶은 원두는 단단해서 같은 설정에서 더 굵게 갈리고, 갓 볶은 원두는 가스가 흐름을 방해합니다. <strong>원두를 바꾸면 다이얼링을 처음부터 다시 하는 것이 기본</strong>입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">시간이 매번 5초씩 흔들립니다</div>
+      굵기가 아니라 <strong>준비 과정의 편차</strong>일 가능성이 큽니다. 투입량이 0.3g씩 다르거나, 가루가 한쪽으로 쏠린 채 탬핑되거나, 그라인더 통로에 이전 가루가 남아 있으면 베드의 저항이 매번 달라집니다. <strong>저울로 투입량을 재고, 분배를 균일하게 하고, 그라인더를 비우는 것</strong>부터 점검하십시오. 위 연구가 투입량을 줄이고 굵게 가는 방식을 제안한 이유도 재현성이었습니다.
+    </div>
+
+    <div class="closing-box">
+      <h3>시간은 목표가 아니라 눈금입니다</h3>
+      <p>정의의 문장을 다시 읽어 보면 결론은 분명합니다. <strong>"브루 타임이 20~30초가 되도록 분쇄도를 잡는다"</strong> — 시간은 손잡이가 아니라 계기판입니다. 손잡이는 분쇄도이고, 그 앞에 먼저 고정해야 하는 것이 투입량과 비율입니다.</p>
+      <p>순서를 정리하면 이렇습니다. <strong>투입량을 정하고, 비율로 산출량을 정하고, 시간은 분쇄도로 맞추고, 맛으로 미세 조정합니다.</strong> 그리고 기록할 때는 타이머를 어느 시점부터 눌렀는지까지 함께 적어 두십시오. 재현되지 않는 한 잔은 좋은 한 잔이라도 다음에 다시 만들 수 없습니다.</p>
+    </div>
+
+    
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-29"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">프렌치프레스 사용법 — 분쇄도와 우려내는 시간, 침전물 줄이는 순서</div><div class="rc-date">2026. 08. 29</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-27"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">그라인더 청소 주기 — 청소 알약 사용법과 찌꺼기 제거 순서</div><div class="rc-date">2026. 08. 27</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-22"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">에스프레소 머신 청소 주기 — 백플러싱과 포터필터 세척 순서</div><div class="rc-date">2026. 08. 22</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#에스프레소</span>
+      <span class="tag">#샷시간</span>
+      <span class="tag">#다이얼링</span>
+      <span class="tag">#브루비율</span>
+      <span class="tag">#분쇄도조절</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>시간은 결과입니다.</strong> SCAA 정의 원문은 "브루 타임이 20~30초가 되도록 분쇄도를 잡는다"고 적고 있습니다.</li>
+        <li><strong>현장 실측도 정의와 맞습니다.</strong> 바리스타 설문에서 51%가 평균 25~30초라고 답했습니다.</li>
+        <li><strong>현장의 실제 기준은 비율입니다.</strong> 응답의 82%가 산출량을 무게로 재고, 가장 흔한 비율은 1:2(평균 산출 36.5g)입니다.</li>
+        <li><strong>타이머는 물이 커피에 닿는 순간부터</strong> 잽니다. 첫 방울 기준으로 재면 프리인퓨전 길이만큼 짧게 기록됩니다.</li>
+        <li><strong>목표 구간은 조건에 따라 옮겨집니다.</strong> 제조사 예시의 모던 1:2 레시피는 40초입니다.</li>
+        <li><strong>고운 쪽에는 한계가 있습니다.</strong> 일정 지점을 넘어서면 채널링으로 수율이 오히려 떨어집니다.</li>
+        <li><strong>흔들림은 대개 준비 과정 탓입니다.</strong> 투입량 편차·분배·그라인더 잔여분부터 점검하십시오.</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
