@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>플레이버 휠 사용법 — 향미 표현 단계와 한글 명칭 정리 | 바리스타 스페셜티</title>
+  <meta name="description" content="플레이버 휠은 안쪽 9개 대분류에서 바깥으로 좁혀 가며 읽습니다. 1995년판과 2016년 개정판의 차이, 칸 사이 간격과 색이 뜻하는 것, 센서리 렉시콘 110개 항목과 0~15 척도, 한국어판 이용 방법을 정리했습니다">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-09-02">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="플레이버 휠 사용법 — 향미 표현 단계와 한글 명칭 정리 | 바리스타 스페셜티">
+<meta property="og:description" content="플레이버 휠은 안쪽 9개 대분류에서 바깥으로 좁혀 가며 읽습니다. 1995년판과 2016년 개정판의 차이, 칸 사이 간격과 색이 뜻하는 것, 센서리 렉시콘 110개 항목과 0~15 척도, 한국어판 이용 방법을 정리했습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-09-02">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-09-02T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-09-02T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-09-02#page", "url": "https://coffee.ephseed.com/coffee-article-2026-09-02", "headline": "플레이버 휠 사용법 — 향미 표현 단계와 한글 명칭 정리 | 바리스타 스페셜티", "description": "플레이버 휠은 안쪽 9개 대분류에서 바깥으로 좁혀 가며 읽습니다. 1995년판과 2016년 개정판의 차이, 칸 사이 간격과 색이 뜻하는 것, 센서리 렉시콘 110개 항목과 0~15 척도, 한국어판 이용 방법을 정리했습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-09-02", "dateModified": "2026-09-02", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🔥 로스팅 &amp; 원두 과학</span>
+      <span class="badge">플레이버 휠</span>
+      <span class="badge">향미 표현</span>
+    </div>
+    <h1>플레이버 휠 사용법<br/>— 향미 표현 단계와 한글 명칭 정리</h1>
+    <p class="subtitle">플레이버 휠은 마음에 드는 단어를 골라 오는 그림이 아니라, 안쪽에서 바깥으로 좁혀 가며 읽도록 설계된 도구입니다. 읽는 순서, 칸 사이 간격과 색이 담고 있는 정보, 함께 봐야 하는 문서, 한국어 명칭을 확인하는 방법을 정리했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 9월 2일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+    <!-- 훅 -->
+    <div class="hook">
+      "베리 같기도 하고 초콜릿 같기도 한데, 뭐라고 적어야 하나요?"<br/>
+      플레이버 휠을 펼쳐 놓고 바깥쪽 단어부터 훑는 분이 많습니다. 그런데 <strong>이 그림은 바깥에서 안으로 읽도록 만들어지지 않았습니다.</strong> 만든 쪽이 공개한 사용법의 세 번째 단계는 "가운데에서 시작하라"입니다. 방향을 바꾸는 것만으로 고르기가 훨씬 쉬워집니다.
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>안쪽 9개 대분류에서 바깥으로 좁혀 가는 3단 구조와 읽는 순서</li>
+        <li>칸이 붙어 있을 때와 벌어져 있을 때의 뜻 — 간격은 장식이 아닙니다</li>
+        <li>2016년 개정판이 어떤 연구로 만들어졌는가 (전문가 72명·군집분석)</li>
+        <li>휠만으로 부족한 이유와, 함께 봐야 하는 센서리 렉시콘 110개 항목</li>
+        <li>기준 시료의 0~15 척도 읽는 법과 절대 먹으면 안 되는 시료</li>
+        <li>한국어 명칭을 확인하는 방법과 번역할 때 조심할 점</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">9개</span><span class="label">가장 안쪽 고리의 대분류 수</span></div>
+      <div class="data-card"><span class="num">110개</span><span class="label">센서리 렉시콘이 정의한 향미 항목</span></div>
+      <div class="data-card"><span class="num">0~15</span><span class="label">항목별 강도를 적는 척도</span></div>
+      <div class="data-card"><span class="num">72명</span><span class="label">개정판 배치를 정한 전문가 분류 참가자</span></div>
+    </div>
+
+    <h2 class="section-title">1. 지금 쓰는 휠은 2016년에 새로 그린 것입니다</h2>
+    <p>먼저 판본을 확인해야 합니다. 인터넷에 도는 이미지 중에는 아직 옛 판본이 섞여 있습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>1995년판</th><th>2016년 개정판</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>만든 곳</td><td>미국 스페셜티커피협회(SCAA)</td><td class="em">SCA + 월드커피리서치(WCR)</td></tr>
+        <tr><td>근거</td><td>업계 경험에 기반한 정리</td><td class="em">센서리 렉시콘 + 전문가 분류 실험</td></tr>
+        <tr><td>구조</td><td>향(aroma)과 맛(taste) 두 장으로 분리</td><td class="em">한 장에 3단 고리 구조</td></tr>
+        <tr><td>배치 근거</td><td>작성자의 편집 판단</td><td class="em">군집분석·다차원척도법 결과</td></tr>
+      </tbody>
+    </table>
+
+    <p>개정판은 <strong>약 20년 만의 전면 재설계</strong>였고, 2016년 1월에 공개됐습니다. 옛 판본이 잘못된 것은 아니지만 <strong>지금 업계에서 공통 언어로 쓰는 것은 개정판</strong>입니다. 자료를 내려받을 때는 바깥 고리에 "blackberry", "black tea", "malt" 같은 세부어가 촘촘히 들어간 쪽인지부터 확인하십시오.</p>
+
+    <p>또 하나 알아 둘 점은 배포 조건입니다. 이 휠은 <strong>저작자 표시·비영리·변경 금지(CC BY-NC-ND 4.0)</strong> 조건으로 공개돼 있습니다. 카페 벽에 붙여 두고 손님과 이야기하는 용도는 문제가 없지만, <strong>메뉴판이나 상품 페이지에 넣어 판매에 쓰거나 색·항목을 고쳐 다시 그리는 것은 허용 범위를 벗어납니다.</strong></p>
+
+    <h2 class="section-title">2. 3단 구조 — 가운데에서 바깥으로</h2>
+    <p>휠은 동심원 세 겹으로 되어 있습니다. 안쪽일수록 뭉뚱그린 표현이고, 바깥으로 갈수록 구체적인 이름이 나옵니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">가장 안쪽 고리의 9개 대분류</div>
+      과일(Fruity) · 신맛/발효(Sour/Fermented) · 풀·채소(Green/Vegetative) · 기타(Other) · 로스팅(Roasted) · 향신료(Spices) · 견과/코코아(Nutty/Cocoa) · 단맛(Sweet) · 꽃(Floral)
+    </div>
+
+    <p>표현을 고를 때는 <strong>이 9칸 중 하나를 먼저 짚습니다.</strong> "과일 쪽"이라고 정했으면 그다음 고리에서 베리인지 감귤류인지 말린 과일인지를 고르고, 마지막 고리에서 블랙베리인지 딸기인지로 좁힙니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">이 순서가 중요한 이유</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>바깥부터 보면 선택지가 너무 많습니다.</strong> 세부어를 한꺼번에 놓고 고르면 아는 단어에 끌려가지, 실제로 느낀 것을 따라가지 못합니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>중간에서 멈춰도 됩니다.</strong> 만든 쪽의 안내도 "설명이 충분하다고 느껴지는 지점에서 멈추라"고 적고 있습니다. "과일"까지만 적어도 틀린 기록이 아닙니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>확신이 없을수록 안쪽에 머무릅니다.</strong> 억지로 "자몽"까지 내려가면, 다음에 같은 원두를 마셨을 때 기록이 재현되지 않습니다.</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">3. 칸 사이의 간격과 색은 정보입니다</h2>
+    <p>휠에서 가장 자주 놓치는 부분입니다. 바깥 고리의 칸들을 보면 어떤 것은 서로 붙어 있고 어떤 것은 사이가 벌어져 있습니다. <strong>이 간격은 디자인이 아니라 관계의 세기를 나타냅니다.</strong></p>
+
+    <div class="note-box">
+      <div class="note-label">간격 읽는 법</div>
+      칸이 <strong>맞붙어 있으면</strong> 두 표현이 서로 가깝다는 뜻이고, <strong>사이가 벌어져 있으면</strong> 덜 가깝다는 뜻입니다. 그리고 <strong>그 틈이 중심 쪽으로 깊게 파고들수록 관계가 더 멉니다.</strong>
+    </div>
+
+    <p>실무에서 이 정보가 쓰이는 순간은 이럴 때입니다. 한 잔을 놓고 "블랙베리 같기도 하고 라즈베리 같기도 한데"라며 망설일 때, 두 칸이 맞붙어 있다면 <strong>둘 중 무엇을 골라도 큰 오차가 아니라는 뜻</strong>입니다. 반대로 후보 두 개가 깊은 틈으로 갈라져 있다면 그건 <strong>아직 감각이 정리되지 않았다는 신호</strong>이므로, 한 단계 안쪽으로 물러나 적는 편이 낫습니다.</p>
+
+    <p>색도 같은 역할을 합니다. 개정판은 항목의 성격에 맞춰 색을 배치했기 때문에, 세부어를 하나하나 읽지 않고 <strong>색 덩어리만 훑어도 "붉은 과일 쪽" "갈색 계열" 같은 큰 방향을 먼저 잡을 수 있습니다.</strong> 초보자에게는 오히려 이쪽이 빠른 진입로입니다.</p>
+
+    <h2 class="section-title">4. 배치는 어떻게 정해졌나 — 전문가 72명의 분류</h2>
+    <p>간격과 위치를 신뢰해도 되는 근거가 있습니다. 개정판은 그림을 먼저 그린 것이 아니라 <strong>분류 실험 결과를 그림으로 옮긴 것</strong>입니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">개정판이 만들어진 순서</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text">월드커피리서치와 캔자스주립대 감각분석센터가 커피의 향미 항목을 정리한 <strong>센서리 렉시콘</strong>을 먼저 만듭니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>전문가 72명</strong>이 온라인에서 이 항목들을 자유롭게 묶는 분류 작업을 합니다. 이때 <strong>시음은 하지 않습니다</strong> — 맛이 아니라 표현들 사이의 개념적 거리를 재는 작업이기 때문입니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text">모인 데이터에 <strong>계층적 군집분석</strong>을 적용해 어떤 항목들이 한 묶음이 되는지, 몇 단계로 나뉘는지를 결정합니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-text"><strong>다차원척도법</strong>으로 그 묶음들을 원 둘레 어디에 놓을지 정합니다. 지금 보는 배치가 여기서 나왔습니다.</div>
+      </div>
+    </div>
+
+    <p>이 과정은 2016년 <em>Journal of Food Science</em>에 논문으로 실렸습니다. 정리하면 <strong>가까운 자리에 있는 표현은 실제로 전문가들이 함께 묶은 표현</strong>이라는 뜻입니다. 휠 위에서 멀리 떨어진 두 단어를 한 잔에 나란히 적었다면, 기록을 의심해 볼 만합니다.</p>
+
+    <h2 class="section-title">5. 휠만으로는 부족합니다 — 센서리 렉시콘 110개 항목</h2>
+    <p>휠에는 단어만 있고 정의가 없습니다. "이 커피는 파피루스 같다"는 표현을 봤을 때 그게 무슨 뜻인지 휠은 알려 주지 않습니다. 그 역할을 하는 문서가 <strong>센서리 렉시콘</strong>입니다.</p>
+
+    <p>이 문서는 커피에서 나타나는 <strong>향·맛·질감 110개 항목</strong>에 대해 각각 <strong>정의</strong>와 <strong>기준 시료(reference)</strong>를 제시합니다. 기준 시료란 "그 향이 어떤 것인지 직접 확인할 수 있는 실제 제품"입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>항목</th><th>기준 시료 예시</th><th>강도</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>블랙베리</td><td>스머커스 블랙베리 잼</td><td class="em">향미 5.5</td></tr>
+        <tr><td>사과</td><td>르 네 뒤 카페 17번 향료</td><td class="em">향 7.0</td></tr>
+        <tr><td>체리</td><td>알 더블유 크누센 타트 체리 주스</td><td class="em">—</td></tr>
+        <tr><td>스컹키(고무 냄새)</td><td>라텍스 풍선</td><td class="em">—</td></tr>
+      </tbody>
+    </table>
+
+    <p>표 오른쪽의 숫자가 <strong>0~15 척도</strong>입니다. 각 눈금에는 이름이 붙어 있습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">0~15 강도 척도</div>
+      0 없음 · 2 겨우 감지됨 · 4 알아볼 수 있으나 강하지 않음 · 6 약간 강함 · 8 보통으로 강함 · 10 강함 · 12 매우 강함 · 15 극도로 강함
+    </div>
+
+    <p>즉 "블랙베리 5.5"는 <strong>스머커스 블랙베리 잼을 기준으로 잡았을 때 그 정도 세기</strong>라는 뜻입니다. 이런 방식이라 사람마다 "강하다"의 기준이 달라도 숫자가 어긋나지 않습니다. <strong>휠은 무엇인지 고르는 도구, 렉시콘은 얼마나인지 재는 도구</strong>라고 나눠 두면 이해가 쉽습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">⚠️ 반드시 지킬 것</div>
+      기준 시료 중 <strong>향(aroma) 시료로 표시된 것은 절대 입에 넣으면 안 됩니다.</strong> 위 표의 라텍스 풍선처럼 먹는 물건이 아닌 것이 포함돼 있습니다. 맛(flavor) 시료로 표시된 것만 시식할 수 있습니다.
+    </div>
+
+    <p>렉시콘은 초판(2016년) 이후 <strong>2.0판이 2017년 10월</strong>에 나왔습니다. 개정의 핵심은 <strong>24개 항목의 기준 시료를 어느 나라에서나 구할 수 있는 제품으로 교체</strong>한 것입니다. 신맛·쓴맛·짠맛, 사과·포도·코코넛·파인애플, 발효, 완두콩 꼬투리, 종이 냄새, 곰팡이·흙 냄새, 페놀, 석유, 브라운 스파이스, 아몬드, 바닐린, 꽃, 재스민 등이 여기에 해당합니다. <strong>한국에서 훈련할 때는 2.0판을 받는 편이 유리합니다.</strong></p>
+
+    <h2 class="section-title">6. 평가 조건 — 렉시콘은 커핑이 아니라 드립 기준입니다</h2>
+    <p>자주 혼동되는 부분입니다. 렉시콘이 정한 평가용 커피 준비 방법은 <strong>커핑 프로토콜과 다릅니다.</strong></p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>항목</th><th>센서리 렉시콘</th><th>SCA 커핑 프로토콜</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>추출 방식</td><td class="em">자동 드립</td><td>침지(컵에 직접)</td></tr>
+        <tr><td>기준</td><td class="em">인증 브루어 규격 충족 기기</td><td>물 1mL당 커피 0.055g</td></tr>
+        <tr><td>물</td><td class="em">탈이온수 48온스 / 원두 30g</td><td>92.2~94.4℃</td></tr>
+        <tr><td>제공 온도</td><td class="em">약 60℃(140℉)</td><td>붓고 나서 단계별로 평가</td></tr>
+        <tr><td>잔</td><td class="em">4온스 잔에 3분의 2</td><td>규정된 커핑볼</td></tr>
+      </tbody>
+    </table>
+
+    <p>두 문서의 목적이 다르기 때문입니다. <strong>커핑 프로토콜은 커피끼리 점수를 비교하려는 것</strong>이고, <strong>렉시콘은 개별 항목의 강도를 사람 사이에 맞추려는 것</strong>입니다. 그래서 렉시콘은 잡음이 적고 재현이 쉬운 드립 조건을 골랐습니다. <strong>둘을 섞어 쓰면 숫자가 어긋납니다.</strong> 커핑 점수를 낼 때는 커핑 프로토콜을, 항목 강도를 훈련할 때는 렉시콘 조건을 쓰십시오.</p>
+
+    <h2 class="section-title">7. 한글 명칭은 어떻게 확인하나</h2>
+    <p>"플레이버 휠 한글"이 많이 검색되는 이유는 분명합니다. 원본이 영어이기 때문입니다. 확인 경로는 세 가지입니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">한국어 명칭 확인 순서</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>공식 한국어판을 받습니다.</strong> 발행처가 중국어·한국어·포르투갈어·스페인어판을 함께 배포하고 있습니다. 개인이 옮긴 이미지보다 이쪽이 정확합니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>애매한 항목은 렉시콘의 정의로 확인합니다.</strong> 번역어가 갈리는 항목일수록 정의 문장과 기준 시료를 보는 편이 빠릅니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>기록에는 원어를 함께 남깁니다.</strong> "브라운 스파이스(brown spice)"처럼 병기해 두면 나중에 다른 자료와 대조할 때 어긋나지 않습니다.</div>
+      </div>
+    </div>
+
+    <p>번역에서 특히 조심할 항목이 있습니다. <strong>Sour</strong>와 <strong>Acidity</strong>는 둘 다 "신맛"으로 옮기기 쉽지만 휠에서는 성격이 다릅니다. 안쪽 대분류의 <em>Sour/Fermented</em>는 <strong>발효·부패 쪽으로 기운 결점 성격의 신맛</strong>을 포함하는 자리인 반면, 스페셜티에서 장점으로 말하는 산미는 과일 계열 표현으로 적히는 경우가 많습니다. <strong>"시다"는 한 단어로 뭉뚱그리면 칭찬인지 지적인지 구분되지 않습니다.</strong></p>
+
+    <h2 class="section-title">8. 실제로 적어 보는 4단계</h2>
+    <p>휠을 손에 들었다면 다음 순서로 한 잔을 기록해 보십시오.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">한 잔을 기록하는 순서</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>분쇄한 가루의 향을 먼저 맡습니다.</strong> 물이 닿기 전의 향이 가장 또렷합니다. 여기서 9개 대분류 중 하나를 고릅니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>물이 닿는 순간의 향을 맡습니다.</strong> 가루 향에서 잡은 방향이 유지되는지, 다른 쪽으로 옮겨 가는지를 봅니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>한 모금 마시고 두 번째 고리까지만 좁힙니다.</strong> 첫 잔부터 세부어를 고르려 하지 않습니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-text"><strong>식으면서 다시 봅니다.</strong> 온도가 내려가면 단맛과 산미가 또렷해져 처음에 놓친 표현이 잡히는 경우가 많습니다. 이때 세부어로 내려갑니다.</div>
+      </div>
+    </div>
+
+    <p>이 순서를 지키면 <strong>기록이 재현됩니다.</strong> 같은 원두를 일주일 뒤에 다시 마셨을 때 비슷한 자리에 표시가 찍히기 시작하면, 감각이 아니라 <strong>언어가 자리를 잡은 것</strong>입니다. 훈련의 목표는 남들이 못 느끼는 향을 찾아내는 것이 아니라 <strong>같은 것을 같은 이름으로 부르는 것</strong>입니다.</p>
+
+    <div class="closing-box">
+      <h3>휠은 고르는 도구, 렉시콘은 재는 도구</h3>
+      <p>플레이버 휠을 어려워하는 이유는 대개 <strong>바깥부터 읽기 때문</strong>입니다. 가운데 9칸에서 하나를 짚고 바깥으로 한 칸씩 내려가면, 고를 수 있는 후보는 매번 서너 개로 줄어듭니다.</p>
+      <p>그리고 <strong>단어를 정확히 쓰고 싶다면 휠 옆에 렉시콘을 놓아야 합니다.</strong> 휠은 무엇인지를 정하고, 렉시콘은 얼마나인지를 정합니다. 이 둘이 갖춰지면 "제 입에는"으로 시작하던 말이 <strong>남에게 옮겨지는 기록</strong>이 됩니다.</p>
+    </div>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">Q. 바깥쪽 세부어를 못 고르겠는데 잘못하는 건가요?</div>
+      아닙니다. 공식 안내도 "충분하다고 느껴지는 지점에서 멈추라"고 적고 있습니다. 확신 없이 세부어를 고르면 다음에 같은 원두를 마셨을 때 기록이 달라져 오히려 쓸모가 없어집니다. <strong>중간 고리까지만 적는 기록이 세부어까지 적은 부정확한 기록보다 낫습니다.</strong>
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 두 표현 사이에서 고민될 때는 어떻게 하나요?</div>
+      휠에서 두 칸의 위치를 보십시오. <strong>맞붙어 있으면 어느 쪽을 골라도 큰 차이가 아닙니다.</strong> 반대로 둘 사이의 틈이 중심 쪽으로 깊게 파여 있다면 관계가 먼 표현이므로, 한 단계 안쪽으로 물러나 공통 상위 표현으로 적는 편이 안전합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 기준 시료를 다 구해야 훈련이 되나요?</div>
+      전부 구할 필요는 없습니다. 렉시콘 2.0판이 <strong>24개 항목의 시료를 세계 어디서나 구할 수 있는 제품으로 바꾼 것</strong>이 이 때문입니다. 잼·주스·향신료처럼 마트에서 살 수 있는 항목부터 시작하고, 특수한 향료 세트는 필요해질 때 갖추면 됩니다. 다만 <strong>향 시료로 표시된 것은 먹지 마십시오.</strong>
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 휠에 없는 표현을 쓰면 안 되나요?</div>
+      금지된 것은 아닙니다. 휠은 <strong>공통 언어를 만들기 위한 표준</strong>이지 표현의 상한선이 아닙니다. 다만 손님이나 동료에게 전달할 목적이라면 휠 안의 단어로 한 번 옮겨 적어 두는 편이 좋습니다. 개인적인 비유는 본인에게만 통합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 옛 판본과 개정판 중 무엇을 봐야 하나요?</div>
+      <strong>2016년 개정판입니다.</strong> 옛 판본은 향과 맛이 두 장으로 나뉘어 있고 배치 근거가 다릅니다. 지금 업계에서 공통으로 참조하는 것은 개정판이며, 렉시콘의 항목과도 개정판이 대응합니다. 다만 <strong>변경 금지 조건이 붙어 있으므로 색이나 항목을 고쳐 다시 그려 배포하지는 마십시오.</strong>
+    </div>
+
+    
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-30"><div class="rc-cat">🔥 로스팅 & 원두 과학</div><div class="rc-title">약배전 중배전 강배전 차이 — 배전도별 맛과 분쇄도 조절법</div><div class="rc-date">2026. 08. 30</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-17"><div class="rc-cat">🔥 로스팅 & 원두 과학</div><div class="rc-title">원두 산미 뜻 — 신맛이 강해지는 조건과 줄이는 방법</div><div class="rc-date">2026. 08. 17</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-14"><div class="rc-cat">🔥 로스팅 & 보관 과학</div><div class="rc-title">원두 보관법 — 냉동 보관 가능 여부와 개봉 후 보관기간 기준</div><div class="rc-date">2026. 08. 14</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#플레이버휠</span>
+      <span class="tag">#향미표현</span>
+      <span class="tag">#센서리렉시콘</span>
+      <span class="tag">#커핑</span>
+      <span class="tag">#테이스팅노트</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>가운데에서 바깥으로 읽습니다.</strong> 안쪽 9개 대분류를 먼저 짚고 한 칸씩 좁혀 갑니다.</li>
+        <li><strong>중간에서 멈춰도 됩니다.</strong> 확신 없는 세부어보다 재현되는 상위 표현이 낫습니다.</li>
+        <li><strong>칸 사이 간격은 관계의 세기입니다.</strong> 붙어 있으면 가깝고, 틈이 중심 쪽으로 깊을수록 멉니다.</li>
+        <li><strong>배치는 실험 결과입니다.</strong> 전문가 72명의 분류를 군집분석·다차원척도법으로 옮겼습니다.</li>
+        <li><strong>휠 옆에 렉시콘을 둡니다.</strong> 110개 항목의 정의와 기준 시료, 0~15 강도 척도가 여기에 있습니다.</li>
+        <li><strong>향 시료는 먹지 않습니다.</strong> 라텍스 풍선처럼 식용이 아닌 시료가 포함돼 있습니다.</li>
+        <li><strong>한국어판은 공식 배포본을 받습니다.</strong> 애매한 항목은 렉시콘 정의로 확인하고 원어를 병기합니다.</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
