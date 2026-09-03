@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>탬핑 하는법 — 적정 압력과 수평 잡는 순서, 채널링 막는 방법 | 바리스타 스페셜티</title>
+  <meta name="description" content="탬핑 압력은 5~20kg 구간에서 추출 농도와 시간에 유의한 차이를 만들지 않았습니다. 두 건의 통제 실험 결과, 압력보다 수평과 분배가 중요한 이유, 채널링이 생기는 자리, 탬핑 전후 동작 순서를 정리했습니다">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-09-03">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="탬핑 하는법 — 적정 압력과 수평 잡는 순서, 채널링 막는 방법 | 바리스타 스페셜티">
+<meta property="og:description" content="탬핑 압력은 5~20kg 구간에서 추출 농도와 시간에 유의한 차이를 만들지 않았습니다. 두 건의 통제 실험 결과, 압력보다 수평과 분배가 중요한 이유, 채널링이 생기는 자리, 탬핑 전후 동작 순서를 정리했습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-09-03">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-09-03T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-09-03T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-09-03#page", "url": "https://coffee.ephseed.com/coffee-article-2026-09-03", "headline": "탬핑 하는법 — 적정 압력과 수평 잡는 순서, 채널링 막는 방법 | 바리스타 스페셜티", "description": "탬핑 압력은 5~20kg 구간에서 추출 농도와 시간에 유의한 차이를 만들지 않았습니다. 두 건의 통제 실험 결과, 압력보다 수평과 분배가 중요한 이유, 채널링이 생기는 자리, 탬핑 전후 동작 순서를 정리했습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-09-03", "dateModified": "2026-09-03", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🎨 바리스타 스킬 &amp; 라떼아트</span>
+      <span class="badge">탬핑</span>
+      <span class="badge">채널링</span>
+    </div>
+    <h1>탬핑 하는법<br/>— 적정 압력과 수평 잡는 순서, 채널링 막는 방법</h1>
+    <p class="subtitle">몇 kg으로 눌러야 하느냐는 질문은 오래됐지만, 통제 실험 두 건은 같은 답을 내놓았습니다. 압력보다 먼저 잡아야 할 것이 있습니다. 실험 수치와 함께 탬핑 전후의 동작 순서를 정리했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 9월 3일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+
+    <div class="hook">
+      "30파운드로 누르라던데, 저울에 대고 연습해야 하나요?"<br/>
+      바리스타 교육에서 가장 오래 회자된 숫자입니다. 그런데 압력을 나눠 놓고 같은 원두로 수백 잔을 뽑아 본 실험들은 <strong>그 구간 안에서 농도도 시간도 갈리지 않았다</strong>고 보고합니다. 힘을 재는 연습에 시간을 쓰기 전에, 무엇이 실제로 갈리는지부터 보는 편이 빠릅니다.
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>탬핑 압력을 5~20kg으로 나눠 검증한 두 실험의 수치와 통계 결과</li>
+        <li>압력이 아니라 수평과 분배가 결과를 가르는 이유</li>
+        <li>채널링이 생기는 자리 — 분쇄가 곱다고 추출이 오르지 않는 구간</li>
+        <li>탬핑 전에 끝나야 하는 분배 작업과, 도구를 고를 때의 기준</li>
+        <li>퍽 표면과 추출 흐름으로 방금 한 탬핑을 되짚는 방법</li>
+        <li>연습에서 자주 나오는 손목·탬퍼 크기·태핑 관련 실수</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">5~20kg</span><span class="label">검증된 탬핑 압력 구간</span></div>
+      <div class="data-card"><span class="num">p=0.40</span><span class="label">압력과 추출 농도의 관계 — 유의하지 않음</span></div>
+      <div class="data-card"><span class="num">150잔</span><span class="label">또 다른 실험이 뽑은 에스프레소 수</span></div>
+      <div class="data-card"><span class="num">1mm</span><span class="label">분배 도구 바늘의 권장 상한 굵기</span></div>
+    </div>
+
+    <h2 class="section-title">1. 압력을 나눠 본 실험은 이렇게 나왔습니다</h2>
+
+    <p>탬핑 압력을 독립 변수로 놓고 같은 조건에서 반복 추출한 실험이 여러 건 있습니다. 그중 수치가 공개된 두 건을 나란히 놓으면 방향이 분명합니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>소크라틱 커피(2015)</th><th>카페마허 실험</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>비교한 압력</td><td class="em">5 · 10 · 15 · 20kg</td><td class="em">10 · 15 · 20kg</td></tr>
+        <tr><td>표본</td><td>조건당 10잔</td><td class="em">총 150잔</td></tr>
+        <tr><td>측정 항목</td><td>TDS · 추출 수율 · 추출 시간</td><td>TDS · 추출 시간</td></tr>
+        <tr><td>농도(TDS) 차이</td><td class="em">유의하지 않음 (p=0.40)</td><td class="em">유의하지 않음</td></tr>
+        <tr><td>추출 시간 차이</td><td class="em">유의하지 않음 (p=0.30)</td><td class="em">정상 변동 범위 이내</td></tr>
+      </tbody>
+    </table>
+
+    <p>정리하면 <strong>5kg으로 누른 잔과 20kg으로 누른 잔이 통계적으로 구분되지 않았다</strong>는 뜻입니다. 흔히 인용되는 30파운드(약 13.6kg)는 이 구간 한가운데에 있습니다. 그 숫자가 틀렸다기보다, <strong>구간 안 어디를 골라도 결과가 같았기 때문에 특별한 값이 아니었다</strong>고 보는 편이 정확합니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">실험의 범위를 넘겨 읽지 않기</div>
+      두 실험 모두 <strong>검증한 구간은 5~20kg입니다.</strong> 연구자들도 이 범위를 벗어난 압력에서는 다른 결과가 나올 수 있다고 명시했습니다. "아예 안 눌러도 된다"는 결론이 아니라, <strong>일정한 힘으로 눌러 다졌다면 그 안에서 몇 kg인지를 다투는 것이 의미가 적다</strong>는 결론입니다.
+    </div>
+
+    <h2 class="section-title">2. 그러면 압력은 어떻게 정합니까</h2>
+
+    <p>답은 절댓값이 아니라 <strong>반복성</strong>입니다. 매번 다른 힘으로 누르면 그날의 변수가 하나 더 늘어납니다. 반대로 어떤 힘이든 매번 같게 누르면, 맛이 흔들릴 때 <strong>탬핑을 용의선상에서 지울 수 있습니다.</strong> 그것이 압력을 정해 두고 쓰는 실질적인 이유입니다.</p>
+
+    <p>현장에서 쓰기 좋은 기준은 이렇습니다. <strong>가루가 더 이상 내려가지 않는 지점까지 눌렀다가 멈추는 것.</strong> 그 지점을 지나면 힘을 더 줘도 퍽 두께가 거의 변하지 않습니다. 힘의 크기를 재는 대신 <strong>손끝에 오는 저항의 변화</strong>를 기준으로 삼으면, 저울 없이도 잔마다 같은 지점에서 멈출 수 있습니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">저울로 감을 잡는 방법</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>주방 저울 위에 탬퍼를 놓고 눌러 봅니다.</strong> 15kg 부근에서 멈추는 감각을 서너 번 반복해 몸에 익힙니다. 목표는 정확한 숫자가 아니라 <strong>같은 세기의 반복</strong>입니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>익숙해지면 저울을 치웁니다.</strong> 매번 계측하는 습관은 오히려 동작을 늦추고, 앞서 본 것처럼 몇 kg인지는 결과를 가르지 않습니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>손목이 아프면 힘이 과한 것입니다.</strong> 하루 수백 잔을 뽑는 자리에서 과한 탬핑은 손목 부상으로 돌아옵니다. 얻는 것이 없는 힘이라면 줄이는 편이 낫습니다.</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">3. 갈리는 것은 힘이 아니라 수평입니다</h2>
+
+    <p>물은 저항이 가장 적은 길을 따라갑니다. 퍽이 한쪽으로 기울어 있으면 얇은 쪽의 저항이 낮아지고, 물이 그쪽으로 몰립니다. 이것이 <strong>채널링</strong>입니다.</p>
+
+    <p>채널링이 생기면 물길이 지나간 자리는 과다 추출되어 쓰고 떫은 맛이 나오고, 물이 닿지 않은 자리는 그대로 남습니다. 한 잔 안에 <strong>과다 추출과 미추출이 동시에 담기는 것</strong>이라, 추출 시간이나 총량을 맞춰도 맛이 정리되지 않습니다. 압력을 20kg으로 올려도 기울어진 퍽은 그대로 기울어져 있습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">기울기를 줄이는 세 가지</div>
+      ① 탬퍼를 <strong>바스켓 지름에 맞는 것</strong>으로 쓴다(58mm 바스켓에 57mm 탬퍼를 쓰면 가장자리 가루가 덜 눌립니다) · ② 누르는 동안 <strong>탬퍼 손잡이를 위에서 내려다보며</strong> 링 간격이 고른지 확인한다 · ③ 팔꿈치를 몸에 붙이고 <strong>손목이 아니라 어깨로</strong> 수직 하중을 준다
+    </div>
+
+    <h2 class="section-title">4. 채널링은 탬핑 전에 이미 결정됩니다</h2>
+
+    <p>탬핑은 마지막 단계입니다. 이미 뭉쳐 있고 밀도가 고르지 않은 가루를 평평하게 눌러 봐야, <strong>겉면만 평평한 불균일한 퍽</strong>이 됩니다. 그래서 실전에서 손을 봐야 하는 곳은 탬핑 그 자체보다 그 앞 단계입니다.</p>
+
+    <p>2020년에 발표된 에스프레소 추출 모델링 연구는 이 문제를 다른 각도에서 보여 줍니다. 분쇄를 곱게 할수록 추출이 계속 오를 것 같지만, 실제로는 <strong>아주 곱거나 아주 굵은 양쪽 끝에서 수율이 함께 떨어지고 중간 구간에서 가장 높았습니다.</strong> 너무 고운 쪽에서 떨어지는 이유는 미분이 뭉쳐 층을 부분적으로 막고, 물이 열린 길로만 흐르기 때문입니다. <strong>고운 분쇄가 곧 진한 추출이 아니라는 것</strong>이 이 연구의 실용적인 결론입니다.</p>
+
+    <p>같은 연구는 시간을 목표로 삼는 대신 <strong>투입 원두 질량과 나온 음료 질량</strong>만 변수로 관리하면 재현성이 올라간다고 제안합니다. 실제 매장에 적용했을 때 잔당 원두 사용량이 약 25% 줄었다고 보고돼 있습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>단계</th><th>여기서 생기는 문제</th><th>조치</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>분쇄</td><td>미분 뭉침·정전기로 인한 덩어리</td><td class="em">바스켓에 받은 뒤 뭉침을 풀어 준다</td></tr>
+        <tr><td>분배</td><td>가운데는 높고 가장자리는 비는 산 모양</td><td class="em">가는 도구로 저어 밀도를 고르게 한다</td></tr>
+        <tr><td>탬핑</td><td>기울기 — 얇은 쪽으로 물이 몰림</td><td class="em">수직·수평 유지, 힘은 일정하게</td></tr>
+        <tr><td>장착</td><td>장착 충격으로 퍽 가장자리가 갈라짐</td><td class="em">천천히 끼우고 곧바로 추출한다</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">5. 분배 — 탬핑보다 먼저 손대야 할 곳</h2>
+
+    <p>가는 바늘로 바스켓 안의 가루를 저어 뭉침을 풀고 밀도를 고르게 하는 방법이 널리 쓰입니다. 2005년에 소개된 뒤 오랫동안 자가 제작 도구로 쓰이다가, 지금은 완제품으로 나옵니다.</p>
+
+    <p>효과에 대한 설명은 일관됩니다. <strong>가장 뚜렷한 근거는 채널링이 줄어든다는 점</strong>이고, 그 결과로 같은 분쇄도에서도 퍽의 저항이 높아져 흐름이 느려집니다. 유량 측정이 가능한 기계로 비교했을 때 <strong>바스켓 바닥까지 깊게 저은 쪽이 표면만 저은 쪽보다 저항이 높고 잔마다의 편차가 작았습니다.</strong> 쓴맛과 떫은맛의 평균이 내려가고 추출 편차가 줄어드는 쪽으로 보고됩니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">분배 도구를 쓸 때</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>바늘 굵기는 1mm 미만</strong>이 권장됩니다. 굵으면 가루를 밀어낼 뿐 뭉침을 풀지 못하고, 지나간 자리에 골이 남습니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>바닥까지 닿게 젓습니다.</strong> 표면만 정리하면 아래쪽 밀도 차이가 그대로 남습니다. 편차가 작았던 쪽은 깊게 저은 조건이었습니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>깔때기를 씌우면 흘리지 않습니다.</strong> 가장자리로 튄 가루를 다시 쓸어 넣는 동작이 오히려 밀도를 흐트러뜨립니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-text"><strong>흐름이 느려지면 분쇄도를 한 단 굵게</strong> 조정합니다. 저항이 올라간 만큼 기존 분쇄도에서는 시간이 길어집니다. 이것은 고장이 아니라 채널링이 줄어든 신호입니다.</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">6. 동작 순서</h2>
+
+    <div class="tip-box">
+      <div class="tip-title">한 잔을 준비하는 순서</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>바스켓을 마른 상태로 준비합니다.</strong> 물기가 남아 있으면 가루가 벽에 붙어 밀도가 어긋납니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>원두를 계량해 받습니다.</strong> 시간이 아니라 투입 질량과 산출 질량을 기준으로 관리합니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>가루를 저어 뭉침을 풉니다.</strong> 바닥까지 닿게, 원을 그리기보다 위아래로 훑듯이 움직입니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-text"><strong>표면을 고르게 만든 뒤 탬퍼를 올립니다.</strong> 이때 이미 수평이 맞아 있어야 합니다. 탬핑으로 기울기를 교정하려 하지 않습니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">5</div>
+        <div class="tip-text"><strong>수직으로 눌러 저항이 멈추는 지점에서 멈춥니다.</strong> 누른 상태에서 좌우로 비틀지 않습니다. 표면만 매끈해질 뿐 아래는 그대로입니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">6</div>
+        <div class="tip-text"><strong>가장자리 가루를 털고 곧바로 장착합니다.</strong> 눌러 놓고 오래 두면 표면이 마르며 갈라집니다.</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">7. 퍽과 흐름으로 되짚기</h2>
+
+    <p>탬핑이 제대로 됐는지는 <strong>추출이 끝난 뒤 확인하는 것이 가장 정확합니다.</strong> 몇 가지 신호가 반복해서 나타납니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>관찰</th><th>가능한 원인</th><th>다음 잔에서 할 일</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>한 지점에서 물줄기가 먼저 튄다</td><td>그 자리에 채널이 뚫림</td><td class="em">분배부터 다시 — 압력을 올리지 않는다</td></tr>
+        <tr><td>퍽 표면에 구멍·물웅덩이</td><td>기울기 또는 밀도 불균일</td><td class="em">탬퍼 수평과 바스켓 지름 확인</td></tr>
+        <tr><td>줄기가 갈라지거나 한쪽으로 흐름</td><td>가장자리 밀도 부족</td><td class="em">가장자리까지 저었는지 확인</td></tr>
+        <tr><td>같은 세팅인데 시간이 매번 다름</td><td>동작의 반복성 부족</td><td class="em">힘의 크기보다 멈추는 지점을 통일</td></tr>
+      </tbody>
+    </table>
+
+    <p>참고로 흔히 인용되는 추출 기준은 다음과 같습니다. 국제 정의는 <strong>원두 7~9g(더블 14~18g), 산출 25~35ml(더블 50~70ml), 20~30초, 9~10기압, 90.5~96.1℃</strong>를 제시합니다. 추출 수율은 <strong>17~23%</strong> 구간이 목표로 통용됩니다. 다만 이 숫자들은 <strong>지켜야 할 목표가 아니라 잘 맞았을 때 따라오는 결과</strong>에 가깝습니다.</p>
+
+    <h2 class="section-title">8. 자주 나오는 실수</h2>
+
+    <div class="note-box">
+      <div class="note-label">① 탬퍼로 옆면을 두드리기</div>
+      가장자리에 붙은 가루를 떨어뜨리려고 탬퍼 손잡이로 포터필터를 치는 동작은 <strong>이미 다져 놓은 퍽에 금을 냅니다.</strong> 그 금이 그대로 물길이 됩니다. 털어야 한다면 다지기 전에 손가락으로 정리합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">② 누른 상태에서 비틀기(폴리싱)</div>
+      표면을 매끈하게 만드는 동작으로 알려져 있지만, <strong>표면 층만 회전시켜 아래층과의 결합을 끊습니다.</strong> 매끈함은 보기에만 좋을 뿐 추출과 무관합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">③ 지름이 작은 탬퍼</div>
+      바스켓보다 1~2mm 작은 탬퍼를 쓰면 <strong>가장자리에 덜 다져진 고리가 남습니다.</strong> 물은 그 고리를 따라 벽면으로 빠져나갑니다. 가장자리 채널링이 반복된다면 먼저 탬퍼 지름부터 확인하십시오.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">④ 손목만 쓰는 자세</div>
+      손목으로 힘을 주면 하중이 기울고, 잔마다 각도가 달라집니다. <strong>팔꿈치를 몸통에 붙이고 상체 무게를 수직으로 싣는 자세</strong>가 반복성도 좋고 부상도 적습니다.
+    </div>
+
+    <div class="closing-box">
+      <h3>탬핑은 마지막 손질입니다</h3>
+      <p>압력을 나눠 검증한 실험들은 <strong>5~20kg 안에서 농도도 시간도 갈리지 않았다</strong>고 보고합니다. 그러니 힘의 크기를 다투는 대신, <strong>매번 같은 지점에서 멈추는 것</strong>을 목표로 삼는 편이 실속 있습니다.</p>
+      <p>결과를 실제로 가르는 것은 <strong>수평과 분배</strong>입니다. 뭉침을 풀고 밀도를 고르게 만든 뒤 수직으로 한 번 누르면, 탬핑에서 할 수 있는 일은 사실상 끝납니다. 맛이 흔들릴 때 손볼 곳이 명확해지는 것, 그것이 일정한 탬핑이 주는 가장 큰 이득입니다.</p>
+    </div>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">Q. 결국 몇 kg으로 누르면 되나요?</div>
+      <strong>15kg 안팎에서 시작해 매번 같게 누르십시오.</strong> 검증된 5~20kg 구간에서는 어느 값을 골라도 농도와 시간에 유의한 차이가 없었습니다. 중요한 것은 값이 아니라 잔마다 같은 지점에서 멈추는 것입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 두 번 눌러도 되나요?</div>
+      한 번으로 충분합니다. 첫 번째로 저항이 멈추는 지점까지 갔다면 두 번째 탬핑이 퍽을 더 다지지 못합니다. 오히려 <strong>탬퍼를 뗐다 다시 올리는 사이에 각도가 달라져 기울기가 생길 여지</strong>가 늘어납니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 자동 탬퍼를 쓰면 맛이 좋아집니까?</div>
+      맛이 좋아진다기보다 <strong>편차가 줄어듭니다.</strong> 압력과 각도가 기계적으로 고정되므로 사람마다 달라지는 부분이 사라집니다. 다만 앞 단계의 분배가 엉망이면 자동 탬퍼도 <strong>불균일한 퍽을 똑같이 불균일하게 다질 뿐</strong>입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 흐름이 너무 빠른데 더 세게 누르면 안 되나요?</div>
+      권장하지 않습니다. 흐름 속도는 주로 <strong>분쇄도와 투입량</strong>이 정합니다. 힘으로 눌러 시간을 맞추면 그날은 맞아도 다음 잔에서 다시 어긋나고, 원인을 찾을 단서만 없어집니다. <strong>분쇄도를 한 단 곱게</strong> 조정하는 것이 순서입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 자격시험 준비에서는 무엇을 봐야 하나요?</div>
+      시험은 특정 압력 수치를 재지 않습니다. <strong>동작이 일정한지, 수평이 유지되는지, 준비에서 추출까지 흐름이 끊기지 않는지</strong>가 관찰 대상입니다. 연습할 때도 힘의 세기보다 <strong>같은 동작의 반복</strong>에 시간을 쓰는 편이 유리합니다.
+    </div>
+
+    
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-28"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">2급 필기 시험 준비 — 출제 범위 3과목과 문항 구성, 합격 기준 정리</div><div class="rc-date">2026. 08. 28</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-26"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">2급 실기 순서 — 시험 절차와 평가 항목, 배점 기준 정리</div><div class="rc-date">2026. 08. 26</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-25"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">카페라떼 카푸치노 차이 — 우유 양과 거품 두께로 구분하는 기준</div><div class="rc-date">2026. 08. 25</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#탬핑</span>
+      <span class="tag">#채널링</span>
+      <span class="tag">#에스프레소추출</span>
+      <span class="tag">#퍽프렙</span>
+      <span class="tag">#바리스타실기</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>5~20kg 구간에서 압력 차이는 농도·시간에 유의한 영향을 주지 않았습니다.</strong></li>
+        <li><strong>목표는 절댓값이 아니라 반복성입니다.</strong> 저항이 멈추는 지점에서 매번 멈춥니다.</li>
+        <li><strong>결과를 가르는 것은 수평입니다.</strong> 기울면 얇은 쪽으로 물이 몰려 채널이 생깁니다.</li>
+        <li><strong>채널링은 탬핑 전에 결정됩니다.</strong> 뭉침을 풀고 밀도를 고르게 만드는 분배가 먼저입니다.</li>
+        <li><strong>분배 도구 바늘은 1mm 미만, 바닥까지 깊게</strong> 저은 조건이 편차가 작았습니다.</li>
+        <li><strong>고운 분쇄가 곧 진한 추출은 아닙니다.</strong> 너무 고우면 층이 막혀 수율이 떨어집니다.</li>
+        <li><strong>비틀기·옆면 두드리기·작은 탬퍼는 채널을 만듭니다.</strong> 셋 다 빼는 편이 낫습니다.</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
