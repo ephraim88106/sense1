@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>코니컬버 플랫버 차이 — 그라인더 날 방식별 분쇄 입자와 맛 비교 | 바리스타 스페셜티</title>
+  <meta name="description" content="코니컬버와 플랫버는 원두를 부수는 구조부터 다릅니다. 레이저 회절 실측에서 플랫 날도 이봉 분포가 나타난 이유, 회전수·분쇄 속도 사양 비교, 맛 차이에 대한 설명의 근거 한계, 용도별 선택 기준과 날 교체 시점을 정리했습니다">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-09-04">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="코니컬버 플랫버 차이 — 그라인더 날 방식별 분쇄 입자와 맛 비교 | 바리스타 스페셜티">
+<meta property="og:description" content="코니컬버와 플랫버는 원두를 부수는 구조부터 다릅니다. 레이저 회절 실측에서 플랫 날도 이봉 분포가 나타난 이유, 회전수·분쇄 속도 사양 비교, 맛 차이에 대한 설명의 근거 한계, 용도별 선택 기준과 날 교체 시점을 정리했습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-09-04">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-09-04T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-09-04T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-09-04#page", "url": "https://coffee.ephseed.com/coffee-article-2026-09-04", "headline": "코니컬버 플랫버 차이 — 그라인더 날 방식별 분쇄 입자와 맛 비교 | 바리스타 스페셜티", "description": "코니컬버와 플랫버는 원두를 부수는 구조부터 다릅니다. 레이저 회절 실측에서 플랫 날도 이봉 분포가 나타난 이유, 회전수·분쇄 속도 사양 비교, 맛 차이에 대한 설명의 근거 한계, 용도별 선택 기준과 날 교체 시점을 정리했습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-09-04", "dateModified": "2026-09-04", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법 심층 가이드</span>
+      <span class="badge">그라인더</span>
+      <span class="badge">분쇄도</span>
+    </div>
+    <h1>코니컬버 플랫버 차이<br/>— 그라인더 날 방식별 분쇄 입자와 맛 비교</h1>
+    <p class="subtitle">플랫은 균일하고 코니컬은 이중 봉우리라는 설명은 널리 퍼져 있지만, 입자를 직접 잰 연구는 조금 다른 그림을 보여 줍니다. 구조·사양·수명을 숫자로 비교하고, 어디까지가 확인된 사실인지 구분했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 9월 4일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+
+    <div class="hook">
+      "플랫이 코니컬보다 좋은 거 아닌가요?"<br/>
+      매장 그라인더를 고를 때 가장 자주 나오는 질문입니다. 그런데 레이저 회절로 입자를 실제로 재 본 연구는 <strong>플랫 날로 간 커피에서도 굵은 입자와 미분이 두 개의 봉우리로 갈라진다</strong>고 보고합니다. 흔히 알려진 "플랫=균일, 코니컬=이중"이라는 설명은 절반만 맞습니다.
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>두 날이 원두를 부수는 방식의 구조적 차이</li>
+        <li>"플랫은 균일하다"는 설명이 실측과 어긋나는 지점</li>
+        <li>회전 속도·분쇄 속도 사양 비교와 발열이 갈리는 이유</li>
+        <li>맛 차이에 대한 제조사 설명과 그 근거의 한계</li>
+        <li>용도별 선택 기준과 날 교체 시점(kg 단위)</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">98mm</span><span class="label">대표적 플랫 날 지름 — 1,450rpm</span></div>
+      <div class="data-card"><span class="num">63mm</span><span class="label">대표적 에스프레소용 코니컬 날 — 420rpm</span></div>
+      <div class="data-card"><span class="num">13~27μm</span><span class="label">플랫 날 실측에서도 나온 미분 봉우리</span></div>
+      <div class="data-card"><span class="num">300~800kg</span><span class="label">제조사가 밝힌 모델별 날 수명</span></div>
+    </div>
+
+    <h2 class="section-title">1. 두 날은 어떻게 다르게 부수는가</h2>
+
+    <p><strong>플랫 날은 마주 보는 두 장의 원판</strong>입니다. 한 장은 본체에 고정되고 다른 한 장이 회전하며, 원두는 두 원판 사이를 중심에서 바깥쪽으로 밀려 나가는 동안 점점 잘게 부서집니다. 바깥으로 나갈수록 날의 홈이 촘촘해지므로, 마지막 구간을 통과한 입자가 최종 굵기를 결정합니다.</p>
+
+    <p><strong>코니컬 날은 원뿔형 안쪽 날과 링 형태의 바깥 날</strong>로 이루어집니다. 원두는 위에서 떨어져 두 날 사이의 좁아지는 틈을 따라 아래로 내려가며 부서집니다. 중력이 배출을 돕기 때문에 날 사이에 남는 가루가 적은 편이고, 같은 양을 갈아 내는 데 필요한 회전수도 낮습니다.</p>
+
+    <p>구조 차이는 그대로 사양 차이로 이어집니다. 플랫은 원판 면적이 넓어야 처리량이 나오므로 지름이 커지고 회전수가 올라가며, 코니컬은 좁은 틈을 길게 통과시키는 방식이라 저속으로도 처리량이 확보됩니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">먼저 정리해 둘 것</div>
+      두 방식 모두 <strong>날(버, burr)로 갈아내는 그라인더</strong>입니다. 흔히 함께 비교되는 '칼날식(블레이드)'은 원두를 자르는 것이 아니라 프로펠러로 때려 부수는 기구여서, 입자 굵기를 조절한다는 개념 자체가 성립하지 않습니다. 아래 비교는 버 그라인더 안에서의 이야기입니다.
+    </div>
+
+    <h2 class="section-title">2. "플랫은 균일, 코니컬은 이중 봉우리"는 어디까지 맞나</h2>
+
+    <p>가장 널리 퍼진 설명은 이렇습니다. 플랫은 입자가 한 덩어리로 모이는 <strong>단봉(unimodal) 분포</strong>를, 코니컬은 굵은 입자와 미분이 따로 모이는 <strong>이봉(bimodal) 분포</strong>를 만든다는 것입니다. 제조사 기술 문서도 대체로 이 구도를 씁니다.</p>
+
+    <p>그런데 실제로 입자를 재 본 연구를 보면 이야기가 달라집니다. <em>Scientific Reports</em>(2016)에 실린 로스팅 원두 분쇄 연구는 레이저 회절로 0.1~1,000μm 구간을 측정했는데, <strong>측정에 쓴 그라인더가 98mm 플랫 날 기종(EK43)</strong>이었음에도 분포는 뚜렷한 이봉이었습니다. 미분 쪽 봉우리는 <strong>약 13~27μm</strong>, 굵은 입자 쪽 봉우리는 <strong>약 250~280μm</strong>에 있었습니다.</p>
+
+    <p>즉 <strong>이봉 분포는 코니컬의 특징이 아니라 로스팅 원두를 부수는 행위 자체의 성질</strong>에 가깝습니다. 볶은 원두는 세포 구조가 부서지기 쉬운 상태라, 어떤 날로 갈아도 큰 조각과 함께 아주 고운 가루가 함께 만들어집니다. 두 방식의 차이는 "이봉이냐 단봉이냐"가 아니라 <strong>두 봉우리의 비율과 간격이 얼마나 벌어지느냐</strong>의 문제로 보는 편이 실제에 가깝습니다.</p>
+
+    <p>같은 연구는 원두 산지와 가공 방식에 따른 분포 차이가 통계적으로 유의하지 않았다고도 보고했습니다. 미분 경계값이 <strong>76.4 ± 3.5μm 대 69.6 ± 3.1μm</strong>로 갈렸지만 유의미한 차이로 보기 어려운 범위였습니다. 분포를 좌우한 것은 원두의 출신이 아니라 분쇄 조건이었습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">마케팅 문구를 읽을 때</div>
+      제조사·판매처 문서 상당수는 "플랫이 미분이 적다", "코니컬이 바디가 두껍다"는 서술을 <strong>측정값 없이</strong> 제시합니다. 방향성 자체가 틀렸다고 볼 근거는 없지만, 숫자가 붙지 않은 문장은 구매 판단의 근거로는 약합니다. 같은 문장이 여러 곳에 반복된다는 사실이 검증을 대신하지는 않습니다.
+    </div>
+
+    <h2 class="section-title">3. 회전 속도와 발열 — 사양으로 비교하면</h2>
+
+    <p>추상적인 설명보다 사양표가 차이를 분명하게 보여 줍니다. 제조사가 공개한 값 기준입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>항목</th><th>플랫 (98mm 필터·올라운드 기종)</th><th>코니컬 (63mm 에스프레소 기종)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>날 지름</td><td>98mm</td><td>63mm</td></tr>
+        <tr><td>회전수</td><td>1,450rpm(50Hz) / 1,760rpm(60Hz)</td><td>약 420rpm</td></tr>
+        <tr><td>분쇄 속도</td><td>19~21 g/s</td><td>3.5~4 g/s</td></tr>
+        <tr><td>배출 경로</td><td>원심력으로 바깥으로 밀어냄</td><td>중력으로 아래로 떨어짐</td></tr>
+      </tbody>
+    </table>
+
+    <p>회전수 차이가 세 배 이상입니다. 마찰열은 회전 속도와 접촉 시간에 함께 좌우되므로, <strong>같은 조건이라면 고속으로 도는 플랫 쪽이 발열이 큽니다.</strong> 상용 플랫 기종이 냉각팬을 함께 다는 이유이고, 코니컬 쪽 설명에 "저속이라 조용하고 덜 뜨겁다"는 문구가 붙는 이유이기도 합니다.</p>
+
+    <p>다만 발열이 곧 맛의 손상이라고 단정하기는 어렵습니다. 연속으로 수십 잔을 뽑는 상황이 아니라면 온도 상승 폭 자체가 크지 않고, 앞서 본 연구에서도 <strong>온도가 입자에 미치는 영향은 가역적</strong>이었습니다. 발열은 "맛이 망가진다"보다 <strong>"분쇄도가 슬금슬금 변한다"</strong>는 관리 문제로 이해하는 편이 실용적입니다. 오전과 오후의 같은 눈금이 다른 결과를 낸다면 이쪽을 의심해 볼 수 있습니다.</p>
+
+    <h2 class="section-title">4. 맛은 실제로 갈리는가</h2>
+
+    <p>제조사와 업계 문서가 공통적으로 쓰는 표현은 다음과 같습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th></th><th>플랫</th><th>코니컬</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>흔히 붙는 표현</td><td>밝고 선명한 향미, 분리감</td><td>둥글고 두꺼운 바디, 융합감</td></tr>
+        <tr><td>미분</td><td>상대적으로 적다고 설명</td><td>상대적으로 많다고 설명</td></tr>
+        <tr><td>권장 용도</td><td>에스프레소 다량 추출, 푸어오버</td><td>드립·벌크 분쇄, 소량 매장</td></tr>
+        <tr><td>리텐션(잔류)</td><td>정전기로 잔류가 있는 편</td><td>중력 배출로 잔류가 적은 편</td></tr>
+      </tbody>
+    </table>
+
+    <p>여기서 주의할 점이 하나 있습니다. 위 표현들은 <strong>관능 평가 데이터나 성분 분석이 함께 제시된 경우가 드뭅니다.</strong> "분리감"과 "융합감"은 감각 언어이고, 같은 잔을 두고도 평가자에 따라 갈립니다. 방향을 참고하되, <strong>수치로 확인된 사실</strong>(회전수, 지름, 처리량, 수명)과 <strong>업계의 통설</strong>(맛의 성격)을 구분해 두는 편이 낫습니다.</p>
+
+    <p>실무적으로 더 큰 변수는 날의 종류가 아니라 <strong>같은 날을 얼마나 잘 관리하느냐</strong>입니다. 정렬이 어긋난 고급 플랫보다 정렬이 맞은 보급형 쪽이 편차가 작은 경우가 흔합니다. 날이 기울어 붙어 있으면 한쪽만 과하게 부수므로 입자 편차가 커지고, 심하면 다른 부품과 닿아 기기가 상합니다.</p>
+
+    <h2 class="section-title">5. 어느 쪽을 골라야 하는가</h2>
+
+    <div class="tip-box">
+      <div class="tip-title">용도로 좁히는 순서</div>
+      <div class="tip-item">
+        <div class="tip-num">1</div>
+        <div class="tip-text"><strong>하루 몇 잔을 뽑는지부터 정합니다.</strong> 연속 추출이 많은 자리라면 처리량이 큰 플랫 쪽이 대기 시간을 줄입니다. 반대로 하루 수십 잔 규모에서는 처리량 차이가 체감되지 않습니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">2</div>
+        <div class="tip-text"><strong>단일 용도인지 겸용인지 봅니다.</strong> 에스프레소와 필터를 한 대로 오간다면 눈금을 자주 옮기게 되므로, 조절 후 잔류 가루를 비우는 수고(퍼징)가 적은 쪽이 유리합니다. 이 점에서 코니컬의 낮은 리텐션이 실익이 됩니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">3</div>
+        <div class="tip-text"><strong>소음과 설치 공간을 확인합니다.</strong> 저속 코니컬이 조용한 편이고, 대구경 플랫은 본체가 크고 무겁습니다. 주거 공간이나 좁은 바에서는 이쪽이 실제 제약이 됩니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">4</div>
+        <div class="tip-text"><strong>날 교체 비용까지 계산합니다.</strong> 아래 수명표처럼 소모품입니다. 본체 가격만 비교하면 운영 비용을 놓칩니다.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-num">5</div>
+        <div class="tip-text"><strong>같은 예산이면 정렬 품질과 조절 방식을 먼저 봅니다.</strong> 날 방식보다 조절 단계가 촘촘한지, 눈금 재현이 되는지가 매일의 편차를 더 크게 좌우합니다.</div>
+      </div>
+    </div>
+
+    <h2 class="section-title">6. 날은 언제 갈아야 하는가</h2>
+
+    <p>날은 소모품입니다. 무뎌지면 자르지 못하고 짓눌러 부수게 되어 미분이 늘고, 같은 눈금인데 추출이 빨라지거나 맛이 흐려집니다. 한 제조사가 공개한 모델별 수명 기준은 다음과 같습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>모델</th><th>누적 분쇄량</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>소형기</td><td>300kg</td></tr>
+        <tr><td>중형기</td><td>440kg</td></tr>
+        <tr><td>대구경 플랫</td><td>600kg</td></tr>
+        <tr><td>코니컬 63mm급</td><td>600kg</td></tr>
+        <tr><td>코니컬 대형</td><td>800kg</td></tr>
+      </tbody>
+    </table>
+
+    <p>같은 문서는 <strong>"이 값은 블렌드와 분쇄 눈금에 따라 달라질 수 있다"</strong>는 단서를 함께 붙였고, 이물질이 들어가면 수명이 급격히 줄어든다고 명시했습니다. 다크 로스트나 아주 고운 분쇄를 주로 쓰는 자리에서는 표보다 빨리 닳는다고 보는 편이 안전합니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">교체 시점을 알아채는 신호</div>
+      ① 같은 눈금에서 추출 시간이 점점 짧아진다 ② 눈금을 곱게 조여도 시간이 잘 늘지 않는다 ③ 분쇄 소리가 거칠어지고 시간이 길어진다 ④ 미분이 눈에 띄게 늘고 뭉침이 심해진다. 하루 3kg을 가는 매장이라면 600kg은 대략 <strong>200일</strong>치입니다. 날짜가 아니라 <strong>누적 분쇄량</strong>으로 기록해 두면 판단이 쉬워집니다.
+    </div>
+
+    <h2 class="section-title">7. 자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">Q. 홈카페에는 어느 쪽이 낫습니까?</div>
+      하루 몇 잔 규모에서는 <strong>날 방식보다 조절 단계의 촘촘함과 리텐션이 체감 차이를 만듭니다.</strong> 한 잔씩 갈아 바로 쓰는 사용 형태에서는 남는 가루가 적은 쪽이 실측 무게를 맞추기 쉽습니다. 처리량 차이는 사실상 드러나지 않습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 세라믹 날과 스테인리스 날은 무엇이 다릅니까?</div>
+      스테인리스가 가장 흔하고, 세라믹은 가정용 소형기에 자주 쓰입니다. 세라믹은 마모에 강한 대신 <strong>충격에 약해 돌 같은 이물질에 깨질 수 있습니다.</strong> 어느 쪽이든 이물질이 들어가면 수명이 크게 줄어드는 것은 같습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 원두를 얼려서 갈면 정말 좋아집니까?</div>
+      입자 측면에서는 근거가 있습니다. 앞의 연구에서 상온(20℃)과 액체질소(−196℃)를 비교했을 때 <strong>입자 최빈값이 31% 작아졌고</strong>, 미분 경계값도 <strong>70μm에서 61μm로</strong> 내려가며 분포가 좁아졌습니다. 다시 데우면 원래대로 돌아와, 구조가 상한 것이 아닌 가역적 변화였습니다. 다만 이는 극저온 실험값이며, 가정용 냉동실 온도에서 같은 폭을 기대하기는 어렵습니다. 결로로 원두가 젖는 문제도 함께 고려해야 합니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 미분은 무조건 없애야 합니까?</div>
+      아닙니다. 미분은 표면적이 커서 <strong>추출 초반의 농도와 바디를 만드는 성분</strong>이기도 합니다. 문제는 존재 자체가 아니라 양이 들쭉날쭉해 잔마다 결과가 달라지는 것입니다. 목표는 제거가 아니라 <strong>일정하게 유지하는 것</strong>입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 자격시험에서 그라인더 관련해 무엇을 봅니까?</div>
+      특정 날 방식을 요구하지는 않습니다. <strong>분쇄도를 상황에 맞게 조절할 수 있는지, 도징과 청소 동작이 위생 기준에 맞는지</strong>가 관찰 대상입니다. 연습에서도 기기 종류보다 같은 조건을 재현하는 습관에 시간을 쓰는 편이 유리합니다.
+    </div>
+
+
+    
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-01"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">에스프레소 샷 시간 기준 — 25~30초 재는 시점과 조절 방법</div><div class="rc-date">2026. 09. 01</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-29"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">프렌치프레스 사용법 — 분쇄도와 우려내는 시간, 침전물 줄이는 순서</div><div class="rc-date">2026. 08. 29</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-27"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">그라인더 청소 주기 — 청소 알약 사용법과 찌꺼기 제거 순서</div><div class="rc-date">2026. 08. 27</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#그라인더</span>
+      <span class="tag">#코니컬버</span>
+      <span class="tag">#플랫버</span>
+      <span class="tag">#분쇄도</span>
+      <span class="tag">#원두분쇄</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>플랫은 마주 보는 두 원판, 코니컬은 원뿔과 링 사이로 부숩니다.</strong> 배출도 원심력 대 중력으로 갈립니다.</li>
+        <li><strong>이봉 분포는 코니컬만의 특징이 아닙니다.</strong> 98mm 플랫 실측에서도 13~27μm와 250~280μm 두 봉우리가 나왔습니다.</li>
+        <li><strong>회전수 차이는 세 배 이상입니다.</strong> 플랫 1,450rpm·19~21g/s, 코니컬 약 420rpm·3.5~4g/s.</li>
+        <li><strong>발열은 맛의 손상보다 분쇄도가 흐르는 문제로 보는 편이 실용적입니다.</strong></li>
+        <li><strong>맛에 대한 설명은 대부분 측정값 없이 제시됩니다.</strong> 방향은 참고하되 사실과 통설을 구분합니다.</li>
+        <li><strong>날은 소모품입니다.</strong> 모델별로 300~800kg 기준이 제시되며 눈금·블렌드에 따라 달라집니다.</li>
+        <li><strong>같은 예산이면 날 방식보다 정렬과 조절 재현성이 편차를 더 크게 좌우합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
