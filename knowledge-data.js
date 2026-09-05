@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 154, emoji: "🌋", category: "원두 산지 & 테루아르",
+    categoryColor: { bg: "#ecfccb", text: "#3f6212" },
+    title: "예가체프 G1 G2 등급 뜻 — 에티오피아 생두 등급 구분과 향미 정리",
+    date: "2026.09.05",
+    summary: "\"G1이면 좋은 원두인 거죠?\"       에티오피아 원두를 고를 때 가장 많이 나오는 질문입니다. 그런데 G는 맛의 순위표가 아니라, 생두의 상태와 컵 평가를 합산해 매기는 수출 등급 표기입니다. 무엇을 어떤 비중으로 보는지 알고 나면, 같은 G1끼리 값이 몇 배씩 갈리는 이유도 함께 설명됩니다.",
+    link: "coffee-article-2026-09-05.html"
+  },
+  {
     id: 153, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "코니컬버 플랫버 차이 — 그라인더 날 방식별 분쇄 입자와 맛 비교",

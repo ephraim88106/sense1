@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>예가체프 G1 G2 등급 뜻 — 에티오피아 생두 등급 구분과 향미 정리 | 바리스타 스페셜티</title>
+  <meta name="description" content="에티오피아 원두에 붙는 G1·G2는 맛의 순위가 아니라 생두 상태와 컵 평가를 합산한 수출 등급입니다. 300g 샘플과 원료 40 대 컵 60의 배점 구조, SCA 결점 등급표와의 차이, 고도가 컵 점수에 미치는 영향, 라벨을 읽는 순서를 정리했습니다">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-09-05">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="예가체프 G1 G2 등급 뜻 — 에티오피아 생두 등급 구분과 향미 정리 | 바리스타 스페셜티">
+<meta property="og:description" content="에티오피아 원두에 붙는 G1·G2는 맛의 순위가 아니라 생두 상태와 컵 평가를 합산한 수출 등급입니다. 300g 샘플과 원료 40 대 컵 60의 배점 구조, SCA 결점 등급표와의 차이, 고도가 컵 점수에 미치는 영향, 라벨을 읽는 순서를 정리했습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-09-05">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-09-05T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-09-05T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-09-05#page", "url": "https://coffee.ephseed.com/coffee-article-2026-09-05", "headline": "예가체프 G1 G2 등급 뜻 — 에티오피아 생두 등급 구분과 향미 정리 | 바리스타 스페셜티", "description": "에티오피아 원두에 붙는 G1·G2는 맛의 순위가 아니라 생두 상태와 컵 평가를 합산한 수출 등급입니다. 300g 샘플과 원료 40 대 컵 60의 배점 구조, SCA 결점 등급표와의 차이, 고도가 컵 점수에 미치는 영향, 라벨을 읽는 순서를 정리했습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-09-05", "dateModified": "2026-09-05", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🌋 원두 산지 &amp; 테루아르</span>
+      <span class="badge">에티오피아</span>
+      <span class="badge">생두 등급</span>
+    </div>
+    <h1>예가체프 G1 G2 등급 뜻<br/>— 에티오피아 생두 등급 구분과 향미 정리</h1>
+    <p class="subtitle">G1이면 무조건 좋은 원두라고 읽기 쉽지만, G는 생두의 상태와 컵 평가를 합산해 매기는 수출 등급 표기입니다. 무엇을 몇 퍼센트로 보는지, SCA 등급과 어떻게 다른지 숫자로 정리했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 9월 5일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+
+    <div class="hook">
+      <p>"G1이면 좋은 원두인 거죠?"<br/>
+      에티오피아 원두를 고를 때 가장 많이 나오는 질문입니다. 그런데 <strong>G는 맛의 순위표가 아니라, 생두의 상태와 컵 평가를 합산해 매기는 수출 등급 표기</strong>입니다. 무엇을 어떤 비중으로 보는지 알고 나면, 같은 G1끼리 값이 몇 배씩 갈리는 이유도 함께 설명됩니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>라벨의 <em>Yirgacheffe G1 Washed</em> 를 항목별로 해체해 읽는 법</li>
+        <li>등급을 매길 때 쓰는 표준 샘플 양과 배점 구조(원료 40 : 컵 60)</li>
+        <li>널리 인용되는 결점 개수 표를 그대로 믿기 어려운 이유</li>
+        <li>SCA 결점 등급표와 국가 등급이 서로 다른 척도라는 점</li>
+        <li>고도가 컵 점수에 미치는 영향을 다룬 최신 연구 수치</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">300g</span><span class="label">등급 판정에 쓰는 표준 샘플 양</span></div>
+      <div class="data-card"><span class="num">40 : 60</span><span class="label">원료 품질 대 컵 품질 배점</span></div>
+      <div class="data-card"><span class="num">5개 이하</span><span class="label">SCA 스페셜티 결점 허용치(300g)</span></div>
+      <div class="data-card"><span class="num">1,000→1,600m</span><span class="label">고도가 오르며 컵 점수도 오른 구간</span></div>
+    </div>
+
+    <h2 class="section-title">1. G1·G2는 무엇을 가리키는 표기인가</h2>
+
+    <p>먼저 전제를 하나 세워 두겠습니다. <strong>전 세계가 함께 쓰는 단일 등급 체계는 없습니다.</strong> 국제무역센터(ITC)가 펴낸 수출 실무 안내서도 "보편적인 등급·분류 체계는 존재하지 않으며 생산국마다 자체 체계를 가진다"고 명시합니다. 같은 안내서가 예로 든 <em>Ethiopia Jimma 5</em> 역시 "스크린(크기)·결점 수·컵 품질에 기반한 등급 척도"라고만 설명됩니다.</p>
+
+    <p>그래서 G1과 G2는 국제 규격이 아니라 <strong>에티오피아가 자국 수출 커피에 매기는 등급</strong>입니다. 숫자가 작을수록 상위 등급이라는 방향만 공통이고, 세부 판정은 그 나라의 검사 절차를 따릅니다. 라벨은 대체로 아래 순서로 붙습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>표기 예</th><th>가리키는 것</th><th>등급과의 관계</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Ethiopia</td><td>생산국</td><td>등급 체계가 어느 나라 기준인지 결정</td></tr>
+        <tr><td>Yirgacheffe</td><td>지역명(산지)</td><td>등급과 별개 정보. 향미의 방향을 예상하는 단서</td></tr>
+        <tr><td>G1 / G2</td><td>수출 등급</td><td>생두 상태 + 컵 평가의 합산 결과</td></tr>
+        <tr><td>Washed / Natural</td><td>가공 방식</td><td>등급 문자에는 담기지 않는 별도 항목</td></tr>
+      </tbody>
+    </table>
+
+    <p>네 항목이 각각 다른 것을 말합니다. <strong>등급은 생두의 상태를, 지역명은 재배 환경을, 가공 표기는 만드는 방식을 알려 줍니다.</strong> 하나만 보고 나머지를 짐작하면 어긋나기 쉽습니다.</p>
+
+    <h2 class="section-title">2. 등급은 어떻게 매겨지는가 — 원료 40 대 컵 60</h2>
+
+    <p>에티오피아 커피 등급 판정을 다룬 연구 문헌에 배점 구조가 정리돼 있습니다. 판정에는 <strong>300g 단위의 생두 샘플</strong>이 쓰이고, 점수는 두 축으로 나뉩니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>축</th><th>세부 항목</th><th>배점</th></tr>
+      </thead>
+      <tbody>
+        <tr><td rowspan="3">원료 품질(raw quality)</td><td>모양과 크기</td><td>15%</td></tr>
+        <tr><td>색</td><td>15%</td></tr>
+        <tr><td>냄새</td><td>10%</td></tr>
+        <tr><td>컵 품질(liquor)</td><td>커퍼가 실제로 마셔 평가</td><td>60%</td></tr>
+      </tbody>
+    </table>
+
+    <p>여기서 중요한 사실이 하나 드러납니다. <strong>배점의 절반 이상이 눈이 아니라 혀에서 결정됩니다.</strong> 생두가 아무리 고르게 생겼어도 컵에서 점수를 잃으면 상위 등급으로 올라가지 못하고, 반대로 외형이 다소 거칠어도 컵이 좋으면 만회할 수 있는 구조입니다. "G1은 결점두가 적은 것"이라는 설명은 40% 쪽만 옮긴 절반짜리 요약인 셈입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">헷갈리기 쉬운 지점</div>
+      결점두 개수는 <strong>원료 품질 안에서 모양·색을 깎는 요소</strong>로 작동합니다. 결점 개수만으로 등급이 정해지는 것이 아니라, 결점이 만든 감점이 40% 안에서 반영되고 나머지 60%는 컵이 채웁니다.
+    </div>
+
+    <h2 class="section-title">3. 결점 개수 표를 그대로 믿기 어려운 이유</h2>
+
+    <p>인터넷에서 "G1은 결점 0~3개, G2는 4~12개"처럼 딱 떨어지는 표를 쉽게 볼 수 있습니다. 그런데 이 글을 준비하며 확인한 결과, <strong>그 숫자를 확인해 줄 공개된 원문 규정을 찾기 어려웠습니다.</strong> 유통·판매 쪽 문서에서는 자주 인용되지만, 판정 기관이 공개한 문서에서 같은 표를 확인하는 경로는 열려 있지 않았습니다.</p>
+
+    <p>그래서 이 글에서는 <strong>확인되지 않은 구간표를 옮겨 적지 않겠습니다.</strong> 대신 대조군으로 쓸 수 있는, 공개된 기준을 아래에 정리합니다. 두 체계는 별개지만, "300g에 결점이 몇 개면 어느 수준인가"라는 감각을 잡는 데는 충분합니다.</p>
+
+    <h2 class="section-title">4. SCA 결점 등급표 — 국가 등급과는 다른 척도</h2>
+
+    <p>국제연합식량농업기구(FAO)가 정리한 생두 등급 자료에는 미국 스페셜티커피협회 계열의 분류가 수치로 실려 있습니다. 판정 단위는 마찬가지로 <strong>300g</strong>입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>분류</th><th>300g당 풀 디펙트(full defect)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>스페셜티(Specialty)</td><td>5개 이하</td></tr>
+        <tr><td>프리미엄(Premium)</td><td>8개 이하</td></tr>
+        <tr><td>익스체인지(Exchange)</td><td>9~23개</td></tr>
+        <tr><td>기준 미달(Below Standard)</td><td>24~86개</td></tr>
+        <tr><td>오프 그레이드(Off Grade)</td><td>86개 초과</td></tr>
+      </tbody>
+    </table>
+
+    <p>같은 자료는 실무에서 100g 샘플을 쓰는 경우가 흔하다는 점도 함께 적고 있습니다. 표를 읽을 때 <strong>몇 그램 기준인지 먼저 확인해야 하는 이유</strong>입니다. 100g에서 센 개수를 300g 기준표에 그대로 대입하면 실제보다 세 배 좋게 나옵니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">두 척도를 겹쳐 읽지 않기</div>
+      <strong>G1은 에티오피아의 수출 등급이고, 스페셜티는 협회 기준의 분류입니다.</strong> "G1이니까 스페셜티"라는 등식은 성립하지 않습니다. 컵 점수 80점 이상이라는 스페셜티 기준은 또 다른 축이고, 이 셋은 서로를 자동으로 보장하지 않습니다.
+    </div>
+
+    <h2 class="section-title">5. 지역명이 함께 붙는 이유 — 고도가 만드는 차이</h2>
+
+    <p>예가체프처럼 지역명이 등급과 나란히 붙는 데에는 이유가 있습니다. <strong>같은 등급이라도 재배 환경이 향미를 크게 가르기 때문</strong>입니다.</p>
+
+    <p>2026년 <em>Food Science &amp; Nutrition</em>에 실린 연구는 아라비카를 <strong>해발 1,000m·1,200m·1,400m·1,600m</strong> 네 구간에서 수확해 습식 가공 과정을 추적했습니다. 결과는 분명했습니다. <strong>재배 고도가 높아질수록 볶은 원두의 커핑 점수가 함께 올라갔고</strong>, 가장 높은 구간은 여운이 길고 단맛과 바디가 두툼하다는 평가를 받았습니다. 향기 성분 쪽에서도 낮은 구간과 비교해 각각 42종·27종·26종이 유의하게 달라졌습니다.</p>
+
+    <p>2026년 <em>Plant Biology</em>에 실린 산지별 성분 비교 연구에서는 <strong>에티오피아 시료가 자당은 높고 카페인은 낮은 쪽</strong>으로 구분됐습니다. 단맛이 받쳐 주고 쓴맛의 부담이 덜한 방향은, 흔히 이 지역 커피에 붙는 "밝고 화사하다"는 인상과 어긋나지 않습니다.</p>
+
+    <p>다만 <strong>고도는 조건이지 보증이 아닙니다.</strong> 같은 고도에서도 수확 시기와 가공 관리에 따라 결과가 갈리고, 위 연구들도 재배·가공 조건을 통제한 상태에서의 비교입니다. 라벨의 지역명은 "이런 방향일 가능성이 높다"는 예보이지 확정된 맛이 아닙니다.</p>
+
+    <h2 class="section-title">6. 워시드와 내추럴 — 같은 G1이라도 갈리는 자리</h2>
+
+    <p>등급 문자에는 가공 방식이 담기지 않습니다. 그래서 <strong>같은 G1이라도 워시드와 내추럴은 전혀 다른 잔이 됩니다.</strong> 앞서 본 배점에서 컵이 60%를 차지한다는 점을 떠올리면, 가공 방식이 등급 판정 자체에도 영향을 준다는 사실을 알 수 있습니다. 다만 그것은 "어느 쪽이 더 높은 등급을 받는다"가 아니라, 각자의 방식 안에서 얼마나 잘 만들어졌는가의 문제입니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text"><strong>지역명과 가공 방식을 먼저 봅니다.</strong> 향미의 방향은 등급 문자보다 이 둘이 더 많이 알려 줍니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text"><strong>로스팅 날짜를 확인합니다.</strong> 등급이 높아도 볶은 지 오래된 원두는 향이 먼저 빠져나갑니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text"><strong>컵 노트가 구체적인지 봅니다.</strong> 평가를 실제로 거친 로트일수록 표현이 구체적인 편입니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text"><strong>등급은 마지막에 봅니다.</strong> 같은 등급 안에서의 편차가 등급 간 차이보다 큰 경우가 흔합니다.</span></div>
+    </div>
+
+    <h2 class="section-title">7. 자주 묻는 질문</h2>
+
+    <div class="note-box">
+      <div class="note-label">Q. G1이 G2보다 항상 맛있나요</div>
+      경향은 있지만 보장은 아닙니다. 등급은 300g 샘플 하나에 대한 판정 결과이고, 컵 평가가 60%를 차지하더라도 그것은 <strong>그 로트를 그 시점에 평가한 값</strong>입니다. 이후의 보관·운송·로스팅이 잔의 결과를 다시 바꿉니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. G3·G4는 나쁜 원두인가요</div>
+      용도가 다른 원두로 보는 편이 정확합니다. 결점이 늘면 잡미가 섞일 여지가 커지지만, 진하게 볶아 우유와 함께 쓰는 배합에서는 상위 등급의 섬세한 산미가 오히려 가려지기도 합니다. <strong>어디에 쓸 것인가를 먼저 정하고 등급을 고르는</strong> 순서가 낫습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 같은 G1인데 왜 값이 몇 배씩 다른가요</div>
+      등급이 담지 않는 정보가 값에 반영되기 때문입니다. 어느 마을·어느 가공장에서 왔는지, 수확 시기가 언제인지, 그해 컵 점수가 몇 점인지 같은 항목은 등급 문자 하나에 들어가지 않습니다. <strong>정보가 촘촘할수록 값이 올라가는 구조</strong>입니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 스페셜티라고 적혀 있으면 G1인가요</div>
+      아닙니다. 스페셜티는 협회 기준의 분류이고 G는 생산국의 수출 등급입니다. FAO 자료 기준으로 스페셜티는 <strong>300g에 풀 디펙트 5개 이하</strong>라는 별도의 조건을 씁니다. 두 표기는 서로를 대체하지 않습니다.
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">Q. 등급 표기가 없는 원두는 피해야 하나요</div>
+      그렇지 않습니다. 생산국에 따라 등급 체계 자체가 다르고, 크기(스크린)로만 나누는 나라도 있습니다. 표기가 없다는 사실보다 <strong>수확 연도·가공 방식·로스팅 날짜가 적혀 있는지</strong>가 실질적인 판단 기준이 됩니다.
+    </div>
+
+    <h2 class="section-title">8. 정리하면</h2>
+
+    <p>G1과 G2는 원두의 서열이 아니라, <strong>생두의 상태 40%와 컵 평가 60%를 300g 샘플로 판정한 결과에 붙는 이름</strong>입니다. 국제 공통 규격이 아니므로 다른 나라의 표기와 직접 비교할 수 없고, SCA의 스페셜티 분류와도 척도가 다릅니다.</p>
+
+    <p>그래서 실제로 도움이 되는 읽기 순서는 이렇습니다. <strong>지역명과 가공 방식으로 향미의 방향을 잡고, 로스팅 날짜로 신선도를 확인한 다음, 등급은 마지막에 참고 정보로 봅니다.</strong> 등급 문자 하나에 기대는 것보다 훨씬 적게 빗나갑니다.</p>
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-24"><div class="rc-cat">🌋 원두 산지 & 테루아르</div><div class="rc-title">싱글 오리진 뜻 — 블렌드와의 차이와 맛 특성 비교</div><div class="rc-date">2026. 08. 24</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-05"><div class="rc-cat">🌋 원두 산지 & 테루아르</div><div class="rc-title">해발 2,000m에서 무슨 일이 벌어지나 — 커피 맛을 결정짓는 고도의 비밀</div><div class="rc-date">2026. 08. 05</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-26"><div class="rc-cat">🌋 원두 산지 & 테루아르</div><div class="rc-title">커피 맛의 80%는 고도가 결정한다 — 바리스타가 안 알려주던 테루아르의 진실</div><div class="rc-date">2026. 07. 26</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#예가체프</span>
+      <span class="tag">#에티오피아</span>
+      <span class="tag">#생두등급</span>
+      <span class="tag">#G1</span>
+      <span class="tag">#산지</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>G는 국제 규격이 아닙니다.</strong> 생산국마다 자체 체계를 쓰며, G1·G2는 에티오피아의 수출 등급입니다.</li>
+        <li><strong>배점은 원료 40% 대 컵 60%입니다.</strong> 모양·크기 15, 색 15, 냄새 10, 그리고 컵 평가 60으로 나뉩니다.</li>
+        <li><strong>판정 단위는 300g입니다.</strong> 100g 기준으로 센 결점 수를 300g 표에 대입하면 안 됩니다.</li>
+        <li><strong>등급별 결점 허용 개수는 공개 원문으로 확인하기 어렵습니다.</strong> 널리 도는 구간표는 근거를 확인하고 쓰는 편이 안전합니다.</li>
+        <li><strong>SCA 스페셜티는 300g에 결점 5개 이하로, G 등급과는 다른 척도입니다.</strong></li>
+        <li><strong>고도가 오르면 컵 점수도 함께 올랐습니다.</strong> 1,000m에서 1,600m 구간을 비교한 2026년 연구 결과입니다.</li>
+        <li><strong>읽는 순서는 지역명·가공 방식 → 로스팅 날짜 → 등급입니다.</strong> 등급은 마지막 참고 정보입니다.</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
