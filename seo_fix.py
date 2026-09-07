@@ -112,6 +112,26 @@ def esc(s):
     return html.escape(s, quote=True)
 
 
+
+# --- 2026-09-07 색인정리: .noindex 목록 기반 robots 제어 -------------------
+def _noindex_set():
+    p = os.path.join(ROOT, ".noindex")
+    s = set()
+    try:
+        for line in open(p, encoding="utf-8"):
+            line = line.strip()
+            if line and not line.startswith("#"):
+                s.add(line)
+    except Exception:
+        pass
+    return s
+
+NOINDEX = _noindex_set()
+
+def is_noindex(rel):
+    return rel.replace(os.sep, "/") in NOINDEX
+# --------------------------------------------------------------------------
+
 def build_block(fname, src):
     title = get_title(src)
     desc = get_description(src)
@@ -132,7 +152,9 @@ def build_block(fname, src):
 
     parts += [
         '<link rel="canonical" href="%s">' % url,
-        '<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">',
+        '<meta name="robots" content="%s">' % (
+            'noindex,follow' if is_noindex(fname)
+            else 'index, follow, max-image-preview:large, max-snippet:-1'),
         '<meta property="og:type" content="%s">' % ("article" if is_article(fname) else "website"),
         '<meta property="og:site_name" content="%s">' % esc(SITE_NAME),
         '<meta property="og:title" content="%s">' % esc(title),
@@ -220,14 +242,8 @@ def fix_file(path):
 
 
 def write_sitemap(files):
-    # --- 2026-09-07 색인정리: noindex 표시된 페이지는 sitemap 에서 제외한다 ---
-    def _indexable(_rel):
-        try:
-            _h = open(os.path.join(ROOT, _rel), encoding="utf-8", errors="ignore").read(4000)
-        except Exception:
-            return True
-        return not re.search(r'<meta[^>]+name=["\']robots["\'][^>]*noindex', _h, re.I)
-    files = [_r for _r in files if _indexable(_r)]
+    # --- 2026-09-07 색인정리: .noindex 목록에 있는 페이지는 sitemap 에서 제외 ---
+    files = [_r for _r in files if not is_noindex(_r)]
     urls = []
     for fname in files:
         pr = "1.0" if fname == "index.html" else ("0.9" if fname in ("knowledge.html", "board.html") else "0.7")
