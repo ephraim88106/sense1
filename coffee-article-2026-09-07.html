@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1인당 소비량 순위 — 한국과 세계 주요국 연간 잔수 정리 | 바리스타 스페셜티</title>
+  <meta name="description" content="국제기구가 발표하는 커피 소비량의 단위는 60kg들이 생두 백입니다. USDA FAS 2026/27 전망(세계 소비 179.7백만 백, 한국 340만 백)과 세계은행 인구로 1인당 생두 약 3.9kg을 구하고, 로스팅 감량 12~16%와 잔당 10g을 적용해 연 약 330~350잔까지 계산 과정을 공개해 정리했습니다">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-09-07">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="1인당 소비량 순위 — 한국과 세계 주요국 연간 잔수 정리 | 바리스타 스페셜티">
+<meta property="og:description" content="국제기구가 발표하는 커피 소비량의 단위는 60kg들이 생두 백입니다. USDA FAS 2026/27 전망(세계 소비 179.7백만 백, 한국 340만 백)과 세계은행 인구로 1인당 생두 약 3.9kg을 구하고, 로스팅 감량 12~16%와 잔당 10g을 적용해 연 약 330~350잔까지 계산 과정을 공개해 정리했습니다">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-09-07">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-09-07T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-09-07T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-09-07#page", "url": "https://coffee.ephseed.com/coffee-article-2026-09-07", "headline": "1인당 소비량 순위 — 한국과 세계 주요국 연간 잔수 정리 | 바리스타 스페셜티", "description": "국제기구가 발표하는 커피 소비량의 단위는 60kg들이 생두 백입니다. USDA FAS 2026/27 전망(세계 소비 179.7백만 백, 한국 340만 백)과 세계은행 인구로 1인당 생두 약 3.9kg을 구하고, 로스팅 감량 12~16%와 잔당 10g을 적용해 연 약 330~350잔까지 계산 과정을 공개해 정리했습니다", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-09-07", "dateModified": "2026-09-07", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">📈 스페셜티 커피 트렌드</span>
+      <span class="badge">소비량 통계</span>
+      <span class="badge">국가별 비교</span>
+    </div>
+    <h1>1인당 소비량 순위<br/>— 한국과 세계 주요국 연간 잔수 정리</h1>
+    <p class="subtitle">"한국인은 1년에 몇 잔 마신다"는 숫자가 기사마다 다릅니다. 국제기구가 실제로 발표하는 원자료는 무엇인지, 그것을 1인당 잔수로 어떻게 바꾸는지, 그리고 그 과정에서 어디가 흔들리는지 계산 과정을 그대로 공개해 정리했습니다</p>
+    <div class="meta-row">
+      <span>📅 2026년 9월 7일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 9분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>"한국인은 1년에 커피를 353잔 마신다." 이런 문장을 한 번쯤 보셨을 겁니다. 그런데 어떤 기사는 400잔이라고 하고, 어떤 곳은 하루 두 잔이라고 씁니다. <strong>같은 나라를 두고 숫자가 이렇게 벌어지는 이유는 원자료가 아예 잔 수로 발표되지 않기 때문입니다.</strong> 국제기구가 내놓는 단위는 60kg들이 생두 한 백이고, 잔 수는 누군가가 그 값을 나누고 곱해 만든 2차 가공물입니다. 그 계산 과정을 공개해 두면, 어떤 순위표를 믿어야 할지도 함께 판단할 수 있습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>소비량 통계의 원자료가 어디서 나오고 단위가 무엇인지</li>
+        <li>2026/27 세계 생산·소비·재고 규모(USDA FAS 2026년 7월 기준)</li>
+        <li>국가별 절대 소비량 순위와 그 한계</li>
+        <li>1인당 생두 소비량으로 환산하는 계산 과정과 결과표</li>
+        <li>생두 kg을 마시는 잔 수로 바꾸는 두 단계(로스팅 감량·잔당 투입량)</li>
+        <li>한국의 소비량이 지난 10여 년간 얼마나 늘었는지</li>
+        <li>인터넷 순위표를 읽을 때 반드시 확인해야 할 항목</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">340만 백</span><span class="label">한국의 연간 소비량(2026/27 전망, 생두 60kg 기준)</span></div>
+      <div class="data-card"><span class="num">약 3.9kg</span><span class="label">한국 1인당 연간 생두 환산량</span></div>
+      <div class="data-card"><span class="num">약 330~350잔</span><span class="label">잔당 10g으로 환산했을 때의 1인당 연간 잔 수</span></div>
+      <div class="data-card"><span class="num">179.7백만</span><span class="label">2026/27 세계 전체 소비량(백)</span></div>
+    </div>
+
+    <h2 class="section-title">1. 소비량 통계는 어디서 나오는가</h2>
+
+    <p>커피 소비량을 국가 단위로 집계해 정기 발표하는 곳은 사실상 두 곳입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>기관</th><th>발표물</th><th>성격</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>USDA FAS(미국 농무부 해외농업국)</td><td><em>Coffee: World Markets and Trade</em></td><td>연 2회 갱신. 국가별 생산·수입·소비·재고를 한 표에 담습니다</td></tr>
+        <tr><td>ICO(국제커피기구)</td><td><em>Coffee Market Report</em></td><td>매월 발표. 세계 총계와 가격 지표가 중심입니다</td></tr>
+      </tbody>
+    </table>
+
+    <p>두 기관 모두 <strong>단위가 "60kg들이 백(bag)"</strong>입니다. 그리고 이 무게는 <strong>볶기 전 생두 기준</strong>입니다. 여기서부터 오해가 시작됩니다. 340만 백이라는 값을 그대로 "볶은 원두 20만 4천 톤"으로 읽으면 이미 한 단계 틀린 것입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">기억해 둘 단위</div>
+      <p>1백(bag) = 생두 60kg. 백만 백 = 생두 6만 톤. 소비량 표에 적힌 "domestic consumption"은 그 나라 안에서 소비된 <strong>생두 환산량</strong>이며, 원두·인스턴트·RTD 음료를 모두 되돌려 합산한 값입니다.</p>
+    </div>
+
+    <h2 class="section-title">2. 세계 전체는 어느 정도 규모인가</h2>
+
+    <p>USDA FAS가 2026년 7월에 낸 표를 기준으로 하면 다음과 같습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>항목</th><th>2025/26</th><th>2026/27</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>세계 생산</td><td>178.8백만 백</td><td>189.7백만 백</td></tr>
+        <tr><td>ㄴ 아라비카</td><td>—</td><td>105.9백만 백</td></tr>
+        <tr><td>ㄴ 로부스타</td><td>—</td><td>83.8백만 백</td></tr>
+        <tr><td>세계 소비</td><td>—</td><td>179.7백만 백</td></tr>
+        <tr><td>세계 수출</td><td>—</td><td>158.9백만 백</td></tr>
+        <tr><td>기말 재고</td><td>24.4백만 백</td><td>26.3백만 백</td></tr>
+      </tbody>
+    </table>
+
+    <p>주목할 점은 <strong>재고의 크기</strong>입니다. 26.3백만 백은 세계 소비량의 약 15% 수준, 즉 두 달이 조금 안 되는 분량입니다. 커피 가격이 작황 뉴스 한 줄에 크게 움직이는 이유가 여기 있습니다. 완충 장치가 두껍지 않습니다.</p>
+
+    <p>ICO 쪽 숫자도 같은 방향을 가리킵니다. 2025년 10월 보고서는 2024/25 커피 연도의 세계 소비를 175.071백만 백으로, 전년 172.578백만 백 대비 <strong>1.4% 증가</strong>로 집계했습니다. 같은 기간 생산은 177.513백만 백으로 5.2% 늘었습니다.</p>
+
+    <h2 class="section-title">3. 절대량으로 보면 순위는 이렇게 나온다</h2>
+
+    <p>2026/27 전망치 기준 국가·지역별 소비량입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>순위</th><th>국가·지역</th><th>소비량(천 백)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>유럽연합(EU)</td><td>42,500</td></tr>
+        <tr><td>2</td><td>미국</td><td>26,950</td></tr>
+        <tr><td>3</td><td>브라질</td><td>22,390</td></tr>
+        <tr><td>4</td><td>일본</td><td>6,900</td></tr>
+        <tr><td>5</td><td>중국</td><td>6,750</td></tr>
+        <tr><td>6</td><td>필리핀</td><td>6,725</td></tr>
+        <tr><td>7</td><td>캐나다</td><td>5,100</td></tr>
+        <tr><td>8</td><td>베트남</td><td>5,000</td></tr>
+        <tr><td>8</td><td>에티오피아</td><td>5,000</td></tr>
+        <tr><td>10</td><td>영국</td><td>4,850</td></tr>
+        <tr><td>11</td><td>인도네시아</td><td>4,830</td></tr>
+        <tr><td>12</td><td>러시아</td><td>4,800</td></tr>
+        <tr><td>13</td><td>한국</td><td>3,400</td></tr>
+      </tbody>
+    </table>
+
+    <p>여기서 두 가지가 눈에 띕니다. 하나는 <strong>브라질·베트남·에티오피아·인도네시아 같은 생산국이 상위권에 있다는 것</strong>입니다. 이들은 자국에서 기른 커피를 자국에서 상당량 마십니다. 다른 하나는 <strong>중국이 이미 일본과 어깨를 나란히 한다는 것</strong>입니다. 다만 이 표는 인구를 전혀 반영하지 않습니다.</p>
+
+    <h2 class="section-title">4. 1인당으로 나누면 순위가 뒤집힌다</h2>
+
+    <p>1인당 소비량은 국제기구가 국가별로 표를 내주지 않습니다. 그래서 직접 계산해야 하고, 계산식은 단순합니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">1인당 생두 소비량 계산</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text">소비량(천 백) × 1,000 × 60 = 연간 소비 생두 kg</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text">그 값을 인구로 나눕니다. 아래 표는 세계은행 2024년 인구 통계를 썼습니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text">결과 단위는 <strong>생두 kg/인·년</strong>입니다. 볶은 원두 기준이 아닙니다.</span></div>
+    </div>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>국가·지역</th><th>1인당 생두</th><th>절대량 순위</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>캐나다</td><td>7.4kg</td><td>7위</td></tr>
+        <tr><td>브라질</td><td>6.3kg</td><td>3위</td></tr>
+        <tr><td>유럽연합(EU)</td><td>5.7kg</td><td>1위</td></tr>
+        <tr><td>미국</td><td>4.8kg</td><td>2위</td></tr>
+        <tr><td>영국</td><td>4.2kg</td><td>10위</td></tr>
+        <tr><td><strong>한국</strong></td><td><strong>3.9kg</strong></td><td>13위</td></tr>
+        <tr><td>필리핀</td><td>3.5kg</td><td>6위</td></tr>
+        <tr><td>일본</td><td>3.3kg</td><td>4위</td></tr>
+        <tr><td>베트남</td><td>3.0kg</td><td>8위</td></tr>
+        <tr><td>러시아</td><td>2.0kg</td><td>12위</td></tr>
+        <tr><td>인도네시아</td><td>1.0kg</td><td>11위</td></tr>
+        <tr><td>중국</td><td>0.3kg</td><td>5위</td></tr>
+      </tbody>
+    </table>
+
+    <p>순위가 크게 흔들립니다. <strong>중국은 절대량 5위이지만 1인당으로는 표에서 가장 낮습니다.</strong> 반대로 캐나다는 절대량 7위인데 1인당으로는 1위입니다. 인구 14억과 4천만의 차이가 그대로 반영된 결과입니다.</p>
+
+    <p>한국은 <strong>1인당 약 3.9kg</strong>으로 미국(4.8kg)과 일본(3.3kg) 사이에 놓입니다. "한국이 세계에서 커피를 가장 많이 마신다"는 표현은 이 자료로는 뒷받침되지 않습니다. 다만 아시아 주요국 가운데는 상위입니다.</p>
+
+    <h2 class="section-title">5. 생두 kg을 잔 수로 바꾸는 두 단계</h2>
+
+    <p>사람들이 실제로 궁금해하는 것은 kg이 아니라 잔 수입니다. 여기에는 두 번의 환산이 필요하고, 두 번 모두 폭이 있습니다.</p>
+
+    <p><strong>① 로스팅 감량.</strong> 생두를 볶으면 수분과 유기물이 빠져나가면서 무게가 줄어듭니다. 로스터리 자료로 공개된 감량률은 1차 크랙 직후 약 10.3%에서 강배전 16.6% 이상까지 분포합니다. 중배전 언저리를 잡으면 <strong>대략 12~16%</strong>입니다.</p>
+
+    <p><strong>② 한 잔에 들어가는 양.</strong> SCA 표준은 물 1kg당 커피 55g을 권합니다. 180mL 잔으로 환산하면 <strong>한 잔당 약 10g</strong>입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>단계</th><th>한국 기준 계산</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1인당 생두</td><td>약 3.94kg</td></tr>
+        <tr><td>로스팅 후(감량 12~16%)</td><td>약 3.31~3.47kg</td></tr>
+        <tr><td>잔당 10g으로 나누면</td><td><strong>약 330~350잔</strong></td></tr>
+        <tr><td>하루 환산</td><td>약 0.9~1.0잔</td></tr>
+      </tbody>
+    </table>
+
+    <p>같은 방식으로 다른 나라를 계산하면 캐나다 약 620~650잔, 유럽연합 약 480~500잔, 미국 약 400~420잔, 일본 약 280~295잔이 나옵니다. <strong>흔히 인용되는 "한국인 연 353잔"은 이 범위 안에 들어옵니다.</strong> 계산 방식이 크게 다르지 않다는 뜻입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">이 숫자가 흔들리는 지점</div>
+      <p>잔당 투입량을 8g으로 잡으면 잔 수는 25% 늘고, 12g으로 잡으면 17% 줄어듭니다. 에스프레소 더블샷은 18~20g을 씁니다. <strong>"몇 잔"이라는 숫자는 잔의 정의에 따라 얼마든지 달라집니다.</strong> 기사마다 값이 다른 진짜 이유가 여기 있습니다.</p>
+    </div>
+
+    <h2 class="section-title">6. 한국의 소비는 얼마나 늘었나</h2>
+
+    <p>ICO가 공개한 과거 소비 표를 보면 한국은 2011년 1,801천 백, 2012년 1,714천 백, 2013년 1,760천 백, 2014년 1,910천 백이었습니다. 같은 기간 연평균 증가율은 2.0%로 집계됐습니다.</p>
+
+    <p>이 값을 USDA FAS의 2026/27 전망치 3,400천 백과 나란히 놓으면 <strong>약 1.8배</strong>입니다. 인구가 거의 그대로였으니 1인당으로도 비슷한 배율이 됩니다. 2014년 기준 1인당 생두는 약 2.3kg이었습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">이 비교의 한계</div>
+      <p>두 숫자는 <strong>기관이 다릅니다.</strong> ICO와 USDA는 집계 방식과 재수출 처리 기준이 달라, 뺄셈으로 얻은 증가폭을 소수점까지 신뢰할 수는 없습니다. "10여 년 사이에 대략 두 배 가까이 늘었다"는 방향성 정도로 읽는 것이 정확합니다.</p>
+    </div>
+
+    <h2 class="section-title">7. 시장 가격과 함께 보면 달라지는 것</h2>
+
+    <p>소비량만 보면 시장이 조용히 커지는 것처럼 보이지만, 가격을 겹치면 그림이 달라집니다. ICO 종합 지표 가격(I-CIP)은 2025년 10월 평균 326.38 US센트/lb였고, 2026년 7월에는 287.26 US센트/lb였습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>그룹 지표</th><th>2025년 10월</th><th>2026년 7월</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>콜롬비아 마일드</td><td>403.25</td><td>383.39</td></tr>
+        <tr><td>아더 마일드</td><td>403.79</td><td>358.65</td></tr>
+        <tr><td>브라질 내추럴</td><td>373.47</td><td>320.69</td></tr>
+        <tr><td>로부스타</td><td>215.06</td><td>184.78</td></tr>
+      </tbody>
+    </table>
+
+    <p>단위는 US센트/lb입니다. 아라비카 계열과 로부스타 사이에 <strong>두 배 안팎의 격차</strong>가 유지되고 있다는 점이 눈에 띕니다. 소비가 늘어난 물량의 상당 부분이 인스턴트·RTD 쪽이라는 점을 감안하면, 절대 소비량 증가가 곧 스페셜티 수요 증가와 같지는 않습니다.</p>
+
+    <h2 class="section-title">8. 순위표를 읽을 때 확인할 것</h2>
+
+    <div class="tip-box">
+      <div class="tip-title">확인 순서</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text"><strong>단위를 먼저 봅니다.</strong> 생두 kg인지, 볶은 원두 kg인지, 잔 수인지에 따라 값이 20% 이상 달라집니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text"><strong>기준 연도를 봅니다.</strong> 커피 연도(10월~9월)와 달력 연도는 다릅니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text"><strong>1인당인지 절대량인지 봅니다.</strong> 두 순위는 거의 겹치지 않습니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text"><strong>인구 기준 연도를 봅니다.</strong> 오래된 인구로 나눈 값은 최근 자료와 섞이면 어긋납니다.</span></div>
+      <div class="tip-item"><span class="tip-num">5</span><span class="tip-text"><strong>출처가 원문인지 봅니다.</strong> 기관명 없이 "세계 통계"라고만 적힌 표는 재인용을 반복하며 값이 변형된 경우가 많습니다.</span></div>
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 핀란드가 1인당 1위라고 들었는데 표에 없습니다.</strong><br/>
+      A. USDA FAS 표는 유럽연합을 하나의 단위로 묶어 발표합니다. 그래서 핀란드·스웨덴 같은 개별 회원국 값을 이 자료만으로는 뽑을 수 없습니다. 북유럽 수치가 나오는 순위표들은 대체로 각국 통계청 자료나 업계 추정치를 섞은 것이므로, <strong>같은 표 안에서 다른 나라와 직접 비교하기는 어렵습니다.</strong></p>
+      <p><strong>Q. 한국은 세계 몇 위인가요?</strong><br/>
+      A. 절대량으로는 이 자료 기준 13위권이고, 1인당으로 환산하면 표에 실린 12개 국가·지역 중 6번째입니다. 다만 유럽연합이 하나로 묶여 있어 개별 국가를 모두 펼치면 순위는 더 내려갑니다.</p>
+      <p><strong>Q. 인스턴트나 캔커피도 포함된 숫자인가요?</strong><br/>
+      A. 포함됩니다. 소비량은 생두 환산 기준이라 인스턴트 커피, RTD 음료, 카페 음료가 모두 되돌려 합산됩니다. 그래서 "1인당 330잔"이 전부 드립 한 잔을 뜻하지는 않습니다.</p>
+      <p><strong>Q. 왜 생산량과 소비량이 거의 같나요?</strong><br/>
+      A. 2026/27 전망은 생산 189.7백만 백, 소비 179.7백만 백입니다. 차이는 재고로 흘러갑니다. 기말 재고가 24.4에서 26.3백만 백으로 늘어난 것이 그 결과입니다.</p>
+      <p><strong>Q. 직접 계산해 보려면 무엇이 필요한가요?</strong><br/>
+      A. USDA FAS의 <em>Coffee: World Markets and Trade</em> 표에서 소비량을, 세계은행 인구 통계에서 인구를 받으면 됩니다. 두 값을 나눈 뒤 로스팅 감량과 잔당 투입량만 정하면 잔 수까지 나옵니다. <strong>가정을 함께 적어 두는 것이 핵심입니다.</strong></p>
+    </div>
+
+    <div class="closing-box">
+      <p>1인당 소비량은 발표되는 숫자가 아니라 <strong>만들어지는 숫자</strong>입니다. 국제기구가 주는 것은 60kg 백 단위의 국가별 총량과 인구뿐이고, kg과 잔 수는 그 뒤에 붙는 계산입니다. 한국의 경우 약 3.9kg, 잔으로는 약 330~350잔, 하루 한 잔에 조금 못 미치는 수준으로 정리됩니다. 어떤 순위표를 만나든 <strong>단위와 기준 연도와 출처</strong> 세 가지만 확인하면, 그 숫자를 얼마나 믿을지 스스로 판단할 수 있습니다.</p>
+    </div>
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-07"><div class="rc-cat">📈 스페셜티 커피 트렌드</div><div class="rc-title">전통 커피를 처음으로 꺾었다 — 2026년 스페셜티 커피 혁명의 실체</div><div class="rc-date">2026. 08. 07</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-21"><div class="rc-cat">📈 스페셜티 커피 트렌드</div><div class="rc-title">커피 한 잔이 1만원을 넘어서는 이유 — 2026 스페셜티 커피 5대 트렌드 완전 해부</div><div class="rc-date">2026. 07. 21</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-14"><div class="rc-cat">📈 스페셜티 커피 트렌드</div><div class="rc-title">원두값 79% 폭등에도 스페셜티 커피는 왜 더 잘 팔릴까 — 2026 글로벌 데이터 완전 분석</div><div class="rc-date">2026. 07. 14</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#소비량</span>
+      <span class="tag">#1인당소비량</span>
+      <span class="tag">#커피통계</span>
+      <span class="tag">#USDA</span>
+      <span class="tag">#ICO</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>원자료의 단위는 60kg들이 생두 한 백입니다.</strong> 볶은 커피도, 잔 수도 아닙니다.</li>
+        <li><strong>한국의 연간 소비는 340만 백입니다.</strong> 세계 10위권 안팎의 절대량입니다.</li>
+        <li><strong>1인당으로 나누면 약 3.9kg입니다.</strong> 생두 기준이며 미국(약 4.8kg)보다 아래입니다.</li>
+        <li><strong>잔 수로 바꾸면 약 330~350잔입니다.</strong> 하루 한 잔에 조금 못 미치는 수준입니다.</li>
+        <li><strong>절대량 순위와 1인당 순위는 완전히 다릅니다.</strong> 중국은 절대량 상위, 1인당은 최하위권입니다.</li>
+        <li><strong>2014년과 비교하면 약 1.8배입니다.</strong> 다만 출처가 달라 그대로 빼는 것은 조심해야 합니다.</li>
+        <li><strong>출처와 단위를 밝히지 않은 순위표는 신뢰하기 어렵습니다.</strong> 확인할 첫 항목은 언제나 단위입니다.</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
