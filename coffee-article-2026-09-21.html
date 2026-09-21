@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1급 실기 시험 절차 — 2급과 다른 평가 항목과 배점 구성 | 바리스타 스페셜티</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* SVG 인포그래픽 영역 */
+    .infographic-wrap {
+      background: #fff;
+      border-radius: 12px;
+      padding: 28px;
+      margin: 36px 0;
+      border: 1px solid #e8d8c8;
+      box-shadow: 0 4px 16px rgba(107,58,42,0.08);
+    }
+    .infographic-wrap h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #6b3a2a;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    svg { width: 100%; height: auto; display: block; }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<meta name="description" content="1급 실기는 2급과 같은 틀 — 준비 및 시연시간 15분, 에스프레소 4잔·카푸치노 4잔 — 위에서 치러집니다. 다만 응시자격과 필기 구성, 카푸치노 도안 지정에서 갈립니다. 협회 규정을 기준으로 2급과 나란히 정리했습니다.">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-09-21">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="1급 실기 시험 절차 — 2급과 다른 평가 항목과 배점 구성 | 바리스타 스페셜티">
+<meta property="og:description" content="1급 실기는 2급과 같은 틀 — 준비 및 시연시간 15분, 에스프레소 4잔·카푸치노 4잔 — 위에서 치러집니다. 다만 응시자격과 필기 구성, 카푸치노 도안 지정에서 갈립니다. 협회 규정을 기준으로 2급과 나란히 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-09-21">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-09-21T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-09-21T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-09-21#page", "url": "https://coffee.ephseed.com/coffee-article-2026-09-21", "headline": "1급 실기 시험 절차 — 2급과 다른 평가 항목과 배점 구성 | 바리스타 스페셜티", "description": "1급 실기는 2급과 같은 틀 — 준비 및 시연시간 15분, 에스프레소 4잔·카푸치노 4잔 — 위에서 치러집니다. 다만 응시자격과 필기 구성, 카푸치노 도안 지정에서 갈립니다. 협회 규정을 기준으로 2급과 나란히 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-09-21", "dateModified": "2026-09-21", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🎨 바리스타 스킬 &amp; 라떼아트</span>
+      <span class="badge">자격시험</span>
+      <span class="badge">실기</span>
+    </div>
+    <h1>1급 실기 시험 절차<br/>— 2급과 다른 평가 항목과 배점 구성</h1>
+    <p class="subtitle">1급 실기는 2급과 같은 틀 — 준비 및 시연시간 15분, 에스프레소 4잔·카푸치노 4잔 — 위에서 치러집니다. 다만 응시자격과 필기 구성, 카푸치노 도안 지정에서 갈립니다. 협회 규정을 기준으로 2급과 나란히 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 9월 21일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>"2급 붙었으니 1급은 시간만 좀 더 채우면 되는 거 아닌가요?" 실기 접수 창구에서 자주 나오는 질문입니다. 결론부터 말하면 <strong>시연시간과 잔 수는 2급과 완전히 같습니다.</strong> 준비 및 시연시간 15분, 에스프레소 4잔과 카푸치노 4잔. 갈리는 지점은 시간이 아니라 <strong>응시자격, 필기 구성, 카푸치노에 붙는 라떼아트 도안 지정</strong>입니다. 이 세 가지를 미리 알아두면 2급을 준비하던 방식 그대로 1급을 준비했다가 시험장에서 당황하는 일을 줄일 수 있습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>1급과 2급의 평가 범주·시연시간이 같은 이유와 실제로 갈리는 지점</li>
+        <li>1급 응시자격 — 왜 2급을 먼저 따야만 하는가</li>
+        <li>필기 구성 차이 — 영어 문항 10% 내외가 뜻하는 것</li>
+        <li>카푸치노 라떼아트 도안 지정 — 하트 2잔·3단 튤립 2잔</li>
+        <li>배점 구조는 같아도 체감 난도가 올라가는 이유</li>
+        <li>검정료 비교와 접수 전에 확인할 것</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">15분</span><span class="label">준비 및 시연시간 (2급과 동일)</span></div>
+      <div class="data-card"><span class="num">4+4잔</span><span class="label">에스프레소 4잔 · 카푸치노 4잔</span></div>
+      <div class="data-card"><span class="num">2종 도안</span><span class="label">하트 2잔 · 3단 튤립 2잔 (1급만 지정)</span></div>
+      <div class="data-card"><span class="num">60점</span><span class="label">합격선(100점 만점, 필기·실기 공통)</span></div>
+    </div>
+
+    <h2 class="section-title">1. 뼈대는 같다 — 평가 범주 네 가지</h2>
+    <p>협회 자격시험규정이 정한 실기 평가 범주는 1급과 2급이 동일하게 <strong>준비 평가, 에스프레소 평가, 카푸치노 평가, 서비스 기술 평가</strong> 네 가지입니다. 평가 방식도 같아서 <strong>기술적 평가와 감각적 평가</strong>로 나뉘고, 응시자 1인을 <strong>평가자 2인</strong>이 함께 봅니다. 준비 및 시연시간도 <strong>15분</strong>으로 동일합니다.</p>
+    <p>그래서 "1급은 급이 높으니 시간도 더 줄 것"이라고 짐작하기 쉽지만, 규정 자체는 등급 사이에 시간 차등을 두지 않습니다. 같은 틀 안에서 <strong>무엇을 요구하는지가 달라지는 구조</strong>로 이해하는 편이 정확합니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>항목</th><th>2급</th><th>1급</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">평가 범주</td><td>준비·에스프레소·카푸치노·서비스</td><td>동일</td></tr>
+        <tr><td class="em">준비 및 시연시간</td><td>15분</td><td>15분</td></tr>
+        <tr><td class="em">제출 음료</td><td>에스프레소 4잔, 카푸치노 4잔</td><td>동일</td></tr>
+        <tr><td class="em">평가자</td><td>응시자 1인당 2인</td><td>동일</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">2. 응시자격에서부터 갈린다</h2>
+    <p>가장 먼저 부딪히는 차이는 채점표가 아니라 <strong>접수 단계</strong>입니다. 2급은 응시자격에 제한이 없어 누구나 필기부터 볼 수 있습니다. 반면 1급 필기는 <strong>2급 자격을 최종 취득한 사람만 승급 목적으로 응시</strong>할 수 있습니다. 2급을 건너뛰고 바로 1급을 준비하는 경로 자체가 규정상 존재하지 않습니다.</p>
+    <p>실무적으로는 <strong>2급 실기 합격 → 자격증 발급 → 1급 필기 접수</strong> 순서를 벗어날 수 없다는 뜻입니다. 1급을 목표로 한다면 2급 실기 합격 통지를 받는 즉시 1급 필기 일정부터 확인하는 편이 시간을 아낍니다.</p>
+
+    <h2 class="section-title">3. 필기 구성 — 영어 문항이 섞인다</h2>
+    <p>필기는 2급과 1급 모두 <strong>50문항·50분·사지선다형</strong>이고, 출제범위도 커피학 개론, 커피 로스팅과 향미 평가, 커피 추출로 같습니다. 다른 점은 1급 필기에 <strong>영어 문항이 10% 내외</strong> 포함된다는 것입니다.</p>
+    <p>문항 비율로 보면 50문항 중 5문항 안팎이라 합격을 좌우할 만큼 비중이 크지는 않습니다. 다만 <strong>커피 전공 용어의 영어 표기</strong>(추출·로스팅 단계, 장비 명칭 등)를 따로 정리해 두지 않으면 익숙한 개념인데도 지문에서 막히는 경우가 생깁니다. 국문 이론을 다 외운 뒤 영어 용어만 별도로 한 번 더 훑는 순서를 권합니다.</p>
+
+    <h2 class="section-title">4. 카푸치노에 도안이 붙는다</h2>
+    <p>가장 크게 체감되는 차이는 카푸치노 평가입니다. 2급은 카푸치노 4잔에 <strong>도안 지정이 없어</strong> 네 잔의 거품 상태를 균일하게 맞추는 것이 관건입니다. 반면 1급은 카푸치노 4잔 가운데 <strong>하트 2잔, 3단 튤립 2잔</strong>으로 도안이 지정됩니다. 같은 4잔이라도 요구하는 기술의 종류 자체가 달라지는 지점입니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">도안 세부 사항 확인 안내</div>
+      <p>도안 지정 구성(하트·튤립)은 협회 시험안내를 근거로 정리했습니다. 다만 회차별 세부 공지나 지역 시행 기관에 따라 표현이 다르게 안내되는 사례가 있으므로, <strong>실제 접수 전에는 응시 회차의 최신 공지사항으로 다시 확인</strong>하는 것이 안전합니다.</p>
+    </div>
+
+    <p>3단 튤립은 잔 안에 층을 세 번 나눠 쌓아 꽃잎 세 겹처럼 보이게 붓는 도안으로, 하트보다 <strong>우유를 붓는 리듬과 손목 각도를 여러 번 바꿔야</strong> 합니다. 4잔을 15분 안에 내야 하는 시간 구조는 2급과 같으므로, 우유를 한 번에 스팀해 두 도안으로 나눠 붓는 동작을 <strong>도안별로 따로 연습</strong>해 두어야 시간 안에 흔들리지 않습니다.</p>
+
+    <h2 class="section-title">5. 배점은 같지만 체감 난도는 다르다</h2>
+    <p>총점 구조는 2급과 동일하게 <strong>기술 60점 + 감각 40점, 합격선 60점, 항목 간 과락 없음</strong>입니다. 숫자만 보면 차이가 없어 보이지만, 감각 평가 항목 안에 <strong>도안의 대칭·균일함이라는 채점 대상이 새로 들어간다</strong>는 점에서 실질적인 체감 난도가 올라갑니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>내용</th><th>비고</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">총점</td><td>100점</td><td>기술 60 + 감각 40 (동일)</td></tr>
+        <tr><td class="em">합격선</td><td>60점 이상</td><td>필기·실기 동일</td></tr>
+        <tr><td class="em">과락</td><td>없음</td><td>항목 간 과락 조항 없음</td></tr>
+        <tr><td class="em">추가 채점 대상</td><td>라떼아트 도안 완성도</td><td>1급 카푸치노 평가에 포함</td></tr>
+      </tbody>
+    </table>
+
+    <p>정리하면 <strong>기준선 자체가 높아진 것이 아니라, 같은 60점을 채우기 위해 보여야 할 동작의 가짓수가 늘어난 것</strong>입니다. 탬핑·퍼징 같은 기존 동작을 안정적으로 유지하면서 도안 두 가지를 추가로 얹어야 하는 셈입니다.</p>
+
+    <h2 class="section-title">6. 검정료 비교</h2>
+    <p>등급이 올라가면 검정료도 함께 오릅니다. 재응시 시에는 필기와 실기 중 <strong>떨어진 영역의 검정료만</strong> 다시 내면 됩니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>2급</th><th>1급</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">필기</td><td>33,000원</td><td>44,000원</td></tr>
+        <tr><td class="em">실기</td><td>66,000원</td><td>99,000원</td></tr>
+        <tr><td class="em">합계</td><td>99,000원</td><td>143,000원</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">7. 준비 순서를 정리하면</h2>
+    <div class="tip-box">
+      <div class="tip-title">1급 준비 체크리스트</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text"><strong>2급 자격증 발급 여부부터 확인합니다.</strong> 1급 필기는 2급 취득자에게만 응시자격이 주어집니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text"><strong>영어 전공 용어를 별도로 정리합니다.</strong> 문항 비중은 10% 내외지만 준비를 안 하면 아는 문제도 틀립니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text"><strong>하트와 3단 튤립을 각각 따로 반복합니다.</strong> 두 도안을 번갈아 연습하면 손목 각도가 섞여 둘 다 흔들리기 쉽습니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text"><strong>15분 리허설은 2급 때와 같은 틀로 짭니다.</strong> 준비 → 에스프레소 4잔 → 카푸치노 4잔(도안 2종) → 서비스·정리 순서를 그대로 쓰되, 카푸치노 구간에 도안별 시간을 나눠 배분합니다.</span></div>
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 2급 없이 1급 필기부터 바로 볼 수 있나요?</strong><br/>
+      A. 아니요. 1급 필기는 2급 자격을 최종 취득한 사람만 승급 목적으로 응시할 수 있습니다.</p>
+      <p><strong>Q. 1급 실기는 2급보다 시간이 더 긴가요?</strong><br/>
+      A. 아니요. 준비 및 시연시간은 2급과 동일하게 15분입니다. 달라지는 것은 요구되는 도안과 응시자격입니다.</p>
+      <p><strong>Q. 영어 문항이 어려운 수준인가요?</strong><br/>
+      A. 전공 개론 수준의 용어 위주이며 문항 비중은 50문항 중 10% 내외입니다. 국문 이론을 익힌 뒤 용어만 영문으로 한 번 더 정리하면 충분합니다.</p>
+      <p><strong>Q. 2급 카푸치노에도 라떼아트를 해야 하나요?</strong><br/>
+      A. 아니요. 2급은 도안 지정이 없고, 하트 2잔·3단 튤립 2잔이 지정되는 것은 1급입니다.</p>
+      <p><strong>Q. 실기에서 떨어지면 필기부터 다시 봐야 하나요?</strong><br/>
+      A. 필기 합격일로부터 2년간 실기 응시 자격이 유지되는 규정은 1급에도 동일하게 적용됩니다. 그 기간 안이라면 실기만 다시 접수하면 됩니다.</p>
+    </div>
+
+    <div class="closing-box">
+      <h3>같은 틀, 다른 채점 대상</h3>
+      <p>1급 실기를 2급의 연장선으로만 보면 준비 방향이 어긋납니다. <strong>시간과 잔 수는 그대로지만, 응시자격과 필기 구성, 카푸치노 도안이라는 세 축이 새로 생깁니다.</strong> 2급 자격증부터 확보하고, 영어 용어를 따로 정리하고, 하트와 3단 튤립을 각각 안정시키는 순서로 준비하면 같은 15분 안에서도 흔들릴 지점이 줄어듭니다.</p>
+    </div>
+
+    
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-03"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">탬핑 하는법 — 적정 압력과 수평 잡는 순서, 채널링 막는 방법</div><div class="rc-date">2026. 09. 03</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-28"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">2급 필기 시험 준비 — 출제 범위 3과목과 문항 구성, 합격 기준 정리</div><div class="rc-date">2026. 08. 28</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-26"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">2급 실기 순서 — 시험 절차와 평가 항목, 배점 기준 정리</div><div class="rc-date">2026. 08. 26</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#자격시험</span>
+      <span class="tag">#실기시험</span>
+      <span class="tag">#한국커피협회</span>
+      <span class="tag">#라떼아트</span>
+      <span class="tag">#카푸치노</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>평가 범주와 시연시간(15분)은 2급과 동일합니다.</strong> 준비·에스프레소·카푸치노·서비스 기술 네 범주, 평가자 2인 구조도 같습니다.</li>
+        <li><strong>1급 필기는 2급 취득자만 응시할 수 있습니다.</strong> 2급을 건너뛰는 경로는 없습니다.</li>
+        <li><strong>필기에 영어 문항이 10% 내외 추가됩니다.</strong> 출제범위와 문항 수·시간은 2급과 같습니다.</li>
+        <li><strong>카푸치노 4잔에 하트 2잔·3단 튤립 2잔이 지정됩니다.</strong> 2급은 도안 지정이 없습니다.</li>
+        <li><strong>배점 구조(기술 60·감각 40, 합격선 60)는 같지만 채점 대상이 늘어 체감 난도가 오릅니다.</strong></li>
+        <li><strong>검정료는 필기 44,000원 + 실기 99,000원</strong>이며, 재응시 시 떨어진 영역만 다시 냅니다.</li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
