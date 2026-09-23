@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1급 필기 시험 준비 — 응시자격과 특별전형, 2급과 다른 점 정리 | 바리스타 스페셜티</title>
+  <meta name="description" content="바리스타 1급 필기는 50문항 50분으로 2급과 문제 수·시간이 같습니다. 다른 것은 응시자격(2급 취득자)과 특별전형 학점 기준(15학점·평균 70점 이상)입니다. 한국커피협회 공식 규정을 기준으로 2급과 비교해 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-09-23">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="1급 필기 시험 준비 — 응시자격과 특별전형, 2급과 다른 점 정리 | 바리스타 스페셜티">
+<meta property="og:description" content="바리스타 1급 필기는 50문항 50분으로 2급과 문제 수·시간이 같습니다. 다른 것은 응시자격(2급 취득자)과 특별전형 학점 기준(15학점·평균 70점 이상)입니다. 한국커피협회 공식 규정을 기준으로 2급과 비교해 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-09-23">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-09-23T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-09-23T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-09-23#page", "url": "https://coffee.ephseed.com/coffee-article-2026-09-23", "headline": "1급 필기 시험 준비 — 응시자격과 특별전형, 2급과 다른 점 정리 | 바리스타 스페셜티", "description": "바리스타 1급 필기는 50문항 50분으로 2급과 문제 수·시간이 같습니다. 다른 것은 응시자격(2급 취득자)과 특별전형 학점 기준(15학점·평균 70점 이상)입니다. 한국커피협회 공식 규정을 기준으로 2급과 비교해 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-09-23", "dateModified": "2026-09-23", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🎨 바리스타 스킬 & 라떼아트</span>
+      <span class="badge">1급 필기</span>
+      <span class="badge">응시자격</span>
+    </div>
+    <h1>1급 필기 시험 준비<br/>— 응시자격과 특별전형, 2급과 다른 점 정리</h1>
+    <p class="subtitle">"1급 필기는 2급보다 문제도 많고 시간도 길겠지"라고 생각하기 쉽지만, 한국커피협회 공식 규정을 보면 <strong>문항 수(50문항)와 시험 시간(50분)은 2급과 똑같습니다.</strong> 정작 달라지는 것은 응시자격과 특별전형 학점 기준입니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 9월 23일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>2급 필기에 합격하고 나면 자연스레 1급을 준비하게 됩니다. 이때 흔히 하는 오해가 "급수가 올라갔으니 시험도 더 어렵고 길 것"이라는 짐작입니다. 하지만 <strong>필기시험의 형식(문항 수·시간·배점)은 1급과 2급이 완전히 같습니다.</strong> 실제로 갈리는 지점은 시험 난이도 체감이 아니라 <strong>응시자격과 특별전형 조건</strong>입니다. 이 두 가지를 미리 알아두면 접수 단계에서 헤매는 일을 줄일 수 있습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>1급 필기의 응시자격 — 2급과 다르게 "2급 자격증 취득자"만 응시 가능</li>
+        <li>필기시험 사양(문항 수·시간·배점)이 2급과 동일하다는 근거</li>
+        <li>일반전형과 특별전형(전공특별전형)의 학점 기준 비교</li>
+        <li>2급과 1급의 전공특별전형 학점 요건 차이(9학점 vs 15학점)</li>
+        <li>필기 합격 후 실기 응시로 이어지는 전체 절차</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">50문항</span><span class="label">1급·2급 공통 문항 수</span></div>
+      <div class="data-card"><span class="num">50분</span><span class="label">1급·2급 공통 시험 시간</span></div>
+      <div class="data-card"><span class="num">60점</span><span class="label">100점 만점 중 합격 기준</span></div>
+      <div class="data-card"><span class="num">15학점</span><span class="label">1급 전공특별전형 학점 기준</span></div>
+    </div>
+
+    <h2 class="section-title">1. 1급 필기는 아무나 볼 수 없다 — 응시자격부터 확인</h2>
+    <p>가장 먼저 확인해야 할 것은 응시자격입니다. 한국커피협회 자격시험규정에 따르면 <strong>바리스타 2급 필기는 응시자격 제한이 없지만, 1급 필기는 "바리스타 2급 자격증 취득자"만 응시할 수 있습니다.</strong> 즉 2급 실기까지 합격해 정식으로 2급 자격증을 받은 사람만 1급 필기 접수가 가능하다는 뜻입니다. 2급 필기만 합격하고 실기를 아직 안 봤다면 1급 필기를 먼저 접수할 수 없으니, 접수 창구에서 반려되지 않으려면 이 순서를 지켜야 합니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>2급 필기</th><th>1급 필기</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">응시자격</td><td>제한 없음</td><td>바리스타 2급 자격증 취득자</td></tr>
+        <tr><td class="em">일반전형 문항 수</td><td>50문항</td><td>50문항</td></tr>
+        <tr><td class="em">시험 시간</td><td>50분</td><td>50분</td></tr>
+        <tr><td class="em">문제 유형</td><td>사지선다형</td><td>사지선다형</td></tr>
+        <tr><td class="em">합격 기준</td><td>100점 만점 60점 이상</td><td>100점 만점 60점 이상</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">2. 문항 수·시간·배점은 2급과 완전히 같다</h2>
+    <p>많은 수험생이 1급이라는 이름 때문에 시험 자체가 더 길거나 문제 수가 많을 것으로 예상하지만, 협회가 공개한 규정상 <strong>일반전형 기준 1급 필기도 2급과 똑같이 50문항을 50분 동안 사지선다형으로 풉니다.</strong> 배점 역시 100점 만점에 60점 이상이면 합격이라는 기준이 1급·2급 공통으로 적용됩니다. 급수가 올라가며 달라지는 것은 시험의 겉모습이 아니라 <strong>출제되는 내용의 깊이와 범위</strong>라고 이해하는 편이 정확합니다.</p>
+    <p>출제범위는 2급과 마찬가지로 커피학 개론, 커피 로스팅과 향미평가, 커피 추출 세 영역을 기본으로 하되, 1급 자격시험 예상문제집 기준으로 난이도가 올라갑니다. 여기에 <strong>영어로 된 커피 관련 문제가 전체의 10% 내외로 포함</strong>되는 점도 미리 알아두면 좋습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>여기 적힌 문항 수·시간·합격 기준은 협회가 공개한 자격시험규정 기준이며, 회차별 세부 공지에 따라 접수 방식이나 일정이 달라질 수 있습니다. 접수 직전에는 반드시 협회 공식 홈페이지의 해당 회차 공고를 다시 확인하는 것이 안전합니다.</p>
+    </div>
+
+    <h2 class="section-title">3. 진짜 차이는 특별전형 학점 기준에 있다</h2>
+    <p>1급과 2급의 실질적인 차이가 드러나는 곳은 <strong>전공특별전형</strong>입니다. 협회 인증교육기관에서 커피 관련 학점을 이수하면 서류심사를 거쳐 필기시험에 접수할 수 있는 전형인데, 요구되는 학점 기준이 급수마다 다릅니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">전공특별전형 학점 기준 비교</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text"><strong>2급 전공특별전형</strong>은 협회 인증교육기관에서 커피 교과목 9학점 이상을 이수하면 대상이 됩니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text"><strong>1급 전공특별전형</strong>은 커피 교과목 15학점 이수에 더해 <strong>평균 70점 이상</strong>이라는 성적 기준까지 함께 요구합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text">1급에는 이 외에도 평생교육원·커피아카데미 교육과정에서 <strong>바리스타 1급 교과목을 24시간 이상 이수</strong>한 경우를 인정하는 별도 경로가 있습니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text">두 전형 모두 <strong>교육기관을 통한 사전 서류심사·등록 절차</strong>가 먼저이므로, 개인이 협회에 직접 신청하는 방식이 아니라는 점을 유의합니다.</span></div>
+    </div>
+    <p>즉 "학점만 채우면 무시험으로 자격증이 나온다"고 오해하기 쉽지만, 실제로는 <strong>서류심사를 통과해야 필기시험 접수 자격이 주어지는 구조</strong>에 가깝습니다. 전형명에 이끌려 시험 준비를 소홀히 하지 않는 것이 안전합니다.</p>
+
+    <h2 class="section-title">4. 필기 합격 후에는 무엇이 이어지나</h2>
+    <p>1급 필기에 합격하면 다음 단계는 실기입니다. 1급 실기는 2급과 마찬가지로 준비 및 시연시간 15분, 에스프레소 4잔과 카푸치노 4잔을 평가받는 구조이지만, 카푸치노 4잔 중 <strong>하트 2잔·3단 튤립 2잔</strong>이라는 라떼아트 도안이 지정된다는 점이 2급과 다릅니다. 필기와 실기를 하나의 회차 흐름으로 준비할 계획이라면, 필기 공부와 별도로 지정 도안 연습 시간을 미리 확보해 두는 편이 좋습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 2급 실기 없이 필기만 합격해도 1급 필기를 볼 수 있나요?</strong><br/>
+      A. 불가능합니다. 1급 필기 응시자격은 "바리스타 2급 자격증 취득자"이므로 2급 실기까지 합격해 정식 자격증을 받아야 합니다.</p>
+      <p><strong>Q. 1급 필기가 2급보다 시간이 더 긴가요?</strong><br/>
+      A. 아닙니다. 일반전형 기준 50문항·50분으로 2급과 동일합니다. 다만 출제 내용의 난이도와 범위는 1급 쪽이 더 깊습니다.</p>
+      <p><strong>Q. 전공특별전형으로 학점만 채우면 시험 없이 자격증이 나오나요?</strong><br/>
+      A. 아닙니다. 학점 기준을 충족해 서류심사를 통과하면 필기시험 접수 자격이 주어지는 구조이며, 필기시험 자체는 별도로 응시해야 합니다.</p>
+      <p><strong>Q. 영어 문제 비중이 부담스러운데 어느 정도인가요?</strong><br/>
+      A. 전체 문항의 10% 내외로, 기본적인 커피 관련 영어 용어와 문장을 이해하는 수준의 사지선다형 문제로 출제됩니다.</p>
+    </div>
+
+    <div class="closing-box">
+      <h3>급수가 아니라 자격과 학점 기준이 갈리는 지점</h3>
+      <p>1급 필기는 2급과 <strong>문항 수·시간·합격 기준이 동일한 시험</strong>입니다. 준비 부담이 커지는 지점은 시험 형식이 아니라 <strong>응시자격(2급 자격증 취득)과 특별전형 학점 기준(15학점·평균 70점 이상)</strong>입니다. 이 두 가지를 접수 전에 먼저 확인해 두면, 시험 자체는 2급 때 익힌 감각으로 그대로 이어갈 수 있습니다.</p>
+    </div>
+
+    
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-21"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">1급 실기 시험 절차 — 2급과 다른 평가 항목과 배점 구성</div><div class="rc-date">2026. 09. 21</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-03"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">탬핑 하는법 — 적정 압력과 수평 잡는 순서, 채널링 막는 방법</div><div class="rc-date">2026. 09. 03</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-28"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">2급 필기 시험 준비 — 출제 범위 3과목과 문항 구성, 합격 기준 정리</div><div class="rc-date">2026. 08. 28</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#바리스타1급</span>
+      <span class="tag">#필기시험</span>
+      <span class="tag">#응시자격</span>
+      <span class="tag">#특별전형</span>
+      <span class="tag">#KCA자격시험</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>1급 필기 응시자격은 바리스타 2급 자격증 취득자로 한정됩니다.</strong> 2급 실기까지 합격해야 접수할 수 있습니다.</li>
+        <li><strong>일반전형 문항 수·시간·합격 기준은 2급과 동일합니다.</strong> 50문항, 50분, 100점 만점에 60점 이상.</li>
+        <li><strong>전공특별전형 학점 기준은 2급 9학점, 1급 15학점(평균 70점 이상)으로 다릅니다.</strong></li>
+        <li><strong>특별전형은 무시험이 아니라 서류심사 통과 후 필기 접수 자격을 얻는 절차입니다.</strong></li>
+        <li><strong>필기 합격 후 이어지는 1급 실기에는 하트 2잔·3단 튤립 2잔 도안 지정이 있습니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
