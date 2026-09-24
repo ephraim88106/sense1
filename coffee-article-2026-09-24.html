@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>드리퍼 종류 고르는 법 — 하리오 칼리타 고노 구조와 맛 정리 | 바리스타 스페셜티</title>
+  <meta name="description" content="하리오는 나선형 리브와 큰 추출구로 빠르게, 칼리타는 3개의 작은 구멍과 평평한 바닥으로 고르게, 고노는 리브를 하단에만 둬 느리게 내려받습니다. 같은 원두라도 드리퍼 구조에 따라 맛이 달라지는 이유와 고르는 기준을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-09-24">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="드리퍼 종류 고르는 법 — 하리오 칼리타 고노 구조와 맛 정리 | 바리스타 스페셜티">
+<meta property="og:description" content="하리오는 나선형 리브와 큰 추출구로 빠르게, 칼리타는 3개의 작은 구멍과 평평한 바닥으로 고르게, 고노는 리브를 하단에만 둬 느리게 내려받습니다. 같은 원두라도 드리퍼 구조에 따라 맛이 달라지는 이유와 고르는 기준을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-09-24">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-09-24T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-09-24T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-09-24#page", "url": "https://coffee.ephseed.com/coffee-article-2026-09-24", "headline": "드리퍼 종류 고르는 법 — 하리오 칼리타 고노 구조와 맛 정리 | 바리스타 스페셜티", "description": "하리오는 나선형 리브와 큰 추출구로 빠르게, 칼리타는 3개의 작은 구멍과 평평한 바닥으로 고르게, 고노는 리브를 하단에만 둬 느리게 내려받습니다. 같은 원두라도 드리퍼 구조에 따라 맛이 달라지는 이유와 고르는 기준을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-09-24", "dateModified": "2026-09-24", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법 심층 가이드</span>
+      <span class="badge">핸드드립</span>
+      <span class="badge">드리퍼 비교</span>
+    </div>
+    <h1>드리퍼 종류 고르는 법<br/>— 하리오 칼리타 고노 구조와 맛 정리</h1>
+    <p class="subtitle">같은 원두, 같은 분쇄도, 같은 물줄기로 내려도 드리퍼를 바꾸면 맛이 달라집니다. 원인은 손기술이 아니라 <strong>리브(홈)의 위치와 추출구의 크기·개수</strong>입니다. 하리오·칼리타·고노·멜리타 네 가지 구조를 기준으로 어떤 맛을 내는지, 무엇을 골라야 하는지 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 9월 24일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 7분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>드립 도구를 처음 갖추는 분들이 가장 먼저 마주치는 선택지가 드리퍼입니다. 매장마다 하리오, 칼리타, 고노, 멜리타가 나란히 진열돼 있지만 겉보기엔 다 비슷한 원뿔이나 사다리꼴이라 무엇이 다른지 알기 어렵습니다. 하지만 드리퍼 내벽의 <strong>리브(rib, 홈)가 어디에 있는지와 추출구가 몇 개·얼마나 큰지</strong>가 물이 빠지는 속도를 바꾸고, 그 속도가 곧 맛을 바꿉니다. 형태를 이해하면 어떤 드리퍼를 고를지, 같은 드리퍼로도 왜 매번 다른 맛이 나는지 함께 설명됩니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>하리오 V60 — 나선형 리브와 큰 추출구가 만드는 빠른 배수</li>
+        <li>칼리타(웨이브·전통형) — 3개의 작은 구멍과 평평한 바닥이 만드는 균일한 추출</li>
+        <li>고노 — 리브를 하단에만 배치해 느리게 내려받는 구조</li>
+        <li>멜리타 — 단일 구멍 쐐기형, 최초의 페이퍼 드립 방식</li>
+        <li>구조별 비교표와 원두·숙련도에 따라 드리퍼를 고르는 기준</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1구</span><span class="label">하리오 V60 추출구 수</span></div>
+      <div class="data-card"><span class="num">3구</span><span class="label">칼리타 추출구 수</span></div>
+      <div class="data-card"><span class="num">91~95℃</span><span class="label">SCA 권장 추출 물 온도 구간</span></div>
+      <div class="data-card"><span class="num">1908년</span><span class="label">멜리타 페이퍼 드립 특허 등록 연도</span></div>
+    </div>
+
+    <h2 class="section-title">1. 같은 원두인데 왜 드리퍼마다 맛이 다를까</h2>
+    <p>드리퍼는 필터를 걸쳐두는 깔때기일 뿐이지만, 그 안에 새겨진 <strong>리브(내벽의 세로 홈)</strong>가 물과 커피 가루가 접촉하는 시간을 결정합니다. 리브가 드리퍼 전체에 걸쳐 있으면 종이 필터가 벽에서 떨어져 공기가 빠지고 물이 빨리 내려가며, 리브가 일부에만 있으면 종이가 벽에 밀착돼 물이 고였다가 천천히 빠집니다. 여기에 <strong>추출구(바닥 구멍)의 개수와 크기</strong>가 더해져 최종적인 배수 속도가 정해집니다. 배수가 빠르면 물과 가루의 접촉 시간이 짧아 산미와 향이 도드라지고, 느리면 접촉 시간이 길어 바디감과 단맛이 강조되는 경향이 있습니다. 분쇄도나 물줄기를 아무리 바꿔도 이 구조적 차이는 그대로 남기 때문에, 원하는 맛의 방향을 정하고 드리퍼를 고르는 편이 순서상 맞습니다.</p>
+
+    <h2 class="section-title">2. 하리오 V60 — 나선형 리브와 큰 추출구, 빠른 배수</h2>
+    <p>하리오 V60은 원추형 드리퍼 가운데 가장 널리 쓰이는 형태로, 내벽에 <strong>나선형 리브가 드리퍼 상단부터 하단까지 이어져 있고 바닥 추출구가 큰 1구</strong> 구조입니다. 리브가 전체에 걸쳐 있어 종이 필터와 벽 사이에 공기 통로가 넓게 확보되고, 구멍이 크기 때문에 물이 드리퍼 안에 고이지 않고 곧바로 서버로 흘러갑니다. 그만큼 물줄기의 굵기·속도·위치를 바리스타가 직접 조절하는 비중이 커서, 같은 원두라도 붓는 방식에 따라 맛 편차가 큰 편입니다. 숙련되면 산미와 향을 또렷하게 살리는 방향으로 조절하기 좋아 스페셜티 원두, 특히 워시드 가공이나 밝은 로스팅 원두에 자주 쓰입니다.</p>
+
+    <h2 class="section-title">3. 칼리타 — 평평한 바닥과 3구, 안정적인 추출</h2>
+    <p>칼리타는 하리오보다 앞서 일본에서 개발된 드리퍼로, <strong>추출구가 3개이며 구멍 하나하나는 하리오보다 작습니다.</strong> 전통형(사다리꼴)은 리브가 촘촘하게 벽 전체에 배치돼 있고, 이후 나온 웨이브 드리퍼는 바닥이 평평하고 전용 웨이브 필터를 사용합니다. 바닥이 평평하면 가루층의 깊이가 어느 위치에서나 비슷해 물줄기를 다소 거칠게 부어도 추출 편차가 잘 생기지 않습니다. 세 개의 작은 구멍은 하리오의 큰 구멍 하나보다 배수를 더디게 만들어 물과 가루가 접촉하는 시간을 길게 유지시켜 주는데, 이 덕분에 초보자도 비교적 균일하고 안정적인 결과를 얻기 쉽습니다. 붓는 기술보다 안정성을 우선한다면 칼리타, 특히 웨이브 쪽이 접근하기 쉬운 선택입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>하리오 V60</th><th>칼리타</th><th>고노</th><th>멜리타</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">형태</td><td>원추형</td><td>사다리꼴 / 평저(웨이브)</td><td>원추형</td><td>쐐기형</td></tr>
+        <tr><td class="em">리브 위치</td><td>상단~하단 전체, 나선형</td><td>벽 전체(전통형) / 평면 골(웨이브)</td><td>하단 일부에만</td><td>짧게, 일부 구간만</td></tr>
+        <tr><td class="em">추출구</td><td>1구, 크게</td><td>3구, 작게</td><td>1구, 크게</td><td>1구, 작게</td></tr>
+        <tr><td class="em">배수 속도</td><td>빠름</td><td>중간, 균일</td><td>느림</td><td>가장 느림</td></tr>
+        <tr><td class="em">맛의 경향</td><td>산미·향 또렷</td><td>균형 잡힌 맛</td><td>바디감·단맛 강조</td><td>진하고 묵직함</td></tr>
+        <tr><td class="em">난이도</td><td>붓기 숙련 필요</td><td>비교적 관대함</td><td>중간</td><td>관대함</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">4. 고노 — 리브를 하단에만 둔 느린 배수 구조</h2>
+    <p>고노 역시 원추형이지만 리브가 <strong>드리퍼 하단 일부에만</strong> 새겨져 있습니다. 물을 부으면 상단에서는 리브가 없어 종이 필터가 벽에 밀착된 채로 물이 한동안 머물다가, 리브가 시작되는 지점에 도달해서야 서서히 아래로 빠집니다. 이 구조 때문에 물과 가루가 접촉하는 시간이 상대적으로 길어지고, 여과식(투과식)이면서도 침출식에 가까운 성격을 일부 띠게 됩니다. 결과적으로 산미보다 바디감과 단맛이 강조된, 진하고 묵직한 방향의 컵이 나오는 경향이 있습니다. 융드립과 함께 일본식 드립을 대표하는 도구로 꼽히며, 강배전이나 다크한 원두를 부드럽게 뽑고 싶을 때 자주 선택됩니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>드리퍼 구조가 배수 속도의 큰 틀을 정하더라도, 분쇄도·물 온도·붓는 방식이 함께 맞아야 원하는 맛이 납니다. 온도는 드리퍼 종류와 무관하게 SCA 브루잉 기준인 <strong>93℃ ±2℃(91~95℃)</strong> 범위를 기본값으로 잡고, 배전도와 원두 상태에 따라 좁혀가는 방식이 안전합니다.</p>
+    </div>
+
+    <h2 class="section-title">5. 멜리타 — 최초의 페이퍼 드립, 쐐기형 구조</h2>
+    <p>멜리타는 드립 커피 역사의 출발점입니다. 1908년 독일의 멜리타 벤츠가 금속 필터나 천 필터로는 걸러지지 않던 미세한 찌꺼기를 없애기 위해 종이를 이용한 필터를 고안했고, 같은 해 특허를 등록하며 상용화됐습니다. 오늘날의 멜리타 드리퍼는 쐐기형으로, 바닥에 <strong>작은 구멍이 하나</strong> 뚫려 있고 리브가 짧게만 배치돼 있어 물과 가루의 접촉 시간을 의도적으로 길게 만듭니다. 배수가 가장 느린 축에 속해 진하고 묵직한 컵이 나오며, 물줄기 조절에 크게 신경 쓰지 않아도 되는 편이라 드립 도구를 처음 접하는 사람에게도 무난합니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">드리퍼 고르는 기준</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text">물줄기를 직접 조절해 원두의 개성(산미·향)을 살리고 싶다면 <strong>하리오</strong>를 우선 고려합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text">드립이 처음이거나 매번 안정적인 맛을 원한다면 <strong>칼리타 웨이브</strong>가 편차를 줄이기 쉽습니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text">강배전 원두를 부드럽고 진하게 뽑고 싶다면 <strong>고노</strong>나 <strong>멜리타</strong> 쪽이 방향에 맞습니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text">드리퍼를 바꾸기 전에는 분쇄도와 물 온도부터 먼저 점검합니다. 구조를 바꿔도 이 두 변수가 어긋나 있으면 맛 차이가 가려집니다.</span></div>
+    </div>
+
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 초보자에게 가장 무난한 드리퍼는 무엇인가요?</strong><br/>
+      A. 바닥이 평평해 가루층이 고른 칼리타 웨이브, 또는 물줄기 조절 부담이 적은 멜리타가 상대적으로 관대한 편입니다. 하리오는 물줄기 조절에 익숙해질수록 유리합니다.</p>
+      <p><strong>Q. 드리퍼를 바꾸면 분쇄도도 다시 잡아야 하나요?</strong><br/>
+      A. 예. 배수가 빠른 하리오는 조금 더 곱게, 배수가 느린 고노·멜리타는 조금 더 굵게 잡는 식으로 미세 조정이 필요합니다. 같은 분쇄도를 그대로 옮기면 과소·과다 추출이 생기기 쉽습니다.</p>
+      <p><strong>Q. 칼리타 전통형과 웨이브는 같은 드리퍼인가요?</strong><br/>
+      A. 아닙니다. 둘 다 칼리타 브랜드의 3구 구조를 공유하지만, 전통형은 사다리꼴에 촘촘한 리브, 웨이브는 평평한 바닥에 전용 웨이브 필터를 씁니다. 필터가 서로 호환되지 않습니다.</p>
+      <p><strong>Q. 물 온도는 드리퍼마다 다르게 맞춰야 하나요?</strong><br/>
+      A. 기본값은 동일합니다. SCA 브루잉 기준인 91~95℃를 출발점으로 삼고, 배수가 느린 드리퍼(고노·멜리타)는 과다 추출을 피하기 위해 범위 안에서 다소 낮은 쪽을, 배수가 빠른 하리오는 다소 높은 쪽을 시도해 보는 정도로 조정합니다.</p>
+      <p><strong>Q. 리브가 없는 드리퍼도 있나요?</strong><br/>
+      A. 리브가 극히 짧거나 얕은 제품도 있지만, 시판되는 드리퍼 대부분은 정도의 차이만 있을 뿐 리브 구조를 갖추고 있습니다. 리브가 전혀 없으면 필터가 벽에 완전히 밀착돼 물이 거의 빠지지 않기 때문입니다.</p>
+    </div>
+
+    <div class="closing-box">
+      <h3>맛의 방향을 먼저 정하고 드리퍼를 고른다</h3>
+      <p>하리오·칼리타·고노·멜리타는 <strong>리브의 위치와 추출구의 개수·크기</strong>로 배수 속도가 갈리고, 그 속도가 산미·바디감·단맛의 균형을 바꿉니다. 산미와 향을 또렷하게 원하면 하리오, 안정적인 균형을 원하면 칼리타, 진하고 묵직한 바디를 원하면 고노나 멜리타 쪽이 방향에 맞습니다. 드리퍼를 바꾼 뒤에는 분쇄도와 물 온도(기본값 91~95℃)를 함께 조정해야 구조가 의도한 맛이 온전히 드러납니다.</p>
+    </div>
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-23"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">1급 필기 시험 준비 — 응시자격과 특별전형, 2급과 다른 점 정리</div><div class="rc-date">2026. 09. 23</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-21"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">1급 실기 시험 절차 — 2급과 다른 평가 항목과 배점 구성</div><div class="rc-date">2026. 09. 21</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-03"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">탬핑 하는법 — 적정 압력과 수평 잡는 순서, 채널링 막는 방법</div><div class="rc-date">2026. 09. 03</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#드리퍼</span>
+      <span class="tag">#핸드드립</span>
+      <span class="tag">#하리오</span>
+      <span class="tag">#칼리타</span>
+      <span class="tag">#고노</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>드리퍼마다 맛이 다른 이유는 리브 위치와 추출구 개수·크기가 배수 속도를 바꾸기 때문입니다.</strong></li>
+        <li><strong>하리오 V60은 나선형 리브와 큰 1구 구조로 배수가 빨라 산미·향이 또렷합니다.</strong></li>
+        <li><strong>칼리타는 3구와 평평한 바닥(웨이브)으로 배수가 고르고 안정적입니다.</strong></li>
+        <li><strong>고노는 리브가 하단에만 있어 배수가 느리고 바디감·단맛이 강조됩니다.</strong></li>
+        <li><strong>멜리타는 1908년 등장한 최초의 페이퍼 드립 방식으로, 배수가 가장 느리고 진한 편입니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
