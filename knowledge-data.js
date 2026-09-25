@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 160, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "라떼아트 하트 만드는 방법 — 피처 각도와 잔 기울이는 타이밍",
+    date: "2026.09.25",
+    summary: "\"피처만 잘 잡으면 하트는 저절로 나온다\"고 생각하기 쉽지만, 실제로 하트 패턴은 붓는 높이와 유량을 의도적으로 두 번 바꾸는 동작입니다. 처음부터 끝까지 같은 속도로 부으면 우유와 크레마가 섞이기만 할 뿐 흰 무늬가 표면에 뜨지 않습니다. 단계를 나누는 기준과 손을 움직이는 타이밍을 순서대로 정리했습니다.",
+    link: "coffee-article-2026-09-25.html"
+  },
+  {
     id: 159, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "1급 필기 시험 준비 — 응시자격과 특별전형, 2급과 다른 점 정리",

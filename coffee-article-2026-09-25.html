@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>라떼아트 하트 만드는 방법 — 피처 각도와 잔 기울이는 타이밍 | 바리스타 스페셜티</title>
+  <meta name="description" content="라떼아트 하트는 크레마를 살리는 1단계 안정화 붓기(높이 5cm 이상)와 무늬를 만드는 2단계 붓기(높이 1cm 이내)로 나뉩니다. 컵 기울기와 피처 각도, 마무리 스트로크까지 단계별로 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-09-25">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="라떼아트 하트 만드는 방법 — 피처 각도와 잔 기울이는 타이밍 | 바리스타 스페셜티">
+<meta property="og:description" content="라떼아트 하트는 크레마를 살리는 1단계 안정화 붓기(높이 5cm 이상)와 무늬를 만드는 2단계 붓기(높이 1cm 이내)로 나뉩니다. 컵 기울기와 피처 각도, 마무리 스트로크까지 단계별로 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-09-25">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-09-25T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-09-25T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-09-25#page", "url": "https://coffee.ephseed.com/coffee-article-2026-09-25", "headline": "라떼아트 하트 만드는 방법 — 피처 각도와 잔 기울이는 타이밍 | 바리스타 스페셜티", "description": "라떼아트 하트는 크레마를 살리는 1단계 안정화 붓기(높이 5cm 이상)와 무늬를 만드는 2단계 붓기(높이 1cm 이내)로 나뉩니다. 컵 기울기와 피처 각도, 마무리 스트로크까지 단계별로 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-09-25", "dateModified": "2026-09-25", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🎨 바리스타 스킬 & 라떼아트</span>
+      <span class="badge">하트 패턴</span>
+      <span class="badge">밀크 피처링</span>
+    </div>
+    <h1>라떼아트 하트 만드는 방법<br/>— 피처 각도와 잔 기울이는 타이밍</h1>
+    <p class="subtitle">하트는 라떼아트 중 가장 기초적인 패턴으로 꼽히지만, 붓는 동작 자체는 하나가 아니라 <strong>목적이 다른 두 단계로 나뉩니다.</strong> 크레마를 살리는 안정화 붓기와 무늬를 만드는 마무리 붓기의 높이·속도가 다르다는 점을 모르면 하트 대신 얼룩만 남기 쉽습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 9월 25일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>"피처만 잘 잡으면 하트는 저절로 나온다"고 생각하기 쉽지만, 실제로 하트 패턴은 <strong>붓는 높이와 유량을 의도적으로 두 번 바꾸는 동작</strong>입니다. 처음부터 끝까지 같은 속도로 부으면 우유와 크레마가 섞이기만 할 뿐 흰 무늬가 표면에 뜨지 않습니다. 단계를 나누는 기준과 손을 움직이는 타이밍을 순서대로 정리했습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>하트를 만들기 전 우유가 갖춰야 할 마이크로폼 상태</li>
+        <li>1단계 안정화 붓기의 높이·잔 기울기·채우는 양 기준</li>
+        <li>2단계 무늬 그리기에서 높이와 유량을 바꾸는 이유</li>
+        <li>하트 끝을 뾰족하게 마무리하는 스트로크 방법</li>
+        <li>자주 실패하는 3가지 증상과 원인별 해결법</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">30~40°</span><span class="label">1단계 초기 잔 기울기</span></div>
+      <div class="data-card"><span class="num">5cm+</span><span class="label">1단계 안정화 붓기 높이</span></div>
+      <div class="data-card"><span class="num">1cm 이내</span><span class="label">2단계 무늬 붓기 높이</span></div>
+      <div class="data-card"><span class="num">1/2</span><span class="label">2단계 진입 시점(잔 채움량)</span></div>
+    </div>
+
+    <h2 class="section-title">1. 하트가 라떼아트의 기본기로 꼽히는 이유</h2>
+    <p>라떼아트에는 하트 외에도 로제타, 튤립처럼 손목을 흔들어야 하는 패턴이 있습니다. 하트는 이 중 유일하게 <strong>손을 흔들지 않고 붓는 높이와 속도 조절만으로 완성되는 패턴</strong>이라 가장 먼저 배우는 기술로 자리 잡았습니다. 로제타나 튤립을 시도하기 전에 하트로 붓는 타이밍과 마이크로폼 상태를 먼저 몸에 익히는 순서가 일반적입니다.</p>
+    <p>바리스타 자격시험에서도 이 기초성이 그대로 반영됩니다. 실기 시험의 카푸치노 평가에는 라떼아트 도안이 지정되는데, 하트는 가장 기본이 되는 도안으로 등급을 막론하고 반복해서 요구됩니다. 즉 하트를 안정적으로 그릴 수 있어야 그 위의 튤립·로제타 연습으로 넘어갈 수 있는 구조입니다.</p>
+
+    <h2 class="section-title">2. 붓기 전에 확인할 우유 상태</h2>
+    <p>붓는 동작을 아무리 정확히 따라 해도 우유 상태가 맞지 않으면 하트는 뜨지 않습니다. 스티밍이 끝난 우유는 피처를 살짝 돌렸을 때 <strong>거품과 액체가 분리되지 않고 하나의 덩어리처럼 광택 있게 움직이는 상태</strong>여야 합니다. 표면에 큰 기포가 남아 있거나 거품층과 우유층이 따로 노는 상태라면, 붓기 전에 피처를 테이블에 가볍게 두드리고 원을 그리듯 돌려 기포를 없애는 작업이 먼저입니다.</p>
+    <p>온도 역시 무늬가 뜨는 정도에 영향을 줍니다. 우유 스팀의 적정 온도 구간과 공기 주입 타이밍은 별도로 다루는 내용이 많으므로, 스티밍 자체가 익숙하지 않다면 붓기 연습 전에 온도와 거품량부터 먼저 안정시키는 편이 순서상 맞습니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>같은 우유량이라도 스팀 시간이 조금만 길어져도 거품이 두꺼워져 무늬가 뭉개지기 쉽습니다. 붓기 연습을 반복하기 전에 매번 같은 양·같은 스팀 시간을 지켜야 원인을 붓는 동작에서만 찾을 수 있습니다.</p>
+    </div>
+
+    <h2 class="section-title">3. 1단계 — 크레마를 살리는 안정화 붓기</h2>
+    <p>에스프레소를 추출한 직후 잔은 크레마로 덮여 있어 표면에 아무 무늬도 보이지 않는 상태입니다. 이 상태에서 바로 낮게 부으면 우유가 크레마를 뚫고 가라앉아 무늬가 뜨지 않습니다. 그래서 첫 단계는 무늬를 그리는 것이 아니라 <strong>크레마와 우유를 잔 속에서 고르게 섞는 것</strong>이 목적입니다.</p>
+    <p>잔을 30~40도 정도로 기울인 채, 피처 주둥이를 잔 중앙에 맞추고 <strong>5cm 이상의 높이</strong>를 유지하며 얇은 물줄기로 붓습니다. 낙차를 이용해 우유가 크레마 아래로 파고들며 섞이도록 하는 과정으로, 잔의 <strong>1/3에서 1/2 정도</strong>가 채워질 때까지 이 상태를 유지합니다. 이 단계가 끝날 때까지는 표면에 흰색이 뚜렷하게 보이지 않는 것이 정상입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>1단계 (안정화)</th><th>2단계 (무늬 그리기)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">목적</td><td>크레마와 우유 혼합</td><td>표면에 흰 무늬 띄우기</td></tr>
+        <tr><td class="em">붓는 높이</td><td>5cm 이상</td><td>1cm 이내</td></tr>
+        <tr><td class="em">유량</td><td>가늘게 유지</td><td>점차 늘림</td></tr>
+        <tr><td class="em">잔 기울기</td><td>30~40도</td><td>서서히 수평으로</td></tr>
+        <tr><td class="em">채움 기준</td><td>1/3~1/2까지</td><td>1/2 이후~완성까지</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">4. 2단계 — 무늬를 만드는 마무리 붓기</h2>
+    <p>잔이 절반쯤 채워지면 손의 움직임을 바꿉니다. 피처를 잔 표면 <strong>1cm 이내</strong>까지 낮추고, 동시에 유량을 늘려 굵은 물줄기로 바꿉니다. 높이가 낮아지고 유량이 늘어나면 우유가 크레마 아래로 파고들지 않고 <strong>표면 위에 흰 원으로 떠오르기</strong> 시작합니다. 이 흰 원이 하트의 몸통이 되는 부분입니다.</p>
+    <p>이때 잔은 처음의 기울인 자세에서 점점 세워 수평에 가깝게 만들어 갑니다. 잔을 계속 기울인 채로 두면 우유가 한쪽으로 쏠려 무늬가 비대칭이 되기 쉽습니다. 잔을 세우는 속도와 붓는 속도를 맞추는 감각은 반복 연습으로만 익혀집니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">하트 완성까지 손동작 순서</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text">잔을 <strong>30~40도</strong> 기울이고 피처를 <strong>5cm 이상</strong> 높이에서 잔 중앙에 가늘게 붓기 시작합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text">잔이 <strong>1/2 정도</strong> 채워지면 피처를 <strong>1cm 이내</strong>로 낮추고 유량을 늘려 흰 원을 띄웁니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text">흰 원이 잔 크기의 70~80%까지 커질 때까지 같은 높이·유량을 유지하며 잔을 서서히 세웁니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text">마지막에 <strong>유량을 줄이며 피처를 들어 올려</strong> 흰 원의 중심을 가로질러 빠져나가면 꼬리가 생기며 하트가 완성됩니다.</span></div>
+    </div>
+
+    <h2 class="section-title">5. 자주 실패하는 증상과 원인</h2>
+    <p>같은 순서를 따라 해도 결과물이 매번 다르게 나온다면, 대부분 아래 세 가지 중 하나가 원인입니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>증상</th><th>원인</th><th>해결법</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">하트가 안 뜨고 가라앉음</td><td>거품이 부족해 우유가 묽음</td><td>스티밍 시 공기 주입량을 늘려 마이크로폼 되살리기</td></tr>
+        <tr><td class="em">무늬가 한쪽으로 치우침</td><td>피처가 잔 중앙에서 벗어남</td><td>붓기 전 피처 주둥이를 잔 정중앙에 고정</td></tr>
+        <tr><td class="em">하트 끝이 뭉툭함</td><td>마무리 스트로크 속도 부족</td><td>마지막에 유량을 줄이며 빠르게 피처를 들어 올리기</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">6. 자격시험 실기와 하트 패턴</h2>
+    <p>바리스타 실기 시험의 카푸치노 평가는 라떼아트 도안을 지정해 채점합니다. 하트는 급수와 관계없이 기본 도안으로 반복 출제되며, 채점은 대체로 <strong>무늬의 대칭성, 크레마와 우유의 경계선 선명도, 크레마 고유의 색이 살아 있는지</strong>를 기준으로 이루어집니다. 1단계 안정화 붓기가 부족해 크레마 색이 옅어지거나, 2단계에서 잔을 세우는 타이밍이 늦어 무늬가 한쪽으로 밀리는 것이 실기에서 흔히 지적되는 감점 사유입니다.</p>
+    <p>즉 연습 단계에서부터 붓는 속도뿐 아니라 <strong>잔을 세우는 타이밍까지 함께 맞추는 습관</strong>을 들이는 것이 실전에서 안정적인 점수로 이어집니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 하트를 만들 때 손목을 흔들어야 하나요?</strong><br/>
+      A. 아닙니다. 손목을 흔드는 동작은 로제타나 튤립에서 필요하며, 하트는 붓는 높이와 유량 조절만으로 완성됩니다.</p>
+      <p><strong>Q. 1단계와 2단계를 나누는 정확한 시점이 있나요?</strong><br/>
+      A. 잔이 절반 정도 채워졌을 때가 기준입니다. 그 전에 낮게 부으면 무늬가 크레마 아래로 가라앉기 쉽습니다.</p>
+      <p><strong>Q. 우유가 너무 뜨거우면 하트가 안 뜨나요?</strong><br/>
+      A. 온도 자체보다 거품의 질감이 더 중요합니다. 다만 너무 오래 스티밍하면 거품이 두꺼워져 무늬가 뭉개지므로 적정 온도 구간을 지키는 것이 안전합니다.</p>
+      <p><strong>Q. 연습할 때 에스프레소 없이도 가능한가요?</strong><br/>
+      A. 가능합니다. 물에 소량의 식용 색소나 코코아 가루를 풀어 크레마를 흉내 내면 우유 소모 없이 붓는 동작만 반복 연습할 수 있습니다.</p>
+    </div>
+
+    <div class="closing-box">
+      <h3>하트는 손재주가 아니라 순서의 문제</h3>
+      <p>하트 패턴은 <strong>높이 5cm 이상의 안정화 붓기와 1cm 이내의 무늬 붓기, 이 두 단계를 정확한 시점에 전환</strong>하는 것이 전부입니다. 우유 상태를 먼저 맞추고, 잔을 세우는 타이밍과 붓는 속도를 함께 조절하는 감각만 익히면 손재주와 상관없이 반복 재현이 가능합니다.</p>
+    </div>
+
+
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-23"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">1급 필기 시험 준비 — 응시자격과 특별전형, 2급과 다른 점 정리</div><div class="rc-date">2026. 09. 23</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-21"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">1급 실기 시험 절차 — 2급과 다른 평가 항목과 배점 구성</div><div class="rc-date">2026. 09. 21</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-03"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">탬핑 하는법 — 적정 압력과 수평 잡는 순서, 채널링 막는 방법</div><div class="rc-date">2026. 09. 03</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#라떼아트</span>
+      <span class="tag">#하트패턴</span>
+      <span class="tag">#밀크피처링</span>
+      <span class="tag">#바리스타실기</span>
+      <span class="tag">#KCA자격시험</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>하트는 손목 동작 없이 붓는 높이와 유량만으로 완성되는 라떼아트의 기본 패턴입니다.</strong></li>
+        <li><strong>1단계는 5cm 이상 높이로 크레마와 우유를 섞는 안정화 붓기입니다.</strong> 잔의 1/3~1/2까지 채웁니다.</li>
+        <li><strong>2단계는 1cm 이내로 낮춰 유량을 늘리는 무늬 붓기입니다.</strong> 이때부터 흰 원이 표면에 떠오릅니다.</li>
+        <li><strong>잔을 세우는 타이밍을 붓는 속도와 맞추지 않으면 무늬가 한쪽으로 치우칩니다.</strong></li>
+        <li><strong>실기 시험에서는 대칭성과 크레마 색, 경계선 선명도를 기준으로 채점됩니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
