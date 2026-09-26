@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 161, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "라떼아트 튤립 만드는 방법 — 층 쌓는 순서와 자르는 타이밍",
+    date: "2026.09.26",
+    summary: "하트를 어느 정도 그릴 수 있게 되면 다음으로 막히는 지점이 튤립입니다. \"하트를 여러 번 반복해서 부으면 되겠지\"라고 접근하면 층마다 우유가 서로 섞여 경계 없는 얼룩 하나로 끝나는 경우가 많습니다. 튤립은 매 층을 붓기 → 멈춤 → 다시 붓기로 끊어서 쌓고, 마지막에만 물줄기를 가늘게 바꿔 중심을 가르는 동작이 따로 있는 패턴입니다.",
+    link: "coffee-article-2026-09-26.html"
+  },
+  {
     id: 160, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "라떼아트 하트 만드는 방법 — 피처 각도와 잔 기울이는 타이밍",
