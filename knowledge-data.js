@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 162, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "TDS 뜻과 수율 계산법 — 브루잉 컨트롤 차트 보는 법",
+    date: "2026.09.28",
+    summary: "\"물 온도도, 분쇄도도, 비율도 지난주랑 똑같이 맞췄는데 맛이 다르다\"는 말은 카페 현장에서 흔히 나옵니다. 이럴 때 TDS(용존고형물농도)와 추출 수율(Extraction Yield)을 측정해 보면, 감으로는 \"비슷해 보이던\" 두 잔이 실제로는 완전히 다른 지점에 있었다는 것이 숫자로 드러납니다. 이 두 지표와 이를 함께 보는 브루잉 컨트롤 차트를 정리했습니다.",
+    link: "coffee-article-2026-09-28.html"
+  },
+  {
     id: 161, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "라떼아트 튤립 만드는 방법 — 층 쌓는 순서와 자르는 타이밍",
