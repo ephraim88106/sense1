@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>라떼아트 로제타 만드는 방법 — 흔드는 동작과 밀어내는 타이밍 | 바리스타 스페셜티</title>
+  <meta name="description" content="라떼아트 로제타는 피처를 좌우로 흔들며 뒤로 물러나 잎 무늬를 만들고, 마지막에 한 줄로 관통해 줄기를 긋는 패턴입니다. 흔드는 폭과 속도, 뒤로 당기는 타이밍, 마무리 컷 기준을 순서대로 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-09-29">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="라떼아트 로제타 만드는 방법 — 흔드는 동작과 밀어내는 타이밍 | 바리스타 스페셜티">
+<meta property="og:description" content="라떼아트 로제타는 피처를 좌우로 흔들며 뒤로 물러나 잎 무늬를 만들고, 마지막에 한 줄로 관통해 줄기를 긋는 패턴입니다. 흔드는 폭과 속도, 뒤로 당기는 타이밍, 마무리 컷 기준을 순서대로 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-09-29">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-09-29T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-09-29T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-09-29#page", "url": "https://coffee.ephseed.com/coffee-article-2026-09-29", "headline": "라떼아트 로제타 만드는 방법 — 흔드는 동작과 밀어내는 타이밍 | 바리스타 스페셜티", "description": "라떼아트 로제타는 피처를 좌우로 흔들며 뒤로 물러나 잎 무늬를 만들고, 마지막에 한 줄로 관통해 줄기를 긋는 패턴입니다. 흔드는 폭과 속도, 뒤로 당기는 타이밍, 마무리 컷 기준을 순서대로 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-09-29", "dateModified": "2026-09-29", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🎨 바리스타 스킬 & 라떼아트</span>
+      <span class="badge">로제타 패턴</span>
+      <span class="badge">밀크 피처링</span>
+    </div>
+    <h1>라떼아트 로제타 만드는 방법<br/>— 흔드는 동작과 밀어내는 타이밍</h1>
+    <p class="subtitle">로제타는 <strong>피처를 좌우로 흔들며 천천히 뒤로 물러나 잎 모양을 만들고, 마지막에 한 줄로 관통해 줄기를 긋는 패턴</strong>입니다. 손목을 흔드는 폭과 뒤로 당기는 속도가 어긋나면 잎이 벌어지지 않고 물결무늬 한 덩어리로 끝나기 쉽습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 9월 29일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 7분</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ 본문 ═══ -->
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>하트와 튤립을 그릴 수 있게 되면 다음 과제가 로제타입니다. 로제타는 <strong>끊지 않고 한 번에 흔들며 붓는 패턴</strong>이라, 하트처럼 두 번 붓기를 바꾸는 것과 감각이 다릅니다. "손목을 빠르게 흔들면 된다"고만 생각하면 잎이 너무 촘촘하게 붙거나, 흔드는 동안 피처가 앞에 그대로 머물러 원만 커지는 경우가 많습니다. 흔드는 동작과 <strong>뒤로 물러나는 동작을 동시에</strong> 하는 것이 핵심입니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>로제타가 하트·튤립과 다른 붓기 구조</li>
+        <li>흔들기 전에 맞춰야 하는 우유 질감과 스팀 온도</li>
+        <li>바탕을 만드는 1단계 붓기와 흔들기 시작 시점</li>
+        <li>흔드는 폭·속도와 뒤로 당기는 속도의 관계</li>
+        <li>잎을 이어 주는 마무리 관통 컷 방법</li>
+        <li>증상별 실패 원인과 자격시험 실기에서의 로제타</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1/3~1/2</span><span class="label">흔들기 시작 시 잔 채움 기준</span></div>
+      <div class="data-card"><span class="num">약 1cm</span><span class="label">흔들 때 피처와 표면 간격</span></div>
+      <div class="data-card"><span class="num">최대 65℃</span><span class="label">우유 스티밍 정지 온도 상한</span></div>
+      <div class="data-card"><span class="num">30~45초</span><span class="label">스티밍 후 거품 분리 전까지 시간</span></div>
+    </div>
+
+    <h2 class="section-title">1. 로제타가 하트·튤립과 다른 점</h2>
+    <p>하트는 붓는 높이와 유량을 한 번 바꾸는 패턴이고, 튤립은 붓기와 멈춤을 반복해 원을 쌓는 패턴입니다. 로제타는 <strong>멈추지 않고 좌우로 흔들면서 피처를 뒤로 이동</strong>시켜 잎을 연속으로 만듭니다. 흰 거품이 좌우로 밀려 나가며 파도 모양이 만들어지고, 피처가 뒤로 물러날수록 그 파도가 잔 안쪽에서 바깥쪽으로 쌓입니다.</p>
+    <p>그래서 로제타에서는 <strong>손목 동작 하나가 아니라 세 가지 동작</strong>이 동시에 진행됩니다. 좌우로 흔들기, 뒤로 천천히 물러나기, 물줄기 유량 유지가 그것입니다. 하나라도 어긋나면 무늬가 흐트러지므로, 연습할 때는 동작을 나눠서 익히는 편이 빠릅니다.</p>
+
+    <h2 class="section-title">2. 흔들기 전 우유 질감과 스팀 온도</h2>
+    <p>로제타는 우유가 <strong>젖은 페인트처럼 매끈하게 흐르는 마이크로폼 상태</strong>여야 좌우로 밀려 나가며 얇은 흰 선을 만듭니다. 거품이 두꺼우면 덩어리로 얹혀 잎이 뭉치고, 너무 묽으면 흰 무늬가 표면에 뜨지 않고 가라앉습니다. 스티밍이 끝나면 피처를 바닥에 가볍게 두드리고 돌려 큰 기포를 없앤 뒤 바로 붓는 것이 기본입니다.</p>
+    <p>우유 온도는 <strong>65℃를 넘기지 않는 범위</strong>에서 멈추는 것이 일반적으로 권장됩니다. 그 이상으로 올라가면 단백질이 변하면서 거품이 뻣뻣해지고 광택이 사라집니다. 또한 스티밍 후 방치하면 거품과 액체가 <strong>30~45초 안팎</strong>이면 분리되기 시작하므로, 로제타처럼 시간이 걸리는 패턴일수록 스티밍 직후 곧바로 붓는 것이 중요합니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>우유가 분리되기 시작했다면 붓기 전에 피처를 다시 한 번 돌려 섞어 주세요. 이 과정을 생략하면 첫 잎은 나와도 후반부 잎이 점점 희미해지는 경우가 많습니다.</p>
+    </div>
+
+    <h2 class="section-title">3. 1단계 — 바탕을 만드는 안정화 붓기</h2>
+    <p>로제타도 처음부터 무늬를 그리지 않습니다. 잔을 <strong>살짝 기울인 채</strong> 피처를 잔 중앙 위에서 높게 잡고, 가는 물줄기로 우유를 크레마 아래로 넣어 <strong>바탕 색을 갈색에서 옅은 베이지</strong>로 바꿉니다. 이 단계의 목적은 이후 흰 거품이 뜰 수 있는 도화지를 만드는 것입니다.</p>
+    <p>잔이 <strong>1/3~1/2 정도</strong> 채워지면 흔들기로 넘어갑니다. 너무 일찍 시작하면 바탕이 얇아 잎이 금방 번지고, 너무 늦으면 잔에 남은 공간이 부족해 잎을 만들 거리가 나오지 않습니다.</p>
+
+    <h2 class="section-title">4. 2단계 — 흔들면서 뒤로 물러나기</h2>
+    <p>피처 주둥이를 표면 가까이 <strong>약 1cm</strong> 정도로 낮추면 물줄기가 표면에 얹히듯 닿아 흰 거품이 위로 떠오릅니다. 이 상태에서 피처를 좌우로 작게 흔들면 물줄기가 시계추처럼 움직이며 좌우로 흰 선이 퍼집니다. 흔드는 폭은 <strong>손목 전체가 아니라 손가락으로 피처를 가볍게 밀고 당기는 느낌</strong>으로 만드는 편이 일정합니다.</p>
+    <p>흔들기를 시작한 뒤에는 피처를 <strong>천천히 뒤로</strong> 이동시킵니다. 이때 뒤로 가는 속도가 잎 사이의 간격을 결정합니다. 너무 빠르게 물러나면 잎이 듬성듬성 벌어지고, 너무 느리면 잎이 서로 붙어 물결무늬 한 덩어리가 됩니다. 유량은 처음 붓기보다 조금 넉넉하게 유지해야 잎이 끝까지 선명하게 남습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>1단계 (바탕)</th><th>2단계 (흔들기)</th><th>3단계 (관통 컷)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">목적</td><td>크레마와 우유 혼합</td><td>좌우 잎 만들기</td><td>잎을 이어 줄기 만들기</td></tr>
+        <tr><td class="em">붓는 높이</td><td>높게, 가는 물줄기</td><td>표면 가까이(약 1cm)</td><td>다시 높여 가늘게</td></tr>
+        <tr><td class="em">동작</td><td>연속 붓기</td><td>좌우로 흔들며 뒤로 이동</td><td>중심을 따라 앞으로 한 번에</td></tr>
+        <tr><td class="em">채움 기준</td><td>1/3~1/2까지</td><td>잔 뒤쪽 가장자리 근처까지</td><td>잔 앞쪽 끝까지 이동</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">5. 3단계 — 잎을 이어 주는 관통 컷</h2>
+    <p>잔 뒤쪽까지 잎을 쌓았다면 흔들기를 멈추고 피처를 <strong>가볍게 들어 올려 물줄기를 가늘게</strong> 바꿉니다. 그 상태로 잎들의 중심을 따라 <strong>앞쪽으로 한 번에 쭉 밀어</strong> 지나가면, 좌우로 벌어진 잎들이 가운데 줄기로 연결되며 로제타 모양이 완성됩니다.</p>
+    <p>컷은 중간에 멈추지 않고 <strong>일정한 속도로 잔 끝까지</strong> 이어 가는 것이 좋습니다. 속도가 느려지면 줄기가 두꺼워져 잎이 묻히고, 너무 빨라 잔 끝을 넘어가면 무늬가 잔 밖으로 밀려 나가 균형이 깨집니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">로제타 완성까지 손동작 순서</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text">잔을 기울이고 가는 물줄기로 <strong>1/3~1/2</strong>까지 바탕 붓기를 합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text">피처를 표면 <strong>약 1cm</strong>까지 낮추고 유량을 조금 늘려 흰 거품이 뜨게 합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text">손가락으로 피처를 좌우로 작게 흔들며 <strong>동시에 천천히 뒤로</strong> 이동합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text">잔 뒤쪽 가장자리 근처에서 흔들기를 멈추고 피처를 살짝 듭니다.</span></div>
+      <div class="tip-item"><span class="tip-num">5</span><span class="tip-text">가는 물줄기로 <strong>멈추지 않고 앞쪽으로</strong> 중심을 관통해 줄기를 긋습니다.</span></div>
+    </div>
+
+    <h2 class="section-title">6. 자주 실패하는 증상과 원인</h2>
+    <p>같은 순서를 따라도 잎이 제대로 나오지 않는다면 아래 원인을 순서대로 점검해 보세요.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>증상</th><th>원인</th><th>해결법</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">잎이 붙어 한 덩어리로 보임</td><td>뒤로 물러나는 속도가 너무 느림</td><td>흔드는 리듬은 유지하고 후퇴 속도만 조금 높이기</td></tr>
+        <tr><td class="em">잎이 듬성듬성 벌어짐</td><td>뒤로 너무 빨리 물러나거나 흔드는 폭이 작음</td><td>흔드는 횟수를 늘리고 후퇴 속도 낮추기</td></tr>
+        <tr><td class="em">흰 무늬가 뜨지 않고 갈색만 남음</td><td>피처가 표면에서 너무 높거나 거품이 묽음</td><td>주둥이를 낮추고 스티밍 시간을 조금 늘리기</td></tr>
+        <tr><td class="em">한쪽으로 쏠린 잎</td><td>피처가 좌우 한쪽으로 치우쳐 흔들림</td><td>중앙선을 기준으로 좌우 같은 폭으로 흔들기</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">7. 자격시험 실기와 로제타 패턴</h2>
+    <p>바리스타 2급 실기의 카푸치노 평가에서는 <strong>로제타 2잔과 3단 튤립 2잔</strong>을 각각 짝을 맞춰 만들도록 요구합니다. 같은 패턴 두 잔의 모양이 비슷해야 하며, 에칭 도구로 무늬를 보정하지 않고 <strong>프리 푸어링만으로 완성</strong>해야 합니다. 평가는 기술적 평가와 감각적 평가로 나뉘어 각기 다른 심사위원이 채점하는 방식이 일반적입니다.</p>
+    <p>연습할 때는 같은 우유량, 같은 스티밍 시간으로 <strong>두 잔을 연속으로 재현</strong>하는 훈련이 효과적입니다. 첫 잔은 잘 나오는데 두 번째 잔에서 잎 수가 달라진다면, 스티밍 후 방치 시간이 길어져 우유가 분리되었을 가능성이 큽니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 로제타는 하트와 튤립 중 무엇을 먼저 익혀야 하나요?</strong><br/>
+      A. 하트를 먼저 익히는 것이 일반적입니다. 하트에서 익힌 높이·유량 조절 감각이 로제타의 바탕 단계와 흔들기 단계에서 그대로 쓰입니다.</p>
+      <p><strong>Q. 잎은 몇 장까지 만드는 것이 좋은가요?</strong><br/>
+      A. 정해진 장수는 없으며 잔 크기와 흔드는 폭에 따라 달라집니다. 초보 단계에서는 잎 수보다 좌우 대칭과 간격의 균일함에 집중하는 편이 낫습니다.</p>
+      <p><strong>Q. 손목으로 흔들어야 하나요, 손가락으로 흔들어야 하나요?</strong><br/>
+      A. 손가락으로 피처를 가볍게 밀고 당기는 방식이 폭을 일정하게 유지하기 쉽다고 알려져 있습니다. 다만 개인 손 크기와 피처 모양에 따라 편한 방식이 달라 직접 비교해 보시길 권합니다.</p>
+      <p><strong>Q. 마지막 컷에서 줄기가 두꺼워지는 이유는 무엇인가요?</strong><br/>
+      A. 물줄기를 충분히 가늘게 바꾸지 않았거나 컷 도중 속도가 느려졌을 가능성이 큽니다. 피처를 먼저 들어 올려 물줄기를 가늘게 만든 뒤 일정한 속도로 통과하세요.</p>
+      <p><strong>Q. 우유가 자꾸 뻑뻑해지는데 스티밍을 어떻게 조절하나요?</strong><br/>
+      A. 공기 주입 시간을 줄이고 65℃를 넘기지 않도록 멈추는 시점을 앞당겨 보세요. 스티밍 후에는 피처를 돌려 광택이 도는 상태로 만든 뒤 바로 붓는 것이 좋습니다.</p>
+    </div>
+
+    <div class="closing-box">
+      <h3>로제타는 흔들기와 후퇴의 균형</h3>
+      <p>로제타의 본질은 <strong>좌우로 흔드는 리듬과 뒤로 물러나는 속도를 따로 조절하고, 마지막에 한 번에 관통해 줄기를 잇는 것</strong>입니다. 우유를 스티밍한 직후 바로 붓는 습관까지 더하면 같은 무늬를 반복해서 재현하기 쉬워집니다.</p>
+    </div>
+
+    <p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://www.vervecoffee.com/blogs/the-verve-blog/how-to-pour-rosetta-latte-art" rel="noopener nofollow">Verve Coffee Roasters — How to Pour a Rosetta</a>, <a href="https://www.wisenose.fi/en/articles/latte-art/" rel="noopener nofollow">Wise Nose — Latte Art: A Guide to Milk Steaming and Free Pouring</a>, <a href="https://artisticoffee.com/blogs/training/how-to-pour-a-rosetta-like-a-pro-latte-art-lesson" rel="noopener nofollow">Artisti Coffee Roasters — Mastering the Rosetta</a>, KCA 바리스타 2급 실기 안내</p>
+
+    
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-22"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">에스프레소 리스트레토 룽고 비교 — 물 비율과 맛으로 구분하는 법</div><div class="rc-date">2026. 09. 22</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-04"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">코니컬버 플랫버 차이 — 그라인더 날 방식별 분쇄 입자와 맛 비교</div><div class="rc-date">2026. 09. 04</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-01"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">에스프레소 샷 시간 기준 — 25~30초 재는 시점과 조절 방법</div><div class="rc-date">2026. 09. 01</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#라떼아트</span>
+      <span class="tag">#로제타패턴</span>
+      <span class="tag">#밀크피처링</span>
+      <span class="tag">#바리스타실기</span>
+      <span class="tag">#KCA자격시험</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>로제타는 좌우로 흔들며 뒤로 물러나 잎을 만들고, 마지막에 한 줄로 관통해 줄기를 긋는 패턴입니다.</strong></li>
+        <li><strong>우유는 65℃를 넘기지 않게 멈추고, 스티밍 직후 30~45초 안에 붓는 것이 좋습니다.</strong></li>
+        <li><strong>흔들기는 잔이 1/3~1/2 찼을 때, 피처를 표면 약 1cm까지 낮추고 시작합니다.</strong></li>
+        <li><strong>잎 간격은 뒤로 물러나는 속도가, 잎 폭은 흔드는 폭이 결정합니다.</strong></li>
+        <li><strong>마무리는 가는 물줄기로 멈추지 않고 중심을 한 번에 관통해야 줄기가 깔끔합니다.</strong></li>
+        <li><strong>KCA 2급 실기 카푸치노 평가는 로제타 2잔을 프리 푸어링으로 요구합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
