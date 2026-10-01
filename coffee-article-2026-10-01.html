@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>핸드드립 쓴맛 잡는법 — 쓴맛이 나는 이유와 분쇄도·물 온도 조절 | 바리스타 스페셜티</title>
+  <meta name="description" content="원두 쓴맛은 대개 과추출이나 강배전에서 옵니다. 분쇄도를 한 단계 굵게, 물 온도를 90~94℃로, 추출 시간을 줄이는 순서로 조절하는 방법과 SCA 추출 수율 18~22% 기준을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-01">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="핸드드립 쓴맛 잡는법 — 쓴맛이 나는 이유와 분쇄도·물 온도 조절 | 바리스타 스페셜티">
+<meta property="og:description" content="원두 쓴맛은 대개 과추출이나 강배전에서 옵니다. 분쇄도를 한 단계 굵게, 물 온도를 90~94℃로, 추출 시간을 줄이는 순서로 조절하는 방법과 SCA 추출 수율 18~22% 기준을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-01">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-01T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-01T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-01#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-01", "headline": "핸드드립 쓴맛 잡는법 — 쓴맛이 나는 이유와 분쇄도·물 온도 조절 | 바리스타 스페셜티", "description": "원두 쓴맛은 대개 과추출이나 강배전에서 옵니다. 분쇄도를 한 단계 굵게, 물 온도를 90~94℃로, 추출 시간을 줄이는 순서로 조절하는 방법과 SCA 추출 수율 18~22% 기준을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-01", "dateModified": "2026-10-01", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🔥 로스팅 & 원두 과학</span>
+      <span class="badge">추출 수율</span>
+      <span class="badge">쓴맛 보정</span>
+    </div>
+    <h1>핸드드립 쓴맛 잡는법<br/>— 쓴맛이 나는 이유와 분쇄도·물 온도 조절</h1>
+    <p class="subtitle">원두 쓴맛은 <strong>대부분 과추출(너무 오래, 너무 곱게, 너무 뜨겁게)이나 강배전 원두에서 생깁니다.</strong> 원인을 구분하면 분쇄도·물 온도·시간 중 어느 것을 바꿀지 정할 수 있습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 1일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 7분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>같은 원두인데 어떤 날은 고소하고 어떤 날은 입안이 쓰고 텁텁합니다. <strong>쓴맛은 원두 불량이 아니라 추출 조건이 어긋났다는 신호인 경우가 많습니다.</strong> 물이 가루에서 필요 이상으로 많은 성분을 뽑아내면 단맛과 산미 뒤에 쓴 성분이 따라 나옵니다. 어느 변수가 원인인지 순서대로 점검하면 원두를 바꾸지 않아도 맛이 달라집니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>쓴맛이 나는 대표적인 네 가지 원인</li>
+        <li>SCA가 제시하는 추출 수율 18~22% 기준</li>
+        <li>분쇄도·물 온도·추출 시간별 조절 방향</li>
+        <li>에스프레소와 핸드드립에서 각각 바꿀 변수</li>
+        <li>강배전 원두의 쓴맛을 줄이는 요령</li>
+        <li>쓴맛과 떫은맛을 구분하는 방법</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">18~22%</span><span class="label">SCA 권장 추출 수율 범위</span></div>
+      <div class="data-card"><span class="num">90~96℃</span><span class="label">SCA 권장 브루잉 물 온도(195~205°F)</span></div>
+      <div class="data-card"><span class="num">25~30초</span><span class="label">에스프레소 추출 시간 기준</span></div>
+      <div class="data-card"><span class="num">1:15~1:18</span><span class="label">핸드드립 가루:물 비율 범위</span></div>
+    </div>
+
+    <h2 class="section-title">1. 쓴맛이 나는 이유 네 가지</h2>
+    <p>커피 가루에서는 물이 닿는 순서대로 성분이 녹아 나옵니다. 보통 <strong>초반에는 산과 단맛 성분이, 후반으로 갈수록 쓴맛과 떫은맛 성분이 더 많이 나오는 것</strong>으로 알려져 있습니다. 그래서 추출이 필요 이상으로 길어지거나 강해지면 쓴맛이 두드러집니다. 원인은 크게 네 가지로 나눌 수 있습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>원인</th><th>어떻게 쓴맛이 되나</th><th>확인 방법</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">분쇄도가 너무 곱다</td><td>표면적이 커져 물이 성분을 과하게 뽑음</td><td>추출이 느리고 가루가 뭉쳐 있음</td></tr>
+        <tr><td class="em">물 온도가 너무 높다</td><td>쓴 성분이 빨리, 많이 녹음</td><td>끓자마자 바로 부었는지 확인</td></tr>
+        <tr><td class="em">추출 시간이 너무 길다</td><td>후반의 쓴 성분까지 계속 추출됨</td><td>핸드드립 3분 반, 에스프레소 35초 이상</td></tr>
+        <tr><td class="em">배전도가 강하다</td><td>볶는 과정에서 원두 자체에 쓴맛 성분이 늘어남</td><td>표면에 기름이 보이고 색이 진함</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">2. 추출 수율 18~22%가 기준인 이유</h2>
+    <p>SCA(스페셜티커피협회)는 필터 커피에서 <strong>추출 수율 18~22%</strong>를 균형이 잡히는 범위로 제시합니다. 수율은 가루 무게 대비 물에 녹아 나온 성분의 비율입니다. 이 범위보다 낮으면 신맛이 날카롭고 밋밋한 <strong>과소추출</strong>, 높으면 쓰고 떫은 <strong>과추출</strong> 쪽으로 기웁니다.</p>
+    <p>집에서 수율을 직접 재기는 어렵지만, 맛으로 방향은 알 수 있습니다. <strong>신맛이 튀면 더 뽑고, 쓴맛이 튀면 덜 뽑는다</strong>는 원칙입니다. 쓴맛이 느껴진다면 추출을 조금 줄이는 쪽으로 변수를 하나씩 조정합니다.</p>
+
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>과추출이 아니어도 쓴맛이 나는 경우가 있습니다. 쓴맛 대신 입안이 마르는 느낌이 강하다면 떫은맛일 수 있고, 이는 과추출뿐 아니라 오래된 원두나 깨끗하지 않은 기구에서도 생깁니다.</p>
+    </div>
+
+    <h2 class="section-title">3. 분쇄도 — 한 단계씩 굵게</h2>
+    <p>쓴맛을 줄이는 가장 효과적인 변수는 보통 분쇄도입니다. <strong>그라인더를 한 단계 굵게 조정하고 같은 조건으로 다시 내려 맛을 비교</strong>합니다. 한 번에 여러 단계를 바꾸면 이번에는 신맛이 강해져 어느 변수가 영향을 줬는지 알 수 없게 됩니다.</p>
+    <p>굵게 갈면 물이 더 빨리 빠져 접촉 시간이 줄고 표면적도 작아집니다. 두 효과가 겹쳐 쓴맛 성분이 덜 녹아 나옵니다. 반대로 곱게 갈수록 추출이 느려져 과추출 위험이 커집니다.</p>
+
+    <h2 class="section-title">4. 물 온도 — 90~94℃에서 시작</h2>
+    <p>SCA 기준 브루잉 물 온도는 <strong>195~205°F(약 90~96℃)</strong>입니다. 끓는 물(약 100℃)을 바로 붓는 것은 이 범위를 넘습니다. 쓴맛이 신경 쓰이면 주전자를 불에서 내려 <strong>30초~1분 정도 두었다가 90~94℃ 안팎</strong>으로 부어 보세요. 강배전 원두는 낮은 쪽인 85~90℃대로 내리는 방법도 많이 씁니다.</p>
+    <p>다만 온도를 낮추면 산미와 단맛 추출도 함께 줄 수 있어, 분쇄도를 바꾼 뒤에도 쓴맛이 남을 때 두 번째로 조정하는 편이 좋습니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">쓴맛 줄이는 조정 순서</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text">그라인더를 <strong>한 단계 굵게</strong> 하고 나머지 조건은 그대로 둡니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text">여전히 쓰면 물 온도를 <strong>2~3℃ 낮춥니다.</strong></span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text">추출 시간을 <strong>10~20초</strong> 줄이거나 물줄기 횟수를 줄입니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text">가루 양을 소폭 늘려 비율을 조정하거나, 로스팅이 약한 원두로 바꿉니다.</span></div>
+    </div>
+
+    <h2 class="section-title">5. 에스프레소와 핸드드립에서 바꿀 것</h2>
+    <p><strong>에스프레소</strong>는 추출 시간이 25~30초 범위를 넘어 35초 이상 걸리면 쓴맛이 강해지기 쉽습니다. 이럴 때는 분쇄를 굵게 하거나 탬핑 압력을 일정하게 맞춰 시간을 줄입니다. 탬핑이 고르지 않으면 물길(채널링)이 생겨 일부는 과추출, 일부는 과소추출되어 쓴맛과 신맛이 동시에 날 수 있습니다.</p>
+    <p><strong>핸드드립</strong>은 총 추출 시간이 3분 30초를 넘어가거나, 물을 천천히 계속 부어 후반까지 쓴 성분이 나오는 경우가 많습니다. 추출이 끝난 뒤에도 드리퍼에 남은 물을 끝까지 받지 말고, <strong>정해 둔 양이 되면 드리퍼를 빼는 것</strong>이 쓴맛을 줄이는 간단한 방법입니다. 가루:물 비율은 1:15~1:18 범위에서 조정할 수 있습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>추출 방식</th><th>쓴맛이 날 때 우선 바꿀 것</th><th>참고 기준</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">에스프레소</td><td>분쇄도를 굵게, 탬핑 균일하게</td><td>추출 25~30초</td></tr>
+        <tr><td class="em">핸드드립</td><td>분쇄도 굵게, 마지막 물 빼기</td><td>총 추출 약 3분 안팎</td></tr>
+        <tr><td class="em">프렌치프레스</td><td>침출 시간 단축, 굵게 분쇄</td><td>보통 4분 전후</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">6. 강배전 원두의 쓴맛 줄이기</h2>
+    <p>조건을 맞춰도 쓴맛이 남는다면 배전도가 원인일 수 있습니다. 로스팅이 진해질수록 쓴맛이 강해지고 산미는 줄어드는 경향이 있습니다. 이 경우 <strong>물 온도를 낮추고(85~90℃대), 분쇄를 약간 굵게, 추출 시간을 짧게</strong> 가져가면 쓴맛을 누그러뜨릴 수 있습니다. 쓴맛이 취향에 맞지 않는다면 약배전이나 중배전으로 바꾸는 것도 방법입니다. 배전도별 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-30">약배전·중배전·강배전 차이</a>에서 따로 정리했습니다.</p>
+
+    <h2 class="section-title">7. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 쓴 커피에 소금을 조금 넣으면 정말 쓴맛이 줄어드나요?</strong><br/>
+      A. 소량의 소금이 쓴맛 인지를 완화한다는 이야기가 있지만, 근본 해결은 아닙니다. 추출 조건을 먼저 점검하는 것이 맞습니다.</p>
+      <p><strong>Q. 신맛과 쓴맛이 같이 나요. 왜 그런가요?</strong><br/>
+      A. 가루가 고르게 젖지 않아 일부는 덜 뽑히고 일부는 과하게 뽑힌 경우입니다. 분쇄 입자의 균일도와 물을 붓는 방식, 에스프레소라면 탬핑을 확인하세요.</p>
+      <p><strong>Q. 원두를 오래 두면 쓴맛이 강해지나요?</strong><br/>
+      A. 산화되면 향이 줄고 밋밋하거나 텁텁한 맛이 늘 수 있습니다. 개봉 후에는 밀폐해 서늘한 곳에 보관하고 가능한 한 빨리 소비하세요.</p>
+      <p><strong>Q. 아메리카노가 쓴 것은 물을 더 넣으면 해결되나요?</strong><br/>
+      A. 희석하면 쓴맛이 약해지지만 단맛과 향도 같이 묽어집니다. 에스프레소 추출 시간부터 점검하는 편이 낫습니다.</p>
+      <p><strong>Q. 쓴맛이 전혀 없는 커피가 좋은 커피인가요?</strong><br/>
+      A. 아닙니다. 적당한 쓴맛은 커피 맛의 일부이며 단맛·산미와 균형을 이루는 것이 중요합니다. 입에 남아 불쾌한 쓴맛을 줄이는 것이 목표입니다.</p>
+    </div>
+
+    <div class="closing-box">
+      <h3>쓴맛은 한 번에 하나씩 조정합니다</h3>
+      <p>쓴맛이 나면 <strong>분쇄도, 물 온도, 추출 시간 순으로 하나씩만 바꿔 맛을 비교</strong>하세요. 변수를 동시에 바꾸면 원인을 알 수 없습니다. 그래도 남는다면 강배전 원두 자체의 특성일 수 있습니다.</p>
+    </div>
+
+    <p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: SCA Coffee Brewing Standards(Golden Cup, 추출 수율 18~22%, 물 온도 195~205°F), <a href="https://en.wikipedia.org/wiki/Coffee_extraction" rel="noopener nofollow">Wikipedia — Coffee extraction</a>, <a href="https://www.blackoutcoffee.com/blogs/the-reading-room/how-to-fix-bitter-coffee" rel="noopener nofollow">Blackout Coffee — How to Fix Bitter Coffee</a>, <a href="https://achillescoffeeroasters.com/blogs/specialty-coffee-blog/why-coffee-tastes-bitter-sour-or-flat-and-how-to-fix-it" rel="noopener nofollow">Achilles Coffee Roasters — Bitter, Sour or Flat</a></p>
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-22"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">에스프레소 리스트레토 룽고 비교 — 물 비율과 맛으로 구분하는 법</div><div class="rc-date">2026. 09. 22</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-04"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">코니컬버 플랫버 차이 — 그라인더 날 방식별 분쇄 입자와 맛 비교</div><div class="rc-date">2026. 09. 04</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-01"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">에스프레소 샷 시간 기준 — 25~30초 재는 시점과 조절 방법</div><div class="rc-date">2026. 09. 01</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#쓴맛</span>
+      <span class="tag">#추출수율</span>
+      <span class="tag">#분쇄도</span>
+      <span class="tag">#물온도</span>
+      <span class="tag">#원두</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>쓴맛은 과추출(곱은 분쇄, 높은 온도, 긴 시간)과 강배전에서 주로 생깁니다.</strong></li>
+        <li><strong>SCA 기준 추출 수율은 18~22%이며 쓴맛이 나면 추출을 줄입니다.</strong></li>
+        <li><strong>분쇄도를 한 단계 굵게 하는 것이 가장 먼저 할 조정입니다.</strong></li>
+        <li><strong>물 온도는 90~94℃로, 끓는 물은 잠시 식혀서 씁니다.</strong></li>
+        <li><strong>에스프레소는 25~30초, 핸드드립은 약 3분 안팎으로 시간을 맞춥니다.</strong></li>
+        <li><strong>변수는 한 번에 하나씩만 바꿔 원인을 확인합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>

@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 164, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "핸드드립 쓴맛 잡는법 — 쓴맛이 나는 이유와 분쇄도·물 온도 조절",
+    date: "2026.10.01",
+    summary: "같은 원두인데 어떤 날은 고소하고 어떤 날은 입안이 쓰고 텁텁합니다. 쓴맛은 원두 불량이 아니라 추출 조건이 어긋났다는 신호인 경우가 많습니다. 물이 가루에서 필요 이상으로 많은 성분을 뽑아내면 단맛과 산미 뒤에 쓴 성분이 따라 나옵니다. 어느 변수가 원인인지 순서대로 점검하면 원두를 바꾸지 않아도 맛이 달라집니다.",
+    link: "coffee-article-2026-10-01.html"
+  },
+  {
     id: 163, emoji: "🔥", category: "로스팅 & 원두 과학",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "커핑 하는법 — 스푼 사용 순서와 SCA 100점 채점표 항목",
