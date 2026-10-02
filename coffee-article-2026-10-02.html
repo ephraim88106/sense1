@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TDS 뜻 — 농도 1.15~1.35%와 수율 18~22% 계산하는 법 | 바리스타 스페셜티</title>
+  <meta name="description" content="원두 추출 수율은 가루에서 물로 녹아 나온 성분의 비율, TDS는 잔 속 농도입니다. SCA 기준 수율 18~22%와 TDS 1.15~1.35%의 뜻, 수율 계산 공식, 맛이 틀어졌을 때 조정 방법을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-02">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="TDS 뜻 — 농도 1.15~1.35%와 수율 18~22% 계산하는 법 | 바리스타 스페셜티">
+<meta property="og:description" content="원두 추출 수율은 가루에서 물로 녹아 나온 성분의 비율, TDS는 잔 속 농도입니다. SCA 기준 수율 18~22%와 TDS 1.15~1.35%의 뜻, 수율 계산 공식, 맛이 틀어졌을 때 조정 방법을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-02">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-02T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-02T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-02#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-02", "headline": "TDS 뜻 — 농도 1.15~1.35%와 수율 18~22% 계산하는 법 | 바리스타 스페셜티", "description": "원두 추출 수율은 가루에서 물로 녹아 나온 성분의 비율, TDS는 잔 속 농도입니다. SCA 기준 수율 18~22%와 TDS 1.15~1.35%의 뜻, 수율 계산 공식, 맛이 틀어졌을 때 조정 방법을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-02", "dateModified": "2026-10-02", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법 심층 가이드</span>
+      <span class="badge">TDS</span>
+      <span class="badge">추출 수율</span>
+    </div>
+    <h1>TDS 뜻<br/>— 농도 1.15~1.35%와 수율 18~22% 계산하는 법</h1>
+    <p class="subtitle"><strong>TDS는 잔 속 커피가 얼마나 진한지, 추출 수율은 가루에서 얼마나 뽑았는지를 나타냅니다.</strong> 두 숫자는 서로 다른 것을 재며, 함께 봐야 맛이 어디로 기울었는지 알 수 있습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 2일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 7분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>레시피를 지켰는데도 어제와 맛이 다르다면, 감으로만 조정하기보다 숫자로 확인하는 방법이 있습니다. 그때 나오는 말이 <strong>TDS와 추출 수율</strong>입니다. 둘은 비슷해 보이지만 재는 대상이 다릅니다. TDS는 완성된 한 잔이 얼마나 진한지를, 수율은 원두 가루에서 성분이 얼마나 빠져나왔는지를 말합니다. 뜻을 구분하면 "연한데 쓰다"거나 "진한데 시다" 같은 상황도 설명할 수 있습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>TDS와 추출 수율의 뜻과 차이</li>
+        <li>SCA가 제시하는 TDS 1.15~1.35%, 수율 18~22% 기준</li>
+        <li>수율을 계산하는 공식과 예시</li>
+        <li>수치별 맛의 경향과 조정 방법</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1.15~1.35%</span><span class="label">SCA 필터 커피 TDS 범위</span></div>
+      <div class="data-card"><span class="num">18~22%</span><span class="label">SCA 권장 추출 수율</span></div>
+      <div class="data-card"><span class="num">약 55g/L</span><span class="label">가루:물 기준 비율(±10%)</span></div>
+      <div class="data-card"><span class="num">93℃±3</span><span class="label">브루잉 물 온도 기준</span></div>
+    </div>
+
+    <h2 class="section-title">1. TDS 뜻 — 잔 속에 녹아 있는 양</h2>
+    <p>TDS는 Total Dissolved Solids, 즉 <strong>물에 녹아 있는 고형분의 총량</strong>을 말합니다. 추출된 커피 100g 안에 녹은 성분이 몇 g인지를 퍼센트로 나타낸 값이어서, 숫자가 높을수록 진한 커피입니다. 일반 필터 커피는 1~2% 안팎이고, 나머지 98% 이상은 물입니다. 에스프레소는 훨씬 높아 대략 8~12% 범위로 알려져 있습니다.</p>
+    <p>TDS는 <strong>굴절계(refractometer)</strong>로 잽니다. 커피 몇 방울을 올리면 빛이 꺾이는 정도로 농도를 읽는 방식입니다. 식힌 뒤 필터로 걸러 측정하는 것이 일반적인 요령입니다.</p>
+
+    <h2 class="section-title">2. 추출 수율 뜻 — 가루에서 얼마나 뽑았나</h2>
+    <p>추출 수율(extraction yield)은 <strong>사용한 원두 가루 무게 중 물에 녹아 나온 비율</strong>입니다. 가루 20g으로 4g 분량의 성분을 뽑았다면 수율은 20%입니다. 원두 가루의 약 30% 정도가 물에 녹을 수 있는 성분이라고 알려져 있고, 그중 18~22% 구간만 뽑아내는 것이 균형 잡힌 맛의 기준으로 쓰입니다.</p>
+    <p>먼저 녹아 나오는 것은 산미 성분과 밝은 향이고, 뒤로 갈수록 단맛과 쓴맛, 떫은맛 쪽 성분이 늘어납니다. 그래서 수율이 낮으면 신맛 위주로, 높으면 쓴맛 위주로 기웁니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>TDS</th><th>추출 수율</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">알려주는 것</td><td>잔이 얼마나 진한가</td><td>가루에서 얼마나 뽑았는가</td></tr>
+        <tr><td class="em">기준(SCA 필터)</td><td>1.15~1.35%</td><td>18~22%</td></tr>
+        <tr><td class="em">주로 바뀌는 조건</td><td>가루:물 비율</td><td>분쇄도·온도·시간</td></tr>
+        <tr><td class="em">측정 도구</td><td>굴절계</td><td>TDS와 무게로 계산</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">3. 수율 계산하는 법</h2>
+    <p>수율은 직접 재지 않고 <strong>TDS와 무게로 계산</strong>합니다. 공식은 다음과 같습니다.</p>
+    <div class="note-box">
+      <div class="note-label">계산 공식</div>
+      <p><strong>추출 수율(%) = 추출된 커피 무게(g) × TDS(%) ÷ 사용한 가루 무게(g)</strong></p>
+      <p>예시: 가루 15g, 추출된 커피 250g, TDS 1.25%라면 250 × 1.25 ÷ 15 = 약 20.8%입니다.</p>
+    </div>
+    <p>여기서 주의할 점은 <strong>투입한 물의 양이 아니라 컵에 나온 커피의 무게</strong>를 쓴다는 것입니다. 가루가 물을 머금기 때문에 보통 가루 무게의 두 배 정도는 가루에 남습니다. 그래서 물 300g을 부어도 컵에는 270g 안팎이 담깁니다.</p>
+
+    <h2 class="section-title">4. 수치로 읽는 맛의 방향</h2>
+    <p>두 수치를 함께 놓으면 맛이 틀어진 이유를 추정할 수 있습니다.</p>
+    <table class="compare-table">
+      <thead>
+        <tr><th>상태</th><th>TDS</th><th>수율</th><th>맛의 경향</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">과소추출</td><td>낮거나 보통</td><td>18% 미만</td><td>신맛이 날카롭고 짧음</td></tr>
+        <tr><td class="em">균형</td><td>1.15~1.35%</td><td>18~22%</td><td>단맛과 산미의 균형</td></tr>
+        <tr><td class="em">과추출</td><td>낮거나 보통</td><td>22% 초과</td><td>쓰고 떫으며 텁텁함</td></tr>
+        <tr><td class="em">연함</td><td>1.15% 미만</td><td>범위 안</td><td>맛이 묽고 약함</td></tr>
+        <tr><td class="em">진함</td><td>1.35% 초과</td><td>범위 안</td><td>진하고 무거움</td></tr>
+      </tbody>
+    </table>
+    <p>SCA의 브루잉 컨트롤 차트도 이 두 축으로 구성됩니다. 가로축이 수율, 세로축이 TDS이고, 가운데 구간이 기준 범위입니다. 다만 이 범위는 <strong>취향의 정답이 아니라 출발점</strong>입니다. 기준 안에 들어도 마음에 들지 않을 수 있고, 약간 벗어난 쪽을 더 좋아하는 사람도 많습니다.</p>
+
+    <h2 class="section-title">5. 수율과 TDS를 바꾸는 방법</h2>
+    <p>두 수치는 서로 다른 변수로 움직이므로, 무엇을 바꿀지 구분하면 조정이 쉬워집니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">조정 방향 정리</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text">맛이 <strong>시고 밋밋하면</strong> 수율을 올립니다. 분쇄를 곱게, 물 온도를 높게, 추출 시간을 길게 합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text">맛이 <strong>쓰고 떫으면</strong> 수율을 내립니다. 분쇄를 굵게, 온도를 낮게, 시간을 짧게 합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text">맛이 <strong>너무 연하거나 진하면</strong> 수율은 두고 가루:물 비율을 바꿔 TDS를 맞춥니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text">한 번에 <strong>변수 하나만</strong> 바꾸고 같은 방식으로 다시 재서 비교합니다.</span></div>
+    </div>
+    <p>비율 기준은 SCA Golden Cup 표준에서 물 1L당 가루 약 55g(±10%)입니다. 1:18 정도에 해당하며, 핸드드립에서 흔히 쓰는 1:15~1:17보다 약간 연한 쪽입니다. 그래서 실제 레시피는 기준 범위보다 진하게 잡는 경우가 많습니다.</p>
+
+    <h2 class="section-title">6. 집에서 측정하지 않아도 되는 경우</h2>
+    <p>굴절계는 수십만 원대 장비라 모든 사람이 필요하지는 않습니다. <strong>가루 무게, 물 무게, 추출 시간을 저울과 타이머로 기록</strong>하는 것만으로도 재현성은 크게 올라갑니다. 맛이 마음에 드는 레시피는 숫자로 남겨 두고, 달라졌을 때 어느 값이 바뀌었는지 비교합니다.</p>
+    <p>카페 현장에서는 메뉴 품질을 맞추거나 새 원두의 레시피를 잡을 때 굴절계를 씁니다. 에스프레소는 샷 무게를 재는 방식이 일반적이고, 비율은 <a href="https://coffee.ephseed.com/coffee-article-2026-09-22">리스트레토·룽고 비교</a>와 <a href="https://coffee.ephseed.com/coffee-article-2026-09-01">샷 시간 기준</a>에서 확인할 수 있습니다.</p>
+
+    <h2 class="section-title">7. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. TDS가 높으면 좋은 커피인가요?</strong><br/>
+      A. 아닙니다. TDS는 진하기일 뿐 품질이 아닙니다. 수율이 어긋난 채 진하기만 높으면 쓰거나 시게 느껴집니다.</p>
+      <p><strong>Q. 수율 18~22%는 모든 추출법에 적용되나요?</strong><br/>
+      A. SCA 기준은 필터 커피를 대상으로 합니다. 에스프레소는 TDS가 훨씬 높고, 수율 범위도 다르게 논의되므로 같은 숫자를 그대로 쓰지 않습니다.</p>
+      <p><strong>Q. 굴절계 없이 수율을 알 수 있나요?</strong><br/>
+      A. 정확히는 어렵습니다. 대신 맛으로 방향을 판단합니다. 시면 더 뽑고, 쓰면 덜 뽑는다는 원칙입니다.</p>
+      <p><strong>Q. 수율을 높이면 항상 맛이 좋아지나요?</strong><br/>
+      A. 아닙니다. 22%를 넘으면 쓴맛과 떫은맛이 늘어납니다. 올리는 만큼 균형이 깨질 수 있습니다.</p>
+      <p><strong>Q. 같은 원두인데 수치가 매번 다른 이유는 무엇인가요?</strong><br/>
+      A. 분쇄 입자 균일도, 물 온도, 붓는 방식, 측정 때 커피 온도가 영향을 줍니다. 저울로 무게를 일정하게 맞추는 것부터 시작하세요.</p>
+    </div>
+
+    <div class="closing-box">
+      <h3>두 숫자를 함께 보면 원인이 보입니다</h3>
+      <p><strong>TDS는 진하기, 수율은 뽑힌 정도입니다.</strong> 맛이 틀어지면 수율로 신맛·쓴맛 방향을 잡고, 비율로 농도를 맞춥니다. 기준 범위는 출발점으로 삼고 취향에 맞게 조절하세요.</p>
+    </div>
+
+    <p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: SCA Coffee Brewing Standards(Golden Cup, TDS 1.15~1.35%, 수율 18~22%, 55g/L), <a href="https://roastopedia.com/golden-cup-standard/" rel="noopener nofollow">Roastopedia — The Golden Cup Standard</a>, <a href="https://seelaz.com/blogs/barista-academy/sca-brewing-control-chart" rel="noopener nofollow">Seelaz — The SCA Brewing Control Chart</a>, <a href="https://coffeegear.org/guide-sca-coffee-standards/" rel="noopener nofollow">Coffeegear — SCA Coffee Standards</a>, <a href="https://en.wikipedia.org/wiki/Coffee_extraction" rel="noopener nofollow">Wikipedia — Coffee extraction</a></p>
+
+
+
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-01"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">핸드드립 쓴맛 잡는법 — 쓴맛이 나는 이유와 분쇄도·물 온도 조절</div><div class="rc-date">2026. 10. 01</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-22"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">에스프레소 리스트레토 룽고 비교 — 물 비율과 맛으로 구분하는 법</div><div class="rc-date">2026. 09. 22</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-04"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">코니컬버 플랫버 차이 — 그라인더 날 방식별 분쇄 입자와 맛 비교</div><div class="rc-date">2026. 09. 04</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#TDS</span>
+      <span class="tag">#추출수율</span>
+      <span class="tag">#굴절계</span>
+      <span class="tag">#브루잉</span>
+      <span class="tag">#원두</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>TDS는 잔 속 농도, 추출 수율은 가루에서 뽑힌 비율입니다.</strong></li>
+        <li><strong>SCA 기준은 TDS 1.15~1.35%, 수율 18~22%입니다.</strong></li>
+        <li><strong>수율 = 추출된 커피 무게 × TDS ÷ 가루 무게로 계산합니다.</strong></li>
+        <li><strong>수율이 낮으면 신맛, 높으면 쓴맛 쪽으로 기웁니다.</strong></li>
+        <li><strong>농도는 가루:물 비율로, 수율은 분쇄도·온도·시간으로 조정합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
