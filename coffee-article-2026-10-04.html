@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>핸드드립 드리퍼 고르는법 — 입문자에게 맞는 모양과 재질 | 바리스타 스페셜티</title>
+  <meta name="description" content="원뿔형 하리오 V60과 사다리꼴 칼리타 웨이브의 구멍 수·물 빠짐 속도 차이, 플라스틱·세라믹·유리·금속 재질별 특징을 정리했습니다. 입문자가 드리퍼를 고르는 기준과 첫 레시피까지 안내합니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-04">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="핸드드립 드리퍼 고르는법 — 입문자에게 맞는 모양과 재질 | 바리스타 스페셜티">
+<meta property="og:description" content="원뿔형 하리오 V60과 사다리꼴 칼리타 웨이브의 구멍 수·물 빠짐 속도 차이, 플라스틱·세라믹·유리·금속 재질별 특징을 정리했습니다. 입문자가 드리퍼를 고르는 기준과 첫 레시피까지 안내합니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-04">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-04T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-04T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-04#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-04", "headline": "핸드드립 드리퍼 고르는법 — 입문자에게 맞는 모양과 재질 | 바리스타 스페셜티", "description": "원뿔형 하리오 V60과 사다리꼴 칼리타 웨이브의 구멍 수·물 빠짐 속도 차이, 플라스틱·세라믹·유리·금속 재질별 특징을 정리했습니다. 입문자가 드리퍼를 고르는 기준과 첫 레시피까지 안내합니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-04", "dateModified": "2026-10-04", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법 심층 가이드</span>
+      <span class="badge">드리퍼</span>
+      <span class="badge">핸드드립 도구</span>
+    </div>
+    <h1>핸드드립 드리퍼 고르는법<br/>— 입문자에게 맞는 모양과 재질</h1>
+    <p class="subtitle"><strong>드리퍼는 모양이 물 빠지는 속도를 정하고, 재질이 온도 유지를 좌우합니다.</strong> 처음 사는 분을 위해 대표 두 모델과 재질별 특징을 비교했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 4일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 7분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>핸드드립을 시작하려고 보면 하리오, 칼리타, 케멕스, 고노 등 드리퍼 종류가 너무 많아 무엇부터 사야 할지 막막합니다. 사실 맛을 가르는 핵심은 두 가지입니다. <strong>물이 얼마나 빨리 빠지는가</strong>와 <strong>물 온도가 얼마나 유지되는가</strong>입니다. 이 글에서는 가장 많이 쓰는 원뿔형(하리오 V60)과 사다리꼴형(칼리타 웨이브)을 중심으로 모양과 재질별 특징, 입문자가 고르는 방법을 정리합니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>원뿔형과 사다리꼴형 드리퍼의 구조 차이</li>
+        <li>구멍 수와 리브(홈)가 물 빠짐 속도에 미치는 영향</li>
+        <li>플라스틱·세라믹·유리·금속 재질별 장단점</li>
+        <li>입문자에게 맞는 선택 기준과 첫 레시피</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1개</span><span class="label">V60 바닥 구멍 수</span></div>
+      <div class="data-card"><span class="num">3개</span><span class="label">칼리타 웨이브 바닥 구멍 수</span></div>
+      <div class="data-card"><span class="num">약 2~2.5분</span><span class="label">V60 흔한 추출 시간</span></div>
+      <div class="data-card"><span class="num">약 2.5~3.5분</span><span class="label">웨이브 흔한 추출 시간</span></div>
+    </div>
+
+    <h2 class="section-title">1. 드리퍼는 무엇을 결정하나</h2>
+    <p>드리퍼는 가루 층을 담고 물이 지나가는 길을 만드는 도구입니다. 같은 원두와 같은 물을 써도 드리퍼에 따라 <strong>물이 가루에 머무는 시간</strong>이 달라지고, 그에 따라 맛의 선명도와 바디감이 달라집니다.</p>
+    <p>핵심 변수는 세 가지입니다. 첫째는 <strong>모양</strong>(원뿔·사다리꼴)으로 가루 층의 두께와 모양을 정합니다. 둘째는 <strong>구멍의 크기와 수</strong>로 물 빠짐 속도를 정합니다. 셋째는 <strong>재질</strong>로 열 보존과 관리 편의를 정합니다.</p>
+
+    <h2 class="section-title">2. 원뿔형 하리오 V60 — 붓는 방식이 맛을 만든다</h2>
+    <p>V60은 약 60도 각도의 원뿔 모양에 바닥에 <strong>큰 구멍 하나</strong>가 있고, 안쪽에 나선형 리브가 있습니다. 리브는 필터가 벽에 달라붙지 않게 해 공기와 물이 지나갈 길을 만듭니다. 구멍이 크기 때문에 물이 빨리 빠지고, 그만큼 <strong>물줄기 속도와 굵기가 추출 시간과 맛에 직접 영향</strong>을 줍니다.</p>
+    <p>잘 맞추면 향이 선명하고 맑은 컵이 나오지만, 붓는 방법이 흔들리면 맛도 같이 흔들립니다. 그래서 어느 정도 연습이 필요한 드리퍼로 평가됩니다. 일반적으로 분쇄도는 중간보다 약간 가는 편(굵은 소금 정도)이 많이 쓰입니다.</p>
+
+    <h2 class="section-title">3. 사다리꼴 칼리타 웨이브 — 실수에 너그러운 구조</h2>
+    <p>칼리타 웨이브는 <strong>평평한 바닥과 작은 구멍 세 개</strong>를 가진 드리퍼입니다. 필터도 물결 모양(웨이브)이라 벽면과 닿는 면적이 적습니다. 구멍이 작고 여러 개라 물 빠짐이 느리고 일정해서, 붓는 속도가 조금 흔들려도 결과가 크게 달라지지 않습니다.</p>
+    <p>가루 층이 평평해 물이 고르게 스며들기 쉽고, 컵의 맛이 균형 잡히고 바디감이 있는 편입니다. 분쇄도는 V60보다 약간 굵게 잡는 경우가 많습니다.</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr><th>항목</th><th>하리오 V60</th><th>칼리타 웨이브</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">모양</td><td>원뿔형, 나선 리브</td><td>평평한 바닥, 웨이브 필터</td></tr>
+        <tr><td class="em">바닥 구멍</td><td>큰 구멍 1개</td><td>작은 구멍 3개</td></tr>
+        <tr><td class="em">물 빠짐</td><td>빠름, 붓는 속도에 민감</td><td>느리고 일정함</td></tr>
+        <tr><td class="em">추출 시간(흔한 범위)</td><td>약 2~2.5분</td><td>약 2.5~3.5분</td></tr>
+        <tr><td class="em">맛 경향</td><td>선명하고 맑은 향미</td><td>균형 잡힌 단맛과 바디</td></tr>
+        <tr><td class="em">난이도</td><td>연습 필요</td><td>입문자에게 무난</td></tr>
+      </tbody>
+    </table>
+    <p>위 수치는 대체로 소개되는 범위이며, 원두 양과 분쇄도에 따라 달라집니다. 분쇄도 조절은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-12">그라인더 분쇄도 조절</a> 글을 참고하세요.</p>
+
+    <h2 class="section-title">4. 재질별 특징 — 열 보존과 관리</h2>
+    <table class="compare-table">
+      <thead>
+        <tr><th>재질</th><th>장점</th><th>주의할 점</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">플라스틱</td><td>가볍고 가격이 저렴, 깨질 걱정이 적음</td><td>열 보존이 약해 예열이 중요, 오래 쓰면 변색 가능</td></tr>
+        <tr><td class="em">세라믹</td><td>열을 잘 간직하고 안정적</td><td>무겁고 떨어뜨리면 깨짐, 예열 필수</td></tr>
+        <tr><td class="em">유리</td><td>내부가 보이고 냄새가 배지 않음</td><td>깨지기 쉽고 열 보존은 보통</td></tr>
+        <tr><td class="em">금속(스테인리스 등)</td><td>튼튼하고 휴대에 편리</td><td>열이 빨리 식고 가격이 높은 편</td></tr>
+      </tbody>
+    </table>
+    <p>어떤 재질이든 <strong>필터를 끼운 뒤 뜨거운 물로 미리 적셔 예열</strong>하면 종이 냄새도 줄고 온도도 안정됩니다. 물 온도의 기준은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-15">핸드드립 내리는법</a> 글에 정리해 두었습니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">입문자 선택 요령</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text">물줄기 조절이 아직 서툴다면 <strong>구멍이 여러 개인 웨이브형</strong>이 안정적입니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text">향미의 선명함을 연습하며 키우고 싶다면 <strong>V60</strong>으로 시작해도 좋습니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text">드리퍼 전용 <strong>필터 규격(1~2인용, 2~4인용)</strong>을 먼저 확인합니다. 모델마다 필터가 호환되지 않습니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text">첫 구입은 <strong>플라스틱이나 세라믹</strong>이 부담이 적고, 어떤 재질이든 예열을 습관으로 만드세요.</span></div>
+    </div>
+
+    <h2 class="section-title">5. 첫 레시피 — 한 잔 기준</h2>
+    <p>어느 드리퍼를 쓰든 출발점은 비슷하게 잡을 수 있습니다. 커피 대 물의 비율은 <strong>1:15~1:17</strong> 범위가 흔히 쓰입니다. 예를 들어 원두 15g에 물 약 240g입니다. 물 온도는 약 92~96℃ 사이에서 시작하고, 먼저 원두 무게의 2배 정도 물로 30~45초 뜸을 들입니다.</p>
+    <ul style="margin:0 0 18px 22px;font-size:15.5px;color:#3a2218">
+      <li><strong>V60</strong>은 중간보다 약간 가는 분쇄도에서 시작해 총 2~3분 안팎을 목표로 합니다.</li>
+      <li><strong>웨이브</strong>는 약간 굵게 갈고 2.5~3.5분 안팎을 목표로 합니다.</li>
+      <li>쓴맛이 강하면 분쇄도를 굵게, 신맛이 날카로우면 가늘게 한 단계씩 조정합니다.</li>
+    </ul>
+    <p>맛이 쓰게 느껴질 때의 조정은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-01">핸드드립 쓴맛 잡는법</a> 글에서 이어서 확인할 수 있습니다.</p>
+
+    <h2 class="section-title">6. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 드리퍼를 바꾸면 맛이 정말 달라지나요?</strong><br/>
+      A. 같은 원두라도 물 빠짐 속도가 달라지면 추출 정도가 달라져 맛 차이가 납니다. 다만 분쇄도와 물 온도, 붓는 방법의 영향도 크므로 드리퍼만의 효과는 아닙니다.</p>
+      <p><strong>Q. 두 개를 함께 사도 되나요?</strong><br/>
+      A. 가능합니다. 같은 원두를 두 드리퍼로 내려 비교하면 내 취향을 찾는 데 도움이 됩니다. 단, 필터는 각각 맞는 규격으로 준비해야 합니다.</p>
+      <p><strong>Q. 필터는 아무 종이나 써도 되나요?</strong><br/>
+      A. 드리퍼 모양에 맞는 규격을 쓰는 편이 좋습니다. 맞지 않는 필터는 벽면에 들뜨거나 물이 새어 추출이 고르지 않을 수 있습니다.</p>
+      <p><strong>Q. 예열은 꼭 해야 하나요?</strong><br/>
+      A. 필수는 아니지만 온도 손실을 줄이고 종이 냄새를 씻어 내므로 권장합니다. 세라믹이나 유리는 효과가 더 큽니다.</p>
+      <p><strong>Q. 케멕스나 고노는 입문용으로 어떤가요?</strong><br/>
+      A. 각각 특징이 뚜렷해 익숙해진 뒤 시도하기 좋습니다. 먼저 V60이나 웨이브로 기본기를 잡는 분이 많습니다.</p>
+    </div>
+
+    <div class="closing-box">
+      <h3>모양은 속도를, 재질은 온도를 정합니다</h3>
+      <p><strong>처음에는 안정적인 웨이브형으로 시작하고, 익숙해지면 V60으로 향미의 선명함을 시도</strong>해 보는 흐름이 무난합니다. 어떤 드리퍼든 예열과 분쇄도 조절이 맛을 좌우합니다.</p>
+    </div>
+
+    <p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://acquiredcoffee.com/hario-v60-vs-kalita-wave/" rel="noopener nofollow">Acquired Coffee — Hario V60 vs Kalita Wave</a>, <a href="https://perfectdailygrind.com/2015/08/kalita-wave-the-story-brewing-guide/" rel="noopener nofollow">Perfect Daily Grind — Kalita Wave Brewing Guide</a>, <a href="https://www.equatorcoffees.com/blogs/journal/pour-over-coffee-makers-kalita-versus-hario-v60" rel="noopener nofollow">Equator Coffees — Kalita versus Hario V60</a>, <a href="https://www.onlinecoffeeguide.com/brew-methods/kalita-wave" rel="noopener nofollow">Online Coffee Guide — Kalita Wave</a></p>
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-04"><div class="rc-cat">🏪 카페 창업 & 운영 실전</div><div class="rc-title">월 매출 1억인데 망했다 — 아무도 안 알려주는 카페 수익의 진실</div><div class="rc-date">2026. 08. 04</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-25"><div class="rc-cat">🏪 카페 창업 & 운영 실전</div><div class="rc-title">하루 34곳이 폐업하는데 당신만 살아남을 수 있다고? — 카페 창업 수익 구조의 민낯</div><div class="rc-date">2026. 07. 25</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-18"><div class="rc-cat">🏪 카페 창업 & 운영 실전</div><div class="rc-title">카페 창업 후 3년 내 절반이 망하는 이유 — 10년 차 바리스타가 숨겨온 수익 구조의 진실</div><div class="rc-date">2026. 07. 18</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#드리퍼</span>
+      <span class="tag">#하리오V60</span>
+      <span class="tag">#칼리타웨이브</span>
+      <span class="tag">#핸드드립</span>
+      <span class="tag">#커피도구</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>모양과 구멍 수가 물 빠짐 속도를, 재질이 온도 유지를 좌우합니다.</strong></li>
+        <li><strong>V60은 구멍 1개로 빠르고 붓는 방식에 민감, 웨이브는 구멍 3개로 느리고 안정적입니다.</strong></li>
+        <li><strong>플라스틱은 가볍고, 세라믹은 열 보존이 좋으며, 금속은 튼튼합니다.</strong></li>
+        <li><strong>입문자는 웨이브형이 무난하고, 필터 규격을 먼저 확인합니다.</strong></li>
+        <li><strong>예열과 분쇄도 조절은 어떤 드리퍼에서도 필요합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
