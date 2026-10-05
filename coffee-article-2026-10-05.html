@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>케냐 AA 등급 뜻 — 스크린 사이즈 기준과 AB·PB 등급 구분 정리 | 바리스타 스페셜티</title>
+  <meta name="description" content="케냐 커피의 AA·AB·PB·C 등급이 무엇을 뜻하는지, 스크린 사이즈(17/18·15/16)로 나누는 기준과 등급이 맛의 우열이 아닌 이유, 케냐 원두를 고를 때 보는 항목을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-05">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="케냐 AA 등급 뜻 — 스크린 사이즈 기준과 AB·PB 등급 구분 정리 | 바리스타 스페셜티">
+<meta property="og:description" content="케냐 커피의 AA·AB·PB·C 등급이 무엇을 뜻하는지, 스크린 사이즈(17/18·15/16)로 나누는 기준과 등급이 맛의 우열이 아닌 이유, 케냐 원두를 고를 때 보는 항목을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-05">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-05T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-05T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-05#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-05", "headline": "케냐 AA 등급 뜻 — 스크린 사이즈 기준과 AB·PB 등급 구분 정리 | 바리스타 스페셜티", "description": "케냐 커피의 AA·AB·PB·C 등급이 무엇을 뜻하는지, 스크린 사이즈(17/18·15/16)로 나누는 기준과 등급이 맛의 우열이 아닌 이유, 케냐 원두를 고를 때 보는 항목을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-05", "dateModified": "2026-10-05", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 커피 품종·산지 가이드</span>
+      <span class="badge">케냐</span>
+      <span class="badge">생두 등급</span>
+    </div>
+    <h1>케냐 AA 등급 뜻<br/>— 스크린 사이즈 기준과 AB·PB 등급 구분 정리</h1>
+    <p class="subtitle"><strong>케냐 등급은 맛이 아니라 생두의 크기와 모양을 나눈 분류입니다.</strong> AA, AB, PB, C가 각각 무엇인지와 등급표를 읽는 방법을 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 5일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>케냐 원두를 사다 보면 봉투에 "케냐 AA", "케냐 AB", "케냐 PB"처럼 알파벳이 붙어 있습니다. 가장 흔한 오해는 AA가 가장 맛있는 최고 등급이라는 생각입니다. 케냐의 등급은 <strong>생두의 크기와 모양을 기준으로 나눈 분류</strong>이고, 맛은 같은 등급 안에서도 농장과 수확 시기, 가공 상태에 따라 크게 달라집니다. 이 글에서는 등급이 어떻게 나뉘는지, 표기를 어떻게 읽어야 하는지 정리합니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>AA·AB·PB·C 등급이 각각 무엇을 뜻하는지</li>
+        <li>스크린 사이즈(17/18, 15/16)가 의미하는 크기</li>
+        <li>등급이 곧 맛의 서열은 아닌 이유</li>
+        <li>케냐 원두를 고를 때 등급 외에 보는 항목</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">17/18</span><span class="label">AA 스크린 사이즈(1/64인치 단위)</span></div>
+      <div class="data-card"><span class="num">15/16</span><span class="label">AB 스크린 사이즈(자료에 따라 표기 차이)</span></div>
+      <div class="data-card"><span class="num">PB</span><span class="label">한 알짜리 피베리</span></div>
+      <div class="data-card"><span class="num">크기 기준</span><span class="label">맛 등급이 아님</span></div>
+    </div>
+
+    <h2 class="section-title">1. 케냐 등급은 무엇을 기준으로 하나</h2>
+    <p>케냐는 수출하는 생두를 <strong>크기(스크린 사이즈)와 모양</strong>으로 나눕니다. 생두를 구멍 크기가 다른 체(스크린)에 걸러 어느 체에 남는지로 크기를 정하며, 구멍 크기는 1/64인치 단위로 표기합니다. 예를 들어 스크린 17은 17/64인치(약 6.7mm) 구멍입니다.</p>
+    <p>이 방식은 같은 크기의 생두끼리 모아 볶으면 <strong>익는 속도가 고르게 맞는다</strong>는 점에서 실용적입니다. 반면 크기 분류일 뿐이라 향미의 우열을 직접 보증하지는 않습니다. 생두 결점을 세는 방식은 <a href="https://coffee.ephseed.com/coffee-article-2026-09-05">예가체프 G1 G2 등급 뜻</a>에서 다룬 에티오피아 사례와 비교해 볼 수 있습니다.</p>
+
+    <h2 class="section-title">2. AA·AB·PB·C 등급 구분</h2>
+    <table class="compare-table">
+      <thead>
+        <tr><th>등급</th><th>의미</th><th>특징</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">AA</td><td>스크린 17/18, 큰 알</td><td>가장 큰 일반 등급으로 가격이 높은 편</td></tr>
+        <tr><td class="em">AB</td><td>A와 B가 섞인 중간 크기(대체로 15/16 전후)</td><td>생산량 비중이 크고 가격 대비 선택지가 넓음</td></tr>
+        <tr><td class="em">PB</td><td>피베리, 한 알짜리 둥근 콩</td><td>크기가 작고 둥글어 별도로 분류</td></tr>
+        <tr><td class="em">C</td><td>더 작은 알</td><td>상대적으로 낮은 크기 등급</td></tr>
+        <tr><td class="em">E·TT·T</td><td>매우 큰 알(E), 가볍고 작은 알 등</td><td>주로 크기·밀도로 가려낸 별도 분류</td></tr>
+      </tbody>
+    </table>
+    <p>스크린 사이즈 수치는 자료마다 표기가 조금씩 다릅니다. AB를 15/16으로 적는 곳도 있고 A와 B를 합친 구간으로 설명하는 곳도 있으므로, 정확한 수치는 수입사나 로스터리의 설명을 함께 확인하는 편이 안전합니다.</p>
+
+    <h2 class="section-title">3. 피베리(PB)는 무엇이 다른가</h2>
+    <p>보통 커피 체리 안에는 납작한 씨앗 두 개가 마주 보고 들어 있습니다. 피베리는 <strong>씨앗이 한 알만 자라 둥글게 된 것</strong>입니다. 일반적으로 전체 생산량의 일부에 해당하는 소량입니다.</p>
+    <p>피베리가 더 맛있다는 말이 널리 퍼져 있지만, 그것은 확정된 사실이라기보다 소개 문구에 가깝습니다. 둥근 모양이라 로스팅 중 굴러가며 고르게 익는다는 설명이 있고, 취향에 따라 선명하다고 느끼는 분들이 있습니다. 같은 농장의 AA와 직접 비교해 보며 판단하는 것이 좋습니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">등급표 읽는 요령</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text"><strong>AA는 크기 등급</strong>입니다. 맛이 가장 좋다는 뜻이 아닙니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text">같은 AA라도 <strong>수확 연도와 로트</strong>에 따라 향미 차이가 큽니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text">포장에 <strong>농협·워싱 스테이션 이름</strong>이 있으면 더 구체적인 정보입니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text">크기가 다른 생두가 섞이면 로스팅이 고르지 않으므로 <strong>등급이 하나로 통일된 제품</strong>을 고릅니다.</span></div>
+    </div>
+
+    <h2 class="section-title">4. 크기와 맛은 어떤 관계인가</h2>
+    <p>케냐에서는 고지대에서 천천히 자란 생두가 크고 밀도가 높은 경향이 있어, 큰 알이 좋은 컵 품질과 함께 나타나는 일이 많다고 알려져 있습니다. 이것이 AA가 높은 가격에 거래되는 배경입니다.</p>
+    <p>그러나 이는 경향일 뿐입니다. 컵 평가에서는 AB나 PB가 AA보다 높은 점수를 받는 로트도 흔합니다. 고도와 밀도가 맛에 미치는 영향은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-24">싱글 오리진 뜻</a>과 함께 읽으면 이해가 쉽습니다.</p>
+
+    <h2 class="section-title">5. 케냐 원두의 일반적인 특징</h2>
+    <p>케냐 커피는 대체로 <strong>워시드 가공</strong>을 하며, 수확한 체리를 물에 담가 발효하는 과정을 거쳐 깨끗하고 선명한 산미를 내는 것으로 알려져 있습니다. 대표 품종으로는 SL28, SL34가 자주 언급됩니다.</p>
+    <p>맛 표현으로는 블랙커런트, 자몽 같은 과일 산미와 와인 같은 질감이 흔히 쓰입니다. 산미가 부담스럽다면 <a href="https://coffee.ephseed.com/coffee-article-2026-08-17">원두 산미 뜻</a>에서 줄이는 방법을 확인할 수 있습니다. 가공 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-23">내추럴 워시드 차이</a> 글에 비교해 두었습니다.</p>
+
+    <h2 class="section-title">6. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 케냐 AA가 가장 좋은 커피인가요?</strong><br/>
+      A. AA는 크기 기준 최상위 일반 등급이지 맛의 최고 등급은 아닙니다. 로트와 농장에 따라 품질이 다릅니다.</p>
+      <p><strong>Q. AA와 AB는 맛이 얼마나 다른가요?</strong><br/>
+      A. 일관된 차이가 있다고 단정하기 어렵습니다. 크기가 다르면 로스팅 반응이 달라 맛이 조금 달라질 수 있어, 직접 비교해 보는 것이 가장 정확합니다.</p>
+      <p><strong>Q. 케냐 원두는 왜 산미가 강한가요?</strong><br/>
+      A. 고지대 재배와 워시드 가공, 품종 특성이 어우러진 결과로 설명됩니다. 배전도를 약간 높이거나 추출을 길게 하면 산미를 줄일 수 있습니다.</p>
+      <p><strong>Q. TT, T 같은 표기는 무엇인가요?</strong><br/>
+      A. 크기나 밀도가 작거나 가벼운 생두를 가려낸 하위 분류입니다. 일반 판매 제품에서는 드물게 보입니다.</p>
+    </div>
+
+    <div class="closing-box">
+      <h3>등급은 크기, 맛은 로트가 정합니다</h3>
+      <p><strong>케냐 원두는 AA·AB·PB 표기를 크기 정보로 읽고, 실제 맛은 농장·수확 연도·로스팅 설명으로 판단하세요.</strong></p>
+    </div>
+
+    <p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://www.trabocca.com/coffee-knowledge/origin/kenya-grades-explained/" rel="noopener nofollow">Trabocca — Kenya Grades Explained</a>, <a href="https://www.coffee-direct.co.uk/blogs/news/a-deeper-look-at-kenyan-coffee" rel="noopener nofollow">Coffee Direct — A Deeper Look at Kenyan Coffee</a>, <a href="https://espressocoffeeguide.com/gourmet-coffee/arabian-and-african-coffees/kenya-coffee/kenya-coffee-grading/" rel="noopener nofollow">Espresso &amp; Coffee Guide — Kenya Coffee Grading</a></p>
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-05"><div class="rc-cat">🌋 원두 산지 & 테루아르</div><div class="rc-title">예가체프 G1 G2 등급 뜻 — 에티오피아 생두 등급 구분과 향미 정리</div><div class="rc-date">2026. 09. 05</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-24"><div class="rc-cat">🌋 원두 산지 & 테루아르</div><div class="rc-title">싱글 오리진 뜻 — 블렌드와의 차이와 맛 특성 비교</div><div class="rc-date">2026. 08. 24</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-05"><div class="rc-cat">🌋 원두 산지 & 테루아르</div><div class="rc-title">해발 2,000m에서 무슨 일이 벌어지나 — 커피 맛을 결정짓는 고도의 비밀</div><div class="rc-date">2026. 08. 05</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#케냐커피</span>
+      <span class="tag">#케냐AA</span>
+      <span class="tag">#생두등급</span>
+      <span class="tag">#피베리</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>케냐 등급은 생두 크기와 모양으로 나눈 분류입니다.</strong></li>
+        <li><strong>AA는 스크린 17/18의 큰 알, AB는 중간 크기, PB는 한 알짜리 피베리입니다.</strong></li>
+        <li><strong>등급은 맛의 서열이 아니며 같은 등급 안에서도 로트별 차이가 큽니다.</strong></li>
+        <li><strong>수치 표기는 자료마다 달라 판매처 설명을 함께 확인합니다.</strong></li>
+        <li><strong>농장·수확 연도·로스팅 정보로 최종 선택합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>

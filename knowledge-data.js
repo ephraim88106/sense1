@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 168, emoji: "🌋", category: "원두 산지 & 테루아르",
+    categoryColor: { bg: "#ecfccb", text: "#3f6212" },
+    title: "케냐 AA 등급 뜻 — 스크린 사이즈 기준과 AB·PB 등급 구분 정리",
+    date: "2026.10.05",
+    summary: "케냐 원두를 사다 보면 봉투에 \"케냐 AA\", \"케냐 AB\", \"케냐 PB\"처럼 알파벳이 붙어 있습니다. 가장 흔한 오해는 AA가 가장 맛있는 최고 등급이라는 생각입니다. 케냐의 등급은 생두의 크기와 모양을 기준으로 나눈 분류이고, 맛은 같은 등급 안에서도 농장과 수확 시기, 가공 상태에 따라 크게 달라집니다. 이 글에서는 등급이 어떻게 나뉘는지, 표기를 어떻게 읽어야 하는지 정리합니다.",
+    link: "coffee-article-2026-10-05.html"
+  },
+  {
     id: 167, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "핸드드립 드리퍼 고르는법 — 입문자에게 맞는 모양과 재질",
