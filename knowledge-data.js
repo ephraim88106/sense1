@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 169, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "핸드드립 비율 — 1인분 몇 g인지와 1:15~1:17 계산법",
+    date: "2026.10.06",
+    summary: "핸드드립을 시작하면 가장 먼저 부딪히는 질문이 \"원두를 몇 g 넣어야 하나\"입니다. 스푼으로 대충 뜨면 날마다 맛이 달라지고, 그 원인을 분쇄도나 물 온도로 착각하기 쉽습니다. 원두 양은 내리려는 물 양에 비율을 곱해 정하는 값입니다. 이 글에서는 SCA 기준과 흔히 쓰는 1:15~1:17 비율, 인원별 원두 양, 맛이 연하거나 진할 때 조절하는 방법을 정리합니다.",
+    link: "coffee-article-2026-10-06.html"
+  },
+  {
     id: 168, emoji: "🌋", category: "원두 산지 & 테루아르",
     categoryColor: { bg: "#ecfccb", text: "#3f6212" },
     title: "케냐 AA 등급 뜻 — 스크린 사이즈 기준과 AB·PB 등급 구분 정리",

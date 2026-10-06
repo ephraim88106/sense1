@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>핸드드립 비율 — 1인분 몇 g인지와 1:15~1:17 계산법 | 바리스타 스페셜티</title>
+  <meta name="description" content="핸드드립 1인분에 원두가 몇 g 필요한지, 1:15~1:17 물 비율 계산법과 SCA 골드컵 기준(리터당 55g), 인원별 원두 양 표와 맛이 연하거나 진할 때 조절하는 방법을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-06">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="핸드드립 비율 — 1인분 몇 g인지와 1:15~1:17 계산법 | 바리스타 스페셜티">
+<meta property="og:description" content="핸드드립 1인분에 원두가 몇 g 필요한지, 1:15~1:17 물 비율 계산법과 SCA 골드컵 기준(리터당 55g), 인원별 원두 양 표와 맛이 연하거나 진할 때 조절하는 방법을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-06">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-06T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-06T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-06#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-06", "headline": "핸드드립 비율 — 1인분 몇 g인지와 1:15~1:17 계산법 | 바리스타 스페셜티", "description": "핸드드립 1인분에 원두가 몇 g 필요한지, 1:15~1:17 물 비율 계산법과 SCA 골드컵 기준(리터당 55g), 인원별 원두 양 표와 맛이 연하거나 진할 때 조절하는 방법을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-06", "dateModified": "2026-10-06", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법 가이드</span>
+      <span class="badge">핸드드립</span>
+      <span class="badge">물 비율</span>
+    </div>
+    <h1>핸드드립 비율<br/>— 1인분 몇 g인지와 1:15~1:17 계산법</h1>
+    <p class="subtitle"><strong>핸드드립 원두 양은 물 양을 먼저 정하고 비율로 나누면 쉽게 계산됩니다.</strong> 1인분 기준 g수와 인원별 표, 맛 조절법을 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 6일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>핸드드립을 시작하면 가장 먼저 부딪히는 질문이 "원두를 몇 g 넣어야 하나"입니다. 스푼으로 대충 뜨면 날마다 맛이 달라지고, 그 원인을 분쇄도나 물 온도로 착각하기 쉽습니다. 원두 양은 <strong>내리려는 물 양에 비율을 곱해 정하는 값</strong>입니다. 이 글에서는 SCA 기준과 흔히 쓰는 1:15~1:17 비율, 인원별 원두 양, 맛이 연하거나 진할 때 조절하는 방법을 정리합니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>1인분(약 200~250ml) 핸드드립에 필요한 원두 g수</li>
+        <li>1:15, 1:16, 1:17 비율을 계산하는 방법</li>
+        <li>SCA 골드컵 기준(리터당 55g)의 의미</li>
+        <li>맛이 연할 때와 진할 때 어떤 변수를 바꿀지</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1:16</span><span class="label">입문자가 시작하기 좋은 기준 비율</span></div>
+      <div class="data-card"><span class="num">55g/L</span><span class="label">SCA 골드컵 기준(±10%)</span></div>
+      <div class="data-card"><span class="num">15g</span><span class="label">물 240ml 기준 원두 양(1:16)</span></div>
+      <div class="data-card"><span class="num">저울</span><span class="label">스푼보다 정확한 계량 도구</span></div>
+    </div>
+
+    <h2 class="section-title">1. 원두 양은 비율로 정한다</h2>
+    <p>커피 비율은 <strong>원두 무게 : 물 무게</strong>로 표기합니다. 1:16이면 원두 1g당 물 16g(약 16ml)을 쓴다는 뜻입니다. 숫자가 작을수록 원두를 많이 쓰는 진한 커피, 클수록 연한 커피입니다.</p>
+    <p>계산은 간단합니다. <strong>물 양 ÷ 비율 = 원두 양</strong>입니다. 물 320g을 1:16으로 내린다면 320 ÷ 16 = 20g입니다. 이 방식이면 인원이 늘어도 같은 맛을 재현할 수 있습니다. 비율이 맛에 미치는 영향은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-02">TDS 뜻</a> 글에서 농도와 수율로 더 자세히 볼 수 있습니다.</p>
+
+    <h2 class="section-title">2. SCA 기준은 리터당 55g</h2>
+    <p>SCA(Specialty Coffee Association)의 골드컵 기준은 <strong>물 1리터당 원두 약 55g, 허용 범위 ±10%</strong>입니다. 이는 대략 1:16.5~1:20 사이의 비율에 해당하며, 100ml당으로는 5~6g 정도입니다.</p>
+    <p>다만 이 값은 필터 커피 머신 같은 대량 추출을 기준으로 정리된 수치입니다. 핸드드립은 소량을 손으로 내리므로 실제로는 <strong>1:15~1:17</strong>을 많이 씁니다. 같은 기준을 두 번 확인했을 때 자료마다 범위 표기가 조금씩 다르므로, 숫자 하나에 매이기보다 이 범위 안에서 취향에 맞는 값을 찾는 것이 좋습니다.</p>
+
+    <h2 class="section-title">3. 인원별 원두 양 표</h2>
+    <table class="compare-table">
+      <thead>
+        <tr><th>추출량(물)</th><th>1:15 (진한 편)</th><th>1:16 (기준)</th><th>1:17 (연한 편)</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">1인 240ml</td><td>16g</td><td>15g</td><td>14g</td></tr>
+        <tr><td class="em">2인 400ml</td><td>27g</td><td>25g</td><td>24g</td></tr>
+        <tr><td class="em">3인 600ml</td><td>40g</td><td>37.5g</td><td>35g</td></tr>
+        <tr><td class="em">4인 800ml</td><td>53g</td><td>50g</td><td>47g</td></tr>
+      </tbody>
+    </table>
+    <p>표의 물 양은 드리퍼에 붓는 총량입니다. 원두가 물을 흡수하기 때문에 컵에 담기는 양은 원두 무게의 약 2배만큼 줄어듭니다. 240ml를 내려서 컵에 가득 받고 싶다면 물을 20~30ml 더 붓습니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">계량 요령</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text"><strong>주방 저울</strong>(0.1g 단위)을 쓰면 스푼보다 오차가 훨씬 줄어듭니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text">같은 스푼이라도 <strong>배전도에 따라 무게가 다릅니다.</strong> 강배전은 밀도가 낮아 더 가볍습니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text">물은 ml가 아니라 <strong>g으로 재서</strong> 붓는 습관을 들이면 비율이 일정해집니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text">한 번에 하나만 바꿉니다. <strong>비율을 바꿀 때는 분쇄도와 온도를 고정</strong>합니다.</span></div>
+    </div>
+
+    <h2 class="section-title">4. 배전도와 드리퍼에 따른 조정</h2>
+    <p>같은 1:16이라도 원두 상태에 따라 체감 농도가 달라집니다. 약배전은 조직이 단단해 성분이 덜 녹아 나오므로 비율을 1:15 쪽으로 조금 올리거나 물 온도를 높이는 방법을 쓰고, 강배전은 쉽게 추출되므로 1:17 쪽이 부담이 덜합니다. 배전도별 특징은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-15">핸드드립 내리는법</a>과 함께 보면 이해가 쉽습니다.</p>
+    <p>드리퍼도 영향을 줍니다. 물이 빨리 빠지는 원뿔형은 같은 양이라도 가볍게, 천천히 빠지는 구조는 진하게 나오는 경향이 있습니다. 드리퍼별 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-10-04">핸드드립 드리퍼 고르는법</a>에 정리했습니다.</p>
+
+    <h2 class="section-title">5. 맛이 연하거나 진할 때 조절하기</h2>
+    <table class="compare-table">
+      <thead>
+        <tr><th>증상</th><th>먼저 바꿀 것</th><th>그다음</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">밍밍하고 물 같다</td><td>비율을 1:16 → 1:15로</td><td>분쇄도를 한 단계 곱게</td></tr>
+        <tr><td class="em">너무 진하고 무겁다</td><td>비율을 1:16 → 1:17로</td><td>물을 더 붓지 않고 원두를 줄임</td></tr>
+        <tr><td class="em">쓰고 텁텁하다</td><td>분쇄도를 굵게</td><td>물 온도를 낮춤</td></tr>
+        <tr><td class="em">시고 날카롭다</td><td>분쇄도를 곱게</td><td>물 온도를 높임</td></tr>
+      </tbody>
+    </table>
+    <p>쓴맛이 문제라면 비율보다 추출 조건이 원인인 경우가 많습니다. 자세한 원인은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-01">핸드드립 쓴맛 잡는법</a>에서 분쇄도와 물 온도 기준으로 다뤘습니다. 진하게 마시고 싶어서 물을 줄이면 오히려 추출이 덜 되어 맛이 시어질 수 있으니, 농도는 원두 양으로 조절합니다.</p>
+
+    <h2 class="section-title">6. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 핸드드립 1인분은 원두 몇 g인가요?</strong><br/>
+      A. 물 240ml 기준 1:16이면 15g입니다. 가볍게 마시려면 14g, 진하게는 16g 정도로 시작해 보시면 됩니다.</p>
+      <p><strong>Q. 스푼으로 계량해도 되나요?</strong><br/>
+      A. 가능하지만 오차가 큽니다. 일반 계량스푼 한 스푼은 대략 5~7g으로 원두 종류에 따라 달라지므로, 저울로 한 번 재서 기준을 잡아 두는 것을 권합니다.</p>
+      <p><strong>Q. 1:15와 1:17 중 무엇이 정답인가요?</strong><br/>
+      A. 정답은 없습니다. 둘 다 SCA 권장 범위 근처이며 취향과 원두에 따라 선택합니다. 처음에는 1:16으로 내리고 맛을 보며 한 칸씩 움직이세요.</p>
+      <p><strong>Q. 물을 더 부으면 연해지나요?</strong><br/>
+      A. 추출 후 물을 타면 연해지지만 추출 자체는 그대로입니다. 연한 커피를 원한다면 처음부터 비율을 높여 내리거나, 진하게 내린 뒤 희석하는 방법을 구분해서 쓰세요.</p>
+      <p><strong>Q. 양을 늘리면 뜸 들이는 물도 늘려야 하나요?</strong><br/>
+      A. 일반적으로 뜸 물은 원두 무게의 2~3배 정도를 씁니다. 원두 15g이면 30~45g입니다.</p>
+    </div>
+
+    <div class="closing-box">
+      <h3>물 양에 비율을 곱해 원두를 정하세요</h3>
+      <p><strong>핸드드립은 1:16에서 시작해 1:15~1:17 안에서 취향을 찾고, 계량은 저울로 하는 것이 가장 재현성이 높습니다.</strong></p>
+    </div>
+
+    <p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://sca.coffee/research/protocols-best-practices" rel="noopener nofollow">SCA — Protocols &amp; Best Practices</a>, <a href="https://www.seattlecoffeegear.com/blogs/learning-center/achieving-the-gold-cup-standard-your-guide-to-brewing-excellence" rel="noopener nofollow">Seattle Coffee Gear — Gold Cup Standard</a>, <a href="https://methodicalcoffee.com/blogs/coffee-culture/coffee-to-water-ratio-the-ultimate-guide-to-brewing-ratios" rel="noopener nofollow">Methodical Coffee — Coffee-to-Water Ratio Guide</a></p>
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-04"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">핸드드립 드리퍼 고르는법 — 입문자에게 맞는 모양과 재질</div><div class="rc-date">2026. 10. 04</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-02"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">TDS 뜻 — 농도 1.15~1.35%와 수율 18~22% 계산하는 법</div><div class="rc-date">2026. 10. 02</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-01"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">핸드드립 쓴맛 잡는법 — 쓴맛이 나는 이유와 분쇄도·물 온도 조절</div><div class="rc-date">2026. 10. 01</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#핸드드립</span>
+      <span class="tag">#원두양</span>
+      <span class="tag">#커피비율</span>
+      <span class="tag">#SCA골드컵</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>원두 양 = 물 양 ÷ 비율로 계산합니다.</strong></li>
+        <li><strong>핸드드립은 1:15~1:17, 입문은 1:16이 무난합니다.</strong></li>
+        <li><strong>SCA 골드컵 기준은 리터당 55g(±10%)입니다.</strong></li>
+        <li><strong>240ml 1인분은 1:16에서 원두 15g입니다.</strong></li>
+        <li><strong>농도는 원두 양으로, 쓴맛·신맛은 분쇄도와 온도로 조절합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
