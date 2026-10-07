@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 170, emoji: "🌋", category: "원두 산지 & 테루아르",
+    categoryColor: { bg: "#ecfccb", text: "#3f6212" },
+    title: "과테말라 SHB 뜻 — 고도로 나눈 등급 기준과 HB 구분법",
+    date: "2026.10.07",
+    summary: "과테말라 원두 봉투에는 \"과테말라 안티구아 SHB\"처럼 영문 세 글자가 붙어 있는 경우가 많습니다. SHB는 Strictly Hard Bean의 약자로, 생두가 자란 해발 고도를 기준으로 나눈 등급입니다. 크기로 나누는 케냐 AA와는 기준이 완전히 다릅니다. 이 글에서는 SHB·HB 같은 표기가 어느 높이를 뜻하는지, 고도가 높으면 왜 단단한 생두가 되는지, 그리고 이 등급만으로 맛을 판단하면 안 되는 이유를 정리합니다.",
+    link: "coffee-article-2026-10-07.html"
+  },
+  {
     id: 169, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "핸드드립 비율 — 1인분 몇 g인지와 1:15~1:17 계산법",
