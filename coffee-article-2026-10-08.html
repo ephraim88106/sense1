@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>머신 압력 9bar 뜻 — 압력이 높고 낮을 때 나타나는 증상과 점검법 | 바리스타 스페셜티</title>
+  <meta name="description" content="에스프레소 추출 압력이 왜 9bar 전후로 통용되는지, 프리인퓨전과 압력 프로파일링이 맛에 주는 영향, 압력이 높거나 낮을 때 나타나는 증상과 점검 순서를 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-08">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="머신 압력 9bar 뜻 — 압력이 높고 낮을 때 나타나는 증상과 점검법 | 바리스타 스페셜티">
+<meta property="og:description" content="에스프레소 추출 압력이 왜 9bar 전후로 통용되는지, 프리인퓨전과 압력 프로파일링이 맛에 주는 영향, 압력이 높거나 낮을 때 나타나는 증상과 점검 순서를 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-08">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-08T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-08T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-08#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-08", "headline": "머신 압력 9bar 뜻 — 압력이 높고 낮을 때 나타나는 증상과 점검법 | 바리스타 스페셜티", "description": "에스프레소 추출 압력이 왜 9bar 전후로 통용되는지, 프리인퓨전과 압력 프로파일링이 맛에 주는 영향, 압력이 높거나 낮을 때 나타나는 증상과 점검 순서를 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-08", "dateModified": "2026-10-08", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법 가이드</span>
+      <span class="badge">에스프레소</span>
+      <span class="badge">추출 압력</span>
+    </div>
+    <h1>머신 압력 9bar 뜻<br/>— 압력이 높고 낮을 때 나타나는 증상과 점검법</h1>
+    <p class="subtitle"><strong>에스프레소 압력은 약 9bar가 표준처럼 통용되지만, 맛을 좌우하는 것은 압력 하나가 아니라 분쇄도·도징과의 균형입니다.</strong> 압력의 의미와 점검 순서를 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 8일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>에스프레소 머신 압력계의 바늘이 어디를 가리키는지는 샷의 맛과 직접 이어집니다. 가정용 머신 광고에는 "15바", "19바" 같은 숫자가 크게 적히지만, 실제 추출에서 중요한 것은 <strong>추출 중 커피 퍽(puck)에 걸리는 압력이 대체로 9bar 전후</strong>라는 점입니다. 이 글에서는 왜 이 숫자가 기준처럼 쓰이는지, 낮추거나 높이면 맛이 어떻게 달라지는지, 압력이 이상할 때 무엇부터 점검해야 하는지를 정리합니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>9bar 전후가 표준처럼 쓰이게 된 배경</li>
+        <li>펌프 압력과 실제 추출 압력이 다른 이유</li>
+        <li>프리인퓨전과 압력 프로파일링이 하는 일</li>
+        <li>압력이 높거나 낮을 때 나타나는 증상과 점검 순서</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">약 9bar</span><span class="label">추출 중 통용되는 기준 압력</span></div>
+      <div class="data-card"><span class="num">2~3bar</span><span class="label">프리인퓨전 단계의 낮은 압력(예시)</span></div>
+      <div class="data-card"><span class="num">약 90~96℃</span><span class="label">함께 쓰이는 물 온도 범위</span></div>
+      <div class="data-card"><span class="num">관례</span><span class="label">절대 규칙이 아닌 출발점</span></div>
+    </div>
+
+    <h2 class="section-title">1. 9bar 전후가 기준이 된 배경</h2>
+    <p>에스프레소는 뜨거운 물을 압력으로 밀어 곱게 간 커피 층을 통과시키는 추출 방식입니다. 1940년대 레버식 머신에서 시작해 1960년대 이후 전동 펌프 머신이 보급되면서 <strong>약 9bar</strong>가 업계의 관례로 자리 잡았다고 알려져 있습니다. 이 수치가 실험으로 도출된 유일한 최적값이라는 근거는 확실하지 않으며, 오늘날 대부분의 바스켓과 그룹헤드, 레시피가 이 압력을 전제로 설계되어 있기 때문에 기준처럼 쓰이는 면이 큽니다.</p>
+    <p>따라서 9bar는 "반드시 지켜야 하는 법칙"이 아니라 <strong>검증이 많이 된 출발점</strong>으로 이해하는 편이 정확합니다. 일부 카페와 연구자는 6~7bar 같은 낮은 압력에서 굵게 갈아 짧게 뽑는 방식을 실험하기도 합니다.</p>
+
+    <h2 class="section-title">2. 펌프 압력과 추출 압력은 다릅니다</h2>
+    <table class="compare-table">
+      <thead>
+        <tr><th>구분</th><th>의미</th><th>확인 방법</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">펌프 압력</td><td>펌프가 물을 밀어내는 최대 압력(스펙의 15바·19바)</td><td>제품 사양표</td></tr>
+        <tr><td class="em">추출 압력</td><td>커피 층을 통과할 때 실제로 걸리는 압력</td><td>머신 압력계, 압력 측정용 포터필터</td></tr>
+        <tr><td class="em">라인 압력</td><td>추출 전 배관 속 압력(프리인퓨전 등에 쓰임)</td><td>머신 설계에 따라 다름</td></tr>
+      </tbody>
+    </table>
+    <p>펌프가 19바까지 낼 수 있어도 압력 조절(OPV) 장치가 추출 압력을 9bar 전후로 맞추도록 설계된 머신이 일반적입니다. 즉 사양표의 큰 숫자는 맛과 직접 관계가 없고, <strong>실제로 뽑을 때 압력계가 가리키는 값</strong>이 중요합니다. 압력은 같은 분쇄도라도 도징량과 탬핑에 따라 달라지므로 <a href="https://coffee.ephseed.com/coffee-article-2026-09-03">탬핑 하는법</a>과 함께 보면 좋습니다.</p>
+
+    <h2 class="section-title">3. 프리인퓨전과 압력 프로파일링</h2>
+    <p>건조한 커피 층에 처음부터 높은 압력을 가하면 물이 약한 틈으로만 빠르게 지나가 <strong>채널링</strong>이 생기기 쉽습니다. 이를 줄이려고 처음 몇 초 동안 낮은 압력(대략 2~3bar)으로 커피를 적시는 단계를 <strong>프리인퓨전</strong>이라고 합니다. 일부 머신은 이 단계를 자동으로 수행하거나 시간을 조절할 수 있게 해 줍니다.</p>
+    <p>더 나아가 추출 중 압력을 단계별로 바꾸는 방식을 <strong>압력 프로파일링</strong>이라고 부릅니다. 예를 들어 낮은 압력으로 적신 뒤 9bar까지 올리고, 후반에 서서히 낮추는 식입니다. 초반 저압이 거친 맛을 줄이고 후반 감압이 단맛과 질감을 돕는다는 설명이 많지만, 대부분 업계 경험에 기반한 것이므로 <strong>기계식 고정 압력 머신에서 얻은 레시피를 그대로 기대하면 안 됩니다.</strong></p>
+
+    <div class="tip-box">
+      <div class="tip-title">압력 관련 점검 요령</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text">추출 중 압력계가 <strong>약 9bar 전후</strong>에서 안정되는지 먼저 확인합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text">압력이 어긋나면 <strong>머신 설정보다 분쇄도·도징량</strong>부터 점검합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text">샷 시간은 함께 봅니다. 기준과 조절은 <a href="https://coffee.ephseed.com/coffee-article-2026-09-01">에스프레소 샷 시간 기준</a>을 참고합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text">한 번에 <strong>하나의 변수만</strong> 바꾸고 맛을 비교합니다.</span></div>
+    </div>
+
+    <h2 class="section-title">4. 압력이 높거나 낮을 때 나타나는 증상</h2>
+    <table class="compare-table">
+      <thead>
+        <tr><th>상태</th><th>흔한 원인</th><th>맛과 겉모습</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">압력이 너무 높음</td><td>분쇄가 너무 곱거나 도징이 많음, 과한 탬핑</td><td>추출이 느리고 쓴맛·떫은맛, 물이 거의 떨어지지 않음</td></tr>
+        <tr><td class="em">압력이 너무 낮음</td><td>분쇄가 굵거나 도징이 적음, 채널링</td><td>추출이 빠르고 묽고 신맛이 튀며 크레마가 옅음</td></tr>
+        <tr><td class="em">압력이 흔들림</td><td>펌프·밸브 이상, 물때, 불균일한 퍽</td><td>샷마다 맛 편차가 큼</td></tr>
+      </tbody>
+    </table>
+    <p>크레마가 옅거나 두꺼운 경우의 원인은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-21">에스프레소 크레마 색과 양 보는법</a>에서 다뤘습니다. 압력은 원인이 아니라 <strong>결과로 나타나는 신호</strong>인 경우가 많다는 점을 기억해 두면 좋습니다.</p>
+
+    <h2 class="section-title">5. 압력 조절은 누가 어떻게 하나</h2>
+    <p>가정용 머신은 대개 공장 출하 때 압력이 맞춰져 있고, 사용자가 만지는 것은 분쇄도와 도징입니다. 업소용 머신은 압력 조절 나사(OPV)나 펌프 설정을 기사가 조정할 수 있습니다. 압력계 값이 계속 기준에서 벗어나면 임의로 분해하기보다 <strong>제조사 점검 기준에 따라 조정</strong>하는 것이 안전합니다. 물때가 쌓이면 압력이 불안정해지므로 머신 세척 주기도 중요합니다. 이는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-22">에스프레소 머신 청소 주기</a>에 정리되어 있습니다.</p>
+    <p>추출 비율과 시간으로 맛을 바꾸고 싶다면 압력을 건드리기 전에 <a href="https://coffee.ephseed.com/coffee-article-2026-09-22">리스트레토 룽고 비교</a>에서 물 양 조절을 먼저 시도하는 쪽이 현실적입니다.</p>
+
+    <h2 class="section-title">6. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 에스프레소 압력이 9bar여야만 하나요?</strong><br/>
+      A. 필수 규칙은 아닙니다. 9bar 전후가 많이 쓰이는 관례이고, 더 낮은 압력으로 추출하는 실험 방식도 있습니다. 다만 대부분의 레시피와 장비가 이 범위에 맞춰져 있습니다.</p>
+      <p><strong>Q. 15바, 19바 머신이 더 맛있나요?</strong><br/>
+      A. 그 숫자는 펌프가 낼 수 있는 최대 압력이며 실제 추출 압력과 다릅니다. 숫자가 크다고 맛이 좋아지는 것은 아닙니다.</p>
+      <p><strong>Q. 프리인퓨전은 꼭 필요한가요?</strong><br/>
+      A. 필수는 아니지만 커피 층을 고르게 적셔 채널링을 줄이는 데 도움이 되는 방법으로 널리 쓰입니다.</p>
+      <p><strong>Q. 압력계가 낮게 나오면 어떻게 해야 하나요?</strong><br/>
+      A. 분쇄도를 곱게 하거나 도징량을 맞춰 보고, 그래도 어긋나면 물때와 펌프 상태를 점검합니다.</p>
+    </div>
+
+    <div class="closing-box">
+      <h3>압력은 결과를 읽는 신호입니다</h3>
+      <p><strong>에스프레소는 약 9bar 전후를 기준으로 삼고, 어긋나면 머신보다 분쇄도와 도징부터 조절하세요.</strong></p>
+    </div>
+
+    <p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://clivecoffee.com/blogs/learn/nine-bar-pressure-espresso-s-greatest-accident" rel="noopener nofollow">Clive Coffee — Nine Bar Pressure</a>, <a href="https://www.sevenmiles.com.au/editorial/espresso-pressure/" rel="noopener nofollow">Seven Miles — Espresso Pressure</a>, <a href="https://19grams.coffee/en/blogs/kaffeelexikon/espresso-preinfusion" rel="noopener nofollow">19grams — Espresso Preinfusion</a>, <a href="https://www.beanscenemag.com.au/unlocking-flavour-with-pressure-profiling/" rel="noopener nofollow">Beanscene — Pressure Profiling</a>. 수치는 자료마다 차이가 있어 범위로 서술했습니다.</p>
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-06"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">핸드드립 비율 — 1인분 몇 g인지와 1:15~1:17 계산법</div><div class="rc-date">2026. 10. 06</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-04"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">핸드드립 드리퍼 고르는법 — 입문자에게 맞는 모양과 재질</div><div class="rc-date">2026. 10. 04</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-02"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">TDS 뜻 — 농도 1.15~1.35%와 수율 18~22% 계산하는 법</div><div class="rc-date">2026. 10. 02</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#에스프레소압력</span>
+      <span class="tag">#프리인퓨전</span>
+      <span class="tag">#압력프로파일링</span>
+      <span class="tag">#에스프레소추출</span>
+    </div>
+
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>추출 압력은 약 9bar 전후가 관례적 기준입니다.</strong></li>
+        <li><strong>사양표의 15바·19바는 펌프 최대 압력이며 맛과 직접 관계가 없습니다.</strong></li>
+        <li><strong>프리인퓨전은 낮은 압력으로 적셔 채널링을 줄이는 방법입니다.</strong></li>
+        <li><strong>압력이 어긋나면 분쇄도·도징량부터 점검합니다.</strong></li>
+        <li><strong>한 번에 한 가지 변수만 바꿔 비교합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>

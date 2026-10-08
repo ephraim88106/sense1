@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 171, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "머신 압력 9bar 뜻 — 압력이 높고 낮을 때 나타나는 증상과 점검법",
+    date: "2026.10.08",
+    summary: "에스프레소 머신 압력계의 바늘이 어디를 가리키는지는 샷의 맛과 직접 이어집니다. 가정용 머신 광고에는 \"15바\", \"19바\" 같은 숫자가 크게 적히지만, 실제 추출에서 중요한 것은 추출 중 커피 퍽(puck)에 걸리는 압력이 대체로 9bar 전후라는 점입니다. 이 글에서는 왜 이 숫자가 기준처럼 쓰이는지, 낮추거나 높이면 맛이 어떻게 달라지는지, 압력이 이상할 때 무엇부터 점검해야 하는지를 정리합니다.",
+    link: "coffee-article-2026-10-08.html"
+  },
+  {
     id: 170, emoji: "🌋", category: "원두 산지 & 테루아르",
     categoryColor: { bg: "#ecfccb", text: "#3f6212" },
     title: "과테말라 SHB 뜻 — 고도로 나눈 등급 기준과 HB 구분법",
