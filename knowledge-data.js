@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 172, emoji: "🔥", category: "로스팅 & 원두 과학",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "콜롬비아 수프리모 뜻 — 스크린 사이즈 기준과 엑셀소 구분법",
+    date: "2026.10.09",
+    summary: "\"콜롬비아 수프리모\"는 원두 봉투와 메뉴판에서 흔히 보이는 이름입니다. 이름만 들으면 최고급 등급처럼 느껴지지만, 수프리모는 생두의 크기(스크린 사이즈)로 나눈 등급입니다. 이 글에서는 수프리모와 엑셀소가 각각 무엇을 뜻하는지, 크기가 맛과 어떤 관계인지, 봉투 표기를 어떻게 읽으면 좋은지 정리합니다.",
+    link: "coffee-article-2026-10-09.html"
+  },
+  {
     id: 171, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "머신 압력 9bar 뜻 — 압력이 높고 낮을 때 나타나는 증상과 점검법",
