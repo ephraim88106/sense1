@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>만델링 뜻 — 습식 탈곡 가공 방식과 맛 특징, 등급 읽는 법 | 바리스타 스페셜티</title>
+  <meta name="description" content="만델링이 인도네시아 수마트라 커피를 가리키는 이름인 이유, 습식 탈곡(기링 바사) 가공이 맛에 주는 영향, 산미가 낮고 바디가 묵직한 이유와 등급 표기를 읽는 법을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-10">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="만델링 뜻 — 습식 탈곡 가공 방식과 맛 특징, 등급 읽는 법 | 바리스타 스페셜티">
+<meta property="og:description" content="만델링이 인도네시아 수마트라 커피를 가리키는 이름인 이유, 습식 탈곡(기링 바사) 가공이 맛에 주는 영향, 산미가 낮고 바디가 묵직한 이유와 등급 표기를 읽는 법을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-10">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-10T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-10T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-10#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-10", "headline": "만델링 뜻 — 습식 탈곡 가공 방식과 맛 특징, 등급 읽는 법 | 바리스타 스페셜티", "description": "만델링이 인도네시아 수마트라 커피를 가리키는 이름인 이유, 습식 탈곡(기링 바사) 가공이 맛에 주는 영향, 산미가 낮고 바디가 묵직한 이유와 등급 표기를 읽는 법을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-10", "dateModified": "2026-10-10", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🌋 원두 산지 가이드</span>
+      <span class="badge">인도네시아</span>
+      <span class="badge">가공 방식</span>
+    </div>
+    <h1>만델링 뜻<br/>— 습식 탈곡 가공 방식과 맛 특징, 등급 읽는 법</h1>
+    <p class="subtitle"><strong>만델링은 인도네시아 북부 수마트라 커피를 가리키는 이름이며, 맛의 특징은 습식 탈곡 가공에서 크게 비롯됩니다.</strong> 뜻과 맛, 구매 기준을 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 10일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>"만델링"은 묵직하고 산미가 적은 커피의 대표 이름으로 자주 불립니다. 하지만 품종이나 등급 이름이 아니라 <strong>수마트라 북부에서 나는 커피의 상표처럼 굳어진 이름</strong>입니다. 이 글에서는 만델링의 뜻, 맛을 만드는 습식 탈곡(기링 바사) 가공, 봉투 표기를 읽는 법을 차례로 설명합니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>만델링이 가리키는 지역과 이름의 유래</li>
+        <li>습식 탈곡(기링 바사)이 일반 워시드와 다른 점</li>
+        <li>산미가 낮고 바디가 묵직한 이유</li>
+        <li>등급 표기와 구매 시 확인할 점</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">수마트라</span><span class="label">인도네시아 주요 재배 섬</span></div>
+      <div class="data-card"><span class="num">기링 바사</span><span class="label">습식 탈곡 가공의 현지 명칭</span></div>
+      <div class="data-card"><span class="num">약 10~12%</span><span class="label">최종 건조 후 생두 수분율</span></div>
+      <div class="data-card"><span class="num">지역명</span><span class="label">품종·등급이 아님</span></div>
+    </div>
+    <h2 class="section-title">1. 만델링은 무엇을 뜻하나</h2>
+    <p>만델링(Mandheling)은 인도네시아 북부 수마트라 일대에서 재배되는 아라비카 커피에 붙는 이름입니다. 이 지역에 사는 만다일링(Mandailing)족의 이름에서 왔다고 알려져 있으며, 오늘날에는 특정 농장이 아니라 <strong>지역에서 나는 커피를 통칭하는 판매용 이름</strong>으로 쓰입니다. 같은 수마트라 안에서도 아체 지방의 가요(Gayo), 린통(Lintong) 등 지역명이 따로 쓰이므로, 만델링이라는 단어 하나로 모든 수마트라 커피를 뜻하지는 않습니다.</p>
+    <p>산지 이름 위주로 원두를 고르는 기준은 <a href="https://coffee.ephseed.com/coffee-article-2026-09-05">예가체프 G1 G2 등급 뜻</a>에서도 비슷하게 다뤘습니다.</p>
+    <h2 class="section-title">2. 습식 탈곡(기링 바사)이란</h2>
+    <p>수마트라는 습도가 높고 비가 잦아 생두를 오래 햇볕에 말리기 어렵습니다. 그래서 현지에서는 <strong>기링 바사(Giling Basah, 습식 탈곡)</strong>라는 방식이 발달했습니다. 일반적인 워시드는 파치먼트(껍질)를 씌운 채 충분히 말린 뒤 벗기지만, 기링 바사는 아직 수분이 많은 상태에서 껍질을 벗겨 냅니다.</p>
+    <table class="compare-table">
+      <thead>
+        <tr><th>단계</th><th>일반 워시드</th><th>습식 탈곡</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="em">과육 제거·세척</td><td>진행</td><td>진행</td></tr>
+        <tr><td class="em">파치먼트 건조</td><td>수분율 약 10~12%까지 충분히 건조</td><td>수분이 높은 상태에서 일부만 건조</td></tr>
+        <tr><td class="em">껍질 벗기기</td><td>건조 후</td><td>수분이 남은 상태에서</td></tr>
+        <tr><td class="em">최종 건조</td><td>없음(이미 완료)</td><td>껍질 없이 약 10~12%까지 다시 건조</td></tr>
+      </tbody>
+    </table>
+    <p>이 과정에서 생두가 공기와 직접 닿는 시간이 길어지고, 색이 푸른빛이 도는 짙은 녹색으로 변하는 경우가 많습니다. 수분 수치는 자료와 농가마다 다르므로 위 표의 값은 일반적인 범위로 이해하면 됩니다. 일반 워시드와 내추럴 방식의 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-23">내추럴 워시드 차이</a>에서 비교했습니다.</p>
+    <h2 class="section-title">3. 산미가 낮고 바디가 묵직한 이유</h2>
+    <p>여러 자료는 습식 탈곡 커피가 <strong>산미가 낮고 바디가 두터우며 흙, 나무, 허브, 향신료 같은 풍미</strong>를 띠는 경향이 있다고 설명합니다. 이 풍미는 가공 중 생두가 겪는 환경 변화와 수마트라의 기후·토양이 함께 만든 것으로 보며, 정확한 화학적 원인은 단정하기 어렵습니다. 산미가 무엇인지는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-17">원두 산미 뜻</a>에 정리되어 있습니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">만델링 맛을 살리는 요령</div>
+      <div class="tip-item"><span class="tip-num">1</span><span class="tip-text">중배전~중강배전에서 바디와 단맛이 잘 드러난다고 알려져 있습니다. 배전도별 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-30">약배전 중배전 강배전 차이</a>를 참고합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">2</span><span class="tip-text">산미가 낮은 편이라 과추출 시 쓴맛이 도드라지기 쉬우니 <strong>물 온도를 약간 낮춰</strong> 시도합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">3</span><span class="tip-text">프렌치프레스처럼 바디가 살아나는 방식이 잘 맞는 편입니다. <a href="https://coffee.ephseed.com/coffee-article-2026-08-29">프렌치프레스 사용법</a>을 함께 확인합니다.</span></div>
+      <div class="tip-item"><span class="tip-num">4</span><span class="tip-text">생두 특성상 로트마다 편차가 있으므로 <strong>같은 이름이라도 시음 후</strong> 판단합니다.</span></div>
+    </div>
+    <h2 class="section-title">4. 등급 표기는 어떻게 읽나</h2>
+    <p>인도네시아 커피는 크기가 아니라 <strong>결점두(불량 생두) 수</strong>를 기준으로 등급을 나누는 방식이 널리 쓰입니다. 대체로 300g 샘플 속 결점 개수로 Grade 1, Grade 2 등을 구분하며, 기준 수치는 거래처와 시기에 따라 다를 수 있습니다. 판매처가 쓰는 "더블 피크", "트리플 피크" 같은 표현은 수작업 선별 횟수를 강조하는 상업적 용어이므로 공식 등급과는 구분해서 봐야 합니다.</p>
+    <p>크기로 나누는 콜롬비아·케냐와 기준이 다르다는 점은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-09">콜롬비아 수프리모 뜻</a>과 비교하면 이해하기 쉽습니다.</p>
+    <h2 class="section-title">5. 구매할 때 확인할 점</h2>
+    <p>봉투에 지역명(만델링·가요·린통), 가공 방식, 수확 연도, 로스팅 날짜가 적혀 있는지 봅니다. 생두 상태에서 오래 보관된 경우 풍미가 무뎌질 수 있으므로 수확 연도도 확인하는 것이 좋습니다. 원두 보관은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-14">원두 보관법</a>을 따릅니다. 블렌드에 일부 섞인 경우와 싱글 오리진의 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-24">싱글 오리진 뜻</a>에서 비교했습니다.</p>
+    <h2 class="section-title">6. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 만델링은 원두 품종 이름인가요?</strong><br/>
+      A. 아닙니다. 수마트라 북부 지역 커피를 부르는 이름이며 품종은 농장마다 다릅니다.</p>
+      <p><strong>Q. 만델링은 왜 산미가 적은가요?</strong><br/>
+      A. 습식 탈곡 가공과 재배 환경이 함께 작용한 결과로 설명되며, 정확한 원인은 단정하기 어렵습니다.</p>
+      <p><strong>Q. 만델링과 가요는 같은 건가요?</strong><br/>
+      A. 둘 다 수마트라 커피지만 재배 지역과 이름이 다릅니다. 가요는 아체 지방 커피입니다.</p>
+      <p><strong>Q. 만델링은 강배전만 맞나요?</strong><br/>
+      A. 강배전으로 많이 팔릴 뿐, 중배전에서도 단맛과 바디를 즐길 수 있습니다. 취향에 따라 고르면 됩니다.</p>
+    </div>
+    <div class="closing-box">
+      <h3>만델링은 지역 이름이고, 맛은 가공에서 나옵니다</h3>
+      <p><strong>만델링은 수마트라 북부 커피를 가리키는 이름이며, 산미가 낮고 묵직한 맛은 습식 탈곡 가공의 영향이 큽니다.</strong></p>
+    </div>
+    <p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://specialtycoffee.id/articles/mandheling-coffee/" rel="noopener nofollow">Specialty Coffee Indonesia — Mandheling Coffee</a>, <a href="https://realdealroasters.co.uk/2025/10/23/what-makes-mandheling-coffee-unique-the-giling-basah-process" rel="noopener nofollow">Real Deal Roasters — The Giling Basah Process</a>, <a href="https://1zpresso.coffee/mandheling-coffee/" rel="noopener nofollow">1Zpresso — Mandheling Coffee</a></p>
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-29"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">라떼아트 로제타 만드는 방법 — 흔드는 동작과 밀어내는 타이밍</div><div class="rc-date">2026. 09. 29</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-26"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">라떼아트 튤립 만드는 방법 — 층 쌓는 순서와 자르는 타이밍</div><div class="rc-date">2026. 09. 26</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-25"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">라떼아트 하트 만드는 방법 — 피처 각도와 잔 기울이는 타이밍</div><div class="rc-date">2026. 09. 25</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#만델링</span>
+      <span class="tag">#습식탈곡</span>
+      <span class="tag">#수마트라</span>
+      <span class="tag">#인도네시아커피</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>만델링은 수마트라 북부 커피를 가리키는 지역 이름입니다.</strong></li>
+        <li><strong>기링 바사는 수분이 남은 상태에서 껍질을 벗기는 가공입니다.</strong></li>
+        <li><strong>산미가 낮고 바디가 묵직한 경향이 있습니다.</strong></li>
+        <li><strong>등급은 결점두 수 기준이 일반적이며 기준은 거래처마다 다릅니다.</strong></li>
+        <li><strong>같은 이름이어도 로트 편차가 있어 시음이 필요합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>

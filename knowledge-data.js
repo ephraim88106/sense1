@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 173, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "만델링 뜻 — 습식 탈곡 가공 방식과 맛 특징, 등급 읽는 법",
+    date: "2026.10.10",
+    summary: "\"만델링\"은 묵직하고 산미가 적은 커피의 대표 이름으로 자주 불립니다. 하지만 품종이나 등급 이름이 아니라 수마트라 북부에서 나는 커피의 상표처럼 굳어진 이름입니다. 이 글에서는 만델링의 뜻, 맛을 만드는 습식 탈곡(기링 바사) 가공, 봉투 표기를 읽는 법을 차례로 설명합니다.",
+    link: "coffee-article-2026-10-10.html"
+  },
+  {
     id: 172, emoji: "🔥", category: "로스팅 & 원두 과학",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "콜롬비아 수프리모 뜻 — 스크린 사이즈 기준과 엑셀소 구분법",
