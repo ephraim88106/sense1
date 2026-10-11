@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>도징 뜻 — 바스켓별 담는 양(g)과 많을 때·적을 때 증상 | 바리스타 스페셜티</title>
+  <meta name="description" content="에스프레소 도징이란 무엇인지, 바스켓 표기에 따라 원두 몇 g을 담는지, 1:2 비율 계산, 과다 도징과 부족 도징의 증상과 점검 순서를 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-11">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="도징 뜻 — 바스켓별 담는 양(g)과 많을 때·적을 때 증상 | 바리스타 스페셜티">
+<meta property="og:description" content="에스프레소 도징이란 무엇인지, 바스켓 표기에 따라 원두 몇 g을 담는지, 1:2 비율 계산, 과다 도징과 부족 도징의 증상과 점검 순서를 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-11">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-11T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-11T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-11#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-11", "headline": "도징 뜻 — 바스켓별 담는 양(g)과 많을 때·적을 때 증상 | 바리스타 스페셜티", "description": "에스프레소 도징이란 무엇인지, 바스켓 표기에 따라 원두 몇 g을 담는지, 1:2 비율 계산, 과다 도징과 부족 도징의 증상과 점검 순서를 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-11", "dateModified": "2026-10-11", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🎨 바리스타 스킬</span>
+      <span class="badge">에스프레소</span>
+      <span class="badge">도징</span>
+    </div>
+    <h1>도징 뜻<br/>— 바스켓별 담는 양(g)과 많을 때·적을 때 증상</h1>
+    <p class="subtitle"><strong>도징은 포터필터 바스켓에 담는 원두의 무게이며, 바스켓에 표기된 용량에서 1~2g 안쪽으로 맞추는 것이 기본입니다.</strong> 기준과 증상별 점검 순서를 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 11일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>에스프레소 맛이 들쭉날쭉할 때 분쇄도부터 만지는 경우가 많지만, 그 전에 확인할 것이 <strong>바스켓에 담은 원두의 무게, 즉 도징</strong>입니다. 같은 분쇄도라도 원두 양이 달라지면 추출 시간과 맛이 달라집니다. 이 글에서는 도징의 뜻, 바스켓별 기준, 과다·부족 도징의 증상, 점검 순서를 설명합니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>도징의 뜻과 저울로 재야 하는 이유</li>
+        <li>바스켓 표기 용량별 원두 g 기준</li>
+        <li>도징량과 추출량(1:2 비율) 계산</li>
+        <li>과다·부족 도징의 증상과 점검 순서</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">18g</span><span class="label">더블 바스켓에서 흔한 표기 용량</span></div>
+      <div class="data-card"><span class="num">±1~2g</span><span class="label">표기 용량 대비 권장 허용 범위</span></div>
+      <div class="data-card"><span class="num">1:2</span><span class="label">입문 때 쓰는 대표 비율</span></div>
+      <div class="data-card"><span class="num">25~30초</span><span class="label">더블 샷 추출 시간 기준</span></div>
+    </div>
+    <h2 class="section-title">1. 도징이란 무엇인가</h2>
+    <p>도징(dosing)은 포터필터 바스켓에 담는 <strong>분쇄 원두의 양</strong>을 뜻합니다. 같은 원두와 분쇄도라도 양이 다르면 원두층(퍽)의 두께가 달라지고, 물이 통과하는 저항도 달라집니다. 그래서 도징은 분쇄도, 추출량과 함께 에스프레소를 조절하는 기본 변수 세 가지로 꼽힙니다.</p>
+    <p>부피나 숟가락으로 어림하면 같은 양을 담았다고 생각해도 원두의 밀도와 분쇄 입자에 따라 몇 g씩 차이가 납니다. 0.1g 단위의 저울로 매번 재는 것이 재현성의 출발점입니다. 추출 시간 재는 법은 <a href="https://coffee.ephseed.com/coffee-article-2026-09-01">에스프레소 샷 시간 기준</a>에서 다뤘습니다.</p>
+
+    <h2 class="section-title">2. 바스켓별 도징 기준</h2>
+    <p>도징량은 먼저 <strong>바스켓 표기 용량</strong>에 맞춥니다. 바스켓 옆면이나 바닥에 "18g", "20g" 같은 숫자가 새겨져 있는 경우가 많습니다. 아래는 일반적으로 안내되는 범위이며, 제조사와 바스켓 모양에 따라 다릅니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>바스켓 종류</th><th>표기 용량 예</th><th>도징 범위(참고)</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>싱글</td><td>7~9g</td><td>표기 ±1g</td><td>양이 적어 오차의 영향이 큼</td></tr>
+        <tr><td>더블(표준)</td><td class="em">18g</td><td>17~19g</td><td>가장 흔한 시작점</td></tr>
+        <tr><td>더블(대용량)</td><td class="em">20g</td><td>19~21g</td><td>바스켓이 바뀌면 분쇄도 재조정</td></tr>
+      </tbody>
+    </table>
+    <p>표기 용량은 권장 기준일 뿐 바스켓의 실제 용량과 일치하지 않는 경우도 있습니다. 처음에는 표기 용량으로 시작하고, 퍽의 상태와 맛을 보며 1g 이내에서 조정하는 방식이 안전합니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">도징 기본 순서</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>빈 포터필터를 저울에 올리고 영점을 맞춥니다.</strong> 바스켓이 마른 상태인지 확인합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>목표 g에 맞춰 분쇄 원두를 받습니다.</strong> 그라인더가 g 단위 자동 정지를 지원하지 않으면 시간으로 맞추고 저울로 확인합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>표면을 평평하게 고릅니다.</strong> 한쪽으로 쏠리면 채널링 위험이 커집니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>수평으로 탬핑합니다.</strong> 방법은 <a href="https://coffee.ephseed.com/coffee-article-2026-09-03">탬핑 하는법</a>을 참고합니다.</div></div>
+    </div>
+
+    <h2 class="section-title">3. 도징량과 추출량 비율 계산</h2>
+    <p>도징량을 정하면 추출량(음료의 무게)도 함께 정합니다. 입문 단계에서는 <strong>도징량 : 추출량 = 1 : 2</strong>를 시작점으로 많이 씁니다. 18g을 담았다면 약 36g이 추출되도록 잔 아래에 저울을 두고 재면 됩니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>비율</th><th>18g 도징 시 추출량</th><th>맛 경향</th></tr></thead>
+      <tbody>
+        <tr><td>1 : 1.5</td><td>약 27g</td><td>진하고 묵직함</td></tr>
+        <tr><td class="em">1 : 2</td><td class="em">약 36g</td><td>균형을 잡기 쉬운 시작점</td></tr>
+        <tr><td>1 : 2.5</td><td>약 45g</td><td>가볍고 산미가 도드라짐</td></tr>
+      </tbody>
+    </table>
+    <p>이 비율은 정해진 규격이 아니라 출발점입니다. 로스팅 정도와 취향에 따라 달라지며, 물 비율에 따른 맛 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-09-22">리스트레토 룽고 비교</a>에서 자세히 비교했습니다.</p>
+
+    <h2 class="section-title">4. 과다 도징의 증상</h2>
+    <p>바스켓 용량보다 많이 담으면 탬핑한 퍽 윗면이 샤워 스크린(그룹헤드의 물 분사판)에 닿거나 눌립니다. 이때 나타날 수 있는 증상은 다음과 같습니다.</p>
+    <ul style="margin:0 0 18px 22px;font-size:15.5px;color:#3a2218">
+      <li>퍽 윗면에 샤워 스크린 자국이 선명하게 남음</li>
+      <li>물이 한쪽으로 몰려 추출이 고르지 않음(채널링)</li>
+      <li>추출이 느려지거나 쓴맛과 텁텁함이 강해짐</li>
+    </ul>
+    <p>다만 약간의 과다 도징은 문제가 없다는 의견도 있어 기준이 절대적이지는 않습니다. 그래도 표기 용량에서 크게 벗어나면 위 증상이 나타나기 쉬우므로, 초보 단계에서는 표기 용량에서 1~2g 안쪽을 지키는 편이 안전합니다.</p>
+
+    <h2 class="section-title">5. 부족 도징의 증상</h2>
+    <p>반대로 원두가 너무 적으면 퍽이 얇아지고 바스켓 위쪽에 빈 공간(헤드스페이스)이 커집니다. 물이 얇은 퍽을 빠르게 통과하면서 다음과 같은 일이 생길 수 있습니다.</p>
+    <ul style="margin:0 0 18px 22px;font-size:15.5px;color:#3a2218">
+      <li>추출이 지나치게 빨라지고 맛이 묽고 시게 느껴짐</li>
+      <li>퍽이 질척하게 무너지거나 채널이 생김</li>
+      <li>같은 분쇄도로는 시간이 맞지 않아 더 곱게 갈아야 함</li>
+    </ul>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>도징량을 바꾸면 추출 속도도 바뀌므로 분쇄도를 함께 조정해야 합니다. 분쇄도 단계별 굵기는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-12">그라인더 분쇄도 조절</a>에서 정리했습니다.</p>
+    </div>
+
+    <h2 class="section-title">6. 샷이 이상할 때 점검 순서</h2>
+    <p>맛이나 시간이 이상할 때는 한 번에 하나씩만 바꿔야 원인을 찾을 수 있습니다. 권장 순서는 다음과 같습니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>순서</th><th>확인 항목</th><th>방법</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>도징량</td><td>저울로 표기 용량 ±1g 안인지 확인</td></tr>
+        <tr><td>2</td><td>퍽 준비</td><td>표면 고르기와 수평 탬핑 점검</td></tr>
+        <tr><td>3</td><td>분쇄도</td><td>시간이 짧으면 곱게, 길면 굵게</td></tr>
+        <tr><td>4</td><td>추출량</td><td>1:2 기준으로 무게 확인</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">7. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 18g 바스켓에 20g을 담아도 되나요?</strong><br/>
+      A. 1~2g 정도는 허용되는 경우가 많지만 퍽이 샤워 스크린에 닿으면 채널링이 생길 수 있어 퍽 윗면 상태를 확인해야 합니다.</p>
+      <p><strong>Q. 저울 없이 도징을 맞출 수 있나요?</strong><br/>
+      A. 어렵습니다. 원두 밀도와 분쇄도에 따라 같은 부피도 무게가 달라지므로 0.1g 단위 저울을 권장합니다.</p>
+      <p><strong>Q. 싱글 샷도 1:2 비율이 맞나요?</strong><br/>
+      A. 시작점으로는 같게 씁니다. 다만 양이 적어 오차가 크므로 더블 바스켓에서 연습하는 편이 안정적입니다.</p>
+      <p><strong>Q. 도징을 바꾸면 분쇄도도 바꿔야 하나요?</strong><br/>
+      A. 네. 퍽 두께가 달라져 추출 시간이 변하므로 분쇄도를 다시 맞춥니다.</p>
+    </div>
+    <div class="closing-box">
+      <h3>도징은 저울로 재고, 한 번에 하나만 바꿉니다</h3>
+      <p><strong>바스켓 표기 용량에서 1~2g 안쪽으로 맞추고, 1:2 비율을 시작점 삼아 분쇄도를 조정합니다.</strong></p>
+    </div>
+    <p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://clivecoffee.com/blogs/learn/headspace-espressos-invisible-enemy" rel="noopener nofollow">Clive Coffee — Headspace: Espresso's Invisible Enemy?</a>, <a href="https://coffeedant.com/blog/espresso-dosing/" rel="noopener nofollow">Coffee Dant — The Home Barista's Guide to Espresso Dosing</a>, <a href="https://www.home-barista.com/tips/overdosing-or-leave-some-head-space-t100985.html" rel="noopener nofollow">Home-Barista — Overdosing or leave some head space?</a></p>
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-04"><div class="rc-cat">🏪 카페 창업 & 운영 실전</div><div class="rc-title">월 매출 1억인데 망했다 — 아무도 안 알려주는 카페 수익의 진실</div><div class="rc-date">2026. 08. 04</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-25"><div class="rc-cat">🏪 카페 창업 & 운영 실전</div><div class="rc-title">하루 34곳이 폐업하는데 당신만 살아남을 수 있다고? — 카페 창업 수익 구조의 민낯</div><div class="rc-date">2026. 07. 25</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-18"><div class="rc-cat">🏪 카페 창업 & 운영 실전</div><div class="rc-title">카페 창업 후 3년 내 절반이 망하는 이유 — 10년 차 바리스타가 숨겨온 수익 구조의 진실</div><div class="rc-date">2026. 07. 18</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#에스프레소</span>
+      <span class="tag">#도징</span>
+      <span class="tag">#바스켓</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>도징은 바스켓에 담는 원두 무게이며 저울로 재야 합니다.</strong></li>
+        <li><strong>바스켓 표기 용량에서 1~2g 안쪽이 기본입니다.</strong></li>
+        <li><strong>1:2 비율(18g이면 약 36g)이 시작점입니다.</strong></li>
+        <li><strong>과다 도징은 채널링, 부족 도징은 묽고 신 샷으로 이어질 수 있습니다.</strong></li>
+        <li><strong>도징을 바꾸면 분쇄도도 다시 맞춰야 합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>

@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 174, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "도징 뜻 — 바스켓별 담는 양(g)과 많을 때·적을 때 증상",
+    date: "2026.10.11",
+    summary: "에스프레소 맛이 들쭉날쭉할 때 분쇄도부터 만지는 경우가 많지만, 그 전에 확인할 것이 바스켓에 담은 원두의 무게, 즉 도징입니다. 같은 분쇄도라도 원두 양이 달라지면 추출 시간과 맛이 달라집니다. 이 글에서는 도징의 뜻, 바스켓별 기준, 과다·부족 도징의 증상, 점검 순서를 설명합니다.",
+    link: "coffee-article-2026-10-11.html"
+  },
+  {
     id: 173, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "만델링 뜻 — 습식 탈곡 가공 방식과 맛 특징, 등급 읽는 법",
