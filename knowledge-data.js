@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 175, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "과소추출 과다추출 뜻 — 신맛·쓴맛으로 구분하는 증상과 조절법",
+    date: "2026.10.12",
+    summary: "에스프레소가 시거나 쓸 때 원인은 대부분 추출이 덜 되었거나(과소추출) 지나치게 되었거나(과다추출) 둘 중 하나입니다. 이 글에서는 두 상태의 차이, 맛으로 구분하는 법, 수율 기준, 조절 순서를 설명합니다.",
+    link: "coffee-article-2026-10-12.html"
+  },
+  {
     id: 174, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "도징 뜻 — 바스켓별 담는 양(g)과 많을 때·적을 때 증상",
