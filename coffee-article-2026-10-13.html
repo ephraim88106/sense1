@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>플랫화이트 뜻 — 라떼와 우유 양·거품 두께·샷 구성 비교 | 바리스타 스페셜티</title>
+  <meta name="description" content="플랫화이트와 카페라떼의 차이를 우유 양(140~170ml 대 200~280ml 안팎), 거품 두께, 샷 구성, 컵 크기 기준으로 비교하고 주문할 때 고르는 기준을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-13">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="플랫화이트 뜻 — 라떼와 우유 양·거품 두께·샷 구성 비교 | 바리스타 스페셜티">
+<meta property="og:description" content="플랫화이트와 카페라떼의 차이를 우유 양(140~170ml 대 200~280ml 안팎), 거품 두께, 샷 구성, 컵 크기 기준으로 비교하고 주문할 때 고르는 기준을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-13">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-13T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-13T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-13#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-13", "headline": "플랫화이트 뜻 — 라떼와 우유 양·거품 두께·샷 구성 비교 | 바리스타 스페셜티", "description": "플랫화이트와 카페라떼의 차이를 우유 양(140~170ml 대 200~280ml 안팎), 거품 두께, 샷 구성, 컵 크기 기준으로 비교하고 주문할 때 고르는 기준을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-13", "dateModified": "2026-10-13", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🎨 바리스타 스킬</span>
+      <span class="badge">플랫화이트</span>
+      <span class="badge">우유 음료</span>
+    </div>
+    <h1>플랫화이트 뜻<br/>— 라떼와 우유 양·거품 두께·샷 구성 비교</h1>
+    <p class="subtitle"><strong>플랫화이트는 라떼보다 우유가 적고 거품이 얇아 커피 맛이 진하게 느껴지는 음료입니다.</strong> 두 음료의 구성 차이와 고르는 기준을 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 13일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>메뉴판에서 플랫화이트와 카페라떼를 두고 고민한다면 핵심은 하나입니다. <strong>플랫화이트는 우유가 적고 거품이 얇아 커피 맛이 더 진하게 느껴지고, 카페라떼는 우유가 많아 부드럽고 순합니다.</strong> 이 글에서는 두 음료의 구성 차이와 고르는 기준을 설명합니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>플랫화이트의 뜻과 유래</li>
+        <li>우유 양·거품 두께·컵 크기 비교</li>
+        <li>샷 구성(더블 샷, 리스트레토)의 차이</li>
+        <li>취향별로 고르는 기준과 집에서 만드는 요령</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">140~170ml</span><span class="label">플랫화이트 우유 양 (자료별 범위)</span></div>
+      <div class="data-card"><span class="num">200~280ml</span><span class="label">카페라떼 우유 양 (자료별 범위)</span></div>
+      <div class="data-card"><span class="num">1cm 안팎</span><span class="label">플랫화이트 거품 두께 (0.5~1.5cm)</span></div>
+      <div class="data-card"><span class="num">더블 샷</span><span class="label">플랫화이트 기본 샷 구성</span></div>
+    </div>
+
+    <h2 class="section-title">1. 플랫화이트란 어떤 음료인가</h2>
+    <p>플랫화이트는 에스프레소에 <strong>얇고 매끈한 마이크로폼 우유</strong>를 부어 만든 음료입니다. 이름의 &lsquo;플랫&rsquo;은 위에 거품이 봉긋하게 올라오지 않고 표면이 평평하다는 뜻으로 설명하는 경우가 많습니다. 유래는 호주와 뉴질랜드가 서로 자기 쪽이라고 주장하며, 1980년대 후반 무렵 시작되었다는 설명이 일반적입니다. 정확한 발명자는 자료마다 달라 단정하기 어렵습니다.</p>
+    <p>한국에서는 스타벅스를 비롯한 체인점 메뉴에 들어오면서 알려졌고, 라떼보다 커피 맛이 분명하다는 이유로 찾는 사람이 늘었습니다. 다만 정해진 국제 규격이 있는 것은 아니어서 카페마다 레시피가 조금씩 다릅니다.</p>
+
+    <h2 class="section-title">2. 플랫화이트와 카페라떼 비교표</h2>
+    <table class="compare-table">
+      <thead><tr><th>구분</th><th>플랫화이트</th><th>카페라떼</th></tr></thead>
+      <tbody>
+        <tr><td>우유 양</td><td class="em">약 140~170ml</td><td class="em">약 200~280ml</td></tr>
+        <tr><td>컵 크기</td><td>약 170~225ml</td><td>약 225~340ml</td></tr>
+        <tr><td>거품 두께</td><td>약 0.5~1.5cm, 얇고 매끈함</td><td>약 1cm 이상, 상대적으로 두꺼움</td></tr>
+        <tr><td>샷</td><td>더블 샷, 리스트레토를 쓰는 곳도 있음</td><td>싱글 또는 더블 샷</td></tr>
+        <tr><td>맛</td><td>커피 맛이 진하고 고소함</td><td>우유 맛이 두드러지고 부드러움</td></tr>
+        <tr><td>라떼아트</td><td>하트·로제타 등 가능하나 면이 얇음</td><td>다양한 패턴에 유리</td></tr>
+      </tbody>
+    </table>
+    <p>위 수치는 여러 자료에서 안내하는 범위이며, 카페마다 컵 용량과 레시피가 달라 같은 이름이어도 결과가 다를 수 있습니다. 라떼와 카푸치노의 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-25">카페라떼 카푸치노 차이</a>에서 다뤘습니다.</p>
+
+    <h2 class="section-title">3. 맛이 달라지는 이유</h2>
+    <p>같은 양의 에스프레소라도 우유가 적으면 커피 성분이 희석되는 정도가 작아집니다. 그래서 플랫화이트는 커피 맛이 또렷하게 남습니다. 또 거품이 얇으면 입안에서 공기감이 줄고 질감이 <strong>벨벳처럼 매끈하게</strong> 느껴집니다.</p>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>플랫화이트에 리스트레토(물을 적게 쓴 짧은 추출)를 쓰는 경우가 있지만 필수는 아닙니다. 리스트레토는 단맛과 바디가 도드라지는 경향이 있어 우유와 잘 어울린다는 평가를 받습니다. 리스트레토와 룽고의 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-09-22">에스프레소 리스트레토 룽고 비교</a>에서 정리했습니다.</p>
+    </div>
+
+    <h2 class="section-title">4. 취향별로 고르는 기준</h2>
+    <div class="tip-box">
+      <div class="tip-title">이럴 때 이쪽을 고릅니다</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>커피 맛을 또렷하게 느끼고 싶다면 플랫화이트.</strong> 우유에 묻히지 않고 원두의 고소함이 남습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>순하고 부드러운 맛이 좋다면 카페라떼.</strong> 우유 비중이 커서 쓴맛과 산미가 한결 덜합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>양을 넉넉히 마시고 싶다면 카페라떼.</strong> 컵이 크고 천천히 마시기 좋습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>카페인이 신경 쓰이면 샷 수를 확인합니다.</strong> 플랫화이트는 대체로 더블 샷이므로 싱글 샷 라떼보다 카페인이 많을 수 있습니다.</div></div>
+    </div>
+
+    <h2 class="section-title">5. 집에서 만들 때 요령</h2>
+    <p>플랫화이트의 관건은 우유 질감입니다. 거품을 많이 만들지 않고 공기를 짧게 넣은 뒤, 우유가 소용돌이치며 매끈해지도록 스팀 피처를 돌려 줍니다. 우유 온도는 대체로 55~65℃ 범위를 목표로 하며, 너무 뜨거우면 단맛이 줄고 질감이 거칠어집니다.</p>
+    <ul style="margin:0 0 18px 22px;font-size:15.5px;color:#3a2218">
+      <li><strong>에스프레소:</strong> 더블 샷 약 36~40g 추출을 기준으로 시작해 취향에 맞게 조절합니다.</li>
+      <li><strong>우유:</strong> 150ml 안팎의 차가운 우유를 작은 피처에 담습니다.</li>
+      <li><strong>스팀:</strong> 공기 주입은 처음 몇 초만 하고 이후에는 소용돌이로 매끈하게 만듭니다. 자세한 순서는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-16">우유 스팀 하는법</a>을 참고합니다.</li>
+      <li><strong>붓기:</strong> 피처를 낮게 잡고 천천히 부어 얇은 거품 면이 생기게 합니다.</li>
+    </ul>
+
+    <h2 class="section-title">6. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 플랫화이트가 라떼보다 더 쓴가요?</strong><br/>
+      A. 우유 비중이 낮아 커피 맛이 진하게 느껴지지만 쓴맛이 늘어나는 것은 아닙니다. 쓴맛은 추출 상태에 따라 달라집니다.</p>
+      <p><strong>Q. 카페에서 플랫화이트와 라떼가 같은 음료로 나오기도 하나요?</strong><br/>
+      A. 카페마다 레시피가 달라 큰 차이가 없는 곳도 있습니다. 컵 크기와 샷 수를 물어보면 정확합니다.</p>
+      <p><strong>Q. 코르타도와는 어떻게 다른가요?</strong><br/>
+      A. 코르타도는 스페인 계열의 음료로 우유와 에스프레소를 거의 1:1로 섞어 더 작은 잔에 냅니다. 플랫화이트는 그보다 우유가 많은 편입니다.</p>
+      <p><strong>Q. 오트밀크로 만들어도 되나요?</strong><br/>
+      A. 가능합니다. 바리스타용으로 나온 제품이 스팀 질감을 내기 쉽고, 일반 제품은 거품이 덜 안정적일 수 있습니다.</p>
+    </div>
+    <div class="closing-box">
+      <h3>커피 맛을 원하면 플랫화이트, 부드러움을 원하면 카페라떼</h3>
+      <p><strong>우유 양과 거품 두께, 샷 구성이 다르며 카페마다 레시피가 달라 컵 크기와 샷 수를 확인하면 정확합니다.</strong></p>
+    </div>
+
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://www.brewcoffeehome.com/?p=6788" rel="noopener nofollow">Brew Coffee Home — Flat White vs Latte</a>, <a href="https://www.finedininglovers.com/explore/articles/flat-white-vs-latte-all-differences" rel="noopener nofollow">Fine Dining Lovers — Flat White vs Latte</a>, <a href="https://completehomebarista.com/guides/flat-white-vs-latte" rel="noopener nofollow">Complete Home Barista — Flat White vs Latte</a>, <a href="https://arlafoods.co.uk/brands/arla-barista/articles/flat-white-vs-latte-vs-cappuccino" rel="noopener nofollow">Arla Barista — Flat White vs Latte vs Cappuccino</a></p>
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-06"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">무산소 발효 뜻 — 일반 발효와 향미 비교, 가향과 구분하는 방법</div><div class="rc-date">2026. 09. 06</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-31"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">아라비카 로부스타 차이 — 카페인 함량과 재배 조건, 맛 비교</div><div class="rc-date">2026. 08. 31</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-23"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">내추럴 워시드 차이 — 가공방식별 맛과 향, 원두 고르는 기준</div><div class="rc-date">2026. 08. 23</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#플랫화이트</span>
+      <span class="tag">#카페라떼</span>
+      <span class="tag">#우유음료</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>플랫화이트는 우유 약 140~170ml, 라떼는 약 200~280ml로 우유 양이 다릅니다.</strong></li>
+        <li><strong>플랫화이트의 거품은 약 0.5~1.5cm로 얇고 매끈합니다.</strong></li>
+        <li><strong>플랫화이트는 대체로 더블 샷이라 커피 맛이 진합니다.</strong></li>
+        <li><strong>수치는 카페마다 달라 컵 크기와 샷 수를 확인합니다.</strong></li>
+        <li><strong>집에서는 공기를 짧게 넣고 소용돌이로 질감을 만듭니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>

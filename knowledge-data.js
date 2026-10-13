@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 176, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "플랫화이트 뜻 — 라떼와 우유 양·거품 두께·샷 구성 비교",
+    date: "2026.10.13",
+    summary: "메뉴판에서 플랫화이트와 카페라떼를 두고 고민한다면 핵심은 하나입니다. 플랫화이트는 우유가 적고 거품이 얇아 커피 맛이 더 진하게 느껴지고, 카페라떼는 우유가 많아 부드럽고 순합니다. 이 글에서는 두 음료의 구성 차이와 고르는 기준을 설명합니다.",
+    link: "coffee-article-2026-10-13.html"
+  },
+  {
     id: 175, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "과소추출 과다추출 뜻 — 신맛·쓴맛으로 구분하는 증상과 조절법",
