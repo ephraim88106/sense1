@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 177, emoji: "🔥", category: "로스팅 & 원두 과학",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "아메리카노 블렌드 고르는법 — 배전도와 산미·바디감별 추천 조합",
+    date: "2026.10.14",
+    summary: "아메리카노용 원두를 고를 때 가장 먼저 볼 것은 배전도입니다. 에스프레소에 뜨거운 물을 더해 마시기 때문에 물에 희석되어도 맛이 남는 중배전~중강배전, 그리고 고소하고 단맛이 있는 원산지 조합이 가장 실패가 적습니다.",
+    link: "coffee-article-2026-10-14.html"
+  },
+  {
     id: 176, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "플랫화이트 뜻 — 라떼와 우유 양·거품 두께·샷 구성 비교",

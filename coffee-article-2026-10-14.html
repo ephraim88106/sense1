@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>아메리카노 블렌드 고르는법 — 배전도와 산미·바디감별 추천 조합 | 바리스타 스페셜티</title>
+  <meta name="description" content="아메리카노에 맞는 원두를 배전도(중배전~중강배전), 산미와 바디감, 원산지 조합, 블렌드와 싱글 오리진 기준으로 고르는 방법을 표와 체크 항목으로 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-14">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="아메리카노 블렌드 고르는법 — 배전도와 산미·바디감별 추천 조합 | 바리스타 스페셜티">
+<meta property="og:description" content="아메리카노에 맞는 원두를 배전도(중배전~중강배전), 산미와 바디감, 원산지 조합, 블렌드와 싱글 오리진 기준으로 고르는 방법을 표와 체크 항목으로 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-14">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-14T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-14T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-14#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-14", "headline": "아메리카노 블렌드 고르는법 — 배전도와 산미·바디감별 추천 조합 | 바리스타 스페셜티", "description": "아메리카노에 맞는 원두를 배전도(중배전~중강배전), 산미와 바디감, 원산지 조합, 블렌드와 싱글 오리진 기준으로 고르는 방법을 표와 체크 항목으로 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-14", "dateModified": "2026-10-14", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 원두 고르기</span>
+      <span class="badge">아메리카노</span>
+      <span class="badge">배전도</span>
+    </div>
+    <h1>아메리카노 블렌드 고르는법<br/>— 배전도와 산미·바디감별 추천 조합</h1>
+    <p class="subtitle"><strong>아메리카노는 중배전~중강배전에 고소함과 바디감이 있는 원두가 무난합니다.</strong> 배전도, 산미, 원산지 조합 기준으로 고르는 방법을 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 14일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>아메리카노용 원두를 고를 때 가장 먼저 볼 것은 <strong>배전도입니다.</strong> 에스프레소에 뜨거운 물을 더해 마시기 때문에 물에 희석되어도 맛이 남는 중배전~중강배전, 그리고 고소하고 단맛이 있는 원산지 조합이 가장 실패가 적습니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>아메리카노에 맞는 배전도와 그 이유</li>
+        <li>산미와 바디감으로 원두를 고르는 기준</li>
+        <li>원산지·블렌드·싱글 오리진 선택 방법</li>
+        <li>구매할 때 확인할 포장 표기와 신선도</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">중~중강배전</span><span class="label">아메리카노에 무난한 배전도</span></div>
+      <div class="data-card"><span class="num">1:8~1:12</span><span class="label">에스프레소 대비 물 비율 (취향별 범위)</span></div>
+      <div class="data-card"><span class="num">2~4주</span><span class="label">로스팅 후 맛있게 마시는 대략의 기간</span></div>
+      <div class="data-card"><span class="num">블렌드</span><span class="label">처음 고를 때 실패가 적은 선택</span></div>
+    </div>
+    <h2 class="section-title">1. 아메리카노에 맞는 배전도</h2>
+    <p>아메리카노는 에스프레소 한 잔에 물을 더해 농도를 낮춘 음료입니다. 물이 들어가면 향과 단맛이 옅어지므로 <strong>로스팅으로 만든 고소함과 단맛, 바디감이 충분한 원두</strong>가 잘 어울립니다. 그래서 많은 카페가 중배전에서 중강배전 사이를 기본 원두로 씁니다.</p>
+    <p>약배전은 산미와 과일 향이 두드러져 물을 더하면 신맛이 도드라질 수 있고, 강배전은 쓴맛과 탄 향이 강해 물을 많이 넣어도 무거운 뒷맛이 남을 수 있습니다. 배전도별 맛 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-30">약배전 중배전 강배전 차이</a>에서 자세히 다룹니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>배전도</th><th>맛 경향</th><th>아메리카노 적합도</th></tr></thead>
+      <tbody>
+        <tr><td>약배전</td><td>산미·꽃과 과일 향, 가벼운 바디</td><td>취향에 따라 선택. 산미를 즐기는 분께 적합</td></tr>
+        <tr><td class="em">중배전</td><td>단맛·고소함·산미의 균형</td><td class="em">무난함. 처음 고르기에 좋음</td></tr>
+        <tr><td class="em">중강배전</td><td>초콜릿·견과류 향, 묵직한 바디</td><td class="em">무난함. 진한 맛을 선호할 때</td></tr>
+        <tr><td>강배전</td><td>쓴맛·스모키함, 산미 거의 없음</td><td>쓴맛을 좋아할 때. 추출 시 과다추출 주의</td></tr>
+      </tbody>
+    </table>
+    <p>배전도 표기는 로스터마다 기준이 달라 같은 &lsquo;중배전&rsquo;이어도 색과 맛이 다를 수 있습니다. 라벨 표기는 참고용으로 보고, 설명에 적힌 맛 노트를 함께 확인하는 편이 정확합니다.</p>
+    <h2 class="section-title">2. 산미와 바디감으로 고르는 법</h2>
+    <p>아메리카노가 시다고 느껴지는 이유는 원두 자체의 산미 때문일 수도 있고 추출이 덜 된 탓일 수도 있습니다. 원두를 고르는 단계에서는 <strong>산미는 낮고 바디감은 높은 쪽</strong>이 안전합니다. 산미의 원인은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-17">원두 산미 뜻</a>에서 정리했습니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">취향별 선택 기준</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>고소하고 진한 맛:</strong> 중강배전, 맛 노트에 초콜릿·견과류·카라멜이 적힌 원두를 고릅니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>깔끔하고 가벼운 맛:</strong> 중배전 이하에 산미가 은은한 원두를 고르고, 물 양은 조금 줄입니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>신맛이 싫다면:</strong> 브라질·인도네시아 계열 비중이 높은 블렌드를 고릅니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>향을 즐기고 싶다면:</strong> 에티오피아·케냐 계열이 들어간 원두를 고르되 산미가 올라올 수 있음을 감안합니다.</div></div>
+    </div>
+    <h2 class="section-title">3. 원산지별 특징 참고</h2>
+    <table class="compare-table">
+      <thead><tr><th>원산지</th><th>일반적 특징</th><th>아메리카노 활용</th></tr></thead>
+      <tbody>
+        <tr><td>브라질</td><td>견과류·초콜릿, 낮은 산미, 묵직한 바디</td><td class="em">블렌드의 기본 축으로 많이 사용</td></tr>
+        <tr><td>콜롬비아</td><td>단맛과 균형 잡힌 산미</td><td>브라질과 섞어 단맛을 더함</td></tr>
+        <tr><td>과테말라</td><td>초콜릿·스파이스, 중간 산미</td><td>중강배전에서 풍미가 좋음</td></tr>
+        <tr><td>에티오피아</td><td>꽃·과일 향, 밝은 산미</td><td>향을 더하는 용도, 단독 사용 시 산미 강함</td></tr>
+        <tr><td>인도네시아</td><td>흙·허브 향, 낮은 산미, 무거운 바디</td><td>바디감 보강용</td></tr>
+      </tbody>
+    </table>
+    <p>위 특징은 일반적인 경향이며 농장과 가공 방식에 따라 달라집니다. 산지별 비교는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-23">내추럴 워시드 차이</a>도 함께 참고할 수 있습니다.</p>
+    <h2 class="section-title">4. 블렌드와 싱글 오리진 중 무엇을 고를까</h2>
+    <p>블렌드는 여러 원산지를 섞어 단맛, 산미, 바디의 균형을 맞춘 원두로, 매번 비슷한 맛을 내기 쉬워 아메리카노에 흔히 쓰입니다. 싱글 오리진은 한 지역 고유의 개성이 분명해 맛을 즐기려는 분께 어울립니다. 둘의 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-24">싱글 오리진 뜻</a>에 있습니다.</p>
+    <p>처음 고른다면 <strong>중배전~중강배전 블렌드</strong>로 시작해 맛을 확인한 뒤, 산미나 향이 아쉬우면 싱글 오리진으로 넓히는 순서를 권합니다. 일부 블렌드에는 로부스타가 소량 들어가 크레마와 바디를 보강하기도 하며, 이 경우 카페인 함량이 높아질 수 있습니다. 두 품종의 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-31">아라비카 로부스타 차이</a>에서 확인하세요.</p>
+    <h2 class="section-title">5. 구매할 때 확인할 항목</h2>
+    <ul style="margin:0 0 18px 22px;font-size:15.5px;color:#3a2218">
+      <li><strong>로스팅 날짜:</strong> 유통기한보다 로스팅 날짜를 확인합니다. 로스팅 후 대략 2~4주 안에 마시면 향이 살아 있습니다.</li>
+      <li><strong>맛 노트와 배전도:</strong> 초콜릿·견과류·카라멜 표기는 아메리카노에 무난합니다.</li>
+      <li><strong>원두 상태 / 분쇄 여부:</strong> 가능하면 홀빈으로 사서 마시기 직전에 갈아야 향이 오래갑니다.</li>
+      <li><strong>용량:</strong> 한 번에 많이 사기보다 한두 주 안에 마실 양(200~500g)을 사는 편이 신선합니다.</li>
+      <li><strong>보관:</strong> 밀폐해 빛과 열을 피합니다. 자세한 방법은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-14">원두 보관법</a>을 참고하세요.</li>
+    </ul>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>같은 원두라도 분쇄도와 추출 시간에 따라 맛이 크게 달라집니다. 에스프레소는 보통 25~30초 안팎을 기준으로 맞춥니다. 자세한 내용은 <a href="https://coffee.ephseed.com/coffee-article-2026-09-01">에스프레소 샷 시간 기준</a>을 확인하세요.</p>
+    </div>
+    <h2 class="section-title">6. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 아메리카노에는 꼭 강배전을 써야 하나요?</strong><br/>
+      A. 아닙니다. 중배전도 잘 어울리며 강배전은 쓴맛을 좋아할 때 선택하는 옵션입니다.</p>
+      <p><strong>Q. 산미 있는 원두로 아메리카노를 만들면 안 되나요?</strong><br/>
+      A. 가능합니다. 다만 물을 많이 넣으면 신맛이 도드라질 수 있어 물 양을 줄이거나 추출을 조금 더 진행해 조절합니다.</p>
+      <p><strong>Q. 홀빈과 분쇄 원두 중 무엇이 좋나요?</strong><br/>
+      A. 분쇄하면 표면적이 넓어져 향이 빨리 날아가므로, 그라인더가 있다면 홀빈을 권합니다.</p>
+      <p><strong>Q. 에스프레소용 원두와 아메리카노용 원두가 따로 있나요?</strong><br/>
+      A. 같은 원두를 씁니다. 아메리카노는 에스프레소에 물을 더한 음료이기 때문입니다.</p>
+    </div>
+    <div class="closing-box">
+      <h3>처음에는 중배전~중강배전 블렌드로 시작합니다</h3>
+      <p><strong>배전도, 산미와 바디, 원산지 조합을 보고 고르며, 로스팅 날짜를 확인해 신선한 원두를 구매합니다.</strong></p>
+    </div>
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://sca.coffee/" rel="noopener nofollow">Specialty Coffee Association</a>, <a href="https://www.thewaytocoffee.com/beans/coffee-blend-espresso-amazonia/" rel="noopener nofollow">The Way to Coffee — Espresso Blend</a>, <a href="https://coffeereview.com/" rel="noopener nofollow">Coffee Review</a></p>
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-07"><div class="rc-cat">📈 스페셜티 커피 트렌드</div><div class="rc-title">1인당 소비량 순위 — 한국과 세계 주요국 연간 잔수 정리</div><div class="rc-date">2026. 09. 07</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-07"><div class="rc-cat">📈 스페셜티 커피 트렌드</div><div class="rc-title">전통 커피를 처음으로 꺾었다 — 2026년 스페셜티 커피 혁명의 실체</div><div class="rc-date">2026. 08. 07</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-21"><div class="rc-cat">📈 스페셜티 커피 트렌드</div><div class="rc-title">커피 한 잔이 1만원을 넘어서는 이유 — 2026 스페셜티 커피 5대 트렌드 완전 해부</div><div class="rc-date">2026. 07. 21</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#아메리카노</span>
+      <span class="tag">#원두고르기</span>
+      <span class="tag">#배전도</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>아메리카노에는 중배전~중강배전 원두가 무난합니다.</strong></li>
+        <li><strong>산미가 싫다면 브라질·인도네시아 비중이 높은 블렌드를 고릅니다.</strong></li>
+        <li><strong>처음에는 블렌드, 개성을 원하면 싱글 오리진을 선택합니다.</strong></li>
+        <li><strong>로스팅 날짜를 확인하고 2~4주 안에 마십니다.</strong></li>
+        <li><strong>가능하면 홀빈으로 사서 마시기 직전에 갈아 씁니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
