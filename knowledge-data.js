@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 178, emoji: "🌱", category: "원두 산지 & 테루아르",
+    categoryColor: { bg: "#ecfccb", text: "#3f6212" },
+    title: "생두 결점두 뜻 — 블랙빈·사워빈 구분과 1·2차 결점 종류와 세는 법",
+    date: "2026.10.15",
+    summary: "생두 등급 이야기에서 빠지지 않는 말이 결점두(defect bean)입니다. 결점두는 발효·곰팡이·벌레·건조 불량 등으로 모양이나 색이 비정상이고, 볶아서 마시면 맛에 나쁜 영향을 주는 콩을 말합니다. 원두 포장에 &lsquo;스페셜티&rsquo;라고 적힌 이유도 결국 이 불량 콩이 얼마나 적은가와 맞닿아 있습니다.",
+    link: "coffee-article-2026-10-15.html"
+  },
+  {
     id: 177, emoji: "🔥", category: "로스팅 & 원두 과학",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "아메리카노 블렌드 고르는법 — 배전도와 산미·바디감별 추천 조합",
