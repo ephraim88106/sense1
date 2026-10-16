@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 179, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "샷 비율 1:2 뜻 — 가루 18g에 36g 받는 계산법과 맛 조절",
+    date: "2026.10.16",
+    summary: "머신 압력과 샷 시간을 맞춰도 맛이 들쭉날쭉하다면 비율(브루 레시오)을 먼저 확인해 보세요. 비율은 포터필터에 담은 가루 무게(도징량)와 컵에 받은 에스프레소 무게(추출량)의 관계입니다. 시간은 흐르는 속도에 따라 달라지지만, 무게는 저울로 바로 확인할 수 있어 기준으로 삼기 좋습니다.",
+    link: "coffee-article-2026-10-16.html"
+  },
+  {
     id: 178, emoji: "🌱", category: "원두 산지 & 테루아르",
     categoryColor: { bg: "#ecfccb", text: "#3f6212" },
     title: "생두 결점두 뜻 — 블랙빈·사워빈 구분과 1·2차 결점 종류와 세는 법",

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>샷 비율 1:2 뜻 — 가루 18g에 36g 받는 계산법과 맛 조절 | 바리스타 스페셜티</title>
+  <meta name="description" content="에스프레소 비율 1:2는 가루 18g에 추출량 36g을 뜻합니다. 1:1.5~1:3 범위별 맛 차이와 추출량 재는 법, 비율이 안 맞을 때 조절하는 순서를 표로 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-16">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="샷 비율 1:2 뜻 — 가루 18g에 36g 받는 계산법과 맛 조절 | 바리스타 스페셜티">
+<meta property="og:description" content="에스프레소 비율 1:2는 가루 18g에 추출량 36g을 뜻합니다. 1:1.5~1:3 범위별 맛 차이와 추출량 재는 법, 비율이 안 맞을 때 조절하는 순서를 표로 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-16">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-16T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-16T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-16#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-16", "headline": "샷 비율 1:2 뜻 — 가루 18g에 36g 받는 계산법과 맛 조절 | 바리스타 스페셜티", "description": "에스프레소 비율 1:2는 가루 18g에 추출량 36g을 뜻합니다. 1:1.5~1:3 범위별 맛 차이와 추출량 재는 법, 비율이 안 맞을 때 조절하는 순서를 표로 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-16", "dateModified": "2026-10-16", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법 심층 가이드</span>
+      <span class="badge">에스프레소</span>
+      <span class="badge">추출 비율</span>
+    </div>
+    <h1>샷 비율 1:2 뜻<br/>— 가루 18g에 36g 받는 계산법과 맛 조절</h1>
+    <p class="subtitle"><strong>에스프레소 비율 1:2는 가루 무게 대비 추출된 에스프레소 무게가 2배라는 뜻이며, 18g을 담았다면 36g 안팎을 받는 것이 가장 흔한 출발점입니다.</strong> 비율을 재는 법과 조절 순서를 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 16일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>머신 압력과 샷 시간을 맞춰도 맛이 들쭉날쭉하다면 <strong>비율(브루 레시오)</strong>을 먼저 확인해 보세요. 비율은 포터필터에 담은 가루 무게(도징량)와 컵에 받은 에스프레소 무게(추출량)의 관계입니다. 시간은 흐르는 속도에 따라 달라지지만, 무게는 저울로 바로 확인할 수 있어 기준으로 삼기 좋습니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>1:2 비율이 무슨 뜻이고 어떻게 계산하는지</li>
+        <li>비율이 낮을 때와 높을 때 맛이 어떻게 달라지는지</li>
+        <li>저울로 추출량을 재는 방법</li>
+        <li>비율이 맞지 않을 때 조절하는 순서</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1 : 2</span><span class="label">가장 흔한 출발 비율 (가루 : 추출량)</span></div>
+      <div class="data-card"><span class="num">18g → 36g</span><span class="label">18g 도징 기준 1:2 추출량</span></div>
+      <div class="data-card"><span class="num">1:1.5~1:3</span><span class="label">현장에서 널리 쓰는 조절 범위</span></div>
+      <div class="data-card"><span class="num">25~30초</span><span class="label">일반적으로 함께 참고하는 추출 시간</span></div>
+    </div>
+    <h2 class="section-title">1. 에스프레소 비율 1:2의 뜻</h2>
+    <p>비율 표기는 &lsquo;가루 : 추출량&rsquo; 순서입니다. 1:2는 가루 1에 대해 추출된 에스프레소가 2라는 뜻이므로, <strong>가루 18g이면 추출량은 36g</strong>, 가루 20g이면 40g입니다. 계산식은 단순합니다.</p>
+    <p><strong>목표 추출량(g) = 도징량(g) × 비율의 뒷숫자</strong></p>
+    <p>여기서 추출량은 부피(ml)가 아니라 <strong>무게(g)</strong>입니다. 갓 뽑은 에스프레소에는 크레마(거품)가 많아 부피로 재면 값이 흔들리기 때문에, 컵 밑에 저울을 놓고 무게로 재는 방식이 널리 쓰입니다. 바스켓별 도징량은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-11">도징 뜻</a>에서 정리했습니다.</p>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>1:2가 어느 한 기관이 정한 표준 수치라고 단정하기는 어렵습니다. 업계에서 가장 흔히 쓰는 <strong>출발점(기준선)</strong>으로 이해하시고, 원두와 취향에 맞춰 조금씩 옮기는 것이 일반적입니다. SCA의 공개 기준(골든 컵)은 필터 커피에 대한 것이라 에스프레소 비율과는 별개입니다.</p>
+    </div>
+    <h2 class="section-title">2. 비율별 맛과 용도</h2>
+    <table class="compare-table">
+      <thead><tr><th>비율(도징 18g 기준)</th><th>추출량</th><th>맛 경향</th><th>어울리는 용도</th></tr></thead>
+      <tbody>
+        <tr><td>1 : 1~1.5</td><td>18~27g</td><td>진하고 걸쭉하며 단맛·신맛이 강하게 느껴짐</td><td>리스트레토, 우유 음료</td></tr>
+        <tr><td class="em">1 : 2</td><td class="em">36g</td><td class="em">단맛·산미·쓴맛의 균형, 가장 무난</td><td class="em">에스프레소, 아메리카노</td></tr>
+        <tr><td>1 : 2.5~3</td><td>45~54g</td><td>가볍고 묽으며 쓴맛·떫은맛이 올라올 수 있음</td><td>룽고, 산미 있는 원두 실험</td></tr>
+      </tbody>
+    </table>
+    <p>추출량이 늘수록 더 오래 물이 통과해 가루에서 더 많은 성분이 빠져나옵니다. 처음에는 신맛과 단맛 계열이, 뒤로 갈수록 쓴맛과 떫은맛 계열이 많이 나오는 경향이 있습니다. 이 관계는 <a href="https://coffee.ephseed.com/coffee-article-2026-10-12">과소추출 과다추출 뜻</a>과 같은 원리입니다. 리스트레토와 룽고의 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-09-22">에스프레소 리스트레토 룽고 비교</a>에서 볼 수 있습니다.</p>
+    <h2 class="section-title">3. 저울로 비율 재는 순서</h2>
+    <div class="tip-box">
+      <div class="tip-title">비율 재는 5단계</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>가루 무게 확인:</strong> 포터필터를 저울에 올려 영점을 맞추고 가루를 담아 도징량을 기록합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>컵 영점:</strong> 에스프레소 잔(또는 샷 글라스)을 저울에 올리고 영점을 맞춥니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>추출 시작과 동시에 타이머:</strong> 추출 버튼을 누르는 순간 시간 측정을 시작합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>목표 무게 직전에 멈추기:</strong> 추출을 멈춘 뒤에도 몇 그램이 더 떨어지므로, 목표보다 1~2g 앞에서 멈추는 것이 좋습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">5</div><div class="tip-text"><strong>결과 기록:</strong> 도징량, 추출량, 시간, 맛을 함께 적어 두면 다음 조절이 쉬워집니다.</div></div>
+    </div>
+    <h2 class="section-title">4. 비율이 맞지 않을 때 조절 순서</h2>
+    <p>목표 무게에 도달했는데 시간이 너무 짧거나 길다면 비율이 아니라 <strong>분쇄도</strong>를 조정할 차례입니다. 기본 원칙은 &lsquo;비율은 고정하고 분쇄도로 시간을 맞춘다&rsquo;입니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>상황</th><th>가능한 원인</th><th>조절 방향</th></tr></thead>
+      <tbody>
+        <tr><td>36g이 20초 안에 끝남</td><td>분쇄가 굵거나 도징이 적음</td><td class="em">분쇄를 한 단계 가늘게</td></tr>
+        <tr><td>36g까지 40초 이상 걸림</td><td>분쇄가 가늘거나 도징이 많음</td><td class="em">분쇄를 한 단계 굵게</td></tr>
+        <tr><td>시간은 맞는데 신맛이 튐</td><td>추출량이 부족</td><td>비율을 1:2.2 정도로 늘려 시험</td></tr>
+        <tr><td>시간은 맞는데 쓴맛이 강함</td><td>추출량이 과함</td><td>비율을 1:1.8 정도로 줄여 시험</td></tr>
+      </tbody>
+    </table>
+    <p>한 번에 한 가지 변수만 바꾸는 것이 핵심입니다. 분쇄도와 비율을 동시에 바꾸면 무엇이 맛을 바꿨는지 알 수 없습니다. 샷 시간 기준은 <a href="https://coffee.ephseed.com/coffee-article-2026-09-01">에스프레소 샷 시간 기준</a>에 따로 정리했습니다.</p>
+    <h2 class="section-title">5. 원두와 음료에 따른 비율 선택</h2>
+    <ul style="margin:0 0 18px 22px;font-size:15.5px;color:#3a2218">
+      <li><strong>약배전·산미가 강한 원두:</strong> 추출량을 조금 늘려(1:2.2~1:2.5) 산미를 부드럽게 만드는 경우가 많습니다.</li>
+      <li><strong>강배전·쓴맛이 강한 원두:</strong> 추출량을 줄여(1:1.5~1:1.8) 쓴맛이 올라오기 전에 끊는 방법이 쓰입니다.</li>
+      <li><strong>우유 음료:</strong> 우유와 섞이면 맛이 묽어지므로 조금 진하게(1:1.5~1:2) 뽑는 곳이 많습니다.</li>
+      <li><strong>아메리카노:</strong> 뜨거운 물을 붓기 때문에 1:2 기준으로 뽑은 뒤 물 양으로 농도를 조절합니다.</li>
+    </ul>
+    <p>어디까지나 경향이며 정답은 아닙니다. 같은 원두도 로스터리와 로스팅 날짜에 따라 달라지므로 맛을 보면서 결정하세요. 농도와 수율을 숫자로 확인하고 싶다면 <a href="https://coffee.ephseed.com/coffee-article-2026-10-02">TDS 뜻</a>을 참고하세요.</p>
+    <h2 class="section-title">6. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 저울이 없으면 비율을 어떻게 맞추나요?</strong><br/>
+      A. 정확한 비율은 저울이 있어야 확인할 수 있습니다. 0.1g 단위로 재는 소형 저울은 가격 부담이 크지 않으니 하나 두시기를 권합니다.</p>
+      <p><strong>Q. 1:2와 1:3 중 어느 쪽이 정답인가요?</strong><br/>
+      A. 정답은 없습니다. 1:2는 기준선이고, 원두 특성과 취향에 따라 옮깁니다.</p>
+      <p><strong>Q. 도징량이 바뀌면 추출량도 바뀌나요?</strong><br/>
+      A. 같은 비율을 유지한다면 그렇습니다. 20g을 담았다면 1:2 기준으로 40g이 목표입니다.</p>
+      <p><strong>Q. 크레마까지 포함해서 무게를 재나요?</strong><br/>
+      A. 네. 컵에 담긴 에스프레소 전체 무게(크레마 포함)를 기준으로 삼는 것이 일반적입니다.</p>
+    </div>
+    <div class="closing-box">
+      <h3>시간보다 먼저 무게를 확인하세요</h3>
+      <p><strong>가루 18g에 추출량 36g, 이것이 1:2입니다. 비율을 고정하고 분쇄도로 시간을 맞추면 샷이 훨씬 안정됩니다.</strong></p>
+    </div>
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://www.seattlecoffeegear.com/blogs/learning-center/espresso-brew-ratios-explained" rel="noopener nofollow">Seattle Coffee Gear — Espresso Brew Ratios Explained</a>, <a href="https://clivecoffee.com/blogs/learn/brew-ratios-do-they-even-matter" rel="noopener nofollow">Clive Coffee — Brew Ratios: Do They Even Matter?</a>, <a href="https://completehomebarista.com/guides/espresso-extraction-yield-explained/" rel="noopener nofollow">Complete Home Barista — Espresso Extraction Yield Explained</a></p>
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-14"><div class="rc-cat">🔥 로스팅 & 원두 과학</div><div class="rc-title">아메리카노 블렌드 고르는법 — 배전도와 산미·바디감별 추천 조합</div><div class="rc-date">2026. 10. 14</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-09"><div class="rc-cat">🔥 로스팅 & 원두 과학</div><div class="rc-title">콜롬비아 수프리모 뜻 — 스크린 사이즈 기준과 엑셀소 구분법</div><div class="rc-date">2026. 10. 09</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-03"><div class="rc-cat">🔥 로스팅 & 보관 과학</div><div class="rc-title">디개싱 뜻 — 볶은 지 며칠 뒤가 맛있는지 숙성 기간 정리</div><div class="rc-date">2026. 10. 03</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#에스프레소</span>
+      <span class="tag">#추출비율</span>
+      <span class="tag">#브루레시오</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>비율은 가루 무게 대비 추출된 에스프레소 무게입니다.</strong></li>
+        <li><strong>1:2는 가루 18g에 36g, 가장 흔한 출발점입니다.</strong></li>
+        <li><strong>추출량이 적으면 진하고 시며, 많으면 묽고 쓴 경향이 있습니다.</strong></li>
+        <li><strong>비율은 고정하고 분쇄도로 시간을 맞춥니다.</strong></li>
+        <li><strong>한 번에 한 가지 변수만 바꿔 맛을 비교합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
