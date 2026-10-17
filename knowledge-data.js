@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 180, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "추출용 물 고르는법 — TDS 150ppm 목표와 경도·알칼리도, 정수기 물 써도 되는지",
+    date: "2026.10.17",
+    summary: "원두와 분쇄도, 비율을 다 맞췄는데도 맛이 밋밋하거나 날카롭다면 추출에 쓰는 물을 의심해 볼 차례입니다. 한 잔의 98% 이상이 물이고, 물속 미네랄은 커피 성분을 끌어내는 역할을 합니다. 너무 순수한 물도, 미네랄이 너무 많은 물도 좋은 맛을 내지 못합니다.",
+    link: "coffee-article-2026-10-17.html"
+  },
+  {
     id: 179, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "샷 비율 1:2 뜻 — 가루 18g에 36g 받는 계산법과 맛 조절",

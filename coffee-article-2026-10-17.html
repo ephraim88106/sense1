@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>추출용 물 고르는법 — TDS 150ppm 목표와 경도·알칼리도, 정수기 물 써도 되는지 | 바리스타 스페셜티</title>
+  <meta name="description" content="추출용 물 기준은 TDS 75~250ppm(목표 150ppm), 총경도 50~175ppm, 알칼리도 40~75ppm, pH 6.5~7.5입니다. 수돗물·정수기·생수 중 무엇을 써야 하는지와 스케일 관리까지 표로 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-17">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="추출용 물 고르는법 — TDS 150ppm 목표와 경도·알칼리도, 정수기 물 써도 되는지 | 바리스타 스페셜티">
+<meta property="og:description" content="추출용 물 기준은 TDS 75~250ppm(목표 150ppm), 총경도 50~175ppm, 알칼리도 40~75ppm, pH 6.5~7.5입니다. 수돗물·정수기·생수 중 무엇을 써야 하는지와 스케일 관리까지 표로 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-17">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-17T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-17T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-17#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-17", "headline": "추출용 물 고르는법 — TDS 150ppm 목표와 경도·알칼리도, 정수기 물 써도 되는지 | 바리스타 스페셜티", "description": "추출용 물 기준은 TDS 75~250ppm(목표 150ppm), 총경도 50~175ppm, 알칼리도 40~75ppm, pH 6.5~7.5입니다. 수돗물·정수기·생수 중 무엇을 써야 하는지와 스케일 관리까지 표로 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-17", "dateModified": "2026-10-17", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법 심층 가이드</span>
+      <span class="badge">추출용 물</span>
+      <span class="badge">SCA 기준</span>
+    </div>
+    <h1>추출용 물 고르는법<br/>— TDS 150ppm 목표와 경도·알칼리도, 정수기 물 써도 되는지</h1>
+    <p class="subtitle"><strong>추출용 물은 TDS 75~250ppm(목표 150ppm), 총경도 50~175ppm, 알칼리도 40~75ppm, pH 6.5~7.5 범위가 SCA 기준으로 널리 인용됩니다.</strong> 수돗물·정수기·생수를 고르는 기준과 머신 스케일 관리를 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 17일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>원두와 분쇄도, 비율을 다 맞췄는데도 맛이 밋밋하거나 날카롭다면 <strong>추출에 쓰는 물</strong>을 의심해 볼 차례입니다. 한 잔의 98% 이상이 물이고, 물속 미네랄은 커피 성분을 끌어내는 역할을 합니다. 너무 순수한 물도, 미네랄이 너무 많은 물도 좋은 맛을 내지 못합니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>SCA가 제시하는 추출용 물 기준 수치</li>
+        <li>TDS·경도·알칼리도가 각각 맛과 머신에 미치는 영향</li>
+        <li>수돗물·정수기·생수·RO수의 장단점</li>
+        <li>스케일(물때) 관리와 필터 교체 시점</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">150ppm</span><span class="label">TDS 목표값 (허용 75~250)</span></div>
+      <div class="data-card"><span class="num">50~175ppm</span><span class="label">총경도 허용 범위 (CaCO&#8323; 기준)</span></div>
+      <div class="data-card"><span class="num">40~75ppm</span><span class="label">알칼리도 범위 (목표 약 40)</span></div>
+      <div class="data-card"><span class="num">pH 6.5~7.5</span><span class="label">목표 7.0, 염소는 0</span></div>
+    </div>
+    <h2 class="section-title">1. 추출용 물 기준 수치</h2>
+    <p>SCA(스페셜티커피협회)의 물 기준은 2009년 SCAA 표준에서 출발해 여러 자료에 인용됩니다. 출처마다 허용 범위 표기가 조금씩 달라서, 아래 표는 가장 널리 인용되는 값을 정리한 것입니다. 정확한 수치는 SCA 공식 문서로 확인하시기를 권합니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>항목</th><th>목표값</th><th>허용 범위</th><th>의미</th></tr></thead>
+      <tbody>
+        <tr><td>TDS(총용존고형물)</td><td class="em">150 mg/L</td><td>75~250 mg/L</td><td>물속에 녹은 미네랄 총량</td></tr>
+        <tr><td>총경도(칼슘·마그네슘)</td><td class="em">약 68 mg/L</td><td>50~175 mg/L</td><td>커피 성분을 끌어내는 힘</td></tr>
+        <tr><td>알칼리도</td><td class="em">약 40 mg/L</td><td>40~75 mg/L</td><td>산을 중화하는 완충력</td></tr>
+        <tr><td>pH</td><td class="em">7.0</td><td>6.5~7.5</td><td>산성·알칼리성 정도</td></tr>
+        <tr><td>염소</td><td class="em">0 mg/L</td><td>없을 것</td><td>소독약 냄새의 원인</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>일부 자료는 경도를 17~85 mg/L(칼슘 경도 기준)로, pH를 6~8로 제시하기도 합니다. 기준이 표준 하나로 딱 떨어진다기보다 <strong>&lsquo;이 근처에서 맛이 안정된다&rsquo;는 가이드라인</strong>에 가깝다고 이해하시면 됩니다. 농도 표기의 TDS와 추출 결과 TDS는 다른 개념이니, 추출 결과 쪽은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-02">TDS 뜻</a>을 참고하세요.</p>
+    </div>
+    <h2 class="section-title">2. 경도와 알칼리도가 맛에 주는 영향</h2>
+    <p><strong>경도</strong>는 칼슘과 마그네슘의 양입니다. 이 미네랄은 커피 속 향미 성분과 결합하며 추출을 돕는 것으로 알려져 있어, 경도가 너무 낮으면 맛이 밋밋하고 비어 보이는 경향이 있습니다. 반대로 너무 높으면 추출이 막히고 스케일이 빠르게 쌓입니다.</p>
+    <p><strong>알칼리도</strong>(주로 탄산수소염)는 산을 중화하는 완충 역할을 합니다. 알칼리도가 낮으면 산미가 날카롭게 튀고, 높으면 산미가 눌려 맛이 납작해지는 경향이 있습니다. 또 에스프레소 머신 보일러에서는 알칼리도가 너무 낮으면 부식성이 생길 수 있고, 너무 높으면 스케일이 되어 쌓입니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>물 상태</th><th>맛 경향</th><th>머신 영향</th></tr></thead>
+      <tbody>
+        <tr><td>미네랄 거의 없음(증류수·RO수)</td><td>밋밋하고 신맛이 날카로움</td><td>부식 우려, 일부 머신 센서 오작동</td></tr>
+        <tr><td class="em">적정 범위(TDS 100~200 안팎)</td><td class="em">단맛·산미·바디 균형</td><td class="em">스케일 비교적 적음</td></tr>
+        <tr><td>경도·알칼리도 높음</td><td>무겁고 산미가 눌림</td><td>스케일이 빠르게 쌓임</td></tr>
+      </tbody>
+    </table>
+    <h2 class="section-title">3. 수돗물·정수기·생수 중 무엇을 쓸까</h2>
+    <ul style="margin:0 0 18px 22px;font-size:15.5px;color:#3a2218">
+      <li><strong>수돗물:</strong> 지역과 시기에 따라 염소 냄새와 미네랄 함량이 달라집니다. 활성탄 필터로 염소를 거른 뒤 쓰는 경우가 많습니다.</li>
+      <li><strong>정수기 물:</strong> 활성탄과 중공사막 방식은 염소와 이물질은 줄이지만 미네랄은 대체로 남깁니다. 반면 RO(역삼투압) 방식은 미네랄까지 거의 제거합니다.</li>
+      <li><strong>생수:</strong> 제품마다 미네랄 함량이 크게 다릅니다. 라벨의 성분표에서 칼슘·마그네슘 수치를 확인하세요. 저미네랄 생수는 맛이 밋밋하게 나올 수 있습니다.</li>
+      <li><strong>RO수·증류수:</strong> 그대로 쓰기보다 미네랄을 다시 넣거나 수돗물과 섞는 방식(블렌딩)으로 쓰는 경우가 많습니다.</li>
+    </ul>
+    <p>한국 수돗물은 지역에 따라 경도가 낮은 편이라, 연수에 가까운 물이 나오는 곳이 많습니다. 자기 지역의 수질은 상수도사업본부 수질 정보나 간이 TDS 측정기로 확인해 보세요.</p>
+    <h2 class="section-title">4. 내 물 점검하는 순서</h2>
+    <div class="tip-box">
+      <div class="tip-title">물 점검 4단계</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>냄새 확인:</strong> 컵에 받은 물에서 염소(소독약) 냄새가 나는지 먼저 맡아 봅니다. 나면 활성탄 필터가 필요합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>TDS 측정:</strong> 휴대용 TDS 측정기로 값을 잽니다. 75 미만이면 너무 순수하고, 250을 넘으면 경도가 높을 수 있습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>경도·알칼리도 시험지 사용:</strong> 수족관용 시험지로 총경도(GH)와 탄산염경도(KH)를 대략 확인할 수 있습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>같은 원두로 비교 추출:</strong> 물만 바꿔 같은 레시피로 두 잔을 내려 맛을 비교합니다. 수치보다 맛의 차이를 직접 확인하는 것이 가장 확실합니다.</div></div>
+    </div>
+    <h2 class="section-title">5. 스케일 관리와 필터 교체</h2>
+    <p>에스프레소 머신은 물을 가열하는 보일러와 배관에 미네랄이 굳은 <strong>스케일(물때)</strong>이 생기기 쉽습니다. 스케일은 가열 효율을 떨어뜨리고 유량을 줄여 샷 시간까지 흔들 수 있습니다. 경도가 높은 지역일수록 정수 필터(이온교환수지 포함)의 교체 주기가 중요합니다.</p>
+    <ul style="margin:0 0 18px 22px;font-size:15.5px;color:#3a2218">
+      <li>필터는 제조사가 정한 용량(리터) 또는 기간 중 먼저 도래하는 쪽에 맞춰 교체합니다.</li>
+      <li>스팀완드 끝이 자주 막히거나 샷 시간이 점점 길어지면 스케일을 의심해 봅니다.</li>
+      <li>탈석(디스케일링) 제품은 머신 제조사가 권하는 것을 사용하고, 사용 후에는 충분히 헹궈 냅니다.</li>
+    </ul>
+    <p>정기 세척은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-22">에스프레소 머신 청소 주기</a>에서, 압력 점검은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-08">머신 압력 9bar 뜻</a>에서 정리했습니다. 핸드드립 물 온도 조절은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-01">핸드드립 쓴맛 잡는법</a>에서 볼 수 있습니다.</p>
+    <h2 class="section-title">6. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 정수기 물이면 그대로 써도 되나요?</strong><br/>
+      A. 활성탄 중심 정수기라면 대체로 무난합니다. 다만 RO 방식이면 미네랄이 거의 없어 맛이 밋밋하거나 머신에 부담이 될 수 있으니 확인이 필요합니다.</p>
+      <p><strong>Q. 끓인 물을 식혀 쓰면 더 좋은가요?</strong><br/>
+      A. 끓이면 염소는 일부 날아가지만 미네랄은 오히려 농축됩니다. 핸드드립에는 쓸 수 있으나 에스프레소 머신에는 반드시 정수된 물을 넣어야 합니다.</p>
+      <p><strong>Q. TDS 측정기만 있으면 충분한가요?</strong><br/>
+      A. TDS는 미네랄 총량만 보여줍니다. 같은 TDS여도 경도와 알칼리도 구성에 따라 맛이 다를 수 있어 참고용으로 쓰시는 것이 좋습니다.</p>
+      <p><strong>Q. 생수는 어떤 제품이 좋은가요?</strong><br/>
+      A. 한 가지가 정답이라고 하기 어렵습니다. 성분표에서 칼슘·마그네슘이 너무 적거나 많지 않은 제품을 골라 직접 비교해 보세요.</p>
+    </div>
+    <div class="closing-box">
+      <h3>물도 레시피의 일부입니다</h3>
+      <p><strong>TDS 150ppm 안팎, 염소 없음, 알칼리도 약 40ppm. 이 기준을 출발점으로 삼고 직접 맛을 비교해 내 물을 확인하세요.</strong></p>
+    </div>
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://know.coffeeparts.com.au/glossary/sca-water-standards" rel="noopener nofollow">Coffee Parts — SCA Water Standards</a>, <a href="https://open-exam-prep.com/study-guides/sca-q-grader/brewing-science-water-chemistry/sca-water-standards" rel="noopener nofollow">SCA Q Grader 학습자료 — Water Standards for Cupping &amp; Brewing</a>, <a href="https://archerscoffee.com/blogs/brew-guides/water-for-coffee" rel="noopener nofollow">Archers Coffee — Thinking About Water for Coffee</a></p>
+
+
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-13"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">플랫화이트 뜻 — 라떼와 우유 양·거품 두께·샷 구성 비교</div><div class="rc-date">2026. 10. 13</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-10"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">만델링 뜻 — 습식 탈곡 가공 방식과 맛 특징, 등급 읽는 법</div><div class="rc-date">2026. 10. 10</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-29"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">라떼아트 로제타 만드는 방법 — 흔드는 동작과 밀어내는 타이밍</div><div class="rc-date">2026. 09. 29</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#추출용물</span>
+      <span class="tag">#TDS</span>
+      <span class="tag">#알칼리도</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>TDS 목표 150ppm, 허용 75~250ppm이 널리 인용됩니다.</strong></li>
+        <li><strong>경도는 추출을 돕고, 알칼리도는 산미를 조절합니다.</strong></li>
+        <li><strong>염소는 없어야 하며 pH는 6.5~7.5가 목표입니다.</strong></li>
+        <li><strong>RO수·증류수는 미네랄을 보충해 써야 합니다.</strong></li>
+        <li><strong>필터 교체와 스케일 점검을 주기적으로 합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
