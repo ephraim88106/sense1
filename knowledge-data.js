@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 181, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "채널링 뜻 — 생기는 원인과 바텀리스 포터필터로 확인하는 법",
+    date: "2026.10.18",
+    summary: "샷 시간은 25~30초로 맞췄는데 맛이 날카롭고 텁텁하게 쓰다면 채널링을 의심해 볼 차례입니다. 물은 저항이 적은 길로 흐르기 때문에, 가루 층에 약한 부분이 있으면 그곳으로만 몰립니다. 시간과 압력 숫자가 정상이어도 한 잔 안에서 추출이 고르지 않을 수 있습니다.",
+    link: "coffee-article-2026-10-18.html"
+  },
+  {
     id: 180, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "추출용 물 고르는법 — TDS 150ppm 목표와 경도·알칼리도, 정수기 물 써도 되는지",
