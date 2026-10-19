@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 182, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "아이스 아메리카노 만드는 방법 — 샷·물·얼음 비율과 싱거워지지 않는 요령",
+    date: "2026.10.19",
+    summary: "같은 샷을 넣었는데 매장에서 마신 아이스 아메리카노는 진하고, 집에서 만든 것은 금방 싱거워진다면 비율과 얼음 계산에서 차이가 나는 경우가 많습니다. 뜨거운 샷이 얼음을 녹이면서 물이 더해지기 때문에, 물을 뜨거운 아메리카노와 같은 양으로 넣으면 묽어지기 쉽습니다.",
+    link: "coffee-article-2026-10-19.html"
+  },
+  {
     id: 181, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "채널링 뜻 — 생기는 원인과 바텀리스 포터필터로 확인하는 법",

@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>아이스 아메리카노 만드는 방법 — 샷·물·얼음 비율과 싱거워지지 않는 요령 | 바리스타 스페셜티</title>
+  <meta name="description" content="아이스 아메리카노는 에스프레소 1에 물 2~3 정도를 기준으로 시작해 입맛에 맞추는 음료입니다. 샷과 물·얼음 비율, 재료 넣는 차례, 얼음이 녹아 싱거워지는 것을 줄이는 방법, 크레마 처리 방식을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-19">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="아이스 아메리카노 만드는 방법 — 샷·물·얼음 비율과 싱거워지지 않는 요령 | 바리스타 스페셜티">
+<meta property="og:description" content="아이스 아메리카노는 에스프레소 1에 물 2~3 정도를 기준으로 시작해 입맛에 맞추는 음료입니다. 샷과 물·얼음 비율, 재료 넣는 차례, 얼음이 녹아 싱거워지는 것을 줄이는 방법, 크레마 처리 방식을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-19">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-19T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-19T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-19#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-19", "headline": "아이스 아메리카노 만드는 방법 — 샷·물·얼음 비율과 싱거워지지 않는 요령 | 바리스타 스페셜티", "description": "아이스 아메리카노는 에스프레소 1에 물 2~3 정도를 기준으로 시작해 입맛에 맞추는 음료입니다. 샷과 물·얼음 비율, 재료 넣는 차례, 얼음이 녹아 싱거워지는 것을 줄이는 방법, 크레마 처리 방식을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-19", "dateModified": "2026-10-19", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법 심층 가이드</span>
+      <span class="badge">아이스 아메리카노</span>
+      <span class="badge">레시피</span>
+    </div>
+    <h1>아이스 아메리카노 만드는 방법<br/>— 샷·물·얼음 비율과 싱거워지지 않는 요령</h1>
+    <p class="subtitle"><strong>아이스 아메리카노는 에스프레소에 찬물과 얼음을 더해 만들며, 샷 1에 물 2~3을 시작점으로 얼음 양과 녹는 속도까지 계산해 맞추는 음료입니다.</strong> 비율과 순서, 싱거워지지 않게 하는 요령을 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 19일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>같은 샷을 넣었는데 매장에서 마신 아이스 아메리카노는 진하고, 집에서 만든 것은 금방 싱거워진다면 <strong>비율과 얼음 계산</strong>에서 차이가 나는 경우가 많습니다. 뜨거운 샷이 얼음을 녹이면서 물이 더해지기 때문에, 물을 뜨거운 아메리카노와 같은 양으로 넣으면 묽어지기 쉽습니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>샷·물·얼음의 기본 비율과 용량별 예시</li>
+        <li>재료를 넣는 순서와 크레마 처리 방식</li>
+        <li>얼음이 녹아 싱거워지는 것을 줄이는 요령</li>
+        <li>맛이 밋밋하거나 쓸 때 조절하는 방법</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1 : 2~3</span><span class="label">에스프레소 대 물 시작 비율(자료마다 다름)</span></div>
+      <div class="data-card"><span class="num">큰 얼음</span><span class="label">작은 얼음보다 천천히 녹음</span></div>
+      <div class="data-card"><span class="num">잔 미리 차갑게</span><span class="label">처음 녹는 양을 줄임</span></div>
+      <div class="data-card"><span class="num">10분 이내</span><span class="label">시간이 지날수록 묽어짐</span></div>
+    </div>
+    <h2 class="section-title">1. 아이스 아메리카노는 무엇이 다른가</h2>
+    <p>아메리카노는 에스프레소에 물을 더한 음료이고, 아이스 아메리카노는 여기에 얼음을 넣어 차갑게 마시는 형태입니다. 뜨거운 아메리카노와 달리 <strong>얼음이 녹으며 물이 추가</strong>됩니다. 그래서 같은 샷이라도 물 양을 줄이고 얼음으로 희석을 맞추는 방식을 쓰기도 합니다.</p>
+    <p>샷 자체의 품질이 먼저입니다. 추출 시간과 비율이 흔들린 샷은 얼음을 넣어도 쓰거나 시게 느껴지니, 기준은 <a href="https://coffee.ephseed.com/coffee-article-2026-09-01">에스프레소 샷 시간 기준</a>과 <a href="https://coffee.ephseed.com/coffee-article-2026-10-16">샷 비율 1:2 뜻</a>에서 먼저 확인해 보세요.</p>
+    <h2 class="section-title">2. 샷·물·얼음 기본 비율</h2>
+    <p>레시피마다 숫자가 달라 정답은 없습니다. 에스프레소 1에 물 2~3을 시작점으로 소개하는 자료가 많고, 더 진하게 마시려면 물을 줄이거나 샷을 추가합니다. 아래는 시작점으로 쓸 수 있는 예시이며 <strong>정확한 수치가 아니라 출발선</strong>입니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>구성</th><th>샷</th><th>찬물</th><th>얼음</th><th>느낌</th></tr></thead>
+      <tbody>
+        <tr><td class="em">진하게</td><td>더블 샷(약 60ml)</td><td>약 100~120ml</td><td>잔의 절반가량</td><td>쓴맛·바디가 분명함</td></tr>
+        <tr><td class="em">기본</td><td>더블 샷(약 60ml)</td><td>약 120~150ml</td><td>잔의 절반~2/3</td><td>가장 무난한 농도</td></tr>
+        <tr><td class="em">부드럽게</td><td>더블 샷(약 60ml)</td><td>약 150~180ml</td><td>잔의 2/3</td><td>가볍고 마시기 편함</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>샷 용량은 에스프레소 레시피와 크레마 양에 따라 달라지므로 위 값은 어림입니다. 한 번 만들고 맛을 본 뒤 <strong>물을 10~20ml 단위로 늘리거나 줄여</strong> 매장·가정의 기준을 정하는 편이 정확합니다.</p>
+    </div>
+    <h2 class="section-title">3. 만드는 순서</h2>
+    <div class="tip-box">
+      <div class="tip-title">아이스 아메리카노 4단계</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>잔 준비:</strong> 잔을 미리 차갑게 하거나 얼음을 먼저 담아 둡니다. 따뜻한 잔은 얼음을 빨리 녹입니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>찬물 담기:</strong> 정수한 찬물을 정해 둔 양만큼 먼저 붓습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>샷 붓기:</strong> 추출한 샷을 물 위에 바로 붓습니다. 이 순서에서는 샷이 얼음에 직접 닿는 시간이 줄어 크레마가 상대적으로 남습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>얼음 넣기:</strong> 마지막에 얼음을 채웁니다. 얼음을 먼저 넣고 샷을 붓는 매장도 있어 순서는 매장마다 다릅니다.</div></div>
+    </div>
+    <p>일부 매장은 반대로 샷에 찬물을 더하거나 얼음 위에 샷을 붓습니다. 맛 차이는 크지 않다고 설명하는 자료가 있으며, 크레마가 덜 남는 정도의 차이입니다.</p>
+    <h2 class="section-title">4. 싱거워지는 것을 줄이는 요령</h2>
+    <ul style="margin:0 0 18px 22px;font-size:15.5px;color:#3a2218">
+      <li><strong>큰 얼음:</strong> 표면적이 작아 천천히 녹습니다. 작은 조각 얼음은 빨리 녹습니다.</li>
+      <li><strong>얼음을 가득:</strong> 얼음이 많을수록 잔 안이 빨리 차가워져 오히려 덜 녹는다고 설명하는 자료가 있습니다.</li>
+      <li><strong>샷을 먼저 식히기:</strong> 샷을 찬물에 먼저 섞어 온도를 낮춘 뒤 얼음을 넣으면 얼음이 녹는 양이 줄어듭니다.</li>
+      <li><strong>커피 얼음:</strong> 커피를 얼려 쓰면 녹아도 농도가 유지됩니다. 한 잔에 쓸 만큼만 미리 준비해야 합니다.</li>
+      <li><strong>시간:</strong> 만든 뒤 시간이 갈수록 묽어지므로 가급적 바로 마십니다.</li>
+    </ul>
+    <h2 class="section-title">5. 크레마와 쓴맛 처리</h2>
+    <p>크레마는 차가운 음료에서는 거품이 금방 가라앉고, 일부 자료는 <strong>쓴맛이 도드라질 수 있어 걷어 낸다</strong>고 설명합니다. 반대로 크레마를 그대로 두어 향을 살리는 쪽도 있습니다. 어느 쪽이 정답이라기보다 기호입니다.</p>
+    <p>쓴맛이 계속 거슬린다면 크레마보다 추출 쪽 원인일 수 있으니, 분쇄도와 물 온도를 조절하는 방법은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-12">과소추출 과다추출 뜻</a>에서 확인할 수 있습니다. 원두 선택은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-14">아메리카노 블렌드 고르는법</a>을 참고하세요.</p>
+    <h2 class="section-title">6. 맛이 아쉬울 때 조절</h2>
+    <table class="compare-table">
+      <thead><tr><th>증상</th><th>가능한 원인</th><th>조절</th></tr></thead>
+      <tbody>
+        <tr><td class="em">밋밋하고 싱겁다</td><td>물이 많거나 얼음이 빨리 녹음</td><td>물을 줄이거나 큰 얼음, 샷 추가</td></tr>
+        <tr><td class="em">너무 쓰다</td><td>샷 과다추출, 샷이 너무 진함</td><td>추출 점검, 물 양 늘리기</td></tr>
+        <tr><td class="em">시고 날카롭다</td><td>샷 과소추출 또는 약배전 특성</td><td>분쇄도를 곱게, 배전도 선택</td></tr>
+        <tr><td class="em">텁텁하다</td><td>크레마·미분의 영향</td><td>크레마를 걷거나 그라인더 점검</td></tr>
+      </tbody>
+    </table>
+    <h2 class="section-title">7. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 뜨거운 샷을 바로 얼음에 부어도 되나요?</strong><br/>
+      A. 가능합니다. 다만 얼음이 많이 녹아 묽어지므로 물을 조금 줄여 잡는 것이 좋습니다.</p>
+      <p><strong>Q. 아이스는 샷을 더 넣어야 하나요?</strong><br/>
+      A. 얼음 희석을 고려해 더블 샷을 기본으로 쓰는 곳이 많습니다. 싱겁다면 샷을 추가하거나 물을 줄이세요.</p>
+      <p><strong>Q. 뜨거운 아메리카노와 샷 양이 같은가요?</strong><br/>
+      A. 같은 샷을 쓰되 물 양이 달라집니다. 얼음 부피 때문에 물은 보통 적게 넣습니다.</p>
+      <p><strong>Q. 콜드브루로 대신해도 되나요?</strong><br/>
+      A. 가능하지만 맛과 카페인 특성이 다릅니다. 만드는 법은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-13">콜드브루 만드는법</a>에서 볼 수 있습니다.</p>
+    </div>
+    <div class="closing-box">
+      <h3>비율은 출발선이고, 기준은 한 번 정해 두는 것입니다</h3>
+      <p><strong>더블 샷에 찬물을 먼저 담고, 샷을 붓고, 얼음을 채우세요. 맛을 보고 물을 10~20ml씩 조절해 우리 매장·집의 기준을 기록해 두면 매번 같은 맛을 낼 수 있습니다.</strong></p>
+    </div>
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료(수치와 순서는 자료마다 달라 범위로 서술했습니다): <a href="https://themanual.com/food-and-drink/iced-americano" rel="noopener nofollow">The Manual — Iced Americano</a>, <a href="https://completehomebarista.com/guides/iced-americano-water-ratio-chart/" rel="noopener nofollow">Complete Home Barista — Iced Americano Water Ratio</a>, <a href="https://beannbeancoffee.com/blogs/beansider/how-to-make-an-iced-americano-at-home" rel="noopener nofollow">Bean &amp; Bean — Iced Americano</a>, <a href="https://lifeboostcoffee.com/blogs/lifeboost/iced-americano-and-aerocano-recipes-pro-tips" rel="noopener nofollow">Lifeboost — Iced Americano Tips</a></p>
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-18"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">채널링 뜻 — 생기는 원인과 바텀리스 포터필터로 확인하는 법</div><div class="rc-date">2026. 10. 18</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-17"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">추출용 물 고르는법 — TDS 150ppm 목표와 경도·알칼리도, 정수기 물 써도 되는지</div><div class="rc-date">2026. 10. 17</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-16"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">샷 비율 1:2 뜻 — 가루 18g에 36g 받는 계산법과 맛 조절</div><div class="rc-date">2026. 10. 16</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#아이스아메리카노</span>
+      <span class="tag">#에스프레소</span>
+      <span class="tag">#레시피</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>에스프레소 1에 물 2~3을 시작점으로 잡고 맛을 보며 조절합니다.</strong></li>
+        <li><strong>얼음이 녹아 물이 더해지므로 뜨거운 아메리카노보다 물을 적게 넣습니다.</strong></li>
+        <li><strong>찬물, 샷, 얼음 순서가 흔하며 매장마다 다릅니다.</strong></li>
+        <li><strong>큰 얼음과 차가운 잔으로 희석을 줄입니다.</strong></li>
+        <li><strong>한 번 정한 기준을 기록해 두면 매번 같은 맛을 냅니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
