@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>마키아토 뜻 — 라떼 마키아토와 구분하는 법, 거품 양과 잔 크기 | 바리스타 스페셜티</title>
+  <meta name="description" content="마키아토는 이탈리아어로 '얼룩진·점을 찍은'이라는 뜻입니다. 에스프레소에 우유 거품을 조금 올린 에스프레소 마키아토와, 우유 위에 샷을 부은 라떼 마키아토의 차이, 우유 양과 만드는 순서, 주문할 때 헷갈리지 않는 법을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-21">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="마키아토 뜻 — 라떼 마키아토와 구분하는 법, 거품 양과 잔 크기 | 바리스타 스페셜티">
+<meta property="og:description" content="마키아토는 이탈리아어로">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-21">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-21T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-21T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-21#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-21", "headline": "마키아토 뜻 — 라떼 마키아토와 구분하는 법, 거품 양과 잔 크기 | 바리스타 스페셜티", "description": "마키아토는 이탈리아어로", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-21", "dateModified": "2026-10-21", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 추출 기법 심층 가이드</span>
+      <span class="badge">마키아토</span>
+      <span class="badge">음료 구분</span>
+    </div>
+    <h1>마키아토 뜻<br/>— 라떼 마키아토와 구분하는 법, 거품 양과 잔 크기</h1>
+    <p class="subtitle"><strong>마키아토는 이탈리아어로 '얼룩진, 점을 찍은'이라는 뜻이며, 에스프레소에 우유 거품을 조금 올린 에스프레소 마키아토와 우유가 대부분인 라떼 마키아토는 전혀 다른 음료입니다. 우유 양, 만드는 순서, 주문 요령을 정리했습니다.</strong></p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 21일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>메뉴판에 같은 '마키아토'라고 적혀 있는데 한 곳에서는 작은 잔에 진한 샷이 나오고, 다른 곳에서는 큰 컵에 달콤한 우유 음료가 나온다면 <strong>두 가지 다른 음료를 같은 이름으로 부르기 때문</strong>인 경우가 많습니다. 이 글에서는 마키아토의 뜻과 두 종류의 차이를 우유 양과 순서 기준으로 정리합니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>마키아토라는 말의 뜻과 어원</li>
+        <li>에스프레소 마키아토와 라떼 마키아토의 구성 차이</li>
+        <li>우유 양·잔 크기·만드는 순서 비교</li>
+        <li>카페라떼·카푸치노와 구분하는 기준과 주문 요령</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">'얼룩진'</span><span class="label">마키아토(macchiato)의 이탈리아어 뜻</span></div>
+      <div class="data-card"><span class="num">샷 + 거품 약간</span><span class="label">에스프레소 마키아토 구성</span></div>
+      <div class="data-card"><span class="num">우유 + 샷</span><span class="label">라떼 마키아토 구성(우유가 대부분)</span></div>
+      <div class="data-card"><span class="num">약 60~90ml</span><span class="label">에스프레소 마키아토의 일반적 잔 크기(자료마다 다름)</span></div>
+    </div>
+    <h2 class="section-title">1. 마키아토는 무슨 뜻인가</h2>
+    <p>마키아토(macchiato)는 이탈리아어로 <strong>'얼룩진' 또는 '점이 찍힌'</strong>이라는 뜻의 말입니다. 에스프레소에 우유나 우유 거품을 소량 올려 흰 점을 찍은 모습에서 이름이 붙었다고 설명하는 자료가 많습니다. 즉 이름의 기준은 <strong>에스프레소가 주인공이고 우유는 표시만 한 정도</strong>라는 점입니다.</p>
+    <p>이 기본 형태가 에스프레소 마키아토(이탈리아 현지에서는 흔히 '카페 마키아토')입니다. 한편 우유 음료 쪽에서 출발한 라떼 마키아토는 반대로 '우유에 샷으로 얼룩을 남긴 것'이라는 의미로 붙은 이름이어서, 같은 단어를 서로 반대 방향에서 쓰는 셈입니다.</p>
+    <h2 class="section-title">2. 에스프레소 마키아토와 라떼 마키아토 비교</h2>
+    <table class="compare-table">
+      <thead><tr><th>구분</th><th>에스프레소 마키아토</th><th>라떼 마키아토</th></tr></thead>
+      <tbody>
+        <tr><td class="em">주인공</td><td>에스프레소</td><td>스팀 우유</td></tr>
+        <tr><td class="em">구성</td><td>샷 1~2잔 + 우유 거품 한두 스푼</td><td>스팀 우유와 거품 + 샷 1~2잔</td></tr>
+        <tr><td class="em">잔 크기</td><td>데미타스 등 작은 잔(약 60~90ml)</td><td>유리잔·큰 컵(약 240~350ml)</td></tr>
+        <tr><td class="em">우유 비중</td><td>아주 적음</td><td>대부분</td></tr>
+        <tr><td class="em">맛</td><td>진하고 쓴맛·산미가 분명함</td><td>부드럽고 고소하며 우유 맛이 큼</td></tr>
+        <tr><td class="em">모양</td><td>샷 위에 흰 점 형태의 거품</td><td>우유 위에 샷이 번져 층이 생김</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>양과 비율은 SCA나 KCA가 하나로 정해 둔 표준이 있는 것이 아니라 나라와 매장마다 다릅니다. 위 수치는 여러 자료에서 공통으로 쓰는 <strong>어림 범위</strong>이므로 매장 레시피가 우선입니다.</p>
+    </div>
+    <h2 class="section-title">3. 에스프레소 마키아토 만드는 순서</h2>
+    <div class="tip-box">
+      <div class="tip-title">에스프레소 마키아토 4단계</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>잔 데우기:</strong> 작은 잔을 뜨거운 물로 미리 데워 샷이 빨리 식지 않게 합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>샷 추출:</strong> 평소 레시피대로 에스프레소를 추출해 잔에 받습니다. 샷 시간 기준은 <a href="https://coffee.ephseed.com/coffee-article-2026-09-01">에스프레소 샷 시간 기준</a>을 참고하세요.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>거품 준비:</strong> 우유를 스팀해 거품이 많은 윗부분을 떠냅니다. 이때 너무 묽지 않은 단단한 거품이 점처럼 얹기 좋습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>올리기:</strong> 스푼으로 샷 중앙에 거품을 한두 스푼 올립니다. 섞지 않고 그대로 냅니다.</div></div>
+    </div>
+    <p>우유를 직접 스팀하는 요령은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-16">우유 스팀 하는법</a>에서 확인할 수 있습니다. 소량만 필요하므로 많이 만들기보다 피처에 우유를 적게 넣어 스팀하는 편이 다루기 쉽습니다.</p>
+    <h2 class="section-title">4. 라떼 마키아토 만드는 순서</h2>
+    <p>라떼 마키아토는 순서가 거꾸로입니다. 큰 유리잔에 <strong>스팀 우유를 먼저 담고, 그 위로 샷을 천천히 부어</strong> 층이 생기게 합니다. 샷이 우유와 거품 사이로 가라앉으며 갈색 띠를 남기는 것이 특징입니다.</p>
+    <ul style="margin:0 0 18px 22px;font-size:15.5px;color:#3a2218">
+      <li><strong>우유 먼저:</strong> 잔의 대부분을 스팀 우유로 채우고 윗부분은 거품을 둡니다.</li>
+      <li><strong>샷은 천천히:</strong> 거품 중앙에 스푼을 대고 샷을 흘려 넣으면 층이 덜 섞입니다.</li>
+      <li><strong>섞지 않고 제공:</strong> 마시는 사람이 저어 마시도록 두는 매장이 많습니다.</li>
+    </ul>
+    <p>같은 우유 음료인 카페라떼·카푸치노와의 구분은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-25">카페라떼 카푸치노 차이</a>, 플랫화이트와의 구분은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-13">플랫화이트 뜻</a>에서 비교해 두었습니다.</p>
+    <h2 class="section-title">5. 이름만 보고 주문하면 헷갈리는 이유</h2>
+    <p>국내 매장에서는 메뉴판에 '마키아토'만 적고 사실상 라떼 마키아토를 내는 곳이 많고, 캐러멜 마키아토처럼 <strong>시럽과 캐러멜 소스를 더한 단 음료</strong>도 같은 이름 계열로 팔립니다. 이탈리아식으로 에스프레소 마키아토를 마시고 싶다면 '에스프레소 마키아토'라고 구체적으로 말하거나 샷이 나오는 잔 크기를 확인하는 편이 안전합니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>상황</th><th>이렇게 주문</th><th>예상되는 음료</th></tr></thead>
+      <tbody>
+        <tr><td class="em">진한 샷에 우유 맛만 살짝</td><td>에스프레소 마키아토</td><td>작은 잔의 샷 + 거품</td></tr>
+        <tr><td class="em">우유 음료에 샷 층을 즐김</td><td>라떼 마키아토</td><td>큰 유리잔의 층진 우유 음료</td></tr>
+        <tr><td class="em">달콤한 음료</td><td>캐러멜 마키아토 등</td><td>시럽·소스가 들어간 우유 음료</td></tr>
+      </tbody>
+    </table>
+    <h2 class="section-title">6. 맛이 아쉬울 때 조절</h2>
+    <table class="compare-table">
+      <thead><tr><th>증상</th><th>가능한 원인</th><th>조절</th></tr></thead>
+      <tbody>
+        <tr><td class="em">에스프레소 마키아토가 너무 쓰다</td><td>샷 과다추출 또는 거품이 너무 적음</td><td>추출 점검, 거품을 한 스푼 더</td></tr>
+        <tr><td class="em">거품이 금방 꺼진다</td><td>거품이 너무 묽거나 오래 둠</td><td>단단한 윗부분만 사용, 바로 제공</td></tr>
+        <tr><td class="em">라떼 마키아토 층이 안 생긴다</td><td>샷을 빨리 부었거나 우유 거품이 얇음</td><td>스푼에 대고 천천히, 거품 두께 확보</td></tr>
+        <tr><td class="em">너무 밍밍하다</td><td>샷 용량 부족</td><td>더블 샷으로 변경</td></tr>
+      </tbody>
+    </table>
+    <p>샷 자체가 날카롭거나 쓰다면 우유로 가리기보다 추출 상태를 먼저 보는 것이 좋습니다. 증상별 점검은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-12">과소추출 과다추출 뜻</a>에 정리되어 있습니다.</p>
+    <h2 class="section-title">7. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 마키아토와 카페라떼는 어떻게 다른가요?</strong><br/>
+      A. 에스프레소 마키아토는 우유가 거의 없고, 카페라떼는 우유가 대부분입니다. 라떼 마키아토는 카페라떼와 재료가 같지만 샷을 위에서 붓는 순서와 층이 다릅니다.</p>
+      <p><strong>Q. 마키아토와 코르타도는 같은가요?</strong><br/>
+      A. 다릅니다. 코르타도는 샷과 스팀 우유를 비슷한 양으로 섞어 낸다고 설명되는 음료로, 마키아토보다 우유가 훨씬 많습니다.</p>
+      <p><strong>Q. 에스프레소 마키아토는 샷을 몇 잔 쓰나요?</strong><br/>
+      A. 싱글 또는 더블 샷을 쓰며 매장마다 다릅니다. 진하게 마시려면 싱글, 양을 늘리려면 더블이 일반적입니다.</p>
+      <p><strong>Q. 거품 대신 스팀 우유를 넣어도 되나요?</strong><br/>
+      A. 가능합니다. 다만 우유가 많아질수록 마키아토보다 코르타도·카페라떼에 가까워집니다.</p>
+    </div>
+    <div class="closing-box">
+      <h3>마키아토는 이름보다 구성을 보고 고릅니다</h3>
+      <p><strong>샷이 주인공이면 에스프레소 마키아토, 우유가 주인공이면 라떼 마키아토입니다. 주문할 때 종류를 직접 말하고, 만들 때는 우유 양을 먼저 정해 두면 매번 같은 음료를 낼 수 있습니다.</strong></p>
+    </div>
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료(양과 비율은 자료마다 달라 범위로 서술했습니다): <a href="https://www.breville.com/us/en/blog/coffee-and-espresso/macchiato-vs-latte.html" rel="noopener nofollow">Breville — Macchiato vs. latte</a> · <a href="https://www.tastingtable.com/1557492/macchiato-vs-latte-difference/" rel="noopener nofollow">Tasting Table — Macchiato vs Latte</a> · <a href="https://specialtycoffee.id/articles/difference-between-macchiato-latte-cappuccino/" rel="noopener nofollow">Specialty Coffee ID — Macchiato vs Latte vs Cappuccino</a></p>
+
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-07"><div class="rc-cat">📈 스페셜티 커피 트렌드</div><div class="rc-title">1인당 소비량 순위 — 한국과 세계 주요국 연간 잔수 정리</div><div class="rc-date">2026. 09. 07</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-07"><div class="rc-cat">📈 스페셜티 커피 트렌드</div><div class="rc-title">전통 커피를 처음으로 꺾었다 — 2026년 스페셜티 커피 혁명의 실체</div><div class="rc-date">2026. 08. 07</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-21"><div class="rc-cat">📈 스페셜티 커피 트렌드</div><div class="rc-title">커피 한 잔이 1만원을 넘어서는 이유 — 2026 스페셜티 커피 5대 트렌드 완전 해부</div><div class="rc-date">2026. 07. 21</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#마키아토</span>
+      <span class="tag">#라떼마키아토</span>
+      <span class="tag">#에스프레소</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>마키아토는 '얼룩진'이라는 뜻의 이탈리아어입니다.</strong></li>
+        <li><strong>에스프레소 마키아토는 샷에 거품을 한두 스푼 올린 작은 음료입니다.</strong></li>
+        <li><strong>라떼 마키아토는 스팀 우유 위에 샷을 부어 층을 만든 큰 음료입니다.</strong></li>
+        <li><strong>주문할 때는 종류를 구체적으로 말하는 것이 안전합니다.</strong></li>
+        <li><strong>양과 비율은 매장마다 다르므로 기준을 한 번 정해 기록해 둡니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>

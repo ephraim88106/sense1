@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 183, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "마키아토 뜻 — 라떼 마키아토와 구분하는 법, 거품 양과 잔 크기",
+    date: "2026.10.21",
+    summary: "메뉴판에 같은 '마키아토'라고 적혀 있는데 한 곳에서는 작은 잔에 진한 샷이 나오고, 다른 곳에서는 큰 컵에 달콤한 우유 음료가 나온다면 두 가지 다른 음료를 같은 이름으로 부르기 때문인 경우가 많습니다. 이 글에서는 마키아토의 뜻과 두 종류의 차이를 우유 양과 순서 기준으로 정리합니다.",
+    link: "coffee-article-2026-10-21.html"
+  },
+  {
     id: 182, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "아이스 아메리카노 만드는 방법 — 샷·물·얼음 비율과 싱거워지지 않는 요령",
