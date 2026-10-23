@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 184, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "프리인퓨전 뜻 — 효과와 시간 설정, 채널링 줄이는 원리",
+    date: "2026.10.23",
+    summary: "샷이 한쪽으로만 뚫려 나오거나 같은 레시피인데 맛이 들쭉날쭉하다면 물이 처음 닿는 순간을 의심해 볼 만합니다. 프리인퓨전은 본 추출 전에 낮은 압력으로 커피 가루를 먼저 적셔 주는 단계입니다. 이 글에서는 뜻과 효과, 흔히 쓰는 시간 범위, 머신 종류별 차이와 조절 방법을 정리합니다.",
+    link: "coffee-article-2026-10-23.html"
+  },
+  {
     id: 183, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "마키아토 뜻 — 라떼 마키아토와 구분하는 법, 거품 양과 잔 크기",
