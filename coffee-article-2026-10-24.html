@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>아포가토 만드는 법 — 샷 양과 아이스크림 고르는 요령 | 바리스타 스페셜티</title>
+  <meta name="description" content="아포가토는 아이스크림 위에 갓 뽑은 샷을 부어 먹는 이탈리아식 디저트입니다. 샷 한 잔(약 30ml)에 1~2스쿱을 기본으로 한 비율, 바닐라·젤라토 선택 기준, 녹지 않게 내는 요령과 흔한 실수를 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-24">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="아포가토 만드는 법 — 샷 양과 아이스크림 고르는 요령 | 바리스타 스페셜티">
+<meta property="og:description" content="아포가토는 아이스크림 위에 갓 뽑은 샷을 부어 먹는 이탈리아식 디저트입니다. 샷 한 잔(약 30ml)에 1~2스쿱을 기본으로 한 비율, 바닐라·젤라토 선택 기준, 녹지 않게 내는 요령과 흔한 실수를 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-24">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-24T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-24T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-24#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-24", "headline": "아포가토 만드는 법 — 샷 양과 아이스크림 고르는 요령 | 바리스타 스페셜티", "description": "아포가토는 아이스크림 위에 갓 뽑은 샷을 부어 먹는 이탈리아식 디저트입니다. 샷 한 잔(약 30ml)에 1~2스쿱을 기본으로 한 비율, 바닐라·젤라토 선택 기준, 녹지 않게 내는 요령과 흔한 실수를 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-24", "dateModified": "2026-10-24", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 카페 메뉴 실무</span>
+      <span class="badge">아포가토</span>
+      <span class="badge">디저트 음료</span>
+    </div>
+    <h1>아포가토 만드는 법<br/>— 샷 양과 아이스크림 고르는 요령</h1>
+    <p class="subtitle"><strong>아포가토는 아이스크림 위에 갓 뽑은 샷을 부어 먹는 이탈리아식 디저트입니다. 샷 한 잔(약 30ml)에 아이스크림 1~2스쿱이 기본 비율이며, 바로 부어 곧바로 먹는 것이 핵심입니다.</strong></p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 24일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>아포가토를 만들었는데 아이스크림이 금세 녹아 국물처럼 되거나, 반대로 맛이 밍밍하다면 샷 양과 아이스크림 상태를 먼저 점검해 볼 만합니다. <strong>아포가토는 재료가 두 가지뿐이라 비율과 온도, 내는 타이밍이 맛의 거의 전부</strong>입니다. 이 글에서는 기본 비율과 만드는 과정, 아이스크림 선택 기준, 자주 하는 실수를 정리합니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>아포가토의 뜻과 기본 구성</li>
+        <li>샷 양과 아이스크림 스쿱 수 비율</li>
+        <li>바닐라 아이스크림과 젤라토의 차이와 고르는 기준</li>
+        <li>녹지 않게 내는 요령과 흔한 실수</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">약 30ml</span><span class="label">기본 단위인 싱글 샷 한 잔의 양</span></div>
+      <div class="data-card"><span class="num">1~2스쿱</span><span class="label">샷 한 잔에 곁들이는 아이스크림 양</span></div>
+      <div class="data-card"><span class="num">바로 제공</span><span class="label">부은 직후 먹어야 하는 디저트</span></div>
+      <div class="data-card"><span class="num">재료 2가지</span><span class="label">샷과 아이스크림이 전부</span></div>
+    </div>
+    <h2 class="section-title">1. 아포가토는 무슨 뜻인가</h2>
+    <p>아포가토(affogato)는 이탈리아어로 <strong>'잠긴, 빠진'</strong>을 뜻하는 말에서 온 이름입니다. 이탈리아에서는 보통 아포가토 알 카페(affogato al caffè), 즉 '커피에 잠긴 아이스크림'이라고 부릅니다. 바닐라나 피오르디라테 같은 담백한 아이스크림 위에 갓 뽑은 샷을 붓는 것이 가장 흔한 형태입니다.</p>
+    <p>정확한 기원은 분명하지 않다고 전해집니다. 현대식 에스프레소가 19세기 후반에야 자리 잡았기 때문에, 이 디저트도 젤라토 자체보다는 훨씬 나중에 생겼을 것이라는 설명이 일반적입니다. 음료로 볼지 디저트로 볼지는 매장마다 다르며, 메뉴판에서는 디저트 음료로 분류하는 경우가 많습니다.</p>
+    <h2 class="section-title">2. 기본 비율은 어떻게 되나</h2>
+    <p>자료마다 조금씩 다르지만 <strong>싱글 샷 한 잔(약 30ml)에 아이스크림 1~2스쿱</strong>이 가장 흔한 기준입니다. 정해진 표준 규격이 있는 것은 아니므로 아래 표는 출발점으로만 보세요.</p>
+    <table class="compare-table">
+      <thead><tr><th>구성</th><th>샷</th><th>아이스크림</th><th>특징</th></tr></thead>
+      <tbody>
+        <tr><td class="em">가볍게</td><td>싱글 1잔(약 30ml)</td><td>1스쿱</td><td>커피 맛이 또렷하고 금방 녹음</td></tr>
+        <tr><td class="em">기본</td><td>싱글 1잔(약 30ml)</td><td>2스쿱</td><td>가장 흔한 조합, 단맛과 쓴맛 균형</td></tr>
+        <tr><td class="em">진하게</td><td>더블 2잔(약 60ml)</td><td>2~3스쿱</td><td>디저트보다 음료에 가까움</td></tr>
+        <tr><td class="em">나눠 먹기</td><td>싱글 1잔을 따로 제공</td><td>1~2스쿱</td><td>손님이 직접 부어 먹는 방식</td></tr>
+      </tbody>
+    </table>
+    <p>샷의 기본 비율과 양 계산은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-16">샷 비율 1:2 뜻</a>에서, 샷 시간을 재는 기준은 <a href="https://coffee.ephseed.com/coffee-article-2026-09-01">에스프레소 샷 시간 기준</a>에서 확인할 수 있습니다.</p>
+    <h2 class="section-title">3. 아이스크림은 무엇으로 고르나</h2>
+    <p>샷이 뜨거운 만큼 아이스크림은 <strong>단맛이 과하지 않고 단단한 것</strong>이 유리합니다. 주로 아래 세 가지를 비교합니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>종류</th><th>특징</th><th>아포가토에서의 장단점</th></tr></thead>
+      <tbody>
+        <tr><td class="em">바닐라 아이스크림</td><td>공기 함량(오버런)이 높고 가벼운 편</td><td>구하기 쉽지만 빨리 녹아 묽어질 수 있음</td></tr>
+        <tr><td class="em">젤라토(바닐라·피오르디라테)</td><td>상대적으로 밀도가 높고 지방이 적은 편</td><td>샷 맛이 잘 드러나고 쫀득함, 녹는 속도는 보관 온도에 영향</td></tr>
+        <tr><td class="em">초콜릿·견과류 맛</td><td>맛이 강함</td><td>샷 향을 가릴 수 있어 변형 메뉴로 적합</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>지방과 설탕 함량, 공기 함량은 제품마다 크게 달라 어느 쪽이 항상 낫다고 말하기는 어렵습니다. 같은 샷으로 두세 가지를 직접 비교해 보는 것이 가장 확실합니다.</p>
+    </div>
+    <h2 class="section-title">4. 아포가토 만드는 4단계</h2>
+    <div class="tip-box">
+      <div class="tip-title">아포가토 만드는 과정</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>잔 준비:</strong> 바닥이 좁고 깊은 잔이나 작은 유리컵을 냉장 또는 냉동해 두면 아이스크림이 덜 녹습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>스쿱 담기:</strong> 아이스크림은 단단한 상태에서 모양을 잡아 잔에 담습니다. 너무 오래 꺼내 두면 샷을 붓기도 전에 녹기 시작합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>샷 추출:</strong> 아이스크림을 담은 뒤 <strong>마지막에</strong> 샷을 뽑아야 합니다. 샷이 식거나 크레마가 사라진 뒤에 부으면 맛이 약해집니다. 신선도 기준은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-21">에스프레소 크레마 색과 양 보는법</a>을 참고하세요.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>바로 제공:</strong> 샷을 부은 즉시 손님 앞으로 내고, 먹는 사람이 녹기 전에 먹도록 안내합니다.</div></div>
+    </div>
+    <h2 class="section-title">5. 맛을 좌우하는 샷 선택</h2>
+    <p>아이스크림의 단맛과 차가움이 샷의 신맛을 눌러 주기 때문에, 평소 마시던 샷보다 <strong>쓴맛이 살짝 도드라지는 중배전~강배전 원두</strong>가 잘 어울린다는 설명이 많습니다. 반대로 산미가 밝은 약배전 샷은 아이스크림과 만나 과일 향이 강조되어 색다른 맛이 나기도 합니다.</p>
+    <p>배전도별 맛 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-30">약배전 중배전 강배전 차이</a>에서 정리했습니다. 샷이 지나치게 묽거나 시게 나오면 아이스크림 맛에 묻히기 쉬우니, 추출 상태는 <a href="https://coffee.ephseed.com/coffee-article-2026-10-12">과소추출 과다추출 뜻</a>을 보며 점검하세요.</p>
+    <h2 class="section-title">6. 자주 하는 실수</h2>
+    <table class="compare-table">
+      <thead><tr><th>증상</th><th>가능한 원인</th><th>조절</th></tr></thead>
+      <tbody>
+        <tr><td class="em">금세 녹아 국물처럼 된다</td><td>잔이 따뜻함, 아이스크림이 부드러운 상태</td><td>잔을 차게 하고 단단한 아이스크림 사용</td></tr>
+        <tr><td class="em">커피 맛이 안 느껴진다</td><td>샷 양이 적거나 묽음</td><td>더블 샷, 추출 점검</td></tr>
+        <tr><td class="em">너무 달다</td><td>단맛이 강한 아이스크림</td><td>바닐라·피오르디라테 등 담백한 맛 선택</td></tr>
+        <tr><td class="em">샷이 식어 밍밍하다</td><td>추출 후 대기 시간이 길었음</td><td>스쿱을 먼저 담고 마지막에 샷 추출</td></tr>
+      </tbody>
+    </table>
+    <h2 class="section-title">7. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 에스프레소 머신이 없으면 어떻게 만드나요?</strong><br/>
+      A. 모카포트로 진하게 내린 커피로 대신하는 경우가 많습니다. 사용 순서는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-19">모카포트 사용법</a>에서 다루었습니다. 연하게 내린 드립 커피는 아이스크림에 묻히므로 진하게 내리는 것이 좋습니다.</p>
+      <p><strong>Q. 아이스크림 위에 샷을 붓는 순서가 중요한가요?</strong><br/>
+      A. 이탈리아식은 아이스크림에 샷을 붓는 방식이 일반적입니다. 샷 잔을 따로 내어 손님이 직접 붓게 하는 매장도 있습니다.</p>
+      <p><strong>Q. 술을 넣는 변형도 있나요?</strong><br/>
+      A. 아마레토나 칼루아 같은 리큐어를 더하는 변형이 소개되지만, 주류 제공이 가능한 업장에 한정됩니다. 일반 카페 메뉴에서는 제외하는 경우가 많습니다.</p>
+      <p><strong>Q. 얼려 두고 미리 만들어도 되나요?</strong><br/>
+      A. 권하지 않습니다. 샷이 닿는 순간부터 녹기 시작하므로 주문 후 바로 만들어 내는 것이 기본입니다.</p>
+    </div>
+    <div class="closing-box">
+      <h3>아포가토는 타이밍이 맛의 절반입니다</h3>
+      <p><strong>단단한 아이스크림을 차가운 잔에 담고, 샷은 마지막에 뽑아 바로 붓는 것이 기본입니다. 샷 양과 아이스크림 맛을 한 번에 하나씩만 바꿔 가며 기록하면 매장에 맞는 비율을 빠르게 찾을 수 있습니다.</strong></p>
+    </div>
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료(양과 비율은 자료마다 달라 범위로 서술했습니다): <a href="https://en.wikipedia.org/wiki/Affogato" rel="noopener nofollow">Wikipedia — Affogato</a> · <a href="https://www.dictionary.com/browse/affogato" rel="noopener nofollow">Dictionary.com — affogato</a> · <a href="https://italianfoodforever.com/2021/08/affogato/" rel="noopener nofollow">Italian Food Forever — Affogato</a> · <a href="https://loveandlemons.com/affogato-recipe/" rel="noopener nofollow">Love and Lemons — Affogato Recipe</a></p>
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-13"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">플랫화이트 뜻 — 라떼와 우유 양·거품 두께·샷 구성 비교</div><div class="rc-date">2026. 10. 13</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-10"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">만델링 뜻 — 습식 탈곡 가공 방식과 맛 특징, 등급 읽는 법</div><div class="rc-date">2026. 10. 10</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-29"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">라떼아트 로제타 만드는 방법 — 흔드는 동작과 밀어내는 타이밍</div><div class="rc-date">2026. 09. 29</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#아포가토</span>
+      <span class="tag">#디저트</span>
+      <span class="tag">#아이스크림</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>아포가토는 아이스크림 위에 갓 뽑은 샷을 부어 먹는 이탈리아식 디저트입니다.</strong></li>
+        <li><strong>기본은 싱글 샷(약 30ml)에 아이스크림 1~2스쿱입니다.</strong></li>
+        <li><strong>담백하고 단단한 바닐라·젤라토가 샷 맛을 잘 살립니다.</strong></li>
+        <li><strong>차가운 잔에 스쿱을 먼저 담고 샷은 마지막에 뽑습니다.</strong></li>
+        <li><strong>부은 직후 바로 제공해야 녹아 묽어지지 않습니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>

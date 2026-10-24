@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 185, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "아포가토 만드는 법 — 샷 양과 아이스크림 고르는 요령",
+    date: "2026.10.24",
+    summary: "아포가토를 만들었는데 아이스크림이 금세 녹아 국물처럼 되거나, 반대로 맛이 밍밍하다면 샷 양과 아이스크림 상태를 먼저 점검해 볼 만합니다. 아포가토는 재료가 두 가지뿐이라 비율과 온도, 내는 타이밍이 맛의 거의 전부입니다. 이 글에서는 기본 비율과 만드는 과정, 아이스크림 선택 기준, 자주 하는 실수를 정리합니다.",
+    link: "coffee-article-2026-10-24.html"
+  },
+  {
     id: 184, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "프리인퓨전 뜻 — 효과와 시간 설정, 채널링 줄이는 원리",
