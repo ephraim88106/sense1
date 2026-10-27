@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 186, emoji: "☕", category: "커피 품종 & 가공법",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "커핑 점수 80점 뜻 — 점수 구간과 결점두 한도, 일반 등급 구분법",
+    date: "2026.10.27",
+    summary: "포장지에 '스페셜티'라고 적혀 있는데 일반 원두와 뭐가 다른지 궁금하다면, 먼저 스페셜티는 로스터리가 붙이는 이름이 아니라 생두의 점수로 정해지는 등급이라는 점을 알아 두면 됩니다. 이 글에서는 80점 기준이 무엇인지, 점수를 어떻게 매기는지, 포장지에서 무엇을 확인하면 되는지 정리합니다.",
+    link: "coffee-article-2026-10-27.html"
+  },
+  {
     id: 185, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "아포가토 만드는 법 — 샷 양과 아이스크림 고르는 요령",
