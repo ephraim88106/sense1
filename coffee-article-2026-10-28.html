@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>브라질 산토스 뜻 — NY2 등급 기준과 스크린 17/18, 컵 프로파일 읽는 법 | 바리스타 스페셜티</title>
+  <meta name="description" content="산토스는 항구 이름, NY2는 결점 수 등급, 17/18은 생두 크기입니다. 브라질 생두 표기를 항목별로 읽는 법과 컵 프로파일, 맛 경향, 고를 때 확인할 점을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-10-28">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="브라질 산토스 뜻 — NY2 등급 기준과 스크린 17/18, 컵 프로파일 읽는 법 | 바리스타 스페셜티">
+<meta property="og:description" content="산토스는 항구 이름, NY2는 결점 수 등급, 17/18은 생두 크기입니다. 브라질 생두 표기를 항목별로 읽는 법과 컵 프로파일, 맛 경향, 고를 때 확인할 점을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-10-28">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-10-28T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-10-28T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-10-28#page", "url": "https://coffee.ephseed.com/coffee-article-2026-10-28", "headline": "브라질 산토스 뜻 — NY2 등급 기준과 스크린 17/18, 컵 프로파일 읽는 법 | 바리스타 스페셜티", "description": "산토스는 항구 이름, NY2는 결점 수 등급, 17/18은 생두 크기입니다. 브라질 생두 표기를 항목별로 읽는 법과 컵 프로파일, 맛 경향, 고를 때 확인할 점을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-10-28", "dateModified": "2026-10-28", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">🌎 산지·등급</span>
+      <span class="badge">브라질</span>
+      <span class="badge">생두 등급</span>
+    </div>
+    <h1>브라질 산토스 뜻<br/>— NY2 등급 기준과 스크린 17/18, 컵 프로파일 읽는 법</h1>
+    <p class="subtitle"><strong>산토스는 브라질 생두를 선적하는 항구 이름이고, NY2는 샘플 속 결점 수로 나눈 등급이며, 17/18은 생두 크기입니다. 세 표기는 서로 다른 것을 가리킵니다.</strong></p>
+    <div class="meta-row">
+      <span>📅 2026년 10월 28일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>원두 포장지나 생두 거래 자료에서 '브라질 산토스 NY2 17/18'이라는 표기를 보고 어디까지가 산지이고 어디부터가 등급인지 헷갈린다면, <strong>항구·결점 등급·크기·맛 분류가 한 줄에 붙어 있는 것</strong>이라고 이해하면 쉽습니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>산토스가 품종이 아니라 항구 이름인 이유</li>
+        <li>NY2에서 NY는 무엇이고 2는 무엇을 뜻하는지</li>
+        <li>스크린 17/18이 가리키는 생두 크기</li>
+        <li>컵 프로파일 분류와 맛 경향, 고를 때 확인할 점</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">산토스</span><span class="label">상파울루주의 선적 항구 이름</span></div>
+      <div class="data-card"><span class="num">NY2</span><span class="label">뉴욕 방식의 결점 수 등급 중 2번</span></div>
+      <div class="data-card"><span class="num">17/18</span><span class="label">생두 크기를 나타내는 스크린 사이즈</span></div>
+      <div class="data-card"><span class="num">300g</span><span class="label">결점을 세는 일반적인 생두 표본 양</span></div>
+    </div>
+    <h2 class="section-title">1. 산토스는 무엇을 뜻하나</h2>
+    <p>산토스(Santos)는 품종이나 농장 이름이 아니라 <strong>브라질 상파울루주에 있는 항구 이름</strong>입니다. 과거에 여러 산지의 커피가 이 항구로 모여 수출되면서 '산토스'가 브라질 커피를 대표하는 이름처럼 쓰이게 되었습니다.</p>
+    <p>그래서 '브라질 산토스'라고만 적혀 있으면 어느 지역, 어느 농장의 커피인지는 알 수 없는 경우가 많습니다. 산지를 정확히 알고 싶다면 미나스제라이스 같은 주나 농장 이름, 가공 방식이 함께 적혀 있는지 확인하는 것이 좋습니다. 브라질은 건조 방식으로 가공하는 내추럴이 많은 편인데, 가공 방식별 차이는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-23">내추럴 워시드 차이</a>에서 정리했습니다.</p>
+    <h2 class="section-title">2. NY2는 무엇을 기준으로 나눈 등급인가</h2>
+    <p>NY2의 NY는 뉴욕 시장에서 쓰이던 거래 방식의 이름에서 온 표기이고, 숫자는 <strong>샘플에 들어 있는 결점두의 많고 적음</strong>을 나타냅니다. 보통 300g 안팎의 생두 표본에서 결점두를 세어 점수를 매기고, 결점이 적을수록 앞 번호의 등급이 됩니다. 브라질 방식은 번호가 낮을수록 결점이 적은 상위 등급입니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>표기</th><th>가리키는 것</th><th>판단 기준</th></tr></thead>
+      <tbody>
+        <tr><td class="em">산토스</td><td>선적 항구</td><td>산지 이름, 품질 등급이 아님</td></tr>
+        <tr><td class="em">NY2</td><td>결점 수 등급</td><td>표본 속 결점두 개수</td></tr>
+        <tr><td class="em">17/18</td><td>생두 크기</td><td>체(스크린) 구멍 크기</td></tr>
+        <tr><td class="em">Strictly Soft 등</td><td>컵 프로파일</td><td>컵 테스트 결과의 맛 분류</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>같은 NY2라도 표본 양이나 세는 방식, 번호별 허용 개수는 자료와 거래처마다 표현이 다릅니다. 정확한 허용 개수가 필요하면 거래처 규격서나 공식 기준을 직접 확인하세요. 결점두의 종류는 <a href="https://coffee.ephseed.com/coffee-article-2026-10-15">생두 결점두 뜻</a>에 정리해 두었습니다.</p>
+    </div>
+    <h2 class="section-title">3. 스크린 17/18은 어떤 크기인가</h2>
+    <p>스크린 사이즈는 생두를 구멍 크기가 다른 체에 걸러 크기를 나눈 값입니다. 숫자 하나가 1/64인치를 뜻하므로, 17은 약 6.75mm, 18은 약 7.14mm 구멍입니다. <strong>17/18은 이 두 체 사이에 걸리는 비교적 큰 생두</strong>를 가리킵니다.</p>
+    <p>크기는 클수록 무조건 맛있다는 뜻이 아니라, 볶을 때 열이 고르게 전달되는지에 영향을 줍니다. 크기가 들쭉날쭉하면 같은 로스팅 안에서 덜 익거나 탈 수 있기 때문에 균일한 크기를 선호합니다. 스크린 사이즈로 등급을 나누는 방식은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-05">케냐 AA 등급 뜻</a>과 <a href="https://coffee.ephseed.com/coffee-article-2026-10-09">콜롬비아 수프리모 뜻</a>에서도 확인할 수 있습니다.</p>
+    <h2 class="section-title">4. 컵 프로파일은 어떻게 읽나</h2>
+    <p>브라질 거래에서는 결점 수 등급 뒤에 컵 테스트로 매긴 맛 분류가 따라붙는 경우가 많습니다. 자료마다 표현이 다르지만 대체로 아래처럼 부드럽고 깨끗한 쪽에서 거칠고 강한 쪽으로 분류합니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>표기 예</th><th>대략적인 의미</th></tr></thead>
+      <tbody>
+        <tr><td class="em">Strictly Soft</td><td>부드럽고 깨끗한 맛, 가장 상위 분류</td></tr>
+        <tr><td class="em">Soft / Softish</td><td>부드럽지만 약간의 거칠음이 섞임</td></tr>
+        <tr><td class="em">Hard</td><td>거칠고 날카로운 맛이 두드러짐</td></tr>
+        <tr><td class="em">Rio</td><td>약품 같은 강한 이취가 나는 분류</td></tr>
+      </tbody>
+    </table>
+    <p>이 분류는 향미의 좋고 나쁨을 점수로 매기는 것이 아니라 거래용으로 나눈 단계입니다. 스페셜티 원두의 점수 평가와는 방식이 다르니 함께 비교하지 않는 것이 좋습니다.</p>
+    <h2 class="section-title">5. 맛 경향과 고를 때 확인할 점</h2>
+    <div class="tip-box">
+      <div class="tip-title">브라질 원두 선택 체크리스트</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>가공 방식:</strong> 내추럴이면 단맛과 묵직함, 워시드면 깔끔함이 두드러지는 경향이 있습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>맛 경향:</strong> 산미가 낮고 견과류·초콜릿 같은 고소함과 단맛이 바탕이어서 블렌드의 바디 담당으로 많이 쓰입니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>표기 확인:</strong> 산토스, 등급, 크기 중 무엇이 적혀 있는지 보고, 농장·지역 정보가 있는지 함께 봅니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>로스팅 날짜:</strong> 등급과 관계없이 볶은 날짜가 중요합니다. 숙성 기간은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-03">디개싱 뜻</a>을 참고하세요.</div></div>
+    </div>
+    <h2 class="section-title">6. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 산토스는 브라질 최고급 원두를 뜻하나요?</strong><br/>
+      A. 아닙니다. 항구 이름이라 품질을 보증하는 말이 아닙니다. 등급과 컵 프로파일을 따로 확인해야 합니다.</p>
+      <p><strong>Q. NY2가 NY3보다 항상 맛있나요?</strong><br/>
+      A. 결점이 더 적다는 뜻이지, 맛 취향까지 보장하지는 않습니다. 로스팅과 추출에 따라 결과가 달라집니다.</p>
+      <p><strong>Q. 크기가 큰 생두가 더 좋은가요?</strong><br/>
+      A. 크기는 균일성과 로스팅 안정성에 관련된 지표이고, 맛과 직접 비례하지는 않는다는 설명이 많습니다.</p>
+      <p><strong>Q. 브라질 원두는 신맛이 없나요?</strong><br/>
+      A. 대체로 산미가 낮은 편이지만 지역과 가공, 로스팅에 따라 다릅니다.</p>
+      <p><strong>Q. 과테말라 등급과 어떻게 다른가요?</strong><br/>
+      A. 과테말라는 재배 고도로 등급을 나누고 브라질은 결점 수로 나눕니다. 고도 기준은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-07">과테말라 SHB 뜻</a>을 참고하세요.</p>
+    </div>
+    <div class="closing-box">
+      <h3>한 줄 표기를 항목별로 나눠 읽습니다</h3>
+      <p><strong>산토스는 항구, NY2는 결점 수 등급, 17/18은 생두 크기, 뒤에 붙는 분류는 컵 테스트 결과입니다. 각각 따로 읽으면 표기가 어렵지 않습니다.</strong></p>
+    </div>
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료(등급별 허용 결점 개수는 자료마다 달라 일반적인 구조 위주로 서술했습니다): <a href="https://www.fao.org/4/X6939E/X6939e13.htm" rel="noopener nofollow">FAO — Green coffee classification</a> · <a href="https://royalcoffee.com/?p=72002" rel="noopener nofollow">Royal Coffee — Coffee grading</a> · <a href="https://koreascience.kr/article/JAKO200916955021418.do" rel="noopener nofollow">KoreaScience — 생두 등급과 컵 품질 연구</a> · <a href="https://sca.coffee/" rel="noopener nofollow">Specialty Coffee Association</a></p>
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-09-07"><div class="rc-cat">📈 스페셜티 커피 트렌드</div><div class="rc-title">1인당 소비량 순위 — 한국과 세계 주요국 연간 잔수 정리</div><div class="rc-date">2026. 09. 07</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-08-07"><div class="rc-cat">📈 스페셜티 커피 트렌드</div><div class="rc-title">전통 커피를 처음으로 꺾었다 — 2026년 스페셜티 커피 혁명의 실체</div><div class="rc-date">2026. 08. 07</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-07-21"><div class="rc-cat">📈 스페셜티 커피 트렌드</div><div class="rc-title">커피 한 잔이 1만원을 넘어서는 이유 — 2026 스페셜티 커피 5대 트렌드 완전 해부</div><div class="rc-date">2026. 07. 21</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#브라질</span>
+      <span class="tag">#산토스</span>
+      <span class="tag">#생두등급</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>산토스는 항구 이름이고 품질 등급이 아닙니다.</strong></li>
+        <li><strong>NY2는 표본 속 결점 수로 나눈 등급입니다.</strong></li>
+        <li><strong>17/18은 약 6.75~7.14mm 체에 걸리는 큰 생두입니다.</strong></li>
+        <li><strong>컵 프로파일은 거래용 맛 분류입니다.</strong></li>
+        <li><strong>산지·가공법·로스팅 날짜를 함께 확인합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>

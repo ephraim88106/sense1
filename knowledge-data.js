@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 187, emoji: "☕", category: "커피 품종 & 가공법",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "브라질 산토스 뜻 — NY2 등급 기준과 스크린 17/18, 컵 프로파일 읽는 법",
+    date: "2026.10.28",
+    summary: "원두 포장지나 생두 거래 자료에서 '브라질 산토스 NY2 17/18'이라는 표기를 보고 어디까지가 산지이고 어디부터가 등급인지 헷갈린다면, 항구·결점 등급·크기·맛 분류가 한 줄에 붙어 있는 것이라고 이해하면 쉽습니다.",
+    link: "coffee-article-2026-10-28.html"
+  },
+  {
     id: 186, emoji: "☕", category: "커피 품종 & 가공법",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "커핑 점수 80점 뜻 — 점수 구간과 결점두 한도, 일반 등급 구분법",
