@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 188, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "허니 프로세스 뜻 — 화이트·옐로·레드·블랙 허니 구분 기준과 맛 특징",
+    date: "2026.10.29",
+    summary: "원두 포장지에 '옐로 허니'나 '블랙 허니'라고 적혀 있어서 정말 꿀이 들어갔는지 궁금했다면, 허니는 맛이 아니라 가공 방식의 이름이라는 점부터 알고 가면 됩니다.",
+    link: "coffee-article-2026-10-29.html"
+  },
+  {
     id: 187, emoji: "☕", category: "커피 품종 & 가공법",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "브라질 산토스 뜻 — NY2 등급 기준과 스크린 17/18, 컵 프로파일 읽는 법",
