@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 189, emoji: "☕", category: "커피 품종 & 가공법",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "블루마운틴 뜻 — No.1 등급 기준과 재배 고도, 블렌드 표기 확인하는 법",
+    date: "2026.10.30",
+    summary: "원두 가격표에서 블루마운틴만 유독 비싸서 무엇이 다른지 궁금했다면, 블루마운틴은 품종이 아니라 지역과 인증으로 정해지는 이름이라는 점부터 알고 가면 됩니다.",
+    link: "coffee-article-2026-10-30.html"
+  },
+  {
     id: 188, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "허니 프로세스 뜻 — 화이트·옐로·레드·블랙 허니 구분 기준과 맛 특징",
