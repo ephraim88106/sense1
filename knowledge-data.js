@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 190, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "템핑 하는법 — 누르는 힘과 수평 맞추는 요령, 세게 누르면 생기는 일",
+    date: "2026.10.31",
+    summary: "샷이 한쪽으로만 흘러나오거나 매번 추출 시간이 달라진다면, 분쇄도보다 먼저 템핑의 수평과 일관성을 점검해 볼 만합니다. 힘의 세기보다 자세와 순서가 결과를 좌우하는 경우가 많습니다.",
+    link: "coffee-article-2026-10-31.html"
+  },
+  {
     id: 189, emoji: "☕", category: "커피 품종 & 가공법",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "블루마운틴 뜻 — No.1 등급 기준과 재배 고도, 블렌드 표기 확인하는 법",
