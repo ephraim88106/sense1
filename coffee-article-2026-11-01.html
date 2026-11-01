@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>디카페인 고르는법 — 제거 방식별 차이와 카페인 잔존량, 맛 특징 | 바리스타 스페셜티</title>
+  <meta name="description" content="디카페인 원두는 카페인이 완전히 없는 것이 아니라 대부분을 제거한 원두입니다. 물·이산화탄소·용매 방식의 차이, 법적 기준과 잔존량, 고를 때 확인할 표기와 맛 특징을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-01">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="디카페인 고르는법 — 제거 방식별 차이와 카페인 잔존량, 맛 특징 | 바리스타 스페셜티">
+<meta property="og:description" content="디카페인 원두는 카페인이 완전히 없는 것이 아니라 대부분을 제거한 원두입니다. 물·이산화탄소·용매 방식의 차이, 법적 기준과 잔존량, 고를 때 확인할 표기와 맛 특징을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-01">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-01T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-01T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-01#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-01", "headline": "디카페인 고르는법 — 제거 방식별 차이와 카페인 잔존량, 맛 특징 | 바리스타 스페셜티", "description": "디카페인 원두는 카페인이 완전히 없는 것이 아니라 대부분을 제거한 원두입니다. 물·이산화탄소·용매 방식의 차이, 법적 기준과 잔존량, 고를 때 확인할 표기와 맛 특징을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-01", "dateModified": "2026-11-01", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 원두 선택</span>
+      <span class="badge">디카페인</span>
+      <span class="badge">카페인</span>
+    </div>
+    <h1>디카페인 고르는법<br/>— 제거 방식별 차이와 카페인 잔존량, 맛 특징</h1>
+    <p class="subtitle"><strong>디카페인은 카페인이 0이 아니라 대부분을 제거한 원두이며, 제거 방식과 표기를 확인하면 목적에 맞게 고를 수 있습니다.</strong></p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 1일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>저녁에도 커피를 마시고 싶은데 카페인이 부담된다면, 디카페인 원두는 좋은 선택지입니다. 다만 <strong>카페인이 완전히 없는 것은 아니고</strong>, 제거 방식에 따라 표기와 맛이 조금씩 달라서 고르기 전에 알아둘 점이 있습니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>디카페인의 법적 기준과 실제 카페인 잔존량</li>
+        <li>물·이산화탄소·용매 방식의 차이</li>
+        <li>포장지에서 확인할 표기</li>
+        <li>맛 특징과 추출할 때 주의할 점</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">97% 이상</span><span class="label">미국에서 통용되는 카페인 제거 기준</span></div>
+      <div class="data-card"><span class="num">0.1% 이하</span><span class="label">EU 기준, 볶은 원두의 카페인 함량</span></div>
+      <div class="data-card"><span class="num">약 2~15mg</span><span class="label">디카페인 한 잔(240ml)의 일반적 범위</span></div>
+      <div class="data-card"><span class="num">3~4가지</span><span class="label">대표적인 카페인 제거 방식</span></div>
+    </div>
+    <h2 class="section-title">1. 디카페인 원두는 어떤 원두인가</h2>
+    <p>디카페인 원두는 <strong>볶기 전 생두 단계에서 카페인을 제거</strong>한 원두입니다. 카페인은 로스팅으로 줄어들지 않기 때문에, 이미 볶은 원두에서는 제거하기 어렵고 생두를 물이나 이산화탄소, 용매에 노출시켜 빼냅니다.</p>
+    <p>법적 기준은 나라마다 다릅니다. 미국에서는 원래 함량의 <strong>97% 이상을 제거</strong>한 경우를 디카페인으로 보는 것이 일반적이고, EU는 볶은 원두 기준 카페인 <strong>0.1% 이하</strong>로 정해 두고 있습니다. 한국에서 판매되는 제품은 제조사와 수입처 표기를 함께 확인하는 것이 좋습니다. 일반 원두의 카페인 함량이 궁금하다면 <a href="https://coffee.ephseed.com/coffee-article-2026-08-31">아라비카 로부스타 차이</a>도 참고해 보세요.</p>
+    <h2 class="section-title">2. 카페인은 얼마나 남아 있을까</h2>
+    <p>자료마다 수치가 조금 다르지만, 디카페인 커피 한 잔(약 240ml)에는 대체로 <strong>약 2~15mg</strong>의 카페인이 남는다고 설명합니다. 일반 커피가 한 잔에 수십~100mg 안팎이라는 점을 생각하면 크게 줄어든 수준입니다.</p>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      <p>시판 제품을 분석한 연구에서도 제품마다 잔존 카페인이 다르게 나타났고, 일부는 EU 기준 참고치(0.1%)를 넘었다는 보고가 있습니다. 카페인에 매우 민감하거나 의학적 이유로 섭취를 제한해야 한다면 하루 마시는 잔 수를 함께 고려하세요. 추출 방식별 함량은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-18">아메리카노 카페인 함량 비교</a>에서 볼 수 있습니다.</p>
+    </div>
+    <h2 class="section-title">3. 카페인 제거 방식 비교</h2>
+    <table class="compare-table">
+      <thead><tr><th>방식</th><th>사용하는 것</th><th>특징</th></tr></thead>
+      <tbody>
+        <tr><td class="em">물 추출 (스위스 워터 등)</td><td>물, 활성탄 여과</td><td>용매를 쓰지 않아 표기에 '무용매'로 안내되는 경우가 많음. 제조사는 99.9% 제거를 내세움</td></tr>
+        <tr><td class="em">이산화탄소(CO2)</td><td>고압 이산화탄소</td><td>카페인만 선택적으로 빼내는 편이라 향미 손실이 적다고 설명됨</td></tr>
+        <tr><td class="em">에틸아세테이트</td><td>용매(사탕수수 유래 표기 제품 있음)</td><td>'천연 디카페인'으로 불리기도 하며 약 97% 제거 수준으로 소개됨</td></tr>
+        <tr><td class="em">염화메틸렌</td><td>용매</td><td>널리 쓰여 왔으나 용매 사용에 대한 인식 때문에 기피하는 소비자도 있음. 제거 후 세척·로스팅 과정을 거침</td></tr>
+      </tbody>
+    </table>
+    <p>어느 방식이 절대적으로 우월하다고 말하기는 어렵습니다. 방식보다 <strong>원두 품질, 로스팅 상태, 신선도</strong>가 맛에 더 크게 작용하는 경우도 많습니다. 용매 사용이 걱정된다면 물이나 이산화탄소 방식 표기를 우선 고르면 됩니다.</p>
+    <h2 class="section-title">4. 고를 때 확인할 표기</h2>
+    <div class="tip-box">
+      <div class="tip-title">디카페인 원두 고르기 체크리스트</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>제거 방식:</strong> '워터 프로세스', 'CO2', '에틸아세테이트' 등 방식이 적혀 있는지 봅니다. 아예 표기가 없다면 판매처에 문의하세요.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>생두 산지·품종:</strong> 콜롬비아, 브라질 등 산지가 명확한 제품이 맛을 가늠하기 쉽습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>로스팅 날짜:</strong> 디카페인도 신선도가 중요합니다. 볶은 날짜가 가까운 제품을 고르세요. 보관은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-14">원두 보관법</a>을 따릅니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>배전도:</strong> 중배전 이상이 무난하다는 의견이 많습니다. 약배전은 신맛이 두드러질 수 있습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">5</div><div class="tip-text"><strong>용도:</strong> 에스프레소용인지 핸드드립용인지, 분쇄 여부를 확인합니다.</div></div>
+    </div>
+    <h2 class="section-title">5. 맛과 추출에서 달라지는 점</h2>
+    <p>카페인 제거 과정을 거치면 생두의 조직이 달라져 <strong>일반 원두와 같은 조건으로 볶거나 내리면 맛이 다르게 나올 수 있다</strong>고 알려져 있습니다. 쓴맛은 카페인이 아니라 다른 성분에서 오는 비중이 크기 때문에, 디카페인이라고 해서 쓴맛이 사라지거나 반드시 더 쓰지는 않습니다.</p>
+    <p>추출할 때는 처음에는 평소 레시피로 시작하고, 맛이 밋밋하거나 시게 느껴지면 분쇄도·시간을 조금씩 조정합니다. 신맛이 강하면 <a href="https://coffee.ephseed.com/coffee-article-2026-10-15">과소추출 과다추출 뜻</a>을 보며 점검하는 것이 좋습니다.</p>
+    <h2 class="section-title">6. 자주 묻는 질문</h2>
+    <div class="note-box">
+      <div class="note-label">자주 묻는 질문</div>
+      <p><strong>Q. 디카페인은 카페인이 0인가요?</strong><br/>
+      A. 아닙니다. 대부분을 제거한 것으로, 한 잔에 소량이 남습니다.</p>
+      <p><strong>Q. 임산부나 수면이 걱정되는 사람은 마셔도 되나요?</strong><br/>
+      A. 일반 커피보다 카페인이 훨씬 적지만 0은 아니므로, 개인 상황에 따라 의사나 전문가와 상담하는 것이 안전합니다.</p>
+      <p><strong>Q. 에스프레소로도 내릴 수 있나요?</strong><br/>
+      A. 네. 디카페인 에스프레소 블렌드 제품이 많고, 일반 원두와 같은 방식으로 추출합니다.</p>
+      <p><strong>Q. 디카페인이 맛이 없다는 말은 사실인가요?</strong><br/>
+      A. 예전보다 품질이 많이 좋아졌고, 신선한 원두를 고르면 차이가 크지 않다는 평가가 많습니다. 다만 개인차가 있습니다.</p>
+    </div>
+<div class="closing-box">
+      <h3>방식과 신선도를 함께 보세요</h3>
+      <p><strong>디카페인 원두는 제거 방식, 산지, 로스팅 날짜를 확인하고 고르면 됩니다. 카페인이 0은 아니라는 점만 기억해 두세요.</strong></p>
+    </div>
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료(수치는 자료마다 달라 범위로 서술했습니다): <a href="https://en.wikipedia.org/wiki/Decaffeination" rel="noopener nofollow">Wikipedia: Decaffeination</a> · <a href="https://www.swisswater.com/blogs/sw/decaf-myths-busted-5-even-decaf-contains-a-significant-amount-of-caffeine-right" rel="noopener nofollow">Swiss Water Process</a> · <a href="https://www.healthline.com/nutrition/caffeine-in-decaf" rel="noopener nofollow">Healthline: Caffeine in decaf</a> · <a href="https://coffeehow.co/coffee-beans/decaf-coffee/" rel="noopener nofollow">Coffeehow: Decaf Coffee</a></p>
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-29"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">허니 프로세스 뜻 — 화이트·옐로·레드·블랙 허니 구분 기준과 맛 특징</div><div class="rc-date">2026. 10. 29</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-23"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">프리인퓨전 뜻 — 효과와 시간 설정, 채널링 줄이는 원리</div><div class="rc-date">2026. 10. 23</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-21"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">마키아토 뜻 — 라떼 마키아토와 구분하는 법, 거품 양과 잔 크기</div><div class="rc-date">2026. 10. 21</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#디카페인</span>
+      <span class="tag">#원두고르기</span>
+      <span class="tag">#카페인</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>디카페인은 생두 단계에서 카페인 대부분(미국 기준 97% 이상)을 제거한 원두입니다.</strong></li>
+        <li><strong>한 잔에 약 2~15mg이 남아 0은 아닙니다.</strong></li>
+        <li><strong>물·CO2 방식은 무용매, 에틸아세테이트·염화메틸렌은 용매 방식입니다.</strong></li>
+        <li><strong>제거 방식, 산지, 로스팅 날짜, 배전도를 확인하고 고릅니다.</strong></li>
+        <li><strong>맛이 다르면 분쇄도와 시간을 조금씩 조정합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>

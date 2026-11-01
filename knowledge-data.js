@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 191, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "디카페인 고르는법 — 제거 방식별 차이와 카페인 잔존량, 맛 특징",
+    date: "2026.11.01",
+    summary: "저녁에도 커피를 마시고 싶은데 카페인이 부담된다면, 디카페인 원두는 좋은 선택지입니다. 다만 카페인이 완전히 없는 것은 아니고, 제거 방식에 따라 표기와 맛이 조금씩 달라서 고르기 전에 알아둘 점이 있습니다.",
+    link: "coffee-article-2026-11-01.html"
+  },
+  {
     id: 190, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "템핑 하는법 — 누르는 힘과 수평 맞추는 요령, 세게 누르면 생기는 일",
