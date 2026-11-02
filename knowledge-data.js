@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 192, emoji: "🔥", category: "로스팅 & 원두 과학",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "싱글오리진 블렌드 뭐가 다를까 — 산지 표기 읽는 법과 용도별 추천",
+    date: "2026.11.02",
+    summary: "원두 포장지에 싱글오리진과 블렌드라는 표기가 나란히 있으면 어느 쪽이 더 좋은 원두인지 헷갈리기 쉽습니다. 결론부터 말씀드리면 우열의 문제가 아니라 한 곳의 개성을 보여 주느냐, 여러 원두로 균형을 맞추느냐의 차이입니다.",
+    link: "coffee-article-2026-11-02.html"
+  },
+  {
     id: 191, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "디카페인 고르는법 — 제거 방식별 차이와 카페인 잔존량, 맛 특징",
