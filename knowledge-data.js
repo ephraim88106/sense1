@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 193, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "샷 시간 몇 초가 적당할까 — 25~30초가 출발점인 이유와 분쇄도 조절",
+    date: "2026.11.03",
+    summary: "샷 시간이 25~30초여야 한다는 말은 자주 듣지만, 왜 그 숫자인지, 벗어나면 어떻게 해야 하는지는 잘 설명되지 않습니다. 결론부터 말씀드리면 이 시간은 맛을 조절하기 위한 기준점이지 지켜야 할 규칙은 아닙니다.",
+    link: "coffee-article-2026-11-03.html"
+  },
+  {
     id: 192, emoji: "🔥", category: "로스팅 & 원두 과학",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "싱글오리진 블렌드 뭐가 다를까 — 산지 표기 읽는 법과 용도별 추천",
