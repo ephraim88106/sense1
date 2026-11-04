@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 194, emoji: "🏪", category: "카페 창업 & 운영 실전",
+    categoryColor: { bg: "#fee2e2", text: "#991b1b" },
+    title: "라떼용 오트 음료 고르는법 — 성분표 확인 기준과 용도별 선택",
+    date: "2026.11.04",
+    summary: "라떼에 오트 음료를 넣으려는데 제품마다 거품이 다르다는 경험은 흔합니다. 결론부터 말씀드리면 오트 음료든 일반 우유든 라벨의 단백질과 지방 수치를 보는 일에서 시작하며, 바리스타용 표기가 있는지 먼저 확인하시면 됩니다.",
+    link: "coffee-article-2026-11-04.html"
+  },
+  {
     id: 193, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "샷 시간 몇 초가 적당할까 — 25~30초가 출발점인 이유와 분쇄도 조절",
