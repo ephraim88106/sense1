@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 195, emoji: "🌋", category: "원두 산지 & 테루아르",
+    categoryColor: { bg: "#ecfccb", text: "#3f6212" },
+    title: "머신 예열 시간 체크리스트 — 방식별 대기 시간과 포터필터 예열",
+    date: "2026.11.05",
+    summary: "아침 첫 샷만 유난히 시고 밍밍하다면 원두보다 머신과 포터필터가 덜 데워졌기 때문일 가능성이 있습니다. 결론부터 말씀드리면 램프가 켜졌다고 바로 추출하지 말고, 머신 방식에 맞는 시간만큼 기다리며 포터필터를 그룹에 끼워 함께 데우는 것이 안전합니다.",
+    link: "coffee-article-2026-11-05.html"
+  },
+  {
     id: 194, emoji: "🏪", category: "카페 창업 & 운영 실전",
     categoryColor: { bg: "#fee2e2", text: "#991b1b" },
     title: "라떼용 오트 음료 고르는법 — 성분표 확인 기준과 용도별 선택",

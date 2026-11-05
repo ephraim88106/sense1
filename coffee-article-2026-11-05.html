@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>머신 예열 시간 체크리스트 — 방식별 대기 시간과 포터필터 예열 | 바리스타 스페셜티</title>
+  <meta name="description" content="에스프레소 머신 예열은 몇 분이 필요한지, 포터필터를 미리 데워야 하는 이유와 순서를 정리했습니다. 머신 방식별 예열 시간 차이와 첫 샷이 맛없을 때 확인할 점을 설명합니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-05">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="머신 예열 시간 체크리스트 — 방식별 대기 시간과 포터필터 예열 | 바리스타 스페셜티">
+<meta property="og:description" content="에스프레소 머신 예열은 몇 분이 필요한지, 포터필터를 미리 데워야 하는 이유와 순서를 정리했습니다. 머신 방식별 예열 시간 차이와 첫 샷이 맛없을 때 확인할 점을 설명합니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-05">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-05T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-05T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-05#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-05", "headline": "머신 예열 시간 체크리스트 — 방식별 대기 시간과 포터필터 예열 | 바리스타 스페셜티", "description": "에스프레소 머신 예열은 몇 분이 필요한지, 포터필터를 미리 데워야 하는 이유와 순서를 정리했습니다. 머신 방식별 예열 시간 차이와 첫 샷이 맛없을 때 확인할 점을 설명합니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-05", "dateModified": "2026-11-05", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges">
+      <span class="badge hot">☕ 에스프레소 머신</span>
+      <span class="badge">예열</span>
+      <span class="badge">포터필터</span>
+    </div>
+    <h1>머신 예열 시간 체크리스트<br/>— 방식별 대기 시간과 포터필터 예열</h1>
+    <p class="subtitle"><strong>머신은 켠 뒤 방식에 따라 몇 분에서 30분 이상, 포터필터는 장착한 채 함께 데우는 것이 기본입니다.</strong></p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 5일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>아침 첫 샷만 유난히 시고 밍밍하다면 원두보다 <strong>머신과 포터필터가 덜 데워졌기 때문</strong>일 가능성이 있습니다. 결론부터 말씀드리면 램프가 켜졌다고 바로 추출하지 말고, 머신 방식에 맞는 시간만큼 기다리며 포터필터를 그룹에 끼워 함께 데우는 것이 안전합니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>머신 방식별 예열 시간의 대략적인 범위</li>
+        <li>포터필터를 데워야 하는 이유</li>
+        <li>예열 순서와 흔한 실수</li>
+        <li>첫 샷이 맛없을 때 확인할 점</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">5~40분</span><span class="label">머신 방식별 예열 시간 범위(제품마다 다름)</span></div>
+      <div class="data-card"><span class="num">약 93℃</span><span class="label">추출수 온도의 일반적 기준</span></div>
+      <div class="data-card"><span class="num">최대 10℃</span><span class="label">차가운 포터필터에서 떨어질 수 있다는 보고</span></div>
+    </div>
+    <h2 class="section-title">1. 보일러 램프가 켜져도 아직 덜 데워진 이유</h2>
+    <p>머신의 <strong>보일러 물 온도</strong>는 비교적 빨리 올라가지만, 그룹헤드와 포터필터 같은 <strong>금속 부품</strong>은 천천히 데워집니다. 이 부품들이 차가우면 93℃ 안팎의 물이 지나가는 동안 열을 빼앗겨 실제 커피에 닿는 물 온도가 낮아집니다. 추출 온도가 낮으면 신맛이 두드러지고 맛이 얇아지는 경향이 있습니다.</p>
+    <h2 class="section-title">2. 머신 방식별 예열 시간</h2>
+    <table class="compare-table">
+      <thead><tr><th>방식</th><th>예열 시간(대략)</th><th>특징</th></tr></thead>
+      <tbody>
+        <tr><td>씬블록·씬블록형 가정용</td><td>수 분~10분</td><td>빠르지만 온도 안정성은 상대적으로 낮은 편</td></tr>
+        <tr><td>열교환기(HX) E61 그룹</td><td>약 20~35분</td><td>황동 그룹이 무거워 오래 걸리지만 안정적</td></tr>
+        <tr><td>듀얼보일러·포화 그룹</td><td>제품별로 다름(20분 안팎인 경우가 많음)</td><td>그룹이 보일러 회로에 연결돼 회복이 빠른 편</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      위 시간은 제조사·판매처 자료를 종합한 대략적 범위입니다. 같은 방식이라도 모델마다 다르므로 사용 설명서의 권장 예열 시간이 우선입니다.
+    </div>
+    <h2 class="section-title">3. 포터필터 예열이 필요한 이유</h2>
+    <p>포터필터는 두꺼운 금속이라 상온 상태면 많은 열을 흡수합니다. 일부 자료는 차가운 포터필터를 거치면 물 온도가 크게 떨어질 수 있다고 설명합니다. 그래서 대부분의 가이드는 <strong>포터필터를 그룹헤드에 끼운 채로 예열 시간 동안 두는 것</strong>을 기본으로 안내합니다.</p>
+    <p>컵도 마찬가지입니다. 차가운 컵에 받으면 샷 온도가 빠르게 내려가므로, 따뜻한 물이나 컵 워머로 컵을 미리 데워 두면 맛 유지에 도움이 됩니다.</p>
+    <h2 class="section-title">4. 예열 순서</h2>
+    <div class="tip-box">
+      <div class="tip-title">출근 후 예열 순서</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>머신 전원</strong>을 켜고 보일러 압력과 온도가 올라오길 기다립니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text">빈 <strong>포터필터를 그룹헤드에 장착</strong>한 채로 예열 시간 동안 둡니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text">추출 직전 포터필터를 빼고 <strong>그룹에서 물을 짧게 흘려</strong> 식은 물을 내보냅니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text">포터필터를 닦고 도징·태핑 후 바로 장착해 추출합니다. 포터필터를 빼 둔 시간이 길수록 다시 식습니다.</div></div>
+    </div>
+    <h2 class="section-title">5. 흔한 실수</h2>
+    <table class="compare-table">
+      <thead><tr><th>실수</th><th>나타나는 증상</th><th>대처</th></tr></thead>
+      <tbody>
+        <tr><td>램프만 보고 바로 추출</td><td>첫 샷이 시고 얇음</td><td>방식별 권장 시간 대기</td></tr>
+        <tr><td>포터필터를 빼 둔 채 예열</td><td>샷 온도 불안정</td><td>끼운 채로 예열</td></tr>
+        <tr><td>예열 중 공샷을 반복</td><td>물 낭비, 단일 보일러에서는 오히려 온도가 흔들릴 수 있음</td><td>추출 직전 한 번만 짧게 플러시</td></tr>
+        <tr><td>연속 추출 후 바로 다음 샷</td><td>샷마다 맛이 달라짐</td><td>회복 시간 확보, 포터필터를 그룹에 둠</td></tr>
+      </tbody>
+    </table>
+    <p>샷 시간이 맞는데도 맛이 이상하다면 온도 외에 분쇄도와 도징도 확인해야 합니다. 관련해서는 <a href="https://coffee.ephseed.com/coffee-article-2026-11-03">샷 시간 글</a>과 <a href="https://coffee.ephseed.com/coffee-article-2026-10-12">과소추출 과다추출 뜻</a> 글에서 증상별로 정리했습니다.</p>
+    <h2 class="section-title">6. 예열을 마쳤는지 확인하는 방법</h2>
+    <p>그룹헤드를 손으로 만졌을 때 <strong>고르게 따뜻한지</strong> 확인하거나, 첫 샷의 맛과 온도를 기준으로 삼는 방법이 있습니다. 매일 같은 시간 동안 예열하고 첫 샷을 비교하면 내 머신에 맞는 대기 시간을 찾을 수 있습니다. 온도계를 쓰는 경우에는 제품 사양에 표시된 값을 기준으로 삼으세요.</p>
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 전원을 켜고 10분이면 충분한가요?</strong><br/>씬블록 방식이라면 가능한 경우가 있지만, E61처럼 그룹이 무거운 머신은 20분 이상 필요하다고 안내되는 경우가 많습니다. 설명서를 확인하세요.</p>
+    <p><strong>Q. 타이머로 미리 켜 두어도 되나요?</strong><br/>가능합니다. 영업 시작 30분 전쯤 켜지게 해 두는 방법을 쓰는 곳이 많습니다. 전기 사용과 안전은 제조사 안내를 따르세요.</p>
+    <p><strong>Q. 첫 샷은 버리는 것이 좋은가요?</strong><br/>충분히 예열했다면 버릴 필요는 없습니다. 맛이 불안정하다면 예열 시간을 늘리는 쪽이 먼저입니다.</p>
+    <p><strong>Q. 컵 예열은 꼭 해야 하나요?</strong><br/>필수는 아니지만 샷이 빨리 식는 것을 줄여 줍니다. 특히 소량의 에스프레소는 컵 온도 영향을 크게 받습니다.</p>
+    <p><strong>Q. 청소와 예열은 어떤 순서로 하나요?</strong><br/>청소는 영업 종료 후 하는 것이 일반적이며, 예열은 영업 시작 전에 합니다. 청소 절차는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-23">머신 청소 주기</a> 글을 참고하세요.</p>
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>예열은 램프가 아니라 시간으로 판단하세요. 포터필터를 끼운 채 함께 데우고, 추출 직전에 짧게 플러시한 뒤 바로 추출하는 순서가 기본입니다.</p>
+    </div>
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료(판매처·제조사 자료는 제품마다 수치가 달라 대략적 범위로 서술했습니다): <a href="https://clivecoffee.com/blogs/learn/how-long-to-wait-for-an-e61-machine-to-heat-up" rel="noopener nofollow">Clive Coffee: E61 heat-up time</a> · <a href="https://flairespresso.com/blogs/news/preheating-for-espresso-why-when-and-how" rel="noopener nofollow">Flair: Preheating for espresso</a> · <a href="https://completehomebarista.com/faqs/brewing-methods/espresso-technique/how-to-preheat-equipment/" rel="noopener nofollow">Complete Home Barista: Preheat equipment</a></p>
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-15"><div class="rc-cat">🌱 원두 산지 & 테루아르</div><div class="rc-title">생두 결점두 뜻 — 블랙빈·사워빈 구분과 1·2차 결점 종류와 세는 법</div><div class="rc-date">2026. 10. 15</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-07"><div class="rc-cat">🌋 원두 산지 & 테루아르</div><div class="rc-title">과테말라 SHB 뜻 — 고도로 나눈 등급 기준과 HB 구분법</div><div class="rc-date">2026. 10. 07</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-05"><div class="rc-cat">🌋 원두 산지 & 테루아르</div><div class="rc-title">케냐 AA 등급 뜻 — 스크린 사이즈 기준과 AB·PB 등급 구분 정리</div><div class="rc-date">2026. 10. 05</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#에스프레소머신</span>
+      <span class="tag">#머신예열</span>
+      <span class="tag">#포터필터</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>램프가 아니라 시간으로 예열을 판단합니다.</strong></li>
+        <li><strong>씬블록 수 분, E61 약 20~35분이 대략의 범위입니다.</strong></li>
+        <li><strong>포터필터는 그룹에 끼운 채 함께 데웁니다.</strong></li>
+        <li><strong>추출 직전에 한 번 짧게 플러시합니다.</strong></li>
+        <li><strong>컵도 데우면 샷이 덜 식습니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
