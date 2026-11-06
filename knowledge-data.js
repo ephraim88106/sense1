@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 196, emoji: "☕", category: "커피 품종 & 가공법",
+    categoryColor: { bg: "#fef3c7", text: "#92400e" },
+    title: "자격증 종류 — 국내 협회 1·2급과 SCA 과정, 목적별 선택 요령",
+    date: "2026.11.06",
+    summary: "바리스타 자격증을 알아보면 이름이 비슷한 시험이 많아 무엇부터 따야 할지 막막합니다. 결론부터 말씀드리면 국내 카페 취업이 목적이면 협회 주관 1·2급, 해외 근무나 스페셜티 분야 전문성이 목적이면 SCA 과정을 먼저 살펴보는 것이 일반적입니다. 둘은 경쟁 관계가 아니라 함께 쌓는 경우도 많습니다.",
+    link: "coffee-article-2026-11-06.html"
+  },
+  {
     id: 195, emoji: "🌋", category: "원두 산지 & 테루아르",
     categoryColor: { bg: "#ecfccb", text: "#3f6212" },
     title: "머신 예열 시간 체크리스트 — 방식별 대기 시간과 포터필터 예열",
