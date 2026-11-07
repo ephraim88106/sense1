@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 197, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "라떼 재료 고르는법 — 지방·단백질 함량 보는 법과 락토프리 선택 요령",
+    date: "2026.11.07",
+    summary: "같은 스티밍 방법으로 우유만 바꿨는데 거품이 푹 꺼지거나 맛이 밋밋해지는 경우가 있습니다. 결론부터 말씀드리면 라떼에는 일반 우유(지방 3% 안팎)가 가장 무난하고, 저지방·무지방은 거품은 쉽게 나지만 질감이 가볍고, 락토프리는 단맛이 더 느껴지는 편입니다. 어떤 우유가 맞는지는 만들고 싶은 음료에 따라 달라집니다.",
+    link: "coffee-article-2026-11-07.html"
+  },
+  {
     id: 196, emoji: "☕", category: "커피 품종 & 가공법",
     categoryColor: { bg: "#fef3c7", text: "#92400e" },
     title: "자격증 종류 — 국내 협회 1·2급과 SCA 과정, 목적별 선택 요령",
