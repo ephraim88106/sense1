@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 198, emoji: "☕", category: "추출 기법 심층 가이드",
+    categoryColor: { bg: "#dcfce7", text: "#166534" },
+    title: "물 경도 뜻 — 연수·경수 차이와 TDS 범위, 정수기 물 써도 될까",
+    date: "2026.11.08",
+    summary: "같은 원두와 같은 레시피인데 매장이나 집마다 맛이 다르다면 물을 먼저 의심해 볼 만합니다. 결론부터 말씀드리면 SCA는 추출용 물의 총경도를 약 50~175mg/L(목표 68mg/L 안팎), TDS를 약 75~250mg/L(목표 150mg/L 안팎)로 권장합니다. 너무 부드러운 물은 맛이 밋밋하거나 시게 느껴질 수 있고, 너무 단단한 물은 맛이 둔해지고 기계에 스케일이 쌓입니다.",
+    link: "coffee-article-2026-11-08.html"
+  },
+  {
     id: 197, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "라떼 재료 고르는법 — 지방·단백질 함량 보는 법과 락토프리 선택 요령",
