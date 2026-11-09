@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 199, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "스팀 완드 청소 주기 — 사용 후 닦는 순서와 막힘 푸는 요령",
+    date: "2026.11.09",
+    summary: "스팀 완드는 우유가 직접 닿는 부분이라 청소를 미루면 금세 굳고, 나중에는 노즐 구멍이 막혀 스팀이 약해집니다. 결론부터 말씀드리면 사용 직후에 젖은 행주로 겉면을 닦고, 스팀을 잠깐 분사해 안쪽 우유를 밀어내는 두 동작을 매번 하는 것이 가장 중요합니다. 여기에 주 1회 정도 전용 세정제로 담가 두면 대부분의 막힘을 예방할 수 있습니다.",
+    link: "coffee-article-2026-11-09.html"
+  },
+  {
     id: 198, emoji: "☕", category: "추출 기법 심층 가이드",
     categoryColor: { bg: "#dcfce7", text: "#166534" },
     title: "물 경도 뜻 — 연수·경수 차이와 TDS 범위, 정수기 물 써도 될까",

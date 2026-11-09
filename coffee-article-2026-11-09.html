@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>스팀 완드 청소 주기 — 사용 후 닦는 순서와 막힘 푸는 요령 | 바리스타 스페셜티</title>
+  <meta name="description" content="스팀 완드를 사용할 때마다 닦고 비우는 순서, 주 1회 담금 세척, 노즐 구멍이 막혔을 때 푸는 방법을 정리했습니다. 우유 찌꺼기가 쌓이는 이유와 바리스타가 지켜야 할 위생 습관까지 설명합니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-09">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="스팀 완드 청소 주기 — 사용 후 닦는 순서와 막힘 푸는 요령 | 바리스타 스페셜티">
+<meta property="og:description" content="스팀 완드를 사용할 때마다 닦고 비우는 순서, 주 1회 담금 세척, 노즐 구멍이 막혔을 때 푸는 방법을 정리했습니다. 우유 찌꺼기가 쌓이는 이유와 바리스타가 지켜야 할 위생 습관까지 설명합니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-09">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-09T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-09T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-09#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-09", "headline": "스팀 완드 청소 주기 — 사용 후 닦는 순서와 막힘 푸는 요령 | 바리스타 스페셜티", "description": "스팀 완드를 사용할 때마다 닦고 비우는 순서, 주 1회 담금 세척, 노즐 구멍이 막혔을 때 푸는 방법을 정리했습니다. 우유 찌꺼기가 쌓이는 이유와 바리스타가 지켜야 할 위생 습관까지 설명합니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-09", "dateModified": "2026-11-09", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges"><span class="badge hot">☕ 위생·관리</span><span class="badge">스팀 완드</span><span class="badge">머신 청소</span></div>
+    <h1>스팀 완드 청소 주기<br/>— 사용 후 닦는 순서와 막힘 푸는 요령</h1>
+    <p class="subtitle"><strong>우유가 마르기 전에 닦고 비우는 것이 핵심입니다. 매번 하는 청소와 주 1회 청소를 나눠 보면 부담이 줄어듭니다.</strong></p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 9일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 5분</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>스팀 완드는 우유가 직접 닿는 부분이라 청소를 미루면 금세 굳고, 나중에는 노즐 구멍이 막혀 스팀이 약해집니다. 결론부터 말씀드리면 <strong>사용 직후에 젖은 행주로 겉면을 닦고, 스팀을 잠깐 분사해 안쪽 우유를 밀어내는 두 동작을 매번 하는 것</strong>이 가장 중요합니다. 여기에 주 1회 정도 전용 세정제로 담가 두면 대부분의 막힘을 예방할 수 있습니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>스팀 완드에 우유가 남으면 생기는 문제</li>
+        <li>사용할 때마다 해야 하는 닦기·분사 순서</li>
+        <li>주 1회 담금 세척 방법과 세정제 선택</li>
+        <li>노즐 구멍이 막혔을 때 안전하게 푸는 방법</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">매번</span><span class="label">사용 직후 닦기 + 스팀 분사</span></div>
+      <div class="data-card"><span class="num">주 1회</span><span class="label">전용 세정제 담금 세척</span></div>
+      <div class="data-card"><span class="num">식은 뒤</span><span class="label">막힘 제거는 충분히 식힌 후</span></div>
+    </div>
+    <h2 class="section-title">1. 왜 스팀 완드를 바로 닦아야 하나</h2>
+    <p>우유의 단백질과 지방은 열을 받으면 완드 표면에 달라붙고, 시간이 지나면 단단하게 굳습니다. 겉면에 남은 우유는 닦으면 되지만, 문제는 <strong>팁 안쪽으로 빨려 들어간 우유</strong>입니다. 스팀을 멈추는 순간 팁 안쪽에 우유가 역류해 들어올 수 있고, 이것이 쌓이면 스팀 구멍이 좁아지거나 막힙니다. 우유가 한 시간만 마른 채 방치돼도 청소가 훨씬 어려워진다는 것이 업계 정비 안내의 공통된 설명입니다.</p>
+    <p>위생 측면에서도 우유 찌꺼기는 이취와 세균 번식의 원인이 됩니다. 라떼 맛이 이상하거나 스팀 소리가 평소와 다르다면 완드 상태부터 확인해 보시기 바랍니다.</p>
+    <h2 class="section-title">2. 사용할 때마다 하는 청소 순서</h2>
+    <div class="tip-box">
+      <div class="tip-title">매번 하는 3단계</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>바로 닦기:</strong> 스팀을 끈 직후, 전용 행주(젖은 상태)로 완드 겉면을 위에서 아래로 닦습니다. 뜨거우므로 손이 직접 닿지 않게 합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>스팀 분사(퍼지):</strong> 행주로 팁을 감싸거나 빈 곳을 향해 1~2초 스팀을 분사해 안쪽에 들어간 우유를 밀어냅니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>한 번 더 닦기:</strong> 분사 후 나온 물기와 우유를 다시 닦아 마무리합니다.</div></div>
+    </div>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      일부 가정용 머신은 스팀 레버를 OFF 위치로 돌리면 자동으로 안쪽을 헹구는 기능이 있습니다. 해당 기능 유무와 사용법은 제품 설명서를 따르세요.
+    </div>
+    <h2 class="section-title">3. 행주와 도구 관리</h2>
+    <p>스팀 완드 전용 행주는 다른 용도와 섞어 쓰지 않는 것이 좋습니다. 우유가 묻은 행주를 계속 쓰면 오히려 완드에 우유를 바르는 셈이 됩니다. 영업 중에는 <strong>행주를 자주 교체하고, 하루가 끝나면 세탁하거나 소독</strong>하는 것이 기본입니다. 피처에 남은 우유로 스팀을 연속해서 쓰는 것도 피하세요.</p>
+    <h2 class="section-title">4. 주 1회 담금 세척</h2>
+    <p>매번 닦아도 팁 안쪽에는 조금씩 찌꺼기가 쌓입니다. 그래서 주기적으로 <strong>우유 찌꺼기용 전용 세정제</strong>에 완드 끝부분을 담가 두는 방법이 널리 쓰입니다. 제조사 안내 기준으로도 주 1회 담금이 권장되는 경우가 많으며, 이를 건너뛰면 우유가 굳거나 곰팡이가 생기고 막힘으로 이어질 수 있다고 설명합니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>구분</th><th>주기</th><th>방법</th></tr></thead>
+      <tbody>
+        <tr><td>겉면 닦기</td><td>사용할 때마다</td><td>젖은 행주로 닦기</td></tr>
+        <tr><td>안쪽 분사</td><td>사용할 때마다</td><td>1~2초 스팀 분사</td></tr>
+        <tr><td>담금 세척</td><td>주 1회 안팎</td><td>우유용 세정제 희석액에 팁 담그기</td></tr>
+        <tr><td>구멍 점검</td><td>담금 후 또는 증상 있을 때</td><td>청소 바늘로 구멍 확인</td></tr>
+      </tbody>
+    </table>
+    <p>세정제는 용도가 나뉩니다. 우유 찌꺼기용과 커피 오일용은 성분이 다르므로 <strong>제품 라벨의 용도를 확인</strong>하고, 희석 비율과 담그는 시간은 제품 설명서대로 지킵니다. 세척 후에는 맑은 물로 충분히 헹구고 스팀을 분사해 세정제를 완전히 제거해야 합니다.</p>
+    <h2 class="section-title">5. 노즐 구멍이 막혔을 때</h2>
+    <p>스팀이 한쪽으로만 나가거나 힘이 약해졌다면 구멍 일부가 막힌 것입니다. 이때는 다음 순서로 진행합니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">막힘 제거 순서</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>완전히 식히기:</strong> 스팀을 끄고 손으로 만질 수 있을 만큼 충분히 식힙니다. 뜨거운 상태에서 작업하면 화상 위험이 있습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>담가서 불리기:</strong> 굳은 우유는 세정제에 담가 불린 뒤 작업하면 훨씬 쉽게 풀립니다. 심하면 담금 시간을 늘립니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>청소 바늘로 뚫기:</strong> 제품에 포함된 청소 바늘(또는 가는 도구)을 구멍에 살살 넣어 찌꺼기를 빼냅니다. 무리하게 넣으면 구멍이 변형됩니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>분사로 확인:</strong> 헹군 뒤 스팀을 분사해 모든 구멍에서 고르게 나오는지 확인합니다.</div></div>
+    </div>
+    <p>그래도 해결되지 않으면 팁을 분리할 수 있는 모델은 설명서대로 분리해 세척하고, 분리가 어렵다면 제조사 서비스에 문의하세요.</p>
+    <h2 class="section-title">6. 영업 마감 때 점검 체크</h2>
+    <p>마감 시에는 완드 겉면, 팁 구멍, 행주 상태를 한 번씩 확인합니다. 겉면에 끈적임이 남아 있는지, 스팀 분사가 고르게 나오는지, 사용한 행주가 분리되어 세탁 대상으로 놓였는지를 보면 됩니다. 이 습관은 기계 관리와 위생 기준 모두에서 기본으로 요구되는 부분이며, 우유 음료를 많이 다루는 매장일수록 결과 차이가 큽니다. 머신 전체 청소 주기가 궁금하시다면 에스프레소 머신 청소 주기 글도 함께 참고하시기 바랍니다.</p>
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 스팀 완드는 하루에 몇 번 닦아야 하나요?</strong><br/>우유를 스팀할 때마다 닦고 분사하는 것이 원칙입니다. 한 번 스팀한 뒤 시간이 지나면 우유가 굳기 쉽습니다.</p>
+    <p><strong>Q. 행주 없이 스팀만 분사해도 되나요?</strong><br/>분사만으로는 겉면의 우유가 남습니다. 닦기와 분사를 함께 하는 것이 안전합니다.</p>
+    <p><strong>Q. 식초나 베이킹소다로 세척해도 되나요?</strong><br/>제조사가 권장하는 방법인지 설명서를 먼저 확인하세요. 우유용 전용 세정제를 쓰는 것이 무난합니다.</p>
+    <p><strong>Q. 스팀이 약해졌는데 꼭 분해해야 하나요?</strong><br/>대부분 담금 세척과 구멍 청소로 해결됩니다. 해결이 안 될 때만 분리 세척이나 서비스를 고려하세요.</p>
+    <p><strong>Q. 청소 후 우유에서 세정제 맛이 날 수 있나요?</strong><br/>헹굼과 스팀 분사가 부족하면 가능합니다. 세척 후 물로 헹구고 분사를 충분히 해 주세요.</p>
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>스팀 완드는 매번 닦고 분사하고, 주기적으로 담가서 푸는 것만 지켜도 막힘과 이취를 대부분 막을 수 있습니다. 작은 습관이 라떼 품질과 위생을 함께 지킵니다.</p>
+    </div>
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료(제조사 안내 기준이며 모델에 따라 다를 수 있습니다): <a href="https://www.breville.com/en-us/my-products/producthub/bes870/cleaning-guides/cleaning-and-unblocking-the-steam-wand" rel="noopener nofollow">Breville 스팀 완드 청소 안내</a> · <a href="https://www.seattlecoffeegear.com/blogs/learning-center/how-to-clean-steam-wand" rel="noopener nofollow">Seattle Coffee Gear 스팀 완드 청소</a> · <a href="https://www.delonghi.com/en-us/faqs/Dedica-Maestro-Plus---EC950:-How-do-i-clean-the-steam-wand-after-using-it/a/568175" rel="noopener nofollow">De'Longhi 스팀 완드 FAQ</a></p>
+
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-02"><div class="rc-cat">🔥 로스팅 & 원두 과학</div><div class="rc-title">싱글오리진 블렌드 뭐가 다를까 — 산지 표기 읽는 법과 용도별 추천</div><div class="rc-date">2026. 11. 02</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-14"><div class="rc-cat">🔥 로스팅 & 원두 과학</div><div class="rc-title">아메리카노 블렌드 고르는법 — 배전도와 산미·바디감별 추천 조합</div><div class="rc-date">2026. 10. 14</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-09"><div class="rc-cat">🔥 로스팅 & 원두 과학</div><div class="rc-title">콜롬비아 수프리모 뜻 — 스크린 사이즈 기준과 엑셀소 구분법</div><div class="rc-date">2026. 10. 09</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#스팀완드</span>
+      <span class="tag">#머신청소</span>
+      <span class="tag">#위생</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>사용 직후 닦고 스팀을 분사하는 것이 가장 중요합니다.</strong></li>
+        <li><strong>우유가 마르면 청소가 어려워지고 구멍이 막힙니다.</strong></li>
+        <li><strong>주 1회 전용 세정제 담금 세척을 권장합니다.</strong></li>
+        <li><strong>막힘은 식힌 뒤 불리고 청소 바늘로 풀어 주세요.</strong></li>
+        <li><strong>세척 후 헹굼과 분사로 세정제를 완전히 제거하세요.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
