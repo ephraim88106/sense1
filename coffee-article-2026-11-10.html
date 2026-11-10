@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>스팀 피처 고르는법 — 용량·주둥이 모양과 크기별 선택 요령 | 바리스타 스페셜티</title>
+  <meta name="description" content="라떼아트용 우유 스팀 피처를 고르는 기준을 정리했습니다. 350ml·600ml 용량 선택, 뾰족한 주둥이와 둥근 주둥이 차이, 우유 채우는 양과 스테인리스 재질까지 설명합니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-10">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="스팀 피처 고르는법 — 용량·주둥이 모양과 크기별 선택 요령 | 바리스타 스페셜티">
+<meta property="og:description" content="라떼아트용 우유 스팀 피처를 고르는 기준을 정리했습니다. 350ml·600ml 용량 선택, 뾰족한 주둥이와 둥근 주둥이 차이, 우유 채우는 양과 스테인리스 재질까지 설명합니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-10">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-10T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-10T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-10#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-10", "headline": "스팀 피처 고르는법 — 용량·주둥이 모양과 크기별 선택 요령 | 바리스타 스페셜티", "description": "라떼아트용 우유 스팀 피처를 고르는 기준을 정리했습니다. 350ml·600ml 용량 선택, 뾰족한 주둥이와 둥근 주둥이 차이, 우유 채우는 양과 스테인리스 재질까지 설명합니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-10", "dateModified": "2026-11-10", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges"><span class="badge hot">🎨 라떼아트</span><span class="badge">스팀 피처</span><span class="badge">장비 선택</span></div>
+    <h1>스팀 피처 고르는법<br/>— 용량·주둥이 모양과 크기별 선택 요령</h1>
+    <p class="subtitle"><strong>한 번에 만드는 음료 양에 맞는 용량과, 라떼아트 용도에 맞는 주둥이 모양만 정하면 선택은 거의 끝납니다.</strong></p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 10일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 5분</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>라떼아트가 잘 안 될 때 기술만 탓하기 쉽지만, 피처가 음료 양에 맞지 않아 생기는 문제도 많습니다. 결론부터 말씀드리면 <strong>한 잔씩 만드는 용도라면 약 350ml(12oz)급, 두 잔 이상이나 큰 잔이라면 약 600ml(20oz)급</strong>이 일반적인 출발점이고, 아트를 그릴 목적이라면 주둥이가 뾰족한 형태가 다루기 좋다는 설명이 많습니다. 아래에서 용량, 주둥이, 재질, 우유 채우는 양을 차례로 정리합니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>음료 양별로 맞는 피처 용량</li>
+        <li>뾰족한 주둥이와 둥근 주둥이의 차이</li>
+        <li>우유를 어느 정도 채워야 스팀이 잘 되는지</li>
+        <li>재질·손잡이·눈금 등 구매 전 확인할 점</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">350ml</span><span class="label">약 12oz, 한 잔 기준</span></div>
+      <div class="data-card"><span class="num">600ml</span><span class="label">약 20oz, 두 잔·큰 잔 기준</span></div>
+      <div class="data-card"><span class="num">1/3~1/2</span><span class="label">우유 채우는 양의 일반적 범위</span></div>
+    </div>
+    <h2 class="section-title">1. 피처가 라떼아트에 미치는 영향</h2>
+    <p>스팀 피처는 우유를 데우는 용기이면서 붓는 도구입니다. 스팀 단계에서는 <strong>우유가 피처 안에서 회전하며 거품이 고르게 섞이는 공간</strong>이 필요하고, 붓는 단계에서는 주둥이가 우유 흐름의 굵기와 방향을 정합니다. 피처가 너무 크면 소량의 우유가 바닥에 얕게 고여 스팀 팁이 우유에 충분히 잠기지 않고, 너무 작으면 우유가 넘치거나 회전 공간이 부족해집니다. 그래서 먼저 <strong>평소에 만드는 음료의 우유 양</strong>을 기준으로 용량을 정하는 것이 순서입니다.</p>
+    <h2 class="section-title">2. 용량 선택 기준</h2>
+    <p>제조사와 바리스타 교육 자료에서 공통으로 언급되는 규격은 약 350ml(12oz)와 약 600ml(20oz)입니다. 1L(32oz) 이상은 대량 작업이나 연습용으로 쓰이는 경우가 많습니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>용량</th><th>적합한 용도</th><th>유의점</th></tr></thead>
+      <tbody>
+        <tr><td>약 350ml (12oz)</td><td>한 잔, 소형 잔, 가정용 연습</td><td>두 잔 분량은 부족할 수 있음</td></tr>
+        <tr><td>약 600ml (20oz)</td><td>두 잔 이상, 큰 잔, 매장 일반 작업</td><td>소량 스팀 시 우유가 얕아 팁이 잠기기 어려움</td></tr>
+        <tr><td>약 1L (32oz)</td><td>다량 제조, 대형 음료</td><td>무게가 있어 아트 연습에는 다루기 불편</td></tr>
+      </tbody>
+    </table>
+    <p>가정에서 한 잔씩 만든다면 350ml급으로 시작해, 카푸치노 같은 큰 잔이나 연속 작업이 늘면 600ml급을 추가하는 방식이 무난합니다. 라떼아트를 처음 배우는 경우에는 한 번에 다루는 우유 양이 적은 작은 피처가 손에 익히기 쉽다는 의견이 많습니다.</p>
+    <h2 class="section-title">3. 주둥이 모양 차이</h2>
+    <p>같은 용량이라도 주둥이(스파웃)의 모양에 따라 붓는 느낌이 달라집니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">주둥이 모양별 특징</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>뾰족한(샤프) 주둥이:</strong> 우유 흐름을 가늘게 모아 세밀한 선과 무늬를 그리기에 유리하다고 알려져 있습니다. 대신 흐름 조절이 예민해 초반에는 흘리기 쉽습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>둥근(라운드) 주둥이:</strong> 흐름이 넓고 부드럽게 나와 하트나 큰 무늬를 그리기에 편하고, 처음 연습할 때 실수가 덜합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>중간형·특수 형태:</strong> 제품별로 주둥이를 넓게 벌리거나 홈을 낸 설계도 있습니다. 사용 후기나 시연 영상으로 흐름을 확인하고 고르는 것이 좋습니다.</div></div>
+    </div>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      주둥이 모양의 우열은 정해진 것이 아니라 사용자 숙련도와 만들려는 무늬에 따라 달라집니다. 소매점·제조사 글에는 판매 목적의 표현이 섞여 있으니 일반적인 경향으로만 참고하세요.
+    </div>
+    <h2 class="section-title">4. 우유 채우는 양</h2>
+    <p>피처를 고른 뒤에는 채우는 양이 중요합니다. 여러 바리스타 가이드는 <strong>피처 용량의 약 1/3~1/2 정도</strong>를 우유가 차는 범위로 안내합니다. 스팀하면 공기가 들어가 부피가 늘어나므로 처음부터 가득 채우면 넘치거나 거품을 만들 공간이 없어집니다. 보통 피처 안쪽에 주둥이가 시작되는 지점이 있는데, 그 아래쪽을 기준선으로 삼으면 가늠하기 쉽습니다. 눈금이 있는 모델이라면 음료별 우유 양을 기록해 두고 반복하면 결과가 일정해집니다.</p>
+    <h2 class="section-title">5. 재질과 구조 확인</h2>
+    <p>대부분의 전문가용 피처는 스테인리스 스틸입니다. 열 전도가 빨라 손으로 우유 온도를 가늠하기 좋고, 세척과 위생 관리가 쉽기 때문입니다. 구매 전에는 다음을 확인하세요.</p>
+    <ul>
+      <li><strong>손잡이:</strong> 손가락이 편하게 들어가고 뜨거워지지 않는 위치인지</li>
+      <li><strong>바닥 모양:</strong> 우유가 회전하기 좋은 둥근 안쪽 바닥인지</li>
+      <li><strong>무게:</strong> 한 손으로 오래 들어도 흔들리지 않는지</li>
+      <li><strong>내부 눈금:</strong> 우유 양을 일정하게 맞추기 쉬운지</li>
+      <li><strong>스팀 완드와의 높이:</strong> 가진 머신 아래에서 팁을 넣고 돌리기 편한 크기인지</li>
+    </ul>
+    <h2 class="section-title">6. 관리와 세척</h2>
+    <p>우유가 남은 피처를 방치하면 이취가 생기고 이후 거품 상태도 나빠집니다. 사용 후 바로 물로 헹구고 세제로 닦아 완전히 건조해 두세요. 피처 외부의 스팀 완드 관리가 궁금하시다면 스팀 완드 청소 주기 글을, 스팀 방법은 우유 스팀 하는법 글을 함께 참고하시기 바랍니다.</p>
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 처음 사는 피처는 어떤 크기가 좋나요?</strong><br/>한 잔씩 만드는 가정 환경이라면 약 350ml급이 다루기 쉽습니다. 큰 잔이나 여러 잔을 자주 만든다면 600ml급을 고려하세요.</p>
+    <p><strong>Q. 피처가 클수록 좋은 거 아닌가요?</strong><br/>그렇지 않습니다. 소량 우유로 큰 피처를 쓰면 우유가 얕게 고여 스팀하기 어렵습니다. 만드는 양에 맞추는 것이 기준입니다.</p>
+    <p><strong>Q. 뾰족한 주둥이가 꼭 필요한가요?</strong><br/>세밀한 무늬를 목표로 하면 유리하지만, 하트 같은 기본 무늬는 둥근 주둥이로도 충분히 가능합니다.</p>
+    <p><strong>Q. 우유를 얼마나 넣어야 하나요?</strong><br/>일반적으로 피처 용량의 1/3~1/2 범위를 안내합니다. 제품 눈금이나 주둥이 시작 지점 아래를 기준으로 삼으세요.</p>
+    <p><strong>Q. 플라스틱이나 코팅 피처도 쓸 수 있나요?</strong><br/>열과 세척 내구성이 제품마다 달라 제조사 사용 범위를 확인해야 합니다. 일반적으로 스테인리스가 가장 많이 쓰입니다.</p>
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>만드는 음료 양으로 용량을 정하고, 연습 단계와 목표 무늬로 주둥이 모양을 고르면 실패가 줄어듭니다. 우유는 1/3~1/2만 채우는 습관을 함께 들이세요.</p>
+    </div>
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료(판매·교육 자료이며 제품에 따라 다를 수 있습니다): <a href="https://clivecoffee.com/blogs/learn/best-milk-pitcher-for-latte-art-at-home-size-material-clive" rel="noopener nofollow">Clive Coffee 라떼아트 피처 크기·재질 안내</a> · <a href="https://completehomebarista.com/faqs/milk-latte-art/choosing-milk-pitcher/" rel="noopener nofollow">Complete Home Barista 피처 선택</a> · <a href="https://giraffyco.ca/blogs/news/picking-the-right-milk-pitcher-for-beginner-latte-artists" rel="noopener nofollow">초보자용 피처 선택 가이드</a></p>
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-09"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">스팀 완드 청소 주기 — 사용 후 닦는 순서와 막힘 푸는 요령</div><div class="rc-date">2026. 11. 09</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-07"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">라떼 재료 고르는법 — 지방·단백질 함량 보는 법과 락토프리 선택 요령</div><div class="rc-date">2026. 11. 07</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-03"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">샷 시간 몇 초가 적당할까 — 25~30초가 출발점인 이유와 분쇄도 조절</div><div class="rc-date">2026. 11. 03</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#라떼아트</span>
+      <span class="tag">#스팀피처</span>
+      <span class="tag">#피처고르는법</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>한 잔은 약 350ml, 여러 잔·큰 잔은 약 600ml가 출발점입니다.</strong></li>
+        <li><strong>뾰족한 주둥이는 세밀한 무늬, 둥근 주둥이는 입문에 유리합니다.</strong></li>
+        <li><strong>우유는 피처 용량의 1/3~1/2만 채웁니다.</strong></li>
+        <li><strong>스테인리스 재질과 손에 맞는 손잡이·무게를 확인하세요.</strong></li>
+        <li><strong>사용 후 바로 세척하고 건조해 이취를 막으세요.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
