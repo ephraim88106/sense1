@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>피베리 뜻 — 생기는 과정과 PB 등급 표기, 맛 특징과 가격이 높은 까닭 | 바리스타 스페셜티</title>
+  <meta name="description" content="피베리는 커피 체리 한 알에 씨앗이 둘이 아니라 하나만 들어 둥글게 자란 생두입니다. 전체 열매의 5~10%에서 생기는 과정, 케냐·탄자니아의 PB 등급 표기와 스크린 선별, 일반 생두와의 맛 차이에 대한 블라인드 커핑 결과, 로스팅에서 달라지는 점, 가격이 높은 까닭을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-13">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="피베리 뜻 — 생기는 과정과 PB 등급 표기, 맛 특징과 가격이 높은 까닭 | 바리스타 스페셜티">
+<meta property="og:description" content="피베리는 커피 체리 한 알에 씨앗이 둘이 아니라 하나만 들어 둥글게 자란 생두입니다. 전체 열매의 5~10%에서 생기는 과정, 케냐·탄자니아의 PB 등급 표기와 스크린 선별, 일반 생두와의 맛 차이에 대한 블라인드 커핑 결과, 로스팅에서 달라지는 점, 가격이 높은 까닭을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-13">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-13T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-13T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-13#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-13", "headline": "피베리 뜻 — 생기는 과정과 PB 등급 표기, 맛 특징과 가격이 높은 까닭 | 바리스타 스페셜티", "description": "피베리는 커피 체리 한 알에 씨앗이 둘이 아니라 하나만 들어 둥글게 자란 생두입니다. 전체 열매의 5~10%에서 생기는 과정, 케냐·탄자니아의 PB 등급 표기와 스크린 선별, 일반 생두와의 맛 차이에 대한 블라인드 커핑 결과, 로스팅에서 달라지는 점, 가격이 높은 까닭을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-13", "dateModified": "2026-11-13", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges"><span class="badge hot">☕ 품종 & 가공법</span><span class="badge">피베리</span><span class="badge">생두 등급</span></div>
+    <h1>피베리 뜻<br/>— 생기는 과정과 PB 등급 표기, 맛 특징과 가격이 높은 까닭</h1>
+    <p class="subtitle"><strong>피베리는 체리 한 알에 씨앗이 하나만 자라 둥글게 된 생두입니다. 전체 열매의 5~10% 정도에서 생기고, 케냐·탄자니아에서는 PB 등급으로 따로 팔립니다. 맛이 더 좋다는 말이 어디까지 확인된 것인지, 값이 왜 더 나가는지 정리했습니다.</strong></p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 13일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="article-body">
+    <div class="hook">
+      <p>원두 봉투나 생두 리스트에서 '케냐 PB', '탄자니아 피베리'라는 표기를 보면 등급이 더 높은 것인지, 품종이 따로 있는 것인지 헷갈리기 쉽습니다. 결론부터 말씀드리면 <strong>피베리(peaberry)는 품종이 아니라 모양에 따른 구분</strong>입니다. 커피 체리 한 알에는 보통 납작한 면이 서로 마주 보는 씨앗 두 개가 들어 있는데, 그중 하나만 자라서 작고 둥글게 된 것을 피베리라고 부릅니다. 전체 열매의 5~10% 안팎에서 생기고, 크기와 모양으로 골라내기 때문에 따로 포장되어 값이 더 나갑니다. 아래에서 생기는 과정, 등급 표기, 맛에 대한 실제 평가, 로스팅에서 달라지는 점, 가격 구조를 차례로 설명합니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>피베리가 생기는 과정과 전체 수확량에서 차지하는 비율</li>
+        <li>케냐·탄자니아 등급표에서 PB가 AA·AB와 어떻게 나뉘는지</li>
+        <li>'더 달고 진하다'는 말이 블라인드 커핑에서 확인되는지</li>
+        <li>둥근 생두가 로스팅·분쇄에서 일반 생두와 다르게 움직이는 지점</li>
+        <li>값이 더 나가는 실제 요인과 살 때 확인할 항목</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1개</span><span class="label">피베리 체리 안에 든 씨앗 수. 일반 체리는 2개</span></div>
+      <div class="data-card"><span class="num">5~10%</span><span class="label">수확한 체리 가운데 피베리가 나오는 대략적인 비율</span></div>
+      <div class="data-card"><span class="num">PB</span><span class="label">케냐·탄자니아 등급표에서 피베리만 모은 등급의 표기</span></div>
+    </div>
+
+    <h2 class="section-title">1. 피베리란 무엇인가</h2>
+    <p>커피 체리를 갈라 보면 안쪽에 씨앗 두 개가 평평한 면을 마주 댄 채 들어 있습니다. 우리가 흔히 보는 생두가 한쪽은 둥글고 한쪽은 납작한 이유가 이것입니다. 그런데 일부 체리에서는 씨앗 하나만 자라고, 남은 공간을 혼자 채우면서 <strong>양쪽이 모두 둥근 타원형</strong>이 됩니다. 이렇게 된 생두를 영어로는 완두콩을 닮았다고 해서 피베리(peaberry), 스페인어권에서는 달팽이를 뜻하는 카라콜(caracol), 브라질에서는 모카(moca)라고 부릅니다. 국내에서는 피베리라는 이름이 그대로 쓰입니다.</p>
+    <p>중요한 것은 피베리가 <strong>게이샤나 버번 같은 품종 이름이 아니라는 점</strong>입니다. 어떤 품종의 나무에서도 생길 수 있고, 같은 나무의 같은 가지에서 일반 생두와 함께 열립니다. 그래서 '케냐 PB'는 케냐에서 수확한 생두 가운데 피베리만 골라 모은 것이지, 특별한 품종이나 농장을 뜻하지 않습니다.</p>
+
+    <h2 class="section-title">2. 왜 생기나</h2>
+    <p>원인은 아직 완전히 밝혀지지 않았습니다. 가장 널리 받아들여지는 설명은 체리 안의 밑씨 두 개 중 <strong>하나가 수정되지 않거나 발육 초기에 멈춰</strong> 나머지 하나만 자란다는 것입니다. 수분 스트레스, 가지 끝처럼 양분 공급이 불리한 위치, 나무의 유전적 성향 등이 영향을 준다고 추정되며, 같은 품종이라도 나무와 해에 따라 비율이 달라집니다.</p>
+    <p>비율은 자료마다 조금씩 다르지만 대체로 <strong>수확한 체리의 5~10% 안팎</strong>으로 적습니다. 대형 로스터 피츠(Peet's)는 5~10%로, 일부 산지 자료는 5~12%로 적고, 특정 나무에서는 훨씬 높게 나왔다는 보고도 있습니다. 실무에서는 '열 알 중 한 알 이하' 정도로 기억하면 됩니다.</p>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      피베리는 결함(디펙트)으로 분류되지 않습니다. 다만 크기와 모양이 다르기 때문에 균일한 생두를 원하는 시장에서는 골라내는 대상이 되고, 그 결과물이 따로 상품이 된 것입니다.
+    </div>
+
+    <h2 class="section-title">3. 어떻게 골라내고 어떻게 표기하나</h2>
+    <p>피베리는 둥글고 작아서 <strong>스크린(체) 선별</strong>에서 자연스럽게 분리됩니다. 납작한 생두가 걸리는 구멍을 피베리는 굴러서 통과하기 때문에, 크기별로 생두를 나누는 산지에서는 별도 등급으로 묶기 쉽습니다. 대표적인 곳이 케냐와 탄자니아이고, 두 나라 모두 등급표에 PB(peaberry)를 따로 둡니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>표기</th><th>케냐</th><th>탄자니아</th><th>구분 근거</th></tr></thead>
+      <tbody>
+        <tr><td>AA</td><td>스크린 17~18, 가장 큰 납작 생두</td><td>스크린 17~18</td><td>크기</td></tr>
+        <tr><td>AB</td><td>스크린 15~16</td><td>스크린 15~16 (A·B를 합쳐 부름)</td><td>크기</td></tr>
+        <tr><td class="em">PB</td><td class="em">피베리만 모은 등급</td><td class="em">피베리만 모은 등급</td><td class="em">모양</td></tr>
+        <tr><td>C 이하</td><td>스크린 14~15의 작은 생두, 그 아래 E·T·TT 등</td><td>C·E·F·AF·TT·UG 등</td><td>크기·결점</td></tr>
+      </tbody>
+    </table>
+    <p>여기서 꼭 기억할 점은 <strong>이 등급이 크기와 모양을 나눈 것이지 컵 품질을 보증하는 것이 아니라는 사실</strong>입니다. 생두 수입사 카페임포츠(Cafe Imports)는 탄자니아 등급에 대해 스크린 크기만을 나타내며 컵 품질의 지표가 아니라고 명시합니다. 같은 로트에서 나온 AA와 PB는 품종·고도·가공이 모두 같고, 나뉜 기준은 체 구멍 크기뿐입니다. 스크린 사이즈 숫자와 AB·PB 구분은 이 사이트의 <a href="https://coffee.ephseed.com/coffee-article-2026-10-05">케냐 AA 등급 글</a>에서 더 자세히 다루었습니다.</p>
+    <p>시장에 따라 대접도 다릅니다. 탄자니아 생두를 가장 많이 사 가는 일본 로스터들은 생두의 균일함을 중시해 피베리를 골라내는 쪽을 선호하고, 그렇게 분리된 PB는 미국 등 다른 시장으로 가는 경우가 많다고 수입사 자료는 설명합니다. 반대로 미국·한국에서는 '피베리'라는 이름 자체가 상품성이 있어 별도 라인업으로 팔립니다.</p>
+
+    <h2 class="section-title">4. 맛이 정말 다른가</h2>
+    <p>피베리를 소개하는 글에는 흔히 두 가지 설명이 붙습니다. 하나는 씨앗 두 개가 나눠 가질 양분을 하나가 독차지해 <strong>단맛과 농도가 진해진다</strong>는 것, 다른 하나는 둥근 모양 덕에 <strong>로스팅이 고르게 되어 깨끗하다</strong>는 것입니다. 둘 다 그럴듯하지만, 지금까지 공개된 비교 시음 자료에서는 <strong>일관된 우위가 확인되지 않았습니다.</strong></p>
+    <p>커피 평가 매체 커피리뷰(Coffee Review)는 같은 로트의 피베리와 일반 생두를 커핑한 결과 어느 쪽이 늘 낫다고 말할 수 없었다고 정리했고, 생두 바이어의 블라인드 커핑 경험을 적은 칼럼도 피베리 자체에 품질상의 이점은 보이지 않으며 차이는 어떻게 가공하고 볶았는지에서 온다고 적습니다. 피베리를 직접 판매하는 코나 농장조차 자사 블라인드 시음에서 '맛이 좋았다'고는 하지만 더 달다는 통설을 확인했다고는 말하지 않습니다.</p>
+    <p>성분 연구는 있지만 아직 소규모입니다. 2022년 학술지 <em>Processes</em>에 실린 토머스제퍼슨대 연구는 여러 산지의 피베리를 뜨거운 물과 찬물로 추출해 분석했는데, 피베리 추출물의 카페인 농도가 일반 생두보다 평균적으로 높게 측정됐다고 보고했습니다. 다만 표본이 많지 않고 산지·로스팅 조건이 통제되지 않아 '피베리는 카페인이 많다'로 일반화하기에는 이릅니다. 실무에서는 <strong>피베리라는 이름보다 그 로트의 커핑 노트와 로스팅 날짜를 보는 것</strong>이 맛을 예측하는 데 더 도움이 됩니다.</p>
+
+    <h2 class="section-title">5. 로스팅과 분쇄에서 달라지는 점</h2>
+    <p>맛의 우열과 별개로, 모양이 다르다는 사실은 로스팅 현장에서 실제 차이를 만듭니다. 둥근 생두는 드럼 안에서 잘 구르고, 같은 무게라도 표면적 대비 부피가 달라 열을 받는 속도가 납작한 생두와 다릅니다. 밀도가 높은 편이어서 같은 프로파일을 그대로 적용하면 1차 크랙 시점이나 발열 구간이 예상과 어긋날 수 있습니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">피베리를 처음 볶을 때 보는 것</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>같은 산지의 AA·AB 프로파일을 출발점으로 쓰되, 별도 로그를 남깁니다.</strong> 품종과 가공이 같아도 열 전달이 달라 그대로 맞아떨어지지 않습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>수분 날리는 초반 구간을 서두르지 않습니다.</strong> 밀도 높은 생두에 열을 천천히 넣기 위해 건조 단계를 조금 길게 잡는 로스터 사례가 많습니다. 다만 이는 경험에서 나온 요령이지 정해진 규칙은 아닙니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>1차 크랙 소리와 색 변화를 눈과 귀로 확인합니다.</strong> 둥근 생두는 색이 고르게 바뀌어 겉보기보다 안쪽이 덜 익었을 수 있으니, 크랙 이후 발전 시간을 로그로 비교합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>분쇄 입자 분포를 한 번 점검합니다.</strong> 생두 모양이 다르면 같은 분쇄도 눈금에서 입자 분포가 조금 달라질 수 있어, 추출 시간이 평소와 다르면 분쇄도를 한 단계 조정합니다.</div></div>
+    </div>
+    <p>핸드드립이나 에스프레소 레시피 자체를 바꿀 필요는 없습니다. 같은 비율과 온도에서 시작해 추출 시간과 맛을 보고 분쇄도만 미세하게 맞추면 됩니다. 비율 계산은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-06">핸드드립 비율 글</a>을 참고하시기 바랍니다.</p>
+
+    <h2 class="section-title">6. 가격이 높은 까닭</h2>
+    <p>피베리가 같은 로트의 일반 생두보다 비싼 데는 세 가지 요인이 겹칩니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>요인</th><th>내용</th><th>맛과의 관계</th></tr></thead>
+      <tbody>
+        <tr><td>희소성</td><td>수확량의 5~10%만 나오므로 같은 농장에서도 물량이 적음</td><td>없음</td></tr>
+        <tr><td>추가 선별</td><td>스크린 선별 뒤 손 선별까지 한 번 더 거쳐 인건비가 붙음</td><td>간접적 (결점두가 줄어듦)</td></tr>
+        <tr><td>수요와 이름값</td><td>'피베리'라는 명칭 자체가 프리미엄 라인으로 소비됨</td><td>없음</td></tr>
+      </tbody>
+    </table>
+    <p>즉 값이 더 나가는 것은 생산·선별 비용과 수요 때문이지 맛이 검증되어서가 아닙니다. 피베리를 살 때는 <strong>같은 농장의 일반 등급과 가격 차이가 어느 정도인지</strong>, 로스터가 적어 둔 커핑 노트가 구체적인지, 로스팅 날짜가 가까운지를 먼저 보고, 가능하면 같은 농장의 AA나 AB와 나란히 내려 직접 비교해 보는 것이 가장 정확합니다.</p>
+
+    <h2 class="section-title">7. 시험 대비 정리</h2>
+    <p>바리스타 필기에서 생두 상식으로 나올 수 있는 범위는 다음 정도입니다. 피베리는 체리 한 알에 씨앗이 하나만 발달해 둥글게 된 생두이며 품종이 아니다. 케냐·탄자니아 등급표에서는 PB로 표기하며, 이 등급은 크기·모양 구분이지 품질 등급이 아니다. 스크린 선별에서 둥근 모양 때문에 분리된다. 이 세 문장을 기억하면 피베리 관련 문항은 대부분 풀 수 있습니다. 다른 등급 용어는 <a href="https://coffee.ephseed.com/coffee-article-2026-10-27">커핑 점수 80점 글</a>과 산지별 등급 글을 함께 보시면 연결됩니다.</p>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 피베리는 결점두인가요?</strong><br/>아닙니다. SCA 결점 분류에 피베리는 들어 있지 않습니다. 다만 크기와 모양이 달라 균일함을 중시하는 시장에서는 골라내는 대상이 되고, 골라낸 것을 따로 파는 것입니다.</p>
+    <p><strong>Q. 피베리는 카페인이 더 많나요?</strong><br/>2022년 한 소규모 연구에서 피베리 추출물의 카페인 농도가 평균적으로 높게 측정된 사례가 있지만, 표본이 적고 조건이 통제되지 않아 일반화하기 어렵습니다. 카페인 함량은 품종(아라비카·로부스타)과 추출 방식의 영향이 훨씬 큽니다.</p>
+    <p><strong>Q. 어느 산지 피베리가 유명한가요?</strong><br/>등급표에 PB를 따로 두는 케냐와 탄자니아가 가장 흔하고, 하와이 코나, 브라질, 파푸아뉴기니, 르완다·부룬디 등에서도 피베리 로트가 나옵니다. 산지가 다르면 맛도 그 산지의 특성을 따라가므로 '피베리 맛'이 따로 있는 것은 아닙니다.</p>
+    <p><strong>Q. 같은 농장 AA와 PB 중 무엇을 사는 것이 좋을까요?</strong><br/>품종·고도·가공이 같으므로 맛의 바탕은 같습니다. 가격 차이가 크지 않고 직접 비교해 보고 싶다면 PB를, 가성비를 우선한다면 AA·AB를 고르면 됩니다. 등급보다 로스팅 날짜와 보관 상태가 맛에 더 큰 영향을 줍니다.</p>
+    <p><strong>Q. 집에서 볶을 때 피베리가 더 어렵나요?</strong><br/>어렵다기보다 평소 프로파일이 그대로 맞지 않을 수 있다는 뜻입니다. 둥글고 밀도가 높아 열이 들어가는 속도가 달라지므로, 첫 배치는 소량으로 볶으면서 1차 크랙 시점을 기록해 두는 것이 좋습니다.</p>
+
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>피베리는 체리 한 알에 씨앗이 하나만 자라 둥글게 된 생두로, 품종이 아니라 모양에 따른 구분입니다. 수확량의 5~10% 정도에서 나오고 케냐·탄자니아에서는 PB 등급으로 따로 묶이지만, 이 등급은 크기·모양 기준일 뿐 품질을 보증하지 않습니다. 블라인드 커핑에서 일관된 맛의 우위는 확인되지 않았고, 값이 더 나가는 것은 희소성과 추가 선별 비용, 수요 때문입니다. 살 때는 이름보다 커핑 노트와 로스팅 날짜를 보시기 바랍니다.</p>
+    </div>
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://blog.peets.com/what-is-a-peaberry/" rel="noopener nofollow">Peet's Coffee — What is a Peaberry? (발생 비율 5~10%)</a> · <a href="https://www.cafeimports.com/europe/tanzania" rel="noopener nofollow">Cafe Imports — Origins: Tanzania (등급 체계와 PB 취급)</a> · <a href="https://perfectdailygrind.com/2022/10/exploring-coffee-grading-systems-tanzania/" rel="noopener nofollow">Perfect Daily Grind — Exploring coffee grading systems: Tanzania</a> · <a href="https://doi.org/10.3390/pr10101989" rel="noopener nofollow">Schwarzmann, Washington &amp; Rao (2022), Physicochemical Analysis of Cold Brew and Hot Brew Peaberry Coffee, <em>Processes</em> 10(10):1989</a> · <a href="https://coffeereview.com/?p=3387" rel="noopener nofollow">Coffee Review — 피베리와 일반 생두 비교 커핑</a></p>
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-06"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">자격증 종류 — 국내 협회 1·2급과 SCA 과정, 목적별 선택 요령</div><div class="rc-date">2026. 11. 06</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-30"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">블루마운틴 뜻 — No.1 등급 기준과 재배 고도, 블렌드 표기 확인하는 법</div><div class="rc-date">2026. 10. 30</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-28"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">브라질 산토스 뜻 — NY2 등급 기준과 스크린 17/18, 컵 프로파일 읽는 법</div><div class="rc-date">2026. 10. 28</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#피베리</span>
+      <span class="tag">#PB등급</span>
+      <span class="tag">#생두등급</span>
+      <span class="tag">#케냐PB</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>피베리는 체리 한 알에 씨앗이 하나만 자란 둥근 생두이며, 품종이 아닙니다.</strong></li>
+        <li><strong>수확한 체리의 5~10% 안팎에서 생기고 스크린 선별로 분리됩니다.</strong></li>
+        <li><strong>케냐·탄자니아의 PB 등급은 크기·모양 구분이지 품질 등급이 아닙니다.</strong></li>
+        <li><strong>블라인드 커핑에서 일반 생두보다 일관되게 낫다는 결과는 없습니다.</strong></li>
+        <li><strong>값이 높은 까닭은 희소성·추가 선별·수요이며, 살 때는 커핑 노트와 로스팅 날짜를 봅니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
