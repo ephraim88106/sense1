@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>콜드브루 보관기간 — 직접 만든 원액은 냉장 며칠, 상한 신호 확인법 | 바리스타 스페셜티</title>
+  <meta name="description" content="직접 만든 콜드브루 원액은 밀폐해 냉장하면 1~2주, 물이나 우유를 섞은 뒤에는 2~3일 안에 마시는 것이 기준입니다. 가열 공정이 없는 콜드브루가 보관에 민감한 까닭, 제조사와 식품위생 규정이 제시하는 일수, 국내 더치커피 미생물 조사 결과, 상했을 때 나타나는 신호와 카페 실무 관리 요령을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-14">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="콜드브루 보관기간 — 직접 만든 원액은 냉장 며칠, 상한 신호 확인법 | 바리스타 스페셜티">
+<meta property="og:description" content="직접 만든 콜드브루 원액은 밀폐해 냉장하면 1~2주, 물이나 우유를 섞은 뒤에는 2~3일 안에 마시는 것이 기준입니다. 가열 공정이 없는 콜드브루가 보관에 민감한 까닭, 제조사와 식품위생 규정이 제시하는 일수, 국내 더치커피 미생물 조사 결과, 상했을 때 나타나는 신호와 카페 실무 관리 요령을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-14">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-14T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-14T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-14#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-14", "headline": "콜드브루 보관기간 — 직접 만든 원액은 냉장 며칠, 상한 신호 확인법 | 바리스타 스페셜티", "description": "직접 만든 콜드브루 원액은 밀폐해 냉장하면 1~2주, 물이나 우유를 섞은 뒤에는 2~3일 안에 마시는 것이 기준입니다. 가열 공정이 없는 콜드브루가 보관에 민감한 까닭, 제조사와 식품위생 규정이 제시하는 일수, 국내 더치커피 미생물 조사 결과, 상했을 때 나타나는 신호와 카페 실무 관리 요령을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-14", "dateModified": "2026-11-14", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges"><span class="badge hot">☕ 추출 & 위생</span><span class="badge">콜드브루</span><span class="badge">보관 관리</span></div>
+    <h1>콜드브루 보관기간<br/>— 직접 만든 원액은 냉장 며칠, 상한 신호 확인법</h1>
+    <p class="subtitle"><strong>희석하지 않은 원액은 밀폐 용기에 담아 냉장하면 1~2주, 물이나 우유를 섞은 뒤에는 2~3일이 기준입니다.</strong> 콜드브루는 뜨거운 물을 거치지 않아 세균을 죽이는 단계가 없고, 들어간 세균이 냉장고 안에서도 열흘 넘게 살아남는다는 연구가 있어 일수를 지키는 것이 중요합니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 14일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 7분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+
+    <div class="hook">
+      <p>콜드브루를 한 번에 넉넉히 내려 병에 담아 두면 며칠째까지 마셔도 되는지 늘 애매합니다. 결론부터 말씀드리면 물을 타지 않은 원액은 뚜껑을 꼭 닫아 냉장 보관할 때 1~2주, 물이나 우유를 섞은 뒤에는 2~3일 안에 마시는 것이 기준입니다. 카페라면 생산일로부터 7일을 넘기지 않도록 라벨을 붙이는 것이 안전합니다. 아래에서 이 일수가 어디서 나왔는지, 원액과 희석액이 왜 다른지, 상했을 때 어떤 신호가 나타나는지 차례로 설명합니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>콜드브루가 뜨거운 커피보다 보관에 민감한 까닭</li>
+        <li>원액·희석액·우유 첨가 음료별 냉장 보관 일수</li>
+        <li>'7일' 기준이 나온 식품위생 규정과 제조사 설명서의 근거</li>
+        <li>국내 더치커피 70건 미생물 조사에서 확인된 사실</li>
+        <li>상한 콜드브루의 신호와 카페 실무 관리 요령</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1~2주</span><span class="label">희석 전 원액을 밀폐 냉장했을 때의 보관 일수</span></div>
+      <div class="data-card"><span class="num">7일</span><span class="label">가열 공정 없는 냉장 즉석식품에 적용되는 날짜 표기 상한</span></div>
+      <div class="data-card"><span class="num">5℃ 이하</span><span class="label">식약처가 안내하는 가정 냉장고 유지 온도</span></div>
+    </div>
+
+    <h2 class="section-title">1. 콜드브루는 왜 보관에 더 신경 써야 하나</h2>
+    <p>핫커피는 90℃ 안팎의 물이 가루를 지나면서 세균 대부분을 죽입니다. 콜드브루는 상온이나 냉장 온도의 물에 원두를 12~24시간 담가 두는 방식이라 <strong>이 가열 단계가 아예 없습니다.</strong> 원두 표면, 물, 용기, 손에서 들어온 미생물이 그대로 음료에 남는다는 뜻입니다.</p>
+    <p>산도도 한몫합니다. 콜드브루의 pH는 연구에 따라 5.4~5.9 정도로 측정되는데, 이는 식초나 과일주스처럼 세균 증식을 막아 줄 만큼 낮은 값이 아닙니다. 미국 조지아대학교 식품안전센터가 2024년 발표한 연구에서는 대장균·살모넬라·리스테리아를 일부러 넣은 콜드브루를 4℃에 두었을 때 <strong>세균이 늘어나지는 않았지만 9~12일 동안 살아남았고</strong>, 포자를 만드는 바실루스 세레우스는 3주가 지나도 검출되었습니다. 즉 콜드브루 안에서 세균이 불어나는 일은 드물지만, 한 번 들어간 세균은 냉장고에서도 쉽게 사라지지 않습니다.</p>
+    <div class="note-box">
+      <div class="note-label">핵심</div>
+      콜드브루 위생의 원칙은 두 가지입니다. 첫째, 내릴 때 세균이 들어가지 않게 손·기구·물을 깨끗이 합니다. 둘째, 들어갔을지 모를 세균이 오래 머물지 않도록 보관 일수를 지킵니다. 냄새와 맛이 멀쩡해 보여도 일수를 넘긴 원액은 버리는 것이 원칙입니다.
+    </div>
+
+    <h2 class="section-title">2. 원액과 희석액의 보관 일수</h2>
+    <p>보관 일수는 '무엇을 섞었는가'에 따라 크게 달라집니다. 콜드브루 추출 기구 제조사 토디(Toddy)의 사용설명서는 추출한 원액을 유리 디캔터에 뚜껑을 덮어 냉장하면 <strong>최대 2주까지 신선하게 유지된다</strong>고 안내합니다. 커피 머신 제조사 브레빌(Breville)의 안내도 원액은 2주, 물을 탄 뒤에는 나흘 정도로 적고, 농축액을 희석한 순간부터는 일반 콜드브루와 같은 기준으로 보라고 덧붙입니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>상태</th><th>냉장 보관 일수</th><th>가장 맛있는 시기</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td class="em">원액 (희석 전, 밀폐)</td><td class="em">7~14일</td><td>1~3일</td><td>제조사 안내 상한 2주. 카페는 7일 라벨</td></tr>
+        <tr><td>물로 희석한 뒤</td><td>2~4일</td><td>당일</td><td>농도가 낮아져 산화·변질이 빨라짐</td></tr>
+        <tr><td>우유·시럽·크림을 섞은 뒤</td><td>당일 (24시간 이내)</td><td>바로</td><td>당과 단백질이 세균의 먹이가 됨</td></tr>
+        <tr><td>시판 밀봉 병음료 (미개봉)</td><td>라벨 표기 기한</td><td>—</td><td>살균·초고압 처리와 밀봉으로 수개월 유지</td></tr>
+        <tr><td>시판 병음료 (개봉 후)</td><td>제조사 안내, 보통 수일 이내</td><td>당일</td><td>개봉 순간부터 직접 내린 것과 같은 취급</td></tr>
+      </tbody>
+    </table>
+    <p>표의 일수는 <strong>안전하게 마실 수 있는 상한</strong>이지 맛이 유지되는 기간이 아닙니다. 콜드브루는 공기와 닿으면서 산화가 진행되어 사나흘이 지나면 단맛이 줄고 시큼한 뒷맛과 텁텁함이 올라옵니다. 가장 좋은 맛을 기준으로 삼는다면 원액도 사흘 안에 마시는 양만큼만 내리는 편이 낫습니다.</p>
+
+    <h2 class="section-title">3. '7일' 기준은 어디서 왔나</h2>
+    <p>미국 식품의약국(FDA)의 식품위생규범(Food Code)은 냉장 상태로 보관하는 즉석섭취 식품에 대해 <strong>5℃(41℉) 이하에서 최대 7일</strong>까지만 두고 그 안에 소비하거나 폐기하도록 날짜 표기를 요구합니다. 7일이라는 숫자는 리스테리아균의 증식 예측 모델에서 나온 값입니다. 위스콘신주 농무부의 콜드브루 지침은 이 규정을 그대로 적용해, 가열 공정이 없는 콜드브루는 온도 관리가 필요한 식품으로 보고 생산일로부터 7일 이내 날짜 표기와 5℃ 이하 보관을 요구합니다.</p>
+    <p>한편 미국커피협회(NCA)가 2023년 발표한 백서는 외부 검사기관에 의뢰해 블랙 콜드브루 원액과 포장 제품을 29℃에서 11일간 두고 병원균 6종을 검사한 결과 모두 음성이었다며, 아무것도 섞지 않은 블랙 콜드브루는 온도 관리 대상에서 제외할 수 있다고 주장했습니다. 다만 같은 문서가 크림이나 설탕을 넣는 순간 별도 검증이 필요하고, 각 지역 보건당국은 여전히 콜드브루를 온도 관리 식품으로 본다고 적고 있습니다. 실무에서는 <strong>7일 표기와 냉장 보관을 지키는 쪽이 안전</strong>합니다.</p>
+    <p>국내에는 콜드브루만을 위한 보관 일수 규정이 따로 없습니다. 식약처의 식중독 예방 수칙은 냉장 식품을 5℃ 이하에서 보관하고, 세균이 빠르게 늘어나는 온도대에 두 시간 이상 두지 말라는 일반 원칙을 제시합니다. 콜드브루에 이 원칙을 적용하면 '5℃ 이하 냉장, 생산일로부터 7일'이 가장 보수적이면서 설명 가능한 기준이 됩니다.</p>
+
+    <h2 class="section-title">4. 국내 더치커피 70건 조사에서 확인된 것</h2>
+    <p>경기도보건환경연구원 미생물팀은 도내 커피전문점과 제조업체에서 유통되는 더치커피 70건을 수거해 위생지표균·식중독균·진균 오염도를 조사하고 결과를 2022년 <em>식품위생안전학회지</em>에 발표했습니다. 대장균, 대장균군, 식중독균 12종은 <strong>모든 시료에서 검출되지 않았습니다.</strong> 다만 일반세균은 일부 시료에서 검출되었고 시료 간 편차가 컸으며, 커피전문점이 직접 내린 제품이 제조업체 제품보다 수치가 높은 경향을 보였습니다. 연구진은 원두 관리 단계부터 판매까지 냉장 온도를 유지하면서 위생을 관리하는 것이 중요하다고 결론지었습니다.</p>
+    <p>이 결과는 두 가지를 말해 줍니다. 국내에서 유통되는 콜드브루가 당장 위험한 수준은 아니라는 점, 그리고 매장에서 직접 내리는 경우 기구와 보관 관리에 따라 일반세균 수치가 벌어진다는 점입니다. 병원균이 나오지 않았다는 것이 관리가 필요 없다는 뜻은 아닙니다.</p>
+
+    <h2 class="section-title">5. 오래 두고 마시는 보관 요령</h2>
+    <div class="tip-box">
+      <div class="tip-title">원액 보관 체크리스트</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>추출이 끝나면 바로 찌꺼기를 완전히 걸러냅니다.</strong> 가루가 남아 있으면 계속 우러나 쓴맛이 늘 뿐 아니라 미생물이 자랄 자리를 남깁니다. 종이 필터로 한 번 더 거르면 침전물도 줄어듭니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>뚜껑이 꼭 닫히는 유리병에 가능한 한 가득 채웁니다.</strong> 공기층이 적을수록 산화가 늦어집니다. 큰 병 하나보다 작은 병 여러 개에 나눠 담아 하나씩 열면 나머지는 공기에 덜 닿습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>냉장고 문 쪽이 아니라 안쪽 선반에 둡니다.</strong> 문 칸은 여닫을 때마다 온도가 오르내려 5℃ 이하가 유지되지 않는 시간이 생깁니다. 냉장고용 온도계로 실제 온도를 한 번 확인해 두면 좋습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>희석은 마시기 직전에 합니다.</strong> 원액 상태로 두고 잔에 따를 때 물·얼음·우유를 섞어야 보관 일수가 깁니다. 미리 희석해 둔 병은 2~3일 안에 비웁니다.</div></div>
+      <div class="tip-item"><div class="tip-num">5</div><div class="tip-text"><strong>병에 내린 날짜와 폐기일을 적습니다.</strong> 기억에 의존하면 '아직 괜찮겠지'가 반복됩니다. 가정에서는 2주, 매장에서는 7일을 폐기일로 적어 둡니다.</div></div>
+      <div class="tip-item"><div class="tip-num">6</div><div class="tip-text"><strong>추출 전 손과 기구를 씻고 정수한 물을 씁니다.</strong> 세균은 대부분 내리는 과정에서 들어갑니다. 피처·거름망·병은 사용 후 바로 세제로 씻어 완전히 말립니다.</div></div>
+    </div>
+    <p>장기 보관이 필요하면 냉동이 대안입니다. 원액을 얼음틀에 얼려 밀폐 봉투에 옮겨 두면 수개월 둘 수 있고, 아이스 음료에 얼음 대신 넣으면 녹아도 싱거워지지 않습니다. 다만 해동하면 향이 눈에 띄게 줄기 때문에 맛을 중시한다면 권하지 않습니다.</p>
+
+    <h2 class="section-title">6. 상한 콜드브루의 신호</h2>
+    <table class="compare-table">
+      <thead><tr><th>확인 항목</th><th>정상</th><th>버려야 할 신호</th></tr></thead>
+      <tbody>
+        <tr><td>냄새</td><td>볶은 향, 은은한 단내</td><td class="em">시큼한 냄새, 쿰쿰하거나 금속성 냄새, 알코올 냄새</td></tr>
+        <tr><td>겉모습</td><td>맑거나 균일하게 어두운 갈색</td><td class="em">표면의 막·거품·곰팡이, 뿌옇게 탁해짐, 덩어리</td></tr>
+        <tr><td>질감</td><td>물처럼 흐름</td><td class="em">끈적임, 점도가 느껴짐</td></tr>
+        <tr><td>맛</td><td>부드러운 단맛과 쓴맛</td><td class="em">톡 쏘는 신맛, 식초 같은 맛, 밍밍하고 종이 같은 맛</td></tr>
+        <tr><td>용기</td><td>변화 없음</td><td class="em">뚜껑이 부풀거나 열 때 가스가 빠지는 소리</td></tr>
+      </tbody>
+    </table>
+    <p>한 가지라도 해당하면 아까워하지 말고 버립니다. 반대로 <strong>이 신호가 없다고 안전이 보장되는 것은 아닙니다.</strong> 앞서 본 연구처럼 병원균은 냄새나 맛을 바꾸지 않고 열흘 넘게 살아남을 수 있으므로, 겉이 멀쩡해도 보관 일수를 넘긴 원액은 마시지 않는 것이 맞습니다.</p>
+
+    <h2 class="section-title">7. 카페 실무와 시험 대비 정리</h2>
+    <p>매장에서 콜드브루를 직접 내린다면 <strong>생산일·폐기일 라벨, 5℃ 이하 냉장 온도 기록, 7일 이내 소진</strong>이 기본입니다. 한 번에 많이 내려 두기보다 일주일 안에 팔릴 양만큼 배치를 나누고, 케그나 탭으로 제공한다면 라인과 꼭지를 정해진 주기로 세척합니다. 우유나 시럽을 섞는 메뉴는 주문이 들어온 뒤 잔에서 섞고, 미리 섞어 보관하지 않습니다. 휴게음식점 위생교육에서 배우는 냉장 보관과 날짜 표기 원칙이 콜드브루에도 그대로 적용된다고 보면 됩니다.</p>
+    <p>바리스타 필기에서 위생·보관 상식으로 정리해 둘 범위는 다음과 같습니다. 콜드브루는 가열 공정이 없어 미생물 관리가 필요하다. 냉장 온도는 5℃ 이하를 유지한다. 희석하지 않은 원액은 밀폐 냉장 시 최대 2주, 희석 후에는 2~3일, 우유를 섞은 뒤에는 당일 소비가 기준이다. 영업장에서는 생산일로부터 7일 이내 날짜 표기를 한다. 변질 신호는 냄새·막·탁도·맛 변화이며, 신호가 없어도 기한을 넘기면 폐기한다.</p>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 냉동 보관해도 되나요?</strong><br/>됩니다. 원액을 얼음틀에 얼려 밀폐 봉투에 옮겨 두면 수개월 보관할 수 있고, 커피 얼음으로 쓰면 음료가 싱거워지지 않습니다. 다만 해동한 원액은 향이 줄고 맛이 평평해지므로 그대로 마시는 용도보다 라떼나 얼음용으로 적합합니다. 해동 후에는 다시 얼리지 않고 2~3일 안에 씁니다.</p>
+    <p><strong>Q. 상온에 몇 시간 두었던 콜드브루는 어떻게 하나요?</strong><br/>식약처 수칙대로 세균이 빠르게 늘어나는 온도대에 두 시간 이상 두었다면 버리는 것이 원칙입니다. 특히 한여름 차 안이나 창가처럼 30℃ 가까운 곳에 두었다면 한 시간만 지나도 다시 냉장고에 넣지 않습니다. 가열 공정이 없는 음료이므로 '다시 차갑게 하면 괜찮다'는 생각은 통하지 않습니다.</p>
+    <p><strong>Q. 더치커피도 같은 기준인가요?</strong><br/>같습니다. 찬물을 한 방울씩 떨어뜨리는 점적식 더치커피도 가열 단계가 없고, 오히려 상온에서 8~12시간 추출하는 동안 기구가 공기에 노출되는 시간이 깁니다. 추출이 끝나면 바로 냉장하고, 원액은 2주, 희석 후에는 2~3일이라는 같은 일수를 적용합니다. 점적 기구의 물탱크와 관은 매번 분해해 세척합니다.</p>
+    <p><strong>Q. 시판 병 콜드브루는 왜 몇 달씩 두어도 되나요?</strong><br/>제조 과정에서 살균 또는 초고압 처리를 하고 밀봉하기 때문입니다. 2023년 학술지 <em>Foods</em>에 실린 연구에서는 콜드브루에 600MPa 초고압을 3분간 가하자 대장균 O157·리스테리아·살모넬라가 검출 한계 아래로 줄고 4℃와 23℃ 모두에서 90일간 재검출되지 않았습니다. 같은 연구에서 처리하지 않은 콜드브루는 4℃에서 60일이 지나도 세균이 검출되었습니다. 집에서 내린 원액에는 이 공정이 없으므로 시판 제품의 기한을 그대로 적용하면 안 됩니다.</p>
+    <p><strong>Q. 기한이 지난 원액을 끓여 마시면 안전해지나요?</strong><br/>권하지 않습니다. 가열하면 살아 있는 세균은 줄지만 바실루스 세레우스처럼 포자를 만들거나 이미 만들어진 독소가 남는 균은 끓여도 없어지지 않습니다. 맛도 크게 변합니다. 끓이는 것은 기한을 넘긴 원액을 살리는 방법이 아니라 신선한 원액을 따뜻하게 마시는 방법으로만 생각하는 것이 맞습니다.</p>
+
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>콜드브루는 뜨거운 물을 거치지 않아 세균을 죽이는 단계가 없고 pH도 5.4~5.9로 높은 편이라, 들어간 미생물이 냉장고 안에서도 열흘 넘게 살아남습니다. 그래서 희석하지 않은 원액은 밀폐 냉장 1~2주, 물을 섞은 뒤에는 2~4일, 우유나 시럽을 섞은 뒤에는 당일 안에 마시는 것이 기준이고, 영업장에서는 5℃ 이하 냉장과 생산일로부터 7일 표기를 지킵니다.</p>
+      <p>깨끗한 기구와 정수한 물로 내리고, 찌꺼기를 바로 걸러 가득 채운 유리병에 담아 냉장고 안쪽에 두며, 날짜를 적어 두면 맛과 안전을 함께 지킬 수 있습니다. 냄새·막·탁도·맛이 변하면 버리고, 변하지 않았더라도 일수를 넘긴 원액은 마시지 않는 것이 원칙입니다.</p>
+    </div>
+
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://toddycafe.com/cold-brew/instruction-manual" rel="noopener nofollow">Toddy — Cold Brew System Instruction Manual (원액 냉장 보관 최대 2주)</a> · <a href="https://www.breville.com/us/en/blog/coffee-and-espresso/how-long-does-cold-brew-last.html" rel="noopener nofollow">Breville — How long does cold brew last? (원액 2주·희석 후 4일)</a> · <a href="https://newswire.caes.uga.edu/story/10365/cold-brew-coffee.html" rel="noopener nofollow">University of Georgia CAES — 콜드브루 병원균 생존 연구 (Parra &amp; den Bakker, 2024)</a> · <a href="https://www.fda.gov/food/retail-food-protection/fda-food-code" rel="noopener nofollow">U.S. FDA Food Code §3-501.17 — 냉장 즉석섭취 식품 날짜 표기 (41℉ 이하 7일)</a> · <a href="https://datcp.wi.gov/Documents2/ColdBrewFactSheet.pdf" rel="noopener nofollow">Wisconsin DATCP — Cold Brew Coffee Fact Sheet</a> · <a href="https://www.ncausa.org/Industry-Resources/Cold-Brew/Cold-Brew-White-Paper" rel="noopener nofollow">National Coffee Association — Cold Brew White Paper (2023)</a> · <a href="https://doi.org/10.3390/foods12234231" rel="noopener nofollow">Polanco-Estibález et al. (2023), High-Pressure Processing for Cold Brew Coffee, <em>Foods</em> 12(23):4231</a> · <a href="https://doi.org/10.13103/JFHS.2022.37.4.271" rel="noopener nofollow">경기도보건환경연구원 (2022), 식품접객업소 판매 더치커피의 미생물 오염도 조사, <em>식품위생안전학회지</em> 37(4):271-276</a></p>
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-12"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">탬퍼 사이즈 고르는법 — 58mm·58.5mm 차이와 바스켓 내경 재는 법</div><div class="rc-date">2026. 11. 12</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-08"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">물 경도 뜻 — 연수·경수 차이와 TDS 범위, 정수기 물 써도 될까</div><div class="rc-date">2026. 11. 08</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-01"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">디카페인 고르는법 — 제거 방식별 차이와 카페인 잔존량, 맛 특징</div><div class="rc-date">2026. 11. 01</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#콜드브루보관</span>
+      <span class="tag">#더치커피유통기한</span>
+      <span class="tag">#콜드브루원액</span>
+      <span class="tag">#카페위생</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>희석 전 원액은 밀폐 냉장 1~2주, 물 희석 후 2~4일, 우유·시럽 첨가 후 당일이 기준입니다.</strong></li>
+        <li><strong>가열 공정이 없고 pH 5.4~5.9라 세균이 죽지 않고 열흘 넘게 살아남습니다.</strong></li>
+        <li><strong>영업장은 5℃ 이하 냉장과 생산일로부터 7일 날짜 표기를 지킵니다.</strong></li>
+        <li><strong>찌꺼기를 바로 거르고 가득 채운 유리병에 담아 냉장고 안쪽에 두며 날짜를 적습니다.</strong></li>
+        <li><strong>냄새·막·탁도·맛이 변하면 버리고, 변화가 없어도 일수를 넘기면 마시지 않습니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
