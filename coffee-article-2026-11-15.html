@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>사이폰(사이펀) 사용법 — 준비물과 물 양·분쇄도·불 세기, 모카포트와 다른 점 | 바리스타 스페셜티</title>
+  <meta name="description" content="사이폰(사이펀)은 아래 플라스크의 물을 끓여 증기 압력으로 위로 올리고, 불을 빼면 진공으로 다시 내려받는 침지식 추출 기구입니다. 제조사 기준 물 120ml당 원두 12g, 상부 물 온도 90~92℃, 우리는 시간 60초의 출발 레시피와 준비물, 알코올램프·가스·할로겐 열원별 불 세기, 추출 순서 8단계, 융 필터 관리, 모카포트·핸드드립과 다른 점을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-15">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="사이폰(사이펀) 사용법 — 준비물과 물 양·분쇄도·불 세기, 모카포트와 다른 점 | 바리스타 스페셜티">
+<meta property="og:description" content="사이폰(사이펀)은 아래 플라스크의 물을 끓여 증기 압력으로 위로 올리고, 불을 빼면 진공으로 다시 내려받는 침지식 추출 기구입니다. 제조사 기준 물 120ml당 원두 12g, 상부 물 온도 90~92℃, 우리는 시간 60초의 출발 레시피와 준비물, 알코올램프·가스·할로겐 열원별 불 세기, 추출 순서 8단계, 융 필터 관리, 모카포트·핸드드립과 다른 점을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-15">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-15T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-15T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-15#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-15", "headline": "사이폰(사이펀) 사용법 — 준비물과 물 양·분쇄도·불 세기, 모카포트와 다른 점 | 바리스타 스페셜티", "description": "사이폰(사이펀)은 아래 플라스크의 물을 끓여 증기 압력으로 위로 올리고, 불을 빼면 진공으로 다시 내려받는 침지식 추출 기구입니다. 제조사 기준 물 120ml당 원두 12g, 상부 물 온도 90~92℃, 우리는 시간 60초의 출발 레시피와 준비물, 알코올램프·가스·할로겐 열원별 불 세기, 추출 순서 8단계, 융 필터 관리, 모카포트·핸드드립과 다른 점을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-15", "dateModified": "2026-11-15", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges"><span class="badge hot">☕ 추출 기구</span><span class="badge">사이폰</span><span class="badge">침지식 추출</span></div>
+    <h1>사이폰(사이펀) 사용법<br/>— 준비물과 물 양·분쇄도·불 세기, 모카포트와 다른 점</h1>
+    <p class="subtitle"><strong>아래 플라스크의 물을 끓여 증기 압력으로 위로 올리고, 불을 빼면 식으면서 생기는 진공으로 다시 내려받는 침지식 추출 기구입니다.</strong> 제조사 기준 물 120ml당 원두 12g, 상부 물 온도 90~92℃, 우리는 시간 60초 전후가 출발점이고, 불 세기와 융 필터 관리가 맛을 가릅니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 15일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+
+    <div class="hook">
+      <p>사이폰은 유리 플라스크 두 개가 위아래로 맞물린 기구로, 물이 저절로 올라갔다가 커피가 되어 내려오는 모습 때문에 카페 바에 두면 가장 눈길을 끄는 추출 도구입니다. 그런데 처음 쓰면 가루가 위에서 끓어 넘치거나, 커피가 내려오지 않거나, 융 필터에서 쉰 냄새가 나는 일이 흔합니다. 결론부터 말씀드리면 사이폰은 <strong>물 120ml당 원두 12g, 중간 굵기 분쇄, 물이 올라온 뒤 불을 줄여 90~92℃를 유지하면서 60초 전후 우리고, 불을 빼서 1분 안에 내려받는</strong> 순서를 지키면 안정적으로 맑고 향이 선명한 커피가 나옵니다. 아래에서 원리, 준비물, 물 양과 분쇄도, 불 세기, 추출 순서, 모카포트와 다른 점, 융 필터 관리까지 차례로 설명합니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>물이 위로 올라가고 다시 내려오는 원리 — 증기 압력과 진공</li>
+        <li>구성품 이름과 용량별 물 양, 준비물 목록</li>
+        <li>제조사 기준 원두 양과 서양 로스터리 레시피의 차이, 출발 비율</li>
+        <li>분쇄도 기준과 열원(알코올램프·가스·할로겐)별 불 세기 조절</li>
+        <li>추출 순서 8단계와 모카포트·핸드드립과 다른 점</li>
+        <li>융 필터 보관법과 교체 시기, 바리스타 필기 대비 정리</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">12g / 120ml</span><span class="label">제조사(하리오)가 제시하는 1인분 원두와 물 양</span></div>
+      <div class="data-card"><span class="num">90~92℃</span><span class="label">가루를 넣을 때 상부 용기 안 물 온도</span></div>
+      <div class="data-card"><span class="num">60초 전후</span><span class="label">가루를 넣고 불을 빼기까지 우리는 시간</span></div>
+      <div class="data-card"><span class="num">1~2바</span><span class="label">모카포트의 추출 압력 — 사이폰은 대기압에서 우림</span></div>
+    </div>
+
+    <h2 class="section-title">1. 물이 올라가고 커피가 내려오는 원리</h2>
+    <p>사이폰은 아래쪽 둥근 유리 용기(플라스크)에 물을 담고, 그 위에 관이 아래로 길게 뻗은 상부 용기(로트)를 끼운 뒤 플라스크를 가열합니다. 물이 끓기 시작하면 플라스크 안의 수증기 압력이 바깥 공기 압력보다 높아지고, 이 압력이 물을 관을 따라 위로 밀어 올립니다. 관 끝이 바닥까지 닿지 않기 때문에 <strong>물은 전부 올라가지 않고 플라스크 바닥에 조금 남으며</strong>, 남은 물이 계속 증기를 만들어 위에 올라간 물이 내려오지 않게 붙잡아 둡니다.</p>
+    <p>이 상태에서 상부 용기에 원두 가루를 넣고 저으면 가루 전체가 물에 잠겨 우러납니다. 가루가 물 속에 머무는 침지식 추출이면서, 가열이 계속되는 동안 상부의 물 온도가 거의 변하지 않아 다른 수동 기구보다 <strong>온도가 안정적</strong>입니다. 정해진 시간이 지나 불을 빼면 플라스크가 식으면서 증기가 다시 물로 응축되어 압력이 떨어지고, 바깥 공기 압력과 중력이 커피를 필터를 거쳐 아래로 끌어내립니다. 이 하강 과정 때문에 '진공식 추출'이라고도 부릅니다. 내려온 뒤 상부에는 가루가 둥근 돔 모양으로 남고 그 위에 거품이 덮여 있으면 추출이 고르게 끝난 신호입니다.</p>
+    <div class="note-box">
+      <div class="note-label">역사</div>
+      두 개의 유리 용기를 위아래로 잇는 방식은 1830년대 베를린의 뢰프(Loeff)가 고안했고, 1841년 프랑스 리옹의 바시외(Vassieux) 부인이 오늘날과 비슷한 형태로 특허를 냈습니다. 1844년에는 좌우로 놓인 두 용기와 무게추로 불을 자동으로 끄는 밸런싱 사이폰이 나왔습니다. 현재 국내 카페와 교육기관에서 쓰는 수직형 유리 사이폰은 대부분 일본 하리오(Hario) 제품이며, 그래서 '사이폰'과 '사이펀' 두 표기가 함께 쓰입니다.
+    </div>
+
+    <h2 class="section-title">2. 준비물과 구성품 이름</h2>
+    <p>구성품 이름을 알아 두면 설명서와 교재를 읽기 쉽습니다. 아래쪽 둥근 용기가 <strong>플라스크</strong>, 관이 달린 위쪽 용기가 <strong>로트(상부 용기)</strong>, 로트 바닥에 끼우는 것이 <strong>필터</strong>입니다. 필터는 스프링과 체인이 달린 금속 틀에 융(기모 천)을 씌운 것이 기본이고, 체인을 관 아래로 내려 끝의 고리를 관 끝에 걸어 고정합니다. 플라스크를 세우는 <strong>스탠드</strong>, 그 아래 <strong>열원</strong>, 가루를 저을 <strong>대나무 스틱</strong>(죽베라)과 계량스푼이 함께 들어 있습니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>모델(하리오 테크니카 기준)</th><th>잔 수</th><th>물 용량</th><th>원두 양(12g/잔 기준)</th></tr></thead>
+      <tbody>
+        <tr><td>TCA-2</td><td>2잔</td><td>240ml</td><td>24g</td></tr>
+        <tr><td class="em">TCA-3</td><td class="em">3잔</td><td class="em">360ml</td><td class="em">36g</td></tr>
+        <tr><td>TCA-5</td><td>5잔</td><td>600ml</td><td>60g</td></tr>
+      </tbody>
+    </table>
+    <p>여기서 '1잔'은 <strong>120ml</strong>입니다. 머그컵 기준으로는 3잔 모델이 어른 두 잔 정도라고 보면 맞습니다. 플라스크 옆면의 눈금은 이 잔 수를 표시한 것으로, 눈금 이상 채우면 물이 올라갈 때 상부에서 넘칩니다. 구성품 외에 따로 준비하면 좋은 것은 <strong>저울, 타이머, 온도계, 미리 물을 끓여 둘 전기포트, 그리고 젖은 행주</strong>입니다. 저울은 계량스푼의 오차를 줄여 주고, 젖은 행주는 불을 뺀 뒤 플라스크 바닥에 대어 하강을 빨리 시작하게 할 때 씁니다. 물에 젖은 플라스크를 불에 올리면 유리가 깨질 수 있으므로 바깥면은 반드시 말린 뒤 가열합니다.</p>
+
+    <h2 class="section-title">3. 물 양과 원두 양 — 출발 비율</h2>
+    <p>제조사 사용 안내는 잔당 <strong>물 120ml에 원두 12g</strong>, 즉 1:10의 진한 비율을 제시합니다. 물 온도는 90~92℃, 저어 주는 횟수는 가루를 잠기게 하는 1회와 마무리 1회로 두 번, 우리는 시간은 약 60초입니다. 반면 미국·유럽 로스터리의 사이폰 레시피는 대개 <strong>1:14~1:17</strong> 사이로, 예를 들어 5잔 모델에 원두 35g과 물 560ml를 쓰는 식입니다. 이 차이는 사이폰 구조에서 나옵니다. 플라스크에 넣은 물 가운데 일부는 올라가지 않고 바닥에 남아 증기를 만드는 데 쓰이고, 융 필터와 가루가 물을 머금기 때문에 <strong>실제로 가루와 만나는 물은 넣은 양보다 적습니다.</strong> 그래서 숫자로는 진해 보여도 잔에 담긴 커피는 그만큼 진하지 않습니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>기준</th><th>비율(원두:물)</th><th>3잔(물 360ml) 원두 양</th><th>특징</th></tr></thead>
+      <tbody>
+        <tr><td>제조사 공식 안내</td><td>1:10</td><td>36g</td><td>짧게(60초) 우려 진하고 깔끔함</td></tr>
+        <tr><td class="em">입문 추천 출발점</td><td class="em">1:12~1:13</td><td class="em">28~30g</td><td class="em">계량스푼 3스푼과 비슷, 균형이 잡히기 쉬움</td></tr>
+        <tr><td>서양 로스터리 레시피</td><td>1:14~1:17</td><td>21~26g</td><td>2~3분 우려 부드럽고 가벼움</td></tr>
+        <tr><td>SCA 브루잉 기준(참고)</td><td>약 1:18 (55g/L)</td><td>20g</td><td>드립 기준 농도 1.15~1.35% 목표</td></tr>
+      </tbody>
+    </table>
+    <p>함께 들어 있는 계량스푼 한 스푼은 로스팅 정도와 원두 밀도에 따라 <strong>8~11g</strong> 사이로 달라집니다. 같은 스푼으로도 강배전 원두는 가볍고 약배전 원두는 무거우므로, 처음 몇 번은 저울로 실제 무게를 확인해 두는 것이 좋습니다. 비율을 바꿀 때는 물 양은 눈금에 맞춰 고정하고 원두 양만 2g 단위로 움직이면 변화를 알아보기 쉽습니다.</p>
+
+    <h2 class="section-title">4. 분쇄도 — 중간 굵기, 융에 미분이 끼지 않게</h2>
+    <p>제조사와 로스터리 레시피 모두 <strong>중간 굵기</strong>를 기준으로 삼습니다. 프렌치프레스용보다는 가늘고, 핸드드립용과 비슷하거나 조금 굵은 정도입니다. 우리는 시간이 1~2분으로 짧은 침지식이라 너무 굵으면 밍밍하고 신맛만 남고, 너무 가늘면 융 필터에 미분이 끼어 하강이 느려지면서 쓴맛과 떫은맛이 올라옵니다. 하강이 1분을 훌쩍 넘기거나 커피가 내려오다 멈추면 분쇄가 가늘거나 필터가 막힌 것입니다.</p>
+    <p>조절 순서는 다른 기구와 같습니다. <strong>쓰고 떫으면 한 단계 굵게, 싱겁고 시면 한 단계 가늘게</strong> 움직이고, 한 번에 한 가지 변수만 바꿉니다. 분쇄도를 그대로 두고 우리는 시간을 15초 단위로 늘리거나 줄이는 방법도 사이폰에서는 잘 통합니다. 기구별 굵기 기준은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-12">그라인더 분쇄도 조절</a> 글에 정리해 두었습니다.</p>
+
+    <h2 class="section-title">5. 불 세기와 열원 — 올라오면 줄인다</h2>
+    <p>사이폰의 불 조절은 두 단계입니다. 물을 올릴 때는 세게, 올라온 뒤에는 <strong>물이 내려오지 않을 만큼만 약하게</strong> 유지합니다. 불이 계속 세면 상부 물이 끓는점 가까이 올라가 가루가 부글거리며 넘치고, 추출 온도가 높아져 쓴맛이 늘어납니다. 가루를 넣을 때 상부 물 온도가 <strong>90~94℃</strong> 범위에 있도록 맞추는 것이 목표이며, 온도계가 있으면 처음 몇 번은 직접 재 보는 것이 좋습니다. 플라스크에 찬물 대신 <strong>미리 끓인 물</strong>을 넣으면 올리는 시간이 크게 줄고 유리가 받는 열도 줄어듭니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>열원</th><th>장점</th><th>단점</th><th>불 조절 요령</th></tr></thead>
+      <tbody>
+        <tr><td>알코올램프(기본 구성품)</td><td>저렴, 어디서나 사용</td><td class="em">가열이 느리고 세기 조절이 거의 안 됨</td><td>뜨거운 물을 넣어 시작, 올라오면 램프를 옆으로 조금 빼서 열을 줄임</td></tr>
+        <tr><td>가스(부탄) 버너</td><td>세기 조절이 쉽고 빠름</td><td>불꽃이 플라스크 옆면을 타고 오르면 위험</td><td>올라오는 즉시 최소 불로, 불꽃이 바닥 중앙에만 닿게</td></tr>
+        <tr><td class="em">할로겐 빔 히터</td><td class="em">온도 유지가 가장 정밀, 불꽃 없음</td><td>가격이 본체보다 비쌈, 부피</td><td>단계 조절로 상부 온도를 90℃대에 고정</td></tr>
+      </tbody>
+    </table>
+    <p>어느 열원이든 공통 원칙은 같습니다. 물이 다 올라간 뒤 플라스크 바닥에 남은 물이 <strong>잔잔하게 끓는 정도</strong>가 적정 세기입니다. 바닥 물이 거세게 끓어 큰 기포가 관으로 올라오면 상부에서 커피가 요동치며 추출이 고르지 않게 되고, 반대로 불이 너무 약해 증기가 모자라면 우리는 중간에 커피가 내려와 버립니다.</p>
+
+    <h2 class="section-title">6. 추출 순서 8단계</h2>
+    <div class="tip-box">
+      <div class="tip-title">3잔 모델(물 360ml, 원두 28~36g) 기준</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>필터를 세팅합니다.</strong> 융 필터는 따뜻한 물에 담가 적신 뒤 로트 바닥 중앙에 놓고, 체인을 관 아래로 내려 끝의 고리를 관 끝에 걸어 고정합니다. 필터가 한쪽으로 치우치면 그 틈으로 가루가 새어 내려옵니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>플라스크에 뜨거운 물을 눈금까지 넣고 바깥면을 완전히 닦습니다.</strong> 젖은 유리를 불에 올리면 깨질 수 있습니다. 원두는 이때 저울로 계량해 둡니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>로트를 플라스크에 비스듬히 걸쳐 두고 가열합니다.</strong> 처음부터 수직으로 꽉 끼우면 물이 끓기 전부터 압력이 걸립니다. 물이 끓어 작은 기포가 올라오기 시작하면 로트를 수직으로 눌러 끼웁니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>물이 올라오면 바로 불을 줄입니다.</strong> 바닥에 남은 물이 잔잔히 끓는 세기가 기준입니다. 물속의 잔 기포가 가라앉고 수면이 고요해지면 가루를 넣을 준비가 된 것입니다.</div></div>
+      <div class="tip-item"><div class="tip-num">5</div><div class="tip-text"><strong>가루를 넣고 스틱으로 1차 교반합니다.</strong> 가루는 물 위에 떠 있으므로 스틱을 세워 위에서 아래로 눌러 넣듯 서너 번 저어 전체를 잠기게 합니다. 이때 타이머를 켭니다. 세게 휘저으면 미분이 융에 박혀 하강이 느려집니다.</div></div>
+      <div class="tip-item"><div class="tip-num">6</div><div class="tip-text"><strong>60~90초 우립니다.</strong> 제조사 기준은 약 60초, 비율을 1:14 이상으로 묽게 잡았다면 2분 안팎까지 늘립니다. 우리는 동안 불은 그대로 약하게 유지합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">7</div><div class="tip-text"><strong>마무리 교반 후 불을 뺍니다.</strong> 가볍게 두세 번 저어 표면의 가루 층을 깨고 열원을 치웁니다. 젖은 행주로 플라스크 바닥을 감싸면 식는 속도가 빨라져 하강이 바로 시작됩니다. 하강은 30~60초가 정상입니다.</div></div>
+      <div class="tip-item"><div class="tip-num">8</div><div class="tip-text"><strong>로트를 분리하고 따릅니다.</strong> 상부에 돔 모양의 가루 층과 그 위의 거품이 남아 있으면 잘된 추출입니다. 로트는 좌우로 살짝 돌려 빼서 스탠드의 거치대에 걸고, 플라스크의 커피를 바로 잔에 따릅니다. 뜨거운 플라스크에 두면 계속 데워져 맛이 무거워집니다.</div></div>
+    </div>
+
+    <h2 class="section-title">7. 모카포트·핸드드립과 다른 점</h2>
+    <p>겉모습이 비슷해 혼동하기 쉽지만 모카포트와 사이폰은 원리가 다릅니다. 모카포트는 아래 물통의 증기 압력(통상 1~2바)으로 뜨거운 물을 <strong>가루층을 통과하도록 밀어 올리는</strong> 가압 추출이고, 가루와 물이 만나는 시간이 짧으며 결과물이 진합니다. 사이폰은 증기 압력을 물을 올리는 데만 쓰고, 추출 자체는 <strong>대기압에서 가루를 물에 담가 우리는</strong> 침지식입니다. 그래서 농도와 질감은 드립에 가깝고, 융 필터를 거쳐 침전물이 적어 맑습니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>항목</th><th>사이폰</th><th>모카포트</th><th>핸드드립</th></tr></thead>
+      <tbody>
+        <tr><td>추출 방식</td><td class="em">침지 후 진공 하강 여과</td><td>증기압으로 가루층 통과(가압)</td><td>중력 투과(여과)</td></tr>
+        <tr><td>추출 압력</td><td>대기압</td><td class="em">1~2바(실측 최고 2.5바)</td><td>대기압</td></tr>
+        <tr><td>물 온도</td><td>90~94℃ 유지</td><td>물통 안 최고 100℃ 이상</td><td>85~95℃, 추출 중 계속 떨어짐</td></tr>
+        <tr><td>분쇄도</td><td>중간</td><td>중간 가늘게(에스프레소보다 굵게)</td><td>중간 가늘게~중간</td></tr>
+        <tr><td>원두:물</td><td>1:10~1:15</td><td>바스켓 가득(약 1:7~1:10)</td><td>1:15~1:17</td></tr>
+        <tr><td>맛 성향</td><td class="em">맑고 향이 선명, 단맛이 또렷</td><td>진하고 무거움, 과다 추출 쪽</td><td>가볍고 산미 표현이 쉬움</td></tr>
+        <tr><td>추출 시간</td><td>가열 포함 5~7분, 우림 1~2분</td><td>가열 포함 5~6분</td><td>2분 30초~3분 30초</td></tr>
+      </tbody>
+    </table>
+    <p>핸드드립과 비교하면 사이폰은 물 온도가 끝까지 유지되고 가루 전체가 같은 시간 물에 잠기기 때문에 <strong>추출이 고르고 재현성이 높습니다.</strong> 반대로 물줄기 조절로 맛을 세밀하게 바꾸는 여지는 적어, 변수는 원두 양·분쇄도·우리는 시간·불 세기 네 가지로 정리됩니다. 모카포트의 물 양과 불 세기 조절은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-19">모카포트 사용법</a> 글에, 핸드드립 비율은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-06">핸드드립 비율</a> 글에 따로 정리해 두었습니다.</p>
+
+    <h2 class="section-title">8. 융 필터 관리와 세척</h2>
+    <p>사이폰에서 맛이 변하는 가장 흔한 원인은 가루도 불도 아닌 <strong>융 필터</strong>입니다. 융은 커피 기름과 물을 머금기 때문에 그대로 두면 하루 만에 쉰 냄새가 나고 곰팡이가 생깁니다. 제조사와 로스터리의 관리 안내는 다음과 같이 모입니다.</p>
+    <div class="note-box">
+      <div class="note-label">융 필터 관리 원칙</div>
+      새 융은 <strong>처음 쓰기 전에 끓는 물에 한 번 삶아</strong> 풀기와 제조 과정의 냄새를 뺍니다. 사용 후에는 가루를 털어 내고 흐르는 물에 헹군 뒤 부드러운 브러시로 기름기를 닦아 내되, 세제는 쓰지 않습니다(천에 세제 냄새가 남습니다). 보관은 <strong>깨끗한 물에 완전히 담가 뚜껑을 덮고 냉장고</strong>에 두며, 물은 하루에 한 번 갈아 줍니다. 말려서 보관하면 기름이 산화되어 다음 추출에 냄새가 옮습니다. 매일 쓰는 매장이라면 <strong>2~3개월</strong>, 가정에서는 커피에서 묵은 기름 냄새가 나거나 하강이 눈에 띄게 느려지면 교체합니다. 기름이 많이 쌓였을 때는 커피 기구용 세척제를 푼 물에 담갔다가 여러 번 헹궈 쓸 수 있습니다.
+    </div>
+    <p>융 관리가 번거롭다면 <strong>사이폰용 종이 필터</strong>를 쓰는 전용 필터 틀이 있습니다. 매번 버리므로 위생 관리가 쉽고 맛이 더 깔끔해지지만, 융보다 기름을 더 걸러 내 바디감이 조금 가벼워집니다. 유리 부분은 매번 중성세제로 씻어 물기를 완전히 말리고, 특히 플라스크 바닥 바깥면에 물때나 그을음이 남지 않게 닦아야 다음 가열 때 열이 고르게 전달됩니다.</p>
+
+    <h2 class="section-title">9. 카페 실무와 시험 대비 정리</h2>
+    <p>매장에서 사이폰을 메뉴로 운영한다면 <strong>원두 양·물 눈금·우리는 시간을 레시피 카드로 고정</strong>하고, 열원은 할로겐 빔 히터처럼 세기가 일정한 것을 쓰는 편이 바쁜 시간에도 편차가 적습니다. 융은 사용 횟수를 기록해 교체 주기를 지키고, 손님 앞에서 추출할 때는 뜨거운 유리와 알코올램프의 불꽃이 손님 쪽으로 향하지 않게 배치합니다.</p>
+    <p>바리스타 필기에서 추출 기구 단원에 정리해 둘 범위는 다음과 같습니다. 사이폰은 <strong>진공식(배큠) 추출 기구</strong>이며 침지식으로 분류한다. 아래 플라스크를 가열하면 증기 압력으로 물이 상부 로트로 올라가고, 가열을 멈추면 식으면서 생기는 압력 차로 커피가 필터를 거쳐 내려온다. 1830~1840년대 유럽에서 개발되었다. 필터는 융(천)이 기본이고 종이·금속 필터도 쓴다. 열원은 알코올램프·가스·할로겐 빔 히터이며, 물이 올라온 뒤 불을 줄여 90℃대의 온도를 유지한다. 분쇄도는 중간 굵기, 추출 시간은 1분 전후, 침전물이 적고 향이 선명하며 온도가 안정적인 것이 특징이다. 모카포트는 가압 추출, 사이폰은 대기압 침지 추출이라는 구분도 자주 출제되는 지점입니다.</p>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 플라스크에 찬물을 넣어도 되나요?</strong><br/>됩니다. 다만 알코올램프로 찬물 360ml를 끓이는 데는 10분 가까이 걸리고, 그 사이 유리가 오래 달궈집니다. 전기포트로 끓인 물을 넣고 시작하면 2~3분 안에 올라오고 추출 온도도 맞추기 쉽습니다. 뜨거운 물을 넣을 때는 플라스크를 스탠드에 먼저 세우고, 손잡이가 아닌 몸통을 잡지 않도록 주의합니다.</p>
+    <p><strong>Q. 가루를 넣자마자 부글거리며 넘치려 합니다.</strong><br/>불이 너무 센 경우가 대부분입니다. 상부 물이 끓는점 가까이 있으면 가루의 가스가 한꺼풀 올라오며 거품이 크게 일어납니다. 물이 올라온 직후 불을 줄여 수면이 잔잔해진 뒤 가루를 넣고, 원두 양이 눈금 대비 너무 많지 않은지도 확인합니다. 갓 볶은 원두는 가스가 많아 거품이 더 크게 일어나므로 볶은 지 사흘 이상 지난 원두가 다루기 쉽습니다.</p>
+    <p><strong>Q. 커피가 내려오지 않거나 중간에 멈춥니다.</strong><br/>세 가지를 순서대로 봅니다. 첫째, 필터 체인의 고리가 관 끝에 제대로 걸려 필터가 중앙에 밀착되어 있는지. 둘째, 분쇄가 너무 가늘어 미분이 융을 막지 않았는지. 셋째, 융에 기름이 쌓여 물이 통과하지 못하는 상태인지. 플라스크 바닥을 젖은 행주로 감싸 식혀도 내려오지 않으면 로트를 살짝 돌려 틈을 만들어 압력을 풀고, 다음 추출에서 분쇄를 한 단계 굵게 조정하거나 융을 교체합니다.</p>
+    <p><strong>Q. 융 대신 종이 필터를 쓰면 맛이 어떻게 달라지나요?</strong><br/>종이는 커피 기름을 더 많이 걸러 내므로 맛이 한층 깔끔하고 가벼워지며, 식었을 때 탁해지는 현상도 줄어듭니다. 융은 기름을 일부 통과시켜 단맛과 바디감이 더 풍부하게 느껴집니다. 어느 쪽이 낫다기보다 성향 차이이며, 위생 관리가 어려운 환경이라면 종이 필터가 안전합니다. 종이 필터는 전용 필터 틀이 필요하고, 사용 전에 뜨거운 물로 한 번 적셔 종이 냄새를 빼고 씁니다.</p>
+    <p><strong>Q. 사이폰 커피가 핸드드립보다 맛있다고 하는 이유가 있나요?</strong><br/>맛이 더 좋다기보다 성격이 다릅니다. 사이폰은 추출 내내 물 온도가 90℃대로 유지되고 가루 전체가 같은 시간 잠기므로 향이 또렷하고 뒷맛이 깔끔하며, 같은 레시피를 반복하면 결과가 거의 같습니다. 핸드드립은 물줄기와 뜸들이기로 맛을 세밀하게 조절할 수 있는 대신 사람과 날에 따라 편차가 큽니다. 산미가 밝은 약배전 원두는 드립이, 단맛과 향을 안정적으로 보여 주고 싶은 중배전 원두는 사이폰이 장점을 드러내기 쉽습니다.</p>
+
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>사이폰은 플라스크의 물을 끓여 증기 압력으로 상부 로트에 올리고, 가루를 넣어 대기압에서 우린 뒤, 불을 빼 식으면서 생기는 진공으로 융 필터를 거쳐 내려받는 침지식 추출 기구입니다. 제조사 기준 물 120ml당 원두 12g, 상부 물 온도 90~92℃, 우리는 시간 60초가 출발점이고, 입문자는 3잔 모델에 원두 28~30g, 60~90초로 시작해 쓰면 굵게·시면 가늘게 한 단계씩 조절하면 됩니다.</p>
+      <p>불은 물이 올라오는 즉시 바닥 물이 잔잔히 끓을 만큼으로 줄이고, 융은 처음에 삶아 쓰고 사용 후 헹궈 물에 담아 냉장 보관하며 2~3개월 또는 냄새가 나면 교체합니다. 모카포트는 1~2바 압력으로 가루층을 통과시키는 가압 추출, 사이폰은 대기압에서 우리는 침지 추출이라는 점이 두 기구의 가장 큰 차이입니다.</p>
+    </div>
+
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://www.hario.co.uk/pages/brew-guides-syphon" rel="noopener nofollow">Hario UK — Syphon Brew Guide (융 필터 적시기·체인 고정·추출 순서)</a> · <a href="https://www.hario-europe.com/blogs/hario-community/an-introduction-to-brewing-with-siphons" rel="noopener nofollow">Hario Europe — An Introduction to Brewing with Siphons (원리·구성품·TCA 시리즈 용량)</a> · <a href="https://coffee-labo.co.jp/siphon-coffee/" rel="noopener nofollow">제조사 공식 레시피 비교표 — 하리오 테크니카 TCA-3: 원두 12g×3·물 360ml·90~92℃·교반 2회·약 60초</a> · <a href="https://www.hario.co.uk/blogs/news/history-of-the-syphon" rel="noopener nofollow">Hario UK — History of the Syphon (1830년대 뢰프, 1841년 바시외 특허)</a> · <a href="https://www.unionroasted.com/brew_syphon.html" rel="noopener nofollow">Union Hand-Roasted Coffee — Brew Guide: Syphon (상부 물 온도 91~94℃ 유지)</a> · <a href="https://perfectdailygrind.com/2023/01/what-is-syphon-brewing/" rel="noopener nofollow">Perfect Daily Grind (2023) — What is syphon brewing? (증기압·진공 하강 원리, 침지식 분류)</a> · <a href="https://www.baristahustle.com/do-you-have-any-recommendations-for-the-maintenance-of-cloth-filters/" rel="noopener nofollow">Barista Hustle — 융 필터 관리 안내 (헹굼·물에 담가 냉장 보관·세제 미사용)</a> · <a href="https://doi.org/10.1016/j.applthermaleng.2008.05.008" rel="noopener nofollow">Navarini et al. (2009), Experimental investigation of steam pressure coffee extraction in a stove-top coffee maker, <em>Applied Thermal Engineering</em> (모카포트 압력 1~2바·최고 2.5바)</a></p>
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-14"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">콜드브루 보관기간 — 직접 만든 원액은 냉장 며칠, 상한 신호 확인법</div><div class="rc-date">2026. 11. 14</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-12"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">탬퍼 사이즈 고르는법 — 58mm·58.5mm 차이와 바스켓 내경 재는 법</div><div class="rc-date">2026. 11. 12</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-08"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">물 경도 뜻 — 연수·경수 차이와 TDS 범위, 정수기 물 써도 될까</div><div class="rc-date">2026. 11. 08</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#사이폰</span>
+      <span class="tag">#사이펀커피</span>
+      <span class="tag">#진공식추출</span>
+      <span class="tag">#융필터</span>
+      <span class="tag">#추출기구</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>증기 압력으로 물을 올리고, 불을 빼면 진공으로 융 필터를 거쳐 내려받는 침지식 추출 기구입니다.</strong></li>
+        <li><strong>제조사 기준 물 120ml당 원두 12g, 상부 물 온도 90~92℃, 우리는 시간 60초가 출발점입니다.</strong></li>
+        <li><strong>분쇄는 중간 굵기, 물이 올라오면 바닥 물이 잔잔히 끓을 만큼 불을 줄입니다.</strong></li>
+        <li><strong>융은 처음에 삶아 쓰고, 사용 후 헹궈 물에 담아 냉장 보관하며 2~3개월마다 교체합니다.</strong></li>
+        <li><strong>모카포트는 1~2바 가압 추출, 사이폰은 대기압 침지 추출이라는 점이 가장 큰 차이입니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
