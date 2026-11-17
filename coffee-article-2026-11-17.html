@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WDT 뜻 — 디스트리뷰터와 다른 점, 바늘 굵기와 젓는 깊이 | 바리스타 스페셜티</title>
+  <meta name="description" content="WDT는 Weiss Distribution Technique의 약자로, 가는 바늘로 바스켓 가루를 바닥까지 저어 뭉침과 밀도 차를 풀어 채널링을 막는 분배 기법입니다. 디스트리뷰터·레벨러와 다른 점, 바늘 굵기 0.3·0.4mm 선택 기준, 바스켓 바닥까지 젓는 깊이와 순서, 비교 테스트 결과와 자주 하는 실수를 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-17">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="WDT 뜻 — 디스트리뷰터와 다른 점, 바늘 굵기와 젓는 깊이 | 바리스타 스페셜티">
+<meta property="og:description" content="WDT는 Weiss Distribution Technique의 약자로, 가는 바늘로 바스켓 가루를 바닥까지 저어 뭉침과 밀도 차를 풀어 채널링을 막는 분배 기법입니다. 디스트리뷰터·레벨러와 다른 점, 바늘 굵기 0.3·0.4mm 선택 기준, 바스켓 바닥까지 젓는 깊이와 순서, 비교 테스트 결과와 자주 하는 실수를 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-17">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-17T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-17T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-17#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-17", "headline": "WDT 뜻 — 디스트리뷰터와 다른 점, 바늘 굵기와 젓는 깊이 | 바리스타 스페셜티", "description": "WDT는 Weiss Distribution Technique의 약자로, 가는 바늘로 바스켓 가루를 바닥까지 저어 뭉침과 밀도 차를 풀어 채널링을 막는 분배 기법입니다. 디스트리뷰터·레벨러와 다른 점, 바늘 굵기 0.3·0.4mm 선택 기준, 바스켓 바닥까지 젓는 깊이와 순서, 비교 테스트 결과와 자주 하는 실수를 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-17", "dateModified": "2026-11-17", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges"><span class="badge hot">🎨 바리스타 스킬</span><span class="badge">퍽 프렙</span><span class="badge">에스프레소</span></div>
+    <h1>WDT 뜻<br/>— 디스트리뷰터와 다른 점, 바늘 굵기와 젓는 깊이</h1>
+    <p class="subtitle"><strong>WDT는 바스켓에 담긴 가루를 가는 바늘로 저어 뭉침을 풀고 밀도를 고르게 만드는 분배 기법입니다.</strong> 이름의 유래, 디스트리뷰터·레벨러와 역할이 어떻게 다른지, 바늘 굵기 0.3mm와 0.4mm의 선택 기준, 바스켓 바닥까지 젓는 깊이와 순서, 실제 테스트에서 확인된 효과와 자주 하는 실수까지 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 17일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+
+    <div class="hook">
+      <p>홈카페 장비를 알아보다 보면 바늘 몇 개가 손잡이에 꽂힌 작은 도구를 자주 보게 됩니다. 제품명에는 대부분 WDT라는 글자가 붙어 있는데, 무엇의 약자인지, 이미 가지고 있는 디스트리뷰터와 무엇이 다른지 헷갈리는 분이 많습니다. 결론부터 말씀드리면 <strong>WDT는 Weiss Distribution Technique의 약자로, 포터필터 바스켓 안의 가루를 가는 바늘로 바닥까지 저어 뭉침을 풀고 밀도를 고르게 만드는 기법</strong>이며, 디스트리뷰터가 표면만 고르는 것과 달리 커피 베드 전체를 손보는 단계입니다. 아래에서 용어의 유래, 왜 필요한지, 디스트리뷰터·레벨러와 다른 점, 바늘 굵기와 길이 고르는 기준, 젓는 깊이와 순서, 실제 테스트 결과, 자주 하는 실수와 관리 요령을 차례로 설명합니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>WDT라는 이름이 어디서 왔고 어떤 문제를 해결하려고 만들어졌는지</li>
+        <li>가루 뭉침이 채널링으로 이어지는 과정과 단일 도징 그라인더에서 더 자주 생기는 이유</li>
+        <li>디스트리뷰터(스핀형)·레벨러·WDT 세 도구가 각각 바스켓의 어느 깊이를 손보는지</li>
+        <li>바늘 굵기 0.25·0.3·0.4·0.7mm의 차이와 바스켓 깊이에 맞는 바늘 길이</li>
+        <li>바닥까지 젓는 깊이, 저어 주는 방향, 탬핑 전 마무리 순서</li>
+        <li>머신 제조사와 전문 매체가 진행한 비교 테스트에서 나온 결과와 한계</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">0.3~0.4mm</span><span class="label">일반적으로 권장되는 WDT 바늘 굵기</span></div>
+      <div class="data-card"><span class="num">바닥까지</span><span class="label">바늘을 넣는 깊이 — 표면만 긁으면 효과가 적음</span></div>
+      <div class="data-card"><span class="num">2005~2006년</span><span class="label">John Weiss가 Home-Barista에 기법을 소개한 시기</span></div>
+      <div class="data-card"><span class="num">3대</span><span class="label">Clive Coffee 비교 테스트에서 WDT 적용 후 채널링이 사라진 그라인더 수</span></div>
+    </div>
+
+    <h2 class="section-title">1. WDT 뜻과 유래</h2>
+    <p>WDT는 <strong>Weiss Distribution Technique(와이스 분배 기법)</strong>의 머리글자입니다. 은퇴한 컴퓨터 과학자이자 생화학 박사인 John Weiss가 집에서 에스프레소를 내리면서 채널링을 줄이려고 고안했고, 2005~2006년 무렵 홈바리스타 커뮤니티 Home-Barista에 글로 소개하면서 이름이 굳어졌습니다. 초기에는 해부용 바늘(dissecting needle)이나 이쑤시개로 가루를 저었고, 지금은 0.3mm 안팎의 스테인리스 바늘 여러 개를 손잡이에 꽂은 전용 도구가 널리 팔립니다.</p>
+    <p>용어를 정리하면 기법 이름이 WDT이고, 그 기법에 쓰는 바늘 도구를 WDT 툴이라고 부릅니다. 제품마다 바늘 개수(보통 6~10개), 굵기, 길이가 다르지만 하는 일은 같습니다. 도징한 가루를 바스켓 바닥까지 저어 뭉친 덩어리를 풀고, 한쪽으로 몰린 가루를 고르게 펴서 <strong>물이 커피 베드 전체를 같은 속도로 통과하도록</strong> 만드는 것입니다.</p>
+
+    <h2 class="section-title">2. 왜 필요한가 — 뭉침이 채널링으로 이어지는 과정</h2>
+    <p>그라인더에서 나온 가루는 완전히 흩어져 떨어지지 않습니다. 정전기와 원두의 기름기 때문에 작은 덩어리로 뭉치고, 슈트에서 나오는 위치에 따라 바스켓 한쪽에 더 많이 쌓입니다. 이 상태에서 탬핑하면 겉은 평평해 보여도 속에는 밀도가 높은 곳과 낮은 곳이 섞여 있습니다. 압력이 걸린 물은 저항이 작은 곳으로 몰리고, 그 길이 <strong>채널(물길)</strong>이 됩니다. 채널이 생긴 자리는 과다추출되고 나머지는 과소추출되어 한 잔 안에 쓴맛과 신맛이 동시에 섞이게 됩니다.</p>
+    <p>뭉침은 다음 조건에서 더 자주 생깁니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>조건</th><th>뭉침이 늘어나는 이유</th><th>WDT가 돕는 부분</th></tr></thead>
+      <tbody>
+        <tr><td class="em">단일 도징(싱글 도징) 그라인더</td><td class="em">한 잔 분량만 갈면 정전기가 더 세고 가루가 슈트 벽에 붙었다 떨어지며 덩어리가 됨</td><td class="em">바닥까지 저어 덩어리를 풀어 줌</td></tr>
+        <tr><td>가는 분쇄도</td><td>입자가 작을수록 표면적이 커져 서로 달라붙기 쉬움</td><td>미세 뭉침을 풀어 유량을 고르게 함</td></tr>
+        <tr><td>강배전·기름진 원두</td><td>표면 오일이 접착제 역할을 함</td><td>기름기로 뭉친 덩어리를 분리</td></tr>
+        <tr><td>슈트가 한쪽으로 치우친 그라인더</td><td>가루가 바스켓 한쪽에 산처럼 쌓임</td><td>높은 쪽 가루를 낮은 쪽으로 옮겨 평탄화</td></tr>
+        <tr><td>좁고 깊은 바스켓(싱글 바스켓 등)</td><td>가루가 세로로 쌓여 아래쪽이 먼저 눌림</td><td>깊이까지 풀어 위아래 밀도 차를 줄임</td></tr>
+      </tbody>
+    </table>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      뭉침을 줄이는 또 다른 방법으로 분쇄 전 원두에 물을 아주 소량 뿌리는 RDT(Ross Droplet Technique)가 있습니다. 이것은 정전기 자체를 줄이는 방법이고, WDT는 이미 생긴 뭉침을 푸는 방법이라 둘을 함께 쓰는 경우가 많습니다. 채널링이 생기는 원인과 바텀리스 포터필터로 확인하는 방법은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-18">채널링 뜻</a> 글에 따로 정리해 두었습니다.
+    </div>
+
+    <h2 class="section-title">3. 디스트리뷰터·레벨러와 다른 점</h2>
+    <p>세 도구는 모두 "분배"라는 말로 불리지만 손보는 깊이가 다릅니다. 스핀형 디스트리뷰터(OCD 계열)는 바스켓 테두리에 올려 돌리는 원반형 도구로, 경사진 날개가 <strong>표면 몇 mm를 깎아 평평하게 고르는 일</strong>을 합니다. 레벨러도 비슷하게 표면을 눌러 수평을 맞추는 역할이고, 탬퍼와 결합된 형태가 많습니다. 반면 WDT는 바늘이 바스켓 바닥까지 들어가 커피 베드 전체의 뭉침과 밀도 차를 풀어 줍니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>구분</th><th>WDT(바늘)</th><th>스핀형 디스트리뷰터</th><th>레벨러</th></tr></thead>
+      <tbody>
+        <tr><td>손보는 깊이</td><td class="em">바스켓 바닥까지 전체</td><td>표면 2~5mm</td><td>표면</td></tr>
+        <tr><td>뭉친 덩어리</td><td class="em">풀어서 흩어 놓음</td><td>풀지 못하고 눌러 다질 수 있음</td><td>풀지 못함</td></tr>
+        <tr><td>한쪽으로 쏠린 가루</td><td class="em">옮겨서 고르게 폄</td><td>표면만 고르게 보임</td><td>표면만 고르게 보임</td></tr>
+        <tr><td>표면 수평</td><td>마지막에 가볍게 톡톡 쳐서 맞춤</td><td class="em">매우 평평하게 만듦</td><td class="em">평평하게 만듦</td></tr>
+        <tr><td>숙련도 영향</td><td>젓는 깊이와 속도에 따라 차이</td><td>적음(돌리기만 하면 됨)</td><td>적음</td></tr>
+        <tr><td>가격대</td><td>저렴(수천 원~수만 원)</td><td>중간~높음</td><td>중간</td></tr>
+        <tr><td>주로 해결하는 문제</td><td class="em">채널링, 샷 편차</td><td>탬핑 수평 불량</td><td>탬핑 수평 불량</td></tr>
+      </tbody>
+    </table>
+    <p>그래서 두 도구는 경쟁 관계가 아니라 순서 관계입니다. 디스트리뷰터로 표면을 아무리 잘 고르더라도 바닥 근처에 뭉친 덩어리는 그대로 남고, 그 덩어리 주변이 물길이 됩니다. 반대로 WDT만 하고 마무리를 대충 하면 표면이 울퉁불퉁해 탬핑이 기울 수 있습니다. 둘 다 쓴다면 <strong>WDT로 속을 풀고, 디스트리뷰터나 레벨러로 겉을 고른 뒤 탬핑</strong>하는 순서가 일반적입니다. 탬핑 자체의 압력과 수평 잡는 방법은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-31">템핑 하는법</a> 글을 참고하시면 됩니다.</p>
+
+    <h2 class="section-title">4. 바늘 굵기와 길이 고르는 기준</h2>
+    <p>WDT 툴을 고를 때 가장 많이 묻는 것이 바늘 굵기입니다. 가는 바늘은 가루 사이를 지나가면서 덩어리만 풀어 주고, 굵은 바늘은 가루를 옆으로 밀어내 새로운 틈을 만들 수 있다는 것이 기본 원리입니다. 머신 제조사 Decent Espresso의 분배 기법 비교에서도 0.7mm 바늘과 0.4mm 바늘을 따로 놓고 비교했을 만큼 굵기는 결과에 영향을 주는 변수로 다뤄집니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>바늘 굵기</th><th>특징</th><th>맞는 경우</th><th>주의점</th></tr></thead>
+      <tbody>
+        <tr><td>0.25mm</td><td>가장 가늘고 저항이 적어 가루를 거의 밀지 않음</td><td>아주 가는 분쇄, 미세 뭉침이 많은 그라인더</td><td>쉽게 휘고 부러짐, 세척 시 주의</td></tr>
+        <tr><td class="em">0.3mm</td><td class="em">가늘면서 어느 정도 강도가 있음</td><td class="em">대부분의 홈카페 입문자</td><td class="em">세게 누르면 휨</td></tr>
+        <tr><td class="em">0.4mm</td><td class="em">내구성과 효율의 균형, 기름진 강배전 덩어리도 풀림</td><td class="em">강배전 위주, 바쁜 매장</td><td class="em">0.3mm보다 가루를 조금 더 밀어냄</td></tr>
+        <tr><td>0.6~0.7mm 이상</td><td>해부용 바늘·꼬치 굵기, 가루를 밀어 길을 냄</td><td>임시 대용품</td><td>바늘 자국이 물길이 될 수 있어 전용 툴 권장</td></tr>
+      </tbody>
+    </table>
+    <p>길이는 바스켓 깊이에 맞춰야 합니다. 더블 바스켓 기준으로 바늘이 가루 표면에서 <strong>바닥까지 닿는 길이(대략 40~45mm)</strong>가 필요하고, 깊은 바스켓이나 트리플 바스켓을 쓰면 더 긴 바늘이 맞습니다. 바늘 개수는 6~10개가 일반적이며, 많을수록 한 번 저을 때 넓게 풀리지만 바늘 간격이 좁아 가루가 바늘 사이에 끼기도 합니다. 바스켓 규격과 내경 재는 법은 <a href="https://coffee.ephseed.com/coffee-article-2026-11-12">탬퍼 사이즈 고르는법</a> 글에 정리되어 있습니다.</p>
+
+    <h2 class="section-title">5. 젓는 깊이와 순서 — 탬핑 전까지</h2>
+    <p>WDT는 "저으면 된다"고 알려져 있지만, 깊이와 속도에 따라 결과가 달라집니다. 가장 흔한 실수는 표면만 긁는 것입니다. 바늘 끝이 바닥에 닿지 않으면 아래쪽 덩어리가 그대로 남습니다. 두 번째 실수는 너무 세고 빠르게 저어 가루가 튀고 바스켓 한쪽에 다시 몰리는 것입니다. 아래 순서대로 하면 대부분의 문제가 해결됩니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">WDT 실전 순서</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>도징</strong> — 바스켓에 정량을 담습니다. 깔때기(도징 링)를 올려 두면 저을 때 가루가 밖으로 튀지 않습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>바닥까지 깊게 젓기</strong> — 바늘을 수직으로 바닥까지 넣고, 바스켓 가장자리부터 중심으로 작은 원을 그리며 천천히 저어 줍니다. 가루 전체가 한 번씩 풀리도록 10~15초 정도면 충분합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>얕게 한 번 더</strong> — 바늘을 표면 가까이 올려 가볍게 한 바퀴 돌리며 높은 곳의 가루를 낮은 곳으로 옮깁니다. 표면이 대체로 평평해지면 바늘을 끌지 말고 <strong>수직으로 들어 올립니다</strong>.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>톡톡 치기</strong> — 포터필터를 손바닥에 가볍게 두세 번 쳐서 가루를 가라앉힙니다. 세게 치면 한쪽으로 쏠리므로 살짝만 칩니다. 디스트리뷰터가 있으면 이 단계에서 씁니다.</div></div>
+      <div class="tip-item"><div class="tip-num">5</div><div class="tip-text"><strong>탬핑</strong> — 수평을 보면서 한 번에 누릅니다. WDT를 했으면 탬핑 압력을 세게 줄 필요가 없고, 수평이 더 중요합니다.</div></div>
+    </div>
+    <p>시간을 더 들인다고 결과가 계속 좋아지지는 않습니다. 가루가 충분히 풀렸는데 계속 저으면 미분이 아래로 가라앉아 오히려 바닥 저항이 커질 수 있습니다. 한 번 깊게, 한 번 얕게가 기본이고, 바텀리스 포터필터로 추출을 보면서 물줄기가 고르게 모이는지 확인하면 자기 루틴을 빨리 잡을 수 있습니다.</p>
+
+    <h2 class="section-title">6. 효과는 확인됐나 — 비교 테스트 결과와 한계</h2>
+    <p>WDT가 맛을 바꾼다는 주장은 많지만, 조건을 통제한 비교는 드뭅니다. 참고할 만한 자료는 다음과 같습니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>출처</th><th>조건</th><th>결과</th><th>한계</th></tr></thead>
+      <tbody>
+        <tr><td class="em">Clive Coffee(장비 전문 매체)</td><td class="em">머신 1대, 원두 1종, 그라인더 3대에서 WDT 유무 비교</td><td class="em">WDT 적용 시 샷 편차가 뚜렷이 줄고, 3대 모두에서 채널링이 사라짐</td><td class="em">그라인더 3대·원두 1종에 한정, 블라인드 아님</td></tr>
+        <tr><td>Clive Coffee 퍽 프렙 비교</td><td>WDT·레벨러·디스트리뷰터 등 단일 도구별 비교</td><td>단일 도구 중 WDT 개선 폭이 가장 큼, 레벨러는 탬핑이 이미 고른 사람에게는 효과가 작음</td><td>맛 평가가 주관적</td></tr>
+        <tr><td>Decent Espresso(머신 제조사)</td><td>분배 없음·포터필터 돌리기·표면 긁기·0.7mm WDT·0.4mm WDT 비교</td><td>분배를 생략하면 가끔 높은 수율이 나오지만 일관성이 떨어짐, WDT 방식이 안정적</td><td>자사 머신 기준</td></tr>
+        <tr><td>Home-Barista 커뮤니티 테스트</td><td>개인이 진행한 소규모 비교</td><td>WDT 루틴에서 추출 편차가 줄었다는 보고 다수</td><td>표본 작고 블라인드 아님</td></tr>
+      </tbody>
+    </table>
+    <p>공통된 결론은 WDT가 <strong>평균 수율을 크게 올리기보다 샷 사이의 편차를 줄이고 채널링을 막는 쪽</strong>에 효과가 있다는 것입니다. 또 하나 반복해서 나오는 결론은 그라인더 품질이 분배 도구보다 중요하다는 점입니다. 입자가 고르고 뭉침이 적은 그라인더일수록 WDT의 효과는 작아지고, 보급형 그라인더일수록 WDT가 필요해집니다. 그래서 장비 예산이 정해져 있다면 그라인더에 먼저 쓰고, WDT 툴은 그 다음에 저렴하게 더하는 것이 순서입니다. 수율과 농도를 숫자로 확인하는 방법은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-02">TDS 뜻</a> 글에 정리되어 있습니다.</p>
+
+    <h2 class="section-title">7. 자주 하는 실수와 관리, 시험 대비 정리</h2>
+    <p>실수는 대개 네 가지입니다. 첫째, 바늘이 휘어진 채로 쓰는 것입니다. 휜 바늘은 가루를 밀어내므로 손끝으로 굴려 보고 휘었으면 교체합니다. 둘째, 저은 뒤 바늘을 비스듬히 끌어내 표면에 고랑을 남기는 것입니다. 항상 수직으로 뺍니다. 셋째, 바늘에 묻은 가루를 그대로 두는 것입니다. 사용 후 마른 천이나 솔로 털고, 기름기가 쌓이면 미지근한 물로 헹군 뒤 완전히 말립니다. 넷째, 깔때기 없이 저어 가루가 튀고 도징량이 매번 달라지는 것입니다. 도징량이 달라지면 WDT로 얻은 일관성이 사라집니다.</p>
+    <div class="note-box">
+      <div class="note-label">시험 대비</div>
+      바리스타 실기 시험의 기본 흐름은 도징 → 레벨링(분배) → 탬핑 → 포터필터 장착 → 추출로 평가되며, WDT 툴은 필수 도구가 아닙니다. 시험장 비품만 사용하도록 하는 경우가 많으므로 개인 도구 반입 가능 여부는 응시 전 주최 측 안내를 확인하시기 바랍니다. 필기에서는 "분배(distribution)는 바스켓 안 가루의 밀도를 고르게 해 채널링을 막는 과정"이라는 정의와, 뭉침·채널링·과다추출·과소추출의 연결 고리를 정리해 두면 됩니다.
+    </div>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 그라인더가 좋으면 WDT를 안 해도 되나요?</strong><br/>뭉침이 거의 없는 고급 그라인더라면 효과가 작아지는 것은 맞습니다. 다만 비교 테스트에서는 고급 그라인더에서도 WDT를 했을 때 샷 편차가 줄었다는 결과가 있었고, 비용이 거의 들지 않는 단계이므로 바텀리스 포터필터로 채널링이 보이면 추가하시는 것을 권합니다.</p>
+    <p><strong>Q. 바늘은 몇 개가 적당한가요?</strong><br/>6~10개가 일반적입니다. 개수보다 굵기와 길이가 결과에 더 영향을 주며, 바늘이 너무 촘촘하면 가루가 사이에 끼어 들어 올릴 때 표면이 패입니다. 입문용으로는 0.3~0.4mm 바늘 8개 안팎이 무난합니다.</p>
+    <p><strong>Q. WDT를 했는데도 채널링이 생깁니다.</strong><br/>젓는 깊이가 바닥까지 닿았는지, 바늘이 휘지 않았는지, 톡톡 칠 때 가루가 한쪽으로 쏠리지 않았는지 순서대로 확인하십시오. 세 가지가 문제없다면 분쇄도가 너무 가늘어 미분이 많거나 도징량이 바스켓에 비해 과한 경우가 많습니다. 도징량 기준은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-11">도징 뜻</a> 글을 참고하시면 됩니다.</p>
+    <p><strong>Q. 이쑤시개나 꼬치로 대신해도 되나요?</strong><br/>급할 때 쓸 수는 있지만 굵기가 0.7mm 이상이라 가루를 밀어내며 바늘 자국이 남고, 그 자국이 물길이 되기 쉽습니다. 길게 쓸 계획이면 0.3~0.4mm 전용 툴이 비용 대비 효과가 큽니다.</p>
+    <p><strong>Q. 디스트리뷰터를 이미 쓰고 있는데 WDT를 더 사야 하나요?</strong><br/>디스트리뷰터는 표면을 고르는 도구라 바닥 근처 뭉침은 풀지 못합니다. 채널링이나 샷 편차가 고민이라면 WDT를 앞 단계에 더하고, 탬핑 수평만 고민이라면 지금 도구로 충분합니다.</p>
+
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>WDT는 Weiss Distribution Technique의 약자로, 가는 바늘로 바스켓 바닥까지 가루를 저어 뭉침을 풀고 밀도를 고르게 하는 분배 기법입니다. 디스트리뷰터와 레벨러가 표면을 고르는 도구라면 WDT는 커피 베드 전체를 손보는 단계이고, 둘을 함께 쓴다면 WDT가 먼저입니다.</p>
+      <p>바늘은 0.3~0.4mm가 무난하고, 더블 바스켓 바닥까지 닿는 길이가 필요합니다. 한 번 깊게, 한 번 얕게 저은 뒤 수직으로 들어 올리고 가볍게 톡톡 친 다음 탬핑하면 됩니다. 비교 테스트에서는 평균 수율보다 샷 편차와 채널링을 줄이는 효과가 확인되었고, 그라인더 품질이 더 중요하다는 점도 함께 기억해 두시기 바랍니다.</p>
+    </div>
+
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://www.home-barista.com/tips/wdt-reloaded-history-and-evolution-weiss-distribution-technique-t84095.html" rel="noopener nofollow">Home-Barista — WDT Reloaded: History and Evolution of the Weiss Distribution Technique</a> · <a href="https://decentespresso.com/docs/which_puck_preparation_technique_is_best" rel="noopener nofollow">Decent Espresso — Which puck preparation technique is best?</a> · <a href="https://clivecoffee.com/blogs/learn/do-you-really-need-wdt" rel="noopener nofollow">Clive Coffee — Do You Really Need WDT?</a> · <a href="https://clivecoffee.com/blogs/learn/extraction-showdown-which-puck-prep-is-actually-boosting-your-espresso" rel="noopener nofollow">Clive Coffee — Extraction Showdown: Which Puck Prep Is Actually Boosting Your Espresso?</a> · <a href="https://coffeegeek.com/guides/howtos/weiss-distribution-technique-wdt-how-to" rel="noopener nofollow">CoffeeGeek — Weiss Distribution Technique (WDT) How-To</a></p>
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-10"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">스팀 피처 고르는법 — 용량·주둥이 모양과 크기별 선택 요령</div><div class="rc-date">2026. 11. 10</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-09"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">스팀 완드 청소 주기 — 사용 후 닦는 순서와 막힘 푸는 요령</div><div class="rc-date">2026. 11. 09</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-07"><div class="rc-cat">🎨 바리스타 스킬 & 라떼아트</div><div class="rc-title">라떼 재료 고르는법 — 지방·단백질 함량 보는 법과 락토프리 선택 요령</div><div class="rc-date">2026. 11. 07</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#WDT</span>
+      <span class="tag">#퍽프렙</span>
+      <span class="tag">#디스트리뷰터</span>
+      <span class="tag">#채널링</span>
+      <span class="tag">#에스프레소</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>WDT는 Weiss Distribution Technique의 약자로, 가는 바늘로 바스켓 가루를 바닥까지 저어 뭉침과 밀도 차를 푸는 기법입니다.</strong></li>
+        <li><strong>디스트리뷰터·레벨러는 표면만 고르고, WDT는 커피 베드 전체를 손봅니다. 함께 쓸 때는 WDT가 먼저입니다.</strong></li>
+        <li><strong>바늘 굵기는 0.3~0.4mm, 길이는 더블 바스켓 바닥까지 닿는 40~45mm 안팎이 무난합니다.</strong></li>
+        <li><strong>한 번 깊게, 한 번 얕게 저은 뒤 수직으로 들어 올리고 가볍게 톡톡 친 다음 탬핑합니다.</strong></li>
+        <li><strong>비교 테스트에서는 샷 편차와 채널링을 줄이는 효과가 확인되었고, 그라인더 품질이 분배 도구보다 중요합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
