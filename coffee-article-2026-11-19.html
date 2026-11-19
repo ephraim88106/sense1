@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>머신 석회 제거 하는법 — 디스케일링 주기와 식초·구연산 주의점 | 바리스타 스페셜티</title>
+  <meta name="description" content="머신 석회 제거(디스케일링)는 물속 칼슘·마그네슘이 보일러와 배관에 굳은 스케일을 산성 용액으로 녹이는 작업입니다. 물 경도·사용량별 제거 주기, 가정용 머신 진행 순서와 헹굼 횟수, 식초를 피하고 구연산은 매뉴얼 허용 시에만 쓰는 이유, 열교환기·영업용 머신 주의점과 예방법을 정리했습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-19">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="머신 석회 제거 하는법 — 디스케일링 주기와 식초·구연산 주의점 | 바리스타 스페셜티">
+<meta property="og:description" content="머신 석회 제거(디스케일링)는 물속 칼슘·마그네슘이 보일러와 배관에 굳은 스케일을 산성 용액으로 녹이는 작업입니다. 물 경도·사용량별 제거 주기, 가정용 머신 진행 순서와 헹굼 횟수, 식초를 피하고 구연산은 매뉴얼 허용 시에만 쓰는 이유, 열교환기·영업용 머신 주의점과 예방법을 정리했습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-19">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-19T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-19T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-19#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-19", "headline": "머신 석회 제거 하는법 — 디스케일링 주기와 식초·구연산 주의점 | 바리스타 스페셜티", "description": "머신 석회 제거(디스케일링)는 물속 칼슘·마그네슘이 보일러와 배관에 굳은 스케일을 산성 용액으로 녹이는 작업입니다. 물 경도·사용량별 제거 주기, 가정용 머신 진행 순서와 헹굼 횟수, 식초를 피하고 구연산은 매뉴얼 허용 시에만 쓰는 이유, 열교환기·영업용 머신 주의점과 예방법을 정리했습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-19", "dateModified": "2026-11-19", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges"><span class="badge hot">🛠️ 머신 관리</span><span class="badge">디스케일링</span><span class="badge">물 관리</span></div>
+    <h1>머신 석회 제거 하는법<br/>— 디스케일링 주기와 식초·구연산 주의점</h1>
+    <p class="subtitle"><strong>머신 석회 제거(디스케일링)는 물속 칼슘·마그네슘이 보일러와 배관에 굳어 붙은 스케일을 산성 용액으로 녹여 내는 작업입니다.</strong> 석회가 생기는 원리, 물 경도와 사용량에 따른 제거 주기, 가정용 머신에서 진행하는 순서, 식초와 구연산을 쓸 때 생기는 문제, 보일러 방식별로 집에서 하면 안 되는 경우와 예방법까지 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 19일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+
+    <div class="hook">
+      <p>머신에서 "디스케일링(Descaling)" 알림이 뜨거나, 추출 물줄기가 예전보다 가늘어지고 스팀 힘이 약해졌다면 석회가 쌓였을 가능성이 큽니다. 백플러싱이나 포터필터 세척은 커피 기름때를 지우는 청소이고, 석회 제거는 그와 별개로 <strong>물에서 생긴 광물질 찌꺼기를 산으로 녹이는 작업</strong>입니다. 결론부터 말씀드리면 <strong>주기는 제조사 알림과 물 경도를 기준으로 정하고, 세정제는 제조사 지정 제품을 쓰며, 식초는 피하는 것</strong>이 원칙입니다. 아래에서 석회가 생기는 이유, 주기 정하는 법, 실제 진행 순서, 세정제 고르는 법, 집에서 하면 안 되는 머신, 예방법을 차례로 설명합니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>석회(스케일)가 어디에 왜 생기는지, 쌓이면 맛과 머신에 어떤 일이 생기는지</li>
+        <li>물 경도와 하루 사용량에 따라 석회 제거 주기를 정하는 기준</li>
+        <li>가정용 단일 보일러·써모블록 머신에서 석회를 제거하는 순서와 헹굼 횟수</li>
+        <li>전용 세정제·구연산·식초의 차이와 식초를 권하지 않는 까닭</li>
+        <li>열교환기·듀얼 보일러·영업용 머신에서 직접 하면 안 되는 이유</li>
+        <li>정수 필터와 경도 설정으로 석회 자체를 줄이는 방법</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1~6개월</span><span class="label">가정용 머신의 일반적인 석회 제거 간격 — 물 경도와 사용량에 따라 달라짐</span></div>
+      <div class="data-card"><span class="num">17~85ppm</span><span class="label">SCA 물 기준의 칼슘 경도 허용 범위(CaCO₃ 환산)</span></div>
+      <div class="data-card"><span class="num">2회 이상</span><span class="label">세정 후 물탱크 가득 채워 헹구는 최소 횟수</span></div>
+      <div class="data-card"><span class="num">식초 ✕</span><span class="label">주요 제조사가 권하지 않는 세정제 — 냄새 잔류와 고무 부품 손상 우려</span></div>
+    </div>
+
+    <h2 class="section-title">1. 석회는 왜 생기나 — 스케일이 쌓이는 원리</h2>
+    <p>수돗물과 지하수에는 칼슘과 마그네슘이 녹아 있습니다. 이 성분은 차가운 물에서는 녹아 있다가 물이 데워지면 탄산칼슘·탄산마그네슘 형태로 굳어 <strong>보일러 벽, 히터, 배관, 솔레노이드 밸브, 샤워스크린 뒤쪽</strong>에 하얗게 달라붙습니다. 주전자 바닥에 생기는 하얀 막과 같은 현상입니다. 물을 계속 데우고 증기를 만드는 에스프레소 머신은 이 반응이 특히 잘 일어나는 환경입니다.</p>
+    <p>석회가 쌓이면 세 가지 문제가 나타납니다. 첫째, 히터가 석회막을 거쳐 물을 데워야 하므로 <strong>온도가 늦게 오르고 불안정</strong>해집니다. 추출 온도가 흔들리면 같은 원두와 분쇄도로도 맛이 들쑥날쑥해집니다. 둘째, 가는 관과 유량 조절 구멍(지클레)이 좁아져 <strong>물줄기가 약해지고 스팀 압력이 떨어집니다</strong>. 셋째, 밸브가 제대로 닫히지 않거나 히터가 과열돼 고장으로 이어집니다. 국내 머신 수리 상담에서도 석회로 인한 막힘은 흔한 사유이고, 다수 제조사는 부적절한 석회 관리로 생긴 고장을 무상 보증에서 제외한다고 안내합니다.</p>
+    <div class="note-box">
+      <div class="note-label">청소와 석회 제거는 다른 작업</div>
+      백플러싱·포터필터 세척·그룹 개스킷 솔질은 <strong>커피 기름과 미분</strong>을 지우는 청소로, 알칼리성 세정제를 씁니다. 석회 제거는 <strong>물속 광물질</strong>을 녹이는 작업으로, 산성 세정제를 씁니다. 두 세정제는 용도가 반대이므로 섞거나 바꿔 쓰지 않습니다. 일상 청소 순서는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-22">에스프레소 머신 청소 주기</a> 글에 따로 정리해 두었습니다.
+    </div>
+
+    <h2 class="section-title">2. 석회 제거 주기 정하는 법 — 물 경도와 사용량</h2>
+    <p>주기는 정해진 숫자가 아니라 <strong>물이 얼마나 단단한지(경도)와 하루에 물을 얼마나 데우는지(사용량)</strong>에 따라 달라집니다. 최근 가정용 전자동·반자동 머신은 대부분 사용량을 세어 알림을 띄우는데, 이 알림은 공장 출고 시의 경도 설정값을 기준으로 계산됩니다. 그래서 먼저 우리 집 물의 경도를 측정해 머신에 입력하는 것이 출발점입니다. 머신을 살 때 동봉되는 경도 측정 스트립을 물에 1초 정도 담갔다가 빼면 색이 변한 칸 수로 경도 단계를 알 수 있습니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>물 상태</th><th>하루 1~2잔</th><th>하루 3~5잔</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>연수(경도 낮음)</td><td class="em">4~6개월</td><td>3~4개월</td><td>국내 수돗물은 대체로 연수~중간 범위</td></tr>
+        <tr><td>중간 경도</td><td>2~3개월</td><td class="em">1~2개월</td><td>지역·계절에 따라 변동</td></tr>
+        <tr><td>경수(경도 높음)</td><td>1~2개월</td><td class="em">매월</td><td>정수 필터 사용을 우선 검토</td></tr>
+        <tr><td>정수 필터 사용</td><td colspan="2">필터 교체를 제때 하면 간격을 늘릴 수 있음</td><td>필터 수명이 끝나면 효과 없음</td></tr>
+      </tbody>
+    </table>
+    <p>위 표는 제조사 매뉴얼과 판매처 안내에서 반복되는 범위를 정리한 것이며, <strong>모델별 매뉴얼의 권장 주기가 우선</strong>입니다. 알림이 없는 머신이라면 다음 증상을 신호로 삼으시면 됩니다. 물탱크나 드립 트레이에 하얀 가루가 보일 때, 같은 설정에서 추출 시간이 눈에 띄게 늘었을 때, 예열이 평소보다 오래 걸릴 때, 스팀 완드에서 물방울만 튀고 힘이 약할 때입니다. 물 경도 단위와 연수·경수 구분은 <a href="https://coffee.ephseed.com/coffee-article-2026-11-08">물 경도 뜻</a> 글을 참고하시기 바랍니다.</p>
+
+    <h2 class="section-title">3. 가정용 머신 석회 제거 하는법 — 단계별 진행</h2>
+    <p>여기서 설명하는 절차는 <strong>단일 보일러 또는 써모블록(순간 가열) 방식의 가정용 반자동·전자동 머신</strong>을 기준으로 합니다. 전자동 머신은 대부분 메뉴에 디스케일링 프로그램이 있어 화면 안내를 따라가면 되고, 반자동 머신은 아래 순서를 손으로 진행합니다. 세정제 희석 비율은 제품마다 다르므로 반드시 포장에 적힌 비율을 따릅니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">석회 제거 진행 순서</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>준비</strong> — 물탱크 안의 정수 필터 카트리지를 빼 둡니다. 필터를 꽂은 채 산성 용액을 넣으면 필터가 상하고 용액이 제대로 흐르지 않습니다. 드립 트레이를 비우고, 그룹과 스팀 완드 아래에 1L 이상 받을 수 있는 큰 용기를 둡니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>용액 넣기</strong> — 물탱크에 제조사 지정 비율로 희석한 세정 용액을 채웁니다. 포터필터는 장착하지 않습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>나눠서 흘리기</strong> — 그룹으로 용액을 일부 흘리고, 스팀(온수) 완드로도 일부 흘립니다. 한 번에 다 빼지 말고 조금씩 흘린 뒤 머신을 켠 상태로 10~20분 정도 두어 산이 석회를 녹일 시간을 줍니다. 이 과정을 탱크가 빌 때까지 반복합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>탱크 헹구기</strong> — 물탱크를 꺼내 깨끗이 씻고 맑은 물을 가득 채웁니다.</div></div>
+      <div class="tip-item"><div class="tip-num">5</div><div class="tip-text"><strong>헹굼 2회 이상</strong> — 맑은 물을 그룹과 스팀 완드로 모두 흘려 보냅니다. 탱크 한 통을 다 쓴 뒤 다시 채워 <strong>최소 두 번</strong> 반복합니다. 마지막 물에서 시큼한 냄새가 나지 않아야 합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">6</div><div class="tip-text"><strong>마무리</strong> — 필터를 다시 끼우고, 알림 카운터가 있는 머신은 초기화합니다. 첫 샷 한두 잔은 맛을 확인한 뒤 버립니다.</div></div>
+    </div>
+    <p>헹굼이 부족하면 산이 남아 샷에서 시큼하거나 짠맛이 나고, 고무 패킹이 계속 산에 노출됩니다. 반대로 용액을 진하게 만들거나 오래 방치한다고 더 잘 녹는 것은 아닙니다. 석회가 아주 두꺼우면 녹은 조각이 떨어져 나와 가는 관을 막을 수 있으므로, 오래 관리하지 않은 머신은 한 번에 강하게 하기보다 <strong>정량으로 두세 번 나눠 진행</strong>하는 편이 안전합니다.</p>
+
+    <h2 class="section-title">4. 세정제 고르는 법 — 전용 제품·구연산·식초 비교</h2>
+    <p>석회 제거제는 모두 산성이지만 산의 종류에 따라 금속과 고무에 미치는 영향, 냄새, 헹굼 난이도가 다릅니다. 제조사들은 공통적으로 <strong>자사 지정 세정제</strong>를 권하고, 부적합한 세정제로 생긴 고장은 보증 대상에서 제외한다고 매뉴얼에 적어 둡니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>구분</th><th>제조사 전용 세정제</th><th>구연산</th><th>식초</th></tr></thead>
+      <tbody>
+        <tr><td>주성분</td><td class="em">젖산·설팜산 등 + 부식 억제제</td><td>구연산</td><td>아세트산(초산)</td></tr>
+        <tr><td>석회 제거력</td><td class="em">적정 농도로 설계됨</td><td>좋음</td><td>약한 편이라 오래 걸림</td></tr>
+        <tr><td>냄새 잔류</td><td class="em">적음</td><td>적음</td><td>강하고 오래 남음</td></tr>
+        <tr><td>부품 영향</td><td class="em">제조사가 호환 확인</td><td>고농도·고온에서 잔여물 생길 수 있음</td><td>고무 패킹·실링 손상 우려</td></tr>
+        <tr><td>보증</td><td class="em">유지</td><td>모델에 따라 제외될 수 있음</td><td>대부분 권장하지 않음</td></tr>
+      </tbody>
+    </table>
+    <p><strong>식초를 권하지 않는 까닭</strong>은 크게 두 가지입니다. 아세트산 냄새가 보일러와 배관에 배어 여러 번 헹궈도 커피 맛에 남기 쉽고, 장시간 노출되면 고무 개스킷과 실링이 상할 수 있습니다. 실제로 브레빌, 드롱기 등 주요 가전 제조사의 안내는 식초 대신 전용 세정제를 쓰도록 하고 있습니다.</p>
+    <p><strong>구연산</strong>은 저렴하고 석회를 잘 녹여 많이 쓰이지만, 진한 농도로 고온 보일러에 오래 두면 구연산칼슘 잔여물이 생길 수 있다는 지적이 있고, 일부 제조사는 구연산을 명시적으로 금지합니다. 구연산을 쓸 계획이라면 먼저 매뉴얼에서 허용 여부를 확인하고, 허용된다면 묽게 희석해 짧게 쓰고 충분히 헹구는 것이 원칙입니다.</p>
+
+    <h2 class="section-title">5. 집에서 하면 안 되는 경우 — 보일러 방식별 주의점</h2>
+    <p>모든 머신이 물탱크에 용액을 붓고 흘려보내는 방식으로 석회를 제거할 수 있는 것은 아닙니다. 보일러 구조에 따라 용액이 내부 회로에 갇히거나, 녹은 석회 조각이 빠져나오지 못하고 막힘을 일으킬 수 있습니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>머신 방식</th><th>직접 석회 제거</th><th>이유</th></tr></thead>
+      <tbody>
+        <tr><td>써모블록·단일 보일러(가정용)</td><td class="em">가능 — 매뉴얼 절차대로</td><td>물길이 단순해 헹굼으로 용액이 빠짐</td></tr>
+        <tr><td>열교환기(HX)</td><td>매뉴얼 확인 필수</td><td>스팀 보일러 안 용액이 그룹 쪽으로 다 빠지지 않을 수 있음</td></tr>
+        <tr><td>듀얼 보일러</td><td>매뉴얼 확인 필수</td><td>보일러별 배수가 필요한 모델이 많음</td></tr>
+        <tr><td>영업용 머신(직수 연결)</td><td class="em">기사 점검 권장</td><td>보일러 분해 세척·밸브 교체가 필요한 경우가 많음</td></tr>
+      </tbody>
+    </table>
+    <p>영업용 머신은 수도관에 직접 연결해 쓰는 경우가 대부분이라, 산성 용액을 넣어 흘리는 방식보다 <strong>연수기·정수 필터로 석회가 생기지 않게 막고</strong>, 정기 점검 때 기사가 보일러 상태를 확인하는 방식으로 관리합니다. 카페에서 일하신다면 필터 교체일을 머신 옆에 적어 두고, 스팀 압력이나 물줄기에 이상이 보이면 직접 산을 넣기보다 점검을 요청하시는 것이 안전합니다.</p>
+
+    <h2 class="section-title">6. 석회 예방법과 시험 대비 정리</h2>
+    <p>석회는 제거보다 예방이 쉽습니다. 기본은 세 가지입니다. 첫째, <strong>머신에 물 경도를 실제 측정값으로 설정</strong>해 알림이 제때 뜨게 합니다. 둘째, 물탱크용 정수 필터나 직수용 연수 필터를 쓰고 <strong>교체 주기를 지킵니다</strong>. 수명이 끝난 필터는 효과가 없습니다. 셋째, 증류수나 역삼투(RO) 정수기 물만 단독으로 쓰지 않습니다. 광물질이 전혀 없는 물은 석회는 생기지 않지만 금속을 부식시킬 수 있고, 머신의 수위 감지 센서가 작동하지 않는 모델도 있으며, 추출에 필요한 광물질이 없어 맛이 밋밋해집니다.</p>
+    <p>SCA가 제시한 추출용 물 기준은 총용존고형물(TDS) 150ppm 안팎, 칼슘 경도 17~85ppm(CaCO₃ 환산), 알칼리도 40ppm 안팎, pH 7 근처입니다. 이 범위의 물은 맛과 석회 예방 사이에서 균형이 맞는 편입니다. 물 선택의 자세한 기준은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-17">추출용 물 고르는법</a> 글에 정리해 두었습니다.</p>
+    <div class="note-box">
+      <div class="note-label">시험 대비</div>
+      바리스타 필기 시험의 머신 관리 영역에서는 "보일러 스케일의 원인은 물속 칼슘·마그네슘(경도 성분)", "스케일 예방은 연수기·정수 필터", "기름때 청소는 알칼리성 세정제, 스케일 제거는 산성 세정제"라는 구분이 자주 다뤄집니다. 실기에서는 석회 제거를 직접 평가하지 않지만, 시작 전후 그룹 물 흘리기와 스팀 완드 퍼징 같은 위생 동작은 평가 항목에 포함됩니다.
+    </div>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 정수기 물을 쓰면 석회 제거를 안 해도 되나요?</strong><br/>정수기 종류에 따라 다릅니다. 일반 필터식(중공사막·활성탄) 정수기는 염소 냄새는 줄이지만 경도 성분은 대부분 그대로 통과시켜 석회가 생깁니다. 역삼투(RO) 정수기 물은 석회가 거의 생기지 않지만 단독 사용은 권하지 않습니다. 어느 경우든 주기를 늘릴 수는 있어도 완전히 생략하지는 않는 것이 좋습니다.</p>
+    <p><strong>Q. 알림이 떴는데 무시하고 계속 써도 되나요?</strong><br/>당장 고장 나지는 않지만, 알림은 경도 설정값 기준으로 이미 석회가 쌓였을 시점을 계산한 것입니다. 미루면 녹은 조각이 커져 한 번에 제거하기 어려워지고, 가는 관이 막혀 수리가 필요해질 수 있습니다. 가능하면 일주일 안에 진행하시기 바랍니다.</p>
+    <p><strong>Q. 석회 제거 후 커피에서 신맛이 납니다.</strong><br/>헹굼이 부족해 산이 남은 경우가 대부분입니다. 물탱크를 가득 채워 그룹과 스팀 완드로 한두 번 더 흘려 보내십시오. 그래도 남는다면 세정제 농도를 지정보다 진하게 만들었는지 확인합니다. 신맛이 원두나 추출 때문인지 구분하는 법은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-17">원두 산미 뜻</a> 글을 참고하시면 됩니다.</p>
+    <p><strong>Q. 스팀 완드만 따로 석회 제거할 수 있나요?</strong><br/>스팀 완드 끝 구멍이 막힌 것은 대부분 우유 찌꺼기이고, 이는 석회 제거가 아니라 완드 청소로 해결합니다. 다만 스팀 힘이 전반적으로 약하다면 보일러 쪽 석회가 원인일 수 있으므로 전체 석회 제거를 진행합니다. 완드 청소 요령은 <a href="https://coffee.ephseed.com/coffee-article-2026-11-09">스팀 완드 청소 주기</a> 글에 있습니다.</p>
+    <p><strong>Q. 전용 세정제 대신 다른 브랜드 세정제를 써도 되나요?</strong><br/>성분이 비슷한 범용 세정제도 많지만, 보증 기간 안에는 제조사 지정 제품을 쓰시는 것이 안전합니다. 보증이 끝난 뒤라면 성분표에서 산의 종류와 부식 억제제 포함 여부를 확인하고, 희석 비율을 지켜 사용합니다.</p>
+
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>머신 석회는 물속 칼슘·마그네슘이 열을 받아 보일러와 배관에 굳어 붙은 것으로, 쌓이면 온도가 불안정해지고 물줄기와 스팀 힘이 약해지며 고장으로 이어집니다. 기름때를 지우는 일상 청소와는 다른 작업이고, 산성 세정제로 녹여 냅니다.</p>
+      <p>주기는 물 경도와 사용량에 따라 1~6개월 범위에서 정하되 매뉴얼과 머신 알림이 우선입니다. 필터를 빼고, 지정 비율로 희석한 용액을 그룹과 스팀 완드로 나눠 흘린 뒤, 맑은 물로 두 번 이상 헹굽니다. 식초는 냄새와 부품 손상 때문에 피하고, 구연산은 매뉴얼에서 허용할 때만 묽게 씁니다. 열교환기·듀얼 보일러·영업용 머신은 매뉴얼 확인이나 기사 점검을 먼저 하시기 바랍니다.</p>
+    </div>
+
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://www.delonghi.com/en-us/e/r/descale-coffee-machine" rel="noopener nofollow">De'Longhi — How to Descale a Coffee Machine</a> · <a href="https://www.breville.com/kr/ko/coffee-journey/tutorials/filter-fundamentals/cleaning-and-maintenance.html" rel="noopener nofollow">Breville — 세척 및 유지 관리</a> · <a href="https://www.philips.com.au/c-m-ho/coffee/why-descale" rel="noopener nofollow">Philips — Why descale your coffee machine</a> · <a href="https://www.seattlecoffeegear.com/blogs/learning-center/hard-water-espresso-machine" rel="noopener nofollow">Seattle Coffee Gear — Hard Water and Your Espresso Machine</a> · <a href="https://sca.coffee/research/coffee-standards" rel="noopener nofollow">SCA — Coffee Standards (Water)</a></p>
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-15"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">사이폰(사이펀) 사용법 — 준비물과 물 양·분쇄도·불 세기, 모카포트와 다른 점</div><div class="rc-date">2026. 11. 15</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-14"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">콜드브루 보관기간 — 직접 만든 원액은 냉장 며칠, 상한 신호 확인법</div><div class="rc-date">2026. 11. 14</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-12"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">탬퍼 사이즈 고르는법 — 58mm·58.5mm 차이와 바스켓 내경 재는 법</div><div class="rc-date">2026. 11. 12</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#석회제거</span>
+      <span class="tag">#디스케일링</span>
+      <span class="tag">#머신관리</span>
+      <span class="tag">#물경도</span>
+      <span class="tag">#정수필터</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>머신 석회는 물속 칼슘·마그네슘이 열에 굳어 생기며, 산성 세정제로 녹여 제거합니다. 기름때 청소와는 별개 작업입니다.</strong></li>
+        <li><strong>주기는 물 경도와 사용량에 따라 1~6개월이 일반적이며, 매뉴얼과 머신 알림이 우선입니다.</strong></li>
+        <li><strong>필터를 빼고 용액을 그룹·스팀 완드로 나눠 흘린 뒤, 맑은 물로 두 번 이상 헹굽니다.</strong></li>
+        <li><strong>식초는 냄새 잔류와 고무 부품 손상 우려로 피하고, 구연산은 매뉴얼이 허용할 때만 묽게 씁니다.</strong></li>
+        <li><strong>열교환기·듀얼 보일러·영업용 머신은 매뉴얼 확인이나 기사 점검을 먼저 하고, 평소에는 경도 설정과 필터 교체로 예방합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
