@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>클레버 드리퍼 사용법 — 준비물과 분쇄도·물 온도, 물 먼저 붓는 순서와 맛 조절 | 바리스타 스페셜티</title>
+  <meta name="description" content="클레버 드리퍼 사용법을 준비물부터 정리했습니다. 밸브 구조와 S·L 크기별 필터 규격, 중간~조금 굵은 분쇄도와 90~96℃ 물 온도, 가루 1g에 물 15~17g 비율의 인분별 레시피, 가루 먼저·물 먼저 방식의 진행 순서와 2분~2분 30초 우리는 시간, 물이 안 내려갈 때 조치와 밸브 세척 주의사항을 담았습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-21">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="클레버 드리퍼 사용법 — 준비물과 분쇄도·물 온도, 물 먼저 붓는 순서와 맛 조절 | 바리스타 스페셜티">
+<meta property="og:description" content="클레버 드리퍼 사용법을 준비물부터 정리했습니다. 밸브 구조와 S·L 크기별 필터 규격, 중간~조금 굵은 분쇄도와 90~96℃ 물 온도, 가루 1g에 물 15~17g 비율의 인분별 레시피, 가루 먼저·물 먼저 방식의 진행 순서와 2분~2분 30초 우리는 시간, 물이 안 내려갈 때 조치와 밸브 세척 주의사항을 담았습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-21">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-21T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-21T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-21#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-21", "headline": "클레버 드리퍼 사용법 — 준비물과 분쇄도·물 온도, 물 먼저 붓는 순서와 맛 조절 | 바리스타 스페셜티", "description": "클레버 드리퍼 사용법을 준비물부터 정리했습니다. 밸브 구조와 S·L 크기별 필터 규격, 중간~조금 굵은 분쇄도와 90~96℃ 물 온도, 가루 1g에 물 15~17g 비율의 인분별 레시피, 가루 먼저·물 먼저 방식의 진행 순서와 2분~2분 30초 우리는 시간, 물이 안 내려갈 때 조치와 밸브 세척 주의사항을 담았습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-21", "dateModified": "2026-11-21", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges"><span class="badge hot">☕ 추출 기구</span><span class="badge">침출식</span><span class="badge">클레버 드리퍼</span></div>
+    <h1>클레버 드리퍼 사용법<br/>— 준비물과 분쇄도·물 온도, 물 먼저 붓는 순서와 맛 조절</h1>
+    <p class="subtitle"><strong>클레버 드리퍼(Clever Dripper)는 바닥에 밸브가 달려 있어, 가루를 물에 담가 우린 뒤 종이 필터로 걸러 내는 기구입니다.</strong> 필요한 준비물과 크기별 필터 규격, 분쇄도와 물 온도, 인분별 가루와 물 양, 가루를 먼저 넣는 방식과 물을 먼저 붓는 방식의 진행 순서, 맛이 어긋날 때 손보는 곳과 세척 요령까지 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 21일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 8분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+
+    <div class="hook">
+      <p>클레버 드리퍼는 겉모습이 일반 드리퍼와 비슷해서 핸드드립처럼 물줄기를 돌려 가며 부어야 하는지 헷갈리기 쉽습니다. 결론부터 말씀드리면 물줄기 기술은 거의 필요하지 않습니다. <strong>종이 필터를 끼우고 가루 1g에 물 15~17g 비율로 물을 한 번에 부은 뒤, 2분~2분 30초 우리고 잔 위에 올려 30초~1분 30초 동안 내리면</strong> 됩니다. 전체 3~4분이 출발점입니다. 아래에서 구조, 준비물과 필터 규격, 분쇄도와 물 온도, 인분별 레시피, 두 가지 진행 순서, 맛 조절, 세척을 차례로 설명합니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>클레버 드리퍼의 밸브 구조와 핸드드립·프렌치프레스와 다른 점</li>
+        <li>S·L 크기별 용량과 맞는 종이 필터 규격</li>
+        <li>중간~중간보다 조금 굵은 분쇄도와 로스팅별 물 온도</li>
+        <li>1~2잔 분량의 가루·물 양과 우리는 시간표</li>
+        <li>가루 먼저 방식과 물 먼저 방식의 진행 순서와 장단점</li>
+        <li>물이 안 내려가거나 맛이 쓰고 묽을 때 손보는 곳, 밸브 세척 요령</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1:15~1:17</span><span class="label">가루와 물의 비율 — 여러 로스터리 레시피가 모이는 범위</span></div>
+      <div class="data-card"><span class="num">90~96℃</span><span class="label">물 온도 — 강배전은 낮게, 약배전은 높게</span></div>
+      <div class="data-card"><span class="num">2분~2분 30초</span><span class="label">밸브를 닫은 채 우리는 시간</span></div>
+      <div class="data-card"><span class="num">3~4분</span><span class="label">내리는 시간까지 포함한 전체 시간</span></div>
+    </div>
+
+    <h2 class="section-title">1. 클레버 드리퍼는 어떤 기구인가 — 밸브 구조와 맛의 특징</h2>
+    <p>클레버 드리퍼는 대만의 E.K. Int'l사가 '아비드(Abid)'라는 상표로 내놓은 기구입니다. 사다리꼴 드리퍼처럼 생긴 플라스틱 본체 바닥에 <strong>실리콘 마개가 달린 밸브</strong>가 있고, 그 아래로 누름판이 튀어나와 있습니다. 본체를 평평한 곳에 그냥 두면 밸브가 닫혀 물이 고이고, 잔이나 서버 위에 올리면 테두리가 누름판을 밀어 올려 밸브가 열리면서 커피가 내려갑니다.</p>
+    <p>이 구조 덕분에 추출 방식은 <strong>침출식과 여과식의 중간</strong>이 됩니다. 프렌치프레스처럼 가루 전체가 물에 잠겨 정해진 시간만큼 우러나고, 마지막에는 핸드드립처럼 종이 필터를 통과합니다. 그래서 물줄기 굵기나 붓는 속도에 따라 맛이 흔들리는 폭이 작고, 종이가 오일과 미분을 걸러 프렌치프레스보다 깔끔한 잔이 나옵니다. 일반 핸드드립과 비교하면 바디와 단맛이 조금 더 실리고 산미의 윤곽은 다소 둥글게 느껴지는 편입니다.</p>
+    <p>정리하면 <strong>매번 비슷한 맛을 내기 쉬운 기구</strong>입니다. 드립포트가 없어도 되고, 손기술보다 무게와 시간을 지키는 것이 결과를 좌우합니다. 드리퍼 모양별 특징은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-04">핸드드립 드리퍼 고르는법</a> 글에서, 금속 필터를 쓰는 침출식은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-29">프렌치프레스 사용법</a> 글에서 비교해 보실 수 있습니다.</p>
+
+    <h2 class="section-title">2. 준비물과 크기별 필터 규격</h2>
+    <p>준비물은 단출합니다. 물줄기를 조절할 필요가 없어 일반 전기 주전자로도 충분합니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>준비물</th><th>용도</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>클레버 드리퍼 본체</td><td>우리기와 거르기</td><td>뚜껑과 받침(코스터)이 함께 들어 있음</td></tr>
+        <tr><td class="em">사다리꼴 종이 필터</td><td>여과</td><td>본체 크기에 맞는 규격 사용</td></tr>
+        <tr><td>잔 또는 서버</td><td>받는 용기</td><td>입구 지름이 누름판을 밀어 올릴 수 있어야 함</td></tr>
+        <tr><td>저울과 타이머</td><td>가루·물 무게와 시간 측정</td><td>0.1g 또는 1g 단위</td></tr>
+        <tr><td>스푼 또는 막대</td><td>가루 적시기, 떠 있는 가루층 풀기</td><td>필터를 찢지 않도록 가볍게</td></tr>
+        <tr><td>그라인더</td><td>추출 직전 분쇄</td><td>입자가 고른 버(burr) 방식 권장</td></tr>
+      </tbody>
+    </table>
+    <p>본체는 보통 두 가지 크기로 판매됩니다. 판매처에 따라 표기 용량이 조금씩 다르므로 구입 전에 상품 설명을 확인하시기 바랍니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>크기</th><th>표기 용량</th><th>맞는 필터</th><th>알맞은 분량</th></tr></thead>
+      <tbody>
+        <tr><td>S(소형)</td><td>약 300ml</td><td>2호(#2) 사다리꼴, 1~2인용</td><td>1잔(가루 15g 안팎)</td></tr>
+        <tr><td class="em">L(대형)</td><td>약 500ml(18온스)</td><td>4호(#4) 사다리꼴, 3~4인용</td><td>1~2잔(가루 15~28g)</td></tr>
+      </tbody>
+    </table>
+    <p>표기 용량은 물만 가득 채웠을 때의 값입니다. 가루와 필터가 자리를 차지하고 가루가 물을 머금으므로 실제로 받는 양은 그보다 적습니다. 한 잔만 내리더라도 저어 줄 여유 공간이 있는 L 크기가 다루기 편하다는 평이 많습니다. 받는 잔은 <strong>입구가 너무 넓거나 좁으면 밸브가 열리지 않으므로</strong> 처음 쓰는 잔은 빈 본체를 올려 누름판이 눌리는지 먼저 확인합니다.</p>
+
+    <h2 class="section-title">3. 분쇄도와 물 온도</h2>
+    <p>분쇄도는 <strong>중간에서 중간보다 조금 굵은 굵기</strong>가 출발점입니다. 일반 핸드드립과 같거나 한 단계 굵은 정도, 굵은 설탕과 비슷한 입자입니다. 가루가 물에 잠겨 있는 시간이 길어서 핸드드립보다 고울 필요가 없고, 너무 고우면 마지막에 필터가 막혀 물이 잘 내려가지 않습니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>로스팅 정도</th><th>물 온도</th><th>분쇄도 방향</th></tr></thead>
+      <tbody>
+        <tr><td>약배전</td><td class="em">94~96℃</td><td>출발점보다 조금 곱게</td></tr>
+        <tr><td>중배전</td><td class="em">92~94℃</td><td>출발점 그대로</td></tr>
+        <tr><td>강배전</td><td class="em">90~92℃</td><td>출발점보다 조금 굵게</td></tr>
+      </tbody>
+    </table>
+    <p>제조사는 끓인 직후의 물을 안내하지만, 쓴맛이 도드라지면 온도를 낮춰 보라는 것이 여러 로스터리의 공통된 조언입니다. 온도계가 없다면 끓인 물을 주전자 뚜껑을 연 채 30초~1분 두었다가 쓰면 대략 위 범위에 들어옵니다. 플라스틱 본체는 유리나 도자기보다 열을 덜 빼앗고, 뚜껑을 덮으면 우리는 동안 온도가 잘 유지됩니다. 기구별 굵기는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-12">그라인더 분쇄도 조절</a> 글에 자세히 있습니다.</p>
+
+    <h2 class="section-title">4. 인분별 가루와 물 양 — 우리는 시간표</h2>
+    <p>비율은 <strong>가루 1g에 물 15~17g</strong> 범위에서 시작합니다. 진하게 드시려면 1:15, 가볍게 드시려면 1:17 쪽입니다. 핸드드립과 달리 물을 한 번에 다 붓기 때문에 비율 계산이 곧 레시피의 전부입니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>분량</th><th>가루</th><th>물(1:16)</th><th>받는 양(대략)</th><th>권장 크기</th></tr></thead>
+      <tbody>
+        <tr><td>작은 1잔</td><td>15g</td><td>240g</td><td>약 210ml</td><td>S, L</td></tr>
+        <tr><td class="em">넉넉한 1잔</td><td class="em">20g</td><td class="em">320g</td><td class="em">약 280ml</td><td class="em">L</td></tr>
+        <tr><td>2잔</td><td>26g</td><td>416g</td><td>약 365ml</td><td>L</td></tr>
+      </tbody>
+    </table>
+    <p>가루는 자기 무게의 약 2배만큼 물을 머금으므로 받는 양은 부은 물에서 그만큼을 뺀 값입니다. 우리는 시간은 분량과 관계없이 <strong>2분~2분 30초</strong>, 잔 위에 올린 뒤 물이 다 내려가기까지 <strong>30초~1분 30초</strong>가 일반적입니다. 가이드마다 '추출 시간'에 내리는 시간을 포함하기도 하고 빼기도 하므로, 다른 레시피와 비교할 때는 전체 시간으로 맞춰 보시는 것이 정확합니다. 비율 계산이 익숙하지 않으시면 <a href="https://coffee.ephseed.com/coffee-article-2026-10-06">핸드드립 비율</a> 글의 계산법을 그대로 쓰시면 됩니다.</p>
+
+    <h2 class="section-title">5. 진행 순서 — 가루 먼저 방식과 물 먼저 방식</h2>
+    <p>두 방식 모두 널리 쓰입니다. 설명서에 실린 기본형은 가루를 먼저 넣는 쪽이고, 물을 먼저 붓는 쪽은 물 빠짐을 빠르게 하려는 변형입니다. 공통 준비 단계는 같습니다. 필터의 이음매를 접어 본체에 끼우고, 받침 위가 아니라 <strong>잔 위에 올린 상태에서</strong> 뜨거운 물로 필터를 적셔 종이 냄새를 빼고 본체를 데운 다음, 헹군 물을 버립니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">가루 먼저 방식 (가루 20g · 물 320g)</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>가루 담기</strong> — 본체를 저울 위 평평한 곳에 내려놓고 가루를 담아 평평하게 고릅니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>0:00 물 붓기</strong> — 타이머를 누르고 가루 전체가 젖도록 320g까지 한 번에 붓습니다. 15~20초 안에 마칩니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>0:20 가볍게 젓기</strong> — 마른 덩어리가 남지 않게 스푼으로 서너 번 저은 뒤 뚜껑을 덮습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>2:00 가루층 풀기</strong> — 뚜껑을 열고 위에 떠 있는 가루층을 앞뒤로 두세 번 밀어 가라앉힙니다.</div></div>
+      <div class="tip-item"><div class="tip-num">5</div><div class="tip-text"><strong>2:15 잔 위에 올리기</strong> — 본체를 잔이나 서버 위에 올려 밸브를 엽니다. 3:00~3:45에 물줄기가 방울로 바뀌면 내려놓습니다.</div></div>
+    </div>
+    <div class="tip-box">
+      <div class="tip-title">물 먼저 방식 (가루 20g · 물 320g)</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>물 붓기</strong> — 필터를 헹군 본체를 저울 위에 내려놓고 물 320g을 먼저 붓습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>0:00 가루 넣기</strong> — 가루를 물 위에 고르게 넣고 타이머를 누른 뒤, 가루가 모두 젖도록 가볍게 젓습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>2:00 가루층 풀기</strong> — 뚜껑을 덮어 두었다가 2분에 표면의 가루층을 한 번 풀어 줍니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>2:30 잔 위에 올리기</strong> — 30초쯤 가루가 가라앉기를 기다렸다가 잔 위에 올립니다. 1분 안팎이면 다 내려갑니다.</div></div>
+    </div>
+    <p>물을 먼저 부으면 고운 입자가 필터 바닥에 먼저 깔리지 않아 <strong>마지막 물 빠짐이 빨라지고 막힘이 줄어든다</strong>는 것이 이 방식을 권하는 쪽의 설명입니다. 평소 물이 더디게 내려가 쓴맛이 남았다면 먼저 이 순서로 바꿔 보시기 바랍니다. 반대로 가루 먼저 방식은 설명서대로라 익히기 쉽고, 가루가 젖는 모습을 눈으로 확인할 수 있습니다. 어느 쪽이든 물이 다 내려간 뒤에는 서버를 한두 번 돌려 위아래 농도를 섞어 따릅니다.</p>
+
+    <h2 class="section-title">6. 맛이 어긋날 때 손보는 곳</h2>
+    <p>변수는 분쇄도, 우리는 시간, 물 온도, 비율 네 가지뿐입니다. <strong>한 번에 한 가지만</strong> 바꾸고 전체 시간을 적어 두면 원인을 찾기 쉽습니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>증상</th><th>추정 원인</th><th>조치</th></tr></thead>
+      <tbody>
+        <tr><td>물이 2분 넘게 내려가지 않음</td><td>분쇄가 너무 고움 / 미분이 필터를 막음</td><td class="em">한두 칸 굵게, 물 먼저 방식으로 변경</td></tr>
+        <tr><td>쓰고 떫음</td><td>과다 추출</td><td class="em">더 굵게, 우리는 시간 30초 단축, 물 온도 2~3℃ 낮춤</td></tr>
+        <tr><td>시고 밍밍함</td><td>과소 추출</td><td class="em">더 곱게, 우리는 시간 30초 연장, 물 온도 올림</td></tr>
+        <tr><td>농도만 연함(맛 균형은 괜찮음)</td><td>물 비율이 높음</td><td class="em">1:16 → 1:15로 가루를 늘림</td></tr>
+        <tr><td>잔에 올려도 안 내려감</td><td>잔 입구가 누름판에 닿지 않음</td><td class="em">입구 지름이 맞는 잔·서버로 교체</td></tr>
+        <tr><td>내려놓아도 조금씩 샘</td><td>밸브 마개에 찌꺼기가 낌</td><td class="em">밸브를 분해해 세척</td></tr>
+        <tr><td>종이 맛이 남</td><td>린싱 부족</td><td class="em">뜨거운 물로 필터 전체를 넉넉히 적심</td></tr>
+      </tbody>
+    </table>
+    <p>젓는 횟수도 맛에 영향을 줍니다. 세게 오래 저으면 미분이 떠올라 필터를 막고 쓴맛이 늘기 쉬우므로, 가루를 적실 때와 가루층을 풀 때 각각 서너 번이면 충분합니다. 신맛과 쓴맛으로 추출 상태를 판단하는 법은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-12">과소추출 과다추출 뜻</a> 글에 자세히 있습니다.</p>
+    <div class="note-box">
+      <div class="note-label">아이스로 내릴 때</div>
+      전체 물 양의 약 3분의 1을 얼음으로 바꿔 서버에 미리 담아 두고, 나머지 양의 뜨거운 물만으로 우립니다. 예를 들어 가루 20g에 뜨거운 물 200g, 얼음 120g입니다. 뜨거운 물이 줄어든 만큼 분쇄도를 조금 곱게 하거나 우리는 시간을 30초 늘리면 농도가 유지됩니다.
+    </div>
+
+    <h2 class="section-title">7. 세척과 보관 주의사항</h2>
+    <p>사용 후에는 필터째 가루를 들어내고 따뜻한 물로 바로 헹굽니다. 헹굴 때 손가락으로 <strong>바닥의 누름판을 밀어 올려 밸브를 연 채</strong> 물을 흘려보내야 마개 주변의 커피 오일이 씻겨 나갑니다. 오일이 쌓이면 마개가 끈적해져 밸브가 덜 닫히고 묵은 냄새가 다음 잔에 섞입니다.</p>
+    <p>일주일에 한 번 정도는 밸브를 분해해 씻는 것이 좋습니다. 최근 모델은 바닥 부품을 돌리거나 눌러 분리할 수 있게 되어 있으므로, 설명서의 분해 방법을 확인한 뒤 실리콘 마개와 누름판을 중성세제로 닦고 완전히 말려 조립합니다. 본체 재질은 BPA가 없는 트라이탄(Tritan) 계열 플라스틱으로 안내되어 있으며, 여러 판매처가 <strong>식기세척기와 전자레인지 사용을 권하지 않으므로</strong> 손 세척을 기본으로 합니다.</p>
+    <p>플라스틱은 거친 수세미에 흠집이 나면 그 틈에 착색과 냄새가 남습니다. 부드러운 스펀지를 쓰고, 갈색 막이 생겼다면 커피 기구용 세정제를 푼 따뜻한 물에 잠시 담갔다가 헹굽니다. 보관할 때는 받침 위에 올려 누름판이 눌린 채로 두지 않도록 하고, 종이 필터는 습기와 냄새를 잘 흡수하므로 밀폐 용기에 넣어 둡니다.</p>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 드립포트 없이 일반 주전자로 부어도 되나요?</strong><br/>됩니다. 가루 전체가 물에 잠겨 우러나는 방식이라 물줄기 굵기와 붓는 궤적이 맛에 미치는 영향이 작습니다. 저울로 물 무게만 정확히 맞추시면 됩니다. 물이 튀지 않도록 가장자리 필터보다 가루 쪽으로 붓는 정도만 신경 쓰시면 충분합니다.</p>
+    <p><strong>Q. 핸드드립처럼 뜸을 따로 들여야 하나요?</strong><br/>필수는 아닙니다. 물을 한 번에 부은 뒤 가볍게 저어 가루를 모두 적시는 것으로 뜸의 역할을 대신합니다. 다만 볶은 지 며칠 안 된 원두는 가스가 많아 가루가 떠오르므로, 가루 무게 2배의 물로 30초 적신 뒤 나머지를 붓는 방식도 쓰입니다.</p>
+    <p><strong>Q. 우리는 시간을 4~5분으로 늘리면 더 진해지나요?</strong><br/>농도와 추출량은 늘지만 어느 지점부터는 쓴맛과 떫은맛이 함께 늘어납니다. 진하게 드시려면 시간을 늘리기보다 비율을 1:15로 조정해 가루를 늘리는 편이 맛의 균형을 지키기 쉽습니다. 시간은 30초 단위로 바꿔 가며 비교해 보시기 바랍니다.</p>
+    <p><strong>Q. 칼리타나 멜리타용 필터를 써도 되나요?</strong><br/>모양이 같은 사다리꼴 필터라면 쓸 수 있습니다. 크기만 본체에 맞추면 됩니다. S에는 1~2인용, L에는 3~4인용 규격이 맞는 것으로 안내되어 있으나 제조사마다 치수가 조금씩 다르므로, 필터가 본체 높이보다 많이 낮거나 벽에서 뜨지 않는지 확인하고 구입하시기 바랍니다. 원뿔형(V60용) 필터는 모양이 맞지 않습니다.</p>
+    <p><strong>Q. 프렌치프레스와 맛이 어떻게 다른가요?</strong><br/>우리는 원리는 비슷하지만 마지막에 종이 필터를 거친다는 점이 다릅니다. 종이가 오일과 미분을 걸러 내어 잔 바닥의 침전물이 거의 없고 뒷맛이 깔끔합니다. 프렌치프레스는 금속 망이라 오일이 그대로 나와 더 묵직하고 질감이 두껍습니다.</p>
+
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>클레버 드리퍼는 바닥 밸브로 물을 가둬 가루를 우린 뒤 종이 필터로 걸러 내는 기구입니다. 물줄기 기술이 거의 필요 없고, 무게와 시간만 지키면 매번 비슷한 맛을 낼 수 있습니다.</p>
+      <p>중간~중간보다 조금 굵은 가루에 1:15~1:17 비율로 90~96℃의 물을 한 번에 붓고, 2분~2분 30초 우린 뒤 잔 위에 올려 전체 3~4분 안에 마칩니다. 물이 더디게 내려가면 굵게 갈거나 물을 먼저 붓는 순서로 바꾸고, 쓰면 굵게·짧게, 시면 곱게·길게 조절합니다. 사용 후에는 밸브를 연 채 헹구고 주기적으로 분해해 씻으시기 바랍니다.</p>
+    </div>
+
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://ozonecoffee.co.uk/pages/brew-guide-clever-dripper" rel="noopener nofollow">Ozone Coffee — How to use a Clever Dripper</a> · <a href="https://eightouncecoffee.ca/blogs/news/clever-coffee-dripper-brew-guide" rel="noopener nofollow">Eight Ounce Coffee — Clever Coffee Dripper Brew Guide</a> · <a href="https://crema-coffee.com/pages/clever-dripper-brewing-guide" rel="noopener nofollow">Crema Coffee Roasters — Clever Dripper Brewing Guide</a> · <a href="https://groundworkcoffee.com/pages/clever-dripper-brew-guide" rel="noopener nofollow">Groundwork Coffee — Clever Dripper Brew Guide</a> · <a href="https://www.sweetmarias.com/clever-coffee-dripper-with-filters.html" rel="noopener nofollow">Sweet Maria's — Clever Coffee Dripper</a></p>
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-20"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">케멕스 사용법 — 준비물과 필터 접는 법, 분쇄도와 물 붓는 시간</div><div class="rc-date">2026. 11. 20</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-19"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">머신 석회 제거 하는법 — 디스케일링 주기와 식초·구연산 주의점</div><div class="rc-date">2026. 11. 19</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-15"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">사이폰(사이펀) 사용법 — 준비물과 물 양·분쇄도·불 세기, 모카포트와 다른 점</div><div class="rc-date">2026. 11. 15</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#클레버드리퍼</span>
+      <span class="tag">#클레버사용법</span>
+      <span class="tag">#침출식</span>
+      <span class="tag">#핸드드립</span>
+      <span class="tag">#분쇄도</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>클레버 드리퍼는 바닥 밸브로 물을 가둬 우린 뒤 종이 필터로 거르는, 침출식과 여과식의 중간 기구입니다.</strong></li>
+        <li><strong>분쇄도는 중간~중간보다 조금 굵게, 물 온도는 로스팅에 따라 90~96℃ 범위입니다.</strong></li>
+        <li><strong>가루 1g에 물 15~17g을 한 번에 붓고 2분~2분 30초 우린 뒤 잔 위에 올려 전체 3~4분 안에 마칩니다.</strong></li>
+        <li><strong>물이 더디게 내려가면 굵게 갈거나 물을 먼저 붓는 순서로 바꿉니다.</strong></li>
+        <li><strong>사용 후 밸브를 연 채 헹구고, 주기적으로 분해해 손으로 씻습니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
