@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>드립백 사용법 — 물 양과 온도, 나눠 붓는 횟수와 주의사항 | 바리스타 스페셜티</title>
+  <meta name="description" content="드립백 사용법을 순서대로 정리했습니다. 포장에 적힌 물 양(대개 120~180ml)을 지키는 이유, 90~95℃ 물 온도, 20~30초 뜸 들인 뒤 2~3회로 나눠 붓는 횟수, 잔 높이와 백이 잠기는 문제, 백을 짜지 않아야 하는 까닭, 싱겁거나 쓸 때 조절, 아이스로 내리는 요령과 보관 주의사항을 담았습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-22">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="드립백 사용법 — 물 양과 온도, 나눠 붓는 횟수와 주의사항 | 바리스타 스페셜티">
+<meta property="og:description" content="드립백 사용법을 순서대로 정리했습니다. 포장에 적힌 물 양(대개 120~180ml)을 지키는 이유, 90~95℃ 물 온도, 20~30초 뜸 들인 뒤 2~3회로 나눠 붓는 횟수, 잔 높이와 백이 잠기는 문제, 백을 짜지 않아야 하는 까닭, 싱겁거나 쓸 때 조절, 아이스로 내리는 요령과 보관 주의사항을 담았습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-22">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-22T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-22T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-22#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-22", "headline": "드립백 사용법 — 물 양과 온도, 나눠 붓는 횟수와 주의사항 | 바리스타 스페셜티", "description": "드립백 사용법을 순서대로 정리했습니다. 포장에 적힌 물 양(대개 120~180ml)을 지키는 이유, 90~95℃ 물 온도, 20~30초 뜸 들인 뒤 2~3회로 나눠 붓는 횟수, 잔 높이와 백이 잠기는 문제, 백을 짜지 않아야 하는 까닭, 싱겁거나 쓸 때 조절, 아이스로 내리는 요령과 보관 주의사항을 담았습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-22", "dateModified": "2026-11-22", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges"><span class="badge hot">☕ 추출 기구</span><span class="badge">간편 추출</span><span class="badge">드립백</span></div>
+    <h1>드립백 사용법<br/>— 물 양과 온도, 나눠 붓는 횟수와 주의사항</h1>
+    <p class="subtitle"><strong>드립백은 1잔 분량의 분쇄 가루를 걸이가 달린 필터 주머니에 담아 개별 포장한 제품입니다.</strong> 잔에 거는 요령과 알맞은 잔 높이, 물 양과 온도, 뜸 들이는 시간과 나눠 붓는 횟수, 싱겁거나 쓸 때 손보는 곳, 아이스로 내리는 요령과 보관 주의사항까지 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 22일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 7분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+
+    <div class="hook">
+      <p>드립백은 뜯어서 잔에 걸고 물만 부으면 되지만, 막상 내려 보면 싱겁거나 떫게 나올 때가 많습니다. 원인은 대부분 물 양과 붓는 방식에 있습니다. <strong>포장에 적힌 물 양(대개 120~180ml)을 지키고, 90~95℃의 물로 20~30초 뜸을 들인 뒤 2~3회로 나눠 부으면</strong> 됩니다. 물이 다 내려가면 백을 짜지 말고 바로 걷어 냅니다. 아래에서 구조, 잔 고르기, 물 양과 온도, 붓는 순서, 맛 조절, 아이스 요령, 보관을 차례로 설명합니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>드립백의 구조와 일반 핸드드립과 다른 점</li>
+        <li>백 바닥이 잠기지 않는 잔 높이와 거는 요령</li>
+        <li>가루 양에 맞는 물 양과 90~95℃ 물 온도</li>
+        <li>뜸 들이는 시간과 2~3회로 나눠 붓는 횟수</li>
+        <li>싱겁거나 쓰고 떫을 때 손보는 곳</li>
+        <li>아이스로 내리는 요령, 개봉 전후 보관 주의사항</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">120~180ml</span><span class="label">붓는 물 양 — 제품 포장 표기가 우선</span></div>
+      <div class="data-card"><span class="num">90~95℃</span><span class="label">물 온도 — 끓인 뒤 잠시 식힌 물</span></div>
+      <div class="data-card"><span class="num">20~30초</span><span class="label">소량의 물로 뜸 들이는 시간</span></div>
+      <div class="data-card"><span class="num">2~3회</span><span class="label">뜸 이후 나눠 붓는 횟수</span></div>
+    </div>
+
+    <h2 class="section-title">1. 드립백은 어떤 제품인가 — 구조와 핸드드립과 다른 점</h2>
+    <p>드립백은 부직포 필터 주머니에 분쇄한 가루를 넣고, 양옆에 종이 걸이를 붙여 낱개로 밀봉한 제품입니다. 윗부분의 절취선을 뜯어 입구를 열고 걸이를 벌려 잔 테두리에 걸면 작은 드리퍼가 됩니다. 드리퍼, 서버, 필터, 그라인더가 없어도 주전자와 잔만 있으면 내릴 수 있어 사무실이나 여행지에서 많이 쓰입니다.</p>
+    <p>한 봉지에 든 가루는 <strong>제품에 따라 8~12g 안팎</strong>이며, 봉지 겉면에 중량이 적혀 있습니다. 일반 핸드드립의 1인분이 15~20g인 것과 비교하면 가루가 적은 편입니다. 그래서 머그잔을 가득 채우려고 물을 넉넉히 부으면 농도가 묽어지고, 뒤쪽에서 나오는 쓰고 떫은 성분까지 딸려 나옵니다. 드립백이 맛없게 느껴지는 가장 흔한 이유가 여기에 있습니다.</p>
+    <p>또 하나의 차이는 <strong>가루층이 얕고 주머니가 좁다</strong>는 점입니다. 물을 한꺼번에 부으면 가루를 충분히 거치지 못하고 빠져나가거나 주머니 밖으로 넘칩니다. 반대로 주머니 바닥이 잔 속의 추출액에 잠기면 물 빠짐이 느려져 우리는 방식에 가까워집니다. 붓는 원리 자체는 <a href="https://coffee.ephseed.com/coffee-article-2026-08-15">핸드드립 내리는법</a> 글에서 설명한 것과 같고, 드립백에서는 물 양과 잔 높이를 더 신경 써야 한다고 이해하시면 됩니다.</p>
+
+    <h2 class="section-title">2. 준비물과 잔 고르기 — 백이 잠기지 않는 높이</h2>
+    <p>준비물은 드립백, 잔, 뜨거운 물이 전부입니다. 여기에 저울이나 눈금 있는 계량컵이 하나 있으면 맛이 훨씬 일정해집니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>준비물</th><th>용도</th><th>비고</th></tr></thead>
+      <tbody>
+        <tr><td>드립백</td><td>가루와 필터</td><td>내리기 직전에 개봉</td></tr>
+        <tr><td class="em">깊이가 있는 잔</td><td>받는 용기</td><td>백 바닥이 추출액에 닿지 않는 높이</td></tr>
+        <tr><td>주전자</td><td>물 붓기</td><td>주둥이가 가는 드립포트면 편하지만 필수는 아님</td></tr>
+        <tr><td>저울 또는 계량컵</td><td>물 양 측정</td><td>잔에 물을 미리 담아 눈대중 선을 익혀 두어도 됨</td></tr>
+      </tbody>
+    </table>
+    <p>잔은 <strong>깊이</strong>를 먼저 봅니다. 드립백을 걸면 주머니가 잔 안쪽으로 4~5cm쯤 내려오는데, 낮은 찻잔에서는 추출액이 금방 차올라 주머니 바닥이 잠깁니다. 잠긴 상태에서는 물이 잘 내려가지 않고 가루가 추출액에 계속 담겨 있게 되어, 쓴맛과 떫은맛이 늘기 쉽습니다. 붓고자 하는 물 양을 담았을 때 수면이 잔 높이의 절반을 조금 넘는 정도면 무난합니다.</p>
+    <p>입구 지름도 확인합니다. 입구가 너무 넓으면 걸이가 벌어지다 못해 빠지고, 너무 좁으면 주머니가 접혀 물이 넘칩니다. 걸이를 끝까지 벌려 양쪽 테두리에 깊숙이 끼우고, 주머니 입구가 둥글게 열렸는지 본 뒤에 물을 붓습니다. 개봉하기 전에 봉지를 가볍게 흔들어 가루를 아래로 모아 두면 절취선을 뜯을 때 가루가 쏟아지지 않습니다.</p>
+
+    <h2 class="section-title">3. 물 양과 온도 — 포장 표기를 먼저 따르는 이유</h2>
+    <p>물 양은 <strong>제품 포장에 적힌 수치</strong>가 기준입니다. 제조사가 그 가루 양과 분쇄도, 로스팅에 맞춰 정한 값이기 때문입니다. 표기는 대개 120~180ml 범위에 있고, 일본 UCC가 공개한 드립백 추출 안내는 약 140ml를 기준으로 삼습니다. 표기가 없을 때는 가루 1g에 물 13~16g 정도로 계산하면 됩니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>가루 양</th><th>붓는 물</th><th>잔에 받는 양(대략)</th></tr></thead>
+      <tbody>
+        <tr><td>8g</td><td>110~130ml</td><td>약 95~115ml</td></tr>
+        <tr><td class="em">10g</td><td class="em">130~160ml</td><td class="em">약 110~140ml</td></tr>
+        <tr><td>12g</td><td>160~190ml</td><td>약 135~165ml</td></tr>
+      </tbody>
+    </table>
+    <p>가루는 자기 무게의 약 2배만큼 물을 머금으므로 잔에 받는 양은 부은 물보다 조금 적습니다. 중요한 것은 <strong>잔 크기에 맞춰 물 양을 정하지 않는 것</strong>입니다. 큰 머그잔을 채우고 싶다면 드립백으로 정해진 양만 내린 뒤 뜨거운 물을 따로 더해 농도를 맞추는 편이 맛이 깔끔합니다. 비율 계산이 낯설다면 <a href="https://coffee.ephseed.com/coffee-article-2026-10-06">핸드드립 비율</a> 글을 참고하시기 바랍니다.</p>
+    <p>물 온도는 <strong>90~95℃</strong>가 출발점입니다. 온도가 낮으면 신맛이 도드라지고 밍밍해지며, 팔팔 끓는 물을 바로 부으면 쓴맛이 강해지기 쉽습니다. 온도계가 없다면 물이 끓은 뒤 주전자 뚜껑을 열고 30초~1분 두었다가 쓰면 대략 이 범위에 들어옵니다. 정수기의 온수는 기종에 따라 80~85℃ 정도에 그치는 경우가 있어, 맛이 싱겁고 시게 느껴진다면 물을 끓여서 써 보시기 바랍니다. 진하게 볶은 제품은 범위의 아래쪽, 연하게 볶은 제품은 위쪽이 잘 맞습니다.</p>
+
+    <h2 class="section-title">4. 붓는 순서 — 뜸 들이기와 나눠 붓는 횟수</h2>
+    <p>순서는 뜸 들이기, 나눠 붓기, 걷어 내기 세 단계입니다. 아래는 가루 10g에 물 150ml를 쓰는 예시이며, 다른 용량도 같은 흐름으로 진행합니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">기본 순서 (가루 10g · 물 150ml)</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>걸기</strong> — 봉지를 흔들어 가루를 아래로 모으고 절취선을 뜯은 뒤, 걸이를 벌려 잔에 겁니다. 가루 표면을 가볍게 흔들어 평평하게 만듭니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>0:00 뜸 들이기</strong> — 가루 전체가 젖을 만큼만 물을 20ml 안팎 붓고 20~30초 기다립니다. 잔 바닥에 몇 방울 떨어지는 정도가 알맞습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>0:30 첫 번째 붓기</strong> — 가루 가운데에 가는 물줄기로 주머니의 8~9할 높이까지 붓습니다. 필터 벽에 직접 붓지 않습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>두 번째·세 번째 붓기</strong> — 수면이 절반쯤 내려가면 같은 높이까지 다시 붓습니다. 정해 둔 물 양에 닿을 때까지 2~3회 반복합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">5</div><div class="tip-text"><strong>걷어 내기</strong> — 마지막 물을 붓고 10초쯤 지나 물줄기가 방울로 바뀌면 백을 들어냅니다. 전체 1분 30초~2분 30초가 일반적입니다.</div></div>
+    </div>
+    <p>뜸을 들이는 이유는 가루 속의 가스를 빼서 물이 고르게 스며들 길을 열어 주기 위해서입니다. 이 단계를 건너뛰고 물을 한 번에 부으면 물이 가루 겉면만 스치고 빠져나가 밍밍한 잔이 됩니다. 볶은 지 오래되지 않은 가루는 뜸을 들일 때 표면이 부풀어 오르고, 거의 부풀지 않는다면 신선도가 떨어진 것으로 볼 수 있습니다.</p>
+    <p>나눠 붓는 것은 주머니가 작아서 한 번에 담을 수 있는 물이 30~50ml 정도에 그치기 때문이기도 합니다. <strong>한 번에 가득 붓지 말고, 수면이 완전히 바닥나기 전에 다음 물을 붓는 것</strong>이 요령입니다. 일반 전기 주전자는 물줄기가 굵어 가루가 파이기 쉬우므로, 주전자를 낮게 들고 천천히 기울이거나 계량컵에 옮겨 부으면 조절하기 쉽습니다.</p>
+    <div class="note-box">
+      <div class="note-label">백을 짜지 않습니다</div>
+      물이 아까워 걷어 낸 백을 숟가락으로 누르거나 손으로 짜면, 가루 사이에 남아 있던 쓰고 떫은 성분과 미분이 잔에 섞입니다. 백 아래에서 물이 방울로 떨어지기 시작하면 그대로 들어내고, 흐르는 물은 작은 접시에 받습니다.
+    </div>
+
+    <h2 class="section-title">5. 맛이 어긋날 때 손보는 곳</h2>
+    <p>드립백은 가루 양과 분쇄도가 이미 정해져 있어, 바꿀 수 있는 것은 물 양, 물 온도, 붓는 속도 세 가지입니다. <strong>한 번에 한 가지만</strong> 바꿔 가며 비교합니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>증상</th><th>추정 원인</th><th>조치</th></tr></thead>
+      <tbody>
+        <tr><td>싱겁고 밍밍함</td><td>물이 많음 / 물이 너무 빨리 빠짐</td><td class="em">물을 20~30ml 줄임, 더 가늘게 천천히 부음</td></tr>
+        <tr><td>시고 가벼움</td><td>물 온도가 낮음 / 뜸 생략</td><td class="em">끓인 물 사용, 뜸 20~30초 지킴</td></tr>
+        <tr><td>쓰고 떫음</td><td>물이 너무 뜨거움 / 백이 잠김 / 마지막까지 짜냄</td><td class="em">온도 2~3℃ 낮춤, 깊은 잔으로 교체, 일찍 걷어 냄</td></tr>
+        <tr><td>물이 주머니 밖으로 넘침</td><td>한 번에 너무 많이 부음 / 입구가 덜 벌어짐</td><td class="em">8~9할까지만 붓고 횟수를 늘림</td></tr>
+        <tr><td>잔에 가루가 떨어짐</td><td>필터 벽에 물을 부어 가루가 넘어감</td><td class="em">가운데에만 붓기</td></tr>
+        <tr><td>향이 약하고 종이 맛이 남</td><td>개봉 후 오래됨 / 보관 상태 불량</td><td class="em">표시 기한 확인, 서늘한 곳에 보관</td></tr>
+      </tbody>
+    </table>
+    <p>일부러 진하게 드시고 싶을 때는 물을 줄이는 방법이 가장 간단합니다. 반대로 물을 늘려 양을 채우는 것은 권하지 않습니다. 뒤쪽 추출액일수록 쓴맛과 떫은맛의 비중이 커지기 때문입니다. 신맛과 쓴맛으로 추출 상태를 읽는 법은 <a href="https://coffee.ephseed.com/coffee-article-2026-10-12">과소추출 과다추출 뜻</a> 글에, 쓴맛을 줄이는 변수는 <a href="https://coffee.ephseed.com/coffee-article-2026-10-01">핸드드립 쓴맛 잡는법</a> 글에 자세히 있습니다.</p>
+
+    <h2 class="section-title">6. 아이스로 내리는 요령</h2>
+    <p>아이스는 <strong>뜨거운 물을 줄여 진하게 내린 뒤 얼음으로 식히는</strong> 방식이 기본입니다. 평소처럼 150ml를 다 붓고 얼음을 넣으면 얼음이 녹으면서 농도가 크게 떨어집니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">아이스 순서 (가루 10g 기준)</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>뜨겁게 진하게</strong> — 내열 잔에 드립백을 걸고 뜸을 들인 뒤, 뜨거운 물을 평소의 절반~3분의 2인 80~100ml만 나눠 붓습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>백 걷어 내기</strong> — 물이 다 내려가면 백을 들어냅니다. 얼음을 먼저 넣은 잔에 바로 내리면 수면이 높아져 백이 잠기기 쉽습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>얼음 채우기</strong> — 얼음을 잔 가득 넣고 저어 식힙니다. 진하면 찬물을 조금 더합니다.</div></div>
+    </div>
+    <p>키가 큰 잔이나 텀블러에 얼음을 미리 담고 그 위에 내리는 방법도 쓸 수 있습니다. 이때는 얼음이 주머니 바닥에 닿지 않도록 얼음을 잔의 절반 아래로만 채웁니다. 유리잔은 내열 제품인지 확인하고 쓰시기 바랍니다.</p>
+
+    <h2 class="section-title">7. 보관과 사용 주의사항</h2>
+    <p>드립백은 이미 분쇄된 가루라서 홀빈보다 향이 빨리 빠집니다. 그래서 대부분 낱개 봉지에 질소를 채우거나 산소를 줄여 밀봉합니다. <strong>낱개 봉지는 내리기 직전에 뜯고</strong>, 뜯은 봉지는 그 자리에서 사용합니다. 기한은 제품마다 다르므로 겉면의 소비기한 또는 품질유지기한 표기를 따릅니다.</p>
+    <p>보관 장소는 직사광선이 닿지 않는 서늘하고 건조한 곳이 좋습니다. 여름철 차 안, 가스레인지 옆, 전기 주전자 바로 위 선반처럼 온도가 오르는 자리는 피합니다. 낱개 봉지가 밀봉돼 있다면 굳이 냉장·냉동할 필요는 없고, 냉장고에서 꺼낸 봉지는 겉면에 물기가 맺히지 않도록 실온에 잠시 두었다가 뜯습니다. 원두 상태의 보관 원칙은 <a href="https://coffee.ephseed.com/coffee-article-2026-08-14">원두 보관법</a> 글에 정리해 두었습니다.</p>
+    <p>사용할 때 몇 가지를 더 확인합니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>주의사항</th><th>이유</th></tr></thead>
+      <tbody>
+        <tr><td>한 봉지는 한 번만 사용</td><td>두 번째로 내리면 향 성분은 거의 없고 쓴맛과 떫은맛만 나옴</td></tr>
+        <tr><td>종이컵에 걸 때는 손으로 잡고 붓기</td><td>가벼운 컵은 물 무게가 실리면 한쪽으로 쓰러질 수 있음</td></tr>
+        <tr><td>걸이가 젖기 전에 위치 고정</td><td>종이 걸이가 젖으면 힘이 약해져 주머니가 잔 안으로 빠짐</td></tr>
+        <tr><td>걷어 낼 때 접시 준비</td><td>뜨거운 물이 계속 떨어져 손을 델 수 있음</td></tr>
+        <tr><td>봉지가 부풀었거나 구멍이 난 제품은 확인 후 사용</td><td>밀봉이 풀리면 산패가 빨라져 묵은 냄새가 남</td></tr>
+      </tbody>
+    </table>
+    <p>직접 간 가루로 드립백을 만들고 싶다면 빈 드립백 필터를 따로 구입해 쓸 수 있습니다. 이때는 핸드드립보다 조금 고운 굵기로 10~12g을 담고, 만든 날 바로 드시는 것을 권합니다. 밀봉 설비 없이 며칠 두면 분쇄 가루의 향이 빠르게 줄어듭니다.</p>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 드립백 하나에 물을 얼마나 부어야 하나요?</strong><br/>포장에 적힌 양이 기준이며 대개 120~180ml입니다. 표기가 없다면 가루 10g 기준 130~160ml로 시작해 보시기 바랍니다. 종이컵(약 180ml)을 쓴다면 가득이 아니라 7~8할 높이까지가 알맞습니다.</p>
+    <p><strong>Q. 머그잔을 가득 채우고 싶은데 물을 더 부어도 되나요?</strong><br/>드립백에 계속 붓는 것보다, 정해진 양만 내린 뒤 뜨거운 물을 따로 더하는 방법을 권합니다. 같은 농도라도 뒤쪽의 쓰고 떫은 성분이 덜 섞여 맛이 깔끔합니다. 양이 많이 필요하면 드립백 두 개를 차례로 내리는 편이 낫습니다.</p>
+    <p><strong>Q. 드립포트가 없으면 어떻게 붓나요?</strong><br/>일반 전기 주전자를 낮게 들고 천천히 기울이면 충분합니다. 조절이 어렵다면 주둥이가 있는 계량컵이나 작은 주전자에 옮겨 담아 부으면 물줄기가 가늘어지고, 옮기는 사이에 물 온도도 알맞게 내려갑니다.</p>
+    <p><strong>Q. 백을 물에 담가 티백처럼 우려도 되나요?</strong><br/>우러나기는 하지만 드립백은 물이 가루를 통과하도록 만든 제품이라, 오래 담가 두면 쓰고 떫은맛이 늘어납니다. 잔이 낮아 어쩔 수 없이 잠긴다면 물을 다 부은 뒤 오래 두지 말고 바로 걷어 내시기 바랍니다. 담가 우리는 용도로는 티백 형태로 나온 제품이 따로 있습니다.</p>
+    <p><strong>Q. 우유를 넣어 라떼처럼 마셔도 되나요?</strong><br/>가능합니다. 다만 평소 농도에 우유를 더하면 맛이 흐려지므로, 뜨거운 물을 80~100ml로 줄여 진하게 내린 뒤 데운 우유를 같은 양 정도 더합니다. 진하게 볶은 제품이 우유와 잘 어울립니다.</p>
+
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>드립백은 1잔 분량의 가루가 담긴 필터 주머니를 잔에 걸어 내리는 제품입니다. 가루가 8~12g으로 적고 주머니가 작아서, 물 양을 지키는 것과 나눠 붓는 것이 맛을 좌우합니다.</p>
+      <p>백 바닥이 잠기지 않는 깊은 잔에 걸고, 90~95℃의 물로 20~30초 뜸을 들인 뒤 포장에 적힌 양(대개 120~180ml)을 2~3회로 나눠 붓습니다. 물이 방울로 바뀌면 짜지 말고 걷어 냅니다. 싱거우면 물을 줄이고 천천히, 쓰면 온도를 낮추고 일찍 걷어 내며, 양이 더 필요하면 내린 뒤에 물을 더합니다.</p>
+    </div>
+
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://health.tvbs.com.tw/life/355393" rel="noopener nofollow">TVBS — 일본 UCC가 안내한 드립백 추출 순서</a> · <a href="https://weathernews.jp/news/202411/290185/" rel="noopener nofollow">Weathernews — UCC 취재, 드립백에서 피해야 할 행동</a> · <a href="https://onacoffee.com.au/blogs/brewguides/filter-drip-bags-raspberry-candy" rel="noopener nofollow">Ona Coffee — Filter Drip Bags Brew Guide</a> · <a href="https://www.hankyung.com/amp/2018072637311" rel="noopener nofollow">한국경제 — 드립 물 온도와 뜸 들이기</a> · <a href="https://ceremonycoffee.com/pages/drip-cone-brew-guide" rel="noopener nofollow">Ceremony Coffee — Drip Cone Brew Guide</a></p>
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-21"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">클레버 드리퍼 사용법 — 준비물과 분쇄도·물 온도, 물 먼저 붓는 순서와 맛 조절</div><div class="rc-date">2026. 11. 21</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-20"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">케멕스 사용법 — 준비물과 필터 접는 법, 분쇄도와 물 붓는 시간</div><div class="rc-date">2026. 11. 20</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-19"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">머신 석회 제거 하는법 — 디스케일링 주기와 식초·구연산 주의점</div><div class="rc-date">2026. 11. 19</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#드립백</span>
+      <span class="tag">#드립백사용법</span>
+      <span class="tag">#드립백물양</span>
+      <span class="tag">#핸드드립</span>
+      <span class="tag">#뜸들이기</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>드립백은 가루 8~12g이 담긴 필터 주머니를 잔에 걸어 내리는 1잔용 제품입니다.</strong></li>
+        <li><strong>물 양은 포장 표기(대개 120~180ml)를 따르고, 잔 크기에 맞춰 늘리지 않습니다.</strong></li>
+        <li><strong>90~95℃의 물로 20~30초 뜸을 들인 뒤 2~3회로 나눠 붓습니다.</strong></li>
+        <li><strong>백 바닥이 잠기지 않는 깊은 잔을 쓰고, 다 내려가면 짜지 말고 걷어 냅니다.</strong></li>
+        <li><strong>낱개 봉지는 내리기 직전에 뜯고, 서늘하고 건조한 곳에 보관합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
