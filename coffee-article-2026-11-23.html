@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>가압 바스켓 뜻 — 일반 바스켓과 크레마·분쇄도가 다른 점 | 바리스타 스페셜티</title>
+  <meta name="description" content="가압 바스켓 뜻을 정리했습니다. 바깥 벽의 작은 출구 구멍이 저항을 만드는 이중벽 구조, 일반(단일벽) 바스켓과의 차이, 크레마가 풍성하게 보이는 이유, 바스켓별 분쇄도·탬핑 기준, 구별하는 법과 출구 막힘 청소 요령, 일반 바스켓으로 바꿀 때 확인할 점을 담았습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-23">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="가압 바스켓 뜻 — 일반 바스켓과 크레마·분쇄도가 다른 점 | 바리스타 스페셜티">
+<meta property="og:description" content="가압 바스켓 뜻을 정리했습니다. 바깥 벽의 작은 출구 구멍이 저항을 만드는 이중벽 구조, 일반(단일벽) 바스켓과의 차이, 크레마가 풍성하게 보이는 이유, 바스켓별 분쇄도·탬핑 기준, 구별하는 법과 출구 막힘 청소 요령, 일반 바스켓으로 바꿀 때 확인할 점을 담았습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-23">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-23T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-23T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-23#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-23", "headline": "가압 바스켓 뜻 — 일반 바스켓과 크레마·분쇄도가 다른 점 | 바리스타 스페셜티", "description": "가압 바스켓 뜻을 정리했습니다. 바깥 벽의 작은 출구 구멍이 저항을 만드는 이중벽 구조, 일반(단일벽) 바스켓과의 차이, 크레마가 풍성하게 보이는 이유, 바스켓별 분쇄도·탬핑 기준, 구별하는 법과 출구 막힘 청소 요령, 일반 바스켓으로 바꿀 때 확인할 점을 담았습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-23", "dateModified": "2026-11-23", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges"><span class="badge hot">☕ 에스프레소 장비</span><span class="badge">포터필터</span><span class="badge">가압 바스켓</span></div>
+    <h1>가압 바스켓 뜻<br/>— 일반 바스켓과 크레마·분쇄도가 다른 점</h1>
+    <p class="subtitle"><strong>가압 바스켓은 바닥에 작은 출구 구멍을 하나(또는 몇 개)만 남겨, 가루층 대신 바스켓 자체가 저항을 만드는 이중벽 필터 바스켓입니다.</strong> 일반 바스켓과 구조가 어떻게 다른지, 크레마가 왜 다르게 보이는지, 분쇄도와 탬핑을 어떻게 맞춰야 하는지, 구별하는 법과 청소 요령, 일반 바스켓으로 바꿀 때 확인할 점을 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 23일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 7분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+
+    <div class="hook">
+      <p>가정용 에스프레소 머신을 사면 포터필터 바스켓이 두 종류씩 들어 있는 경우가 많습니다. 생김새는 비슷한데 하나는 바닥에 구멍이 촘촘하고, 다른 하나는 구멍이 거의 보이지 않습니다. 뒤쪽이 바로 <strong>가압 바스켓</strong>입니다. 결론부터 말씀드리면, <strong>미리 분쇄된 원두를 쓰거나 에스프레소용 그라인더가 없다면 가압 바스켓, 갓 간 원두로 분쇄도를 직접 맞춘다면 일반 바스켓</strong>을 쓰시면 됩니다. 아래에서 그 이유를 차례로 설명합니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>가압 바스켓과 일반(단일벽) 바스켓의 구조 차이</li>
+        <li>가압 바스켓에서 크레마가 풍성하게 보이는 원리</li>
+        <li>바스켓별로 맞는 분쇄도·도징·탬핑 기준</li>
+        <li>집에 있는 바스켓이 어느 쪽인지 구별하는 법</li>
+        <li>출구 구멍 막힘을 확인하고 청소하는 요령</li>
+        <li>일반 바스켓으로 바꿀 때 확인할 점</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">구멍 1개</span><span class="label">가압 바스켓 바깥 벽의 출구 (제품에 따라 몇 개)</span></div>
+      <div class="data-card"><span class="num">수백 개</span><span class="label">일반 바스켓 바닥 전체에 뚫린 구멍</span></div>
+      <div class="data-card"><span class="num">25~30초</span><span class="label">일반 바스켓에서 쓰는 더블 샷 시간 출발점</span></div>
+      <div class="data-card"><span class="num">51·54·58mm</span><span class="label">가정용·상업용 머신에서 흔한 바스켓 지름</span></div>
+    </div>
+
+    <h2 class="section-title">1. 가압 바스켓 뜻 — 이중벽 구조와 압력이 생기는 곳</h2>
+    <p>에스프레소는 뜨거운 물이 높은 압력으로 촘촘한 가루층을 통과하면서 추출됩니다. 이때 압력이 유지되려면 무언가가 물의 흐름을 막아 주어야 합니다. 그 <strong>저항을 어디서 만드느냐</strong>가 두 바스켓의 핵심 차이입니다.</p>
+    <p><strong>일반 바스켓</strong>은 벽이 한 겹이고 바닥 전체에 작은 구멍이 고르게 뚫려 있습니다. 구멍만으로는 물을 거의 막지 못하므로, 저항은 전적으로 <strong>가루층(퍽)</strong>이 만듭니다. 분쇄도가 곱고 양이 충분하며 고르게 다져져 있어야 압력이 올라갑니다.</p>
+    <p><strong>가압 바스켓</strong>은 벽이 두 겹입니다. 안쪽 벽에는 구멍이 여러 개 있지만, 바깥 벽에는 작은 출구 구멍이 하나(제품에 따라 몇 개)만 있습니다. 커피는 이 좁은 출구를 통과해야만 나올 수 있으므로, 가루층이 다소 성기더라도 <strong>바스켓 자체가 저항을 만들어</strong> 압력이 유지됩니다. 그래서 영어로는 dual wall(이중벽) 또는 pressurized basket이라고 부르고, 일반 바스켓은 single wall 또는 non-pressurized라고 부릅니다.</p>
+
+    <table class="compare-table">
+      <thead><tr><th>구분</th><th>가압(이중벽) 바스켓</th><th>일반(단일벽) 바스켓</th></tr></thead>
+      <tbody>
+        <tr><td>바닥 구조</td><td>안쪽 벽 + 출구 구멍 1개 내외의 바깥 벽</td><td>한 겹, 바닥 전체에 작은 구멍</td></tr>
+        <tr><td>저항을 만드는 곳</td><td>바스켓 출구</td><td class="em">가루층(분쇄도·양·탬핑)</td></tr>
+        <tr><td>알맞은 원두</td><td>미리 분쇄된 가루, 분쇄 후 시간이 지난 가루</td><td>갓 간 원두</td></tr>
+        <tr><td>실수에 대한 관대함</td><td class="em">높음 — 분쇄도·탬핑이 어긋나도 샷이 나옴</td><td>낮음 — 조건이 맞아야 제대로 추출</td></tr>
+        <tr><td>맛 조절 폭</td><td>좁음</td><td class="em">넓음</td></tr>
+        <tr><td>주로 쓰는 곳</td><td>입문용 가정용 머신</td><td>카페 상업용 머신, 그라인더를 갖춘 가정</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="section-title">2. 크레마가 다르게 보이는 이유</h2>
+    <p>가압 바스켓으로 내린 샷은 거품이 풍성하게 올라와 겉보기에 크레마가 아주 좋아 보입니다. 하지만 이 거품의 상당 부분은 <strong>좁은 출구 구멍을 빠르게 빠져나오면서 공기가 섞여 생긴 것</strong>입니다. 원두의 신선도나 추출 상태와 관계없이 거품이 생기기 때문에, 가압 바스켓의 크레마는 추출이 잘 되었는지 판단하는 지표로 쓰기 어렵습니다.</p>
+    <p>일반 바스켓의 크레마는 원두 속 이산화탄소와 기름 성분이 압력 속에서 유화되며 생깁니다. 그래서 갓 볶아 적당히 숙성된 원두는 크레마가 두껍고, 오래된 원두는 얇고 빨리 꺼집니다. 일반 바스켓에서는 크레마 색과 두께가 원두 상태와 추출 상태를 읽는 단서가 되지만, 가압 바스켓에서는 그렇지 않다는 점을 기억해 두시면 됩니다.</p>
+    <p>맛에서도 차이가 납니다. 제조사와 리뷰어들은 대체로 일반 바스켓 쪽이 바디감이 묵직하고 향미가 선명하다고 설명합니다. 가압 바스켓은 맛이 무난하게 정리되는 대신, 원두 고유의 산미나 단맛을 세밀하게 끌어내기는 어렵습니다.</p>
+
+    <h2 class="section-title">3. 바스켓별 분쇄도·도징·탬핑 기준</h2>
+    <p>브레빌(Breville) 사용설명서는 <strong>단일벽 바스켓은 갓 간 원두에, 이중벽 바스켓은 미리 분쇄된 원두에</strong> 쓰라고 안내합니다. 시중에 파는 분쇄 원두는 에스프레소 기준으로는 굵은 편이라 일반 바스켓에 넣으면 물이 그대로 빠져 묽은 샷이 나옵니다. 반대로 가압 바스켓은 분쇄도와 양, 탬핑 압력, 신선도가 다소 어긋나도 추출이 고르게 되도록 설계되어 있습니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">바스켓별 준비 요령</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>가압 바스켓 — 분쇄도:</strong> 시판 에스프레소용 분쇄 가루나 모카포트용 정도의 굵기면 충분합니다. 너무 곱게 갈면 출구가 막혀 물이 거의 나오지 않을 수 있습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>가압 바스켓 — 탬핑:</strong> 표면을 평평하게 고르는 정도로 가볍게 누릅니다. 이미 바스켓이 저항을 만들기 때문에 세게 다질 필요가 없습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>일반 바스켓 — 분쇄도:</strong> 에스프레소용으로 곱게 간 가루가 필요합니다. 더블 샷 기준 25~30초를 출발점으로 삼아 분쇄도를 조절합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>일반 바스켓 — 도징·탬핑:</strong> 바스켓 용량에 맞는 양을 담고 수평을 맞춰 단단히 다집니다. 양이 적거나 기울면 채널링이 생겨 맛이 흐려집니다.</div></div>
+      <div class="tip-item"><div class="tip-num">5</div><div class="tip-text"><strong>바스켓을 바꿀 때:</strong> 브레빌 설명서는 바스켓을 바꾸면 분쇄도와 양을 다시 맞추라고 안내합니다. 같은 레시피를 그대로 옮겨 쓰지 마세요.</div></div>
+    </div>
+
+    <p>가압 바스켓에서는 샷 시간을 맞추는 것이 일반 바스켓만큼 의미가 크지 않습니다. 흐름 속도를 출구 구멍이 상당 부분 정하기 때문입니다. 대신 추출량(잔에 받는 양)을 일정하게 유지하고, 쓰면 양을 줄이고 묽으면 가루 양을 조금 늘리는 식으로 조절합니다.</p>
+
+    <h2 class="section-title">4. 우리 집 바스켓이 어느 쪽인지 구별하는 법</h2>
+    <p>가장 확실한 방법은 바스켓을 포터필터에서 빼서 <strong>바닥 바깥면</strong>을 보는 것입니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>확인 방법</th><th>가압 바스켓</th><th>일반 바스켓</th></tr></thead>
+      <tbody>
+        <tr><td>바닥 바깥면</td><td>가운데에 작은 구멍 1개(또는 몇 개)만 보임</td><td>바닥 전체에 작은 구멍이 촘촘함</td></tr>
+        <tr><td>빛에 비춰 보기</td><td>안쪽에서는 구멍이 보이지만 빛이 거의 통하지 않음</td><td>구멍마다 빛이 고르게 통함</td></tr>
+        <tr><td>옆면·두께</td><td>바닥이 두 겹으로 겹쳐 있거나 따로 끼운 판이 있음</td><td>한 겹으로 얇음</td></tr>
+        <tr><td>설명서 표기</td><td>Dual Wall, Pressurized, 이중벽</td><td>Single Wall, Non-pressurized, 단일벽</td></tr>
+      </tbody>
+    </table>
+    <p>일부 머신은 바스켓이 아니라 <strong>포터필터 자체</strong>에 압력 밸브가 달려 있습니다. 이 경우 바스켓 바닥은 일반 바스켓처럼 보여도 포터필터 출구에서 압력을 만들기 때문에 결과적으로 가압 방식으로 작동합니다. 바스켓만 보고 판단하기 어렵다면 포터필터 아래쪽 출구 부분도 함께 확인해 보시기 바랍니다.</p>
+
+    <h2 class="section-title">5. 출구 구멍 막힘 확인과 청소 요령</h2>
+    <p>가압 바스켓은 출구 구멍이 아주 작아서 고운 가루와 커피 기름이 쌓이면 막히기 쉽습니다. 막히면 추출이 점점 느려지다가 방울만 떨어지거나, 포터필터 결합부 주변으로 물이 새어 나오기도 합니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">막힘 점검과 청소 순서</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>빈 바스켓으로 물 내려 보기:</strong> 가루 없이 바스켓만 끼운 포터필터를 장착하고 물을 흘려 봅니다. 굵고 고른 물줄기가 나오면 정상이고, 가늘게 졸졸 흐르거나 방울만 떨어지면 막힘을 의심합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>사용 후 바로 헹구기:</strong> 퍽을 털어 낸 뒤 뜨거운 물로 바스켓 안팎을 헹굽니다. 가루가 말라붙기 전에 헹구는 것이 가장 효과적입니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>세정제에 담가 두기:</strong> 주기적으로 에스프레소 머신 전용 세정제를 푼 뜨거운 물에 바스켓을 담가 기름때를 녹입니다. 분해형 제품은 안쪽 판을 분리해 따로 닦습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>출구 구멍 뚫기:</strong> 그래도 막혀 있으면 가는 바늘이나 제조사가 제공하는 청소 핀으로 출구 구멍을 조심스럽게 찔러 이물을 빼냅니다. 구멍을 넓히지 않도록 힘을 주지 않습니다.</div></div>
+    </div>
+    <p>간혹 출구 구멍을 드릴 등으로 넓혀 쓰는 경우가 있는데, 이렇게 하면 더 이상 가압 바스켓으로 작동하지 않고 제품 보증에도 영향을 줄 수 있습니다. 일반 바스켓이 필요하다면 개조보다 정품 단일벽 바스켓을 따로 구입하는 편이 안전합니다. 바스켓을 청소해도 흐름이 약하다면 샤워스크린이나 머신 내부의 석회가 원인일 수 있으므로 디스케일링을 함께 점검합니다.</p>
+
+    <h2 class="section-title">6. 일반 바스켓으로 바꿀 때 확인할 점</h2>
+    <p>가압 바스켓으로 시작해 익숙해지면 일반 바스켓으로 넘어가 맛을 더 세밀하게 조절하고 싶어지는 경우가 많습니다. 바꾸기 전에 다음을 확인하시기 바랍니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>확인 항목</th><th>이유</th></tr></thead>
+      <tbody>
+        <tr><td>에스프레소용 그라인더가 있는가</td><td>일반 바스켓은 곱고 고른 분쇄가 필수라 시판 분쇄 가루로는 제대로 추출되지 않음</td></tr>
+        <tr><td>머신이 단일벽 바스켓을 지원하는가</td><td>포터필터에 압력 밸브가 달린 모델은 바스켓만 바꿔서는 일반 방식이 되지 않음</td></tr>
+        <tr><td>바스켓 지름이 맞는가</td><td>51mm·54mm·58mm 등 모델마다 달라 규격이 다르면 결합되지 않음</td></tr>
+        <tr><td>탬퍼 크기가 맞는가</td><td>바스켓 내경과 탬퍼 지름이 맞아야 가장자리까지 고르게 다져짐</td></tr>
+        <tr><td>원두를 신선하게 쓸 수 있는가</td><td>로스팅 후 시간이 많이 지난 원두는 일반 바스켓에서 흐름이 빨라지고 크레마가 얇아짐</td></tr>
+      </tbody>
+    </table>
+    <p>카페에서 쓰는 상업용 머신과 바리스타 자격 실기 시험장 장비는 일반적으로 단일벽 바스켓을 씁니다. 자격 시험을 준비하신다면 가압 바스켓보다 일반 바스켓으로 분쇄도·도징·탬핑을 연습해 두시는 것이 실제 시험 환경에 가깝습니다.</p>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 가압 바스켓으로 내리면 진짜 에스프레소가 아닌가요?</strong><br/>압력을 걸어 짧게 추출한다는 점에서는 에스프레소 방식이 맞습니다. 다만 압력을 가루층이 아니라 바스켓 출구가 만들기 때문에, 맛을 세밀하게 조절하는 폭이 좁고 거품이 크레마처럼 보일 뿐이라는 차이가 있습니다. 라떼나 아메리카노처럼 다른 재료와 섞어 마신다면 충분히 만족스러운 결과를 얻을 수 있습니다.</p>
+    <p><strong>Q. 가압 바스켓에 갓 간 고운 가루를 넣어도 되나요?</strong><br/>넣을 수는 있지만 너무 곱게 갈면 출구가 막혀 추출이 거의 되지 않거나 지나치게 쓴 샷이 나올 수 있습니다. 갓 간 원두와 에스프레소용 그라인더가 있다면 일반 바스켓을 쓰는 편이 원두의 장점을 살리기 좋습니다.</p>
+    <p><strong>Q. 1컵 바스켓과 2컵 바스켓은 가압 여부와 다른가요?</strong><br/>다른 기준입니다. 1컵·2컵은 담는 가루 양(싱글·더블 샷)을 뜻하고, 가압·일반은 바닥 구조를 뜻합니다. 그래서 가압 1컵, 가압 2컵, 일반 1컵, 일반 2컵처럼 네 가지 조합이 함께 들어 있는 머신도 있습니다.</p>
+    <p><strong>Q. 가압 바스켓에서 샷이 너무 빨리 나오면 어떻게 하나요?</strong><br/>가압 바스켓은 흐름을 출구가 상당 부분 정하므로 먼저 출구 막힘이나 부품 결합 상태를 확인합니다. 그다음 가루 양이 바스켓 표시선까지 차 있는지 확인하고, 잔에 받는 양을 줄여 농도를 맞춥니다. 분쇄도를 아주 곱게 바꾸는 것은 막힘의 원인이 될 수 있어 권하지 않습니다.</p>
+    <p><strong>Q. 바텀리스 포터필터에 가압 바스켓을 써도 되나요?</strong><br/>바텀리스 포터필터는 바스켓 바닥을 눈으로 보며 추출 상태를 확인하려고 쓰는 도구라 일반 바스켓과 함께 쓰는 것이 원칙입니다. 가압 바스켓은 출구가 하나뿐이라 바닥을 봐도 얻을 정보가 거의 없습니다.</p>
+
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>가압 바스켓은 바깥 벽의 작은 출구 구멍이 저항을 만들어, 가루층이 다소 성기더라도 압력을 유지하는 이중벽 바스켓입니다. 미리 분쇄된 원두나 에스프레소용 그라인더가 없는 환경에서 안정적으로 샷을 뽑을 수 있다는 것이 장점입니다.</p>
+      <p>대신 거품이 크레마처럼 보여 추출 상태를 판단하기 어렵고, 맛을 조절하는 폭이 좁습니다. 갓 간 원두로 분쇄도·도징·탬핑을 직접 맞추고 싶다면 일반 바스켓을 쓰고, 가압 바스켓을 쓴다면 출구 구멍이 막히지 않도록 사용 후 바로 헹구고 주기적으로 세정해 두시기 바랍니다.</p>
+    </div>
+
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://www.breville.com/us/en/blog/coffee-and-espresso/pressurized-vs-non-pressurized-portafilter.html" rel="noopener nofollow">Breville — Pressurized vs. non-pressurized baskets</a> · <a href="https://www.breville.com/us/en/blog/coffee-and-espresso/types-of-portafilters.html" rel="noopener nofollow">Breville — What are the different types of portafilters?</a> · <a href="https://manualslib.mx/manual/815129/Breville-The-Bambino-Bes450Bss.html?page=11" rel="noopener nofollow">Breville Bambino 사용설명서 — Single Wall·Dual Wall 필터 바스켓 안내</a> · <a href="https://kitchenaid.co.uk/faq/difference-between-filter-baskets" rel="noopener nofollow">KitchenAid — Difference between filter baskets</a> · <a href="https://producthelp.kitchenaid.com/Countertop_Appliances/Coffee_and_Espresso/Espresso/Semi-Automatic_with_Burr_Grinder/Operation/Too_Much_Pressure" rel="noopener nofollow">KitchenAid Product Help — Too Much Pressure</a></p>
+
+
+
+
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-22"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">드립백 사용법 — 물 양과 온도, 나눠 붓는 횟수와 주의사항</div><div class="rc-date">2026. 11. 22</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-21"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">클레버 드리퍼 사용법 — 준비물과 분쇄도·물 온도, 물 먼저 붓는 순서와 맛 조절</div><div class="rc-date">2026. 11. 21</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-20"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">케멕스 사용법 — 준비물과 필터 접는 법, 분쇄도와 물 붓는 시간</div><div class="rc-date">2026. 11. 20</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#가압바스켓</span>
+      <span class="tag">#이중벽바스켓</span>
+      <span class="tag">#포터필터</span>
+      <span class="tag">#에스프레소</span>
+      <span class="tag">#가정용에스프레소머신</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>가압 바스켓은 바깥 벽의 작은 출구 구멍이 저항을 만드는 이중벽 바스켓입니다.</strong></li>
+        <li><strong>일반 바스켓은 한 겹이며, 저항을 가루층(분쇄도·양·탬핑)이 만듭니다.</strong></li>
+        <li><strong>미리 분쇄된 원두에는 가압 바스켓, 갓 간 원두에는 일반 바스켓이 맞습니다.</strong></li>
+        <li><strong>가압 바스켓의 풍성한 거품은 공기가 섞인 것이라 추출 판단 지표로 쓰기 어렵습니다.</strong></li>
+        <li><strong>출구 구멍이 막히기 쉬우니 사용 후 바로 헹구고 주기적으로 세정합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
