@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>드립포트 고르는 법 — 주둥이 굵기와 용량, 전기·스토브형 장단점 | 바리스타 스페셜티</title>
+  <meta name="description" content="드립포트 고르는 법을 정리했습니다. 일반 주전자와의 차이, 구스넥 주둥이 굵기와 모양에 따른 물줄기 차이, 인분별 실사용 용량 계산, 전기 온도조절형과 스토브형 장단점, 손잡이·재질 확인점, 석회 제거와 관리 요령을 담았습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-24">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="드립포트 고르는 법 — 주둥이 굵기와 용량, 전기·스토브형 장단점 | 바리스타 스페셜티">
+<meta property="og:description" content="드립포트 고르는 법을 정리했습니다. 일반 주전자와의 차이, 구스넥 주둥이 굵기와 모양에 따른 물줄기 차이, 인분별 실사용 용량 계산, 전기 온도조절형과 스토브형 장단점, 손잡이·재질 확인점, 석회 제거와 관리 요령을 담았습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-24">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-24T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-24T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-24#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-24", "headline": "드립포트 고르는 법 — 주둥이 굵기와 용량, 전기·스토브형 장단점 | 바리스타 스페셜티", "description": "드립포트 고르는 법을 정리했습니다. 일반 주전자와의 차이, 구스넥 주둥이 굵기와 모양에 따른 물줄기 차이, 인분별 실사용 용량 계산, 전기 온도조절형과 스토브형 장단점, 손잡이·재질 확인점, 석회 제거와 관리 요령을 담았습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-24", "dateModified": "2026-11-24", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges"><span class="badge hot">☕ 핸드드립 장비</span><span class="badge">드립포트</span><span class="badge">드립 주전자</span></div>
+    <h1>드립포트 고르는 법<br/>— 주둥이 굵기와 용량, 전기·스토브형 장단점</h1>
+    <p class="subtitle"><strong>드립포트는 물줄기를 가늘고 일정하게 조절하려고 쓰는 핸드드립 전용 주전자입니다.</strong> 일반 주전자와 무엇이 다른지, 주둥이 굵기와 모양이 물줄기에 어떤 영향을 주는지, 인분에 맞는 용량은 얼마인지, 전기 온도조절형과 스토브형 중 무엇이 맞는지, 손잡이·재질·관리 요령까지 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 24일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 7분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+
+    <div class="hook">
+      <p>핸드드립을 시작하면 드리퍼와 필터 다음으로 고민하게 되는 장비가 드립포트입니다. 가격대가 1만 원대 스테인리스 제품부터 20만 원이 넘는 전기 온도조절 제품까지 넓어서 무엇을 사야 할지 막막해지기 쉽습니다. 결론부터 말씀드리면, <strong>1~2인분을 내린다면 실사용 600~800ml 용량에 가는 구스넥 주둥이를 고르고, 물 온도를 매번 맞추고 싶다면 전기 온도조절형, 이미 쓰는 주전자와 온도계가 있다면 스토브형</strong>으로 충분합니다. 아래에서 그 기준을 하나씩 설명합니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>드립포트와 일반 주전자의 차이, 꼭 필요한지 여부</li>
+        <li>주둥이 굵기·모양이 물줄기에 주는 영향</li>
+        <li>인분별로 알맞은 용량 계산</li>
+        <li>전기 온도조절형과 스토브형의 장단점</li>
+        <li>손잡이·무게·재질에서 확인할 점</li>
+        <li>사용 후 관리와 석회 제거 요령</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">90~96℃</span><span class="label">SCA 가정용 추출기 기준의 추출 물 온도 범위</span></div>
+      <div class="data-card"><span class="num">600~800ml</span><span class="label">1~2인분 핸드드립에 쓰기 좋은 실사용 용량</span></div>
+      <div class="data-card"><span class="num">1:15~1:17</span><span class="label">원두와 물의 흔한 핸드드립 비율</span></div>
+      <div class="data-card"><span class="num">60분 내외</span><span class="label">전기 온도조절형의 일반적인 보온 유지 시간</span></div>
+    </div>
+
+    <h2 class="section-title">1. 드립포트와 일반 주전자는 무엇이 다른가</h2>
+    <p>일반 주전자는 물을 빨리 붓도록 주둥이가 짧고 넓습니다. 핸드드립에 쓰면 물이 한꺼번에 쏟아져 가루층 한쪽이 패이거나, 뜸 들이기 단계에서 필요한 적은 양만 붓기가 어렵습니다. 드립포트는 <strong>주둥이가 몸통 아래쪽에서 길고 가늘게 뻗어 나온 구조</strong>라, 기울이는 각도를 조금씩 바꾸는 것만으로 물줄기의 굵기와 떨어지는 위치를 세밀하게 조절할 수 있습니다.</p>
+    <p>핸드드립의 맛은 분쇄도·물 온도·비율에 더해 <strong>물을 붓는 속도와 위치</strong>에 따라 달라집니다. 같은 레시피라도 물을 빠르게 많이 부으면 가루가 크게 휘저어지고 물이 빨리 빠져 묽어지기 쉽고, 천천히 고르게 부으면 추출이 고르게 진행됩니다. 드립포트는 이 붓는 동작을 일정하게 반복하도록 도와주는 도구입니다.</p>
+
+    <table class="compare-table">
+      <thead><tr><th>구분</th><th>드립포트</th><th>일반 주전자</th></tr></thead>
+      <tbody>
+        <tr><td>주둥이</td><td class="em">길고 가늘며 몸통 아래쪽에서 시작</td><td>짧고 넓음</td></tr>
+        <tr><td>물줄기 조절</td><td class="em">가늘게부터 굵게까지 조절 쉬움</td><td>한꺼번에 쏟아지기 쉬움</td></tr>
+        <tr><td>뜸 들이기 소량 붓기</td><td>가능</td><td>어려움</td></tr>
+        <tr><td>용량</td><td>0.5~1.2L 정도로 작은 편</td><td>1.5L 이상이 흔함</td></tr>
+        <tr><td>주 용도</td><td>핸드드립·푸어오버</td><td>물 끓이기 전반</td></tr>
+      </tbody>
+    </table>
+    <p>일반 주전자로도 핸드드립을 할 수는 있습니다. 다만 붓는 양이 매번 달라져 맛을 재현하기 어렵기 때문에, 핸드드립을 꾸준히 즐기실 생각이라면 드립포트를 갖추는 편이 레시피를 맞추기 훨씬 수월합니다.</p>
+
+    <h2 class="section-title">2. 주둥이 굵기와 모양 — 물줄기를 정하는 부분</h2>
+    <p>드립포트를 고를 때 가장 먼저 볼 부분은 주둥이입니다. 제조사들은 주둥이 지름을 따로 표기하지 않는 경우가 많으므로, 제품 사진과 설명에서 <strong>주둥이 끝의 굵기와 꺾인 모양</strong>을 확인하는 것이 현실적입니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>주둥이 형태</th><th>물줄기 특징</th><th>잘 맞는 사람</th></tr></thead>
+      <tbody>
+        <tr><td>가는 구스넥(끝이 가늘게 좁아짐)</td><td>가는 물줄기를 안정적으로 유지하기 쉬움</td><td class="em">입문자, 천천히 나눠 붓는 레시피</td></tr>
+        <tr><td>굵은 구스넥</td><td>굵은 물줄기로 빠르게 붓기 쉬움, 가늘게 하려면 숙련 필요</td><td>짧은 시간에 많이 붓는 레시피, 다인분</td></tr>
+        <tr><td>끝이 아래로 꺾인 주둥이</td><td>물이 수직에 가깝게 떨어져 낙하 지점 조절이 쉬움</td><td>원을 그리며 붓는 방식</td></tr>
+        <tr><td>짧고 넓은 주둥이</td><td>물이 퍼지며 쏟아짐</td><td>핸드드립 용도로는 비추천</td></tr>
+      </tbody>
+    </table>
+    <p>입문자라면 <strong>끝이 가늘게 좁아지는 구스넥</strong>이 무난합니다. 물줄기가 저절로 가늘게 유지되어 손떨림이 있어도 흐름이 크게 흔들리지 않습니다. 반대로 굵은 주둥이는 물을 빠르게 많이 부을 수 있어 3~4인분을 한 번에 내리거나 붓는 횟수가 적은 레시피에 편하지만, 가는 물줄기를 원할 때는 각도를 섬세하게 조절해야 합니다.</p>
+
+    <h2 class="section-title">3. 용량 — 표기 용량보다 실사용 용량을 보세요</h2>
+    <p>드립포트 용량은 대개 <strong>가득 채웠을 때의 양</strong>으로 표기됩니다. 하지만 물을 가득 채우면 기울일 때 뚜껑 틈이나 주둥이로 물이 넘치고, 물줄기도 처음에 왈칵 쏟아지기 쉽습니다. 예를 들어 하리오 부오노 1.2L 제품은 권장 실사용량을 약 800ml로 안내합니다. 표기 용량의 60~70% 정도를 실제로 쓸 수 있는 양으로 생각하시면 됩니다.</p>
+    <p>필요한 물의 양은 <strong>추출에 쓰는 물 + 필터 린싱·잔 데우기용 물</strong>로 계산합니다. 원두 15g을 1:16 비율로 내리면 추출에만 240ml가 필요하고, 여기에 필터를 적시고 서버와 잔을 데우는 물 100~200ml를 더하면 1인분에도 400ml 안팎이 듭니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>내리는 양</th><th>원두 / 추출 물(1:16 기준)</th><th>추천 표기 용량</th></tr></thead>
+      <tbody>
+        <tr><td>1인분</td><td>15g / 약 240ml</td><td>0.6~0.8L</td></tr>
+        <tr><td>2인분</td><td>25~30g / 약 400~480ml</td><td class="em">0.9~1.0L</td></tr>
+        <tr><td>3~4인분</td><td>40~50g / 약 640~800ml</td><td>1.2L 이상</td></tr>
+      </tbody>
+    </table>
+    <p>용량이 클수록 물을 채웠을 때 무거워져 손목에 부담이 갑니다. 대부분 1~2인분을 내린다면 0.9~1.0L 제품이 무게와 여유분의 균형이 좋습니다.</p>
+
+    <h2 class="section-title">4. 전기 온도조절형과 스토브형 장단점</h2>
+    <p>SCA(스페셜티커피협회)의 가정용 추출기 기준은 추출 물 온도를 <strong>90~96℃</strong>로 정하고 있습니다. 끓는 물을 바로 쓰면 이 범위보다 뜨겁고, 주전자에 옮겨 두면 시간이 지나며 빠르게 식기 때문에 온도를 어떻게 맞출지가 드립포트 선택의 두 번째 기준이 됩니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>구분</th><th>전기 온도조절형</th><th>스토브형</th></tr></thead>
+      <tbody>
+        <tr><td>온도 맞추기</td><td class="em">원하는 온도를 1℃ 단위로 설정</td><td>별도 온도계로 확인하거나 식혀서 맞춤</td></tr>
+        <tr><td>보온</td><td>제품에 따라 일정 시간 온도 유지(예: 펠로우 스태그 EKG 60분)</td><td>없음, 내리는 동안 조금씩 식음</td></tr>
+        <tr><td>가열 방식</td><td>전용 받침대(베이스)에서 가열</td><td>가스레인지·인덕션(바닥 재질 확인)</td></tr>
+        <tr><td>가격대</td><td>높은 편</td><td class="em">낮은 편</td></tr>
+        <tr><td>고장 요소</td><td>전기 부품·센서</td><td>거의 없음</td></tr>
+        <tr><td>잘 맞는 사람</td><td>매일 같은 온도로 재현하고 싶은 분, 원두를 자주 바꾸는 분</td><td>이미 주전자·온도계가 있는 분, 캠핑 등 야외 사용</td></tr>
+      </tbody>
+    </table>
+    <p>전기 온도조절형은 강배전 원두는 낮게, 약배전 원두는 높게 설정하는 식으로 원두마다 온도를 바로 바꿀 수 있어 편리합니다. 스토브형을 쓴다면 끓인 물을 드립포트에 옮겨 담으면 보통 온도가 몇 도 떨어지므로, <strong>디지털 온도계를 뚜껑 구멍에 꽂아 두고 원하는 온도가 되었을 때 붓기 시작</strong>하면 됩니다. 인덕션에서 쓰려면 바닥이 자성 스테인리스인지 반드시 확인하세요.</p>
+    <p>참고로 SCA가 발표한 연구(UC 데이비스 공동연구)에서는 추출 농도와 수율을 같게 맞추면 87~93℃ 범위의 물 온도 차이가 맛에 주는 영향은 크지 않았다고 보고했습니다. 즉 온도 1~2℃에 지나치게 매달리기보다, <strong>매번 비슷한 온도로 일정하게 붓는 것</strong>이 더 중요하다는 뜻으로 이해하시면 됩니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">매장에서 직접 확인할 것</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>빈 상태로 기울여 보기:</strong> 손잡이를 잡고 주둥이 끝까지 기울였을 때 손목이 꺾이지 않는지 확인합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>무게 확인:</strong> 빈 무게에 물 무게(1L = 약 1kg)를 더해 들 수 있는지 생각해 봅니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>뚜껑 고정:</strong> 깊이 기울였을 때 뚜껑이 빠지거나 덜컹거리지 않는지 봅니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>눈금 유무:</strong> 안쪽에 물 높이 표시가 있으면 채우는 양을 일정하게 맞추기 좋습니다.</div></div>
+    </div>
+
+    <h2 class="section-title">5. 손잡이·무게·재질에서 확인할 점</h2>
+    <p>드립포트는 물을 부을 때 2~4분 동안 들고 있는 도구라 손잡이와 무게 중심이 생각보다 중요합니다. 손잡이가 몸통에서 너무 멀거나 높으면 물이 줄어들수록 무게 중심이 바뀌어 물줄기가 흔들리기 쉽습니다. 손잡이를 쥐었을 때 <strong>검지를 손잡이 위쪽에 걸쳐 각도를 조절할 수 있는 형태</strong>가 다루기 편합니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>재질</th><th>특징</th><th>주의할 점</th></tr></thead>
+      <tbody>
+        <tr><td>스테인리스</td><td class="em">가볍고 튼튼하며 관리가 쉬움, 가장 흔함</td><td>인덕션 사용 시 바닥 재질 확인</td></tr>
+        <tr><td>구리(동)</td><td>열전도가 좋고 외관이 고급스러움</td><td>변색이 생겨 주기적 관리 필요, 가격이 높음</td></tr>
+        <tr><td>법랑</td><td>보온성이 있고 디자인 선택지가 많음</td><td>충격에 코팅이 깨질 수 있음, 무거운 편</td></tr>
+      </tbody>
+    </table>
+    <p>처음 구입하신다면 스테인리스 제품이 가격·무게·관리 면에서 가장 무난합니다. 구리나 법랑은 맛에 큰 차이를 만들기보다 사용감과 외관의 차이로 보시는 것이 좋습니다.</p>
+
+    <h2 class="section-title">6. 사용 후 관리와 석회 제거</h2>
+    <p>드립포트는 물만 담는 도구라 세척이 간단하지만, 수돗물이나 경도가 높은 물을 계속 끓이면 바닥과 주둥이 안쪽에 하얀 석회(물때)가 쌓입니다. 석회가 쌓이면 전기형은 가열 효율과 온도 센서 정확도가 떨어질 수 있고, 주둥이 안쪽이 좁아져 물줄기가 고르지 않게 됩니다.</p>
+    <div class="tip-box">
+      <div class="tip-title">관리 순서</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>사용 후 물 비우기:</strong> 남은 물을 버리고 뚜껑을 연 채 말립니다. 물을 오래 담아 두면 석회와 물 냄새가 생기기 쉽습니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>구연산 세척:</strong> 하얀 물때가 보이면 물에 구연산을 녹여 데운 뒤 잠시 두었다가 헹굽니다. 제품 설명서에 안내된 세척제와 농도를 우선합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>여러 번 헹구기:</strong> 세척 후 깨끗한 물을 2~3회 끓여 버려 냄새와 잔여물을 없앱니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>전기형 받침대 주의:</strong> 받침대와 몸통 바닥의 전기 접점은 물에 담그지 말고 마른 천으로만 닦습니다.</div></div>
+    </div>
+    <p>석회가 자주 생긴다면 물 자체를 바꾸는 것도 방법입니다. 정수기 물이나 경도가 적당한 물을 쓰면 드립포트 관리도 쉬워지고 추출 맛도 안정됩니다.</p>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 드립포트 없이 핸드드립을 할 수 있나요?</strong><br/>할 수 있습니다. 일반 주전자나 계량컵으로도 내릴 수 있지만 물줄기 조절이 어려워 맛이 매번 달라지기 쉽습니다. 클레버 드리퍼나 프렌치프레스처럼 물을 한 번에 부어 우리는 방식이라면 드립포트가 없어도 큰 차이가 없습니다.</p>
+    <p><strong>Q. 전기 온도조절형이 꼭 필요한가요?</strong><br/>필수는 아닙니다. 끓인 물을 드립포트에 옮기고 온도계로 확인하면 스토브형으로도 충분히 맞출 수 있습니다. 매일 같은 온도로 빠르게 준비하고 싶거나 원두에 따라 온도를 자주 바꾸신다면 전기형이 편리합니다.</p>
+    <p><strong>Q. 용량은 클수록 좋은가요?</strong><br/>그렇지 않습니다. 용량이 크면 물을 채웠을 때 무거워져 가는 물줄기를 유지하기 어렵습니다. 평소 내리는 인분에 린싱용 물을 더한 양이 표기 용량의 60~70%에 들어오는 제품을 고르시면 됩니다.</p>
+    <p><strong>Q. 바리스타 자격 시험에서도 드립포트를 쓰나요?</strong><br/>국내 바리스타 자격 실기는 에스프레소 머신 중심으로 평가하는 경우가 일반적이라 시험 과목과 장비는 응시하는 기관의 최신 공고를 확인하셔야 합니다. 다만 핸드드립 관련 교육 과정이나 매장 실무에서는 드립포트를 다루는 일이 많으므로 기본 붓기 동작을 익혀 두면 도움이 됩니다.</p>
+    <p><strong>Q. 드립포트 물을 바로 끓는 상태로 부어도 되나요?</strong><br/>끓는 물(100℃)은 SCA 권장 범위(90~96℃)보다 뜨겁습니다. 강배전 원두는 쓴맛이 강해지기 쉬우므로 잠시 식혀 쓰는 편이 좋고, 약배전 원두는 범위 상단에 가깝게 써도 괜찮습니다.</p>
+
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>드립포트는 물줄기의 굵기와 떨어지는 위치를 일정하게 조절해 핸드드립 맛을 재현하기 쉽게 해 주는 주전자입니다. 고를 때는 주둥이 모양, 실사용 용량, 온도 맞추는 방식, 손잡이와 무게를 차례로 확인하시면 됩니다.</p>
+      <p>1~2인분이라면 표기 0.9~1.0L 안팎의 가는 구스넥 제품이 무난하고, 온도 재현을 중시하면 전기 온도조절형, 이미 주전자와 온도계가 있다면 스토브형으로 시작해도 충분합니다. 어떤 제품이든 사용 후 물을 비우고 주기적으로 석회를 제거해 두면 오래 같은 물줄기를 유지할 수 있습니다.</p>
+    </div>
+
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://sca.coffee/s/SCA_Standard_310-2021.pdf" rel="noopener nofollow">SCA Standard 310-2021 — 가정용 추출기 기준(추출 온도 90~96℃)</a> · <a href="https://sca.coffee/sca-news/read/just-published-brewing-temperature-and-the-sensory-profile-of-brewed-coffee" rel="noopener nofollow">SCA News — Brewing Temperature and the Sensory Profile of Brewed Coffee</a> · <a href="https://www.nature.com/articles/s41598-020-73341-4" rel="noopener nofollow">Batali 외, Scientific Reports (2020) — 추출 온도와 관능 특성</a> · <a href="https://www.muji.us/products/v60-buono-drip-kettle-1-2l-silver" rel="noopener nofollow">HARIO V60 Buono Drip Kettle 1.2L 제품 사양</a> · <a href="https://www.coffeereview.com/equipment-review-fellow-stagg-ekg-electric-kettle/" rel="noopener nofollow">Coffee Review — Fellow Stagg EKG 장비 리뷰</a></p>
+
+
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-23"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">가압 바스켓 뜻 — 일반 바스켓과 크레마·분쇄도가 다른 점</div><div class="rc-date">2026. 11. 23</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-22"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">드립백 사용법 — 물 양과 온도, 나눠 붓는 횟수와 주의사항</div><div class="rc-date">2026. 11. 22</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-21"><div class="rc-cat">☕ 추출 기법 심층 가이드</div><div class="rc-title">클레버 드리퍼 사용법 — 준비물과 분쇄도·물 온도, 물 먼저 붓는 순서와 맛 조절</div><div class="rc-date">2026. 11. 21</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#드립포트</span>
+      <span class="tag">#드립주전자</span>
+      <span class="tag">#구스넥</span>
+      <span class="tag">#핸드드립</span>
+      <span class="tag">#핸드드립장비</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>드립포트는 길고 가는 주둥이로 물줄기 굵기와 위치를 조절하는 핸드드립용 주전자입니다.</strong></li>
+        <li><strong>입문자에게는 끝이 가늘게 좁아지는 구스넥 주둥이가 무난합니다.</strong></li>
+        <li><strong>실사용 용량은 표기 용량의 60~70%로 보고, 1~2인분은 0.9~1.0L가 적당합니다.</strong></li>
+        <li><strong>온도 재현이 중요하면 전기 온도조절형, 주전자·온도계가 있으면 스토브형으로 충분합니다.</strong></li>
+        <li><strong>사용 후 물을 비우고 구연산으로 주기적으로 석회를 제거합니다.</strong></li>
+      </ul>
+    </div>
+  </div>
+</div><!-- /container -->
+
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
