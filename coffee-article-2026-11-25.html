@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>리스트레또 뜻 — 룽고와 비교한 추출량 비율과 맛 구분법 | 바리스타 스페셜티</title>
+  <meta name="description" content="리스트레또 뜻을 정리했습니다. 에스프레소·룽고와의 추출량(g) 비율 차이, 분쇄도와 추출 시간 조절, 맛과 카페인 차이, 머신에서 만드는 순서와 자주 하는 실수를 담았습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-25">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="리스트레또 뜻 — 룽고와 비교한 추출량 비율과 맛 구분법 | 바리스타 스페셜티">
+<meta property="og:description" content="리스트레또 뜻을 정리했습니다. 에스프레소·룽고와의 추출량(g) 비율 차이, 분쇄도와 추출 시간 조절, 맛과 카페인 차이, 머신에서 만드는 순서와 자주 하는 실수를 담았습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-25">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-25T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-25T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-25#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-25", "headline": "리스트레또 뜻 — 룽고와 비교한 추출량 비율과 맛 구분법 | 바리스타 스페셜티", "description": "리스트레또 뜻을 정리했습니다. 에스프레소·룽고와의 추출량(g) 비율 차이, 분쇄도와 추출 시간 조절, 맛과 카페인 차이, 머신에서 만드는 순서와 자주 하는 실수를 담았습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-25", "dateModified": "2026-11-25", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges"><span class="badge hot">☕ 에스프레소 기초</span><span class="badge">리스트레또</span><span class="badge">룽고</span></div>
+    <h1>리스트레또 뜻<br/>— 룽고와 비교한 추출량 비율과 맛 구분법</h1>
+    <p class="subtitle"><strong>리스트레또는 같은 양의 원두로 물을 적게 받아 진하게 뽑은 에스프레소입니다.</strong> 일반 에스프레소와 룽고를 나누는 기준은 추출 시간이 아니라 원두 대비 받는 양(비율)입니다. 비율 범위, 분쇄도 조절, 맛과 카페인 차이, 머신에서 만드는 순서를 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 25일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+
+    <div class="hook">
+      <p>카페 메뉴판이나 머신 버튼에서 리스트레또, 에스프레소, 룽고라는 말을 보고 무엇이 다른지 궁금해지는 경우가 많습니다. 결론부터 말씀드리면 <strong>세 가지는 같은 원두와 같은 머신으로 만들고, 원두 무게 대비 받는 액체의 양만 다릅니다.</strong> 리스트레또는 대략 1:1~1:1.5, 일반 에스프레소는 1:2 안팎, 룽고는 1:3 이상으로 봅니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>리스트레또라는 이름의 뜻과 에스프레소·룽고와의 구분 기준</li>
+        <li>원두 g 기준 추출량과 추출 시간 범위</li>
+        <li>분쇄도를 어떻게 바꿔야 하는지</li>
+        <li>맛·농도·카페인 차이</li>
+        <li>머신에서 리스트레또를 만드는 순서</li>
+        <li>자주 하는 실수와 점검 방법</li>
+      </ul>
+    </div>
+
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">1:1~1:1.5</span><span class="label">리스트레또에서 흔히 쓰는 원두:추출량 비율</span></div>
+      <div class="data-card"><span class="num">1:2 안팎</span><span class="label">일반 에스프레소(노르말레)의 흔한 비율</span></div>
+      <div class="data-card"><span class="num">1:3 이상</span><span class="label">룽고에서 흔히 쓰는 비율</span></div>
+      <div class="data-card"><span class="num">공식 기준 없음</span><span class="label">세 용어 모두 업계 표준 수치가 따로 정해져 있지 않음</span></div>
+    </div>
+
+    <h2 class="section-title">1. 리스트레또 뜻 — 이름에서 알 수 있는 것</h2>
+    <p>리스트레또(ristretto)는 이탈리아어로 &lsquo;제한된, 줄어든&rsquo;이라는 뜻입니다. 에스프레소 한 잔에 들어가는 물의 양을 줄여 짧게 끊어 낸 샷이라는 의미로 쓰입니다. 같은 원두 18g을 담아도 에스프레소는 36g 안팎을 받고, 리스트레또는 18~27g 정도에서 추출을 멈춥니다.</p>
+    <p>반대편에 있는 룽고(lungo)는 &lsquo;길다&rsquo;는 뜻입니다. 원두 양은 그대로 두고 물을 더 많이 통과시켜 받는 양을 늘린 샷입니다. 이 세 가지는 별개의 원두나 별개의 기계가 아니라 <strong>하나의 추출 방식에서 받는 양을 어디서 끊느냐</strong>로 나뉩니다.</p>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      세 용어에 대해 업계 전체가 합의한 공식 수치는 없습니다. 로스터리와 머신 제조사마다 비율 범위를 조금씩 다르게 안내하므로, 아래 숫자는 흔히 쓰이는 범위로 보시면 됩니다.
+    </div>
+
+    <h2 class="section-title">2. 리스트레또·에스프레소·룽고 비교</h2>
+    <p>추출량은 컵에 받은 액체 무게를 기준으로 하는 것이 정확합니다. 크레마 때문에 부피(ml)로 재면 오차가 커지기 때문입니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>구분</th><th>리스트레또</th><th>에스프레소(노르말레)</th><th>룽고</th></tr></thead>
+      <tbody>
+        <tr><td>원두:추출량 비율</td><td class="em">약 1:1~1:1.5</td><td class="em">약 1:2</td><td class="em">약 1:3 이상</td></tr>
+        <tr><td>원두 18g 기준 받는 양</td><td>약 18~27g</td><td>약 36g</td><td>약 54g 이상</td></tr>
+        <tr><td>추출 시간(참고)</td><td>20~25초 안팎</td><td>25~30초 안팎</td><td>30초 이상, 길면 40~60초</td></tr>
+        <tr><td>맛 경향</td><td>진하고 걸쭉하며 단맛·산미가 응축됨</td><td>균형형</td><td>묽고 쓴맛·떫은맛이 올라오기 쉬움</td></tr>
+        <tr><td>주로 쓰는 곳</td><td>우유 음료 베이스, 진한 샷 선호</td><td>기본 메뉴 전반</td><td>아메리카노 대용, 가벼운 한 잔</td></tr>
+      </tbody>
+    </table>
+    <p>추출 시간은 자료마다 범위가 다르게 소개됩니다. 시간은 결과일 뿐이고, 기준이 되는 것은 받는 양입니다. 같은 18g에 36g을 받더라도 분쇄도와 압력에 따라 22초가 걸릴 수도, 32초가 걸릴 수도 있습니다.</p>
+
+    <h2 class="section-title">3. 분쇄도와 추출 시간은 어떻게 바꾸나</h2>
+    <p>리스트레또를 만든다고 해서 반드시 분쇄도를 가늘게 해야 하는 것은 아닙니다. 에스프레소와 같은 분쇄도에서 <strong>받는 양만 일찍 끊어도</strong> 리스트레또가 됩니다. 이 경우 추출 시간은 자연스럽게 에스프레소보다 짧아집니다.</p>
+    <p>반대로 분쇄도를 한 단계 가늘게 하면 물이 천천히 통과하므로 같은 시간 안에 받는 양이 줄어듭니다. 이렇게 하면 시간은 25~30초 정도로 유지하면서 양만 줄인 리스트레또를 만들 수 있습니다. 다만 너무 가늘게 가면 채널링이 생기거나 물이 거의 내려오지 않을 수 있어 한 번에 한 단계씩 조절하는 편이 안전합니다.</p>
+    <table class="compare-table">
+      <thead><tr><th>만들고 싶은 샷</th><th>분쇄도</th><th>끊는 시점</th></tr></thead>
+      <tbody>
+        <tr><td>리스트레또</td><td>기본보다 같거나 약간 가늘게</td><td class="em">에스프레소보다 일찍 끊음</td></tr>
+        <tr><td>에스프레소</td><td>기본</td><td>비율 1:2 근처에서 끊음</td></tr>
+        <tr><td>룽고</td><td>기본보다 약간 굵게</td><td>비율 1:3 이상까지 받음</td></tr>
+      </tbody>
+    </table>
+    <p>룽고를 만들 때 분쇄도를 굵게 가져가는 이유는 물이 오래 통과해도 과다추출로 쓴맛이 심해지지 않게 하기 위해서입니다. 리스트레또는 반대로 짧게 끊기 때문에 과소추출로 신맛만 튀지 않도록 분쇄도와 도징을 점검해야 합니다.</p>
+
+    <div class="tip-box">
+      <div class="tip-title">머신에서 리스트레또 만드는 순서</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>도징:</strong> 평소 쓰는 바스켓 기준 양(예: 18g)을 담고 평평하게 정리해 템핑합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>목표 설정:</strong> 컵을 저울 위에 올리고 목표 추출량을 정합니다(예: 18g 담았다면 22~27g).</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>추출 시작과 끊기:</strong> 타이머를 켜고, 저울 숫자가 목표에 가까워지면 목표보다 2~3g 앞에서 멈춥니다. 멈춘 뒤에도 몇 g이 더 떨어집니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>맛 확인:</strong> 신맛만 튀면 약간 가늘게, 쓰고 텁텁하면 약간 굵게 조절해 다시 뽑습니다.</div></div>
+    </div>
+
+    <h2 class="section-title">4. 맛과 카페인 차이</h2>
+    <p>리스트레또는 추출 초반에 나오는 성분이 중심이라 단맛·산미·바디감이 응축된 느낌이 강합니다. 반면 추출 후반에 많이 나오는 쓴맛 성분은 상대적으로 덜 나옵니다. 그래서 같은 원두라도 에스프레소보다 부드럽고 진한 인상을 주는 경우가 많습니다. 룽고는 후반 성분이 더 많이 섞여 쓴맛과 떫은맛이 올라오기 쉽고 맛이 가벼워집니다.</p>
+    <p>카페인은 원두 양이 같으면 총량이 크게 다르지 않다는 설명이 많지만, 룽고가 더 많이 추출된다는 설명도 있어 자료마다 차이가 있습니다. 어느 쪽이든 샷 한 잔의 카페인 차이는 크지 않으므로, 카페인을 줄이려고 샷 종류를 고르기보다 샷 수를 조절하는 편이 확실합니다.</p>
+    <div class="note-box">
+      <div class="note-label">주의</div>
+      리스트레또는 &lsquo;더 진한 원두를 쓴 샷&rsquo;이 아니라 &lsquo;같은 원두를 짧게 뽑은 샷&rsquo;입니다. 로스팅이 강하다는 뜻으로 쓰는 말이 아니므로, 메뉴에서 고를 때 원두 종류와는 따로 확인하셔야 합니다.
+    </div>
+
+    <h2 class="section-title">5. 어떤 음료에 쓰면 좋은가</h2>
+    <p>우유를 많이 넣는 라떼나 플랫화이트는 샷의 맛이 우유에 묻히기 쉬워, 진하게 뽑은 리스트레또를 쓰는 매장도 있습니다. 플랫화이트는 리스트레또 더블샷을 쓰는 레시피가 소개되기도 하지만, 어느 쪽이 정답이라는 규정은 없고 매장 레시피에 따라 다릅니다. 아메리카노는 룽고나 일반 에스프레소에 뜨거운 물을 더해 만듭니다. 룽고를 쓰면 샷 자체가 묽어서 물을 덜 섞어도 되지만 쓴맛이 강해질 수 있어, 일반적으로는 에스프레소에 물을 더하는 쪽이 맛이 안정적입니다.</p>
+    <p>정리하면 진하고 단 느낌이 필요한 곳에는 리스트레또, 기본 균형은 에스프레소, 가볍고 긴 한 잔이 필요하면 룽고를 고릅니다. 같은 원두라도 받는 양에 따라 맛 방향이 달라지므로 비교 시음을 해 보시는 것이 좋습니다.</p>
+
+    <h2 class="section-title">6. 자주 하는 실수와 점검</h2>
+    <table class="compare-table">
+      <thead><tr><th>증상</th><th>가능한 원인</th><th>조정</th></tr></thead>
+      <tbody>
+        <tr><td>신맛만 날카롭게 튐</td><td>너무 일찍 끊었거나 분쇄도가 굵음</td><td class="em">분쇄도를 한 단계 가늘게, 목표량을 조금 늘림</td></tr>
+        <tr><td>쓰고 텁텁함</td><td>분쇄도가 지나치게 가늘어 시간이 길어짐</td><td class="em">분쇄도를 한 단계 굵게</td></tr>
+        <tr><td>추출이 끝없이 걸림</td><td>가늘게 갈거나 과도하게 템핑</td><td>도징량·템핑 압력 점검</td></tr>
+        <tr><td>매번 양이 다름</td><td>부피로 재거나 타이머만 봄</td><td>저울로 g 단위 확인</td></tr>
+      </tbody>
+    </table>
+    <p>또 하나 흔한 실수는 머신의 &lsquo;샷 버튼&rsquo; 프로그래밍만 믿는 것입니다. 원두 상태와 분쇄도가 바뀌면 같은 시간에도 받는 양이 달라지므로, 새 원두로 바꾼 날은 저울로 비율을 먼저 확인하는 것이 좋습니다.</p>
+
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 리스트레또는 에스프레소보다 카페인이 많은가요?</strong><br/>원두 양이 같다면 총 카페인 차이는 크지 않다는 설명이 일반적입니다. 오히려 물을 더 통과시키는 룽고가 조금 더 많이 추출된다는 의견도 있습니다. 자료마다 다르므로 정확한 수치는 제품별로 확인하셔야 합니다.</p>
+    <p><strong>Q. 리스트레또와 마키아토는 같은 건가요?</strong><br/>다릅니다. 리스트레또는 샷을 짧게 뽑는 방식이고, 마키아토는 에스프레소에 우유 거품을 소량 올린 음료입니다.</p>
+    <p><strong>Q. 집에서도 리스트레또를 만들 수 있나요?</strong><br/>에스프레소 머신이 있다면 받는 양을 일찍 끊는 것만으로 만들 수 있습니다. 저울과 타이머가 있으면 재현하기 쉽습니다. 가압 바스켓을 쓰면 비율 조절 폭이 좁아질 수 있습니다.</p>
+    <p><strong>Q. 룽고는 에스프레소 더블샷과 같은가요?</strong><br/>아닙니다. 더블샷은 원두 양 자체가 두 배인 샷이고, 룽고는 원두 양은 같고 받는 액체가 많은 샷입니다.</p>
+    <p><strong>Q. 바리스타 자격 시험에 나오나요?</strong><br/>에스프레소 관련 메뉴 용어로 다뤄질 수 있지만, 출제 범위는 기관마다 다르므로 응시하는 기관의 최신 공고와 교재를 확인하시기 바랍니다.</p>
+
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>리스트레또는 같은 원두로 받는 양을 줄여 진하게 뽑은 에스프레소이고, 룽고는 반대로 양을 늘려 길게 뽑은 샷입니다. 구분 기준은 시간이 아니라 원두 대비 추출량이며, 대략 1:1~1:1.5, 1:2, 1:3 이상으로 나눕니다.</p>
+      <p>저울로 g 단위를 재고, 신맛이 튀면 가늘게·쓰면 굵게 한 단계씩 조절하면 원하는 맛에 가까워집니다. 공식 기준이 없는 용어이므로 매장이나 레시피의 기준을 먼저 확인하시기 바랍니다.</p>
+    </div>
+
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://clivecoffee.com/blogs/learn/brew-ratios-basket-sizes-and-the-confusion-over-a-double-shot" rel="noopener nofollow">Clive Coffee — Brew Ratios, Basket Sizes, and the Confusion over a "Double Shot"</a> · <a href="https://home.lamarzoccousa.com/brew-ratios-around-world/" rel="noopener nofollow">La Marzocco — Brew Ratios Around the World</a> · <a href="https://www.seattlecoffeegear.com/blogs/learning-center/ristretto-vs-lungo" rel="noopener nofollow">Seattle Coffee Gear — Ristretto vs Lungo</a> · <a href="https://www.breville.com/en-us/blog/coffee-and-espresso/ristretto-vs-long-shot" rel="noopener nofollow">Breville — Ristretto vs Long Shot</a></p>
+
+
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-16"><div class="rc-cat">🏪 카페 창업 & 운영 실전</div><div class="rc-title">휴게음식점 일반음식점 구분 — 주류 판매 가능 여부와 시설·신고 절차, 업종 변경 요건</div><div class="rc-date">2026. 11. 16</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-11"><div class="rc-cat">🏪 카페 창업 & 운영 실전</div><div class="rc-title">휴게음식점 위생교육 신청 — 신규 6시간·기존 3시간 교육 시간과 과태료</div><div class="rc-date">2026. 11. 11</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-04"><div class="rc-cat">🏪 카페 창업 & 운영 실전</div><div class="rc-title">라떼용 오트 음료 고르는법 — 성분표 확인 기준과 용도별 선택</div><div class="rc-date">2026. 11. 04</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#리스트레또</span>
+      <span class="tag">#룽고</span>
+      <span class="tag">#에스프레소</span>
+      <span class="tag">#추출비율</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>리스트레또는 같은 원두로 받는 양을 줄여 짧게 끊은 진한 에스프레소입니다.</strong></li>
+        <li><strong>구분 기준은 시간이 아니라 원두 대비 추출량이며, 대략 1:1~1:1.5(리스트레또), 1:2(에스프레소), 1:3 이상(룽고)입니다.</strong></li>
+        <li><strong>저울로 g 단위를 재고, 신맛이 튀면 가늘게·쓰면 굵게 한 단계씩 조절합니다.</strong></li>
+        <li><strong>세 용어 모두 업계 공식 수치가 없으므로 매장·레시피 기준을 먼저 확인합니다.</strong></li>
+      </ul>
+    </div>
+
+  </div>
+</div><!-- /container -->
+
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
