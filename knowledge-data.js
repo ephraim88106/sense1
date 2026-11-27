@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 216, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "롱블랙 뜻 — 아메리카노와 구분하는 법, 물 양과 크레마 특징",
+    date: "2026.11.27",
+    summary: "메뉴판에 롱블랙과 아메리카노가 함께 있으면 무엇이 다른지 헷갈리기 쉽습니다. 결론부터 말씀드리면 두 음료 모두 에스프레소와 뜨거운 물로 만들고, 가장 흔히 설명되는 차이는 붓는 순서와 물의 양입니다. 다만 공식 기준은 없고 매장마다 정의가 달라서, 메뉴 설명을 함께 확인하시는 편이 정확합니다.",
+    link: "coffee-article-2026-11-27.html"
+  },
+  {
     id: 215, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "코르타도 뜻 — 플랫화이트·지브롤터와 구분하는 요령, 샷과 1:1 구성",

@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>롱블랙 뜻 — 아메리카노와 구분하는 법, 물 양과 크레마 특징 | 바리스타 스페셜티</title>
+  <meta name="description" content="롱블랙 뜻과 아메리카노와 구분하는 법을 정리했습니다. 물과 에스프레소를 붓는 방식, 크레마가 남는 정도, 농도와 맛 차이, 매장별 기준이 다른 이유와 집에서 만드는 순서를 담았습니다.">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      background: #faf7f2;
+      color: #2c1810;
+      line-height: 1.8;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── 헤더 ── */
+    .article-header {
+      background: linear-gradient(135deg, #2c1810 0%, #6b3a2a 60%, #c8860a 100%);
+      color: #faf7f2;
+      padding: 48px 24px 40px;
+      margin-bottom: 0;
+    }
+    .article-header .inner { max-width: 800px; margin: 0 auto; }
+    .badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .badge {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.05em;
+    }
+    .badge.hot { background: #c8860a; border-color: #c8860a; }
+    .article-header h1 {
+      font-size: clamp(22px, 4vw, 34px);
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 16px;
+    }
+    .article-header .subtitle {
+      font-size: 15px;
+      opacity: 0.85;
+      margin-bottom: 20px;
+    }
+    .meta-row {
+      display: flex;
+      gap: 20px;
+      font-size: 13px;
+      opacity: 0.75;
+      flex-wrap: wrap;
+    }
+
+    /* ── 본문 ── */
+    .article-body { padding: 40px 0 0; }
+
+    /* 훅 문장 */
+    .hook {
+      font-size: 18px;
+      font-weight: 700;
+      color: #6b3a2a;
+      border-left: 5px solid #c8860a;
+      padding: 16px 20px;
+      background: #fff8f0;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 32px;
+      line-height: 1.6;
+    }
+
+    /* 핵심 요약 박스 */
+    .summary-box {
+      background: #2c1810;
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 40px;
+    }
+    .summary-box h3 {
+      font-size: 13px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #c8860a;
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+    .summary-box ul { list-style: none; padding: 0; }
+    .summary-box ul li {
+      padding: 6px 0;
+      padding-left: 24px;
+      position: relative;
+      font-size: 14.5px;
+      line-height: 1.6;
+    }
+    .summary-box ul li::before {
+      content: '☕';
+      position: absolute;
+      left: 0;
+      font-size: 13px;
+    }
+
+    /* 소제목 */
+    h2.section-title {
+      font-size: 22px;
+      font-weight: 900;
+      color: #2c1810;
+      margin: 48px 0 20px;
+      padding-left: 18px;
+      border-left: 5px solid #c8860a;
+      line-height: 1.4;
+    }
+    p { font-size: 15.5px; margin-bottom: 18px; color: #3a2218; }
+    strong { color: #6b3a2a; }
+
+    /* 실전 팁 박스 */
+    .tip-box {
+      background: linear-gradient(135deg, #fff8e7, #ffedc8);
+      border: 2px solid #c8860a;
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin: 36px 0;
+    }
+    .tip-box .tip-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #c8860a;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .tip-item {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 16px;
+      align-items: flex-start;
+    }
+    .tip-num {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      background: #c8860a;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 13px;
+    }
+    .tip-text { font-size: 14.5px; line-height: 1.7; color: #3a2218; }
+    .tip-text strong { color: #6b3a2a; }
+
+    /* 데이터 하이라이트 */
+    .data-highlight {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin: 32px 0;
+    }
+    .data-card {
+      background: #fff;
+      border: 1px solid #e8d8c8;
+      border-radius: 10px;
+      padding: 20px 16px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(107,58,42,0.07);
+    }
+    .data-card .num {
+      font-size: 28px;
+      font-weight: 900;
+      color: #6b3a2a;
+      display: block;
+    }
+    .data-card .label {
+      font-size: 12px;
+      color: #8a6a5a;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* 마무리 */
+    .closing-box {
+      background: linear-gradient(135deg, #6b3a2a, #2c1810);
+      color: #faf7f2;
+      border-radius: 12px;
+      padding: 32px;
+      margin-top: 48px;
+    }
+    .closing-box h3 { font-size: 18px; font-weight: 900; margin-bottom: 16px; color: #c8860a; }
+    .closing-box p { color: #f0e8de; font-size: 15px; margin-bottom: 10px; }
+
+    /* 태그 & 푸터 */
+    .tags { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: #fff;
+      border: 1px solid #c8860a;
+      color: #6b3a2a;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #e8d8c8;
+      font-size: 12px;
+      color: #a08070;
+      line-height: 1.6;
+    }
+
+    /* 비교 테이블 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(107,58,42,0.07);
+      font-size: 14px;
+    }
+    .compare-table thead { background: #6b3a2a; color: #faf7f2; }
+    .compare-table th { padding: 12px 14px; text-align: left; font-weight: 700; }
+    .compare-table td { padding: 11px 14px; border-bottom: 1px solid #f0e8de; }
+    .compare-table tr:last-child td { border-bottom: none; }
+    .compare-table tr:nth-child(even) td { background: #fdf9f5; }
+    .compare-table .em { color: #c8860a; font-weight: 700; }
+
+    /* 경고/참고 박스 */
+    .note-box {
+      background: #fff;
+      border-left: 4px solid #6b3a2a;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      font-size: 14.5px;
+    }
+    .note-box .note-label {
+      font-size: 12px;
+      font-weight: 900;
+      color: #6b3a2a;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 600px) {
+      .article-header { padding: 36px 20px 30px; }
+      h2.section-title { font-size: 19px; }
+      .data-highlight { grid-template-columns: repeat(2, 1fr); }
+      .compare-table { font-size: 13px; }
+      .compare-table th, .compare-table td { padding: 9px 10px; }
+    }
+  </style>
+<!-- SEO:BEGIN -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="canonical" href="https://coffee.ephseed.com/coffee-article-2026-11-27">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="KCA 바리스타 포털">
+<meta property="og:title" content="롱블랙 뜻 — 아메리카노와 구분하는 법, 물 양과 크레마 특징 | 바리스타 스페셜티">
+<meta property="og:description" content="롱블랙 뜻과 아메리카노와 구분하는 법을 정리했습니다. 물과 에스프레소를 붓는 방식, 크레마가 남는 정도, 농도와 맛 차이, 매장별 기준이 다른 이유와 집에서 만드는 순서를 담았습니다.">
+<meta property="og:url" content="https://coffee.ephseed.com/coffee-article-2026-11-27">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://coffee.ephseed.com/assets/og-default.png">
+<meta property="article:published_time" content="2026-11-27T09:00:00+09:00">
+<meta property="article:modified_time" content="2026-11-27T09:00:00+09:00">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L6H7ZKF5GE"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-L6H7ZKF5GE");</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://coffee.ephseed.com/#organization", "name": "KCA 바리스타 포털", "url": "https://coffee.ephseed.com/"}, {"@type": "WebSite", "@id": "https://coffee.ephseed.com/#website", "url": "https://coffee.ephseed.com/", "name": "KCA 바리스타 포털", "inLanguage": "ko-KR", "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}, {"@type": "Article", "@id": "https://coffee.ephseed.com/coffee-article-2026-11-27#page", "url": "https://coffee.ephseed.com/coffee-article-2026-11-27", "headline": "롱블랙 뜻 — 아메리카노와 구분하는 법, 물 양과 크레마 특징 | 바리스타 스페셜티", "description": "롱블랙 뜻과 아메리카노와 구분하는 법을 정리했습니다. 물과 에스프레소를 붓는 방식, 크레마가 남는 정도, 농도와 맛 차이, 매장별 기준이 다른 이유와 집에서 만드는 순서를 담았습니다.", "inLanguage": "ko-KR", "image": "https://coffee.ephseed.com/assets/og-default.png", "isPartOf": {"@id": "https://coffee.ephseed.com/#website"}, "datePublished": "2026-11-27", "dateModified": "2026-11-27", "author": {"@id": "https://coffee.ephseed.com/#organization"}, "publisher": {"@id": "https://coffee.ephseed.com/#organization"}}]}</script>
+<!-- SEO:END -->
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 상단 배너 (300x250)            -->
+<!-- 페이지 최상단, 콘텐츠 시작 직전 위치            -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<div class="kakao-top-ad" style="display:flex;justify-content:center;margin:20px auto 30px;width:fit-content;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-hn8rh47xe9PjfTNC"
+    data-ad-width="300"
+    data-ad-height="250"></ins>
+</div>
+
+
+<!-- ═══ 헤더 ═══ -->
+<div class="article-header">
+  <div class="inner">
+    <div class="badges"><span class="badge hot">☕ 에스프레소 음료</span><span class="badge">롱블랙</span><span class="badge">아메리카노</span></div>
+    <h1>롱블랙 뜻<br/>— 아메리카노와 구분하는 법, 물 양과 크레마 특징</h1>
+    <p class="subtitle"><strong>핵심 차이는 붓는 순서입니다.</strong> 롱블랙은 뜨거운 물 위에 에스프레소를 붓고, 아메리카노는 에스프레소에 물을 더하는 방식으로 설명됩니다. 크레마와 농도, 매장별 기준을 정리했습니다.</p>
+    <div class="meta-row">
+      <span>📅 2026년 11월 27일</span>
+      <span>✍️ 스페셜티 바리스타 10년 경력</span>
+      <span>⏱️ 읽는 데 약 6분</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="article-body">
+
+    <div class="hook">
+      <p>메뉴판에 롱블랙과 아메리카노가 함께 있으면 무엇이 다른지 헷갈리기 쉽습니다. 결론부터 말씀드리면 <strong>두 음료 모두 에스프레소와 뜨거운 물로 만들고, 가장 흔히 설명되는 차이는 붓는 순서와 물의 양입니다.</strong> 다만 공식 기준은 없고 매장마다 정의가 달라서, 메뉴 설명을 함께 확인하시는 편이 정확합니다.</p>
+    </div>
+    <div class="summary-box">
+      <h3>이 글에서 확인할 수 있는 것</h3>
+      <ul>
+        <li>롱블랙과 아메리카노의 정의와 유래</li>
+        <li>붓는 순서가 크레마에 미치는 영향</li>
+        <li>물 양과 농도, 카페인 차이</li>
+        <li>집과 매장에서 만드는 순서</li>
+        <li>주문할 때 확인할 점</li>
+      </ul>
+    </div>
+    <div class="data-highlight">
+      <div class="data-card"><span class="num">샷 → 물</span><span class="label">아메리카노: 에스프레소에 물을 더함</span></div>
+      <div class="data-card"><span class="num">물 → 샷</span><span class="label">롱블랙: 물 위에 에스프레소를 붓는 방식</span></div>
+      <div class="data-card"><span class="num">더블샷 기준</span><span class="label">롱블랙은 물을 적게 쓰는 경우가 많음</span></div>
+      <div class="data-card"><span class="num">공식 기준 없음</span><span class="label">매장마다 물 양과 샷 수가 다름</span></div>
+    </div>
+    <h2 class="section-title">1. 롱블랙과 아메리카노의 정의</h2>
+    <p>아메리카노는 에스프레소에 뜨거운 물을 더한 음료로, 국내 카페에서 가장 널리 팔리는 메뉴입니다. 롱블랙은 호주와 뉴질랜드 카페 문화에서 자리 잡은 이름으로, 뜨거운 물을 먼저 담고 그 위에 에스프레소를 부어 만든다고 소개됩니다.</p>
+    <p>두 음료의 재료는 같기 때문에 &lsquo;사실상 같은 음료&rsquo;라고 보는 자료도 있습니다. 그래서 차이를 말할 때는 어디까지가 일반적인 설명이고 어디부터가 매장 방침인지 나눠서 보는 것이 좋습니다.</p>
+    <div class="note-box">
+      <div class="note-label">참고</div>
+      롱블랙과 아메리카노의 구분에는 국제 표준이나 공식 규격이 없습니다. 아래 내용은 자료에서 흔히 소개되는 설명이며, 같은 이름이라도 매장에 따라 샷 수와 물 양이 다를 수 있습니다.
+    </div>
+    <h2 class="section-title">2. 붓는 순서와 크레마</h2>
+    <p>에스프레소 위에는 크레마라는 갈색 거품층이 생깁니다. 샷 위에 물을 부으면 이 층이 풀어지기 쉽고, 물 위에 샷을 부으면 크레마가 표면에 비교적 남는다고 설명됩니다. 롱블랙이 아메리카노보다 윗면이 진하고 고소한 향이 두드러진다고 말하는 이유가 여기에 있습니다.</p>
+    <p>다만 크레마가 남는 정도는 원두 신선도, 추출 상태, 붓는 속도에 따라 달라지므로 순서만으로 맛이 결정되지는 않습니다.</p>
+    <h2 class="section-title">3. 물 양과 농도 비교</h2>
+    <table class="compare-table">
+      <thead><tr><th>구분</th><th>롱블랙</th><th>아메리카노</th></tr></thead>
+      <tbody>
+        <tr><td>붓는 순서</td><td class="em">물 → 에스프레소</td><td class="em">에스프레소 → 물</td></tr>
+        <tr><td>물 양</td><td>상대적으로 적은 편</td><td>상대적으로 많은 편</td></tr>
+        <tr><td>크레마</td><td>표면에 남기 쉬움</td><td>풀어지기 쉬움</td></tr>
+        <tr><td>맛 경향</td><td>진하고 향이 또렷함</td><td>부드럽고 마시기 편함</td></tr>
+        <tr><td>카페인</td><td colspan="2">샷 수가 같다면 거의 같음</td></tr>
+      </tbody>
+    </table>
+    <p>물이 적으면 농도가 진해지므로 롱블랙이 더 강하게 느껴지는 것은 자연스럽습니다. 반면 카페인은 에스프레소 샷 수에 좌우되기 때문에, 같은 샷 수라면 물을 얼마나 넣었는지와 상관없이 총량은 비슷합니다.</p>
+    <h2 class="section-title">4. 만드는 순서</h2>
+    <div class="tip-box">
+      <div class="tip-title">롱블랙 만드는 순서</div>
+      <div class="tip-item"><div class="tip-num">1</div><div class="tip-text"><strong>잔 예열:</strong> 잔에 뜨거운 물을 부어 데운 뒤 비워 둡니다.</div></div>
+      <div class="tip-item"><div class="tip-num">2</div><div class="tip-text"><strong>물 담기:</strong> 90℃ 안팎의 뜨거운 물을 잔의 절반 정도 채웁니다. 에스프레소 머신의 온수 기능을 쓰면 편합니다.</div></div>
+      <div class="tip-item"><div class="tip-num">3</div><div class="tip-text"><strong>샷 추출:</strong> 더블샷을 뽑아 물 위로 천천히 붓습니다. 크레마가 풀리지 않게 잔 가장자리 쪽에 가깝게 붓는 방법이 흔히 소개됩니다.</div></div>
+      <div class="tip-item"><div class="tip-num">4</div><div class="tip-text"><strong>농도 조절:</strong> 맛을 보고 물 양을 늘리거나 줄여 취향에 맞춥니다.</div></div>
+    </div>
+    <p>아메리카노는 같은 재료를 반대 순서로 쓰면 됩니다. 에스프레소를 먼저 받고 뜨거운 물을 더하는 방식이며, 물 양을 늘리면 더 순해집니다. 물 양 기준은 정해진 값이 없으므로 샷 1에 물 3~5 정도 범위에서 취향대로 시작해 조절하시면 됩니다.</p>
+    <h2 class="section-title">5. 어떤 원두가 어울릴까</h2>
+    <p>물을 섞어 마시는 음료라서 샷의 단점이 그대로 드러납니다. 신맛이 지나치게 날카롭거나 쓴맛이 강한 샷은 물을 더해도 개선되지 않습니다. 중배전 이상에서 단맛과 바디감이 있는 원두가 무난하다는 평가가 많고, 산미가 좋은 약배전 원두는 물이 적은 롱블랙에서 향미 구분이 더 잘 된다는 의견도 있습니다.</p>
+    <h2 class="section-title">6. 주문할 때 확인할 점과 자주 하는 실수</h2>
+    <table class="compare-table">
+      <thead><tr><th>상황</th><th>가능한 원인</th><th>확인 방법</th></tr></thead>
+      <tbody>
+        <tr><td>롱블랙인데 밍밍함</td><td>물이 많거나 샷이 하나뿐임</td><td class="em">샷 수와 잔 용량을 물어보기</td></tr>
+        <tr><td>아메리카노가 너무 쓴 느낌</td><td>샷이 과추출이거나 물이 적음</td><td class="em">물을 더 요청하거나 샷 추출 점검</td></tr>
+        <tr><td>크레마가 안 보임</td><td>원두 신선도 낮음, 샷 위에 물을 부음</td><td>순서와 원두 로스팅 날짜 확인</td></tr>
+        <tr><td>매장마다 맛이 다름</td><td>정의와 레시피가 제각각</td><td>메뉴 설명 확인</td></tr>
+      </tbody>
+    </table>
+    <h2 class="section-title">자주 묻는 질문</h2>
+    <p><strong>Q. 롱블랙이 아메리카노보다 카페인이 많은가요?</strong><br/>샷 수가 같다면 거의 같습니다. 물 양은 카페인 총량이 아니라 농도에 영향을 줍니다. 매장별 샷 수는 확인하시기 바랍니다.</p>
+    <p><strong>Q. 아이스로도 만들 수 있나요?</strong><br/>가능합니다. 찬물과 얼음을 먼저 담고 에스프레소를 부으면 되며, 얼음이 녹는 만큼 물을 조금 줄이는 경우가 많습니다.</p>
+    <p><strong>Q. 롱블랙과 리스트레또·룽고는 같은 건가요?</strong><br/>다릅니다. 리스트레또와 룽고는 에스프레소를 짧게 또는 길게 추출한 샷 자체의 종류이고, 롱블랙은 물에 샷을 부어 만든 음료 이름입니다.</p>
+    <p><strong>Q. 집에서 에스프레소 머신 없이 만들 수 있나요?</strong><br/>모카포트나 에어로프레스로 농축된 커피액을 만들어 뜨거운 물에 붓는 방법으로 비슷하게 마실 수 있습니다. 다만 크레마의 양은 머신 추출보다 적습니다.</p>
+    <p><strong>Q. 바리스타 자격 시험에 나오나요?</strong><br/>메뉴 용어로 다뤄질 수 있으나 출제 범위는 기관마다 다르므로 응시 기관의 최신 공고와 교재를 확인하시기 바랍니다.</p>
+    <div class="closing-box">
+      <h3>정리</h3>
+      <p>롱블랙과 아메리카노는 재료가 같고, 붓는 순서와 물 양으로 구분하는 설명이 일반적입니다. 롱블랙은 물 위에 샷을 부어 크레마를 살리고 농도가 진한 편이며, 아메리카노는 샷에 물을 더해 부드럽게 마시는 방식입니다.</p>
+      <p>공식 기준이 없으므로 주문할 때 샷 수와 물 양을 확인하시고, 집에서는 물 양을 조금씩 바꾸며 취향에 맞는 비율을 찾아보시기 바랍니다.</p>
+    </div>
+<p style="font-size:12px;color:#a08070;margin-top:24px">참고 자료: <a href="https://en.wikipedia.org/wiki/Long_black" rel="noopener nofollow">Wikipedia — Long black</a> · <a href="https://www.wikipedia.com/wiki/Americano_(coffee)" rel="noopener nofollow">Wikipedia — Caffè americano</a> · <a href="https://tastingtable.com/1293064/americano-long-black-coffee-whats-difference" rel="noopener nofollow">Tasting Table — Americano vs. Long Black</a> · <a href="https://www.sageappliances.com/uk/en/blog/coffee-and-espresso/long-black-vs-americano.html" rel="noopener nofollow">Sage Appliances — Long black vs Americano</a></p>
+
+
+<!-- RELATED:BEGIN -->
+<style>
+.related-section{margin:48px 0 0;padding:32px 0 0;border-top:2px solid #e8d8c8}
+.related-section h3{font-size:17px;font-weight:900;color:#2c1810;margin-bottom:20px}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.related-card{background:#fff;border:1px solid #e8d8c8;border-radius:10px;padding:16px 18px;
+  text-decoration:none;color:inherit;display:block;transition:box-shadow .2s,transform .2s}
+.related-card:hover{box-shadow:0 6px 20px rgba(107,58,42,.13);transform:translateY(-2px)}
+.related-card .rc-cat{font-size:11px;font-weight:700;color:#c8860a;margin-bottom:6px}
+.related-card .rc-title{font-size:13.5px;font-weight:700;color:#2c1810;line-height:1.45;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.related-card .rc-date{font-size:11px;color:#a08070;margin-top:8px}
+</style>
+<div class="related-section"><h3>📚 함께 읽으면 좋은 글</h3><div class="related-grid"><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-13"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">피베리 뜻 — 생기는 과정과 PB 등급 표기, 맛 특징과 가격이 높은 까닭</div><div class="rc-date">2026. 11. 13</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-11-06"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">자격증 종류 — 국내 협회 1·2급과 SCA 과정, 목적별 선택 요령</div><div class="rc-date">2026. 11. 06</div></a><a class="related-card" href="https://coffee.ephseed.com/coffee-article-2026-10-30"><div class="rc-cat">☕ 커피 품종 & 가공법</div><div class="rc-title">블루마운틴 뜻 — No.1 등급 기준과 재배 고도, 블렌드 표기 확인하는 법</div><div class="rc-date">2026. 10. 30</div></a></div></div>
+<!-- RELATED:END -->
+<div class="tags">
+      <span class="tag">#롱블랙</span>
+      <span class="tag">#아메리카노</span>
+      <span class="tag">#에스프레소</span>
+      <span class="tag">#크레마</span>
+      <span class="tag">#바리스타</span>
+    </div>
+    <div class="summary-box" style="margin-top:40px">
+      <h3>요약</h3>
+      <ul>
+        <li><strong>롱블랙은 물 위에 샷을 붓고, 아메리카노는 샷에 물을 더하는 것이 일반적인 설명입니다.</strong></li>
+        <li><strong>롱블랙은 물이 적어 진하고 크레마가 남기 쉽습니다.</strong></li>
+        <li><strong>샷 수가 같다면 카페인은 거의 같습니다.</strong></li>
+        <li><strong>공식 기준이 없으므로 샷 수와 물 양은 매장에 확인합니다.</strong></li>
+      </ul>
+    </div>
+
+  </div>
+</div><!-- /container -->
+
+
+
+
+<!-- ============================================= -->
+<!-- 카카오 애드핏: 우측 사이드바 고정 광고 (160x600) -->
+<!-- 데스크탑: 화면 오른쪽 고정 / 태블릿 이하: 하단   -->
+<!-- ads_fix.py 가 자동 주입 — 직접 지우지 말 것     -->
+<!-- ============================================= -->
+<style>
+  .kakao-sidebar-fixed{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:900;background:rgba(255,255,255,0.95);border-radius:12px;padding:10px;box-shadow:0 4px 20px rgba(0,0,0,0.08);border:1px solid rgba(0,0,0,0.08);}
+  @media (max-width:1400px){.kakao-sidebar-fixed{position:static;transform:none;display:flex;justify-content:center;margin:30px auto;width:fit-content;}}
+</style>
+<div class="kakao-sidebar-fixed">
+    <ins class="kakao_ad_area" style="display:none;"
+    data-ad-unit="DAN-q3Gqza2plqVgg8uW"
+    data-ad-width="160"
+    data-ad-height="600"></ins>
+</div>
+<!-- 새 도메인 전용 유닛 -->
+<div class="kakao-ad-lead" style="display:flex;justify-content:center;align-items:center;margin:14px auto;max-width:100%;overflow:hidden;">
+<ins class="kakao_ad_area" style="display:none;"
+data-ad-unit="DAN-9S7Ka99jukqetMgb"
+data-ad-width="300"
+data-ad-height="250"></ins>
+</div>
+<style>
+/* 728x90 은 모바일 화면에 들어가지 않는다. 가로 넘침·미노출 방지 */
+@media (max-width:767px){
+  ins.kakao_ad_area[data-ad-width="728"]{display:none !important;}
+  .fixed-top-ad{display:none !important;}
+}
+</style>
+<script type="text/javascript" src="//t1.kakaocdn.net/kas/static/ba.min.js" async></script>
+
+</body>
+</html>
