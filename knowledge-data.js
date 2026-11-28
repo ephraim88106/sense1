@@ -1,5 +1,13 @@
 export const knowledgeArticles = [
   {
+    id: 217, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
+    categoryColor: { bg: "#fce7f3", text: "#9d174d" },
+    title: "아인슈페너 뜻 — 비엔나커피와 같은 음료일까, 크림 비율과 농도",
+    date: "2026.11.28",
+    summary: "아인슈페너는 만들기 쉬워 보이지만 크림을 너무 단단하게 휘핑하거나 커피가 약하면 맛이 금방 흐려집니다. 진하게 내린 커피 위에, 흘러내릴 정도의 부드러운 크림을 얹는 것이 기본입니다. 레시피마다 비율이 다르므로 아래 수치는 출발점으로 보시기 바랍니다.",
+    link: "coffee-article-2026-11-28.html"
+  },
+  {
     id: 216, emoji: "🎨", category: "바리스타 스킬 & 라떼아트",
     categoryColor: { bg: "#fce7f3", text: "#9d174d" },
     title: "롱블랙 뜻 — 아메리카노와 구분하는 법, 물 양과 크레마 특징",
